@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Oblivion Quest List</title>
+    <style>
+        :root {
+            --bg-primary: #1a1a1a;
+            --bg-secondary: #2d2d2d;
+            --bg-tertiary: #252525;
+            --text-primary: #e0e0e0;
+            --text-secondary: #b0b0b0;
+            --accent-red: #ff4444;
+            --accent-blue: #4a9eff;
+            --accent-cyan: #00d9ff;
+            --accent-gold: #ffd700;
+            --accent-green: #33cc00;
+            --border-color: #444;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: var(--bg-secondary);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        header {
+            border-bottom: 2px solid var(--accent-red);
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            color: var(--accent-red);
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: var(--accent-cyan);
+            font-size: 1.2em;
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+
+        .last-updated {
+            color: var(--text-secondary);
+            font-size: 0.9em;
+            font-style: italic;
+        }
+
+        h2 {
+            color: var(--accent-blue);
+            font-size: 1.8em;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+
+        h3, h4 {
+            color: var(--accent-cyan);
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+
+        h4 {
+            font-size: 1.3em;
+        }
+
+        p {
+            margin-bottom: 15px;
+            color: var(--text-primary);
+        }
+
+        a {
+            color: var(--accent-cyan);
+            text-decoration: none;
+            border-bottom: 1px solid var(--accent-cyan);
+            transition: color 0.3s, border-color 0.3s;
+        }
+
+        a:hover {
+            color: var(--accent-gold);
+            border-color: var(--accent-gold);
+        }
+
+        .info-box {
+            background-color: rgba(74, 158, 255, 0.1);
+            border-left: 4px solid var(--accent-blue);
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .note {
+            background-color: rgba(255, 215, 0, 0.1);
+            border-left: 4px solid var(--accent-gold);
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .section {
+            background-color: var(--bg-tertiary);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 6px;
+            border-left: 3px solid var(--accent-blue);
+        }
+
+        .quest-links {
+            display: flex;
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .quest-link-box {
+            flex: 1;
+            background-color: var(--bg-tertiary);
+            padding: 30px;
+            border-radius: 8px;
+            text-align: center;
+            border: 2px solid var(--accent-blue);
+            transition: all 0.3s ease;
+        }
+
+        .quest-link-box:hover {
+            border-color: var(--accent-gold);
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+        }
+
+        .quest-link-box h4 {
+            margin: 0;
+            font-size: 1.5em;
+        }
+
+        .quest-link-box a {
+            color: var(--accent-gold);
+            font-size: 1.5em;
+            border: none;
+        }
+
+        footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+            color: var(--text-secondary);
+        }
+
+        footer a {
+            margin: 0 10px;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid var(--border-color);
+            margin: 20px 0;
+        }
+
+        b, strong {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        i, em {
+            color: var(--text-secondary);
+            font-style: italic;
+        }
+
+        .copyright {
+            font-size: 0.85em;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>The Oblivion Quest List</h1>
+            <p class="subtitle">Guide to the Ultimate Quest Mods Experience for TES IV: Oblivion</p>
+            <p class="last-updated">Last Updated 03/03/2008</p>
+        </header>
+
+        <main>
+            <div class="info-box">
+                <p><b>Note:</b> More Quest Mods! The old sites for TOQL are gone, but the Oblivion Quest Mod list lives on at UESP here: <a href="https://en.uesp.net/wiki/Oblivion_Mod:Oblivion_Quest_Mod_Wiki" target="_blank">Update your bookmarks and links!</a></p>
+            </div>
+
+            <h2>WHAT IS TOQL?</h2>
+
+            <div class="section">
+                <p>The Oblivion Quest List (<b>TOQL</b>) is intended to be a comprehensive guide to good quest mods for TES IV: Oblivion. It is a community project, in the sense that all of the mods here have been recommended by members of the mod community. Good quest mods are critical to the future of Oblivion modding, because without them people quickly get bored with plundering random dungeons, no matter how great the "eye candy" is.</p>
+
+                <p>What makes a good quest? This is not as simple a question as you might think. My definition is a bit broader than some, but it's definitely not just a matter of having a few journal entries.</p>
+
+                <p>A good quest must, at a bare minimum, have an in-game story, a goal, a challenge, and a conclusion. Preferably, this should involve characters that you meet and interact with (not just ones you need to kill), although this is not strictly necessary -- a quest can be communicated entirely through in-game books or notes, for example. Ideally, it should also include some lore to establish a background setting, history, etc., and make some attempt to fit into the Elder Scrolls world (or replace it) even if it doesn't adhere strictly to previous TES lore. A good quest should also, of course, include some reward, but this can mean a lot of different things given the story.</p>
+
+                <p>Above all, a quest should be fun, either because of the way it challenges you or because of the way it tells a story -- or, if you're really lucky, both of these elements.</p>
+
+                <p>I've split the list into big quest mods and small quest mods. Big quest mods are typically lengthy, involve multiple tasks, or include lots of small quests. Small quest mods are shorter and sometimes simpler, but should still be a lot of fun. The title links to the ESF forum thread for the mod (if we could find a thread for it), while the small links below the description go directly to the download mirror sites for the mod.</p>
+
+                <p>So, with all that out of the way, here are the lists!</p>
+            </div>
+
+            <div class="quest-links">
+                <div class="quest-link-box">
+                    <h4><a href="Big-Quest-Mods.html">Big Quest Mods</a></h4>
+                </div>
+                <div class="quest-link-box">
+                    <h4><a href="Small-Quest-Mods.html">Small Quest Mods</a></h4>
+                </div>
+            </div>
+
+            <h3>CREDITS</h3>
+
+            <div class="section">
+                <p>This project never would have started if not for DragoonWraith. His original thread looking for quests mods, and the subsequent list of mods that he started, provided a lot of the initial material for TOQL. Also, KomodoDave (previously komodo2802) provided invaluable help gathering quite a few of the mod descriptions and download links.</p>
+
+                <p>Aside from the creators of the individual mods listed here, lots of people in the ESF threads have contributed suggestions, feedback, and (most important) links! Thank you all!</p>
+            </div>
+        </main>
+
+        <footer>
+            <hr>
+            <p>
+                <a href="index.html">Home</a>
+            </p>
+            <p class="copyright">Copyright 2006, 2007, 2008 by dev_akm. Individual works copyrighted by their respective creators.</p>
+        </footer>
+    </div>
+</body>
+</html>
