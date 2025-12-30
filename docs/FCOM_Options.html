@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FCOM Optional Add-Ons</title>
+    <style>
+        :root {
+            --bg-primary: #1a1a1a;
+            --bg-secondary: #2d2d2d;
+            --bg-tertiary: #252525;
+            --text-primary: #e0e0e0;
+            --text-secondary: #b0b0b0;
+            --accent-red: #ff4444;
+            --accent-blue: #4a9eff;
+            --accent-cyan: #00d9ff;
+            --accent-gold: #ffd700;
+            --border-color: #444;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: var(--bg-secondary);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        header {
+            border-bottom: 2px solid var(--accent-red);
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            color: var(--accent-red);
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: var(--accent-cyan);
+            font-size: 1.2em;
+            font-style: italic;
+        }
+
+        .last-updated {
+            color: var(--accent-red);
+            font-size: 0.9em;
+            margin-bottom: 15px;
+        }
+
+        h2, h3, h4 {
+            color: var(--accent-blue);
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+
+        h4 {
+            color: var(--accent-cyan);
+            font-size: 1.3em;
+        }
+
+        p {
+            margin-bottom: 15px;
+            color: var(--text-primary);
+        }
+
+        a {
+            color: var(--accent-cyan);
+            text-decoration: none;
+            border-bottom: 1px solid var(--accent-cyan);
+            transition: color 0.3s, border-color 0.3s;
+        }
+
+        a:hover {
+            color: var(--accent-gold);
+            border-color: var(--accent-gold);
+        }
+
+        .bash-tag {
+            color: #9b59b6;
+            font-size: 0.85em;
+            font-family: 'Courier New', monospace;
+            background-color: var(--bg-tertiary);
+            padding: 2px 6px;
+            border-radius: 3px;
+            display: inline-block;
+            margin-top: 5px;
+        }
+
+        .warning {
+            background-color: rgba(255, 68, 68, 0.1);
+            border-left: 4px solid var(--accent-red);
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .warning strong {
+            color: var(--accent-red);
+        }
+
+        .section {
+            background-color: var(--bg-tertiary);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 6px;
+            border-left: 3px solid var(--accent-blue);
+        }
+
+        footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+            color: var(--text-secondary);
+        }
+
+        footer a {
+            margin: 0 10px;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid var(--border-color);
+            margin: 20px 0;
+        }
+
+        b, strong {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        i, em {
+            color: var(--text-secondary);
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>FCOM Optional Add-Ons</h1>
+            <p class="subtitle">Options, Compatibility Patches and Rebalancers for FCOM 0.9.9</p>
+        </header>
+
+        <main>
+            <p class="last-updated">Last Updated 5/19/2009</p>
+
+            <p>If you're using FCOM 8.8 or earlier, see the <a href="https://web.archive.org/web/20110808120119/http://devnull.sweetdanger.net/fcomoptionsold" target="_blank">Old FCOM Options page</a>.</p>
+            
+            <p>If you're using FCOM 8.9 or later, keep reading this page.</p>
+            
+            <p>These optional add-on modules for FCOM improve compatibility with a wide range of other mods. The modules marked with the BASH:Merge tag do not need to be active if you merge them into your Bashed Patch with a recent version of Wrye Bash.</p>
+            
+            <p><b>See</b> the <a href="https://web.archive.org/web/20110808120119/http://devnull.sweetdanger.net/fcomloadorder.html" target="_blank">FCOM Load-Order Guide</a> for where to place these in your load-order.</p>
+
+            <section class="section">
+                <h4>FCOM_FrancescosItemsAddOn</h4>
+                <p>This is a bug patch for <b>Francesco's Optional Items Add-On.esm</b> (version 4.5b). It fixes a circular loot list that may cause poor performance or CTDs. This small fix is not included in FCOM_Francescos.esp since some people do not use the optional items add-on (although I can't imagine why). <i>FCOM_FrancescosItemsAddOn.esp</i> must be loaded after <i>FCOM_Francescos.esp</i>.</p>
+                <p class="bash-tag">{{BASH:Delev,Merge,Relev}}</p>
+            </section>
+
+            <section class="section">
+                <h4>FCOM_UnofficialFranArmorAddOn</h4>
+                <p>This is an optional FCOM support file for the <a href="https://www.nexusmods.com/oblivion/mods/11483" target="_blank">Unofficial Francescos Mod Armor AddOn</a> by Meatball01 (requires separate download of resources from <a href="https://www.nexusmods.com/oblivion/mods/15063" target="_blank">Cryos Ordinator Indoril Armor</a> and <a href="https://www.nexusmods.com/oblivion/mods/6997" target="_blank">Cryos Long Bonemold Helmet</a>).</p>
+                <p>You can also use the <a href="https://www.nexusmods.com/oblivion/mods/15411" target="_blank">Unofficial Lv30 Francescos Leveled Item</a> mod by Maltz -- it doesn't need any special FCOM support.</p>
+                <p>Both of these expansions are highly recommended since they add a lot of great new items to the game. Both expansions should be loaded early, near <i>FCOM_Francescos.esp</i>.</p>
+                <p>The <i>FCOM_UnofficialFranArmorAddon.esp</i> must be loaded anywhere after <i>FCOM_Convergence.esp</i>. If you also use <b>Fighter's Guild United</b> with the <a href="https://www.nexusmods.com/oblivion/mods/15519" target="_blank">FCOM_FightersGUnited</a> patch or <b>NPC New Clothes</b> with the <a href="https://www.nexusmods.com/oblivion/mods/15165" target="_blank">FCOM_NewNPCClothes</a> patch (both patches by Shikamaru_4) along with <i>FCOM_UnofficialFranArmorAddon.esp</i>, then you'll need to decide for yourself which of these to load last since there's some overlap between the three support files.</p>
+                <p class="bash-tag">{{BASH:Delev,Merge,Relev}}</p>
+            </section>
+
+            <section class="section">
+                <h4>FCOM_MoreRandomSpawns and FCOM_MoreRandomItems</h4>
+                <p>MMM, WarCry, and Frans all increase the max level difference GMSTs far higher than was intended for OOO. Now the MMM for FCOM/OOO plugin brings these back down closer to what was intended for OOO, but those who like the more random behavior can use these option files to reset the max level difference GMSTs higher (though not quite as high as WarCry uses). They need to be loaded after the FCOM_Convergence.esp.</p>
+                
+                <p><b>FCOM_MoreRandomSpawns</b><br>
+                This FCOM option increases the max level difference for creature and NPC spawns. It reduces the sometimes jarring transitions when you reach a new level (suddenly new things start appearing), but it also makes weaker enemies appear more often than was intended for OOO.</p>
+                
+                <p><b>FCOM_MoreRandomItems</b><br>
+                This FCOM option increases the max level difference for random items, loot, and NPC gear. It reduces the sometimes jarring transitions when you reach a new level (suddenly new things start appearing), but it also makes weaker items more common than was intended for OOO.</p>
+            </section>
+
+            <section class="section">
+                <h4>FCOM_DurabilityAndDamage</h4>
+                <p>This FCOM option increases melee damage. It works just like the <i>MMM - Durability & Damage</i> plugin, but without messing up the Oscuro durability settings. It will probably make melee combat overly powerful unless you use another mod that makes magicka a lot more deadly, too, such as Mighty Magicka or Supreme Magicka. Must be loaded after <i>FCOM_Convergence.esp</i>. Use <i>FCOM_DurabilityAndDamage.esp</i> instead of <i>MMM - Durability & Damage.esp</i>.</p>
+            </section>
+
+            <section class="section">
+                <h4>FCOM_SpawnRatesReduced</h4>
+                <p>Much like the MMM plugin with a similar name, FCOM_SpawnRatesReduced.esp does almost exactly what the name suggests. It reduces the chance of encounters and produces somewhat smaller mobs of enemies. Use this instead of <i>MMM - Spawn Rates - Reduced</i>. Must be loaded after FCOM_Convergence.esp.</p>
+                <p class="bash-tag">{{BASH:Delev,Merge,Relev}}</p>
+            </section>
+
+            <section class="section">
+                <h4>FCOM_SpawnRatesSlightlyReduced</h4>
+                <p>This option is identical to <i>FCOM_SpawnRatesReduced.esp</i> except that it does not reduce the chance of encounters. Use this instead of <i>FCOM_SpawnRatesReduced.esp</i>, <i>FCOM_SpawnRatesStronger.esp</i>, or <i>MMM - Spawn Rates - Reduced</i>. Must be loaded after <i>FCOM_Convergence.esp</i>.</p>
+                <p class="bash-tag">{{BASH:Delev,Merge,Relev}}</p>
+            </section>
+
+            <section class="section">
+                <h4>FCOM_SpawnRatesStronger</h4>
+                <p>This option works just like <i>FCOM_SpawnRatesSlightlyReduced.esp</i> but also causes stronger enemies to appear sooner. Use this instead of <i>FCOM_SpawnRatesReduced.esp</i>, <i>FCOM_SpawnRatesSlightlyReduced.esp</i>, or <i>MMM - Spawn Rates - Reduced</i>. Must be loaded after <i>FCOM_Convergence.esp</i>.</p>
+                <p class="bash-tag">{{BASH:Delev,Merge,Relev}}</p>
+            </section>
+
+            <section class="section">
+                <h4>FCOM_SaferRoads</h4>
+                <p>Again, like the MMM plugin with a similar name, FCOM_SaferRoads.esp reduces the chance of road encounters by a third. Use this instead of the <i>MMM - Safer Roads</i> plugin. Must be loaded after <i>FCOM_Convergence.esp</i>. Can be used with or without <i>FCOM_SpawnRatesReduced.esp</i>. If you use it with <i>FCOM_SpawnRatesReduced.esp</i>, then be sure to load SaferRoads after SpawnRatesReduced.</p>
+                <p class="bash-tag">{{BASH:Delev,Merge,Relev}}</p>
+            </section>
+
+            <section class="section">
+                <h4>FCOM_LessReaversInGates</h4>
+                <p>This option reduces the Reaver spawn counts in Gate realms only. Can be used with MMM - Less Reavers.esp to get a greater overall reduction in their spawn rate.</p>
+                <p class="bash-tag">{{BASH:Delev,Merge,Relev}}</p>
+            </section>
+
+            <section class="section">
+                <h4>FCOM_NoReaversInGates & FCOM_NoAdventurersInGates</h4>
+                <p>These two options prevent Reavers and Adventurers, respectively, from spawning in the Oblivion gate realms, but leave them present in the rest of the game.</p>
+                <p class="bash-tag">{{BASH:Delev,Merge,Relev}}</p>
+            </section>
+
+            <div class="warning">
+                <h4>FCOM_OscurosOverhaul</h4>
+                <p><strong>Do not use this with MMM.</strong> If you use MMM, then you should use FCOM_Convergence.esp instead of FCOM_OscurosOverhaul.esp. If you don't use MMM, then FCOM_OscurosOverhaul can be used to support integration with other FCOM mods such as WarCry, Fran's, and Bob's Armory. You must load it after Oscuro's_Oblivion_Overhaul.esp.</p>
+                <p class="bash-tag">{{BASH:Relev,Delev}}</p>
+            </div>
+
+            <div class="warning">
+                <h4>FCOM_WarCryNoSpawn</h4>
+                <p><strong>Do not use this at the same time as FCOM_WarCry.esp</strong>. This option file can be used instead of FCOM_WarCry.esp if for some reason you do not like the awesome new enemies added by WarCry. You will still be able to find most (although maybe not all) of the cool new weapons and other items from WarCry, but none of the unique WarCry enemies will spawn. Due to the new FCOM_Convergence.esm features, you can still find unique WarCry loot and trophy drops from other enemies when using the WarCryNoSpawn option.</p>
+                <p class="bash-tag">{{BASH:Delev,Relev}}</p>
+            </div>
+
+            <section class="section">
+                <h4>FCOM_Archery</h4>
+                <p>This is an optional add-on FCOM patch that makes archery more deadly. It requires Francesco's optional new items add-on. Francesco's mod makes archery a lot more deadly than it is in Oscuro's Oblivion Overhaul, so only use this if you feel archery is underpowered in FCOM. This patch merges Fran's bow and ammo rebalance with Oscuro's Oblivion Overhaul, as well as adding some further tweaks from the Unofficial Oblivion Patch by Quarn and Kivan. The new bows added by OOO are rebalanced and renamed to better match with Fran's.</p>
+                <p class="bash-tag">{{BASH:Merge}}</p>
+            </section>
+
+            <section class="section">
+                <h4>FCOM_FriendlierFactions</h4>
+                <p>This optional add-on is similar to the MMM - Friendlier Factions plugin. It reduces faction conflicts. Use instead of the MMM - Friendlier Factions plugin.</p>
+                <p class="bash-tag">{{BASH:Merge}}</p>
+            </section>
+
+            <section class="section">
+                <h4>FCOM_DiverseGuardUnity</h4>
+                <p>This optional add-on FCOM patch merges MMM - Diverse Imperial Armor with OOO guards, producing a rich mixture of regional guard armor. Use instead of MMM - Diverse Imperial Armor. Based on YaKueb's Diverse Legion Armor mod and nb_nmare's Unity project (MOU - Guards).</p>
+                <p class="bash-tag">{{BASH:Merge}}</p>
+            </section>
+
+            <section class="section">
+                <h4>FCOM_BobsGuardUnity</h4>
+                <p>Merges several Imperial Legion changes from Bob's Armory with OOO and MMM - Diverse Imperial Armor, inspired by nb_nmare's Unity project. Use this if you're using both Bob's Armory and DiverseGuardUnity.</p>
+                <p class="bash-tag">{{BASH:Merge}}</p>
+            </section>
+
+            <section class="section">
+                <h4>FCOM_Knights</h4>
+                <p>This is a highly recommended optional add-on FCOM patch for the official Knights of the Nine mod. It adds Oscuro/MOBS rebalance to the weapons from Knights.esp, makes Umaril much tougher, and preserves the Woodland Grace quest reward.</p>
+                <p class="bash-tag">{{BASH:Delev,Merge,Relev}}</p>
+            </section>
+
+            <section class="section">
+                <h4>FCOM_TamrielicIngredients</h4>
+                <p>This is an optional add-on FCOM patch for Tarnsman's <a href="https://www.nexusmods.com/oblivion/mods/11084" target="_blank">Tamrielic Ingredients</a>. It adds the ingredient loot drops from Tamrielic Ingredients onto creatures and NPCs without disturbing any of the unification work done in <i>FCOM_Convergence.esp</i>. Be sure to load this after the <b>Tamrielic_Ingredients_cOMbo.esp</b>. Do not use at the same time as Cobl (see below).</p>
+                <p class="bash-tag">{{BASH:Delev,Merge,Relev}}</p>
+            </section>
+
+            <section class="section">
+                <h4>FCOM_Cobl</h4>
+                <p>This is an optional add-on FCOM patch for <a href="https://web.archive.org/web/20110808120119/http://wrye.ufrealms.net/Cobl.html" target="_blank">Cobl</a> (Common Oblivion). Cobl includes all the same ingredients from Tamrielic Ingredients, plus a lot more. <i>FCOM_Cobl.esp</i> adds the Cobl versions of Tamrielic Ingredients loot drops onto creatures and NPCs without disturbing any of the unification work done in <i>FCOM_Convergence.esp</i>. This is an alternative to Tamrielic Ingredients and should not be used at the same time as TI (you'll get duplicate ingredients). You do not need to use the <i>Cobl Tweaks.esp</i> plugin with FCOM (since the functionality in Cobl Tweaks is already handled by <i>FCOM_Convergence.esp</i>), but all of the other modules work fine and are worth using as long as you follow the <a href="https://web.archive.org/web/20110808120119/http://devnull.sweetdanger.net/fcomloadorderexpanded.html" target="_blank">FCOM Expanded Load-Order</a> for the ones listed there.</p>
+                <p class="bash-tag">{{BASH:Delev,Merge,Relev}}</p>
+            </section>
+
+            <section class="section">
+                <h4>FCOM_LothsBluntWeapons</h4>
+                <p>This is an optional add-on FCOM patch for the excellent <a href="https://www.nexusmods.com/oblivion/mods/12939" target="_blank">Loth's Blunt Weapons for Npcs</a> mod. It alters the leveled lists and weapon stats for Loth's vast assortment of blunt weapons to work with FCOM. To use this option, you must install Loth's Blunt Weapons and use the <i>Loth's Blunt Weapons for Npcs.esp</i> file as described on the <a href="https://web.archive.org/web/20110808120119/http://devnull.sweetdanger.net/fcomloadorder.html" target="_blank">load-order page</a>.</p>
+                <p class="bash-tag">{{BASH:Delev,Merge,Relev}}</p>
+            </section>
+
+            <section class="section">
+                <h4>FCOM_TamrielTravelers</h4>
+                <p>This is an optional add-on FCOM patch for Corepc's <a href="https://www.nexusmods.com/oblivion/mods/4387" target="_blank">Tamriel Travellers 1.3</a>. It adds faction support for the traveling merchants so they should not be attacked by creatures and bandits in the wilderness. Make sure FCOM_TamrielTravelers.esp loads after TamrielTravellers4OOO.esp. Also, be sure to load FCOM_TamrielTravelers.esp before FCOM_FriendlierFactions.esp (if you use it).</p>
+                <p class="bash-tag">{{BASH:Merge}}</p>
+            </section>
+
+            <section class="section">
+                <h4>FCOM_HungersUnitySI</h4>
+                <p>Changes all of the Hungers from OOO & MMM to use the Shivering Isles Hungers art rather than the original art from Lore Creatures. From nb_nmare's Unity project (MOU). You can only use this if you have the Shivering Isles expansion.</p>
+                <p class="bash-tag">{{BASH:Merge}}</p>
+            </section>
+
+            <section class="section">
+                <h4>FCOM_MightyUmbra</h4>
+                <p>This is an optional add-on FCOM patch for <b>Mighty Umbra</b> by Damar Stiehl. It merges the NPC stats, spells and gear for Umbra when using Mighty Umbra along with Oscuro's Oblivion Overhaul. Watch out! If you thought she was hard to beat before, you're in for some serious schooling now. See <a href="https://web.archive.org/web/20110808120119/http://devnull.sweetdanger.net/bigquests" target="_blank">TOQL</a> for details on Mighty Umbra.</p>
+                <p class="bash-tag">{{BASH:Merge}}</p>
+            </section>
+
+            <section class="section">
+                <h4>FCOM_Blood&Mud</h4>
+                <p>This is an optional add-on FCOM patch for M.Syd jr.'s <b>Blood&Mud - Dirt Deluxe Anglais</b>. It merges various Bravil NPC stats and equipment where overlaps were found between FCOM, UOP, and Blood&Mud -- especially on the guards.<br>
+                See <a href="https://web.archive.org/web/20110808120119/http://devnull.sweetdanger.net/bigquests" target="_blank">TOQL</a> for details on Blood&Mud.</p>
+                <p class="bash-tag">{{BASH:Merge}}</p>
+            </section>
+
+            <section class="section">
+                <h4>FCOM_WelkyndSwordBlood&Mud</h4>
+                <p>This is an optional add-on FCOM patch for Blood&Mud and Ungarion's Memoirs Part 1: The Welkynd Sword by MadCat221. It merges the changes to Ungarion from The Welkynd Sword, OOO and Blood&Mud. This plugin must be loaded after <b>FCOM_Blood&Mud</b>. See <a href="https://web.archive.org/web/20110808120119/http://devnull.sweetdanger.net/smallquests" target="_blank">TOQL</a> for details on Ungarion's Memoirs Part 1: The Welkynd Sword.</p>
+                <p class="bash-tag">{{BASH:Merge}}</p>
+            </section>
+
+            <section class="section">
+                <h4>FCOM_DulanCult</h4>
+                <p>This is an optional add-on FCOM patch for <b>Mysteries of the Dulan Cult</b> by Juib Thealas. It resolves several container conflicts with OOO when also using The Mystery of the Dulan cult.esp. See <a href="https://web.archive.org/web/20110808120119/http://devnull.sweetdanger.net/bigquests" target="_blank">TOQL</a> for details on Mysteries of the Dulan Cult.</p>
+            </section>
+
+            <section class="section">
+                <h4>FCOM_Ruin</h4>
+                <p>This is an optional add-on FCOM patch for Ruined Tail's Tale by Simyaz. It requires Ruin 1.x-2.x. Do not use this with Ruin 3.x (RTT). It resolves a conflict with standard healing potions that caused them to revert to vanilla Oblivion behavior in early versions of the mod. See <a href="https://web.archive.org/web/20110808120119/http://devnull.sweetdanger.net/bigquests" target="_blank">TOQL</a> for details on Ruined Tail's Tale.</p>
+                <p class="bash-tag">{{BASH:Merge}}</p>
+            </section>
+
+            <section class="section">
+                <h4>FCOM_EnhancedDaedricInvasion</h4>
+                <p>This is an optional add-on FCOM patch for markb50k's excellent <a href="https://www.nexusmods.com/oblivion/mods/9858" target="_blank">Enhanced Daedric Invasion</a> (EDI) mod. It updates several factions that are critical for EDI to work properly with FCOM. Use this option instead of the <i>Enhanced Daedric Invasion for FCOM.esp</i> file that comes with EDI. Be sure you read the instructions for EDI carefully and know what you're getting into before you try this mod -- it is a radical departure from the vanilla struggle to close Oblivion gates. Definitely not for everyone.</p>
+                <p class="bash-tag">{{BASH:Merge}}</p>
+            </section>
+
+            <section class="section">
+                <h4>FCOM_SlofsRobeTrader</h4>
+                <p>This FCOM Optional Support File is for <a href="https://www.nexusmods.com/oblivion/mods/24320" target="_blank">Slof's Oblivion Robe Trader 1.4</a>. It gives Slof's new robes to many NPCs from FCOM. Use this instead of the MCP Slof's Robe Trader for OOO module. Make sure you have the latest version of Slof's Robe Trader installed (it was last updated 01-12-2008). <i>Huge thanks to ElminsterEU for making this!</i></p>
+                <p class="bash-tag">{{BASH:Merge}}</p>
+            </section>
+
+            <section class="section">
+                <h4>FCOM_ExnemRuneskulls</h4>
+                <p>FCOM Optional Support File for <a href="https://www.nexusmods.com/oblivion/mods/9412" target="_blank">Exnem Runeskulls</a>. It nerfs and relevels the Runeskulls so they are not overpowered. <i>Huge thanks to Angyl A for making this!</i></p>
+                <p class="bash-tag">{{BASH:Merge}}</p>
+            </section>
+
+            <section class="section">
+                <h4>FCOM_OMG</h4>
+                <p>FCOM Optional Support File for <a href="https://www.nexusmods.com/oblivion/mods/13973" target="_blank">Origin of the Mages Guild</a> 5.0.FINAL or 5.1.FINAL. It resolves NPC overlaps between FCOM and OMG as well as resolving several cell conflicts with OOO. Use this instead of the OMG patch for OOO.</p>
+            </section>
+
+            <section class="section">
+                <h4>FCOM_OMGSRT</h4>
+                <p>FCOM Optional Support File to resolve differences between FCOM_SlofsRobeTrader.esp and FCOM_OMG.esp. Must be loaded after both FCOM_SlofsRobeTrader.esp and FCOM_OMG.esp.</p>
+                <p class="bash-tag">{{BASH:Merge}}</p>
+            </section>
+
+            <section class="section">
+                <h4>FCOM_KDCircletsOOOOptimizedNPCEquip</h4>
+                <p>FCOM Optional Support File for KDCircletsOOOOpimized - NPC Equip based on the patches by Axil. Must be loaded after KDCircletsOOOOptimized - NPC Equip.esp. Requires <a href="https://www.nexusmods.com/oblivion/mods/10670" target="_blank">KDCircletsOOOOptimized</a>.</p>
+                <p class="bash-tag">{{BASH:Merge}}</p>
+            </section>
+
+            <p>General load-order placement for these option files (as a group) is shown in the <a href="https://web.archive.org/web/20110808120119/http://devnull.sweetdanger.net/fcomloadorder.html" target="_blank">load-order guidelines</a>.</p>
+        </main>
+
+        <footer>
+            <hr>
+            <p>
+                <a href="index.html">Home</a> | 
+                <a href="FCOM_Convergence.html">FCOM Main</a> | 
+                <a href="https://web.archive.org/web/20110808120119/http://devnull.sweetdanger.net/fcomoptionsold" target="_blank">Old Optional Add-Ons</a>
+            </p>
+        </footer>
+    </div>
+</body>
+</html>
