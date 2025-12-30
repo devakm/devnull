@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FCOM Version History</title>
+    <style>
+        :root {
+            --bg-primary: #1a1a1a;
+            --bg-secondary: #2d2d2d;
+            --bg-tertiary: #252525;
+            --text-primary: #e0e0e0;
+            --text-secondary: #b0b0b0;
+            --accent-red: #ff4444;
+            --accent-blue: #4a9eff;
+            --accent-cyan: #00d9ff;
+            --accent-gold: #ffd700;
+            --border-color: #444;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: var(--bg-secondary);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        header {
+            border-bottom: 2px solid var(--accent-red);
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            color: var(--accent-red);
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: var(--accent-cyan);
+            font-size: 1.2em;
+            font-style: italic;
+        }
+
+        h2, h3, h4 {
+            color: var(--accent-blue);
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+
+        h4 {
+            color: var(--accent-cyan);
+            font-size: 1.3em;
+        }
+
+        p {
+            margin-bottom: 15px;
+            color: var(--text-primary);
+        }
+
+        ul, ol {
+            margin-left: 30px;
+            margin-bottom: 15px;
+        }
+
+        li {
+            margin-bottom: 10px;
+            color: var(--text-primary);
+        }
+
+        a {
+            color: var(--accent-cyan);
+            text-decoration: none;
+            border-bottom: 1px solid var(--accent-cyan);
+            transition: color 0.3s, border-color 0.3s;
+        }
+
+        a:hover {
+            color: var(--accent-gold);
+            border-color: var(--accent-gold);
+        }
+
+        .version {
+            background-color: var(--bg-tertiary);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 6px;
+            border-left: 3px solid var(--accent-red);
+        }
+
+        .version-title {
+            color: var(--accent-red);
+            font-size: 1.1em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .download-links {
+            background-color: rgba(74, 158, 255, 0.1);
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 6px;
+            border: 1px solid var(--accent-blue);
+        }
+
+        .warning {
+            background-color: rgba(255, 68, 68, 0.1);
+            border-left: 4px solid var(--accent-red);
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .warning strong {
+            color: var(--accent-red);
+        }
+
+        footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+            color: var(--text-secondary);
+        }
+
+        footer a {
+            margin: 0 10px;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid var(--border-color);
+            margin: 20px 0;
+        }
+
+        b, strong {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        i, em {
+            color: var(--text-secondary);
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>FCOM Version History</h1>
+            <p class="subtitle">History of Evolution</p>
+        </header>
+
+        <main>
+            <p>Here's a complete list of the recent versions with descriptions about what was changed in them, download links, etc.</p>
+
+            <div class="download-links">
+                <p><b>FCOM Beta Downloads:</b> | <a href="https://www.nexusmods.com/oblivion/mods/12249" target="_blank">TESNexus</a> | <a href="https://web.archive.org/web/20111127063803/http://planetelderscrolls.gamespy.com/View.php?view=OblivionMods.Detail&id=3428" target="_blank">PlanetElderScrolls</a> |</p>
+            </div>
+
+            <div class="version">
+                <p class="version-title">The Beta 0.9.8 update</p>
+                <p>Uses MMM 3.5.5 <b>Beta 3</b> or <b>Beta 5</b> to resolve more problems with wilderness spawns. <a href="https://web.archive.org/web/20111127063803/http://www.4shared.com/file/40465139/a58c4a5b/MMM355b3.html" target="_blank"><b>Requires MMM 3.5.5 Beta 3</b></a> or <a href="https://www.bethsoft.com/bgsforums/index.php?showtopic=826776" target="_blank">Beta 5</a> or later. New MMM bandit and marauder bosses are rebalanced for FCOM. Increased frequency of Fran named boss spawns, made them a bit tougher, and gave them bandit scripts where needed. Tweaked the WarCry Fallen/Carver/etc. variants, giving them Goblin loot, slightly reducing their spawn frequency, and making some of the shamen tougher. Reduced loot for Goblin tribes. Support structure for upcoming Choices & Consequences compatibility patch. Made the King of Miscarand and his zombies tougher.</p>
+                <div class="warning">
+                    <p><b>Be sure to download the latest <a href="https://wrye.ufrealms.net/Wrye%20Bash.html" target="_blank">Wrye Bash</a> update (v151 or later) and Rebuild Patch. Earlier versions of Wrye Bash had a bug where scripts were being merged incorrectly, possibly resulting in CTDs and other problems.</b></p>
+                </div>
+            </div>
+
+            <div class="version">
+                <p class="version-title">The Beta 0.9.7 update</p>
+                <p>Used MMM 3.5.5 <b>Beta 2</b> to hopefully resolve some problems with wilderness spawns. <a href="https://web.archive.org/web/20111127063803/http://www.4shared.com/file/38554564/ac29e311/MMM355.html" target="_blank"><b>Requires MMM 3.5.5 Beta 2</b></a>. It also fixes a few bugged loot lists in Francescos and Francescos Items AddOn, improves the WarCry unique item drops, and adds support for the Unofficial Fran Armor Addon mod. Huge thanks to ElminsterEU for adding a new feature in TES4Edit to help us track down leveled list problems!</p>
+                <p>See the <a href="FCOM_Options.html">FCOM Optional Add-Ons</a> page for descriptions of the new plugins. See the <a href="https://web.archive.org/web/20111127063803/http://devnull.sweetdanger.net/fcomloadorder.html" target="_blank">Basic Load-Order</a> page for a simple configuration, or the <a href="https://web.archive.org/web/20111127063803/http://devnull.sweetdanger.net/fcomloadorderexpanded.html" target="_blank">Expanded Load-Order</a> for an advanced configuration including all of the options.</p>
+            </div>
+
+            <div class="version">
+                <p class="version-title">The Beta 0.9.6 update</p>
+                <p>Added support for MMM 3.5.5 to improve the creature spawn removers and adds several new support modules for popular mods, including ExnemRuneskulls, Slof's Robe Trader, and Origin of the Mages Guild. <a href="https://web.archive.org/web/20111127063803/http://www.4shared.com/file/38554564/ac29e311/MMM355.html" target="_blank"><b>Requires MMM 3.5.5 Beta</b></a> and <a href="https://web.archive.org/web/20111127063803/http://devnull.sweetdanger.net/OOO/" target="_blank"><b>OOO 1.33</b></a>. See the <a href="https://web.archive.org/web/20111127063803/http://devnull.sweetdanger.net/fcomloadorder.html" target="_blank">FCOM Standard Load-Order Guide</a> for details on where to load these. Huge thanks to Angyl A for the Runeskulls rebalance and ElminsterEU for the SRT support! See the <a href="FCOM_Options.html">FCOM Optional Add-Ons</a> page for descriptions of the new plugins.</p>
+            </div>
+
+            <div class="version">
+                <p class="version-title">The Beta 0.9.5 update</p>
+                <p>Was a minor release. It added more Fran loot drops to containers (LL0Lootxx lists) and adds a new optional support module for <b>Cobl</b> as an alternative to Tamrielic Ingredients. See the <a href="FCOM_Options.html">FCOM Optional Add-Ons</a> page and the <a href="https://web.archive.org/web/20111127063803/http://devnull.sweetdanger.net/fcomloadorder.html" target="_blank">FCOM Standard Load-Order Guide</a> for details on how to use it.</p>
+            </div>
+
+            <div class="version">
+                <p class="version-title">The Beta 0.9.4 update</p>
+                <p>Resolved several critical issues found in Beta 9.3. In particular, a CTD-causing error in one of the WarCry spawn lists is fixed, and Francesco loot should start dropping correctly now. Also added a Durability & Damage option like the MMM - Durability & Damage plugin -- the FCOM version raises melee damage without messing up other Oscuro settings (probably unbalancing unless you use another mod that makes magicka a lot more deadly, such as Mighty Magicka or Supreme Magicka).</p>
+                <div class="warning">
+                    <p><b>Be sure to download the latest Wrye Bash (v51 or later) update and Rebuild Patch. Earlier versions of Wrye Bash had a bug where relevs/delevs were not being handled properly when they were "virtually active". This fixes the problem with FCOM_Francescos.esp not working correctly if you use it as a merged plugin. Also, a bug preventing FCOM_TamrielicIngredients.esp from working when "virtually active" has been fixed.</b></p>
+                </div>
+            </div>
+
+            <div class="version">
+                <p class="version-title">The Beta 0.9.3 update</p>
+                <p>Resolved numerous minor issues found in Beta 9.2. Hopefully all of the problems with beast race NPCs are fixed now. Also, the WarCry multi-item loot overload issue should now be solved.</p>
+                <p>The major new improvements in this version are a complete OMOBS rebalance for WarCry items and support for <a href="https://www.nexusmods.com/oblivion/mods/12939" target="_blank">Loth's Blunt Weapons for Npcs</a>. FCOM_LothsBluntWeapons.esp is a major new option module including tweaked leveled lists and OMOBS rebalance for Loth's vast assortment of blunt weapons. To use this option, you must install Loth's Blunt Weapons and use the <i>Loth's Blunt Weapons for Npcs.esp</i> file as described on the <a href="https://web.archive.org/web/20111127063803/http://devnull.sweetdanger.net/fcomloadorder.html" target="_blank">load-order page</a>.</p>
+                <p>Other new plugins include: FCOM_EnhancedDaedricInvasion.esp, FCOM_NoReaversInGates.esp, FCOM_NoAdventurersInGates.esp, and FCOM_NoWyverns.esp.</p>
+                <p>This release works with either MMM 3.5.3 or the upcoming MMM 3.5.4 -- but if you are using MMM 3.5.3 (as most people are), then it requires the included tweaks to the v3.5.3 MMM.esm. <b>If you're using MMM 3.5.3, then you MUST use the included MMM.esm file</b>. <b>If you are using MMM 3.5.4, then ignore the included MMM.esm file</b> (i.e., don't use it).</p>
+                <p>Get details on the <a href="https://www.bethsoft.com/bgsforums/index.php?s=&showtopic=795337&view=findpost&p=11564789" target="_blank">MMM 3.5.4 update here</a> (requires 3.5.3 install first).</p>
+                <p>Get the latest version of <b>MMM 3.5.3</b>! You can get it from <b>ElricM</b> -- as either the <a href="https://web.archive.org/web/20111127063803/http://www.elricm.com/mods.php?safe=4159" target="_blank">Full 3.5.3 download</a> or the <a href="https://web.archive.org/web/20111127063803/http://www.elricm.com/mods.php?safe=4160" target="_blank">upgrade from MMM 3.0 to 3.5.3</a> -- and also from <a href="https://www.nexusmods.com/oblivion/mods/14442" target="_blank">TESNexus</a>.</p>
+                <p>The <b>OOO 1.32</b> updates are no longer included now that <a href="https://web.archive.org/web/20111127063803/http://devnull.sweetdanger.net/OOO/OOO_Guide.html" target="_blank">OOO 1.32.Final is available</a>!</p>
+                <div class="warning">
+                    <p><b>Also, make sure you've got <a href="https://wrye.ufrealms.net/Wrye%20Bash.html" target="_blank">Wrye Bash 151</a> or later. If you use Wrye Bash 106-112 to import/update NPC levels, you'll start seeing in-faction fighting and possibly CTDs. The problem was fixed in Wrye Bash 116.</b> You may need to use the new Repair Factions command to fix any savegames mangled by the earlier bugged function. See <a href="https://www.bethsoft.com/bgsforums/index.php?showtopic=781950&st=40&p=11388710&#entry11388710" target="_blank">here</a> for details.</p>
+                </div>
+            </div>
+
+            <div class="version">
+                <p class="version-title">The Beta 0.9.2 update</p>
+                <p>Resolved several minor issues found in Beta 9.1. NPC race changes made in MMM.esm have been reverted to avoid problems with badly mismatched faces from TNR (Tamriel NPCs Revamped), as well as odd graphical glitches on the beast races. WarCry trophy drops have been revised slightly in an attempt to help reduce overly frequent drops. Reaver spawns have been adjusted to avoid overkill for low-level characters. Several new plugins have been added: FCOM_MoreWildernessLife.esp and FCOM_NoSpiders.esp (both work much like the MMM versions but are more compatible with FCOM).</p>
+            </div>
+
+            <div class="version">
+                <p class="version-title">The Beta 0.9.1 update</p>
+                <p>Resolved several critical issues found in Beta 9.0. If you're using Beta 8.9 or 9.0, you need to upgrade to avoid stability problems with Reavers and Conjurers. The resulting merged lists (in your Bashed Patch) should work much better now and many of the optional plugins have been improved as well. Several new plugins have been added, including: FCOM_SpawnRatesReduced.esp, FCOM_SaferRoads.esp, and FCOM_LessRats.esp (all work just like the MMM versions but are more compatible with FCOM). <b>Be sure to Rebuild Patch and Update NPC Levels after installing this update!</b></p>
+            </div>
+
+            <div class="version">
+                <p class="version-title">The Beta 0.9.0 update</p>
+                <p>Resolved several critical issues found in Beta 8.9. The included OOO RC plugins have been updated to RC5.1. The file structure has been changed again (sorry!). The real shocker here is that MMM for FCOM.esp and MMM for OOO.esp plugins are no longer supported due to confusion over which versions would work with FCOM. <b>The MMM for FCOM.esp has been renamed FCOM_Convergence.esp</b> and the MMM for OOO.esp is now called FCOM_ConvergenceNoFran.esp. Also, the FCOM_WarCryBosses.esp and FCOM_KnightsWarCry.esp plugins are no longer used (functionality from these has been integrated into FCOM_Convergence itself). A new FCOM_FriendlierFactions.esp has been added. The load order has also been updated, so be sure to recheck the <a href="https://web.archive.org/web/20111127063803/http://devnull.sweetdanger.net/fcomloadorder.html" target="_blank">FCOM Standard Load-Order Guide</a> and the <a href="FCOM_Options.html">Optional Add-Ons</a> page. Even if you already read those for 8.9, you need to read them again because several critical details have changed. <b>FCOM 9.0 Requires <a href="https://web.archive.org/web/20111127063803/http://abipc.com/MartsMonsterMod35PublicRelease1.7z" target="_blank">MMM 3.5 Public Release 1</a>, the <a href="https://web.archive.org/web/20111127063803/http://abipc.com/MartsMonsterMod35Refresh.7z" target="_blank">MMM 3.5 Refresh</a> updates, and OOO 1.32 RC5.1 (included). Do not use Mart's Monster Mod for FCOM.esp.</b></p>
+            </div>
+
+            <div class="version">
+                <p class="version-title">The Beta 0.8.9 update</p>
+                <p>Included massive improvements. The biggest changes are in the file structure and in the MMM for FCOM/OOO plugin that is included in the FCOM 8.9 download (now replaced by FCOM_Convergence.esp in 9.0). This is VERY different from standard MMM, which was not the case in previous versions. It is now completely "unified" with OOO. It includes intelligent, hand-merged spawn lists, as well as unified enemy names, stats, loot, spells, and much more. For details, see the ESF thread and the new <a href="https://web.archive.org/web/20111127063803/http://devnull.sweetdanger.net/fcomloadorder.html" target="_blank">FCOM Standard Load-Order Guide</a>. Please be sure to read through that page in detail. The <a href="FCOM_Options.html">Optional Add-Ons</a> page has now been updated with details on most of the changes in the optional plugins. <b>FCOM 8.9 Requires <a href="https://web.archive.org/web/20111127063803/http://abipc.com/MartsMonsterMod35PublicRelease1.7z" target="_blank">MMM 3.5 Public Release 1</a> ESM file and OOO 1.32 RC5 (included). However, the version of Mart's Monster Mod for FCOM.esp that is included with MMM 3.5 is only for use with FCOM 8.8. It does not contain the dramatic new unification changes I've spent the last two months working on.</b></p>
+            </div>
+
+            <div class="warning">
+                <p><b>NOTE:</b> Anyone using the new Wrye Bash version 0.98 or later with FCOM 8.8 or earlier should run the new <i>Mark Levelers</i> command at least once before doing <i>Rebuild Patch</i>. To do this, shift-select your entire mod list in Wrye Bash, then right-click and select <i>Mark Levelers</i>. After doing that, select your Bashed Patch, right-click it and select <i>Rebuild Patch</i>. If you don't do this, you may suddenly start finding common Bandits in Daedric/Glass armor again. This is necessary because the meaning of the Relev tag has changed somewhat. It no longer removes things from lists (only adds and tweaks them). The new Delev tag must be added to remove things. The <i>Mark Levelers</i> command sets the new proper tags for FCOM and most other mods that need tags.</p>
+            </div>
+
+            <div class="download-links">
+                <p><b>FCOM Beta 8.8 Download:</b> | <a href="https://www.nexusmods.com/oblivion/mods/12249" target="_blank">TESNexus</a> | <a href="https://web.archive.org/web/20111127063803/http://planetelderscrolls.gamespy.com/View.php?view=OblivionMods.Detail&id=3428" target="_blank">PlanetElderScrolls</a> |</p>
+            </div>
+
+            <div class="version">
+                <p class="version-title">The Beta 0.8.8 update</p>
+                <p>Includes critical fixes for anyone using the previous <b>FCOM_Vampires</b> while attempting to complete the Light of Dawn quest. None of the main files are altered in this release, so you only need it if you're using the Light of Dawn sword. The corrections resolve errors in the earlier FCOM_Vampires where the Light of Dawn quest would not advance. Also includes some tweaked quest wording to better explain the taint removal process (thanks to MadCat221!). Changed damage effect to fire instead of shock since fire is more appropriate for the sword. Also added proper Relev tag to Mart's Monster Mod - ExtraReavers - NoHounds.esp.</p>
+            </div>
+
+            <div class="version">
+                <p class="version-title">The Beta 0.8.7 update</p>
+                <p>Is a minor release that just tweaks <b>FCOM_Vampires.esp</b>. The changes are all related to the Light of Dawn sword from OOO: toned down the vampire boss kill count bonus to +2; changed some verbage to better reflect the taint removal process on the sword; added global to control whether you get a message reporting your kill count; removed unnecessary kill tracking from the final version of the sword (once you've killed 300 vampires, the sword is fully restored to it's "untainted" state). If you don't like the kill-count message from the sword, you can disable it using the console ~ command:<br><i>Set OOOVampDeadMsg to 0</i></p>
+            </div>
+
+            <div class="version">
+                <p class="version-title">The Beta 0.8.6 update</p>
+                <p>Adds a new plugin called <b>FCOM_Vampires.esp</b> (in the FCOM Optional Add-Ons folder). It integrates the vampire changes and new vampires from MMM and OOO so you get the best of both worlds (inspired heavily by nb_nmare's Unity project). It also makes several critical changes to the Light of Dawn sword so it will work on any vampire from OOO, MMM, or any other mod (the standard OOO method of counting vampire kills only works on OOO vampires). This new plugin is highly recommended if you enjoy hunting vampires and critical if you have found Light of Dawn. <b>FCOM_Unity.esp</b> was also improved with the addition of the creature spawn list mergers for Trolls, Ogres, and Imps. FCOM_Unity is now used as a Releveler. Otherwise no other changes to the main plugins. It's highly recommended that you also add the <a href="https://www.nexusmods.com/oblivion/mods/13053" target="_blank">OOO132RC3Hotfixes.esp</a> since it resolves several significant issues specific to OOO. Load-order placement for these is now detailed in the <a href="https://web.archive.org/web/20111127063803/http://devnull.sweetdanger.net/fcomloadorder.html" target="_blank">load-order guidelines</a>.</p>
+            </div>
+
+            <div class="version">
+                <p class="version-title">The Beta 0.8.5 update</p>
+                <p>Improves the <b>Bats for FCOM</b> option. Added two new bat variants -- Crazed Bat and Dire Bat -- and added the bats to a bunch more spawn lists so they can be found more often.</p>
+            </div>
+
+            <div class="version">
+                <p class="version-title">The Beta 0.8.4 update</p>
+                <p>Adds several new <a href="FCOM_Options.html">optional add-ons</a>. No changes to the main files. Here's a list of the new options:</p>
+                <ul>
+                    <li><b>Tamriel Travellers 1.3 support</b>. In the FCOM Optional Add-Ons folder, you will now find FCOM_TamrielTravelers.esp. Use this along with TamrielTravellers.esm and TamrielTravellers4OOO.esp to get the Tamriel Travellers 1.3 working without faction problems under FCOM.</li>
+                    <li><b>Bats for FCOM</b>. This is a merged version of MrSiika's Bats for MMM and Bats for OOO. The complete Data structure for Bats is included as a subdirectory under FCOM Optional Add-Ons. Thanks, MrSiika!</li>
+                    <li><b>MMM Extra Options</b>. This new subdirectory contains all of the extra MMM options created by argochris for MMM 3.1. These are the same files you can already download from TESNexus, but with the proper Wrye Bash tags added. Thanks, argochris! Includes:<br>
+                        * Mart's Monster Mod - ExtraReavers.esp<br>
+                        * Mart's Monster Mod - No Reaver Hounds.esp<br>
+                        * Mart's Monster Mod - ExtraReavers - NoHounds.esp<br>
+                        * Mart's Monster Mod - No Beholdens.esp<br>
+                        * Mart's Monster Mod - No Slimes.esp<br>
+                        * Mart's Monster Mod - Spawn Rates - Moderate Increased.esp
+                    </li>
+                </ul>
+            </div>
+
+            <div class="version">
+                <p class="version-title">The Beta 0.8.3 update</p>
+                <p>Adds only one new file to the Optional Add-Ons folder: <b>FCOM_FranSISpawnReleveler.esp</b>. You should only use this optional add-on if you are using the <a href="https://web.archive.org/web/20111127063803/http://devnull.sweetdanger.net/fcomsiloadorder" target="_blank">FCOM Expanded Load-Order</a> for Fran's changes to Shivering Isles. It removes Fran's Stronger optional spawns in Tamriel but leaves them in Shivering Isles. It should resolve some faction conflict issues that arise when Fran's stronger bosses spawn alongside other MMM and OOO creatures in Tamriel.</p>
+            </div>
+
+            <div class="version">
+                <p class="version-title">The Beta 0.8.2 update</p>
+                <p>Adds better support for the new Patch Merger feature in <a href="https://wrye.ufrealms.net/Wrye%20Bash.html" target="_blank">Wrye Bash 0.90</a>. This great new feature of Wrye Bash significantly reduces the number of patch plugins that you need to keep active by completely absorbing many patch plugins into your Bashed Patch. This means that several of the FCOM Relevelers no longer need to be active as long as they are used in the Bashed Patch. Also included in this update are properly-tagged versions of all the MMM Relev options (No Giants, Reduced Spawns, etc.) -- none of these need to be active anymore! I know this new feature is going to confuse a bunch of people, so I'll be working on a more complete guide to explain it. If you're the bold, adventurous sort -- wait, you have to be or you wouldn't dare use FCOM anyway, right? -- then go for it! Don't forget to grab the latest version of Wrye Bash before trying this!</p>
+            </div>
+
+            <div class="version">
+                <p class="version-title">The Beta 0.8.1 update</p>
+                <p>Adds support for <a href="https://www.nexusmods.com/oblivion/mods/12205" target="_blank"><b>MMM 3.1 RC</b></a> as well as a bunch of new <a href="FCOM_Options.html">FCOM Optional Add-Ons</a>. <b>Major update!</b> Be sure to wait for respawn after upgrading to MMM 3.1 RC. This is mandatory due to changes in the MMM creature scripts. You may encounter serious problems if you forget to wait for respawn.</p>
+            </div>
+
+            <div class="version">
+                <p class="version-title">The Beta 0.8.0 update</p>
+                <p>Corrects a problem with creature AI in the MMM for FCOM.esp. Otherwise it is identical to Beta 0.7.9. <b>Critical update!</b></p>
+            </div>
+
+            <div class="version">
+                <p class="version-title">The Beta 0.7.9 update</p>
+                <p>Added support for the <a href="https://www.bethsoft.com/bgsforums/index.php?showtopic=731594" target="_blank">MMM 3.1</a> public beta. It includes an updated MMM for FCOM.esp (for MMM 3.1 beta), new SpawnRelevelers for MMM and OOO based on the latest versions of both mods (MMM 3.1 beta and OOO 1.32 RC3), and several improvements to the ItemRelevelers. Also includes a new optional plugin called <b>Knights_OMOBs.esp</b>, which adds Oscuro/MOBS rebalance to the official Knights of the Nine DLC (this option of course requires that you already have Knights.esp, and you must load Knights_OMOBs.esp after Knights.esp). <b>Don't forget to update your Bashed Patch after upgrading to this version!</b></p>
+            </div>
+
+            <div class="version">
+                <p class="version-title">The Beta 0.7.8 update</p>
+                <p>Adds an updated MMMSpawnReleveler.esp that incorporates the <a href="https://www.bethsoft.com/bgsforums/index.php?showtopic=695060" target="_blank">MMM 3.0</a> spawn list changes. It also includes an updated MMM for FCOM.esp based on the version included with MMM 3.0 but with added BASH:Relev tag so it will get processed automatically by Wrye Bash when you update your Bashed Patch (if you use the one from the MMM 3.0 download you'll need to manually add it to your Relevelers list, but it is otherwise identical). If you're not using MMM 3.0, then you must use one of the previous FCOM releases (the game will surely CTD if you try to use the new MMM for FCOM or MMMSpawnReleveler with older versions of MMM). <b>Don't forget to update your Bashed Patch after upgrading to this version!</b></p>
+            </div>
+
+            <div class="version">
+                <p class="version-title">The Beta 0.7.7 update</p>
+                <p>Adds an updated OOOSpawnReleveler.esp that incorporates the <a href="https://web.archive.org/web/20111127063803/http://devnull.sweetdanger.net/OOO/OOO_Guide.html" target="_blank">OOO 1.32 RC1/RC2</a> spawn list changes. If you're not using OOO 1.32 RC1 or RC2, then you should stick with one of the previous FCOM releases. Also, this version is based on MMM 2.01 and is not fully compatible with the new MMM 3.0.</p>
+            </div>
+
+            <div class="version">
+                <p class="version-title">The Beta 0.7.6 update</p>
+                <p>Adds the Bob's Armory rebalance by SpaceBoy and is updated for the <a href="https://www.bethsoft.com/bgsforums/index.php?showtopic=672347" target="_blank">OOO 1.32 Open Beta release</a>. This means the MMM for FCOM plugin and all the OOO Releveler plugins have dependencies changed to use the new master (Oscuro's_Oblivion_Overhaul.esm) file from the OOO 1.32 Open Beta. The OOOSpawnReleveler.esp is also updated with the latest spawn changes from OOO 1.32. If you don't want to use the OOO 1.32 beta, then you'll have to redirect those dependencies back to Oscuro's_Oblivion_Overhaul.esp using Wrye Bash, or just keep using FCOM 0.7.5 for now.</p>
+            </div>
+
+            <div class="version">
+                <p class="version-title">The Beta 0.7.5 update</p>
+                <p>Adds the missing OOO faction relationships that Vini worked so hard on, adds auto-handling tags for Bashed Patch support, and renames all plugins to FCOM. This version requires OOO 1.31c, so use this if you haven't updated to the latest OOO beta yet.</p>
+            </div>
+
+            <h4>Even Older Versions</h4>
+
+            <div class="version">
+                <p>The Beta 0.7.4 update corrected a small mistake in the MMM for FCOM.esp related to Goblin factions that was causing MMM Goblins to fight with OOO Goblins. (the temporary MMMFactionFix.esp is no longer needed). The major addition in this beta release is a new test module created by Cleitanious. It's in the <b>TestResource</b> subdirectory and you can find details about how to use it in the new TESTING section below.</p>
+
+                <p>The Beta 0.7.3 update replaced FCOM_SpawnMerge.esp with two new plugins: FCOM_OOOSpawnReleveler.esp and FCOM_MMMSpawnReleveler.esp. These two files allow Wrye Bash to correctly merge the spawn lists from MMM 2.01 and OOO 1.31c. Martigen also updated the MMM for FCOM plugin to version 2.01 (you'll need his <a href="https://www.elderscrolls.com/forums/index.php?showtopic=650829" target="_blank">latest patch</a>).</p>
+
+                <p>The Beta 0.7.2 update added FCOM_SpawnMerge.esp back into the mix (temporarily). I also moved the VanillaItemReleveler plugin into a ModdersResource subdirectory to keep people from using it accidentally.</p>
+
+                <p>The Beta 0.7.1 update added a FCOM_WarcryFactions.esp to fix the faction relationships between WarCry and MMM. Huge thanks to Vini and Martigen for making this!</p>
+
+                <p>The Beta 0.7.0 update added vastly improved Releveler plugins. You may still need a few of the <a href="https://www.elderscrolls.com/forums/index.php?showtopic=637945" target="_blank">previous files</a>, depending on your configuration.</p>
+
+                <p>Beta Versions 0.4, 0.5, and 0.6 are ancient history now, but you might still find some stuff floating around under the name FranOOOMMM!</p>
+            </div>
+        </main>
+
+        <div class="footer">
+          <p>
+            <a href="index.html">Home</a> |
+            <a href="FCOM_Convergence.html">Main</a> |
+            <a href="FCOM_Convergence_Guide.html">Guide</a>
+            <a href="FCOM_LoadOrder.html">Load-Order</a> |
+            <a href="FCOM_FAQ.html">FAQ</a> |
+            <a href="FCOM_Support.html">Support</a>
+            <a href="FCOM_VersionHistory.html">Version History</a>
+          </p>
+          <p>Copyright 2006, 2007, 2008, 2009, 2015, 2025 by devakm. Individual works copyright by their respective creators.
+          </p>
+        </div>
+    </div>
+</body>
+</html>
