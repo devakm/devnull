@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FCOM Expanded Load Order</title>
+    <style>
+        :root {
+            --bg-primary: #1a1a1a;
+            --bg-secondary: #2d2d2d;
+            --bg-tertiary: #252525;
+            --text-primary: #e0e0e0;
+            --text-secondary: #b0b0b0;
+            --accent-red: #ff4444;
+            --accent-blue: #4a9eff;
+            --accent-cyan: #00d9ff;
+            --accent-gold: #ffd700;
+            --accent-green: #33cc00;
+            --border-color: #444;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: var(--bg-secondary);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        header {
+            border-bottom: 2px solid var(--accent-red);
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            color: var(--accent-red);
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: var(--accent-cyan);
+            font-size: 1.2em;
+            font-style: italic;
+        }
+
+        .last-updated {
+            color: var(--accent-red);
+            font-size: 0.9em;
+            margin-bottom: 15px;
+        }
+
+        h2, h3, h4 {
+            color: var(--accent-blue);
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+
+        h4 {
+            color: var(--accent-cyan);
+            font-size: 1.3em;
+        }
+
+        p {
+            margin-bottom: 15px;
+            color: var(--text-primary);
+        }
+
+        a {
+            color: var(--accent-cyan);
+            text-decoration: none;
+            border-bottom: 1px solid var(--accent-cyan);
+            transition: color 0.3s, border-color 0.3s;
+        }
+
+        a:hover {
+            color: var(--accent-gold);
+            border-color: var(--accent-gold);
+        }
+
+        .load-order {
+            background-color: var(--bg-tertiary);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 6px;
+            border-left: 3px solid var(--accent-blue);
+            font-family: 'Courier New', monospace;
+            font-size: 0.85em;
+        }
+
+        .load-order-item {
+            margin: 6px 0;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .checkbox {
+            color: var(--accent-green);
+            margin-right: 8px;
+            font-weight: bold;
+            min-width: 30px;
+        }
+
+        .plugin-name {
+            color: var(--text-primary);
+            font-weight: bold;
+        }
+
+        .plugin-note {
+            color: var(--text-secondary);
+            font-style: italic;
+            margin-left: 5px;
+        }
+
+        .plugin-note.required {
+            color: var(--accent-red);
+        }
+
+        .plugin-note.optional {
+            color: var(--accent-cyan);
+        }
+
+        .info-box {
+            background-color: rgba(74, 158, 255, 0.1);
+            border-left: 4px solid var(--accent-blue);
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .note {
+            background-color: rgba(255, 215, 0, 0.1);
+            border-left: 4px solid var(--accent-gold);
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+            color: var(--text-secondary);
+        }
+
+        footer a {
+            margin: 0 10px;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid var(--border-color);
+            margin: 20px 0;
+        }
+
+        b, strong {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        i, em {
+            color: var(--text-secondary);
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>FCOM Expanded Load Order</h1>
+            <p class="subtitle">Advanced FCOM Configuration for Beta 9.9 or Later</p>
+        </header>
+
+        <main>
+            <p class="last-updated">Last Updated 3/31/2009</p>
+
+            <p>There are way too many possible configurations for FCOM to detail them all, but the following guide should help with suggestions for some of the most common questions.</p>
+
+            <p>The following load order suggestions work for both SI and non-SI installs.</p>
+
+            <p>This page details the <b>Expanded Load Order</b> for advanced FCOM configurations, including all of the <a href="FCOM_Options.html">optional plugins</a>. If you want a simpler configuration, use the <a href="FCOM_LoadOrder.html">FCOM Basic Load Order</a> instead.</p>
+
+            <div class="info-box">
+                <p>You can automatically force the correct load-order for these plugins (and many more) by using the excellent <a href="https://www.nexusmods.com/oblivion/mods/20516" target="_blank">BOSS</a> (Better Oblivion Sorting Software). This tool was previously called FCOMhelper, but it now works for any load order, not just FCOM.</p>
+            </div>
+
+            <h4>Expanded Load-Order</h4>
+
+            <div class="info-box">
+                <p>You should place the Fran optional plugins very early in your load order, as described below in the expanded load-order list. Files shown with <b>[x]</b> should be active. Files shown with <b>[+]</b> can be either active or "virtually active" (i.e., enabled only in the Bashed Patch). Files shown with <b>[*]</b> MUST be "virtually active" (i.e., "imported" into the Bashed Patch).</p>
+            </div>
+
+            <div class="load-order">
+                <div class="load-order-item">
+                    <span class="checkbox">[x]</span>
+                    <span class="plugin-name">Oblivion.esm</span>
+                </div>
+
+                <div class="load-order-item">
+                    <span class="checkbox">[x]</span>
+                    <span class="plugin-name">Francesco's leveled creatures-items mod.esm</span>
+                </div>
+
+                <div class="load-order-item">
+                    <span class="checkbox">[x]</span>
+                    <div>
+                        <span class="plugin-name">Francesco's optional new items add-on.esm</span>
+                        <span class="plugin-note optional">(Optional! Requires Fran BSA file & FCOM_FrancescoItemsAddOn)</span>
+                    </div>
+                </div>
+
+                <div class="load-order-item">
+                    <span class="checkbox">[x]</span>
+                    <div>
+                        <span class="plugin-name">Tamrielic Ingredients.esm</span>
+                        <span class="plugin-note optional">(With optional support patch included in FCOM 8.1 or later)</span>
+                    </div>
+                </div>
+
+                <div class="load-order-item">
+                    <span class="checkbox">[x]</span>
+                    <div>
+                        <span class="plugin-name">Cobl Main.esm</span>
+                        <span class="plugin-note optional">(Optional alternative to Tamrielic Ingredients; <span class="plugin-note required">Not recommended with TI!</span>)</span>
+                    </div>
+                </div>
+
+                <div class="load-order-item">
+                    <span class="checkbox">[x]</span>
+                    <div>
+                        <span class="plugin-name">Oscuro's_Oblivion_Overhaul.esm</span>
+                        <span class="plugin-note required">(Must be 1.34 or later!)</span>
+                    </div>
+                </div>
+
+                <div class="load-order-item">
+                    <span class="checkbox">[x]</span>
+                    <div>
+                        <span class="plugin-name">Mart's Monster Mod.esm</span>
+                        <span class="plugin-note required">(Must be 3.6 or later!)</span>
+                    </div>
+                </div>
+
+                <div class="load-order-item">
+                    <span class="checkbox">[x]</span>
+                    <div>
+                        <span class="plugin-name">Enhanced Daedric Invasion.esm</span>
+                        <span class="plugin-note optional">(Optional)</span>
+                    </div>
+                </div>
+
+                <div class="load-order-item">
+                    <span class="checkbox">[x]</span>
+                    <div>
+                        <span class="plugin-name">TamrielTravellers.esm</span>
+                        <span class="plugin-note optional">(Optional; requires TamrielTravelers4OOO.esp v1.3 and FCOM_TamrielTravelers.esp)</span>
+                    </div>
+                </div>
+
+                <div class="load-order-item">
+                    <span class="checkbox">[x]</span>
+                    <div>
+                        <span class="plugin-name">FCOM_Convergence.esm</span>
+                        <span class="plugin-note required">(Required!)</span>
+                    </div>
+                </div>
+
+                <div class="load-order-item">
+                    <span class="checkbox">[*]</span>
+                    <div>
+                        <span class="plugin-name">TNR - all.esp</span>
+                        <span class="plugin-note optional">(Tamriel NPCs Revamped should be "imported" in your Bashed Patch config, but should not actually be active)</span>
+                    </div>
+                </div>
+
+                <div class="load-order-item">
+                    <span class="checkbox">[x]</span>
+                    <span class="plugin-name">Unofficial Oblivion Patch.esp</span>
+                </div>
+
+                <div class="load-order-item">
+                    <span class="checkbox">[x]</span>
+                    <div>
+                        <span class="plugin-name">Unofficial Shivering Isles Patch MOBS.esp</span>
+                        <span class="plugin-note optional">(install <a href="https://www.nexusmods.com/oblivion/mods/10739" target="_blank">USIP</a> & replace plugin with <a href="https://www.nexusmods.com/oblivion/mods/17621" target="_blank">Fran-compat version of USIP 1.3</a>)</span>
+                    </div>
+                </div>
+
+                <div class="load-order-item">
+                    <span class="checkbox">[x]</span>
+                    <span class="plugin-name">Francesco's optional chance of stronger bosses.esp</span>
+                </div>
+
+                <div class="load-order-item">
+                    <span class="checkbox">[x]</span>
+                    <span class="plugin-name">Francesco's optional chance of stronger enemies.esp</span>
+                </div>
+
+                <div class="load-order-item">
+                    <span class="checkbox">[x]</span>
+                    <span class="plugin-name">Francesco's optional chance of more enemies.esp</span>
+                </div>
+
+                <div class="load-order-item">
+                    <span class="checkbox">[x]</span>
+                    <span class="plugin-name">Francesco's optional leveled guards.esp</span>
+                </div>
+
+                <div class="load-order-item">
+                    <span class="checkbox">[+]</span>
+                    <div>
+                        <span class="plugin-name">Francesco's Dark Seducer Weapons Patch.esp</span>
+                        <span class="plugin-note optional">(Recommended Optional for SI; Download from <a href="https://web.archive.org/web/20111210085456/http://devnull.sweetdanger.net/mods/FranDarkSeducerWeaponsPatch.rar" target="_blank">SweetDanger</a>)</span>
+                    </div>
+                </div>
+
+                <div class="load-order-item">
+                    <span class="checkbox">[+]</span>
+                    <div>
+                        <span class="plugin-name">FCOM_Francescos.esp</span>
+                        <span class="plugin-note required">(Required ONLY if using Fran's!)</span>
+                    </div>
+                </div>
+
+                <div class="load-order-item">
+                    <span class="checkbox">[+]</span>
+                    <div>
+                        <span class="plugin-name">FCOM_FrancescosItemsAddOn.esp</span>
+                        <span class="plugin-note required">(Required ONLY if using Fran's optional new items add-on.esm!)</span>
+                    </div>
+                </div>
+
+                <div class="load-order-item">
+                    <span class="checkbox">[X]</span>
+                    <div>
+                        <span class="plugin-name">FCOM_FrancescosNamedBosses.esp</span>
+                        <span class="plugin-note optional">(Recommended Optional)</span>
+                    </div>
+                </div>
+
+                <div class="load-order-item">
+                    <span class="checkbox">[X]</span>
+                    <div>
+                        <span class="plugin-name">Fran Armor Add-on.esp</span>
+                        <span class="plugin-note required">(Optional! <a href="https://www.nexusmods.com/oblivion/mods/11483" target="_blank">Unofficial Fran expansion</a>. Requires FCOM_UnofficialFranArmorAddOn!)</span>
+                    </div>
+                </div>
+
+                <div class="load-order-item">
+                    <span class="checkbox">[X]</span>
+                    <div>
+                        <span class="plugin-name">Fran_Lv30Item_Maltz.esp</span>
+                        <span class="plugin-note optional">(Optional! <a href="https://www.nexusmods.com/oblivion/mods/15411" target="_blank">Unofficial Fran expansion</a>. No patch required!)</span>
+                    </div>
+                </div>
+
+                <div class="load-order-item">
+                    <span class="checkbox">[x]</span>
+                    <div>
+                        <span class="plugin-name">Other baseline plugins</span>
+                        <span class="plugin-note optional">(including weather & sound mods, Official plugins, such as DLCSpellTomes.esp, etc. (except for Knights of the Nine, which should load later))</span>
+                    </div>
+                </div>
+
+                <div class="load-order-item">
+                    <span class="checkbox">[x]</span>
+                    <div>
+                        <span class="plugin-name">UOMP, the Unofficial Official Mod Patches</span>
+                        <span class="plugin-note optional">(only if you have official plugins; UOMP for Knights.esp goes later)</span>
+                    </div>
+                </div>
+
+                <div class="load-order-item">
+                    <span class="checkbox">[x]</span>
+                    <div>
+                        <span class="plugin-name">KDCircletsOOOOptimized - NPC Equip.esp</span>
+                        <span class="plugin-note optional">(Optional. <a href="https://www.nexusmods.com/oblivion/mods/10670" target="_blank">KDCircletsOOOOptimized</a>. Requires patch.)</span>
+                    </div>
+                </div>
+
+                <div class="load-order-item">
+                    <span class="checkbox">[x]</span>
+                    <div>
+                        <span class="plugin-name">FCOM_KDCircletsOOOOptimizedNPCEquip.esp</span>
+                        <span class="plugin-note required">(ONLY if using KDCircletsOOOOptimized - NPC Equip.esp!)</span>
+                    </div>
+                </div>
+
+                <div class="load-order-item">
+                    <span class="checkbox">[x]</span>
+                    <div>
+                        <span class="plugin-name">ExnemRuneskulls.esp</span>
+                        <span class="plugin-note optional">(Optional)</span>
+                    </div>
+                </div>
+
+                <div class="load-order-item">
+                    <span class="checkbox">[x]</span>
+                    <div>
+                        <span class="plugin-name">FCOM_ExnemRuneskulls.esp</span>
+                        <span class="plugin-note required">(ONLY if using ExnemRuneSkulls!)</span>
+                    </div>
+                </div>
+
+                <div class="load-order-item">
+                    <span class="checkbox">[x]</span>
+                    <div>
+                        <span class="plugin-name">Slof's Oblivion Robe Trader.esp</span>
+                        <span class="plugin-note optional">(Optional)</span>
+                    </div>
+                </div>
+
+                <div class="load-order-item">
+                    <span class="checkbox">[x]</span>
+                    <div>
+                        <span class="plugin-name">Tamrielic_Ingredients_cOMbo.esp</span>
+                        <span class="plugin-note optional">(Optional)</span>
+                    </div>
+                </div>
+
+                <div class="load-order-item">
+                    <span class="checkbox">[+]</span>
+                    <div>
+                        <span class="plugin-name">FCOM_TamrielicIngredients.esp</span>
+                        <span class="plugin-note required">(ONLY if using Tamrielic Ingredients!)</span>
+                    </div>
+                </div>
+
+                <div class="load-order-item">
+                    <span class="checkbox">[x]</span>
+                    <div>
+                        <span class="plugin-name">Cobl Glue.esp</span>
+                        <span class="plugin-note optional">(Optional; Required only if using Cobl; <span class="plugin-note required">Not recommended with Tamrielic Ingredients!</span>)</span>
+                    </div>
+                </div>
+
+                <div class="load-order-item">
+                    <span class="checkbox">[x]</span>
+                    <div>
+                        <span class="plugin-name">Cobl Si.esp</span>
+                        <span class="plugin-note optional">(Optional Shivering Isles support for Cobl; <span class="plugin-note required">Not recommended with Tamrielic Ingredients!</span>)</span>
+                    </div>
+                </div>
+
+                <div class="load-order-item">
+                    <span class="checkbox">[x]</span>
+                    <div>
+                        <span class="plugin-name">OOO 1.32-Cobl.esp</span>
+                        <span class="plugin-note optional">(Recommended optional support file for Cobl & Oscuro; <span class="plugin-note required">Not recommended with TI!</span>)</span>
+                    </div>
+                </div>
+
+                <div class="load-order-item">
+                    <span class="checkbox">[+]</span>
+                    <div>
+                        <span class="plugin-name">FCOM_Cobl.esp</span>
+                        <span class="plugin-note required">(ONLY if using Cobl! Not recommended with FCOM_TamrielicIngredients!)</span>
+                    </div>
+                </div>
+
+                <div class="load-order-item">
+                    <span class="checkbox">[x]</span>
+                    <div>
+                        <span class="plugin-name">Bob's Armory Oblivion.esp</span>
+                        <span class="plugin-note optional">(Optional)</span>
+                    </div>
+                </div>
+
+                <div class="load-order-item">
+                    <span class="checkbox">[x]</span>
+                    <div>
+                        <span class="plugin-name">FCOM_BobsArmory.esp</span>
+                        <span class="plugin-note required">(Required ONLY if using Bob's Armory!)</span>
+                    </div>
+                </div>
+
+                <div class="load-order-item">
+                    <span class="checkbox">[x]</span>
+                    <div>
+                        <span class="plugin-name">Loth's Blunt Weapons for Npcs.esp</span>
+                        <span class="plugin-note optional">(New! Optional)</span>
+                    </div>
+                </div>
+
+                <div class="load-order-item">
+                    <span class="checkbox">[+]</span>
+                    <div>
+                        <span class="plugin-name">FCOM_LothsBluntWeapons.esp</span>
+                        <span class="plugin-note required">(New! Required ONLY if using Loth's Blunt Weapons!)</span>
+                    </div>
+                </div>
+
+                <div class="load-order-item">
+                    <span class="checkbox">[x]</span>
+                    <div>
+                        <span class="plugin-name">Oblivion WarCry EV.esp</span>
+                        <span class="plugin-note optional">(Optional)</span>
+                    </div>
+                </div>
+
+                <div class="load-order-item">
+                    <span class="checkbox">[x]</span>
+                    <div>
+                        <span class="plugin-name">FCOM_WarCry.esp</span>
+                        <span class="plugin-note required">(Required ONLY if using WarCry!)</span>
+                    </div>
+                </div>
+
+                <div class="load-order-item">
+                    <span class="checkbox">[x]</span>
+                    <div>
+                        <span class="plugin-name">Oscuro's_Oblivion_Overhaul.esp</span>
+                        <span class="plugin-note required">(Must be 1.34 or later!)</span>
+                    </div>
+                </div>
+
+                <div class="load-order-item">
+                    <span class="checkbox">[x]</span>
+                    <div>
+                        <span class="plugin-name">Mart's Monster Mod - Additional Enemy NPC Vars.esp</span>
+                        <span class="plugin-note optional">(Optional, but <span class="plugin-note required">NOT RECOMMENDED</span>)</span>
+                    </div>
+                </div>
+
+                <div class="load-order-item">
+                    <span class="checkbox">[x]</span>
+                    <div>
+                        <span class="plugin-name">FCOM_Convergence.esp</span>
+                        <span class="plugin-note required">(Required if using MMM and OOO!)</span>
+                    </div>
+                </div>
+
+                <div class="load-order-item">
+                    <span class="checkbox">[x]</span>
+                    <div>
+                        <span class="plugin-name">FCOM_RealSwords.esp</span>
+                        <span class="plugin-note optional">(Recommended Optional)</span>
+                    </div>
+                </div>
+
+                <div class="load-order-item">
+                    <span class="checkbox">[x/+]</span>
+                    <div>
+                        <span class="plugin-name">Any FCOM optional spawn adjustment plugins you want to use, such as the following:</span>
+                    </div>
+                </div>
+
+                <div class="load-order-item">
+                    <span class="checkbox">[x]</span>
+                    <div>
+                        <span class="plugin-name">FCOM_DurabilityAndDamage.esp</span>
+                        <span class="plugin-note optional">(Optional -- Use instead of MMM - Durability & Damage.esp!)</span>
+                    </div>
+                </div>
+
+                <div class="load-order-item">
+                    <span class="checkbox">[x]</span>
+                    <div>
+                        <span class="plugin-name">Mart's Monster Mod - More Wilderness Life.esp</span>
+                        <span class="plugin-note optional">(Optional; FCOM_MoreWildernessLife is deprecated!)</span>
+                    </div>
+                </div>
+
+                <div class="load-order-item">
+                    <span class="checkbox">[+]</span>
+                    <div>
+                        <span class="plugin-name">FCOM_SpawnRatesReduced.esp</span>
+                        <span class="plugin-note optional">(Optional -- Use instead of MMM - Spawn Rates - Reduced.esp!)</span>
+                    </div>
+                </div>
+
+                <div class="load-order-item">
+                    <span class="checkbox">[+]</span>
+                    <div>
+                        <span class="plugin-name">FCOM_SaferRoads.esp</span>
+                        <span class="plugin-note optional">(Optional -- Use instead of MMM - Safer Roads.esp!)</span>
+                    </div>
+                </div>
+
+                <div class="load-order-item">
+                    <span class="checkbox">[+]</span>
+                    <div>
+                        <span class="plugin-name">FCOM_LessRats.esp</span>
+                        <span class="plugin-note optional">(Optional -- Use instead of MMM - Less Rats.esp!)</span>
+                    </div>
+                </div>
+
+                <div class="load-order-item">
+                    <span class="checkbox">[+]</span>
+                    <div>
+                        <span class="plugin-name">FCOM_NoSpiders.esp</span>
+                        <span class="plugin-note optional">(Optional -- Use instead of MMM - No Spiders.esp!)</span>
+                    </div>
+                </div>
+
+                <div class="load-order-item">
+                    <span class="checkbox">[+]</span>
+                    <div>
+                        <span class="plugin-name">FCOM_NoWyverns.esp</span>
+                        <span class="plugin-note optional">(Optional -- Use instead of MMM - No Wyverns.esp!)</span>
+                    </div>
+                </div>
+
+                <div class="load-order-item">
+                    <span class="checkbox">[+]</span>
+                    <div>
+                        <span class="plugin-name">FCOM_NoReaversInGates.esp</span>
+                        <span class="plugin-note optional">(Optional!)</span>
+                    </div>
+                </div>
+
+                <div class="load-order-item">
+                    <span class="checkbox">[+]</span>
+                    <div>
+                        <span class="plugin-name">FCOM_NoAdventurersInGates.esp</span>
+                        <span class="plugin-note optional">(Optional!)</span>
+                    </div>
+                </div>
+
+                <div class="load-order-item">
+                    <span class="checkbox">[x/+]</span>
+                    <div>
+                        <span class="plugin-name">Any MMM optional plugins, such as the following:</span>
+                    </div>
+                </div>
+
+                <div class="load-order-item">
+                    <span class="checkbox">[x]</span>
+                    <div>
+                        <span class="plugin-name">Mart's Monster Mod - Extra Wounding.esp</span>
+                        <span class="plugin-note optional">(optional)</span>
+                    </div>
+                </div>
+
+                <div class="load-order-item">
+                    <span class="checkbox">[x]</span>
+                    <div>
+                        <span class="plugin-name">Mart's Monster Mod - Looting NPCs & Creatures.esp</span>
+                        <span class="plugin-note optional">(optional)</span>
+                    </div>
+                </div>
+
+                <div class="load-order-item">
+                    <span class="checkbox">[?]</span>
+                    <div>
+                        <span class="plugin-name">Mart's Monster Mod - Spawn Rates - Increased.esp</span>
+                        <span class="plugin-note required">(NOT tested yet!)</span>
+                    </div>
+                </div>
+
+                <div class="load-order-item">
+                    <span class="checkbox">[?]</span>
+                    <div>
+                        <span class="plugin-name">Mart's Monster Mod - No Reavers.esp</span>
+                        <span class="plugin-note optional">(Optional)</span>
+                    </div>
+                </div>
+
+                <div class="load-order-item">
+                    <span class="checkbox">[x/+]</span>
+                    <div>
+                        <span class="plugin-name">Any additional MMM optional plugins you want to use should go here.</span>
+                        <span class="plugin-note optional">You can use ALL of them EXCEPT the few that are specifically warned against in the "don't use" list or are replaced by FCOM_ versions.</span>
+                    </div>
+                </div>
+
+                <div class="load-order-item">
+                    <span class="checkbox">[x]</span>
+                    <div>
+                        <span class="plugin-name">TamrielTravelers4OOO.esp</span>
+                        <span class="plugin-note optional">(with optional support patch included in FCOM 8.4 or later)</span>
+                    </div>
+                </div>
+
+                <div class="load-order-item">
+                    <span class="checkbox">[+]</span>
+                    <div>
+                        <span class="plugin-name">FCOM_TamrielTravelers.esp</span>
+                        <span class="plugin-note required">(ONLY if using Tamriel Travelers!)</span>
+                    </div>
+                </div>
+
+                <div class="load-order-item">
+                    <span class="checkbox">[x/+]</span>
+                    <div>
+                        <span class="plugin-name">Any FCOM optional add-ons, such as MoreRandomSpawns, MoreRandomItems, etc. Examples:</span>
+                    </div>
+                </div>
+
+                <div class="load-order-item">
+                    <span class="checkbox">[+]</span>
+                    <div>
+                        <span class="plugin-name">FCOM_FriendlierFactions.esp</span>
+                        <span class="plugin-note optional">(Optional! Use instead of MMM - Friendlier Factions.esp)</span>
+                    </div>
+                </div>
+
+                <div class="load-order-item">
+                    <span class="checkbox">[+]</span>
+                    <div>
+                        <span class="plugin-name">FCOM_DiverseGuardUnity.esp</span>
+                        <span class="plugin-note optional">(Optional -- Use instead of Diverse Imperial Armor!)</span>
+                    </div>
+                </div>
+
+                <div class="load-order-item">
+                    <span class="checkbox">[+]</span>
+                    <div>
+                        <span class="plugin-name">FCOM_BobsGuardUnity.esp</span>
+                        <span class="plugin-note required">(ONLY if using Bob's Armory and FCOM_DiverseGuardUnity.esp!)</span>
+                    </div>
+                </div>
+
+                <div class="load-order-item">
+                    <span class="checkbox">[+]</span>
+                    <div>
+                        <span class="plugin-name">FCOM_Archery.esp</span>
+                        <span class="plugin-note optional">(Optional)</span>
+                    </div>
+                </div>
+
+                <div class="load-order-item">
+                    <span class="checkbox">[x]</span>
+                    <div>
+                        <span class="plugin-name">Quest plugins & override plugins, including:</span>
+                    </div>
+                </div>
+
+                <div class="load-order-item">
+                    <span class="checkbox">[x]</span>
+                    <div>
+                        <span class="plugin-name">Knights.esp</span>
+                        <span class="plugin-note optional">(Knights of the Nine official plugin needs to load after OOO)</span>
+                    </div>
+                </div>
+
+                <div class="load-order-item">
+                    <span class="checkbox">[x]</span>
+                    <div>
+                        <span class="plugin-name">Knights - Unofficial Patch.esp</span>
+                        <span class="plugin-note optional">(only if you have Knights.esp)</span>
+                    </div>
+                </div>
+
+                <div class="load-order-item">
+                    <span class="checkbox">[x]</span>
+                    <span class="plugin-name">Ruin.esp</span>
+                </div>
+
+                <div class="load-order-item">
+                    <span class="checkbox">[x]</span>
+                    <span class="plugin-name">Mighty Umbra.esp</span>
+                </div>
+
+                <div class="load-order-item">
+                    <span class="checkbox">[x]</span>
+                    <span class="plugin-name">Blood&Mud.esp</span>
+                </div>
+
+                <div class="load-order-item">
+                    <span class="checkbox">[x]</span>
+                    <span class="plugin-name">Lost Paladins of the Divines.esp</span>
+                </div>
+
+                <div class="load-order-item">
+                    <span class="checkbox">[x]</span>
+                    <span class="plugin-name">Origin of the Mages Guild.esp</span>
+                </div>
+
+                <div class="load-order-item">
+                    <span class="checkbox">[x]</span>
+                    <span class="plugin-name">MannimarcoRevisited.esp</span>
+                </div>
+
+                <div class="load-order-item">
+                    <span class="checkbox">[x]</span>
+                    <span class="plugin-name">MannimarcoRevisitedOOO.esp</span>
+                </div>
+
+                <div class="load-order-item">
+                    <span class="checkbox">[x]</span>
+                    <div>
+                        <span class="plugin-name">Mart's Monster Mod - City Defences.esp</span>
+                        <span class="plugin-note optional">(Optional! Needs to load late to prevent guards from falling off walls.)</span>
+                    </div>
+                </div>
+
+                <div class="load-order-item">
+                    <span class="checkbox">[x/+]</span>
+                    <div>
+                        <span class="plugin-name">Any FCOM optional quest & NPC patches, such as the following:</span>
+                    </div>
+                </div>
+
+                <div class="load-order-item">
+                    <span class="checkbox">[+]</span>
+                    <div>
+                        <span class="plugin-name">FCOM_MightyUmbra.esp</span>
+                        <span class="plugin-note required">(ONLY if using Mighty Umbra!)</span>
+                    </div>
+                </div>
+
+                <div class="load-order-item">
+                    <span class="checkbox">[+]</span>
+                    <div>
+                        <span class="plugin-name">FCOM_Blood&Mud.esp</span>
+                        <span class="plugin-note required">(ONLY if using Blood & Mud!)</span>
+                    </div>
+                </div>
+
+                <div class="load-order-item">
+                    <span class="checkbox">[+]</span>
+                    <div>
+                        <span class="plugin-name">FCOM_Knights.esp</span>
+                        <span class="plugin-note required">(ONLY if using Knights!)</span>
+                    </div>
+                </div>
+
+                <div class="load-order-item">
+                    <span class="checkbox">[+]</span>
+                    <div>
+                        <span class="plugin-name">FCOM_Ruin.esp</span>
+                        <span class="plugin-note required">(ONLY if using Ruined Tail!)</span>
+                    </div>
+                </div>
+
+                <div class="load-order-item">
+                    <span class="checkbox">[x]</span>
+                    <div>
+                        <span class="plugin-name">FCOM_SlofsRobeTrader.esp</span>
+                        <span class="plugin-note required">(Only if you use Slof's Oblivion Robe Trader!)</span>
+                    </div>
+                </div>
+
+                <div class="load-order-item">
+                    <span class="checkbox">[x]</span>
+                    <div>
+                        <span class="plugin-name">FCOM_OMG.esp</span>
+                        <span class="plugin-note required">(Only if you use Origin of the Mages Guild!)</span>
+                    </div>
+                </div>
+
+                <div class="load-order-item">
+                    <span class="checkbox">[x]</span>
+                    <div>
+                        <span class="plugin-name">FCOM_OMGSRT.esp</span>
+                        <span class="plugin-note required">(Only if you use OMG and SRT!)</span>
+                    </div>
+                </div>
+
+                <div class="load-order-item">
+                    <span class="checkbox">[+]</span>
+                    <div>
+                        <span class="plugin-name">FCOM_UnofficialFranArmorAddOn.esp</span>
+                        <span class="plugin-note required">(ONLY if using Unofficial Fran Armor Add-On!)</span>
+                    </div>
+                </div>
+
+                <div class="load-order-item">
+                    <span class="checkbox">[x]</span>
+                    <div>
+                        <span class="plugin-name">Unique Landscapes mods</span>
+                        <span class="plugin-note optional">(must load very late if you use them; be sure to use the <a href="https://www.nexusmods.com/oblivion/mods/14963" target="_blank">MWL patch</a> if you use MWL)</span>
+                    </div>
+                </div>
+
+                <div class="load-order-item">
+                    <span class="checkbox">[x]</span>
+                    <div>
+                        <span class="plugin-name">Enhanced Daedric Invasion.esp</span>
+                        <span class="plugin-note optional">(optional)</span>
+                    </div>
+                </div>
+
+                <div class="load-order-item">
+                    <span class="checkbox">[x]</span>
+                    <div>
+                        <span class="plugin-name">FCOM_EnhancedDaedricInvasion.esp</span>
+                        <span class="plugin-note required">(Required ONLY if using Enhanced Daedric Invasion!)</span>
+                    </div>
+                </div>
+
+                <div class="load-order-item">
+                    <span class="checkbox">[x]</span>
+                    <div>
+                        <span class="plugin-name">GFX_Initial_Glow-all.esp</span>
+                        <span class="plugin-note optional">(beware of other, less-compatible no-glow mods)</span>
+                    </div>
+                </div>
+
+                <div class="load-order-item">
+                    <span class="checkbox">[x]</span>
+                    <div>
+                        <span class="plugin-name">Beautiful People.esp, other beauty packs, etc.</span>
+                    </div>
+                </div>
+
+                <div class="load-order-item">
+                    <span class="checkbox">[x]</span>
+                    <div>
+                        <span class="plugin-name">Bashed Patch, 0.esp</span>
+                        <span class="plugin-note optional">(called "Bashed Lists, 0.esp" in older versions of Wrye Bash)</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="note">
+                <p><b>Note:</b> MMM plugins like Spawn Rates - Increased, Spawn Rates - Reduced, Spawn Rates - Moderate Increased, No Werewolves, No Slimes, No Beholdens, No Reavers, No Reaver Hounds, Extra Reavers, etc., can be used here. Load spawnrate changers before the "no" options! Also note that the names of these plugins changed in MMM 3.1 RC (previously they were called Increased Spawn Rate, Reduced Spawn Rate, etc.).</p>
+
+                <p>The MMM option files for No Carrion Rats, and No Undead Rise are not based on spawn list changes, so they will not show up in the Levelers list (and should not be specified as Relevelers in older versions of WryeBash).</p>
+            </div>
+
+            <p>For more general load-order advice, check the <a href="https://web.archive.org/web/20111210085456/http://devnull.sweetdanger.net/loadorder.html" target="_blank">Load Order Guide</a>.</p>
+
+            <h4>Bashed Patch</h4>
+
+            <p>If you are using an old version of Wrye Bash (prior to 0.98), then check the <a href="https://web.archive.org/web/20111210085456/http://devnull.sweetdanger.net/oldbash.html" target="_blank">Old Bash page</a> for important details. If you have a recent version (v118 or later highly recommended), then everything you need to know is already described in the step-by-step Bashed Patch guide on the main FCOM homepage.</p>
+        </main>
+
+        <footer>
+            <hr>
+            <p>
+                <a href="index.html">Home</a> | 
+                <a href="FCOM_Convergence.html">FCOM: Convergence</a> | 
+                <a href="FCOM_LoadOrder.html">FCOM Basic Load Order</a>
+            </p>
+            <p>Copyright 2006, 2007, 2008, 2009, 2015, 2025 by devakm. Individual works copyright by their respective creators.
+            </p>
+        </footer>
+    </div>
+</body>
+</html>

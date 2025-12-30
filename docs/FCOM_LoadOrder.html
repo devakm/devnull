@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FCOM Basic Load-Order</title>
+    <style>
+        :root {
+            --bg-primary: #1a1a1a;
+            --bg-secondary: #2d2d2d;
+            --bg-tertiary: #252525;
+            --text-primary: #e0e0e0;
+            --text-secondary: #b0b0b0;
+            --accent-red: #ff4444;
+            --accent-blue: #4a9eff;
+            --accent-cyan: #00d9ff;
+            --accent-gold: #ffd700;
+            --accent-green: #33cc00;
+            --border-color: #444;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: var(--bg-secondary);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        header {
+            border-bottom: 2px solid var(--accent-red);
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            color: var(--accent-red);
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: var(--accent-cyan);
+            font-size: 1.2em;
+            font-style: italic;
+        }
+
+        .last-updated {
+            color: var(--accent-red);
+            font-size: 0.9em;
+            margin-bottom: 15px;
+        }
+
+        h2, h3, h4 {
+            color: var(--accent-blue);
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+
+        h4 {
+            color: var(--accent-cyan);
+            font-size: 1.3em;
+        }
+
+        p {
+            margin-bottom: 15px;
+            color: var(--text-primary);
+        }
+
+        a {
+            color: var(--accent-cyan);
+            text-decoration: none;
+            border-bottom: 1px solid var(--accent-cyan);
+            transition: color 0.3s, border-color 0.3s;
+        }
+
+        a:hover {
+            color: var(--accent-gold);
+            border-color: var(--accent-gold);
+        }
+
+        .load-order {
+            background-color: var(--bg-tertiary);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 6px;
+            border-left: 3px solid var(--accent-blue);
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+        }
+
+        .load-order-item {
+            margin: 8px 0;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .checkbox {
+            color: var(--accent-green);
+            margin-right: 8px;
+            font-weight: bold;
+        }
+
+        .plugin-name {
+            color: var(--text-primary);
+            font-weight: bold;
+        }
+
+        .plugin-note {
+            color: var(--text-secondary);
+            font-style: italic;
+            margin-left: 5px;
+        }
+
+        .plugin-note.required {
+            color: var(--accent-red);
+        }
+
+        .plugin-note.optional {
+            color: var(--accent-cyan);
+        }
+
+        .warning {
+            background-color: rgba(255, 68, 68, 0.1);
+            border-left: 4px solid var(--accent-red);
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .info-box {
+            background-color: rgba(74, 158, 255, 0.1);
+            border-left: 4px solid var(--accent-blue);
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+            color: var(--text-secondary);
+        }
+
+        footer a {
+            margin: 0 10px;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid var(--border-color);
+            margin: 20px 0;
+        }
+
+        b, strong {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        i, em {
+            color: var(--text-secondary);
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>FCOM Basic Load-Order</h1>
+            <p class="subtitle">Simplified FCOM Configuration for Beta 9.9 or Later</p>
+        </header>
+
+        <main>
+            <p class="last-updated">Last Updated 11/03/2008</p>
+
+            <p>There are way too many possible configurations for FCOM to detail them all, but the following guide should help with suggestions for some of the most common questions.</p>
+
+            <p>The following load order suggestions work for both SI and non-SI installs.</p>
+
+            <p>This page details the <b>Basic Load Order</b> for simplified FCOM configurations. It does not include all of the optional plugins. If you want a more advanced configuration, see the <a href="https://web.archive.org/web/20111210084813/http://devnull.sweetdanger.net/fcomloadorderexpanded.html" target="_blank">FCOM Expanded Load Order</a> instead.</p>
+
+            <div class="info-box">
+                <p>You can automatically force the correct load-order for these plugins (and many more) by using the excellent <a href="https://www.nexusmods.com/oblivion/mods/20516" target="_blank">BOSS</a> (Better Oblivion Sorting Software). This tool was previously called FCOMhelper, but it now works for any load order, not just FCOM.</p>
+            </div>
+
+            <h4>Basic Load-Order</h4>
+
+            <p>Do not use any other Fran optional plugins (except the ones listed here).</p>
+
+            <div class="load-order">
+                <div class="load-order-item">
+                    <span class="checkbox">[x]</span>
+                    <div>
+                        <span class="plugin-name">Oblivion.esm</span>
+                    </div>
+                </div>
+                
+                <div class="load-order-item">
+                    <span class="checkbox">[x]</span>
+                    <div>
+                        <span class="plugin-name">Francesco's leveled creatures-items mod.esm</span>
+                    </div>
+                </div>
+
+                <div class="load-order-item">
+                    <span class="checkbox">[x]</span>
+                    <div>
+                        <span class="plugin-name">Francesco's optional new items add-on.esm</span>
+                        <span class="plugin-note optional">(Optional! Requires Fran BSA file & FCOM_FrancescoItemsAddOn)</span>
+                    </div>
+                </div>
+
+                <div class="load-order-item">
+                    <span class="checkbox">[x]</span>
+                    <div>
+                        <span class="plugin-name">Oscuro's_Oblivion_Overhaul.esm</span>
+                        <span class="plugin-note required">(Must be 1.34 or later!)</span>
+                    </div>
+                </div>
+
+                <div class="load-order-item">
+                    <span class="checkbox">[x]</span>
+                    <div>
+                        <span class="plugin-name">Mart's Monster Mod.esm</span>
+                        <span class="plugin-note required">(Must be 3.6 or later!)</span>
+                    </div>
+                </div>
+
+                <div class="load-order-item">
+                    <span class="checkbox">[x]</span>
+                    <div>
+                        <span class="plugin-name">FCOM_Convergence.esm</span>
+                        <span class="plugin-note required">(Required!)</span>
+                    </div>
+                </div>
+
+                <div class="load-order-item">
+                    <span class="checkbox">[x]</span>
+                    <div>
+                        <span class="plugin-name">Francesco's optional chance of stronger bosses.esp</span>
+                    </div>
+                </div>
+
+                <div class="load-order-item">
+                    <span class="checkbox">[x]</span>
+                    <div>
+                        <span class="plugin-name">Francesco's optional chance of stronger enemies.esp</span>
+                    </div>
+                </div>
+
+                <div class="load-order-item">
+                    <span class="checkbox">[x]</span>
+                    <div>
+                        <span class="plugin-name">Francesco's optional chance of more enemies.esp</span>
+                    </div>
+                </div>
+
+                <div class="load-order-item">
+                    <span class="checkbox">[x]</span>
+                    <div>
+                        <span class="plugin-name">Francesco's optional leveled guards.esp</span>
+                    </div>
+                </div>
+
+                <div class="load-order-item">
+                    <span class="checkbox">[X]</span>
+                    <div>
+                        <span class="plugin-name">FCOM_Francescos.esp</span>
+                        <span class="plugin-note required">(Required ONLY if using Fran's!)</span>
+                    </div>
+                </div>
+
+                <div class="load-order-item">
+                    <span class="checkbox">[X]</span>
+                    <div>
+                        <span class="plugin-name">FCOM_FrancescosItemsAddOn.esp</span>
+                        <span class="plugin-note required">(Required ONLY if using Fran's optional new items add-on.esm!)</span>
+                    </div>
+                </div>
+
+                <div class="load-order-item">
+                    <span class="checkbox">[X]</span>
+                    <div>
+                        <span class="plugin-name">FCOM_FrancescosNamedBosses.esp</span>
+                        <span class="plugin-note optional">(Recommended Optional)</span>
+                    </div>
+                </div>
+
+                <div class="load-order-item">
+                    <span class="checkbox">[x]</span>
+                    <div>
+                        <span class="plugin-name">Bob's Armory Oblivion.esp</span>
+                        <span class="plugin-note optional">(Optional)</span>
+                    </div>
+                </div>
+
+                <div class="load-order-item">
+                    <span class="checkbox">[x]</span>
+                    <div>
+                        <span class="plugin-name">FCOM_BobsArmory.esp</span>
+                        <span class="plugin-note required">(Required ONLY if using Bob's Armory!)</span>
+                    </div>
+                </div>
+
+                <div class="load-order-item">
+                    <span class="checkbox">[x]</span>
+                    <div>
+                        <span class="plugin-name">Oblivion WarCry EV.esp</span>
+                        <span class="plugin-note optional">(Optional)</span>
+                    </div>
+                </div>
+
+                <div class="load-order-item">
+                    <span class="checkbox">[x]</span>
+                    <div>
+                        <span class="plugin-name">FCOM_WarCry.esp</span>
+                        <span class="plugin-note required">(Required ONLY if using WarCry!)</span>
+                    </div>
+                </div>
+
+                <div class="load-order-item">
+                    <span class="checkbox">[x]</span>
+                    <div>
+                        <span class="plugin-name">Oscuro's_Oblivion_Overhaul.esp</span>
+                        <span class="plugin-note required">(Must be 1.34 or later!)</span>
+                    </div>
+                </div>
+
+                <div class="load-order-item">
+                    <span class="checkbox">[x]</span>
+                    <div>
+                        <span class="plugin-name">FCOM_Convergence.esp</span>
+                        <span class="plugin-note required">(Required if using MMM and OOO!)</span>
+                    </div>
+                </div>
+
+                <div class="load-order-item">
+                    <span class="checkbox">[x]</span>
+                    <div>
+                        <span class="plugin-name">FCOM_RealSwords.esp</span>
+                        <span class="plugin-note optional">(Recommended Optional)</span>
+                    </div>
+                </div>
+
+                <div class="load-order-item">
+                    <span class="checkbox">[x]</span>
+                    <div>
+                        <span class="plugin-name">Bashed Patch, 0.esp</span>
+                        <span class="plugin-note optional">(Use Wrye Bash to <b>Rebuild Patch</b>)</span>
+                    </div>
+                </div>
+            </div>
+
+            <p>For more general load-order advice, check the <a href="https://web.archive.org/web/20111210084813/http://devnull.sweetdanger.net/loadorder.html" target="_blank">Load Order Guide</a>.</p>
+
+            <h4>Bashed Patch</h4>
+
+            <p>If you are using an old version of Wrye Bash (prior to 0.98), then check the <a href="https://web.archive.org/web/20111210084813/http://devnull.sweetdanger.net/oldbash" target="_blank">Old Bash page</a> for important details. If you have a recent version (v118 or later highly recommended), then everything you need to know is already described in the step-by-step Bashed Patch guide on the main FCOM homepage.</p>
+        </main>
+
+        <footer>
+            <hr>
+            <p>
+                <a href="index.html">Home</a> | 
+                <a href="FCOM_Convergence.html">FCOM: Convergence</a> | 
+                <a href="FCOM_LoadOrderExpanded.html">Expanded Load-Order</a>
+            </p>
+            <p>Copyright 2006, 2007, 2008, 2009, 2015, 2025 by devakm. Individual works copyright by their respective creators.
+            </p>
+        </footer>
+    </div>
+</body>
+</html>
