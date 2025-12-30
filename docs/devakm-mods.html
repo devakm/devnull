@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>dev/akm mods - Oblivion</title>
+    <title>devakm mods - Oblivion</title>
     <style>
         :root {
             --bg-primary: #1a1a1a;
@@ -106,7 +106,7 @@
             margin: 10px 0;
         }
 
-        .two-column {
+        .content-wrapper {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 40px;
@@ -119,6 +119,12 @@
             margin: 20px 0;
             border-radius: 6px;
             border-left: 3px solid var(--accent-blue);
+        }
+
+        .section::after {
+            content: "";
+            display: table;
+            clear: both;
         }
 
         .info-box {
@@ -169,7 +175,7 @@
         .image-right {
             float: right;
             margin: 0 0 15px 15px;
-            max-width: 300px;
+            max-width: 200px;
         }
 
         .fcom-accent {
@@ -177,14 +183,15 @@
             font-weight: bold;
         }
 
-        @media (max-width: 768px) {
-            .two-column {
+        @media (max-width: 900px) {
+            .content-wrapper {
                 grid-template-columns: 1fr;
             }
 
             .image-right {
                 float: none;
-                margin: 15px 0;
+                margin: 15px auto;
+                display: block;
                 max-width: 100%;
             }
         }
@@ -193,21 +200,21 @@
 <body>
     <div class="container">
         <header>
-            <h1>dev/akm mods</h1>
+            <h1>devakm mods</h1>
             <p class="subtitle">Mods, Guides, Reviews for Elder Scrolls IV: Oblivion</p>
         </header>
 
         <main>
-            <div class="two-column">
-                <div class="left-column">
+            <div class="content-wrapper">
+                <div>
                     <h2>MODS</h2>
 
                     <div class="section">
                         <h3>FCOM: Convergence</h3>
                         <p><i><span class="fcom-accent">F</span>rancesco + War<span class="fcom-accent">C</span>ry + <span class="fcom-accent">O</span>scuro + <span class="fcom-accent">M</span>artigen</i></p>
                         
-                        <a href="FCOM_Convergence_Screenshots.html" class="image-right">
-                            <img src="images/th_FCOM041.jpg" alt="FCOM: Convergence Screenshot">
+                        <a href="FCOM_Convergence_Screenshots.html">
+                            <img src="images/th_FCOM041.jpg" alt="FCOM: Convergence Screenshot" class="image-right">
                         </a>
                         
                         <p><b>FCOM: Convergence</b> shatters previous barriers in the Oblivion mod community by letting you play four of the largest Oblivion "overhaul" mods at the same time -- <b>Oscuro's Oblivion Overhaul</b>, <b>Martigen's Monster Mod</b>, <b>Oblivion WarCry</b>, and <b>Francesco's Leveled Creatures-Items</b>. It also seeks to show how new item and/or creature expansion mods can be added directly to this environment, and thus includes direct support for <b>Bob's Armory</b>. Previously known as <b>FranOOOMMM</b>, the project is still in beta testing but getting <b>very</b> close to a final release.</p>
@@ -215,11 +222,11 @@
                         <p><a href="Convergence_TesAlliancePage.html">Homepage for FCOM: Convergence</a></p>
                     </div>
 
-                    <div img src="images/th_OOOInstallerFloydian1.jpg" alt="OOO Installer" class="image-right">
-                        
-                        <class="section">
+                    <div class="section">
                         <h3>Oscuro's Overhaul</h3>
                         <p><i>Sotobrastos' classic OOO updated and improved.</i></p>
+                        
+                        <img src="images/th_OOOInstallerFloydian1.jpg" alt="OOO Installer" class="image-right">
                         
                         <p>Working with MadCat221, MiSP, and numerous other contributors, we have continued to add improvements and bug fixes to Oscuro's Oblivion Overhaul -- the award-winning masterpiece created by Jorge Salgado (Sotobrastos). The latest updates include professional-quality installers (standalone EXE and OMOD), vastly revamped documentation, and much more.</p>
                         
@@ -229,30 +236,30 @@
                     </div>
 
                     <div class="section">
-                        <h3>dev/akm Mods</h3>
+                        <h3>devakm Mods</h3>
                         <p>My released mod work so far. Nothing really spectacular yet, but not a bad start.</p>
                         
                         <p>Most of the mods I've released are small tweaks or fixes. The notable exceptions are <b>TES4Gecko</b>, which is a significant update of one of the best tools available for mod-creators, and <b>FCOM: Convergence</b>, which broke significant new ground in the Oblivion mod community by letting you play four of the largest Oblivion "overhaul" mods at the same time (it's still a beta release and work-in-progress).</p>
                         
-                        <p><a href="https://www.nexusmods.com/oblivion/users/57880" target="_blank">Complete dev/akm mods list on Nexus Mods</a></p>
-                    </divimg src="images/th_domrose_06_after.jpg" alt="Skingrad Roof Textures" class="image-right" width="160" height="120">
-                        
-                        <>
+                        <p><a href="https://www.nexusmods.com/oblivion/users/57880" target="_blank">Complete devakm mods list on Nexus Mods</a></p>
+                    </div>
 
                     <div class="section">
                         <h3>Roof Textures</h3>
                         <p><i>Unofficial Add-On for Qarl's Texture Pack 2</i></p>
+                        
+                        <img src="images/th_domrose_06_after.jpg" alt="Skingrad Roof Textures" class="image-right">
                         
                         <p>This is a small texture replacement mod that acts as an unofficial add-on for <a href="http://qarl.rpgmods2.com/Qindex.html" target="_blank">Qarl's Texture Pack 2</a>. It replaces the two very blurry 256x256 Bethesda textures (and normal maps) for rusty metal roofs in Skingrad that Qarl did not replace in his outstanding mod. The new roof textures are 1024x1024 and match Qarl's rusty metal trim texture.</p>
                         
                         <p><a href="skingradrooftextures.html">More Info &amp; Download Links</a></p>
                     </div>
 
-                    <div img src="images/th_QTP2_04after.jpg" alt="QTP2 Normal Maps" class="image-right" width="160" height="120">
-                        
-                        <class="section">
+                    <div class="section">
                         <h3>QNMR2</h3>
                         <p><i>Qarl Normal Maps Reduced (QNMR): Unofficial Add-On for Qarl's Texture Pack 2</i></p>
+                        
+                        <img src="images/th_QTP2_04after.jpg" alt="QTP2 Normal Maps" class="image-right">
                         
                         <p>This is a texture replacement mod that acts as an unofficial option pack for <a href="http://qarl.rpgmods2.com/Qindex.html" target="_blank">Qarl's Texture Pack 2</a> (QTP2). It replaces all of the high-res normal maps from QTP2 with dramatically smaller normal maps. The normal maps are reduced to one quarter of their original size, which can significantly help reduce stuttering on 256Mb video cards with almost no loss of quality that you can see in-game.</p>
                         
@@ -260,16 +267,16 @@
                     </div>
 
                     <div class="section">
-                        <h3>dev/akm blog</h3>
+                        <h3>devakm blog</h3>
                         <p>My research, reviews, opinions, etc.</p>
                         
                         <p>My blog site is where I post updates about what I'm working on. It also includes copies of my research into ArchiveInvalidation problems, my <i>Old-Timer's Review of Oblivion</i>, my opinions on the ESRB, etc.</p>
                         
-                        <p><a href="http://devakm.blogspot.com/" target="_blank">dev/akm blog</a></p>
+                        <p><a href="http://devakm.blogspot.com/" target="_blank">devakm blog</a></p>
                     </div>
                 </div>
 
-                <div class="right-column">
+                <div>
                     <h2>MOD GUIDES</h2>
                     
                     <p>These guides are intended to help you get the most out of your mod-playing experience. They are frequently updated with new information on the latest releases, etc.</p>
@@ -281,13 +288,13 @@
                         <p>The Oblivion Quest List (TOQL) is intended to be a comprehensive guide to good quest mods for TES IV: Oblivion. It is a community project, in the sense that all of the mods listed here have been recommended by members of the mod community. Good quest mods are critical to the future of Oblivion modding, because without them people quickly get bored with plundering random dungeons, no matter how great the "eye candy" is.</p>
                         
                         <p><a href="Quests.html">TOQL: The Oblivion Quest List</a></p>
-                    </divimg src="images/th_city_after.jpg" alt="Texture Overhaul Example" class="image-right">
-                        
-                        <>
+                    </div>
 
                     <div class="section">
                         <h3>Texture Overhaul</h3>
                         <p><i>The Oblivion Texture Overhaul (TOTO): The Ultimate Visual Experience for TES IV</i></p>
+                        
+                        <img src="images/th_city_after.jpg" alt="Texture Overhaul Example" class="image-right">
                         
                         <p>The Oblivion Texture Overhaul (TOTO) is not a mod itself, but rather a guide to a lot of great mods that improve the appearance of The Elder Scrolls IV: Oblivion. TOTO is an ongoing community project to create a resource guide that includes comparison screenshots, installation instructions, download mirror listings, etc.</p>
                         
