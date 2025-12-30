@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dev/akm mods - Oblivion</title>
+    <style>
+        :root {
+            --bg-primary: #1a1a1a;
+            --bg-secondary: #2d2d2d;
+            --bg-tertiary: #252525;
+            --text-primary: #e0e0e0;
+            --text-secondary: #b0b0b0;
+            --accent-red: #ff4444;
+            --accent-blue: #4a9eff;
+            --accent-cyan: #00d9ff;
+            --accent-gold: #ffd700;
+            --accent-green: #33cc00;
+            --border-color: #444;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: var(--bg-secondary);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        header {
+            border-bottom: 2px solid var(--accent-red);
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            color: var(--accent-red);
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: var(--accent-cyan);
+            font-size: 1.2em;
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            color: var(--accent-blue);
+            font-size: 1.8em;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+
+        h3 {
+            color: var(--accent-cyan);
+            font-size: 1.4em;
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+
+        h4 {
+            color: var(--accent-gold);
+            font-size: 1.2em;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            margin-bottom: 15px;
+            color: var(--text-primary);
+        }
+
+        a {
+            color: var(--accent-cyan);
+            text-decoration: none;
+            border-bottom: 1px solid var(--accent-cyan);
+            transition: color 0.3s, border-color 0.3s;
+        }
+
+        a:hover {
+            color: var(--accent-gold);
+            border-color: var(--accent-gold);
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+            margin: 10px 0;
+        }
+
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 30px;
+        }
+
+        .section {
+            background-color: var(--bg-tertiary);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 6px;
+            border-left: 3px solid var(--accent-blue);
+        }
+
+        .info-box {
+            background-color: rgba(74, 158, 255, 0.1);
+            border-left: 4px solid var(--accent-blue);
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .note {
+            background-color: rgba(255, 215, 0, 0.1);
+            border-left: 4px solid var(--accent-gold);
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+            color: var(--text-secondary);
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid var(--border-color);
+            margin: 20px 0;
+        }
+
+        b, strong {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        i, em {
+            color: var(--text-secondary);
+            font-style: italic;
+        }
+
+        .copyright {
+            font-size: 0.85em;
+            margin-top: 10px;
+        }
+
+        .image-right {
+            float: right;
+            margin: 0 0 15px 15px;
+            max-width: 300px;
+        }
+
+        .fcom-accent {
+            color: var(--accent-red);
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            .two-column {
+                grid-template-columns: 1fr;
+            }
+
+            .image-right {
+                float: none;
+                margin: 15px 0;
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>dev/akm mods</h1>
+            <p class="subtitle">Mods, Guides, Reviews for Elder Scrolls IV: Oblivion</p>
+        </header>
+
+        <main>
+            <div class="two-column">
+                <div class="left-column">
+                    <h2>MODS</h2>
+
+                    <div class="section">
+                        <h3>FCOM: Convergence</h3>
+                        <p><i><span class="fcom-accent">F</span>rancesco + War<span class="fcom-accent">C</span>ry + <span class="fcom-accent">O</span>scuro + <span class="fcom-accent">M</span>artigen</i></p>
+                        
+                        <a href="FCOM_Convergence_Screenshots.html" class="image-right">
+                            <img src="images/th_FCOM041.jpg" alt="FCOM: Convergence Screenshot">
+                        </a>
+                        
+                        <p><b>FCOM: Convergence</b> shatters previous barriers in the Oblivion mod community by letting you play four of the largest Oblivion "overhaul" mods at the same time -- <b>Oscuro's Oblivion Overhaul</b>, <b>Martigen's Monster Mod</b>, <b>Oblivion WarCry</b>, and <b>Francesco's Leveled Creatures-Items</b>. It also seeks to show how new item and/or creature expansion mods can be added directly to this environment, and thus includes direct support for <b>Bob's Armory</b>. Previously known as <b>FranOOOMMM</b>, the project is still in beta testing but getting <b>very</b> close to a final release.</p>
+                        
+                        <p><a href="Convergence_TesAlliancePage.html">Homepage for FCOM: Convergence</a></p>
+                    </div>
+
+                    <div img src="images/th_OOOInstallerFloydian1.jpg" alt="OOO Installer" class="image-right">
+                        
+                        <class="section">
+                        <h3>Oscuro's Overhaul</h3>
+                        <p><i>Sotobrastos' classic OOO updated and improved.</i></p>
+                        
+                        <p>Working with MadCat221, MiSP, and numerous other contributors, we have continued to add improvements and bug fixes to Oscuro's Oblivion Overhaul -- the award-winning masterpiece created by Jorge Salgado (Sotobrastos). The latest updates include professional-quality installers (standalone EXE and OMOD), vastly revamped documentation, and much more.</p>
+                        
+                        <p><b>Updated for OOO 1.33 release!</b></p>
+                        
+                        <p><a href="OOO/">Getting Started With OOO</a></p>
+                    </div>
+
+                    <div class="section">
+                        <h3>dev/akm Mods</h3>
+                        <p>My released mod work so far. Nothing really spectacular yet, but not a bad start.</p>
+                        
+                        <p>Most of the mods I've released are small tweaks or fixes. The notable exceptions are <b>TES4Gecko</b>, which is a significant update of one of the best tools available for mod-creators, and <b>FCOM: Convergence</b>, which broke significant new ground in the Oblivion mod community by letting you play four of the largest Oblivion "overhaul" mods at the same time (it's still a beta release and work-in-progress).</p>
+                        
+                        <p><a href="https://www.nexusmods.com/oblivion/users/57880" target="_blank">Complete dev/akm mods list on Nexus Mods</a></p>
+                    </divimg src="images/th_domrose_06_after.jpg" alt="Skingrad Roof Textures" class="image-right" width="160" height="120">
+                        
+                        <>
+
+                    <div class="section">
+                        <h3>Roof Textures</h3>
+                        <p><i>Unofficial Add-On for Qarl's Texture Pack 2</i></p>
+                        
+                        <p>This is a small texture replacement mod that acts as an unofficial add-on for <a href="http://qarl.rpgmods2.com/Qindex.html" target="_blank">Qarl's Texture Pack 2</a>. It replaces the two very blurry 256x256 Bethesda textures (and normal maps) for rusty metal roofs in Skingrad that Qarl did not replace in his outstanding mod. The new roof textures are 1024x1024 and match Qarl's rusty metal trim texture.</p>
+                        
+                        <p><a href="skingradrooftextures.html">More Info &amp; Download Links</a></p>
+                    </div>
+
+                    <div img src="images/th_QTP2_04after.jpg" alt="QTP2 Normal Maps" class="image-right" width="160" height="120">
+                        
+                        <class="section">
+                        <h3>QNMR2</h3>
+                        <p><i>Qarl Normal Maps Reduced (QNMR): Unofficial Add-On for Qarl's Texture Pack 2</i></p>
+                        
+                        <p>This is a texture replacement mod that acts as an unofficial option pack for <a href="http://qarl.rpgmods2.com/Qindex.html" target="_blank">Qarl's Texture Pack 2</a> (QTP2). It replaces all of the high-res normal maps from QTP2 with dramatically smaller normal maps. The normal maps are reduced to one quarter of their original size, which can significantly help reduce stuttering on 256Mb video cards with almost no loss of quality that you can see in-game.</p>
+                        
+                        <p><a href="qarlnormalmapsreduced.html">More Info &amp; Download Links</a></p>
+                    </div>
+
+                    <div class="section">
+                        <h3>dev/akm blog</h3>
+                        <p>My research, reviews, opinions, etc.</p>
+                        
+                        <p>My blog site is where I post updates about what I'm working on. It also includes copies of my research into ArchiveInvalidation problems, my <i>Old-Timer's Review of Oblivion</i>, my opinions on the ESRB, etc.</p>
+                        
+                        <p><a href="http://devakm.blogspot.com/" target="_blank">dev/akm blog</a></p>
+                    </div>
+                </div>
+
+                <div class="right-column">
+                    <h2>MOD GUIDES</h2>
+                    
+                    <p>These guides are intended to help you get the most out of your mod-playing experience. They are frequently updated with new information on the latest releases, etc.</p>
+
+                    <div class="section">
+                        <h3>Quest List</h3>
+                        <p><i>The Oblivion Quest List (TOQL): The Ultimate Guide to Quest Mods for TES IV</i></p>
+                        
+                        <p>The Oblivion Quest List (TOQL) is intended to be a comprehensive guide to good quest mods for TES IV: Oblivion. It is a community project, in the sense that all of the mods listed here have been recommended by members of the mod community. Good quest mods are critical to the future of Oblivion modding, because without them people quickly get bored with plundering random dungeons, no matter how great the "eye candy" is.</p>
+                        
+                        <p><a href="Quests.html">TOQL: The Oblivion Quest List</a></p>
+                    </divimg src="images/th_city_after.jpg" alt="Texture Overhaul Example" class="image-right">
+                        
+                        <>
+
+                    <div class="section">
+                        <h3>Texture Overhaul</h3>
+                        <p><i>The Oblivion Texture Overhaul (TOTO): The Ultimate Visual Experience for TES IV</i></p>
+                        
+                        <p>The Oblivion Texture Overhaul (TOTO) is not a mod itself, but rather a guide to a lot of great mods that improve the appearance of The Elder Scrolls IV: Oblivion. TOTO is an ongoing community project to create a resource guide that includes comparison screenshots, installation instructions, download mirror listings, etc.</p>
+                        
+                        <p><a href="obliviontextureoverhaul.html">TOTO: The Oblivion Texture Overhaul</a></p>
+                    </div>
+
+                    <div class="section">
+                        <h3>Oblivion Mods FAQ</h3>
+                        <p><i>The definitive guide to using mods for Oblivion</i></p>
+                        
+                        <p>This was my first major project for Oblivion and it has grown over time to become <i>the</i> definitive guide to using mods for Oblivion. It is the only fan-controlled topic pinned on the official Oblivion mods forum, and various versions of it are featured prominently on at least five separate web sites, including a German translation. I constantly keep all the different versions of it up to date, but my favorite version is on the CS Wiki since it's the easiest one to read, so that's the one I'm linking to here.</p>
+                        
+                        <p><a href="http://cs.elderscrolls.com/constwiki/index.php/Oblivion_Mods_FAQ" target="_blank">Oblivion Mods FAQ</a></p>
+                    </div>
+
+                    <div class="section">
+                        <h3>De-Isolation Tutorial</h3>
+                        <p>In the early days of Oblivion modding, we couldn't figure out how to make plugins communicate with each other without requiring a common master file. This was known as "mod isolation" (a term coined by Wrye). More than a year later, both ParasiteX and Wrye discovered how to get around this problem. I quickly started exploiting their discoveries in <i>FranOOOMMM</i> (which later evolved into FCOM). This tutorial grew out of my early experiences working with de-isolation (using a hex editor and TES4Gecko). It was the first crude guide to overcoming isolation problems and has evolved over time into a more polished overview of how to use the latest fan-made tools (such as TES4Edit and Wrye Bash) to create de-isolated plugins.</p>
+                        
+                        <p><a href="deisolation.html">De-Isolation Tutorial</a></p>
+                    </div>
+
+                    <div class="section">
+                        <h3>ArchiveInvalidation</h3>
+                        <p>Research, solutions, and workarounds for one of the most annoying bugs in Oblivion.</p>
+                        
+                        <p>This was the result of a massive community research project. It includes details on the texture replacement bug in Oblivion and the best solutions to the problem so far. If you want an easier read, however, most of this information is summarized in the <b>Oblivion Mods FAQ</b>.</p>
+                        
+                        <p><a href="archiveinvalidation.html">ArchiveInvalidation Explained &amp; Destroyed</a></p>
+                    </div>
+
+                    <div class="section">
+                        <h3>TES IV Gotchas</h3>
+                        <p><i>Troubleshooting common mistakes and obscure problems for Oblivion.</i></p>
+                        
+                        <p>This is a collection of short tips by numerous contributors on troubleshooting TES IV problems -- gotchas, common mistakes, CS bugs, etc. The basic ideas and topics were originally discussed and peer-reviewed in a BGS Forums thread starting back in February 2007, eventually resulting in a <b>Troubleshooting</b> category on the CS Wiki. There's already a ton of great info collected there, and the knowledgebase is still being expanded on by multiple contributors.</p>
+                        
+                        <p><a href="http://cs.elderscrolls.com/constwiki/index.php/Category:Troubleshooting" target="_blank">Troubleshooting</a></p>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <hr>
+            <p class="copyright">Copyright 2006, 2007, 2008, 2009 by dev_akm. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>
