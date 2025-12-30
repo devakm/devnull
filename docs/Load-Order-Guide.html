@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Load Order Guide - Oblivion Mods</title>
+    <style>
+        :root {
+            --bg-primary: #1a1a1a;
+            --bg-secondary: #2d2d2d;
+            --bg-tertiary: #252525;
+            --text-primary: #e0e0e0;
+            --text-secondary: #b0b0b0;
+            --accent-red: #ff4444;
+            --accent-blue: #4a9eff;
+            --accent-cyan: #00d9ff;
+            --accent-gold: #ffd700;
+            --accent-green: #33cc00;
+            --border-color: #444;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: var(--bg-secondary);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        header {
+            border-bottom: 2px solid var(--accent-red);
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            color: var(--accent-red);
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: var(--accent-cyan);
+            font-size: 1.2em;
+            font-style: italic;
+        }
+
+        h2 {
+            color: var(--accent-blue);
+            font-size: 1.8em;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+
+        h3, h4, h5, h6 {
+            color: var(--accent-cyan);
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            margin-bottom: 15px;
+            color: var(--text-primary);
+        }
+
+        a {
+            color: var(--accent-cyan);
+            text-decoration: none;
+            border-bottom: 1px solid var(--accent-cyan);
+            transition: color 0.3s, border-color 0.3s;
+        }
+
+        a:hover {
+            color: var(--accent-gold);
+            border-color: var(--accent-gold);
+        }
+
+        .section {
+            background-color: var(--bg-tertiary);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 6px;
+            border-left: 3px solid var(--accent-blue);
+        }
+
+        .info-box {
+            background-color: rgba(74, 158, 255, 0.1);
+            border-left: 4px solid var(--accent-blue);
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .note {
+            background-color: rgba(255, 215, 0, 0.1);
+            border-left: 4px solid var(--accent-gold);
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .load-order-example {
+            background-color: var(--bg-tertiary);
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 6px;
+            border-left: 3px solid var(--accent-green);
+            font-family: 'Courier New', monospace;
+        }
+
+        .load-order-example p {
+            margin: 8px 0;
+        }
+
+        .author {
+            font-style: italic;
+            color: var(--text-secondary);
+            margin-bottom: 15px;
+        }
+
+        footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+            color: var(--text-secondary);
+        }
+
+        footer a {
+            margin: 0 10px;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid var(--border-color);
+            margin: 20px 0;
+        }
+
+        b, strong {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        i, em {
+            color: var(--text-secondary);
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Load Order Guide</h1>
+            <p class="subtitle">For Oblivion Mods</p>
+        </header>
+
+        <main>
+            <p>Originally from the ESF thread: <a href="https://www.elderscrolls.com/forums/index.php?showtopic=649820" target="_blank">Rules of Thumb for mod load orders</a>.</p>
+
+            <h2>General Load-Order Guidelines</h2>
+            
+            <p class="author">by ElecManEXE</p>
+
+            <div class="section">
+                <p>Here are the guidelines that I adhere to, personally.</p>
+
+                <p>~ <b>Unofficial Oblivion Patch</b> should always be first on the list. The fixes are great, but most aren't essential, so if a mod overwrites them its not a big deal, and the fixes have the potential for screwing up other mods if loaded later.</p>
+
+                <p>~ <b>Official Content (DLC's)</b> should be loaded last, until you complete all quests associated with them (that includes buying all furniture for the houses and whatnot). Once they're complete, they can be safely moved up in the list. This is especially important for Knights of the Nine, which will have some fairly major problems unless loaded last (unless you get the UOP for KotN)</p>
+
+                <p>~ <b>Major overhaul mods</b> (OOO, Frans, MMM) should be loaded near the end. That gives you the most complete experience with any of those particular mods. It also lets you carefully choose which other mods to load afterwards... only move mods that you know will conflict and that you want the changes from. For example, I have Improved Soul Gems below OOO because I know that OOO changes the icons of some of the SG's, and ISG needs to be below to show through.</p>
+
+                <p>Some people will recommend putting larger mods first, but personally I disagree. There are a number of mods out there that make minor tweaks, and loading after a large mod will end up completely overwriting a chunk from one of the bigger mods because of the way conflicts work in Oblivion (even one minor change will take precedence over the entire record... for example, simply tweaking the speed of a weapon can cause every stat of that weapon to be retained to vanilla levels if loaded later).</p>
+
+                <p>So basically, it stacks up like this...</p>
+            </div>
+
+            <div class="load-order-example">
+                <p><b>Oblivion.esm</b></p>
+                <p><b>Unofficial Oblivion Patch</b></p>
+                <p><b>&lt;Minor Mods / DLC's (Post-Completion)&gt;</b></p>
+                <p><b>&lt;Major Overhaul Mod/Mods&gt;</b></p>
+                <p><b>&lt;Mods that specifically conflict with overhauls and need to take precedence&gt;</b></p>
+                <p><b>&lt;DLC's (Pre-Completion)&gt;</b></p>
+            </div>
+
+            <h2>Expanded Load-Order Guidelines</h2>
+
+            <p class="author">by dev_akm</p>
+
+            <div class="section">
+                <p>I would extend this to include:</p>
+            </div>
+
+            <div class="load-order-example">
+                <p><b>Oblivion.esm</b></p>
+                <p><b>Unofficial Oblivion Patch</b></p>
+                <p><b>&lt;Weather/Environment/Sound Mods&gt;</b></p>
+                <p><b>&lt;Minor Mods/New Items/Houses/DLC's (Post-Completion)&gt;</b></p>
+                <p><b>&lt;Major Overhaul Mods&gt;</b></p>
+                <p><b>&lt;Mods that specifically conflict with overhauls and need to take precedence&gt;</b></p>
+                <p><b>&lt;DLC's (Pre-Completion)&gt;</b></p>
+                <p><b>&lt;Quests&gt;</b></p>
+                <p><b>&lt;Compatibility Patches/UOMP/Merged Leveled Lists&gt;</b></p>
+            </div>
+
+            <div class="note">
+                <p><b>Special Warning:</b> <b>Knights.esp</b> (Knights of the Nine) -- you may not be able to move it earlier than some other mods (some people have had problems after moving it before OOO, for example).</p>
+            </div>
+
+            <p>That's basically the structure I use and I have 140+ mods working well together.</p>
+
+            <h3>Alternative Description</h3>
+
+            <p class="author">Posted by DMan77:</p>
+
+            <div class="load-order-example">
+                <p><b>Oblivion</b></p>
+                <p><b>unofficial patch</b></p>
+                <p><b>Deeper realism mods that add sights and sounds</b></p>
+                <p><b>added content like weapons/items</b></p>
+                <p><b>gameplay changes, like 'must eat and sleep'</b></p>
+                <p><b>The OOO type</b></p>
+                <p><b>the 'new begining' type mod..</b></p>
+            </div>
+
+            <h2>Color-Coded Example Load-Order</h2>
+
+            <div class="info-box">
+                <p>Agiel has created an excellent load order example spreadsheet that can be very helpful. See <a href="https://spreadsheets.google.com/pub?key=pb7X4kMdvelbqrwmeFgmsEA&gid=0" target="_blank">Agiel's Color-Coded Load Order</a>.</p>
+            </div>
+        </main>
+
+        <footer>
+            <hr>
+            <p>
+                <a href="index.html">Home</a> | 
+                <a href="FCOM_Convergence.html">FCOM: Convergence</a>
+            </p>
+        </footer>
+    </div>
+</body>
+</html>
