@@ -1,0 +1,854 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0099)https://web.archive.org/web/20120320061132/http://devnull.sweetdanger.net/skingradrooftextures.html -->
+<html style="--wm-toolbar-height: 67px;"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script src="./devnull.devakm - Skingrad Roof Textures_files/athena.js.download" type="text/javascript"></script>
+<script type="text/javascript">window.addEventListener('DOMContentLoaded',function(){var v=archive_analytics.values;v.service='wb';v.server_name='wwwb-app222.us.archive.org';v.server_ms=584;archive_analytics.send_pageview({});});</script>
+<script type="text/javascript" src="./devnull.devakm - Skingrad Roof Textures_files/bundle-playback.js.download" charset="utf-8"></script>
+<script type="text/javascript" src="./devnull.devakm - Skingrad Roof Textures_files/wombat.js.download" charset="utf-8"></script>
+<script>window.RufflePlayer=window.RufflePlayer||{};window.RufflePlayer.config={"autoplay":"on","unmuteOverlay":"hidden","showSwfDownload":true};</script>
+<script type="text/javascript" src="./devnull.devakm - Skingrad Roof Textures_files/ruffle.js.download"></script>
+<script type="text/javascript">
+    __wm.init("https://web.archive.org/web");
+  __wm.wombat("http://devnull.sweetdanger.net:80/skingradrooftextures.html","20120320061132","https://web.archive.org/","web","https://web-static.archive.org/_static/",
+	      "1332223892");
+</script>
+<link rel="stylesheet" type="text/css" href="./devnull.devakm - Skingrad Roof Textures_files/banner-styles.css">
+<link rel="stylesheet" type="text/css" href="./devnull.devakm - Skingrad Roof Textures_files/iconochive.css">
+<!-- End Wayback Rewrite JS Include -->
+
+  <title>devnull.devakm - Skingrad Roof Textures</title>
+  
+  <style type="text/css">
+  #g_title p, #g_footer p, #g_description p {
+    margin: 0;
+  }
+  /*
+
+  	-- -- -- -- -- -- --
+  	Browser Fixes
+  	-- -- -- -- -- -- --
+  	
+  	This file uses CSS filtering methods to fix various
+  	layout bugs.
+
+  	Each of the following three imported files is a 
+  	separate, browser-specific CSS file that keeps all 
+  	hacks out of the main style sheet.
+  	
+  	Over time, as supporting these browsers no longer
+  	remains a priority, cleaning up the hacks is as
+  	easy as deleting the @import statement below, or
+  	simply no longer linking this file from the HTML.
+  	
+  */
+
+  /* 
+    fix ie6 "peekaboo bug" using the "holly hack". 
+    Note, this style only gets applied to ie6
+  */
+  * html .wrapper {
+    height: 0.1%;
+  }
+
+  /* 
+   * IE5 mac - overrides the IE/Win hack 
+   */
+
+  /*\*//*/
+
+  * html #threecolumn div {
+  	height: auto;
+  }
+
+  /**/
+
+
+  /* 
+   * IE5/Win-specific CSS -ensures #container wraps all content on window resize
+   */
+
+  @media tty {
+   i{content:"\";/*" "*/}} * html #container { height: 1%; } /*";}
+  }/* */
+  /* Styling for editable elements. Eventually, this will be part of the style. */
+  .editable {
+    border: 1px dashed blue;
+  }
+  
+  #footer {
+    clear: both;
+  }
+  
+  /* Extra divs hidden by default. The custom CSS can override this though */
+  #extraDiv1, #extraDiv2, #extraDiv3, #extraDiv4, #extraDiv5, #extraDiv6 {
+    display: none;
+  }
+  
+  a img,:link img,:visited img {border: none;}
+
+
+  body {
+    text-align: center;
+  }
+  #container {
+    width: 718px;
+    text-align: left;
+    margin: 0 auto;
+  }
+  /** BEGIN CUSTOM SKIN **/
+  /*
+
+  	-- -- -- -- -- -- --
+  	Base CSS
+  	-- -- -- -- -- -- --
+  	
+  	This file simply removes default styling on most HTML elements in 
+  	order to reduce the need to later override them.
+  	
+  */
+
+  h1,h2,h3,h4,h5,h6,pre,code,p {font-size: 1em;}
+  dl,li,dt,dd,h1,h2,h3,h4,h5,h6,pre,form,body,html,p,blockquote,fieldset,input {margin: 0; padding: 0;}
+  a img,:link img,:visited img {border: none;}
+  address {font-style: normal;}/*
+
+  	-- -- -- -- -- -- --
+  	Type Scheme: Deco
+  	-- -- -- -- -- -- --
+  	
+  */
+
+  body {
+  	font: 76% Verdana, sans-serif;
+  }	
+
+  h1, h2, h3, h4, h5, h6, p.description {
+  	font-family: "Trebuchet MS", Trebuchet, sans-serif;
+  }
+  h1 {
+  	font-size: 3em;
+  	font-weight: bold;
+  	letter-spacing: 2px;
+  }
+  h2 {
+  	font-size: 2em;
+  	font-weight: normal;
+  }
+  h3 {
+  	font-size: 1.5em;
+  }
+  h4 {
+  	font-size: 1.2em;
+  	letter-spacing: 0.2em;
+  }
+  h5 {
+  	font-size: 1.2em;
+  }
+  h6 {
+  	font-size: 1em;
+  	font-weight: bold;
+  }
+
+  p, td {
+  	line-height: 1.8em;
+  }
+  code, kbd {
+  	font-size: 1.25em;
+  }/*
+
+  	-- -- -- -- -- -- --
+  	STYLE: Victoria
+  	-- -- -- -- -- -- --
+
+  */
+
+
+  /* ie6win */
+
+  /* IE/Win fixes for various layouts
+  ----------------------------------------------- */
+  * html #threecolumn #main-content {
+  	width: 429px;
+  	margin-left: -2px;
+  }
+
+  /* ie5mac */
+
+  /*\*//*/
+  * html #threecolumn #main-content {
+  	width: 429px;
+  	margin-left: 0;
+  }
+  /**/
+
+  /* ie5win */
+
+  @media tty {
+   i{content:"\";/*" "*/}} td { font-size: 0.8em; } #footer p { margin: 0; padding: 1em 0; } /*";}
+  }/* */
+
+
+  /* Basic HTML style
+  ----------------------------------------------- */
+  a:link {
+  	text-decoration: underline;
+  }
+  a:visited {
+  	text-decoration: underline;
+  }
+  body {
+  	font: 80% "Georgia", serif;
+  	margin: 0;
+  	padding: 25px 0 25px 0;
+  	border-top: solid 3px #fff;
+  	border-bottom: solid 3px #fff;
+  }
+  caption {
+  	font-size: 1.2em;
+  	font-style: italic;
+  	text-align: left;
+  	padding: 1px 4px 4px 4px;
+  	margin-bottom: 4px;
+  	border-bottom: solid 1px #ccc;
+  }
+  dt {
+  	font-weight: bold;
+  }
+  dd {
+  	font-style: italic;
+  	margin: 0 0 1em 1em;
+  }
+  h2 {
+  	font-size: 1.4em;
+  	font-weight: normal;
+  	margin: 1em 0;
+  	padding-bottom: 3px;
+  }
+  h3 {
+  	font-size: 1.2em;
+  	font-weight: normal;
+  	font-style: normal;
+  	padding-bottom: 8px;
+  	margin-top: 1em;
+  	margin-bottom: 0.5em;
+  }
+  h4 {
+  	font-size: 1.1em;
+  	letter-spacing: 0.1em;
+  	padding-left: 12px;
+  	margin: 1.5em 0 1em 0;
+  }
+  h5 {
+  	padding-bottom: 2px;
+  	margin: 1.5em 0 1em 0;
+  }
+  h6 {
+  	font-weight: normal;
+  	letter-spacing: 0.1em;
+  	margin: 1em 0;
+  }
+  hr {
+  	margin: 2em 0;
+  	border-style: none;
+  	height: 1px;
+  }
+  p {
+  	line-height: 1.6;
+  	margin: 1em 0;
+  }
+  td {
+  	vertical-align: top;
+  	padding: 1px 4px;
+  }
+  td p {
+  	margin: 0 0 1em 0;
+  }
+  th {
+  	text-align: left;
+  	font-weight: normal;
+  	font-style: italic;
+  	vertical-align: top;
+  	padding: 1px 4px;
+  }
+
+
+  ul, ol, dl {
+  	margin-bottom: 1.6em;
+  	padding-left: 2em;
+  	margin-left: 0;
+  }
+
+  ul li {
+  	list-style: circle;
+  	margin-bottom: 0.8em;
+  }
+  ol li {
+  	list-style: upper-roman;
+  	margin-left: 2em;
+  	margin-bottom: 0.8em;
+  }
+
+
+
+
+  /* Header
+  ----------------------------------------------- */
+  h1 {
+  	padding-top: 25px;
+  	font-size: 2.4em;
+  	letter-spacing: 0.1em;
+  	text-align: center;
+  }
+  #g_description {
+  	font-style: italic;
+  	text-align: center;
+  	padding-bottom: 15px;
+  	margin: 0;
+  	line-height: 1;
+  }
+
+
+  /* content
+  ----------------------------------------------- */
+  #main-content .wrapper {
+  	margin: 0 25px;
+  }
+
+
+
+  /* sidebar
+  ----------------------------------------------- */
+
+  #sidebar .wrapper {
+  	padding-left: 15px;
+  	padding-right: 5px;
+  }
+
+  #sidebar .wrapper h3 {
+  	padding: 0 0 11px 0;
+  }
+
+
+  #sidebar li {
+  	margin-bottom: 0.8em;
+  }
+  #sidebar .wrapper ul li {
+  	list-style: circle;
+  }
+  #sidebar .wrapper ol li {
+  	list-style: upper-roman;
+  }
+
+  #sidebar .links {
+  	margin-bottom: 2em;
+  }
+
+
+  #adsense, #adsense .wrapper {
+  	text-align: left;
+  	margin: 0;
+  	padding: 0;
+  }
+
+
+  /* footer
+  ----------------------------------------------- */
+  #footer {
+  	margin: 0;
+  	font-style: italic;
+  	font-size: 0.9em;
+  }
+  #footer hr {
+  	display: none;
+  }
+
+  /* header
+  ----------------------------------------------- */
+  #header #page-title {
+  	padding-left: 12px;
+  	padding-right: 12px;
+  }
+
+  #header #g_description {
+  	margin-left: 12px;
+  	margin-right: 12px;
+  }
+
+  /* fixed 1 column
+  ----------------------------------------------- */
+  #onecolumn #header .wrapper {
+  	padding-bottom: 10px;
+  }
+  #onecolumn #footer {
+  	padding: 0 25px 10px 25px;
+  }
+
+
+
+  /* fixed left 2 column
+  ----------------------------------------------- */
+  #twocolumn-left #header .wrapper {
+  	padding-bottom: 10px;
+  }
+  #twocolumn-left #footer {
+  	padding: 0 25px 10px 264px;
+  }
+
+
+  /* fixed right 2 column
+  ----------------------------------------------- */
+  #twocolumn-right #header .wrapper {
+  	padding-bottom: 10px;
+  }
+  #twocolumn-right #footer {
+  	padding: 0 264px 10px 25px;
+  }
+
+
+  /* fixed 3 column
+  ----------------------------------------------- */
+  #threecolumn #header .wrapper {
+  	padding-bottom: 10px;
+  }
+  #threecolumn #footer {
+  	padding: 0 168px 10px 168px;
+  }
+  #sidebar-alternate {
+  	width: 129px;
+  }
+
+
+  /* liquid 2 column, right and left
+  ----------------------------------------------- */
+  #twocolumn-liquid-left, #twocolumn-liquid-right {
+  	padding: 0;
+  	border: 0;
+  	border-top: solid 1px #999;
+  }
+
+  #twocolumn-liquid-left h1, #twocolumn-liquid-right h1 {
+  	margin: 0;
+  }
+
+
+  #twocolumn-liquid-left #footer, #twocolumn-liquid-right #footer {
+  	padding: 0;
+  	margin: 0;
+  }
+  #twocolumn-liquid-left #container #footer .wrapper, #twocolumn-liquid-right #container #footer .wrapper {
+  	padding: 10px 25px 10px 25px;
+  	text-align: center;
+  }
+
+
+
+
+  #twocolumn-liquid-left #sidebar .wrapper *, #twocolumn-liquid-right #sidebar .wrapper * {
+  	margin-left: 0;
+  	margin-right: 0;
+  }
+  #twocolumn-liquid-left #sidebar h3, #twocolumn-liquid-right #sidebar h3 {
+  	padding-left: 0;
+  }
+  #twocolumn-liquid-left #sidebar ul, #twocolumn-liquid-left #sidebar ol,
+  #twocolumn-liquid-right #sidebar ul, #twocolumn-liquid-right #sidebar ol {
+  	padding-left: 2.5em;
+  	/* extra wide for IE's sake */
+  }
+  #twocolumn-liquid-left #sidebar .links ul, #twocolumn-liquid-right #sidebar .links ul {
+  	padding-left: 0;
+  }
+
+
+
+
+
+
+
+  /* editable area borders
+  ----------------------------------------------- */
+  .editable {
+  	border: dashed 1px #f00;
+  }
+  #onecolumn .editmode h1, #twocolumn-left .editmode h1, #twocolumn-right .editmode h1, #threecolumn .editmode h1 {
+  	background-position: -1px 0;
+  }
+  #twocolumn-liquid-left .editmode h1, #twocolumn-liquid-right .editmode h1 {
+  	background-position: 0 -1px;
+  }
+  /*
+
+  	-- -- -- -- -- -- --
+  	COLOR SCHEME: Underbrush
+  	-- -- -- -- -- -- --
+
+  */
+
+
+  /* Basic HTML style */
+
+  a:link {
+  	color: #A04D3E;
+  	border-bottom: solid 1px #C3C191;
+  	text-decoration: none;
+  }
+  a:visited {
+  	color: #BC8278;
+  	border-bottom: solid 1px #BC8278;
+  	text-decoration: none;
+  }
+  a:hover {
+  	color: #000;
+  	border-color: #000;
+  }
+  body {
+  	color: #36341A;
+  	background: #3C391B url(/web/20120320061132im_/http://devnull.sweetdanger.net/devnull_style/body-bg.gif) repeat-x left top;
+  }
+  caption {
+  	border-bottom-color: #ccc;
+  }
+  code, kbd {
+  	color: #A04D3E;
+  }
+  dt {
+  }
+  dd {
+  }
+  h2 {
+  	color: #A04D3E;
+  	background: url(/web/20120320061132im_/http://devnull.sweetdanger.net/devnull_style/h2.gif) repeat-x left bottom;
+  }
+  h3 {
+  	color: #827C5C;
+  	background: url(/web/20120320061132im_/http://devnull.sweetdanger.net/devnull_style/h3.gif) repeat-x left bottom;
+  }
+  h4 {
+  	color: #A04D3E;
+  	background: url(/web/20120320061132im_/http://devnull.sweetdanger.net/devnull_style/h4.gif) no-repeat 0 5px;
+  }
+  h5 {
+  	color: #ADA97C;
+  	background: url(/web/20120320061132im_/http://devnull.sweetdanger.net/devnull_style/h5-border.gif) repeat-x left bottom;
+  }
+  h6 {
+  	color: #3C391B;
+  }
+  hr {
+  	color: #B3B3A9;
+  	background: #B3B3A9;
+  	border-color: #B3B3A9;
+  }
+  td {
+  	vertical-align: top;
+  	padding: 1px 4px;
+  }
+  th {
+  }
+
+
+
+
+  /* Header
+  ----------------------------------------------- */
+  h1 {
+  	color: #36341A;
+  }
+  #g_description {
+  	color: #DAD7A4;
+  }
+
+  /* fixed-width common header
+  ----------------------------------------------- */
+  #onecolumn h1, #twocolumn-left h1, #twocolumn-right h1, #threecolumn h1 {
+  	background: url(/web/20120320061132im_/http://devnull.sweetdanger.net/devnull_style/fixed-h1.gif) no-repeat;
+  }
+  #onecolumn #header, #twocolumn-left #header, #twocolumn-right #header, #threecolumn #header {
+  	background: url(/web/20120320061132im_/http://devnull.sweetdanger.net/devnull_style/fixed-header.gif) repeat-y;
+  }
+
+
+
+  #footer {
+  	color: #797454;
+  }
+  .editable {
+  	border: dashed 1px #f00;
+  }
+
+
+
+  /* fixed 1 column
+  ----------------------------------------------- */
+  #onecolumn #header .wrapper {
+  	background: url(/web/20120320061132im_/http://devnull.sweetdanger.net/devnull_style/fixed-one-headerwrapper.gif) no-repeat left bottom;
+  }
+  #onecolumn #container {
+  	background: #fff url(/web/20120320061132im_/http://devnull.sweetdanger.net/devnull_style/fixed-one-container.gif) repeat-y;
+  }
+  #onecolumn #footer {
+  	background: url(/web/20120320061132im_/http://devnull.sweetdanger.net/devnull_style/fixed-one-footer.gif) no-repeat left bottom;
+  }
+
+
+
+  #sidebar .wrapper h3 {
+  	background-image: url(/web/20120320061132im_/http://devnull.sweetdanger.net/devnull_style/h3-sidebar-border.gif);
+  }
+
+
+  /* fixed 2 column left
+  ----------------------------------------------- */
+  #twocolumn-left #header .wrapper {
+  	background: url(/web/20120320061132im_/http://devnull.sweetdanger.net/devnull_style/fixed-left-headerwrapper.gif) no-repeat left bottom;
+  }
+  #twocolumn-left #container {
+  	background: #fff url(/web/20120320061132im_/http://devnull.sweetdanger.net/devnull_style/fixed-left-container.gif) repeat-y;
+  }
+  #twocolumn-left #footer {
+  	background: url(/web/20120320061132im_/http://devnull.sweetdanger.net/devnull_style/fixed-left-footer.gif) no-repeat left bottom;
+  }
+
+
+  /* fixed 2 column right
+  ----------------------------------------------- */
+  #twocolumn-right #header .wrapper {
+  	background: url(/web/20120320061132im_/http://devnull.sweetdanger.net/devnull_style/fixed-right-headerwrapper.gif) no-repeat left bottom;
+  }
+  #twocolumn-right #container {
+  	background: #fff url(/web/20120320061132im_/http://devnull.sweetdanger.net/devnull_style/fixed-right-container.gif) repeat-y;
+  }
+  #twocolumn-right #footer {
+  	background: url(/web/20120320061132im_/http://devnull.sweetdanger.net/devnull_style/fixed-right-footer.gif) no-repeat left bottom;
+  }
+
+
+  /* fixed 3 column
+  ----------------------------------------------- */
+  #threecolumn #header .wrapper {
+  	background: url(/web/20120320061132im_/http://devnull.sweetdanger.net/devnull_style/fixed-three-headerwrapper.gif) no-repeat left bottom;
+  }
+  #threecolumn #container {
+  	background: #fff url(/web/20120320061132im_/http://devnull.sweetdanger.net/devnull_style/fixed-three-container.gif) repeat-y;
+  }
+  #threecolumn #footer {
+  	background: url(/web/20120320061132im_/http://devnull.sweetdanger.net/devnull_style/fixed-three-footer.gif) no-repeat left bottom;
+  }
+  #threecolumn #sidebar h3, #threecolumn #sidebar-alternate h3 {
+  	background: url(/web/20120320061132im_/http://devnull.sweetdanger.net/devnull_style/h3-sidebar-border-3col.gif) no-repeat center bottom;
+  }
+
+
+  /* liquid 2 column, right and left
+  ----------------------------------------------- */
+  #twocolumn-liquid-left, #twocolumn-liquid-right {
+  	background: #fff;
+  }
+
+  #twocolumn-liquid-left h1, #twocolumn-liquid-right h1 {
+  	margin: 0;
+  	background: url(/web/20120320061132im_/http://devnull.sweetdanger.net/devnull_style/liquid-header-left.gif) no-repeat left top;
+  }
+  #twocolumn-liquid-left #header, #twocolumn-liquid-right #header {
+  	background: #87815F url(/web/20120320061132im_/http://devnull.sweetdanger.net/devnull_style/liquid-header-bg.gif) repeat-x;
+  }
+  #twocolumn-liquid-left #container #header .wrapper, #twocolumn-liquid-right #container #header .wrapper {
+  	background: url(/web/20120320061132im_/http://devnull.sweetdanger.net/devnull_style/liquid-header-right.gif) no-repeat right top;
+  }
+  #twocolumn-liquid-left #container #header p.description, #twocolumn-liquid-right #container #header p.description {
+  	background: url(/web/20120320061132im_/http://devnull.sweetdanger.net/devnull_style/liquid-header-desc.gif) repeat-y left top;
+  }
+
+
+  #twocolumn-liquid-left #footer, #twocolumn-liquid-right #footer {
+  	background: url(/web/20120320061132im_/http://devnull.sweetdanger.net/devnull_style/liquid-left-footer.gif) no-repeat left bottom;
+  }
+  #twocolumn-liquid-left #container #footer .wrapper, #twocolumn-liquid-right #container #footer .wrapper {
+  	background: url(/web/20120320061132im_/http://devnull.sweetdanger.net/devnull_style/liquid-right-footer.gif) no-repeat right bottom;
+  }
+
+
+  #twocolumn-liquid-left #container, #twocolumn-liquid-right #container {
+  	background: #fff url(/web/20120320061132im_/http://devnull.sweetdanger.net/devnull_style/liquid-left-container.gif) repeat-y;
+  }
+  #twocolumn-liquid-left #container .wrapper, #twocolumn-liquid-right #container .wrapper {
+  	background: url(/web/20120320061132im_/http://devnull.sweetdanger.net/devnull_style/liquid-right-container.gif) repeat-y right top;
+  }
+
+  /** END CUSTOM SKIN **/
+  </style>
+
+  <!-- Hack to avoid flash of unstyled content in IE -->
+  <script> </script>
+</head>
+
+<body id="onecolumn"><!-- BEGIN WAYBACK TOOLBAR INSERT -->
+<script>__wm.rw(0);</script>
+<div id="wm-ipp-base" lang="en" style="display: block; direction: ltr; height: 67px;" toolbar-mode="auto"><template shadowrootmode="closed"><div id="wm-ipp" style="position:fixed;left:0;top:0;right:0;" class="">
+<div id="donato" style="position:relative;width:100%;height:0;">
+  <div id="donato-base">
+    <iframe id="donato-if" src="https://archive.org/includes/donate.php?as_page=1&amp;platform=wb&amp;referer=https%3A//web.archive.org/web/20120320061132/http%3A//devnull.sweetdanger.net/skingradrooftextures.html" scrolling="no" frameborder="0" style="width:100%; height:100%">
+    </iframe>
+  </div>
+</div><div id="wm-ipp-inside">
+  <div id="wm-toolbar" style="position:relative;display:flex;flex-flow:row nowrap;justify-content:space-between;" nav="async">
+    <div id="wm-logo" style="/*width:110px;*/padding-top:12px;">
+      <a href="https://web.archive.org/web/" title="Wayback Machine home page"><img src="https://web-static.archive.org/_static/images/toolbar/wayback-toolbar-logo-200.png" srcset="https://web-static.archive.org/_static/images/toolbar/wayback-toolbar-logo-100.png, https://web-static.archive.org/_static/images/toolbar/wayback-toolbar-logo-150.png 1.5x, https://web-static.archive.org/_static/images/toolbar/wayback-toolbar-logo-200.png 2x" alt="Wayback Machine" style="width:100px" border="0"></a>
+    </div>
+    <div class="c" style="display:flex;flex-flow:column nowrap;justify-content:space-between;flex:1;">
+      <form class="u" style="display:flex;flex-direction:row;flex-wrap:nowrap;" target="_top" method="get" action="https://web.archive.org/web/submit" name="wmtb" id="wmtb"><input type="text" name="url" id="wmtbURL" value="http://devnull.sweetdanger.net/skingradrooftextures.html" onfocus="this.focus();this.select();" style="flex:1;" autocomplete="off"><input type="hidden" name="type" value="replay"><input type="hidden" name="date" value="20120320061132"><input type="submit" value="Go">
+      </form>
+      <div style="display:flex;flex-flow:row nowrap;align-items:flex-end;">
+                <div class="s" id="wm-nav-captures" style="flex:1;"><a class="t" href="https://web.archive.org/web/*/http://devnull.sweetdanger.net/skingradrooftextures.html" title="See a list of every capture for this URL">5 captures</a><div class="r" title="Timespan for captures of this URL">28 Apr 2009 - 25 May 2015</div></div>
+        <div class="k">
+          <a href="https://web.archive.org/web/20031201000000/http://devnull.sweetdanger.net/skingradrooftextures.html" id="wm-graph-anchor">
+            <div id="wm-ipp-sparkline" title="Explore captures for this URL" style="position: relative">
+              <canvas id="wm-sparkline-canvas" width="750" height="27" border="0"></canvas>
+            <div class="yt" style="display: none; width: 25px; height: 27px; left: 175px;"></div><div class="mt" style="display: none; width: 2px; height: 27px; left: 198px;"></div></div>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="n">
+      <table>
+        <tbody>
+          <!-- NEXT/PREV MONTH NAV AND MONTH INDICATOR -->
+          <tr class="m">
+            <td class="b" nowrap="nowrap"><a href="https://web.archive.org/web/20090428193300/http://devnull.sweetdanger.net/skingradrooftextures.html" title="19:33:00 Apr 28, 2009">Apr</a></td>
+            <td class="c" id="displayMonthEl" title="You are here: 06:11:32 Mar 20, 2012">Mar</td>
+            <td class="f" nowrap="nowrap"><a href="https://web.archive.org/web/20120520001841/http://devnull.sweetdanger.net/skingradrooftextures.html" title="00:18:41 May 20, 2012">May</a></td>
+          </tr>
+          <!-- NEXT/PREV CAPTURE NAV AND DAY OF MONTH INDICATOR -->
+          <tr class="d">
+            <td class="b" nowrap="nowrap"><a href="https://web.archive.org/web/20090428193300/http://devnull.sweetdanger.net/skingradrooftextures.html" title="19:33:00 Apr 28, 2009"><span class="ta"></span></a></td>
+            <td class="c" id="displayDayEl" style="width:34px;font-size:22px;white-space:nowrap;" title="You are here: 06:11:32 Mar 20, 2012">20</td>
+            <td class="f" nowrap="nowrap"><a href="https://web.archive.org/web/20120520001841/http://devnull.sweetdanger.net/skingradrooftextures.html" title="00:18:41 May 20, 2012"><span class="ta"></span></a></td>
+          </tr>
+          <!-- NEXT/PREV YEAR NAV AND YEAR INDICATOR -->
+          <tr class="y">
+            <td class="b" nowrap="nowrap"><a href="https://web.archive.org/web/20090428193300/http://devnull.sweetdanger.net/skingradrooftextures.html" title="19:33:00 Apr 28, 2009">2009</a></td>
+            <td class="c" id="displayYearEl" title="You are here: 06:11:32 Mar 20, 2012">2012</td>
+            <td class="f" nowrap="nowrap"><a href="https://web.archive.org/web/20130919165631/http://devnull.sweetdanger.net/skingradrooftextures.html" title="16:56:31 Sep 19, 2013">2013</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="r" style="display:flex;flex-flow:column nowrap;align-items:flex-end;justify-content:space-between;">
+      <div id="wm-btns" style="text-align:right;height:23px;">
+                <span class="xxs">
+          <div id="wm-save-snapshot-success">success</div>
+          <div id="wm-save-snapshot-fail">fail</div>
+          <a id="wm-save-snapshot-open" href="https://web.archive.org/web/20120320061132/http://devnull.sweetdanger.net/skingradrooftextures.html#" title="Share via My Web Archive" style="display: inline-block;">
+            <span class="iconochive-web"></span>
+          </a>
+          <a href="https://archive.org/account/login.php" title="Sign In" id="wm-sign-in" style="display: none;">
+            <span class="iconochive-person"></span>
+          </a>
+          <span id="wm-save-snapshot-in-progress" class="iconochive-web"></span>
+        </span>
+                <a class="xxs" href="https://help.archive.org/help/category/the-wayback-machine/" title="Get some help using the Wayback Machine" style="top:-6px;"><span class="iconochive-question" style="color:rgb(87,186,244);font-size:160%;"></span></a>
+        <a id="wm-tb-close" href="https://web.archive.org/web/20120320061132/http://devnull.sweetdanger.net/skingradrooftextures.html#close" style="top:-2px;" title="Close the toolbar"><span class="iconochive-remove-circle" style="color:#888888;font-size:240%;"></span></a>
+      </div>
+      <div id="wm-share" class="xxs">
+        <a href="https://web.archive.org/web/20120320061132/http://web.archive.org/screenshot/http://devnull.sweetdanger.net/skingradrooftextures.html" id="wm-screenshot" title="screenshot" style="visibility: hidden;">
+          <span class="wm-icon-screen-shot"></span>
+        </a>
+        <a href="https://web.archive.org/web/20120320061132/http://devnull.sweetdanger.net/skingradrooftextures.html#" id="wm-video" title="video">
+          <span class="iconochive-movies"></span>
+        </a>
+        <a id="wm-share-facebook" href="https://web.archive.org/web/20120320061132/http://devnull.sweetdanger.net/skingradrooftextures.html#" data-url="https://web.archive.org/web/20120320061132/http://devnull.sweetdanger.net:80/skingradrooftextures.html" title="Share on Facebook" style="margin-right:5px;" target="_blank"><span class="iconochive-facebook" style="color:#3b5998;font-size:160%;"></span></a>
+        <a id="wm-share-twitter" href="https://web.archive.org/web/20120320061132/http://devnull.sweetdanger.net/skingradrooftextures.html#" data-url="https://web.archive.org/web/20120320061132/http://devnull.sweetdanger.net:80/skingradrooftextures.html" title="Share on Twitter" style="margin-right:5px;" target="_blank"><span class="iconochive-twitter" style="color:#1dcaff;font-size:160%;"></span></a>
+      </div>
+      <div style="padding-right:2px;text-align:right;white-space:nowrap;">
+        <a id="wm-expand" class="wm-btn wm-closed" href="https://web.archive.org/web/20120320061132/http://devnull.sweetdanger.net/skingradrooftextures.html#expand"><span id="wm-expand-icon" class="iconochive-down-solid"></span> <span class="xxs" style="font-size:80%;">About this capture</span></a>
+      </div>
+    </div>
+  </div>
+    <div id="wm-capinfo" style="border-top:1px solid #777;display:none; overflow: hidden">
+        <div id="wm-capinfo-notice" source="api"></div>
+                <div id="wm-capinfo-collected-by">
+    <div style="background-color:#666;color:#fff;font-weight:bold;text-align:center;padding:2px 0;">COLLECTED BY</div>
+    <div style="padding:3px;position:relative" id="wm-collected-by-content">
+            <div style="display:inline-block;vertical-align:top;width:50%;">
+			<span class="c-logo" style="background-image:url(https://archive.org/services/img/alexacrawls);"></span>
+		Organization: <a style="color:#33f;" href="https://archive.org/details/alexacrawls" target="_new"><span class="wm-title">Alexa Crawls</span></a>
+		<div style="max-height:75px;overflow:hidden;position:relative;">
+	  <div style="position:absolute;top:0;left:0;width:100%;height:75px;background:linear-gradient(to bottom,rgba(255,255,255,0) 0%,rgba(255,255,255,0) 90%,rgba(255,255,255,255) 100%);"></div>
+	  Starting in 1996, <a href="http://www.alexa.com/">Alexa Internet</a> has been donating their crawl data to the Internet Archive.  Flowing in every day, these data are added to the <a href="http://web.archive.org/">Wayback Machine</a> after an embargo period.
+	</div>
+	      </div>
+      <div style="display:inline-block;vertical-align:top;width:49%;">
+			<span class="c-logo" style="background-image:url(https://archive.org/services/img/alexacrawls)"></span>
+		<div>Collection: <a style="color:#33f;" href="https://archive.org/details/alexacrawls" target="_new"><span class="wm-title">Alexa Crawls</span></a></div>
+		<div style="max-height:75px;overflow:hidden;position:relative;">
+	  <div style="position:absolute;top:0;left:0;width:100%;height:75px;background:linear-gradient(to bottom,rgba(255,255,255,0) 0%,rgba(255,255,255,0) 90%,rgba(255,255,255,255) 100%);"></div>
+	  Starting in 1996, <a href="http://www.alexa.com/">Alexa Internet</a> has been donating their crawl data to the Internet Archive.  Flowing in every day, these data are added to the <a href="http://web.archive.org/">Wayback Machine</a> after an embargo period.
+	</div>
+	      </div>
+    </div>
+    </div>
+    <div id="wm-capinfo-timestamps">
+    <div style="background-color:#666;color:#fff;font-weight:bold;text-align:center;padding:2px 0;" title="Timestamps for the elements of this page">TIMESTAMPS</div>
+    <div>
+      <div id="wm-capresources" style="margin:0 5px 5px 5px;max-height:250px;overflow-y:scroll !important"></div>
+      <div id="wm-capresources-loading" style="text-align:left;margin:0 20px 5px 5px;display:none"><img src="https://web-static.archive.org/_static/images/loading.gif" alt="loading"></div>
+    </div>
+    </div>
+  </div></div></div><link rel="stylesheet" type="text/css" href="./devnull.devakm - Skingrad Roof Textures_files/banner-styles.css"><link rel="stylesheet" type="text/css" href="./devnull.devakm - Skingrad Roof Textures_files/iconochive.css"><div class="wb-autocomplete-suggestions "></div></template>
+</div><div id="wm-ipp-print">The Wayback Machine - https://web.archive.org/web/20120320061132/http://devnull.sweetdanger.net:80/skingradrooftextures.html</div>
+<script type="text/javascript">//<![CDATA[
+__wm.bt(750,27,25,2,"web","http://devnull.sweetdanger.net/skingradrooftextures.html","20120320061132",1996,"https://web-static.archive.org/_static/",["https://web-static.archive.org/_static/css/banner-styles.css?v=1utQkbB3","https://web-static.archive.org/_static/css/iconochive.css?v=3PDvdIFv"], false);
+  __wm.rw(1);
+//]]></script>
+<!-- END WAYBACK TOOLBAR INSERT -->
+ 
+  <div id="container">
+    <div class="wrapper">
+      <div id="header">
+        <div class="wrapper">
+          <h1 id="page-title"><div id="g_title">Skingrad Roof Textures</div></h1>
+          <div style="clear: both;"></div>
+          <p class="description"></p><div id="g_description"><p>Unofficial Add-On for Qarl's Texture Pack 2<br></p></div><p></p>
+          <div style="clear: both"></div>
+        </div>
+      </div>
+      <!-- /editable --><!-- /wrapper --><!-- /header -->
+      <div id="main-content">
+        
+        <div class="wrapper">
+          <div class="content-item "><div id="g_body"><p> <a style="clear: right; margin-bottom: 1em; float: right; margin-left: 1em;" href="https://web.archive.org/web/20120320061132/http://i28.photobucket.com/albums/c209/dev_akm/oblivion/rooftex/domrose_06_after.jpg" target="_blank"><img style="" src="./devnull.devakm - Skingrad Roof Textures_files/th_domrose_06_after.jpg" alt="" border="0" height="120" width="160"></a><font size="1">A Mod for Elder Scrolls IV: Oblivion</font><br><font size="4"></font><i>by dev_akm</i><br></p> 
+
+<p><font size="4">SUMMARY</font><br>This is a small texture replacement mod that acts as an unofficial add-on for <a href="https://web.archive.org/web/20120320061132/http://qarl.rpgmods2.com/Qindex.html" target="_blank">Qarl's Texture Pack 2</a>. It replaces the two very blurry 256x256 Bethesda textures (and normal maps) for rusty metal roofs in Skingrad that Qarl did not replace in his outstanding mod. The new roof textures are 1024x1024 and match Qarl's rusty metal trim texture.</p> 
+
+<p>This mod was inspired by Qarl's Texture Pack 2 and Centurion's <a href="https://web.archive.org/web/20120320061132/http://planetelderscrolls.gamespy.com/View.php?view=OblivionMods.Detail&amp;id=920" target="_blank">Castle Domrose</a>, which is an excellent home for a high-level character (although I had to remove the greeting script from the seller after I bought the place because he kept forcing me into conversations with him). This mod also works really well with Centurion's <a href="https://web.archive.org/web/20120320061132/http://planetelderscrolls.gamespy.com/View.php?view=OblivionMods.Detail&amp;id=1726">Castle Dunkerlore</a>, since that castle mod also uses the Skingrad objects.<br></p> 
+
+<p><font size="4">DESCRIPTION</font><br>Qarl's Skingrad Castle textures make Castle Domrose look simply amazing. However, the blurry stock Bethesda roof textures compared to the rest of Qarl's high-quality textures create a very prominent eyesore when standing on Castle Domrose's fancy balcony and in other places around the castle.&nbsp; <br><br>Here's the view from Castle Domrose's balcony showing the blurry stock Bethesda roof textures shockingly juxtaposed with Qarl's awesome new high-res textures:<br><a href="https://web.archive.org/web/20120320061132/http://i28.photobucket.com/albums/c209/dev_akm/oblivion/rooftex/domrose_02_before.jpg" target="_blank"><img src="./devnull.devakm - Skingrad Roof Textures_files/th_domrose_02_before.jpg" alt="" border="0" height="120" width="160"></a><br><br>So, rather than complain about it, I decided to correct the situation! I started with Bethesda's textures, bumped up the resolution from 256x256 to 1024x1024 and then blended in Qarl's rusty metal trim texture so the new roof textures would both retain Bethesda's original design and still match Qarl's roof trim texture.<br><br>Here are some comparison shots (these are of course all taken with Qarl's Texture Pack 2 installed):<br></p> 
+<table style="font-family: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; font-size: inherit; line-height: inherit; font-size-adjust: inherit; color: inherit;"><tbody><tr><td style="font-family: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; font-size: inherit; line-height: inherit; font-size-adjust: inherit; color: inherit;" valign="top"><a href="https://web.archive.org/web/20120320061132/http://i28.photobucket.com/albums/c209/dev_akm/oblivion/rooftex/skingrad_00_before.jpg" target="_blank"><img src="./devnull.devakm - Skingrad Roof Textures_files/th_skingrad_00_before.jpg" alt="" border="0" height="120" width="160"></a><br><b>Skingrad before</b></td><td style="font-family: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; font-size: inherit; line-height: inherit; font-size-adjust: inherit; color: inherit;" valign="top"><a href="https://web.archive.org/web/20120320061132/http://i28.photobucket.com/albums/c209/dev_akm/oblivion/rooftex/skingrad_00_after.jpg" target="_blank"><img src="./devnull.devakm - Skingrad Roof Textures_files/th_skingrad_00_after.jpg" alt="" border="0" height="120" width="160"></a><br><b>Skingrad after</b></td></tr><tr><td style="font-family: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; font-size: inherit; line-height: inherit; font-size-adjust: inherit; color: inherit;" valign="top"><a href="https://web.archive.org/web/20120320061132/http://i28.photobucket.com/albums/c209/dev_akm/oblivion/rooftex/domrose_06_before.jpg" target="_blank"><img src="./devnull.devakm - Skingrad Roof Textures_files/th_domrose_06_before.jpg" alt="" border="0" height="120" width="160"></a><br><b>Domrose before</b></td><td style="font-family: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; font-size: inherit; line-height: inherit; font-size-adjust: inherit; color: inherit;" valign="top"><a href="https://web.archive.org/web/20120320061132/http://i28.photobucket.com/albums/c209/dev_akm/oblivion/rooftex/domrose_06_after.jpg" target="_blank"><img style="" src="./devnull.devakm - Skingrad Roof Textures_files/th_domrose_06_after.jpg" alt="" border="0" height="120" width="160"></a><br><b>Domrose after</b></td></tr><tr><td style="font-family: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; font-size: inherit; line-height: inherit; font-size-adjust: inherit; color: inherit;" valign="top"><a href="https://web.archive.org/web/20120320061132/http://i28.photobucket.com/albums/c209/dev_akm/oblivion/rooftex/domrose_05_before.jpg" target="_blank"><img src="./devnull.devakm - Skingrad Roof Textures_files/th_domrose_05_before.jpg" alt="" border="0" height="120" width="160"></a><br><b>Domrose before</b></td><td style="font-family: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; font-size: inherit; line-height: inherit; font-size-adjust: inherit; color: inherit;" valign="top"><a href="https://web.archive.org/web/20120320061132/http://i28.photobucket.com/albums/c209/dev_akm/oblivion/rooftex/domrose_05_after.jpg" target="_blank"><img src="./devnull.devakm - Skingrad Roof Textures_files/th_domrose_05_after.jpg" alt="" border="0" height="120" width="160"></a><br><b>Domrose after</b></td></tr><tr><td style="font-family: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; font-size: inherit; line-height: inherit; font-size-adjust: inherit; color: inherit;" valign="top"><a href="https://web.archive.org/web/20120320061132/http://i28.photobucket.com/albums/c209/dev_akm/oblivion/rooftex/domrose_04_before.jpg" target="_blank"><img src="./devnull.devakm - Skingrad Roof Textures_files/th_domrose_04_before.jpg" alt="" border="0" height="120" width="160"></a><br><b>Domrose before</b></td><td style="font-family: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; font-size: inherit; line-height: inherit; font-size-adjust: inherit; color: inherit;" valign="top"><a href="https://web.archive.org/web/20120320061132/http://i28.photobucket.com/albums/c209/dev_akm/oblivion/rooftex/domrose_04_after.jpg" target="_blank"><img src="./devnull.devakm - Skingrad Roof Textures_files/th_domrose_04_after.jpg" alt="" border="0" height="120" width="160"></a><br><b>Domrose after</b></td></tr><tr><td style="font-family: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; font-size: inherit; line-height: inherit; font-size-adjust: inherit; color: inherit;" valign="top"><a href="https://web.archive.org/web/20120320061132/http://i28.photobucket.com/albums/c209/dev_akm/oblivion/rooftex/domrose_03_before.jpg" target="_blank"><img src="./devnull.devakm - Skingrad Roof Textures_files/th_domrose_03_before.jpg" alt="" border="0" height="120" width="160"></a><br><b>Domrose before</b></td><td style="font-family: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; font-size: inherit; line-height: inherit; font-size-adjust: inherit; color: inherit;" valign="top"><a href="https://web.archive.org/web/20120320061132/http://i28.photobucket.com/albums/c209/dev_akm/oblivion/rooftex/domrose_03_after.jpg" target="_blank"><img src="./devnull.devakm - Skingrad Roof Textures_files/th_domrose_03_after.jpg" alt="" border="0" height="120" width="160"></a><br><b>Domrose after</b></td></tr><tr><td style="font-family: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; font-size: inherit; line-height: inherit; font-size-adjust: inherit; color: inherit;" valign="top"><a href="https://web.archive.org/web/20120320061132/http://i28.photobucket.com/albums/c209/dev_akm/oblivion/rooftex/domrose_02_before.jpg" target="_blank"><img src="./devnull.devakm - Skingrad Roof Textures_files/th_domrose_02_before.jpg" alt="" border="0" height="120" width="160"></a><br><b>Domrose before</b></td><td style="font-family: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; font-size: inherit; line-height: inherit; font-size-adjust: inherit; color: inherit;" valign="top"><a href="https://web.archive.org/web/20120320061132/http://i28.photobucket.com/albums/c209/dev_akm/oblivion/rooftex/domrose_02_after.jpg" target="_blank"><img src="./devnull.devakm - Skingrad Roof Textures_files/th_domrose_02_after.jpg" alt="" border="0" height="120" width="160"></a><br><b>Domrose after</b></td></tr><tr><td style="font-family: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; font-size: inherit; line-height: inherit; font-size-adjust: inherit; color: inherit;" valign="top"><a href="https://web.archive.org/web/20120320061132/http://i28.photobucket.com/albums/c209/dev_akm/oblivion/rooftex/domrose_01_before.jpg" target="_blank"><img src="./devnull.devakm - Skingrad Roof Textures_files/th_domrose_01_before.jpg" alt="" border="0" height="120" width="160"></a><br><b>Domrose before</b></td><td style="font-family: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; font-size: inherit; line-height: inherit; font-size-adjust: inherit; color: inherit;" valign="top"><a href="https://web.archive.org/web/20120320061132/http://i28.photobucket.com/albums/c209/dev_akm/oblivion/rooftex/domrose_01_after.jpg" target="_blank"><img src="./devnull.devakm - Skingrad Roof Textures_files/th_domrose_01_after.jpg" alt="" border="0" height="120" width="160"></a><br><b>Domrose after</b></td></tr></tbody></table> 
+<p style="text-align: left; clear: both;" class="separator"><br><font size="4">INSTALLATION</font><br>As with Qarl's Texture Pack 2, you must read the included README and follow the instructions exactly or you'll almost certainly have problems. If you're not willing to use the BSA-alteration method of invalidation, then you probably shouldn't use this add-on. <br><br>Also, just like Qarl's mod, you'll need a good video card (256Mb or greater) to take advantage of this mod, and even then your FPS may be affected. These are big textures.<br><br> If Qarl's Texture Pack 2 is slowing your system down too much, you may also want to install my <a href="https://web.archive.org/web/20120320061132/http://devnull.sweetdanger.net/qarlnormalmapsreduced.html">Qarl Normal Maps Reduced</a>. To get the full benefit of improved performance along with <a href="https://web.archive.org/web/20120320061132/http://www.tessource.net/files/file.php?id=6996">Better Tiling Landscape Textures for Qarl</a>, you should also install my <a href="https://web.archive.org/web/20120320061132/http://devnull.sweetdanger.net/BTSRNormalMapsReduced.7z">BTSR Normal Maps Reduced</a>. The full install sequence should be:&nbsp;<br><br>1) <a href="https://web.archive.org/web/20120320061132/http://www.elricm.com/nuke/html/modules.php?op=modload&amp;name=Downloads&amp;file=index&amp;req=getit&amp;lid=2906"> Qarl's Texture Pack 2</a>&nbsp;<br>2) <a href="https://web.archive.org/web/20120320061132/http://www.tessource.net/files/file.php?id=5134">Skingrad Roof Textures</a><br>3) <a href="https://web.archive.org/web/20120320061132/http://www.tessource.net/files/file.php?id=6996">Better Tiling Textures</a>&nbsp;<br>4) <a href="https://web.archive.org/web/20120320061132/http://devnull.sweetdanger.net/qarlnormalmapsreduced.html">Qarl's Normal Maps Reduced</a>&nbsp;<br>5) <a href="https://web.archive.org/web/20120320061132/http://www.tessource.net/files/file.php?id=7050">BTSR Normal Maps Reduced</a><br><font size="4">&nbsp;</font></p> 
+<p style="text-align: left; clear: both;" class="separator"><font size="4">CREDITS</font><br>Bethesda for an awesome game and Qarl for his incredible Texture Pack 2. I used both Qarl's rusty metal texture and Bethesda's roof textures to create the final result.<br><br><font size="4">DOWNLOAD MIRROR SITES</font>&nbsp;<br><b><a href="https://web.archive.org/web/20120320061132/http://devnull.sweetdanger.net/SkingradRoofTexturesforQarl.7z">Download 7-zip from Googlepages</a>&nbsp;</b></p><p style="text-align: left; clear: both;" class="separator"><b></b><b><a href="https://web.archive.org/web/20120320061132/http://devnull.sweetdanger.net/SkingradRoofTextures1.0.omod">Download OMOD from Googlepages</a> </b><b><br></b></p> 
+<p style="text-align: left; clear: both;" class="separator"><b><a href="https://web.archive.org/web/20120320061132/http://www.tessource.net/files/file.php?id=5134" target="_blank">Download 7-zip from TESSOURCE</a>&nbsp;</b></p> 
+<p style="text-align: left; clear: both;" class="separator"><b><a href="https://web.archive.org/web/20120320061132/http://planetelderscrolls.gamespy.com/View.php?view=OblivionMods.Detail&amp;id=1871">Download 7-zip from PlanetElderScrolls</a></b></p><p style="text-align: left; clear: both;" class="separator"><b><a href="https://web.archive.org/web/20120320061132/http://www.pseudoworld.co.uk/Oblivion/Skingrad%20Roof%20Textures_%20Unofficial%20AddOn%20for%20Qarls%20Texture%20Pack%202.7z">Download 7-zip from pseudoworld.co.uk</a></b><b>&nbsp;</b></p><p style="text-align: left; clear: both;" class="separator"><b><a href="https://web.archive.org/web/20120320061132/http://www.pseudoworld.co.uk/Oblivion/Skingrad%20Roof%20Textures%201.0.omod">Download OMOD from pseudoworld.co.uk</a></b><b> </b><b></b></p> 
+
+<p><br></p> 
+</div></div>
+          <div style="clear: both"></div>
+        </div>
+      </div>
+      <!-- /wrapper --><!-- /main-content -->
+      <div id="footer"><div class="wrapper">
+        <hr>
+        <p></p><div id="g_footer"><p><a href="https://web.archive.org/web/20120320061132/http://devnull.sweetdanger.net/home.html">Home</a> | <a href="https://web.archive.org/web/20120320061132/http://devnull.sweetdanger.net/obliviontextureoverhaul.html">TOTO Main</a> | <a href="https://web.archive.org/web/20120320061132/http://devnull.sweetdanger.net/quests.html">The Oblivion Quest List</a> | Copyright 2006 by dev_akm. Individual works copyright by their respective creators.&nbsp;</p></div><p></p>
+        <div style="clear: both"></div>
+      </div></div>
+      <!-- /wrapper --><!-- /footer -->
+    </div>
+  </div>
+<!-- /wrapper --><!-- /container -->
+
+<div id="extraDiv1"><span></span></div><div id="extraDiv2"><span></span></div>
+<div id="extraDiv3"><span></span></div><div id="extraDiv4"><span></span></div>
+<div id="extraDiv5"><span></span></div><div id="extraDiv6"><span></span></div>
+
+
+
+
+</body></html>
