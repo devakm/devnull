@@ -68,12 +68,29 @@ docs/
 
 ## Navigation Patterns
 
-### FCOM Footer Navigation
-All FCOM-related pages should include the standardized footer navigation:
+### Standard Footer Navigation
+Most pages should include this standardized footer navigation:
 ```html
 <div class="footer">
     <p>
         <a href="index.html">Home</a> |
+        <a href="devakm-mods.html">Dev/Null Mods</a> |
+        <a href="Oblivion-Texture-Overhaul.html">TOTO Main</a> |
+        <a href="Quests.html">The Oblivion Quest List</a>
+    </p>
+    <p>Copyright 2006, 2007, 2008, 2009, 2015, 2025 by devakm. Individual works copyright by their respective creators.</p>
+</div>
+```
+
+This navigation appears on: General documentation pages, texture guides, quest mod pages, and standalone mod pages.
+
+### FCOM Footer Navigation
+FCOM-related pages should include the extended FCOM footer navigation:
+```html
+<div class="footer">
+    <p>
+        <a href="index.html">Home</a> |
+        <a href="devakm-mods.html">Dev/Null Mods</a> |  
         <a href="FCOM_Convergence.html">Main</a> |
         <a href="FCOM_Convergence_Guide.html">Guide</a> |
         <a href="FCOM_LoadOrder.html">Load-Order</a> |

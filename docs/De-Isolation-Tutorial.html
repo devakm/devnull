@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -100,7 +101,8 @@
             border-bottom-color: var(--accent-blue);
         }
 
-        ul, ol {
+        ul,
+        ol {
             margin: 10px 0 15px 0;
             padding-left: 40px;
         }
@@ -140,15 +142,18 @@
             font-weight: bold;
         }
 
-        em, i {
+        em,
+        i {
             color: var(--accent-cyan);
         }
 
-        strong, b {
+        strong,
+        b {
             color: var(--accent-gold);
         }
 
-        code, kbd {
+        code,
+        kbd {
             color: var(--accent-red);
             font-size: 1.25em;
         }
@@ -183,6 +188,7 @@
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <header>
@@ -196,7 +202,7 @@
         </nav>
 
         <p><b><i>by devakm</i></b></p>
-        
+
         <p><i>An expanded version of this article can be found here: <a href="https://cs.elderscrolls.com/constwiki/index.php/De-Isolation_Tutorial" target="_blank">CS Wiki De-Isolation Tutorial</a>.</i></p>
 
         <div class="toc">
@@ -222,23 +228,23 @@
         </div>
 
         <h2 id="introduction">Introduction</h2>
-        
+
         <p>Normally, when people make changes to a plugin, they just open it up in the CS, make their changes and save.</p>
-        
+
         <p>But this isn't always a good idea. Consider these scenarios:</p>
-        
+
         <ul>
             <li>What if you have one large mod and want to offer several optional tweaks to various aspects of the main mod? Maybe it isn't a problem to have several versions on the first release, but how quickly are you going to get tired of repeating this process each time you update the main mod? Maybe you actually need the optional tweaks to be kept in separate add-on files?</li>
             <li>What if you want to make tweaks to someone else's mod and you want to avoid having your changes wiped out by the next release of that plugin?</li>
             <li>What if you want to use or alter something from one of the official DLC mods? Distributing your altered version of an official plugin isn't a great idea, creating a binary patch (binpatch) for it is very cumbersome and prone to errors, and it's very likely that someone else may have the same idea (rendering your mods mutually exclusive).</li>
         </ul>
-        
+
         <p>Mods based on Oblivion.esm don't have this problem because it's a <b>master</b> file (ESM). Multiple add-on plugins (ESPs) can alter it at the same time without any problems. Unfortunately, TESCS doesn't let you use plugins as masters, even though the game engine actually doesn't mind at all.</p>
 
         <h2 id="tools">Tools</h2>
-        
+
         <p>Here's a list of tools that can help. You'll need at least one or more of these tools to use any of the techniques described in this article.</p>
-        
+
         <ul>
             <li><a href="https://cs.elderscrolls.com/constwiki/index.php/TES4Gecko" target="_blank">TES4Gecko</a></li>
             <li><a href="https://cs.elderscrolls.com/constwiki/index.php/Wrye_Bash" target="_blank">Wrye Bash</a></li>
@@ -248,60 +254,60 @@
         </ul>
 
         <h2 id="mastering-patching">Mastering and Patching</h2>
-        
+
         <p>Many beginning mod creators get frustrated with TESCS because it seems to let you select Oblivion.esm and one or more ESPs in addition to your "active" file. The content from those ESPs will appear to be usable, but it's not. When you save your new plugin, TESCS will refuse to remember that your plugin was built on top of those other ESP files. If you then reload your newly created plugin, TESCS will be unable to find the internal references to connect it back to the ESPs you had loaded before, so you'll likely get lots of error messages and things generally won't work as desired.</p>
-        
+
         <p>This behavior is known as <b>Mod Isolation</b>.</p>
-        
+
         <p>Fortunately, there are several good strategies for how to get around this limitation. All such solutions involve either making your own actual master(s) or tricking the game into thinking you've got your own master(s). The latter technique is known as Mod De-Isolation.</p>
-        
+
         <ul>
             <li><b>ESM Mastering</b>. You can make the base (or "source") mod(s) into a master by converting it to an ESM. Both TES4Gecko and Wrye Bash provide functions to let you convert an ESP into an ESM. It works great for lots of things, especially new content that's not directly connected to the Tamriel worldspace.<br><br>However, masters generally should not modify other masters -- only plugins are supposed to modify masters. When one master directly modifies another master, problems can result, such as vanishing landscape. If you try to use TESCS to make a mod based on a master that modifies another master (especially worldspace changes), then you will very likely crash TESCS or encounter a bunch of "assertion errors" when you try to save your changes, leaving you with a plugin containing corrupt cell records.</li>
             <li><b>ESP Mastering</b>. You can trick TESCS into letting you work with plugins as if they were masters. This can be done using a fairly easy bit-flipping method in Wrye Bash or a more cumbersome bait-and-switch method (also using Wrye Bash). It works by temporarily turning an ESP into an ESM so TESCS will let you to establish dependencies on it. Once again, however, these solutions can be problematic when working with plugins that include cell changes, such as the official DLC plugins, usually resulting in a crash or "assertion errors" when you try to save your changes, leaving you with a plugin containing corrupt cell records.</li>
             <li><b>ESP Patching</b>. This involves using TES4Edit to directly create an add-on "patch" plugin or using TES4Gecko to create a patch file based on the differences between the original and your changes. This works best when you're not adding any new content to the source originals (i.e., you're just altering values in existing records, such as giving all mudcrabs more health or making certain weapons do more damage).</li>
         </ul>
-        
+
         <p>Each of these methods is explained in greater detail below.</p>
 
         <h2 id="esm-mastering">ESM Mastering</h2>
-        
+
         <p>Many large mods use ESM Mastering to get around the limitations of standard plugins. However, creating your own master files can be tricky in some cases, so it's not generally recommended unless you have a strong need to do so.</p>
-        
+
         <p>Even though master files are generally supposed to only contain new content, this rule can sometimes be ignored if you really have a need to do so. Master files can in fact both use and modify content from other masters, such as Oblivion.esm, as long as they don't alter any cells (especially exterior cells) in another master.</p>
-        
+
         <p>If your mod adds a lot of new content but doesn't alter any standard Oblivion.esm cells, then it can probably be turned into a master. This makes it easy to then offer add-on option modules to extend or tweak your base master. However, you should be careful about such decisions since master files don't have the same load-order flexibility as normal plugins (masters always load before plugins).</p>
-        
+
         <p>If your mod adds a lot of new content and needs to alter cells in another master, then you probably need both an ESM (for the new content) and an ESP (to connect your ESM to Oblivion.esm). For example, if you create a new worldspace and place it in a master file, then you should use a separate plugin to connect your mastered worldspace to Tamriel. The <i>Split Plugin</i> feature in TES4Gecko can help in situations like this (see ESP Mastering, below, for more details).</p>
-        
+
         <p>The process for creating a master file is simple using either Wrye Bash or TES4Gecko:</p>
-        
+
         <ul>
             <li>In Wrye Bash, go to the Mods tab, right-click on the plugin you want to convert, and select <i>Copy to Esm</i>.</li>
             <li>In TES4Gecko, click the <i>Convert to Master</i> button, select the plugin you want to convert, and click <i>Open</i>.</li>
         </ul>
-        
+
         <p>Either of these methods will give you a new file named MyPlugin.esm (assuming the original was MyPlugin.esp).</p>
-        
+
         <p>Now you can launch TESCS, select your new master, and start creating plugins based on it.</p>
-        
+
         <p>This is by far the easiest solution, but it's not always feasible, in which case you may need to use one of the additional methods described below.</p>
 
         <h2 id="esp-mastering">ESP Mastering</h2>
-        
+
         <p>In many cases, you may not have the option to distribute your own master file. This is especially true if you don't have control over the original plugin, as with the official DLC mods. In a case like this, ESP Mastering or ESP Patching can be used instead of ESM Mastering. Once you head down this road, you may want to consider whether ESP Mastering or ESP Patching is a better solution.</p>
-        
+
         <p>ESP Mastering is usually the best choice when you want to add a significant amount of new content to an existing plugin without storing your changes in the original file. On the other hand, ESP Patching is usually preferred when you mainly want to tweak existing content in the original.</p>
-        
+
         <p>For example, if you wanted to add new enemies and dungeon levels to the Knights of the Nine DLC mod, then ESP Mastering is the way to go because you're adding a bunch of new content. If you just want to alter the existing enemies and dungeon levels in KotN, then ESP Patching is probably a better solution.</p>
 
         <h3 id="esmify-method">Esmify (bit-flip) Method</h3>
-        
+
         <p>See <a href="https://cs.elderscrolls.com/constwiki/index.php/De-Isolation_Tutorial#Esmify_.28bit-flip.29_Method_.28Wrye_Bash.29" target="_blank">Esmify</a> for a full description.</p>
 
         <h3 id="bait-switch-method">Bait-and-Switch Method</h3>
-        
+
         <p>This solution is a bit more cumbersome than the bit-flip method. It uses SomePlugin.esm (note the ESM extension) while you're making changes as the "bait" (so TESCS will consider it a master) and then swaps it with SomePlugin.esp when you're done (the "switch").</p>
-        
+
         <ul>
             <li>Convert SomePlugin.esp to SomePlugin.esm with TES4Gecko or Wrye Bash (see ESM Mastering, above, for details).</li>
             <li>Load SomePlugin.esm in TESCS.</li>
@@ -312,23 +318,23 @@
             <li>Click on the entry for SomePlugin.esm twice so it gives you an edit box.</li>
             <li>Change the "m" to "p", so it now says ".esp" instead of ".esm".</li>
         </ul>
-        
+
         <p>The advantage to this method over the bit-flip method is that you have some way to deal with assertion errors if you get any. If you're trying to modify Knights of the Nine, DLCHorseArmor and other mods that alter vanilla cells, and if your MyTweaks.esp also contains any cells in it, they will likely get corrupted with assertion errors in TESCS when you save changes. All the other data will be good, though.</p>
-        
+
         <p>If you get stuck with this problem, the workaround is a bit involved. You have to first make a split master in TES4Gecko so you now have a clean master that doesn't alter any vanilla cells. The Split Plugin feature in TES4Gecko separates the original plugin into new records, which get saved in the ESM, and change records, which get saved in the ESP. This means you'll have a SomePlugin.esm/SomePlugin.esp pair that work together, each containing different things. Now you can build any cell changes/additions based on the split master (SomePlugin.esm) and keep your changes safe with the good cell data in it. You may want to save your work in an easily identifiable file, such as MyTweakedCells.esp.</p>
-        
+
         <p>Now you can go back and use the bait-and-switch method or the bitflip method to make all your other changes on the unsplit original, knowing that the result will end up with corrupted cells in it. Once you've got this version done, you can chop out the bad cells with TESsnip or a hex editor, change the file extension to .esu, and apply it as a TES4Gecko patch to the version with good cell data.</p>
-        
+
         <p><a href="https://cs.elderscrolls.com/constwiki/index.php/The_Elder_Scrolls_Construction_Set" target="_blank">TESCS 1.2</a> seems to be a bit less forgiving about worldspace changes and may crash rather than letting you save a file with corrupted cell data as suggested here. If you run into this problem, you may be able to get around it using TESCS 1.0.</p>
 
         <h2 id="esp-patching">ESP Patching</h2>
-        
+
         <p>This works best when you're only changing existing records in another plugin. For example, if you want to alter the armored horses from DLCHorseArmor, this is the easiest way to do it.</p>
 
         <h3 id="tes4edit-patch">Making an ESP Patch With TES4Edit</h3>
-        
+
         <p>In the following example, we'll use SomePlugin.esp as the original mod and MyTweaks.esp to contain the de-isolated changes, also known as "overrides".</p>
-        
+
         <ul>
             <li>When you launch TES4Edit, it will popup a window showing your complete plugin load-order list. You can load everything, but this may be more than you really need. If you right-click anywhere in the list, you'll get an option to select none, which unchecks everything. Now you can just pick the plugin you want to alter.</li>
             <li>Select SomePlugin.esp and click OK when you're ready.</li>
@@ -342,48 +348,51 @@
             <li>Click on any of the field values in the MyTweaks.esp column and make whatever changes you want. You can also drag and drop values from other records of the same type.</li>
             <li>When you're done, use Ctrl-S to save your changes.</li>
         </ul>
-        
+
         <p>If you later want to add more changes into the same MyTweaks.esp file, you can easily repeat the above process and pick your existing MyTweaks.esp as the target for <i>Copy as override into...</i> rather than <i>new file</i>. If any additional masters need to be added (for example, if you want to also include changes for SomeOtherPlugin.esp), then TES4Edit will automatically do this for you.</p>
-        
+
         <p>When you play, you'll of course want to put MyTweaks.esp after SomePlugin.esp in the load order, but that's really all there is to doing it.</p>
 
         <h3 id="gecko-patch">Making an ESP Patch With TES4Gecko and Wrye Bash</h3>
-        
+
         <p>You can also create an ESP Patch using TES4Gecko and Wrye Bash.</p>
-        
+
         <p>This is a simple example based on the 1.31 version of Oscuro's Oblivion Overhaul. It describes a scenario where it makes a lot of sense to take advantage of mod "de-isolation" to preserve your changes in a separate plugin.</p>
-        
+
         <p>Consider this question:</p>
-        
+
         <p><i>I'm thinking of changing Oscuro's Oblivion Overhaul to add the War Scythes (which were left out at the last minute before the release of OOO 1.3) to some of the leveled lists, but I also know that a new version of OOO is coming out soon. Is there any conceivable way to have the changes transfer over to the new OOO (1.32) when it gets released? Some creative way of merging the old and the new or something? I don't really want to go and take the time to make the changes if I'll just end up having to do them again when the new one comes out.</i></p>
-        
+
         <p>Yes, there is a way. It's called de-isolation. This will keep your changes in a separate plugin so it won't be lost when the next version of OOO comes out. However, these instructions are fairly specific to OOO 1.31, which used one large ESP file. Since OOO 1.32 or later versions use a split ESM/ESP structure, an additional step to re-merge these files is necessary, creating a "merged master". To do this, you can use TES4Gecko's Merge to Master function to temporarily put everything back into a single file so you can work with it in the TESCS.</p>
-        
+
         <p>Start by making a copy of OOO, called something like OOO_scythes.esp. If you're working with the OOO 1.32 merged master (as described above), then you must use Wrye Bash <i>Copy to esp</i> command to do this. As long as you're just altering things that already exist in OOO, make all your changes in OOO_scythes.esp using TESCS. If you need to add anything new to it, then hold back on making those changes until later in the process.</p>
-        
+
         <p>Once you have the changes done, make a backup copy of your changed plugin just in case something goes wrong, then use TES4Gecko to <i>Create Patch</i> using Oscuro's_Oblivion_Overhaul.esp as the original and OOO_scythes.esp as the patch. This will create a new TES4Gecko patch file called OOO_scythes.esu. Now you can simply change the .esu extension to .esp and you're ready to move on to the next step.</p>
-        
+
         <p>Alternately, you can use <i>Display/Copy Plugin Records</i> or <i>Compare Plugins</i> in TES4Gecko to Ignore everything except the changed entries. You can quickly Ignore large blocks of stuff by simply doing group-level ignores on record groups you know you don't need. When you're done, save the plugin, and you'll see all the Ignored entries vanish.</p>
-        
+
         <p>Regardless of which method you used, you'll next want to fire up Wrye Bash, right-click OOO_scythes.esp, select <i>Add Master</i> from the context menu, and pick either "Oscuro's_Oblivion_Overhaul.esp" (if you started with OOO 1.31) or "Oscuro's_Oblivion_Overhaul.esm" (if you started with OOO 1.32).</p>
-        
+
         <p>After doing this, re-select your mod, look in the dependencies window (small pane in lower-right of screen), and check to make sure the new master record was added. This will make your OOO_scythes.esp dependent on the Oscuro's_Oblivion_Overhaul.esp and will make your changed scythe records override the normal ones in that mod.</p>
-        
+
         <p>When you play, you'll of course want to put your OOO_scythes.esp after OOO in the load order (so its changes override the original), but that's really all there is to doing it.</p>
-        
+
         <p>This way a single OOO_scythes.esp can, for example, be used with either the FULL or LITE versions of the Oscuro's_Oblivion_Overhaul.esp, and it will almost certainly be completely compatible with future versions of OOO -- only minor adjustments would be needed if future versions of OOO make new changes to those specific items (or the leveled lists you added them to), but at least you don't have to worry about changes anywhere else in OOO.</p>
-        
+
         <p>Now, if you want to add some new content as well, and you want to make sure it doesn't have a problem when the next version of OOO comes out, then you must make sure the new content isn't accidentally given the same master relationship as the changes. In other words, you need to make sure that any new content is stored in the local modindex rather than the master modindex. Otherwise your new content will be "injected" into the master and could potentially collide with other new data added there by the mod author in an update. However, the details on how to deal with issues like this would be a good subject for another tutorial since it's a bit out of the scope of this article.</p>
-        
+
         <p>One other possibility worth considering if you're only making changes and not adding anything new. Once you've finished making all your changes and chopping the plugin down to only include the records you changed, you can make it into a patch file. To do this, all you have to do is change the file extension to .ESU instead of .ESP. This allows TES4Gecko to recognize the file as a patch and you can use the <i>Apply Patch</i> function to add your changes back into OOO after the next update is released.</p>
 
         <footer>
             <p>
                 <a href="index.html">Home</a> |
-                <a href="https://cs.elderscrolls.com/constwiki/index.php/De-Isolation_Tutorial" target="_blank">CS Wiki version</a>
+                <a href="devakm-mods.html">Dev/Null Mods</a> |
+                <a href="Oblivion-Texture-Overhaul.html">TOTO Main</a> |
+                <a href="Quests.html">The Oblivion Quest List</a>
             </p>
             <p>Copyright 2006, 2007, 2008, 2009, 2015, 2025 by devakm. Individual works copyright by their respective creators.</p>
         </footer>
     </div>
 </body>
+
 </html>
