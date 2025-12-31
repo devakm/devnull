@@ -1,384 +1,918 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>De-Isolation Tutorial</title>
-    <style>
-        :root {
-            --bg-primary: #1a1a1a;
-            --bg-secondary: #2d2d2d;
-            --bg-tertiary: #252525;
-            --text-primary: #e0e0e0;
-            --text-secondary: #b0b0b0;
-            --accent-red: #ff4444;
-            --accent-blue: #4a9eff;
-            --accent-cyan: #00d9ff;
-            --accent-gold: #ffd700;
-            --accent-green: #33cc00;
-            --border-color: #444;
-        }
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0090)https://web.archive.org/web/20110928161918/http://devnull.sweetdanger.net/deisolation.html -->
+<html style="--wm-toolbar-height: 67px;"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script src="./devnull.devakm - De-Isolation Tutorial_files/athena.js.download" type="text/javascript"></script>
+<script type="text/javascript">window.addEventListener('DOMContentLoaded',function(){var v=archive_analytics.values;v.service='wb';v.server_name='wwwb-app222.us.archive.org';v.server_ms=422;archive_analytics.send_pageview({});});</script>
+<script type="text/javascript" src="./devnull.devakm - De-Isolation Tutorial_files/bundle-playback.js.download" charset="utf-8"></script>
+<script type="text/javascript" src="./devnull.devakm - De-Isolation Tutorial_files/wombat.js.download" charset="utf-8"></script>
+<script>window.RufflePlayer=window.RufflePlayer||{};window.RufflePlayer.config={"autoplay":"on","unmuteOverlay":"hidden","showSwfDownload":true};</script>
+<script type="text/javascript" src="./devnull.devakm - De-Isolation Tutorial_files/ruffle.js.download"></script>
+<script type="text/javascript">
+    __wm.init("https://web.archive.org/web");
+  __wm.wombat("http://devnull.sweetdanger.net:80/deisolation.html","20110928161918","https://web.archive.org/","web","https://web-static.archive.org/_static/",
+	      "1317226758");
+</script>
+<link rel="stylesheet" type="text/css" href="./devnull.devakm - De-Isolation Tutorial_files/banner-styles.css">
+<link rel="stylesheet" type="text/css" href="./devnull.devakm - De-Isolation Tutorial_files/iconochive.css">
+<!-- End Wayback Rewrite JS Include -->
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <title>devnull.devakm - De-Isolation Tutorial</title>
+  
+  <style type="text/css">
+  #g_title p, #g_footer p, #g_description p {
+    margin: 0;
+  }
+  /*
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--bg-primary);
-            color: var(--text-primary);
-            line-height: 1.6;
-            padding: 20px;
-        }
+  	-- -- -- -- -- -- --
+  	Browser Fixes
+  	-- -- -- -- -- -- --
+  	
+  	This file uses CSS filtering methods to fix various
+  	layout bugs.
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            background-color: var(--bg-secondary);
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-        }
+  	Each of the following three imported files is a 
+  	separate, browser-specific CSS file that keeps all 
+  	hacks out of the main style sheet.
+  	
+  	Over time, as supporting these browsers no longer
+  	remains a priority, cleaning up the hacks is as
+  	easy as deleting the @import statement below, or
+  	simply no longer linking this file from the HTML.
+  	
+  */
 
-        header {
-            border-bottom: 2px solid var(--accent-red);
-            padding-bottom: 20px;
-            margin-bottom: 30px;
-        }
+  /* 
+    fix ie6 "peekaboo bug" using the "holly hack". 
+    Note, this style only gets applied to ie6
+  */
+  * html .wrapper {
+    height: 0.1%;
+  }
 
-        h1 {
-            color: var(--accent-red);
-            font-size: 2.5em;
-            margin-bottom: 10px;
-        }
+  /* 
+   * IE5 mac - overrides the IE/Win hack 
+   */
 
-        .subtitle {
-            color: var(--accent-cyan);
-            font-size: 1.2em;
-            font-style: italic;
-            margin-bottom: 10px;
-        }
+  /*\*//*/
 
-        h2 {
-            color: var(--accent-blue);
-            font-size: 1.8em;
-            margin-top: 30px;
-            margin-bottom: 15px;
-        }
+  * html #threecolumn div {
+  	height: auto;
+  }
 
-        h3 {
-            color: var(--accent-cyan);
-            font-size: 1.4em;
-            margin-top: 25px;
-            margin-bottom: 10px;
-        }
+  /**/
 
-        h4 {
-            color: var(--accent-gold);
-            font-size: 1.2em;
-            margin-top: 20px;
-            margin-bottom: 10px;
-        }
 
-        p {
-            margin-bottom: 15px;
-            color: var(--text-primary);
-        }
+  /* 
+   * IE5/Win-specific CSS -ensures #container wraps all content on window resize
+   */
 
-        a {
-            color: var(--accent-cyan);
-            text-decoration: none;
-            border-bottom: 1px solid var(--accent-cyan);
-            transition: color 0.3s, border-color 0.3s;
-        }
+  @media tty {
+   i{content:"\";/*" "*/}} * html #container { height: 1%; } /*";}
+  }/* */
+  /* Styling for editable elements. Eventually, this will be part of the style. */
+  .editable {
+    border: 1px dashed blue;
+  }
+  
+  #footer {
+    clear: both;
+  }
+  
+  /* Extra divs hidden by default. The custom CSS can override this though */
+  #extraDiv1, #extraDiv2, #extraDiv3, #extraDiv4, #extraDiv5, #extraDiv6 {
+    display: none;
+  }
+  
+  a img,:link img,:visited img {border: none;}
 
-        a:hover {
-            color: var(--accent-gold);
-            border-color: var(--accent-gold);
-        }
 
-        ul, ol {
-            margin-left: 30px;
-            margin-bottom: 15px;
-        }
+  body {
+    text-align: center;
+  }
+  #container {
+    width: 718px;
+    text-align: left;
+    margin: 0 auto;
+  }
+  /** BEGIN CUSTOM SKIN **/
+  /*
 
-        li {
-            margin-bottom: 8px;
-        }
+  	-- -- -- -- -- -- --
+  	Base CSS
+  	-- -- -- -- -- -- --
+  	
+  	This file simply removes default styling on most HTML elements in 
+  	order to reduce the need to later override them.
+  	
+  */
 
-        .toc {
-            background-color: var(--bg-tertiary);
-            padding: 20px;
-            margin: 20px 0;
-            border-radius: 6px;
-            border-left: 3px solid var(--accent-blue);
-        }
+  h1,h2,h3,h4,h5,h6,pre,code,p {font-size: 1em;}
+  dl,li,dt,dd,h1,h2,h3,h4,h5,h6,pre,form,body,html,p,blockquote,fieldset,input {margin: 0; padding: 0;}
+  a img,:link img,:visited img {border: none;}
+  address {font-style: normal;}/*
 
-        .toc h2 {
-            margin-top: 0;
-            font-size: 1.4em;
-        }
+  	-- -- -- -- -- -- --
+  	Type Scheme: Deco
+  	-- -- -- -- -- -- --
+  	
+  */
 
-        .toc ul {
-            list-style-type: none;
-            margin-left: 0;
-        }
+  body {
+  	font: 76% Verdana, sans-serif;
+  }	
 
-        .toc li {
-            margin-bottom: 5px;
-        }
+  h1, h2, h3, h4, h5, h6, p.description {
+  	font-family: "Trebuchet MS", Trebuchet, sans-serif;
+  }
+  h1 {
+  	font-size: 3em;
+  	font-weight: bold;
+  	letter-spacing: 2px;
+  }
+  h2 {
+  	font-size: 2em;
+  	font-weight: normal;
+  }
+  h3 {
+  	font-size: 1.5em;
+  }
+  h4 {
+  	font-size: 1.2em;
+  	letter-spacing: 0.2em;
+  }
+  h5 {
+  	font-size: 1.2em;
+  }
+  h6 {
+  	font-size: 1em;
+  	font-weight: bold;
+  }
 
-        .toc .toclevel-2 {
-            margin-left: 20px;
-        }
+  p, td {
+  	line-height: 1.8em;
+  }
+  code, kbd {
+  	font-size: 1.25em;
+  }/*
 
-        .info-box {
-            background-color: rgba(74, 158, 255, 0.1);
-            border-left: 4px solid var(--accent-blue);
-            padding: 15px;
-            margin: 20px 0;
-            border-radius: 4px;
-        }
+  	-- -- -- -- -- -- --
+  	STYLE: Victoria
+  	-- -- -- -- -- -- --
 
-        .note {
-            background-color: rgba(255, 215, 0, 0.1);
-            border-left: 4px solid var(--accent-gold);
-            padding: 15px;
-            margin: 20px 0;
-            border-radius: 4px;
-        }
+  */
 
-        footer {
-            margin-top: 40px;
-            padding-top: 20px;
-            border-top: 1px solid var(--border-color);
-            text-align: center;
-            color: var(--text-secondary);
-        }
 
-        footer a {
-            margin: 0 10px;
-        }
+  /* ie6win */
 
-        hr {
-            border: none;
-            border-top: 1px solid var(--border-color);
-            margin: 20px 0;
-        }
+  /* IE/Win fixes for various layouts
+  ----------------------------------------------- */
+  * html #threecolumn #main-content {
+  	width: 429px;
+  	margin-left: -2px;
+  }
 
-        b, strong {
-            color: var(--text-primary);
-            font-weight: 600;
-        }
+  /* ie5mac */
 
-        i, em {
-            color: var(--text-secondary);
-            font-style: italic;
-        }
+  /*\*//*/
+  * html #threecolumn #main-content {
+  	width: 429px;
+  	margin-left: 0;
+  }
+  /**/
 
-        code {
-            background-color: var(--bg-tertiary);
-            padding: 2px 6px;
-            border-radius: 3px;
-            font-family: 'Courier New', monospace;
-            color: var(--accent-cyan);
-        }
-    </style>
+  /* ie5win */
+
+  @media tty {
+   i{content:"\";/*" "*/}} td { font-size: 0.8em; } #footer p { margin: 0; padding: 1em 0; } /*";}
+  }/* */
+
+
+  /* Basic HTML style
+  ----------------------------------------------- */
+  a:link {
+  	text-decoration: underline;
+  }
+  a:visited {
+  	text-decoration: underline;
+  }
+  body {
+  	font: 80% "Georgia", serif;
+  	margin: 0;
+  	padding: 25px 0 25px 0;
+  	border-top: solid 3px #fff;
+  	border-bottom: solid 3px #fff;
+  }
+  caption {
+  	font-size: 1.2em;
+  	font-style: italic;
+  	text-align: left;
+  	padding: 1px 4px 4px 4px;
+  	margin-bottom: 4px;
+  	border-bottom: solid 1px #ccc;
+  }
+  dt {
+  	font-weight: bold;
+  }
+  dd {
+  	font-style: italic;
+  	margin: 0 0 1em 1em;
+  }
+  h2 {
+  	font-size: 1.4em;
+  	font-weight: normal;
+  	margin: 1em 0;
+  	padding-bottom: 3px;
+  }
+  h3 {
+  	font-size: 1.2em;
+  	font-weight: normal;
+  	font-style: normal;
+  	padding-bottom: 8px;
+  	margin-top: 1em;
+  	margin-bottom: 0.5em;
+  }
+  h4 {
+  	font-size: 1.1em;
+  	letter-spacing: 0.1em;
+  	padding-left: 12px;
+  	margin: 1.5em 0 1em 0;
+  }
+  h5 {
+  	padding-bottom: 2px;
+  	margin: 1.5em 0 1em 0;
+  }
+  h6 {
+  	font-weight: normal;
+  	letter-spacing: 0.1em;
+  	margin: 1em 0;
+  }
+  hr {
+  	margin: 2em 0;
+  	border-style: none;
+  	height: 1px;
+  }
+  p {
+  	line-height: 1.6;
+  	margin: 1em 0;
+  }
+  td {
+  	vertical-align: top;
+  	padding: 1px 4px;
+  }
+  td p {
+  	margin: 0 0 1em 0;
+  }
+  th {
+  	text-align: left;
+  	font-weight: normal;
+  	font-style: italic;
+  	vertical-align: top;
+  	padding: 1px 4px;
+  }
+
+
+  ul, ol, dl {
+  	margin-bottom: 1.6em;
+  	padding-left: 2em;
+  	margin-left: 0;
+  }
+
+  ul li {
+  	list-style: circle;
+  	margin-bottom: 0.8em;
+  }
+  ol li {
+  	list-style: upper-roman;
+  	margin-left: 2em;
+  	margin-bottom: 0.8em;
+  }
+
+
+
+
+  /* Header
+  ----------------------------------------------- */
+  h1 {
+  	padding-top: 25px;
+  	font-size: 2.4em;
+  	letter-spacing: 0.1em;
+  	text-align: center;
+  }
+  #g_description {
+  	font-style: italic;
+  	text-align: center;
+  	padding-bottom: 15px;
+  	margin: 0;
+  	line-height: 1;
+  }
+
+
+  /* content
+  ----------------------------------------------- */
+  #main-content .wrapper {
+  	margin: 0 25px;
+  }
+
+
+
+  /* sidebar
+  ----------------------------------------------- */
+
+  #sidebar .wrapper {
+  	padding-left: 15px;
+  	padding-right: 5px;
+  }
+
+  #sidebar .wrapper h3 {
+  	padding: 0 0 11px 0;
+  }
+
+
+  #sidebar li {
+  	margin-bottom: 0.8em;
+  }
+  #sidebar .wrapper ul li {
+  	list-style: circle;
+  }
+  #sidebar .wrapper ol li {
+  	list-style: upper-roman;
+  }
+
+  #sidebar .links {
+  	margin-bottom: 2em;
+  }
+
+
+  #adsense, #adsense .wrapper {
+  	text-align: left;
+  	margin: 0;
+  	padding: 0;
+  }
+
+
+  /* footer
+  ----------------------------------------------- */
+  #footer {
+  	margin: 0;
+  	font-style: italic;
+  	font-size: 0.9em;
+  }
+  #footer hr {
+  	display: none;
+  }
+
+  /* header
+  ----------------------------------------------- */
+  #header #page-title {
+  	padding-left: 12px;
+  	padding-right: 12px;
+  }
+
+  #header #g_description {
+  	margin-left: 12px;
+  	margin-right: 12px;
+  }
+
+  /* fixed 1 column
+  ----------------------------------------------- */
+  #onecolumn #header .wrapper {
+  	padding-bottom: 10px;
+  }
+  #onecolumn #footer {
+  	padding: 0 25px 10px 25px;
+  }
+
+
+
+  /* fixed left 2 column
+  ----------------------------------------------- */
+  #twocolumn-left #header .wrapper {
+  	padding-bottom: 10px;
+  }
+  #twocolumn-left #footer {
+  	padding: 0 25px 10px 264px;
+  }
+
+
+  /* fixed right 2 column
+  ----------------------------------------------- */
+  #twocolumn-right #header .wrapper {
+  	padding-bottom: 10px;
+  }
+  #twocolumn-right #footer {
+  	padding: 0 264px 10px 25px;
+  }
+
+
+  /* fixed 3 column
+  ----------------------------------------------- */
+  #threecolumn #header .wrapper {
+  	padding-bottom: 10px;
+  }
+  #threecolumn #footer {
+  	padding: 0 168px 10px 168px;
+  }
+  #sidebar-alternate {
+  	width: 129px;
+  }
+
+
+  /* liquid 2 column, right and left
+  ----------------------------------------------- */
+  #twocolumn-liquid-left, #twocolumn-liquid-right {
+  	padding: 0;
+  	border: 0;
+  	border-top: solid 1px #999;
+  }
+
+  #twocolumn-liquid-left h1, #twocolumn-liquid-right h1 {
+  	margin: 0;
+  }
+
+
+  #twocolumn-liquid-left #footer, #twocolumn-liquid-right #footer {
+  	padding: 0;
+  	margin: 0;
+  }
+  #twocolumn-liquid-left #container #footer .wrapper, #twocolumn-liquid-right #container #footer .wrapper {
+  	padding: 10px 25px 10px 25px;
+  	text-align: center;
+  }
+
+
+
+
+  #twocolumn-liquid-left #sidebar .wrapper *, #twocolumn-liquid-right #sidebar .wrapper * {
+  	margin-left: 0;
+  	margin-right: 0;
+  }
+  #twocolumn-liquid-left #sidebar h3, #twocolumn-liquid-right #sidebar h3 {
+  	padding-left: 0;
+  }
+  #twocolumn-liquid-left #sidebar ul, #twocolumn-liquid-left #sidebar ol,
+  #twocolumn-liquid-right #sidebar ul, #twocolumn-liquid-right #sidebar ol {
+  	padding-left: 2.5em;
+  	/* extra wide for IE's sake */
+  }
+  #twocolumn-liquid-left #sidebar .links ul, #twocolumn-liquid-right #sidebar .links ul {
+  	padding-left: 0;
+  }
+
+
+
+
+
+
+
+  /* editable area borders
+  ----------------------------------------------- */
+  .editable {
+  	border: dashed 1px #f00;
+  }
+  #onecolumn .editmode h1, #twocolumn-left .editmode h1, #twocolumn-right .editmode h1, #threecolumn .editmode h1 {
+  	background-position: -1px 0;
+  }
+  #twocolumn-liquid-left .editmode h1, #twocolumn-liquid-right .editmode h1 {
+  	background-position: 0 -1px;
+  }
+  /*
+
+  	-- -- -- -- -- -- --
+  	COLOR SCHEME: Underbrush
+  	-- -- -- -- -- -- --
+
+  */
+
+
+  /* Basic HTML style */
+
+  a:link {
+  	color: #A04D3E;
+  	border-bottom: solid 1px #C3C191;
+  	text-decoration: none;
+  }
+  a:visited {
+  	color: #BC8278;
+  	border-bottom: solid 1px #BC8278;
+  	text-decoration: none;
+  }
+  a:hover {
+  	color: #000;
+  	border-color: #000;
+  }
+  body {
+  	color: #36341A;
+  	background: #3C391B url(/web/20110928161918im_/http://devnull.sweetdanger.net/devnull_style/body-bg.gif) repeat-x left top;
+  }
+  caption {
+  	border-bottom-color: #ccc;
+  }
+  code, kbd {
+  	color: #A04D3E;
+  }
+  dt {
+  }
+  dd {
+  }
+  h2 {
+  	color: #A04D3E;
+  	background: url(/web/20110928161918im_/http://devnull.sweetdanger.net/devnull_style/h2.gif) repeat-x left bottom;
+  }
+  h3 {
+  	color: #827C5C;
+  	background: url(/web/20110928161918im_/http://devnull.sweetdanger.net/devnull_style/h3.gif) repeat-x left bottom;
+  }
+  h4 {
+  	color: #A04D3E;
+  	background: url(/web/20110928161918im_/http://devnull.sweetdanger.net/devnull_style/h4.gif) no-repeat 0 5px;
+  }
+  h5 {
+  	color: #ADA97C;
+  	background: url(/web/20110928161918im_/http://devnull.sweetdanger.net/devnull_style/h5-border.gif) repeat-x left bottom;
+  }
+  h6 {
+  	color: #3C391B;
+  }
+  hr {
+  	color: #B3B3A9;
+  	background: #B3B3A9;
+  	border-color: #B3B3A9;
+  }
+  td {
+  	vertical-align: top;
+  	padding: 1px 4px;
+  }
+  th {
+  }
+
+
+
+
+  /* Header
+  ----------------------------------------------- */
+  h1 {
+  	color: #36341A;
+  }
+  #g_description {
+  	color: #DAD7A4;
+  }
+
+  /* fixed-width common header
+  ----------------------------------------------- */
+  #onecolumn h1, #twocolumn-left h1, #twocolumn-right h1, #threecolumn h1 {
+  	background: url(/web/20110928161918im_/http://devnull.sweetdanger.net/devnull_style/fixed-h1.gif) no-repeat;
+  }
+  #onecolumn #header, #twocolumn-left #header, #twocolumn-right #header, #threecolumn #header {
+  	background: url(/web/20110928161918im_/http://devnull.sweetdanger.net/devnull_style/fixed-header.gif) repeat-y;
+  }
+
+
+
+  #footer {
+  	color: #797454;
+  }
+  .editable {
+  	border: dashed 1px #f00;
+  }
+
+
+
+  /* fixed 1 column
+  ----------------------------------------------- */
+  #onecolumn #header .wrapper {
+  	background: url(/web/20110928161918im_/http://devnull.sweetdanger.net/devnull_style/fixed-one-headerwrapper.gif) no-repeat left bottom;
+  }
+  #onecolumn #container {
+  	background: #fff url(/web/20110928161918im_/http://devnull.sweetdanger.net/devnull_style/fixed-one-container.gif) repeat-y;
+  }
+  #onecolumn #footer {
+  	background: url(/web/20110928161918im_/http://devnull.sweetdanger.net/devnull_style/fixed-one-footer.gif) no-repeat left bottom;
+  }
+
+
+
+  #sidebar .wrapper h3 {
+  	background-image: url(/web/20110928161918im_/http://devnull.sweetdanger.net/devnull_style/h3-sidebar-border.gif);
+  }
+
+
+  /* fixed 2 column left
+  ----------------------------------------------- */
+  #twocolumn-left #header .wrapper {
+  	background: url(/web/20110928161918im_/http://devnull.sweetdanger.net/devnull_style/fixed-left-headerwrapper.gif) no-repeat left bottom;
+  }
+  #twocolumn-left #container {
+  	background: #fff url(/web/20110928161918im_/http://devnull.sweetdanger.net/devnull_style/fixed-left-container.gif) repeat-y;
+  }
+  #twocolumn-left #footer {
+  	background: url(/web/20110928161918im_/http://devnull.sweetdanger.net/devnull_style/fixed-left-footer.gif) no-repeat left bottom;
+  }
+
+
+  /* fixed 2 column right
+  ----------------------------------------------- */
+  #twocolumn-right #header .wrapper {
+  	background: url(/web/20110928161918im_/http://devnull.sweetdanger.net/devnull_style/fixed-right-headerwrapper.gif) no-repeat left bottom;
+  }
+  #twocolumn-right #container {
+  	background: #fff url(/web/20110928161918im_/http://devnull.sweetdanger.net/devnull_style/fixed-right-container.gif) repeat-y;
+  }
+  #twocolumn-right #footer {
+  	background: url(/web/20110928161918im_/http://devnull.sweetdanger.net/devnull_style/fixed-right-footer.gif) no-repeat left bottom;
+  }
+
+
+  /* fixed 3 column
+  ----------------------------------------------- */
+  #threecolumn #header .wrapper {
+  	background: url(/web/20110928161918im_/http://devnull.sweetdanger.net/devnull_style/fixed-three-headerwrapper.gif) no-repeat left bottom;
+  }
+  #threecolumn #container {
+  	background: #fff url(/web/20110928161918im_/http://devnull.sweetdanger.net/devnull_style/fixed-three-container.gif) repeat-y;
+  }
+  #threecolumn #footer {
+  	background: url(/web/20110928161918im_/http://devnull.sweetdanger.net/devnull_style/fixed-three-footer.gif) no-repeat left bottom;
+  }
+  #threecolumn #sidebar h3, #threecolumn #sidebar-alternate h3 {
+  	background: url(/web/20110928161918im_/http://devnull.sweetdanger.net/devnull_style/h3-sidebar-border-3col.gif) no-repeat center bottom;
+  }
+
+
+  /* liquid 2 column, right and left
+  ----------------------------------------------- */
+  #twocolumn-liquid-left, #twocolumn-liquid-right {
+  	background: #fff;
+  }
+
+  #twocolumn-liquid-left h1, #twocolumn-liquid-right h1 {
+  	margin: 0;
+  	background: url(/web/20110928161918im_/http://devnull.sweetdanger.net/devnull_style/liquid-header-left.gif) no-repeat left top;
+  }
+  #twocolumn-liquid-left #header, #twocolumn-liquid-right #header {
+  	background: #87815F url(/web/20110928161918im_/http://devnull.sweetdanger.net/devnull_style/liquid-header-bg.gif) repeat-x;
+  }
+  #twocolumn-liquid-left #container #header .wrapper, #twocolumn-liquid-right #container #header .wrapper {
+  	background: url(/web/20110928161918im_/http://devnull.sweetdanger.net/devnull_style/liquid-header-right.gif) no-repeat right top;
+  }
+  #twocolumn-liquid-left #container #header p.description, #twocolumn-liquid-right #container #header p.description {
+  	background: url(/web/20110928161918im_/http://devnull.sweetdanger.net/devnull_style/liquid-header-desc.gif) repeat-y left top;
+  }
+
+
+  #twocolumn-liquid-left #footer, #twocolumn-liquid-right #footer {
+  	background: url(/web/20110928161918im_/http://devnull.sweetdanger.net/devnull_style/liquid-left-footer.gif) no-repeat left bottom;
+  }
+  #twocolumn-liquid-left #container #footer .wrapper, #twocolumn-liquid-right #container #footer .wrapper {
+  	background: url(/web/20110928161918im_/http://devnull.sweetdanger.net/devnull_style/liquid-right-footer.gif) no-repeat right bottom;
+  }
+
+
+  #twocolumn-liquid-left #container, #twocolumn-liquid-right #container {
+  	background: #fff url(/web/20110928161918im_/http://devnull.sweetdanger.net/devnull_style/liquid-left-container.gif) repeat-y;
+  }
+  #twocolumn-liquid-left #container .wrapper, #twocolumn-liquid-right #container .wrapper {
+  	background: url(/web/20110928161918im_/http://devnull.sweetdanger.net/devnull_style/liquid-right-container.gif) repeat-y right top;
+  }
+
+  /** END CUSTOM SKIN **/
+  </style>
+
+  <!-- Hack to avoid flash of unstyled content in IE -->
+  <script> </script>
 </head>
-<body>
-    <div class="container">
-        <header>
-            <h1>De-Isolation Tutorial</h1>
-            <p class="subtitle">Making Mods That Can Talk to Each Other in TESIV: Oblivion</p>
-            <p><b><i>by dev_akm</i></b></p>
-        </header>
 
-        <main>
-            <div class="info-box">
-                <p>An expanded version of this article can be found here: <a href="http://cs.elderscrolls.com/constwiki/index.php/De-Isolation_Tutorial" target="_blank">CS Wiki De-Isolation Tutorial</a>.</p>
-            </div>
-
-            <div class="toc">
-                <h2>Contents</h2>
-                <ul>
-                    <li><a href="#introduction">1. Introduction</a></li>
-                    <li><a href="#tools">2. Tools</a></li>
-                    <li><a href="#mastering-and-patching">3. Mastering and Patching</a></li>
-                    <li><a href="#esm-mastering">4. ESM Mastering</a></li>
-                    <li><a href="#esp-mastering">5. ESP Mastering</a>
-                        <ul>
-                            <li class="toclevel-2"><a href="#esmify-method">5.1. Esmify (bit-flip) Method</a></li>
-                            <li class="toclevel-2"><a href="#bait-and-switch-method">5.2. Bait-and-Switch Method</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#esp-patching">6. ESP Patching</a>
-                        <ul>
-                            <li class="toclevel-2"><a href="#tes4edit-patch">6.1. Making an ESP Patch With TES4Edit</a></li>
-                            <li class="toclevel-2"><a href="#gecko-bash-patch">6.2. Making an ESP Patch With TES4Gecko and Wrye Bash</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-
-            <h2 id="introduction">Introduction</h2>
-            <p>Normally, when people make changes to a plugin, they just open it up in the CS, make their changes and save.</p>
-            
-            <p>But this isn't always a good idea. Consider these scenarios:</p>
-            
-            <ul>
-                <li>What if you have one large mod and want to offer several optional tweaks to various aspects of the main mod? Maybe it isn't a problem to have several versions on the first release, but how quickly are you going to get tired of repeating this process each time you update the main mod? Maybe you actually need the optional tweaks to be kept in separate add-on files?</li>
-                <li>What if you want to make tweaks to someone else's mod and you want to avoid having your changes wiped out by the next release of that plugin?</li>
-                <li>What if you want to use or alter something from one of the official DLC mods? Distributing your altered version of an official plugin isn't a great idea, creating a binary patch (binpatch) for it is very cumbersome and prone to errors, and it's very likely that someone else may have the same idea (rendering your mods mutually exclusive).</li>
-            </ul>
-            
-            <p>Mods based on Oblivion.esm don't have this problem because it's a <b>master</b> file (ESM). Multiple add-on plugins (ESPs) can alter it at the same time without any problems. Unfortunately, TESCS doesn't let you use plugins as masters, even though the game engine actually doesn't mind at all.</p>
-
-            <h2 id="tools">Tools</h2>
-            <p>Here's a list of tools that can help. You'll need at least one or more of these tools to use any of the techniques described in this article.</p>
-            
-            <ul>
-                <li><a href="http://cs.elderscrolls.com/constwiki/index.php/TES4Gecko" target="_blank">TES4Gecko</a></li>
-                <li><a href="http://cs.elderscrolls.com/constwiki/index.php/Wrye_Bash" target="_blank">Wrye Bash</a></li>
-                <li><a href="http://cs.elderscrolls.com/constwiki/index.php/TES4Edit" target="_blank">TES4Edit</a></li>
-                <li><a href="http://cs.elderscrolls.com/constwiki/index.php/TESsnip" target="_blank">TESsnip</a></li>
-                <li>A hex editor, such as <a href="http://www.chmaas.handshake.de/delphi/freeware/xvi32/xvi32.htm" target="_blank">XVI32</a>.</li>
-            </ul>
-
-            <h2 id="mastering-and-patching">Mastering and Patching</h2>
-            <p>Many beginning mod creators get frustrated with TESCS because it seems to let you select Oblivion.esm and one or more ESPs in addition to your "active" file. The content from those ESPs will appear to be usable, but it's not. When you save your new plugin, TESCS will refuse to remember that your plugin was built on top of those other ESP files. If you then reload your newly created plugin, TESCS will be unable to find the internal references to connect it back to the ESPs you had loaded before, so you'll likely get lots of error messages and things generally won't work as desired.</p>
-            
-            <p>This behavior is known as <b>Mod Isolation</b>.</p>
-            
-            <p>Fortunately, there are several good strategies for how to get around this limitation. All such solutions involve either making your own actual master(s) or tricking the game into thinking you've got your own master(s). The latter technique is known as Mod De-Isolation.</p>
-            
-            <ul>
-                <li><b>ESM Mastering</b>. You can make the base (or "source") mod(s) into a master by converting it to an ESM. Both TES4Gecko and Wrye Bash provide functions to let you convert an ESP into an ESM. It works great for lots of things, especially new content that's not directly connected to the Tamriel worldspace.<br><br>However, masters generally should not modify other masters -- only plugins are supposed to modify masters. When one master directly modifies another master, problems can result, such as vanishing landscape. If you try to use TESCS to make a mod based on a master that modifies another master (especially worldspace changes), then you will very likely crash TESCS or encounter a bunch of "assertion errors" when you try to save your changes, leaving you with a plugin containing corrupt cell records.</li>
-                <li><b>ESP Mastering</b>. You can trick TESCS into letting you work with plugins as if they were masters. This can be done using a fairly easy bit-flipping method in Wrye Bash or a more cumbersome bait-and-switch method (also using Wrye Bash). It works by temporarily turning an ESP into an ESM so TESCS will let you to establish dependencies on it. Once again, however, these solutions can be problematic when working with plugins that include cell changes, such as the official DLC plugins, usually resulting in a crash or "assertion errors" when you try to save your changes, leaving you with a plugin containing corrupt cell records.</li>
-                <li><b>ESP Patching</b>. This involves using TES4Edit to directly create an add-on "patch" plugin or using TES4Gecko to create a patch file based on the differences between the original and your changes. This works best when you're not adding any new content to the source originals (i.e., you're just altering values in existing records, such as giving all mudcrabs more health or making certain weapons do more damage).</li>
-            </ul>
-            
-            <p>Each of these methods is explained in greater detail below.</p>
-
-            <h2 id="esm-mastering">ESM Mastering</h2>
-            <p>Many large mods use ESM Mastering to get around the limitations of standard plugins. However, creating your own master files can be tricky in some cases, so it's not generally recommended unless you have a strong need to do so.</p>
-            
-            <p>Even though master files are generally supposed to only contain new content, this rule can sometimes be ignored if you really have a need to do so. Master files can in fact both use and modify content from other masters, such as Oblivion.esm, as long as they don't alter any cells (especially exterior cells) in another master.</p>
-            
-            <p>If your mod adds a lot of new content but doesn't alter any standard Oblivion.esm cells, then it can probably be turned into a master. This makes it easy to then offer add-on option modules to extend or tweak your base master. However, you should be careful about such decisions since master files don't have the same load-order flexibility as normal plugins (masters always load before plugins).</p>
-            
-            <p>If your mod adds a lot of new content and needs to alter cells in another master, then you probably need both an ESM (for the new content) and an ESP (to connect your ESM to Oblivion.esm). For example, if you create a new worldspace and place it in a master file, then you should use a separate plugin to connect your mastered worldspace to Tamriel. The <i>Split Plugin</i> feature in TES4Gecko can help in situations like this (see ESP Mastering, below, for more details).</p>
-            
-            <p>The process for creating a master file is simple using either Wrye Bash or TES4Gecko:</p>
-            
-            <ul>
-                <li>In Wrye Bash, go to the Mods tab, right-click on the plugin you want to convert, and select <i>Copy to Esm</i>.</li>
-                <li>In TES4Gecko, click the <i>Convert to Master</i> button, select the plugin you want to convert, and click <i>Open</i>.</li>
-            </ul>
-            
-            <p>Either of these methods will give you a new file named MyPlugin.esm (assuming the original was MyPlugin.esp).</p>
-            
-            <p>Now you can launch TESCS, select your new master, and start creating plugins based on it.</p>
-            
-            <p>This is by far the easiest solution, but it's not always feasible, in which case you may need to use one of the additional methods described below.</p>
-
-            <h2 id="esp-mastering">ESP Mastering</h2>
-            <p>In many cases, you may not have the option to distribute your own master file. This is especially true if you don't have control over the original plugin, as with the official DLC mods. In a case like this, ESP Mastering or ESP Patching can be used instead of ESM Mastering. Once you head down this road, you may want to consider whether ESP Mastering or ESP Patching is a better solution.</p>
-            
-            <p>ESP Mastering is usually the best choice when you want to add a significant amount of new content to an existing plugin without storing your changes in the original file. On the other hand, ESP Patching is usually preferred when you mainly want to tweak existing content in the original.</p>
-            
-            <p>For example, if you wanted to add new enemies and dungeon levels to the Knights of the Nine DLC mod, then ESP Mastering is the way to go because you're adding a bunch of new content. If you just want to alter the existing enemies and dungeon levels in KotN, then ESP Patching is probably a better solution.</p>
-
-            <h3 id="esmify-method">Esmify (bit-flip) Method</h3>
-            <p>See <a href="http://cs.elderscrolls.com/constwiki/index.php/De-Isolation_Tutorial#Esmify_.28bit-flip.29_Method_.28Wrye_Bash.29" target="_blank">Esmify</a> for a full description.</p>
-
-            <h3 id="bait-and-switch-method">Bait-and-Switch Method</h3>
-            <p>This solution is a bit more cumbersome than the bit-flip method. It uses SomePlugin.esm (note the ESM extension) while you're making changes as the "bait" (so TESCS will consider it a master) and then swaps it with SomePlugin.esp when you're done (the "switch").</p>
-            
-            <ul>
-                <li>Convert SomePlugin.esp to SomePlugin.esm with TES4Gecko or Wrye Bash (see ESM Mastering, above, for details).</li>
-                <li>Load SomePlugin.esm in TESCS.</li>
-                <li>Make your changes in TESCS and save as MyTweaks.esp</li>
-                <li>Now you'll need to use Wrye Bash to change the masters list for MyTweaks.esp so it looks for SomePlugin.esp instead of SomePlugin.esm.</li>
-                <li>To do this, select MyTweaks.esp in the Mods tab of Wrye Bash.</li>
-                <li>Look in the lower-right corner for the list of masters.</li>
-                <li>Click on the entry for SomePlugin.esm twice so it gives you an edit box.</li>
-                <li>Change the "m" to "p", so it now says ".esp" instead of ".esm".</li>
-            </ul>
-            
-            <p>The advantage to this method over the bit-flip method is that you have some way to deal with assertion errors if you get any. If you're trying to modify Knights of the Nine, DLCHorseArmor and other mods that alter vanilla cells, and if your MyTweaks.esp also contains any cells in it, they will likely get corrupted with assertion errors in TESCS when you save changes. All the other data will be good, though.</p>
-            
-            <p>If you get stuck with this problem, the workaround is a bit involved. You have to first make a split master in TES4Gecko so you now have a clean master that doesn't alter any vanilla cells. The Split Plugin feature in TES4Gecko separates the original plugin into new records, which get saved in the ESM, and change records, which get saved in the ESP. This means you'll have a SomePlugin.esm/SomePlugin.esp pair that work together, each containing different things. Now you can build any cell changes/additions based on the split master (SomePlugin.esm) and keep your changes safe with the good cell data in it. You may want to save your work in an easily identifiable file, such as MyTweakedCells.esp.</p>
-            
-            <p>Now you can go back and use the bait-and-switch method or the bitflip method to make all your other changes on the unsplit original, knowing that the result will end up with corrupted cells in it. Once you've got this version done, you can chop out the bad cells with TESsnip or a hex editor, change the file extension to .esu, and apply it as a TES4Gecko patch to the version with good cell data.</p>
-            
-            <div class="note">
-                <p><b>Note:</b> TESCS 1.2 seems to be a bit less forgiving about worldspace changes and may crash rather than letting you save a file with corrupted cell data as suggested here. If you run into this problem, you may be able to get around it using TESCS 1.0.</p>
-            </div>
-
-            <h2 id="esp-patching">ESP Patching</h2>
-            <p>This works best when you're only changing existing records in another plugin. For example, if you want to alter the armored horses from DLCHorseArmor, this is the easiest way to do it.</p>
-
-            <h3 id="tes4edit-patch">Making an ESP Patch With TES4Edit</h3>
-            <p>In the following example, we'll use SomePlugin.esp as the original mod and MyTweaks.esp to contain the de-isolated changes, also known as "overrides".</p>
-            
-            <ul>
-                <li>When you launch TES4Edit, it will popup a window showing your complete plugin load-order list. You can load everything, but this may be more than you really need. If you right-click anywhere in the list, you'll get an option to select none, which unchecks everything. Now you can just pick the plugin you want to alter.</li>
-                <li>Select SomePlugin.esp and click OK when you're ready.</li>
-                <li>Once it finishes loading, expand the tree listing on the left for SomePlugin.esp.</li>
-                <li>Now expand the tree further to expose the specific records you want to change, such as Creatures, Weapons, etc.</li>
-                <li>Select the records you want to change. You can use shift-click and/or ctrl-click to select multiple records.</li>
-                <li>Right-click and select <i>Copy as override into...</i> from the context menu.</li>
-                <li>You'll get a popup listing all of your plugin files. Pick the last option, <i>new file</i>.</li>
-                <li>When prompted to enter a name, type MyTweaks (without the .esp extension).</li>
-                <li>Once TES4Edit finishes copying the records and saving your new file, you'll find MyTweaks.esp available in the left-hand navigation tree. Clicking on any of the records there will show you both the original values from SomePlugin.esp and the new values from MyTweaks.esp (they'll initially be identical).</li>
-                <li>Click on any of the field values in the MyTweaks.esp column and make whatever changes you want. You can also drag and drop values from other records of the same type.</li>
-                <li>When you're done, use Ctrl-S to save your changes.</li>
-            </ul>
-            
-            <p>If you later want to add more changes into the same MyTweaks.esp file, you can easily repeat the above process and pick your existing MyTweaks.esp as the target for <i>Copy as override into...</i> rather than <i>new file</i>. If any additional masters need to be added (for example, if you want to also include changes for SomeOtherPlugin.esp), then TES4Edit will automatically do this for you.</p>
-            
-            <p>When you play, you'll of course want to put MyTweaks.esp after SomePlugin.esp in the load order, but that's really all there is to doing it.</p>
-
-            <h3 id="gecko-bash-patch">Making an ESP Patch With TES4Gecko and Wrye Bash</h3>
-            <p>You can also create an ESP Patch using TES4Gecko and Wrye Bash.</p>
-            
-            <p>This is a simple example based on the 1.31 version of Oscuro's Oblivion Overhaul. It describes a scenario where it makes a lot of sense to take advantage of mod "de-isolation" to preserve your changes in a separate plugin.</p>
-            
-            <p>Consider this question:</p>
-            
-            <p><i>I'm thinking of changing Oscuro's Oblivion Overhaul to add the War Scythes (which were left out at the last minute before the release of OOO 1.3) to some of the leveled lists, but I also know that a new version of OOO is coming out soon. Is there any conceivable way to have the changes transfer over to the new OOO (1.32) when it gets released? Some creative way of merging the old and the new or something? I don't really want to go and take the time to make the changes if I'll just end up having to do them again when the new one comes out.</i></p>
-            
-            <p>Yes, there is a way. It's called de-isolation. This will keep your changes in a separate plugin so it won't be lost when the next version of OOO comes out. However, these instructions are fairly specific to OOO 1.31, which used one large ESP file. Since OOO 1.32 or later versions use a split ESM/ESP structure, an additional step to re-merge these files is necessary, creating a "merged master". To do this, you can use TES4Gecko's Merge to Master function to temporarily put everything back into a single file so you can work with it in the TESCS.</p>
-            
-            <p>Start by making a copy of OOO, called something like OOO_scythes.esp. If you're working with the OOO 1.32 merged master (as described above), then you must use Wrye Bash <i>Copy to esp</i> command to do this. As long as you're just altering things that already exist in OOO, make all your changes in OOO_scythes.esp using TESCS. If you need to add anything new to it, then hold back on making those changes until later in the process.</p>
-            
-            <p>Once you have the changes done, make a backup copy of your changed plugin just in case something goes wrong, then use TES4Gecko to <i>Create Patch</i> using Oscuro's_Oblivion_Overhaul.esp as the original and OOO_scythes.esp as the patch. This will create a new TES4Gecko patch file called OOO_scythes.esu. Now you can simply change the .esu extension to .esp and you're ready to move on to the next step.</p>
-            
-            <p>Alternately, you can use <i>Display/Copy Plugin Records</i> or <i>Compare Plugins</i> in TES4Gecko to Ignore everything except the changed entries. You can quickly Ignore large blocks of stuff by simply doing group-level ignores on record groups you know you don't need. When you're done, save the plugin, and you'll see all the Ignored entries vanish.</p>
-            
-            <p>Regardless of which method you used, you'll next want to fire up Wrye Bash, right-click OOO_scythes.esp, select <i>Add Master</i> from the context menu, and pick either "Oscuro's_Oblivion_Overhaul.esp" (if you started with OOO 1.31) or "Oscuro's_Oblivion_Overhaul.esm" (if you started with OOO 1.32).</p>
-            
-            <p>After doing this, re-select your mod, look in the dependencies window (small pane in lower-right of screen), and check to make sure the new master record was added. This will make your OOO_scythes.esp dependent on the Oscuro's_Oblivion_Overhaul.esp and will make your changed scythe records override the normal ones in that mod.</p>
-            
-            <p>When you play, you'll of course want to put your OOO_scythes.esp after OOO in the load order (so its changes override the original), but that's really all there is to doing it.</p>
-            
-            <p>This way a single OOO_scythes.esp can, for example, be used with either the FULL or LITE versions of the Oscuro's_Oblivion_Overhaul.esp, and it will almost certainly be completely compatible with future versions of OOO -- only minor adjustments would be needed if future versions of OOO make new changes to those specific items (or the leveled lists you added them to), but at least you don't have to worry about changes anywhere else in OOO.</p>
-            
-            <p>Now, if you want to add some new content as well, and you want to make sure it doesn't have a problem when the next version of OOO comes out, then you must make sure the new content isn't accidentally given the same master relationship as the changes. In other words, you need to make sure that any new content is stored in the local modindex rather than the master modindex. Otherwise your new content will be "injected" into the master and could potentially collide with other new data added there by the mod author in an update. However, the details on how to deal with issues like this would be a good subject for another tutorial since it's a bit out of the scope of this article.</p>
-            
-            <p>One other possibility worth considering if you're only making changes and not adding anything new. Once you've finished making all your changes and chopping the plugin down to only include the records you changed, you can make it into a patch file. To do this, all you have to do is change the file extension to .ESU instead of .ESP. This allows TES4Gecko to recognize the file as a patch and you can use the <i>Apply Patch</i> function to add your changes back into OOO after the next update is released.</p>
-        </main>
-
-        <footer>
-            <hr>
-            <p>
-                <a href="index.html">Home</a> | 
-                <a href="devakm-mods.html" target="_blank">Devakm Mods Main</a> |
-                <a href="http://cs.elderscrolls.com/constwiki/index.php/De-Isolation_Tutorial" target="_blank">CS Wiki version</a>
-            </p>
-        </footer>
+<body id="onecolumn"><!-- BEGIN WAYBACK TOOLBAR INSERT -->
+<script>__wm.rw(0);</script>
+<div id="wm-ipp-base" lang="en" style="display: block; direction: ltr; height: 67px;" toolbar-mode="auto"><template shadowrootmode="closed"><div id="wm-ipp" style="position:fixed;left:0;top:0;right:0;">
+<div id="donato" style="position:relative;width:100%;height:0;">
+  <div id="donato-base">
+    <iframe id="donato-if" src="https://archive.org/includes/donate.php?as_page=1&amp;platform=wb&amp;referer=https%3A//web.archive.org/web/20110928161918/http%3A//devnull.sweetdanger.net/deisolation.html" scrolling="no" frameborder="0" style="width:100%; height:100%">
+    </iframe>
+  </div>
+</div><div id="wm-ipp-inside">
+  <div id="wm-toolbar" style="position:relative;display:flex;flex-flow:row nowrap;justify-content:space-between;" nav="async">
+    <div id="wm-logo" style="/*width:110px;*/padding-top:12px;">
+      <a href="https://web.archive.org/web/" title="Wayback Machine home page"><img src="https://web-static.archive.org/_static/images/toolbar/wayback-toolbar-logo-200.png" srcset="https://web-static.archive.org/_static/images/toolbar/wayback-toolbar-logo-100.png, https://web-static.archive.org/_static/images/toolbar/wayback-toolbar-logo-150.png 1.5x, https://web-static.archive.org/_static/images/toolbar/wayback-toolbar-logo-200.png 2x" alt="Wayback Machine" style="width:100px" border="0"></a>
     </div>
-</body>
-</html>
+    <div class="c" style="display:flex;flex-flow:column nowrap;justify-content:space-between;flex:1;">
+      <form class="u" style="display:flex;flex-direction:row;flex-wrap:nowrap;" target="_top" method="get" action="https://web.archive.org/web/submit" name="wmtb" id="wmtb"><input type="text" name="url" id="wmtbURL" value="http://devnull.sweetdanger.net/deisolation.html" onfocus="this.focus();this.select();" style="flex:1;" autocomplete="off"><input type="hidden" name="type" value="replay"><input type="hidden" name="date" value="20110928161918"><input type="submit" value="Go">
+      </form>
+      <div style="display:flex;flex-flow:row nowrap;align-items:flex-end;">
+                <div class="s" id="wm-nav-captures" style="flex:1;"><a class="t" href="https://web.archive.org/web/*/http://devnull.sweetdanger.net/deisolation.html" title="See a list of every capture for this URL">6 captures</a><div class="r" title="Timespan for captures of this URL">28 Apr 2009 - 25 May 2015</div></div>
+        <div class="k">
+          <a href="https://web.archive.org/web/20110928161918/http://devnull.sweetdanger.net/deisolation.html" id="wm-graph-anchor">
+            <div id="wm-ipp-sparkline" title="Explore captures for this URL" style="position: relative">
+              <canvas id="wm-sparkline-canvas" width="750" height="27" border="0"></canvas>
+            <div class="yt" style="display: none; width: 25px; height: 27px;"></div><div class="mt" style="display: none; width: 2px; height: 27px;"></div></div>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="n">
+      <table>
+        <tbody>
+          <!-- NEXT/PREV MONTH NAV AND MONTH INDICATOR -->
+          <tr class="m">
+            <td class="b" nowrap="nowrap"><a href="https://web.archive.org/web/20090428193234/http://devnull.sweetdanger.net/deisolation.html" title="19:32:34 Apr 28, 2009">Apr</a></td>
+            <td class="c" id="displayMonthEl" title="You are here: 16:19:18 Sep 28, 2011">SEP</td>
+            <td class="f" nowrap="nowrap"><a href="https://web.archive.org/web/20120320061113/http://devnull.sweetdanger.net/deisolation.html" title="06:11:13 Mar 20, 2012">Mar</a></td>
+          </tr>
+          <!-- NEXT/PREV CAPTURE NAV AND DAY OF MONTH INDICATOR -->
+          <tr class="d">
+            <td class="b" nowrap="nowrap"><a href="https://web.archive.org/web/20090428193234/http://devnull.sweetdanger.net/deisolation.html" title="19:32:34 Apr 28, 2009"><span class="ta"></span></a></td>
+            <td class="c" id="displayDayEl" style="width:34px;font-size:22px;white-space:nowrap;" title="You are here: 16:19:18 Sep 28, 2011">28</td>
+            <td class="f" nowrap="nowrap"><a href="https://web.archive.org/web/20120320061113/http://devnull.sweetdanger.net/deisolation.html" title="06:11:13 Mar 20, 2012"><span class="ta"></span></a></td>
+          </tr>
+          <!-- NEXT/PREV YEAR NAV AND YEAR INDICATOR -->
+          <tr class="y">
+            <td class="b" nowrap="nowrap"><a href="https://web.archive.org/web/20090428193234/http://devnull.sweetdanger.net/deisolation.html" title="19:32:34 Apr 28, 2009">2009</a></td>
+            <td class="c" id="displayYearEl" title="You are here: 16:19:18 Sep 28, 2011">2011</td>
+            <td class="f" nowrap="nowrap"><a href="https://web.archive.org/web/20130919163422/http://devnull.sweetdanger.net/deisolation.html" title="16:34:22 Sep 19, 2013">2013</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="r" style="display:flex;flex-flow:column nowrap;align-items:flex-end;justify-content:space-between;">
+      <div id="wm-btns" style="text-align:right;height:23px;">
+                <span class="xxs">
+          <div id="wm-save-snapshot-success">success</div>
+          <div id="wm-save-snapshot-fail">fail</div>
+          <a id="wm-save-snapshot-open" href="https://web.archive.org/web/20110928161918/http://devnull.sweetdanger.net/deisolation.html#" title="Share via My Web Archive" style="display: inline-block;">
+            <span class="iconochive-web"></span>
+          </a>
+          <a href="https://archive.org/account/login.php" title="Sign In" id="wm-sign-in" style="display: none;">
+            <span class="iconochive-person"></span>
+          </a>
+          <span id="wm-save-snapshot-in-progress" class="iconochive-web"></span>
+        </span>
+                <a class="xxs" href="https://help.archive.org/help/category/the-wayback-machine/" title="Get some help using the Wayback Machine" style="top:-6px;"><span class="iconochive-question" style="color:rgb(87,186,244);font-size:160%;"></span></a>
+        <a id="wm-tb-close" href="https://web.archive.org/web/20110928161918/http://devnull.sweetdanger.net/deisolation.html#close" style="top:-2px;" title="Close the toolbar"><span class="iconochive-remove-circle" style="color:#888888;font-size:240%;"></span></a>
+      </div>
+      <div id="wm-share" class="xxs">
+        <a href="https://web.archive.org/web/20110928161918/http://web.archive.org/screenshot/http://devnull.sweetdanger.net/deisolation.html" id="wm-screenshot" title="screenshot" style="visibility: hidden;">
+          <span class="wm-icon-screen-shot"></span>
+        </a>
+        <a href="https://web.archive.org/web/20110928161918/http://devnull.sweetdanger.net/deisolation.html#" id="wm-video" title="video">
+          <span class="iconochive-movies"></span>
+        </a>
+        <a id="wm-share-facebook" href="https://web.archive.org/web/20110928161918/http://devnull.sweetdanger.net/deisolation.html#" data-url="https://web.archive.org/web/20110928161918/http://devnull.sweetdanger.net:80/deisolation.html" title="Share on Facebook" style="margin-right:5px;" target="_blank"><span class="iconochive-facebook" style="color:#3b5998;font-size:160%;"></span></a>
+        <a id="wm-share-twitter" href="https://web.archive.org/web/20110928161918/http://devnull.sweetdanger.net/deisolation.html#" data-url="https://web.archive.org/web/20110928161918/http://devnull.sweetdanger.net:80/deisolation.html" title="Share on Twitter" style="margin-right:5px;" target="_blank"><span class="iconochive-twitter" style="color:#1dcaff;font-size:160%;"></span></a>
+      </div>
+      <div style="padding-right:2px;text-align:right;white-space:nowrap;">
+        <a id="wm-expand" class="wm-btn wm-closed" href="https://web.archive.org/web/20110928161918/http://devnull.sweetdanger.net/deisolation.html#expand"><span id="wm-expand-icon" class="iconochive-down-solid"></span> <span class="xxs" style="font-size:80%;">About this capture</span></a>
+      </div>
+    </div>
+  </div>
+    <div id="wm-capinfo" style="border-top:1px solid #777;display:none; overflow: hidden">
+        <div id="wm-capinfo-notice" source="api"></div>
+                <div id="wm-capinfo-collected-by">
+    <div style="background-color:#666;color:#fff;font-weight:bold;text-align:center;padding:2px 0;">COLLECTED BY</div>
+    <div style="padding:3px;position:relative" id="wm-collected-by-content">
+            <div style="display:inline-block;vertical-align:top;width:50%;">
+			<span class="c-logo" style="background-image:url(https://archive.org/services/img/alexacrawls);"></span>
+		Organization: <a style="color:#33f;" href="https://archive.org/details/alexacrawls" target="_new"><span class="wm-title">Alexa Crawls</span></a>
+		<div style="max-height:75px;overflow:hidden;position:relative;">
+	  <div style="position:absolute;top:0;left:0;width:100%;height:75px;background:linear-gradient(to bottom,rgba(255,255,255,0) 0%,rgba(255,255,255,0) 90%,rgba(255,255,255,255) 100%);"></div>
+	  Starting in 1996, <a href="http://www.alexa.com/">Alexa Internet</a> has been donating their crawl data to the Internet Archive.  Flowing in every day, these data are added to the <a href="http://web.archive.org/">Wayback Machine</a> after an embargo period.
+	</div>
+	      </div>
+      <div style="display:inline-block;vertical-align:top;width:49%;">
+			<span class="c-logo" style="background-image:url(https://archive.org/services/img/alexacrawls)"></span>
+		<div>Collection: <a style="color:#33f;" href="https://archive.org/details/alexacrawls" target="_new"><span class="wm-title">Alexa Crawls</span></a></div>
+		<div style="max-height:75px;overflow:hidden;position:relative;">
+	  <div style="position:absolute;top:0;left:0;width:100%;height:75px;background:linear-gradient(to bottom,rgba(255,255,255,0) 0%,rgba(255,255,255,0) 90%,rgba(255,255,255,255) 100%);"></div>
+	  Starting in 1996, <a href="http://www.alexa.com/">Alexa Internet</a> has been donating their crawl data to the Internet Archive.  Flowing in every day, these data are added to the <a href="http://web.archive.org/">Wayback Machine</a> after an embargo period.
+	</div>
+	      </div>
+    </div>
+    </div>
+    <div id="wm-capinfo-timestamps">
+    <div style="background-color:#666;color:#fff;font-weight:bold;text-align:center;padding:2px 0;" title="Timestamps for the elements of this page">TIMESTAMPS</div>
+    <div>
+      <div id="wm-capresources" style="margin:0 5px 5px 5px;max-height:250px;overflow-y:scroll !important"></div>
+      <div id="wm-capresources-loading" style="text-align:left;margin:0 20px 5px 5px;display:none"><img src="https://web-static.archive.org/_static/images/loading.gif" alt="loading"></div>
+    </div>
+    </div>
+  </div></div></div><link rel="stylesheet" type="text/css" href="./devnull.devakm - De-Isolation Tutorial_files/banner-styles.css"><link rel="stylesheet" type="text/css" href="./devnull.devakm - De-Isolation Tutorial_files/iconochive.css"><div class="wb-autocomplete-suggestions "></div></template>
+</div><div id="wm-ipp-print">The Wayback Machine - https://web.archive.org/web/20110928161918/http://devnull.sweetdanger.net:80/deisolation.html</div>
+<script type="text/javascript">//<![CDATA[
+__wm.bt(750,27,25,2,"web","http://devnull.sweetdanger.net/deisolation.html","20110928161918",1996,"https://web-static.archive.org/_static/",["https://web-static.archive.org/_static/css/banner-styles.css?v=1utQkbB3","https://web-static.archive.org/_static/css/iconochive.css?v=3PDvdIFv"], false);
+  __wm.rw(1);
+//]]></script>
+<!-- END WAYBACK TOOLBAR INSERT -->
+ 
+  <div id="container">
+    <div class="wrapper">
+      <div id="header">
+        <div class="wrapper">
+          <h1 id="page-title"><div id="g_title">De-Isolation Tutorial<br></div></h1>
+          <div style="clear: both;"></div>
+          <p class="description"></p><div id="g_description"><p>Making Mods That Can Talk to Each Other in TESIV: Oblivion&nbsp;</p></div><p></p>
+          <div style="clear: both"></div>
+        </div>
+      </div>
+      <!-- /editable --><!-- /wrapper --><!-- /header -->
+      <div id="main-content">
+        
+        <div class="wrapper">
+          <div class="content-item "><div id="g_body"><p><b><i>by devakm</i></b></p><p><i>An expanded</i><i> version of this article can be found here: <a href="https://web.archive.org/web/20110928161918/http://cs.elderscrolls.com/constwiki/index.php/De-Isolation_Tutorial">CS Wiki De-Isolation Tutorial </a>.<br></i></p><table id="toc" class="toc" summary="Contents"><tbody><tr><td><div id="toctitle"><h2>Contents</h2><span class="toctoggle"></span></div><ul><li class="toclevel-1"><a href="https://web.archive.org/web/20110928161918/http://devnull.sweetdanger.net/deisolation.html#Introduction"><span class="tocnumber">1</span><span class="toctext">. Introduction</span></a></li><li class="toclevel-1"><a href="https://web.archive.org/web/20110928161918/http://devnull.sweetdanger.net/deisolation.html#Tools"><span class="tocnumber">2. </span><span class="toctext">Tools</span></a></li><li class="toclevel-1"><a href="https://web.archive.org/web/20110928161918/http://devnull.sweetdanger.net/deisolation.html#Mastering_and_Patching"><span class="tocnumber">3. </span><span class="toctext">Mastering and Patching</span></a></li><li class="toclevel-1"><a href="https://web.archive.org/web/20110928161918/http://devnull.sweetdanger.net/deisolation.html#ESM_Mastering"><span class="tocnumber">4. </span><span class="toctext">ESM Mastering</span></a></li><li class="toclevel-1"><a href="https://web.archive.org/web/20110928161918/http://devnull.sweetdanger.net/deisolation.html#ESP_Mastering"><span class="tocnumber">5. </span><span class="toctext">ESP Mastering</span></a><ul><li class="toclevel-2"><a href="https://web.archive.org/web/20110928161918/http://devnull.sweetdanger.net/deisolation.html#Esmify_.28bit-flip.29_Method"><span class="tocnumber">5.1</span><span class="toctext">. Esmify (bit-flip) Method</span></a></li><li class="toclevel-2"><a href="https://web.archive.org/web/20110928161918/http://devnull.sweetdanger.net/deisolation.html#Bait-and-Switch_Method"><span class="tocnumber">5.2. </span><span class="toctext">Bait-and-Switch Method</span></a></li></ul></li><li class="toclevel-1"><a href="https://web.archive.org/web/20110928161918/http://devnull.sweetdanger.net/deisolation.html#ESP_Patching"><span class="tocnumber">6</span><span class="toctext">. ESP Patching</span></a><ul><li class="toclevel-2"><a href="https://web.archive.org/web/20110928161918/http://devnull.sweetdanger.net/deisolation.html#Making_an_ESP_Patch_With_TES4Edit"><span class="tocnumber">6.1. </span><span class="toctext">Making an ESP Patch With TES4Edit</span></a></li><li class="toclevel-2"><a href="https://web.archive.org/web/20110928161918/http://devnull.sweetdanger.net/deisolation.html#Making_an_ESP_Patch_With_TES4Gecko_and_Wrye_Bash"><span class="tocnumber">6.2</span><span class="toctext">. Making an ESP Patch With TES4Gecko and Wrye Bash</span></a></li></ul></li></ul></td></tr></tbody></table><a name="Introduction"></a><h2><span class="mw-headline"> Introduction </span></h2><p>Normally, when people make changes to a plugin, they just open it up in the CS, make their changes and save. 
+</p><p>But this isn't always a good idea. Consider these scenarios:
+</p><ul><li> What if you have one large mod and want to offer several optional tweaks to various aspects of the main mod? Maybe it isn't a problem to have several versions on the first release, but how quickly are you going to get tired of repeating this process each time you update the main mod? Maybe you actually need the optional tweaks to be kept in separate add-on files?
+
+</li></ul><ul><li> What if you want to make tweaks to someone else's mod and you want to avoid having your changes wiped out by the next release of that plugin? 
+</li></ul><ul><li> What if you want to use or alter something from one of the official DLC mods? Distributing your altered version of an official plugin isn't a great idea, creating a binary patch (binpatch) for it is very cumbersome and prone to errors, and it's very likely that someone else may have the same idea (rendering your mods mutually exclusive).
+</li></ul><p>Mods based on Oblivion.esm don't have this problem because it's a <b>master</b> file (ESM). Multiple add-on plugins (ESPs) can alter it at the same time without any problems. Unfortunately, TESCS doesn't let you use plugins as masters, even though the game engine actually doesn't mind at all.
+</p><a name="Tools"></a><h2><span class="mw-headline"> Tools </span></h2><p>Here's a list of tools that can help. You'll need at least one or more of these tools to use any of the techniques described in this article.
+</p><ul><li><a href="https://web.archive.org/web/20110928161918/http://cs.elderscrolls.com/constwiki/index.php/TES4Gecko" title="TES4Gecko">TES4Gecko</a></li><li><a href="https://web.archive.org/web/20110928161918/http://cs.elderscrolls.com/constwiki/index.php/Wrye_Bash" title="Wrye Bash">Wrye Bash</a></li><li><a href="https://web.archive.org/web/20110928161918/http://cs.elderscrolls.com/constwiki/index.php/TES4Edit" title="TES4Edit">TES4Edit</a></li><li><a href="https://web.archive.org/web/20110928161918/http://cs.elderscrolls.com/constwiki/index.php/TESsnip" title="TESsnip">TESsnip</a></li><li> A hex editor, such as <a href="https://web.archive.org/web/20110928161918/http://www.chmaas.handshake.de/delphi/freeware/xvi32/xvi32.htm" class="external text" title="http://www.chmaas.handshake.de/delphi/freeware/xvi32/xvi32.htm" rel="nofollow">XVI32</a>.
+
+</li></ul><a name="Mastering_and_Patching"></a><h2><span class="mw-headline"> Mastering and Patching </span></h2><p>Many beginning mod creators get frustrated with TESCS because it seems to let you select Oblivion.esm and one or more ESPs in addition to your "active" file. The content from those ESPs will appear to be usable, but it's not. When you save your new plugin, TESCS will refuse to remember that your plugin was built on top of those other ESP files. If you then reload your newly created plugin, TESCS will be unable to find the internal references to connect it back to the ESPs you had loaded before, so you'll likely get lots of error messages and things generally won't work as desired. 
+</p><p>This behavior is known as <b>Mod Isolation</b>.
+</p><p>Fortunately, there are several good strategies for how to get around this limitation. All such solutions involve either making your own actual master(s) or tricking the game into thinking you've got your own master(s). The latter technique is known as Mod De-Isolation.
+</p><ul><li><b>ESM Mastering</b>. You can make the base (or "source") mod(s) into a master by converting it to an ESM. Both TES4Gecko and Wrye Bash provide functions to let you convert an ESP into an ESM. It works great for lots of things, especially new content that's not directly connected to the Tamriel worldspace.<br><br>However, masters generally should not modify other masters -- only plugins are supposed to modify masters. When one master directly modifies another master, problems can result, such as vanishing landscape. If you try to use TESCS to make a mod based on a master that modifies another master (especially worldspace changes), then you will very likely crash TESCS or encounter a bunch of "assertion errors" when you try to save your changes, leaving you with a plugin containing corrupt cell records.
+</li></ul><ul><li><b>ESP Mastering</b>. You can trick TESCS into letting you work with plugins as if they were masters. This can be done using a fairly easy bit-flipping method in Wrye Bash or a more cumbersome bait-and-switch method (also using Wrye Bash). It works by temporarily turning an ESP into an ESM so TESCS will let you to establish dependencies on it. Once again, however, these solutions can be problematic when working with plugins that include cell changes, such as the official DLC plugins, usually resulting in a crash or "assertion errors" when you try to save your changes, leaving you with a plugin containing corrupt cell records.
+</li></ul><ul><li><b>ESP Patching</b>. This involves using TES4Edit to directly create an add-on "patch" plugin or using TES4Gecko to create a patch file based on the differences between the original and your changes. This works best when you're not adding any new content to the source originals (i.e., you're just altering values in existing records, such as giving all mudcrabs more health or making certain weapons do more damage).
+</li></ul><p>Each of these methods is explained in greater detail below.
+</p><a name="ESM_Mastering"></a><h2><span class="mw-headline"> ESM Mastering </span></h2><p>Many large mods use ESM Mastering to get around the limitations of standard plugins. However, creating your own master files can be tricky in some cases, so it's not generally recommended unless you have a strong need to do so. 
+</p><p>Even though master files are generally supposed to only contain new content, this rule can sometimes be ignored if you really have a need to do so. Master files can in fact both use and modify content from other masters, such as Oblivion.esm, as long as they don't alter any cells (especially exterior cells) in another master.
+</p><p>If your mod adds a lot of new content but doesn't alter any standard Oblivion.esm cells, then it can probably be turned into a master. This makes it easy to then offer add-on option modules to extend or tweak your base master. However, you should be careful about such decisions since master files don't have the same load-order flexibility as normal plugins (masters always load before plugins).
+</p><p>If your mod adds a lot of new content and needs to alter cells in another master, then you probably need both an ESM (for the new content) and an ESP (to connect your ESM to Oblivion.esm). For example, if you create a new worldspace and place it in a master file, then you should use a separate plugin to connect your mastered worldspace to Tamriel. The <i>Split Plugin</i> feature in TES4Gecko can help in situations like this (see ESP Mastering, below, for more details).
+</p><p>The process for creating a master file is simple using either Wrye Bash or TES4Gecko:
+</p><ul><li> In Wrye Bash, go to the Mods tab, right-click on the plugin you want to convert, and select <i>Copy to Esm</i>.
+</li></ul><ul><li> In TES4Gecko, click the <i>Convert to Master</i> button, select the plugin you want to convert, and click <i>Open</i>.
+
+</li></ul><p>Either of these methods will give you a new file named MyPlugin.esm (assuming the original was MyPlugin.esp).
+</p><p>Now you can launch TESCS, select your new master, and start creating plugins based on it. 
+</p><p>This is by far the easiest solution, but it's not always feasible, in which case you may need to use one of the additional methods described below.
+</p><a name="ESP_Mastering"></a><h2><span class="mw-headline"> ESP Mastering </span></h2><p>In many cases, you may not have the option to distribute your own master file. This is especially true if you don't have control over the original plugin, as with the official DLC mods. In a case like this, ESP Mastering or ESP Patching can be used instead of ESM Mastering. Once you head down this road, you may want to consider whether ESP Mastering or ESP Patching is a better solution.
+</p><p>ESP Mastering is usually the best choice when you want to add a significant amount of new content to an existing plugin without storing your changes in the original file. On the other hand, ESP Patching is usually preferred when you mainly want to tweak existing content in the original.
+</p><p>For example, if you wanted to add new enemies and dungeon levels to the Knights of the Nine DLC mod, then ESP Mastering is the way to go because you're adding a bunch of new content. If you just want to alter the existing enemies and dungeon levels in KotN, then ESP Patching is probably a better solution.
+</p><a name="Esmify_.28bit-flip.29_Method"></a><h3><span class="mw-headline"> Esmify (bit-flip) Method </span></h3><p>See <a href="https://web.archive.org/web/20110928161918/http://cs.elderscrolls.com/constwiki/index.php/De-Isolation_Tutorial#Esmify_.28bit-flip.29_Method_.28Wrye_Bash.29" title="ESP Mastering">Esmify</a> for a full description.
+</p><a name="Bait-and-Switch_Method"></a><h3><span class="mw-headline"> Bait-and-Switch Method </span></h3><p>This solution is a bit more cumbersome than the bit-flip method. It uses SomePlugin.esm (note the ESM extension) while you're making changes as the "bait" (so TESCS will consider it a master) and then swaps it with SomePlugin.esp when you're done (the "switch").
+</p><ul><li> Convert SomePlugin.esp to SomePlugin.esm with TES4Gecko or Wrye Bash (see ESM Mastering, above, for details).
+</li><li> Load SomePlugin.esm in TESCS.
+
+</li><li> Make your changes in TESCS and save as MyTweaks.esp
+</li><li> Now you'll need to use Wrye Bash to change the masters list for MyTweaks.esp so it looks for SomePlugin.esp instead of SomePlugin.esm.
+</li><li> To do this, select MyTweaks.esp in the Mods tab of Wrye Bash.
+</li><li> Look in the lower-right corner for the list of masters.
+</li><li> Click on the entry for SomePlugin.esm twice so it gives you an edit box.
+</li><li> Change the "m" to "p", so it now says ".esp" instead of ".esm".
+</li></ul><p>The advantage to this method over the bit-flip method is that you have some way to deal with assertion errors if you get any. If you're trying to modify Knights of the Nine, DLCHorseArmor and other mods that alter vanilla cells, and if your MyTweaks.esp also contains any cells in it, they will likely get corrupted with assertion errors in TESCS when you save changes. All the other data will be good, though.
+</p><p>If you get stuck with this problem, the workaround is a bit involved. You have to first make a split master in TES4Gecko so you now have a clean master that doesn't alter any vanilla cells. The Split Plugin feature in TES4Gecko separates the original plugin into new records, which get saved in the ESM, and change records, which get saved in the ESP. This means you'll have a SomePlugin.esm/SomePlugin.esp pair that work together, each containing different things. Now you can build any cell changes/additions based on the split master (SomePlugin.esm) and keep your changes safe with the good cell data in it. You may want to save your work in an easily identifiable file, such as MyTweakedCells.esp.
+</p><p>Now you can go back and use the bait-and-switch method or the bitflip method to make all your other changes on the unsplit original, knowing that the result will end up with corrupted cells in it. Once you've got this version done, you can chop out the bad cells with TESsnip or a hex editor, change the file extension to .esu, and apply it as a TES4Gecko patch to the version with good cell data.
+</p><p><a href="https://web.archive.org/web/20110928161918/http://cs.elderscrolls.com//constwiki/index.php/The_Elder_Scrolls_Construction_Set" title="The Elder Scrolls Construction Set">TESCS 1.2</a> seems to be a bit less forgiving about worldspace changes and may crash rather than letting you save a file with corrupted cell data as suggested here. If you run into this problem, you may be able to get around it using TESCS 1.0.
+
+</p><a name="ESP_Patching"></a><h2><span class="mw-headline"> ESP Patching </span></h2><p>This works best when you're only changing existing records in another plugin. For example, if you want to alter the armored horses from DLCHorseArmor, this is the easiest way to do it.
+</p><a name="Making_an_ESP_Patch_With_TES4Edit"></a><h3><span class="mw-headline"> Making an ESP Patch With TES4Edit </span></h3><p>In the following example, we'll use SomePlugin.esp as the original mod and MyTweaks.esp to contain the de-isolated changes, also known as "overrides".
+</p><ul><li> When you launch TES4Edit, it will popup a window showing your complete plugin load-order list. You can load everything, but this may be more than you really need. If you right-click anywhere in the list, you'll get an option to select none, which unchecks everything. Now you can just pick the plugin you want to alter. 
+</li><li> Select SomePlugin.esp and click OK when you're ready.
+</li><li> Once it finishes loading, expand the tree listing on the left for SomePlugin.esp.
+</li><li> Now expand the tree further to expose the specific records you want to change, such as Creatures, Weapons, etc.
+</li><li> Select the records you want to change. You can use shift-click and/or ctrl-click to select multiple records.
+</li><li> Right-click and select <i>Copy as override into...</i> from the context menu.
+
+</li><li> You'll get a popup listing all of your plugin files. Pick the last option, <i>new file</i>.
+</li><li> When prompted to enter a name, type MyTweaks (without the .esp extension).
+</li><li> Once TES4Edit finishes copying the records and saving your new file, you'll find MyTweaks.esp available in the left-hand navigation tree. Clicking on any of the records there will show you both the original values from SomePlugin.esp and the new values from MyTweaks.esp (they'll initially be identical).
+</li><li> Click on any of the field values in the MyTweaks.esp column and make whatever changes you want. You can also drag and drop values from other records of the same type.
+</li><li> When you're done, use Ctrl-S to save your changes.
+</li></ul><p>If you later want to add more changes into the same MyTweaks.esp file, you can easily repeat the above process and pick your existing MyTweaks.esp as the target for <i>Copy as override into...</i> rather than <i>new file</i>. If any additional masters need to be added (for example, if you want to also include changes for SomeOtherPlugin.esp), then TES4Edit will automatically do this for you.
+
+</p><p>When you play, you'll of course want to put MyTweaks.esp after SomePlugin.esp in the load order, but that's really all there is to doing it.
+</p><a name="Making_an_ESP_Patch_With_TES4Gecko_and_Wrye_Bash"></a><h3><span class="mw-headline"> Making an ESP Patch With TES4Gecko and Wrye Bash </span></h3><p>You can also create an ESP Patch using TES4Gecko and Wrye Bash. 
+</p><p>This is a simple example based on the 1.31 version of Oscuro's Oblivion Overhaul. It describes a scenario where it makes a lot of sense to take advantage of mod "de-isolation" to preserve your changes in a separate plugin. 
+</p><p>Consider this question: 
+</p><p><i>I'm thinking of changing Oscuro's Oblivion Overhaul to add the War Scythes (which were left out at the last minute before the release of OOO 1.3) to some of the leveled lists, but I also know that a new version of OOO is coming out soon. Is there any conceivable way to have the changes transfer over to the new OOO (1.32) when it gets released? Some creative way of merging the old and the new or something? I don't really want to go and take the time to make the changes if I'll just end up having to do them again when the new one comes out.</i></p><p>Yes, there is a way. It's called de-isolation. This will keep your changes in a separate plugin so it won't be lost when the next version of OOO comes out. However, these instructions are fairly specific to OOO 1.31, which used one large ESP file. Since OOO 1.32 or later versions use a split ESM/ESP structure, an additional step to re-merge these files is necessary, creating a "merged master". To do this, you can use TES4Gecko's Merge to Master function to temporarily put everything back into a single file so you can work with it in the TESCS.
+</p><p>Start by making a copy of OOO, called something like OOO_scythes.esp. If you're working with the OOO 1.32 merged master (as described above), then you must use Wrye Bash <i>Copy to esp</i> command to do this. As long as you're just altering things that already exist in OOO, make all your changes in OOO_scythes.esp using TESCS. If you need to add anything new to it, then hold back on making those changes until later in the process.
+
+</p><p>Once you have the changes done, make a backup copy of your changed plugin just in case something goes wrong, then use TES4Gecko to <i>Create Patch</i> using Oscuro's_Oblivion_Overhaul.esp as the original and OOO_scythes.esp as the patch. This will create a new TES4Gecko patch file called OOO_scythes.esu. Now you can simply change the .esu extension to .esp and you're ready to move on to the next step.
+</p><p>Alternately, you can use <i>Display/Copy Plugin Records</i> or <i>Compare Plugins</i> in TES4Gecko to Ignore everything except the changed entries. You can quickly Ignore large blocks of stuff by simply doing group-level ignores on record groups you know you don't need. When you're done, save the plugin, and you'll see all the Ignored entries vanish.
+</p><p>Regardless of which method you used, you'll next want to fire up Wrye Bash, right-click OOO_scythes.esp, select <i>Add Master</i> from the context menu, and pick either "Oscuro's_Oblivion_Overhaul.esp" (if you started with OOO 1.31) or "Oscuro's_Oblivion_Overhaul.esm" (if you started with OOO 1.32).
+</p><p>After doing this, re-select your mod, look in the dependencies window (small pane in lower-right of screen), and check to make sure the new master record was added. This will make your OOO_scythes.esp dependent on the Oscuro's_Oblivion_Overhaul.esp and will make your changed scythe records override the normal ones in that mod.
+</p><p>When you play, you'll of course want to put your OOO_scythes.esp after OOO in the load order (so its changes override the original), but that's really all there is to doing it.
+
+</p><p>This way a single OOO_scythes.esp can, for example, be used with either the FULL or LITE versions of the Oscuro's_Oblivion_Overhaul.esp, and it will almost certainly be completely compatible with future versions of OOO -- only minor adjustments would be needed if future versions of OOO make new changes to those specific items (or the leveled lists you added them to), but at least you don't have to worry about changes anywhere else in OOO.
+</p><p>Now, if you want to add some new content as well, and you want to make sure it doesn't have a problem when the next version of OOO comes out, then you must make sure the new content isn't accidentally given the same master relationship as the changes. In other words, you need to make sure that any new content is stored in the local modindex rather than the master modindex. Otherwise your new content will be "injected" into the master and could potentially collide with other new data added there by the mod author in an update. However, the details on how to deal with issues like this would be a good subject for another tutorial since it's a bit out of the scope of this article.
+</p><p>One other possibility worth considering if you're only making changes and not adding anything new. Once you've finished making all your changes and chopping the plugin down to only include the records you changed, you can make it into a patch file. To do this, all you have to do is change the file extension to .ESU instead of .ESP. This allows TES4Gecko to recognize the file as a patch and you can use the <i>Apply Patch</i> function to add your changes back into OOO after the next update is released.</p></div></div>
+          <div style="clear: both"></div>
+        </div>
+      </div>
+      <!-- /wrapper --><!-- /main-content -->
+      <div id="footer"><div class="wrapper">
+        <hr>
+        <p></p><div id="g_footer"><p>| <a href="https://web.archive.org/web/20110928161918/http://devnull.sweetdanger.net/home.html">Home</a> | <a href="https://web.archive.org/web/20110928161918/http://cs.elderscrolls.com/constwiki/index.php/De-Isolation_Tutorial">CS Wiki version</a> |<br></p></div><p></p>
+        <div style="clear: both"></div>
+      </div></div>
+      <!-- /wrapper --><!-- /footer -->
+    </div>
+  </div>
+<!-- /wrapper --><!-- /container -->
+
+<div id="extraDiv1"><span></span></div><div id="extraDiv2"><span></span></div>
+<div id="extraDiv3"><span></span></div><div id="extraDiv4"><span></span></div>
+<div id="extraDiv5"><span></span></div><div id="extraDiv6"><span></span></div>
+
+
+
+
+</body></html>

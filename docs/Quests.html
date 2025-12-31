@@ -1,252 +1,843 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Oblivion Quest List</title>
-    <style>
-        :root {
-            --bg-primary: #1a1a1a;
-            --bg-secondary: #2d2d2d;
-            --bg-tertiary: #252525;
-            --text-primary: #e0e0e0;
-            --text-secondary: #b0b0b0;
-            --accent-red: #ff4444;
-            --accent-blue: #4a9eff;
-            --accent-cyan: #00d9ff;
-            --accent-gold: #ffd700;
-            --accent-green: #33cc00;
-            --border-color: #444;
-        }
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0085)https://web.archive.org/web/20111002020631/http://devnull.sweetdanger.net/quests.html -->
+<html style="--wm-toolbar-height: 67px;"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script src="./devnull.devakm - The Oblivion Quest List_files/athena.js.download" type="text/javascript"></script>
+<script type="text/javascript">window.addEventListener('DOMContentLoaded',function(){var v=archive_analytics.values;v.service='wb';v.server_name='wwwb-app222.us.archive.org';v.server_ms=704;archive_analytics.send_pageview({});});</script>
+<script type="text/javascript" src="./devnull.devakm - The Oblivion Quest List_files/bundle-playback.js.download" charset="utf-8"></script>
+<script type="text/javascript" src="./devnull.devakm - The Oblivion Quest List_files/wombat.js.download" charset="utf-8"></script>
+<script>window.RufflePlayer=window.RufflePlayer||{};window.RufflePlayer.config={"autoplay":"on","unmuteOverlay":"hidden","showSwfDownload":true};</script>
+<script type="text/javascript" src="./devnull.devakm - The Oblivion Quest List_files/ruffle.js.download"></script>
+<script type="text/javascript">
+    __wm.init("https://web.archive.org/web");
+  __wm.wombat("http://devnull.sweetdanger.net:80/quests.html","20111002020631","https://web.archive.org/","web","https://web-static.archive.org/_static/",
+	      "1317521191");
+</script>
+<link rel="stylesheet" type="text/css" href="./devnull.devakm - The Oblivion Quest List_files/banner-styles.css">
+<link rel="stylesheet" type="text/css" href="./devnull.devakm - The Oblivion Quest List_files/iconochive.css">
+<!-- End Wayback Rewrite JS Include -->
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <title>devnull.devakm - The Oblivion Quest List</title>
+  
+  <style type="text/css">
+  #g_title p, #g_footer p, #g_description p {
+    margin: 0;
+  }
+  /*
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--bg-primary);
-            color: var(--text-primary);
-            line-height: 1.6;
-            padding: 20px;
-        }
+  	-- -- -- -- -- -- --
+  	Browser Fixes
+  	-- -- -- -- -- -- --
+  	
+  	This file uses CSS filtering methods to fix various
+  	layout bugs.
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            background-color: var(--bg-secondary);
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-        }
+  	Each of the following three imported files is a 
+  	separate, browser-specific CSS file that keeps all 
+  	hacks out of the main style sheet.
+  	
+  	Over time, as supporting these browsers no longer
+  	remains a priority, cleaning up the hacks is as
+  	easy as deleting the @import statement below, or
+  	simply no longer linking this file from the HTML.
+  	
+  */
 
-        header {
-            border-bottom: 2px solid var(--accent-red);
-            padding-bottom: 20px;
-            margin-bottom: 30px;
-        }
+  /* 
+    fix ie6 "peekaboo bug" using the "holly hack". 
+    Note, this style only gets applied to ie6
+  */
+  * html .wrapper {
+    height: 0.1%;
+  }
 
-        h1 {
-            color: var(--accent-red);
-            font-size: 2.5em;
-            margin-bottom: 10px;
-        }
+  /* 
+   * IE5 mac - overrides the IE/Win hack 
+   */
 
-        .subtitle {
-            color: var(--accent-cyan);
-            font-size: 1.2em;
-            font-style: italic;
-            margin-bottom: 10px;
-        }
+  /*\*//*/
 
-        .last-updated {
-            color: var(--text-secondary);
-            font-size: 0.9em;
-            font-style: italic;
-        }
+  * html #threecolumn div {
+  	height: auto;
+  }
 
-        h2 {
-            color: var(--accent-blue);
-            font-size: 1.8em;
-            margin-top: 30px;
-            margin-bottom: 15px;
-        }
+  /**/
 
-        h3, h4 {
-            color: var(--accent-cyan);
-            margin-top: 25px;
-            margin-bottom: 10px;
-        }
 
-        h4 {
-            font-size: 1.3em;
-        }
+  /* 
+   * IE5/Win-specific CSS -ensures #container wraps all content on window resize
+   */
 
-        p {
-            margin-bottom: 15px;
-            color: var(--text-primary);
-        }
+  @media tty {
+   i{content:"\";/*" "*/}} * html #container { height: 1%; } /*";}
+  }/* */
+  /* Styling for editable elements. Eventually, this will be part of the style. */
+  .editable {
+    border: 1px dashed blue;
+  }
+  
+  #footer {
+    clear: both;
+  }
+  
+  /* Extra divs hidden by default. The custom CSS can override this though */
+  #extraDiv1, #extraDiv2, #extraDiv3, #extraDiv4, #extraDiv5, #extraDiv6 {
+    display: none;
+  }
+  
+  a img,:link img,:visited img {border: none;}
 
-        a {
-            color: var(--accent-cyan);
-            text-decoration: none;
-            border-bottom: 1px solid var(--accent-cyan);
-            transition: color 0.3s, border-color 0.3s;
-        }
 
-        a:hover {
-            color: var(--accent-gold);
-            border-color: var(--accent-gold);
-        }
+  body {
+    text-align: center;
+  }
+  #container {
+    width: 718px;
+    text-align: left;
+    margin: 0 auto;
+  }
+  /** BEGIN CUSTOM SKIN **/
+  /*
 
-        .info-box {
-            background-color: rgba(74, 158, 255, 0.1);
-            border-left: 4px solid var(--accent-blue);
-            padding: 15px;
-            margin: 20px 0;
-            border-radius: 4px;
-        }
+  	-- -- -- -- -- -- --
+  	Base CSS
+  	-- -- -- -- -- -- --
+  	
+  	This file simply removes default styling on most HTML elements in 
+  	order to reduce the need to later override them.
+  	
+  */
 
-        .note {
-            background-color: rgba(255, 215, 0, 0.1);
-            border-left: 4px solid var(--accent-gold);
-            padding: 15px;
-            margin: 20px 0;
-            border-radius: 4px;
-        }
+  h1,h2,h3,h4,h5,h6,pre,code,p {font-size: 1em;}
+  dl,li,dt,dd,h1,h2,h3,h4,h5,h6,pre,form,body,html,p,blockquote,fieldset,input {margin: 0; padding: 0;}
+  a img,:link img,:visited img {border: none;}
+  address {font-style: normal;}/*
 
-        .section {
-            background-color: var(--bg-tertiary);
-            padding: 20px;
-            margin: 20px 0;
-            border-radius: 6px;
-            border-left: 3px solid var(--accent-blue);
-        }
+  	-- -- -- -- -- -- --
+  	Type Scheme: Deco
+  	-- -- -- -- -- -- --
+  	
+  */
 
-        .quest-links {
-            display: flex;
-            gap: 20px;
-            margin: 30px 0;
-        }
+  body {
+  	font: 76% Verdana, sans-serif;
+  }	
 
-        .quest-link-box {
-            flex: 1;
-            background-color: var(--bg-tertiary);
-            padding: 30px;
-            border-radius: 8px;
-            text-align: center;
-            border: 2px solid var(--accent-blue);
-            transition: all 0.3s ease;
-        }
+  h1, h2, h3, h4, h5, h6, p.description {
+  	font-family: "Trebuchet MS", Trebuchet, sans-serif;
+  }
+  h1 {
+  	font-size: 3em;
+  	font-weight: bold;
+  	letter-spacing: 2px;
+  }
+  h2 {
+  	font-size: 2em;
+  	font-weight: normal;
+  }
+  h3 {
+  	font-size: 1.5em;
+  }
+  h4 {
+  	font-size: 1.2em;
+  	letter-spacing: 0.2em;
+  }
+  h5 {
+  	font-size: 1.2em;
+  }
+  h6 {
+  	font-size: 1em;
+  	font-weight: bold;
+  }
 
-        .quest-link-box:hover {
-            border-color: var(--accent-gold);
-            transform: translateY(-5px);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
-        }
+  p, td {
+  	line-height: 1.8em;
+  }
+  code, kbd {
+  	font-size: 1.25em;
+  }/*
 
-        .quest-link-box h4 {
-            margin: 0;
-            font-size: 1.5em;
-        }
+  	-- -- -- -- -- -- --
+  	STYLE: Victoria
+  	-- -- -- -- -- -- --
 
-        .quest-link-box a {
-            color: var(--accent-gold);
-            font-size: 1.5em;
-            border: none;
-        }
+  */
 
-        footer {
-            margin-top: 40px;
-            padding-top: 20px;
-            border-top: 1px solid var(--border-color);
-            text-align: center;
-            color: var(--text-secondary);
-        }
 
-        footer a {
-            margin: 0 10px;
-        }
+  /* ie6win */
 
-        hr {
-            border: none;
-            border-top: 1px solid var(--border-color);
-            margin: 20px 0;
-        }
+  /* IE/Win fixes for various layouts
+  ----------------------------------------------- */
+  * html #threecolumn #main-content {
+  	width: 429px;
+  	margin-left: -2px;
+  }
 
-        b, strong {
-            color: var(--text-primary);
-            font-weight: 600;
-        }
+  /* ie5mac */
 
-        i, em {
-            color: var(--text-secondary);
-            font-style: italic;
-        }
+  /*\*//*/
+  * html #threecolumn #main-content {
+  	width: 429px;
+  	margin-left: 0;
+  }
+  /**/
 
-        .copyright {
-            font-size: 0.85em;
-            margin-top: 10px;
-        }
-    </style>
+  /* ie5win */
+
+  @media tty {
+   i{content:"\";/*" "*/}} td { font-size: 0.8em; } #footer p { margin: 0; padding: 1em 0; } /*";}
+  }/* */
+
+
+  /* Basic HTML style
+  ----------------------------------------------- */
+  a:link {
+  	text-decoration: underline;
+  }
+  a:visited {
+  	text-decoration: underline;
+  }
+  body {
+  	font: 80% "Georgia", serif;
+  	margin: 0;
+  	padding: 25px 0 25px 0;
+  	border-top: solid 3px #fff;
+  	border-bottom: solid 3px #fff;
+  }
+  caption {
+  	font-size: 1.2em;
+  	font-style: italic;
+  	text-align: left;
+  	padding: 1px 4px 4px 4px;
+  	margin-bottom: 4px;
+  	border-bottom: solid 1px #ccc;
+  }
+  dt {
+  	font-weight: bold;
+  }
+  dd {
+  	font-style: italic;
+  	margin: 0 0 1em 1em;
+  }
+  h2 {
+  	font-size: 1.4em;
+  	font-weight: normal;
+  	margin: 1em 0;
+  	padding-bottom: 3px;
+  }
+  h3 {
+  	font-size: 1.2em;
+  	font-weight: normal;
+  	font-style: normal;
+  	padding-bottom: 8px;
+  	margin-top: 1em;
+  	margin-bottom: 0.5em;
+  }
+  h4 {
+  	font-size: 1.1em;
+  	letter-spacing: 0.1em;
+  	padding-left: 12px;
+  	margin: 1.5em 0 1em 0;
+  }
+  h5 {
+  	padding-bottom: 2px;
+  	margin: 1.5em 0 1em 0;
+  }
+  h6 {
+  	font-weight: normal;
+  	letter-spacing: 0.1em;
+  	margin: 1em 0;
+  }
+  hr {
+  	margin: 2em 0;
+  	border-style: none;
+  	height: 1px;
+  }
+  p {
+  	line-height: 1.6;
+  	margin: 1em 0;
+  }
+  td {
+  	vertical-align: top;
+  	padding: 1px 4px;
+  }
+  td p {
+  	margin: 0 0 1em 0;
+  }
+  th {
+  	text-align: left;
+  	font-weight: normal;
+  	font-style: italic;
+  	vertical-align: top;
+  	padding: 1px 4px;
+  }
+
+
+  ul, ol, dl {
+  	margin-bottom: 1.6em;
+  	padding-left: 2em;
+  	margin-left: 0;
+  }
+
+  ul li {
+  	list-style: circle;
+  	margin-bottom: 0.8em;
+  }
+  ol li {
+  	list-style: upper-roman;
+  	margin-left: 2em;
+  	margin-bottom: 0.8em;
+  }
+
+
+
+
+  /* Header
+  ----------------------------------------------- */
+  h1 {
+  	padding-top: 25px;
+  	font-size: 2.4em;
+  	letter-spacing: 0.1em;
+  	text-align: center;
+  }
+  #g_description {
+  	font-style: italic;
+  	text-align: center;
+  	padding-bottom: 15px;
+  	margin: 0;
+  	line-height: 1;
+  }
+
+
+  /* content
+  ----------------------------------------------- */
+  #main-content .wrapper {
+  	margin: 0 25px;
+  }
+
+
+
+  /* sidebar
+  ----------------------------------------------- */
+
+  #sidebar .wrapper {
+  	padding-left: 15px;
+  	padding-right: 5px;
+  }
+
+  #sidebar .wrapper h3 {
+  	padding: 0 0 11px 0;
+  }
+
+
+  #sidebar li {
+  	margin-bottom: 0.8em;
+  }
+  #sidebar .wrapper ul li {
+  	list-style: circle;
+  }
+  #sidebar .wrapper ol li {
+  	list-style: upper-roman;
+  }
+
+  #sidebar .links {
+  	margin-bottom: 2em;
+  }
+
+
+  #adsense, #adsense .wrapper {
+  	text-align: left;
+  	margin: 0;
+  	padding: 0;
+  }
+
+
+  /* footer
+  ----------------------------------------------- */
+  #footer {
+  	margin: 0;
+  	font-style: italic;
+  	font-size: 0.9em;
+  }
+  #footer hr {
+  	display: none;
+  }
+
+  /* header
+  ----------------------------------------------- */
+  #header #page-title {
+  	padding-left: 12px;
+  	padding-right: 12px;
+  }
+
+  #header #g_description {
+  	margin-left: 12px;
+  	margin-right: 12px;
+  }
+
+  /* fixed 1 column
+  ----------------------------------------------- */
+  #onecolumn #header .wrapper {
+  	padding-bottom: 10px;
+  }
+  #onecolumn #footer {
+  	padding: 0 25px 10px 25px;
+  }
+
+
+
+  /* fixed left 2 column
+  ----------------------------------------------- */
+  #twocolumn-left #header .wrapper {
+  	padding-bottom: 10px;
+  }
+  #twocolumn-left #footer {
+  	padding: 0 25px 10px 264px;
+  }
+
+
+  /* fixed right 2 column
+  ----------------------------------------------- */
+  #twocolumn-right #header .wrapper {
+  	padding-bottom: 10px;
+  }
+  #twocolumn-right #footer {
+  	padding: 0 264px 10px 25px;
+  }
+
+
+  /* fixed 3 column
+  ----------------------------------------------- */
+  #threecolumn #header .wrapper {
+  	padding-bottom: 10px;
+  }
+  #threecolumn #footer {
+  	padding: 0 168px 10px 168px;
+  }
+  #sidebar-alternate {
+  	width: 129px;
+  }
+
+
+  /* liquid 2 column, right and left
+  ----------------------------------------------- */
+  #twocolumn-liquid-left, #twocolumn-liquid-right {
+  	padding: 0;
+  	border: 0;
+  	border-top: solid 1px #999;
+  }
+
+  #twocolumn-liquid-left h1, #twocolumn-liquid-right h1 {
+  	margin: 0;
+  }
+
+
+  #twocolumn-liquid-left #footer, #twocolumn-liquid-right #footer {
+  	padding: 0;
+  	margin: 0;
+  }
+  #twocolumn-liquid-left #container #footer .wrapper, #twocolumn-liquid-right #container #footer .wrapper {
+  	padding: 10px 25px 10px 25px;
+  	text-align: center;
+  }
+
+
+
+
+  #twocolumn-liquid-left #sidebar .wrapper *, #twocolumn-liquid-right #sidebar .wrapper * {
+  	margin-left: 0;
+  	margin-right: 0;
+  }
+  #twocolumn-liquid-left #sidebar h3, #twocolumn-liquid-right #sidebar h3 {
+  	padding-left: 0;
+  }
+  #twocolumn-liquid-left #sidebar ul, #twocolumn-liquid-left #sidebar ol,
+  #twocolumn-liquid-right #sidebar ul, #twocolumn-liquid-right #sidebar ol {
+  	padding-left: 2.5em;
+  	/* extra wide for IE's sake */
+  }
+  #twocolumn-liquid-left #sidebar .links ul, #twocolumn-liquid-right #sidebar .links ul {
+  	padding-left: 0;
+  }
+
+
+
+
+
+
+
+  /* editable area borders
+  ----------------------------------------------- */
+  .editable {
+  	border: dashed 1px #f00;
+  }
+  #onecolumn .editmode h1, #twocolumn-left .editmode h1, #twocolumn-right .editmode h1, #threecolumn .editmode h1 {
+  	background-position: -1px 0;
+  }
+  #twocolumn-liquid-left .editmode h1, #twocolumn-liquid-right .editmode h1 {
+  	background-position: 0 -1px;
+  }
+  /*
+
+  	-- -- -- -- -- -- --
+  	COLOR SCHEME: Underbrush
+  	-- -- -- -- -- -- --
+
+  */
+
+
+  /* Basic HTML style */
+
+  a:link {
+  	color: #A04D3E;
+  	border-bottom: solid 1px #C3C191;
+  	text-decoration: none;
+  }
+  a:visited {
+  	color: #BC8278;
+  	border-bottom: solid 1px #BC8278;
+  	text-decoration: none;
+  }
+  a:hover {
+  	color: #000;
+  	border-color: #000;
+  }
+  body {
+  	color: #36341A;
+  	background: #3C391B url(/web/20111002020631im_/http://devnull.sweetdanger.net/devnull_style/body-bg.gif) repeat-x left top;
+  }
+  caption {
+  	border-bottom-color: #ccc;
+  }
+  code, kbd {
+  	color: #A04D3E;
+  }
+  dt {
+  }
+  dd {
+  }
+  h2 {
+  	color: #A04D3E;
+  	background: url(/web/20111002020631im_/http://devnull.sweetdanger.net/devnull_style/h2.gif) repeat-x left bottom;
+  }
+  h3 {
+  	color: #827C5C;
+  	background: url(/web/20111002020631im_/http://devnull.sweetdanger.net/devnull_style/h3.gif) repeat-x left bottom;
+  }
+  h4 {
+  	color: #A04D3E;
+  	background: url(/web/20111002020631im_/http://devnull.sweetdanger.net/devnull_style/h4.gif) no-repeat 0 5px;
+  }
+  h5 {
+  	color: #ADA97C;
+  	background: url(/web/20111002020631im_/http://devnull.sweetdanger.net/devnull_style/h5-border.gif) repeat-x left bottom;
+  }
+  h6 {
+  	color: #3C391B;
+  }
+  hr {
+  	color: #B3B3A9;
+  	background: #B3B3A9;
+  	border-color: #B3B3A9;
+  }
+  td {
+  	vertical-align: top;
+  	padding: 1px 4px;
+  }
+  th {
+  }
+
+
+
+
+  /* Header
+  ----------------------------------------------- */
+  h1 {
+  	color: #36341A;
+  }
+  #g_description {
+  	color: #DAD7A4;
+  }
+
+  /* fixed-width common header
+  ----------------------------------------------- */
+  #onecolumn h1, #twocolumn-left h1, #twocolumn-right h1, #threecolumn h1 {
+  	background: url(/web/20111002020631im_/http://devnull.sweetdanger.net/devnull_style/fixed-h1.gif) no-repeat;
+  }
+  #onecolumn #header, #twocolumn-left #header, #twocolumn-right #header, #threecolumn #header {
+  	background: url(/web/20111002020631im_/http://devnull.sweetdanger.net/devnull_style/fixed-header.gif) repeat-y;
+  }
+
+
+
+  #footer {
+  	color: #797454;
+  }
+  .editable {
+  	border: dashed 1px #f00;
+  }
+
+
+
+  /* fixed 1 column
+  ----------------------------------------------- */
+  #onecolumn #header .wrapper {
+  	background: url(/web/20111002020631im_/http://devnull.sweetdanger.net/devnull_style/fixed-one-headerwrapper.gif) no-repeat left bottom;
+  }
+  #onecolumn #container {
+  	background: #fff url(/web/20111002020631im_/http://devnull.sweetdanger.net/devnull_style/fixed-one-container.gif) repeat-y;
+  }
+  #onecolumn #footer {
+  	background: url(/web/20111002020631im_/http://devnull.sweetdanger.net/devnull_style/fixed-one-footer.gif) no-repeat left bottom;
+  }
+
+
+
+  #sidebar .wrapper h3 {
+  	background-image: url(/web/20111002020631im_/http://devnull.sweetdanger.net/devnull_style/h3-sidebar-border.gif);
+  }
+
+
+  /* fixed 2 column left
+  ----------------------------------------------- */
+  #twocolumn-left #header .wrapper {
+  	background: url(/web/20111002020631im_/http://devnull.sweetdanger.net/devnull_style/fixed-left-headerwrapper.gif) no-repeat left bottom;
+  }
+  #twocolumn-left #container {
+  	background: #fff url(/web/20111002020631im_/http://devnull.sweetdanger.net/devnull_style/fixed-left-container.gif) repeat-y;
+  }
+  #twocolumn-left #footer {
+  	background: url(/web/20111002020631im_/http://devnull.sweetdanger.net/devnull_style/fixed-left-footer.gif) no-repeat left bottom;
+  }
+
+
+  /* fixed 2 column right
+  ----------------------------------------------- */
+  #twocolumn-right #header .wrapper {
+  	background: url(/web/20111002020631im_/http://devnull.sweetdanger.net/devnull_style/fixed-right-headerwrapper.gif) no-repeat left bottom;
+  }
+  #twocolumn-right #container {
+  	background: #fff url(/web/20111002020631im_/http://devnull.sweetdanger.net/devnull_style/fixed-right-container.gif) repeat-y;
+  }
+  #twocolumn-right #footer {
+  	background: url(/web/20111002020631im_/http://devnull.sweetdanger.net/devnull_style/fixed-right-footer.gif) no-repeat left bottom;
+  }
+
+
+  /* fixed 3 column
+  ----------------------------------------------- */
+  #threecolumn #header .wrapper {
+  	background: url(/web/20111002020631im_/http://devnull.sweetdanger.net/devnull_style/fixed-three-headerwrapper.gif) no-repeat left bottom;
+  }
+  #threecolumn #container {
+  	background: #fff url(/web/20111002020631im_/http://devnull.sweetdanger.net/devnull_style/fixed-three-container.gif) repeat-y;
+  }
+  #threecolumn #footer {
+  	background: url(/web/20111002020631im_/http://devnull.sweetdanger.net/devnull_style/fixed-three-footer.gif) no-repeat left bottom;
+  }
+  #threecolumn #sidebar h3, #threecolumn #sidebar-alternate h3 {
+  	background: url(/web/20111002020631im_/http://devnull.sweetdanger.net/devnull_style/h3-sidebar-border-3col.gif) no-repeat center bottom;
+  }
+
+
+  /* liquid 2 column, right and left
+  ----------------------------------------------- */
+  #twocolumn-liquid-left, #twocolumn-liquid-right {
+  	background: #fff;
+  }
+
+  #twocolumn-liquid-left h1, #twocolumn-liquid-right h1 {
+  	margin: 0;
+  	background: url(/web/20111002020631im_/http://devnull.sweetdanger.net/devnull_style/liquid-header-left.gif) no-repeat left top;
+  }
+  #twocolumn-liquid-left #header, #twocolumn-liquid-right #header {
+  	background: #87815F url(/web/20111002020631im_/http://devnull.sweetdanger.net/devnull_style/liquid-header-bg.gif) repeat-x;
+  }
+  #twocolumn-liquid-left #container #header .wrapper, #twocolumn-liquid-right #container #header .wrapper {
+  	background: url(/web/20111002020631im_/http://devnull.sweetdanger.net/devnull_style/liquid-header-right.gif) no-repeat right top;
+  }
+  #twocolumn-liquid-left #container #header p.description, #twocolumn-liquid-right #container #header p.description {
+  	background: url(/web/20111002020631im_/http://devnull.sweetdanger.net/devnull_style/liquid-header-desc.gif) repeat-y left top;
+  }
+
+
+  #twocolumn-liquid-left #footer, #twocolumn-liquid-right #footer {
+  	background: url(/web/20111002020631im_/http://devnull.sweetdanger.net/devnull_style/liquid-left-footer.gif) no-repeat left bottom;
+  }
+  #twocolumn-liquid-left #container #footer .wrapper, #twocolumn-liquid-right #container #footer .wrapper {
+  	background: url(/web/20111002020631im_/http://devnull.sweetdanger.net/devnull_style/liquid-right-footer.gif) no-repeat right bottom;
+  }
+
+
+  #twocolumn-liquid-left #container, #twocolumn-liquid-right #container {
+  	background: #fff url(/web/20111002020631im_/http://devnull.sweetdanger.net/devnull_style/liquid-left-container.gif) repeat-y;
+  }
+  #twocolumn-liquid-left #container .wrapper, #twocolumn-liquid-right #container .wrapper {
+  	background: url(/web/20111002020631im_/http://devnull.sweetdanger.net/devnull_style/liquid-right-container.gif) repeat-y right top;
+  }
+
+  /** END CUSTOM SKIN **/
+  </style>
+
+  <!-- Hack to avoid flash of unstyled content in IE -->
+  <script> </script>
 </head>
-<body>
-    <div class="container">
-        <header>
-            <h1>The Oblivion Quest List</h1>
-            <p class="subtitle">Guide to the Ultimate Quest Mods Experience for TES IV: Oblivion</p>
-            <p class="last-updated">Last Updated 03/03/2008</p>
-        </header>
 
-        <main>
-            <div class="info-box">
-                <p><b>Note:</b> More Quest Mods! The old sites for TOQL are gone, but the Oblivion Quest Mod list lives on at UESP here: <a href="https://en.uesp.net/wiki/Oblivion_Mod:Oblivion_Quest_Mod_Wiki" target="_blank">Update your bookmarks and links!</a></p>
-            </div>
-
-            <h2>WHAT IS TOQL?</h2>
-
-            <div class="section">
-                <p>The Oblivion Quest List (<b>TOQL</b>) is intended to be a comprehensive guide to good quest mods for TES IV: Oblivion. It is a community project, in the sense that all of the mods here have been recommended by members of the mod community. Good quest mods are critical to the future of Oblivion modding, because without them people quickly get bored with plundering random dungeons, no matter how great the "eye candy" is.</p>
-
-                <p>What makes a good quest? This is not as simple a question as you might think. My definition is a bit broader than some, but it's definitely not just a matter of having a few journal entries.</p>
-
-                <p>A good quest must, at a bare minimum, have an in-game story, a goal, a challenge, and a conclusion. Preferably, this should involve characters that you meet and interact with (not just ones you need to kill), although this is not strictly necessary -- a quest can be communicated entirely through in-game books or notes, for example. Ideally, it should also include some lore to establish a background setting, history, etc., and make some attempt to fit into the Elder Scrolls world (or replace it) even if it doesn't adhere strictly to previous TES lore. A good quest should also, of course, include some reward, but this can mean a lot of different things given the story.</p>
-
-                <p>Above all, a quest should be fun, either because of the way it challenges you or because of the way it tells a story -- or, if you're really lucky, both of these elements.</p>
-
-                <p>I've split the list into big quest mods and small quest mods. Big quest mods are typically lengthy, involve multiple tasks, or include lots of small quests. Small quest mods are shorter and sometimes simpler, but should still be a lot of fun. The title links to the ESF forum thread for the mod (if we could find a thread for it), while the small links below the description go directly to the download mirror sites for the mod.</p>
-
-                <p>So, with all that out of the way, here are the lists!</p>
-            </div>
-
-            <div class="quest-links">
-                <div class="quest-link-box">
-                    <h4><a href="Big-Quest-Mods.html">Big Quest Mods</a></h4>
-                </div>
-                <div class="quest-link-box">
-                    <h4><a href="Small-Quest-Mods.html">Small Quest Mods</a></h4>
-                </div>
-            </div>
-
-            <h3>CREDITS</h3>
-
-            <div class="section">
-                <p>This project never would have started if not for DragoonWraith. His original thread looking for quests mods, and the subsequent list of mods that he started, provided a lot of the initial material for TOQL. Also, KomodoDave (previously komodo2802) provided invaluable help gathering quite a few of the mod descriptions and download links.</p>
-
-                <p>Aside from the creators of the individual mods listed here, lots of people in the ESF threads have contributed suggestions, feedback, and (most important) links! Thank you all!</p>
-            </div>
-        </main>
-
-        <footer>
-            <hr>
-            <p>
-                <a href="index.html">Home</a> | 
-                <a href="devakm-mods.html">dev_akm's Mods & Guides</a>
-            </p>
-            <p class="copyright">Copyright 2006, 2007, 2008, 2009, 2015, 2025 by devakm. Individual works copyright by their respective creators.</p>
-        </footer>
+<body id="onecolumn"><!-- BEGIN WAYBACK TOOLBAR INSERT -->
+<script>__wm.rw(0);</script>
+<div id="wm-ipp-base" lang="en" style="display: block; direction: ltr; height: 67px;" toolbar-mode="auto"><template shadowrootmode="closed"><div id="wm-ipp" style="position:fixed;left:0;top:0;right:0;" class="">
+<div id="donato" style="position:relative;width:100%;height:0;">
+  <div id="donato-base">
+    <iframe id="donato-if" src="https://archive.org/includes/donate.php?as_page=1&amp;platform=wb&amp;referer=https%3A//web.archive.org/web/20111002020631/http%3A//devnull.sweetdanger.net/quests.html" scrolling="no" frameborder="0" style="width:100%; height:100%">
+    </iframe>
+  </div>
+</div><div id="wm-ipp-inside">
+  <div id="wm-toolbar" style="position:relative;display:flex;flex-flow:row nowrap;justify-content:space-between;" nav="async">
+    <div id="wm-logo" style="/*width:110px;*/padding-top:12px;">
+      <a href="https://web.archive.org/web/" title="Wayback Machine home page"><img src="https://web-static.archive.org/_static/images/toolbar/wayback-toolbar-logo-200.png" srcset="https://web-static.archive.org/_static/images/toolbar/wayback-toolbar-logo-100.png, https://web-static.archive.org/_static/images/toolbar/wayback-toolbar-logo-150.png 1.5x, https://web-static.archive.org/_static/images/toolbar/wayback-toolbar-logo-200.png 2x" alt="Wayback Machine" style="width:100px" border="0"></a>
     </div>
-</body>
-</html>
+    <div class="c" style="display:flex;flex-flow:column nowrap;justify-content:space-between;flex:1;">
+      <form class="u" style="display:flex;flex-direction:row;flex-wrap:nowrap;" target="_top" method="get" action="https://web.archive.org/web/submit" name="wmtb" id="wmtb"><input type="text" name="url" id="wmtbURL" value="http://devnull.sweetdanger.net/quests.html" onfocus="this.focus();this.select();" style="flex:1;" autocomplete="off"><input type="hidden" name="type" value="replay"><input type="hidden" name="date" value="20111002020631"><input type="submit" value="Go">
+      </form>
+      <div style="display:flex;flex-flow:row nowrap;align-items:flex-end;">
+                <div class="s" id="wm-nav-captures" style="flex:1;"><a class="t" href="https://web.archive.org/web/*/http://devnull.sweetdanger.net/quests.html" title="See a list of every capture for this URL">12 captures</a><div class="r" title="Timespan for captures of this URL">28 Apr 2009 - 30 May 2023</div></div>
+        <div class="k">
+          <a href="https://web.archive.org/web/19960801000000/http://devnull.sweetdanger.net/quests.html" id="wm-graph-anchor">
+            <div id="wm-ipp-sparkline" title="Explore captures for this URL" style="position: relative">
+              <canvas id="wm-sparkline-canvas" width="750" height="27" border="0"></canvas>
+            <div class="yt" style="display: none; width: 25px; height: 27px; left: 0px;"></div><div class="mt" style="display: none; width: 2px; height: 27px; left: 15px;"></div></div>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="n">
+      <table>
+        <tbody>
+          <!-- NEXT/PREV MONTH NAV AND MONTH INDICATOR -->
+          <tr class="m">
+            <td class="b" nowrap="nowrap"><a href="https://web.archive.org/web/20090501062856/http://devnull.sweetdanger.net/quests.html" title="06:28:56 May 1, 2009">May</a></td>
+            <td class="c" id="displayMonthEl" title="You are here: 02:06:31 Oct 02, 2011">Oct</td>
+            <td class="f" nowrap="nowrap"><a href="https://web.archive.org/web/20111210211106/http://devnull.sweetdanger.net/quests.html" title="21:11:06 Dec 10, 2011">Dec</a></td>
+          </tr>
+          <!-- NEXT/PREV CAPTURE NAV AND DAY OF MONTH INDICATOR -->
+          <tr class="d">
+            <td class="b" nowrap="nowrap"><a href="https://web.archive.org/web/20090501062856/http://devnull.sweetdanger.net/quests.html" title="06:28:56 May 1, 2009"><span class="ta"></span></a></td>
+            <td class="c" id="displayDayEl" style="width:34px;font-size:22px;white-space:nowrap;" title="You are here: 02:06:31 Oct 02, 2011">02</td>
+            <td class="f" nowrap="nowrap"><a href="https://web.archive.org/web/20111101184707/http://devnull.sweetdanger.net/quests.html" title="18:47:07 Nov 1, 2011"><span class="ta"></span></a></td>
+          </tr>
+          <!-- NEXT/PREV YEAR NAV AND YEAR INDICATOR -->
+          <tr class="y">
+            <td class="b" nowrap="nowrap"><a href="https://web.archive.org/web/20090501062856/http://devnull.sweetdanger.net/quests.html" title="06:28:56 May 1, 2009">2009</a></td>
+            <td class="c" id="displayYearEl" title="You are here: 02:06:31 Oct 02, 2011">2011</td>
+            <td class="f" nowrap="nowrap"><a href="https://web.archive.org/web/20150111215211/http://devnull.sweetdanger.net/quests.html" title="21:52:11 Jan 11, 2015">2015</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="r" style="display:flex;flex-flow:column nowrap;align-items:flex-end;justify-content:space-between;">
+      <div id="wm-btns" style="text-align:right;height:23px;">
+                <span class="xxs">
+          <div id="wm-save-snapshot-success">success</div>
+          <div id="wm-save-snapshot-fail">fail</div>
+          <a id="wm-save-snapshot-open" href="https://web.archive.org/web/20111002020631/http://devnull.sweetdanger.net/quests.html#" title="Share via My Web Archive" style="display: inline-block;">
+            <span class="iconochive-web"></span>
+          </a>
+          <a href="https://archive.org/account/login.php" title="Sign In" id="wm-sign-in" style="display: none;">
+            <span class="iconochive-person"></span>
+          </a>
+          <span id="wm-save-snapshot-in-progress" class="iconochive-web"></span>
+        </span>
+                <a class="xxs" href="https://help.archive.org/help/category/the-wayback-machine/" title="Get some help using the Wayback Machine" style="top:-6px;"><span class="iconochive-question" style="color:rgb(87,186,244);font-size:160%;"></span></a>
+        <a id="wm-tb-close" href="https://web.archive.org/web/20111002020631/http://devnull.sweetdanger.net/quests.html#close" style="top:-2px;" title="Close the toolbar"><span class="iconochive-remove-circle" style="color:#888888;font-size:240%;"></span></a>
+      </div>
+      <div id="wm-share" class="xxs">
+        <a href="https://web.archive.org/web/20111002020631/http://web.archive.org/screenshot/http://devnull.sweetdanger.net/quests.html" id="wm-screenshot" title="screenshot" style="visibility: hidden;">
+          <span class="wm-icon-screen-shot"></span>
+        </a>
+        <a href="https://web.archive.org/web/20111002020631/http://devnull.sweetdanger.net/quests.html#" id="wm-video" title="video">
+          <span class="iconochive-movies"></span>
+        </a>
+        <a id="wm-share-facebook" href="https://web.archive.org/web/20111002020631/http://devnull.sweetdanger.net/quests.html#" data-url="https://web.archive.org/web/20111002020631/http://devnull.sweetdanger.net:80/quests.html" title="Share on Facebook" style="margin-right:5px;" target="_blank"><span class="iconochive-facebook" style="color:#3b5998;font-size:160%;"></span></a>
+        <a id="wm-share-twitter" href="https://web.archive.org/web/20111002020631/http://devnull.sweetdanger.net/quests.html#" data-url="https://web.archive.org/web/20111002020631/http://devnull.sweetdanger.net:80/quests.html" title="Share on Twitter" style="margin-right:5px;" target="_blank"><span class="iconochive-twitter" style="color:#1dcaff;font-size:160%;"></span></a>
+      </div>
+      <div style="padding-right:2px;text-align:right;white-space:nowrap;">
+        <a id="wm-expand" class="wm-btn wm-closed" href="https://web.archive.org/web/20111002020631/http://devnull.sweetdanger.net/quests.html#expand"><span id="wm-expand-icon" class="iconochive-down-solid"></span> <span class="xxs" style="font-size:80%;">About this capture</span></a>
+      </div>
+    </div>
+  </div>
+    <div id="wm-capinfo" style="border-top:1px solid #777;display:none; overflow: hidden">
+        <div id="wm-capinfo-notice" source="api"></div>
+                <div id="wm-capinfo-collected-by">
+    <div style="background-color:#666;color:#fff;font-weight:bold;text-align:center;padding:2px 0;">COLLECTED BY</div>
+    <div style="padding:3px;position:relative" id="wm-collected-by-content">
+            <div style="display:inline-block;vertical-align:top;width:50%;">
+			<span class="c-logo" style="background-image:url(https://archive.org/services/img/alexacrawls);"></span>
+		Organization: <a style="color:#33f;" href="https://archive.org/details/alexacrawls" target="_new"><span class="wm-title">Alexa Crawls</span></a>
+		<div style="max-height:75px;overflow:hidden;position:relative;">
+	  <div style="position:absolute;top:0;left:0;width:100%;height:75px;background:linear-gradient(to bottom,rgba(255,255,255,0) 0%,rgba(255,255,255,0) 90%,rgba(255,255,255,255) 100%);"></div>
+	  Starting in 1996, <a href="http://www.alexa.com/">Alexa Internet</a> has been donating their crawl data to the Internet Archive.  Flowing in every day, these data are added to the <a href="http://web.archive.org/">Wayback Machine</a> after an embargo period.
+	</div>
+	      </div>
+      <div style="display:inline-block;vertical-align:top;width:49%;">
+			<span class="c-logo" style="background-image:url(https://archive.org/services/img/alexacrawls)"></span>
+		<div>Collection: <a style="color:#33f;" href="https://archive.org/details/alexacrawls" target="_new"><span class="wm-title">Alexa Crawls</span></a></div>
+		<div style="max-height:75px;overflow:hidden;position:relative;">
+	  <div style="position:absolute;top:0;left:0;width:100%;height:75px;background:linear-gradient(to bottom,rgba(255,255,255,0) 0%,rgba(255,255,255,0) 90%,rgba(255,255,255,255) 100%);"></div>
+	  Starting in 1996, <a href="http://www.alexa.com/">Alexa Internet</a> has been donating their crawl data to the Internet Archive.  Flowing in every day, these data are added to the <a href="http://web.archive.org/">Wayback Machine</a> after an embargo period.
+	</div>
+	      </div>
+    </div>
+    </div>
+    <div id="wm-capinfo-timestamps">
+    <div style="background-color:#666;color:#fff;font-weight:bold;text-align:center;padding:2px 0;" title="Timestamps for the elements of this page">TIMESTAMPS</div>
+    <div>
+      <div id="wm-capresources" style="margin:0 5px 5px 5px;max-height:250px;overflow-y:scroll !important"></div>
+      <div id="wm-capresources-loading" style="text-align:left;margin:0 20px 5px 5px;display:none"><img src="https://web-static.archive.org/_static/images/loading.gif" alt="loading"></div>
+    </div>
+    </div>
+  </div></div></div><link rel="stylesheet" type="text/css" href="./devnull.devakm - The Oblivion Quest List_files/banner-styles.css"><link rel="stylesheet" type="text/css" href="./devnull.devakm - The Oblivion Quest List_files/iconochive.css"><div class="wb-autocomplete-suggestions "></div></template>
+</div><div id="wm-ipp-print">The Wayback Machine - https://web.archive.org/web/20111002020631/http://devnull.sweetdanger.net:80/quests.html</div>
+<script type="text/javascript">//<![CDATA[
+__wm.bt(750,27,25,2,"web","http://devnull.sweetdanger.net/quests.html","20111002020631",1996,"https://web-static.archive.org/_static/",["https://web-static.archive.org/_static/css/banner-styles.css?v=1utQkbB3","https://web-static.archive.org/_static/css/iconochive.css?v=3PDvdIFv"], false);
+  __wm.rw(1);
+//]]></script>
+<!-- END WAYBACK TOOLBAR INSERT -->
+ 
+  <div id="container">
+    <div class="wrapper">
+      <div id="header">
+        <div class="wrapper">
+          <h1 id="page-title"><div id="g_title">The Oblivion Quest List<br></div></h1>
+          <div style="clear: both;"></div>
+          <p class="description"></p><div id="g_description"><p>Guide to the Ultimate Quest Mods Experience for TES IV: Oblivion&nbsp;</p></div><p></p>
+          <div style="clear: both"></div>
+        </div>
+      </div>
+      <!-- /editable --><!-- /wrapper --><!-- /header -->
+      <div id="main-content">
+        
+        <div class="wrapper">
+          <div class="content-item "><div id="g_body"><p><i><font color="#660000" size="1"><font size="4"><a href="https://web.archive.org/web/20111002020631/http://knol.google.com/k/devnulldevakm/toql-the-oblivion-quest-list/2xu0v7u1nzut0/2">New Location! </a>Update your bookmarks and links! </font></font></i></p><p><font color="#660000" size="1"><i><font color="#660000" size="1"><br></font></i></font></p><p><font color="#660000" size="1"><i><font color="#660000" size="1">Last Updated 03/03/2008</font></i></font></p><h2><font color="#660000" size="1"><font size="6">WHAT IS TOQL?</font></font></h2><p><font color="#660000" size="1"><font size="2">The Oblivion Quest List (<span style="font-weight: bold;">TOQL</span>) is intended to be a comprehensive guide to good quest mods for TES IV: Oblivion. It is a community project, in the sense that all of the mods here have been recommended by members of the mod community<a href="https://web.archive.org/web/20111002020631/http://www.elderscrolls.com/forums/index.php?showtopic=585343" target="_blank"></a>. </font><font size="2">Good quest mods are critical to the future of Oblivion modding, because without them people quickly get bored with plundering random dungeons, no matter how great the "eye candy" is.</font></font></p><p><font color="#660000" size="1"><font size="2">What makes a good quest? This is not as simple a question as you might think. My definition is a bit broader than some, but it's definitely not just a matter of having a few journal entries.</font></font></p><p><font color="#660000" size="1"><font size="2">A good quest must, at a bare minimum, have an in-game story, a goal, a challenge, and a conclusion. Preferably, this should involve characters that you meet and interact with (not just ones you need to kill), although this is not strictly necessary -- a quest can be communicated entirely through in-game books or notes, for example. Ideally, it should also include some lore to establish a background setting, history, etc., and make some attempt to fit into the Elder Scrolls world (or replace it) even if it doesn't adhere strictly to previous TES lore. A good quest should also, of course, include some reward, but this can mean a lot of different things given the story.</font></font></p><p><font color="#660000" size="1"><font size="2">Above all, a quest should be fun, either because of the way it challenges you or because of the way it tells a story -- or, if you're really lucky, both of these elements.</font></font></p><p><font color="#660000" size="1"><font size="2">I've split the list into big quest mods and small quest mods. Big quest mods are typically lengthy, involve multiple tasks, or include lots of small quests. Small quest mods are shorter and sometimes simpler, but should still be a lot of fun. The title links to the ESF forum thread for the mod (if we could find a thread for it), while the small links below the description go directly to the download mirror sites for the mod.</font></font></p><p><font color="#660000" size="1"><font size="2">If you have questions or feedback about these mods or the list itself, you can always post to the <a href="https://web.archive.org/web/20111002020631/http://www.bethsoft.com/bgsforums/index.php?showtopic=817082" target="_blank">latest ESF thread</a>. </font></font></p><p><font color="#660000" size="1"><font size="2">So, with all that out of the way, here are the lists!</font></font></p><h4><font color="#660000" size="1"><font size="4"><a href="https://web.archive.org/web/20111002020631/http://devnull.sweetdanger.net/bigquests">Big Quest Mods</a></font></font></h4><h4><font color="#660000" size="1"><font size="4"><a href="https://web.archive.org/web/20111002020631/http://devnull.sweetdanger.net/smallquests">Small Quest Mods</a></font></font></h4><p><font color="#660000" size="1"><font size="4">&nbsp;<br></font></font></p><p><font color="#660000" size="1"><font size="2"></font></font></p><h3><font color="#660000" size="1"><font size="1"><font size="1"><font size="4">CREDITS</font></font></font></font></h3><p><font color="#660000" size="1"><font size="1"><font size="1"><font size="1"><font size="1"><font size="2">This project never would have started if not for <a href="https://web.archive.org/web/20111002020631/http://www.elderscrolls.com/forums/index.php?showuser=29244">DragoonWraith</a>.
+His original thread looking for quests mods, and the subsequent list of
+mods that he started, provided a lot of the initial material for TOQL.
+Also, <a href="https://web.archive.org/web/20111002020631/http://www.elderscrolls.com/forums/index.php?showuser=320493">KomodoDave (previously komodo2802)</a> provided invaluable help gathering quite a few of the mod descriptions and download links.</font></font></font></font></font></font></p><font color="#660000" size="1"><font size="1"><font size="1"><font size="1"><font size="1"><font size="1"><font size="2">Aside from the creators of the individual mods listed here, lots of people in the</font><font size="2"> ESF threads have contributed suggestions, feedback, and (most important) links! Thank you all!</font><p><font size="2"></font></p></font></font></font></font></font></font></div></div><font color="#660000" size="1"><font size="1"><font size="1"><font size="1">
+          <div style="clear: both"></div>
+        </font></font></font></font></div><font color="#660000" size="1"><font size="1"><font size="1"><font size="1">
+      </font></font></font></font></div><font color="#660000" size="1"><font size="1"><font size="1"><font size="1">
+      <!-- /wrapper --><!-- /main-content -->
+      <div id="footer"><div class="wrapper">
+        <hr>
+        <p></p><div id="g_footer"><p><a href="https://web.archive.org/web/20111002020631/http://devnull.sweetdanger.net/home.html">Home</a> | <a href="https://web.archive.org/web/20111002020631/http://devnull.sweetdanger.net/obliviontextureoverhaul.html">The Oblivion Texture Overhaul</a> |&nbsp;</p><p>Copyright 2006, 2007, 2008 by devakm. Individual works copyrighted by their respective creators.<br></p></div><p></p>
+        <div style="clear: both"></div>
+      </div></div>
+      <!-- /wrapper --><!-- /footer -->
+    </font></font></font></font></div><font color="#660000" size="1"><font size="1"><font size="1"><font size="1">
+  </font></font></font></font></div><font color="#660000" size="1"><font size="1"><font size="1"><font size="1">
+<!-- /wrapper --><!-- /container -->
+
+<div id="extraDiv1"><span></span></div><div id="extraDiv2"><span></span></div>
+<div id="extraDiv3"><span></span></div><div id="extraDiv4"><span></span></div>
+<div id="extraDiv5"><span></span></div><div id="extraDiv6"><span></span></div>
+
+
+
+
+</font></font></font></font></body></html>
