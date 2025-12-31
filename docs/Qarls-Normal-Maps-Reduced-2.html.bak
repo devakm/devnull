@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qarl's Normal Maps Reduced 2.0 - devnull.devakm</title>
+    <style>
+        :root {
+            --bg-primary: #1a1a1a;
+            --bg-secondary: #2d2d2d;
+            --bg-tertiary: #252525;
+            --text-primary: #e0e0e0;
+            --text-secondary: #b0b0b0;
+            --accent-red: #ff4444;
+            --accent-blue: #4a9eff;
+            --accent-cyan: #00d9ff;
+            --accent-gold: #ffd700;
+            --accent-green: #33cc00;
+            --border-color: #444;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Georgia, serif;
+            font-size: 16px;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background-color: var(--bg-primary);
+            padding: 20px;
+        }
+
+        #container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: var(--bg-secondary);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        #header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        h1 {
+            font-family: "Trebuchet MS", Trebuchet, sans-serif;
+            font-size: 2.5em;
+            color: var(--accent-gold);
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+
+        .description {
+            font-style: italic;
+            color: var(--text-secondary);
+            font-size: 1.1em;
+        }
+
+        h2 {
+            font-family: "Trebuchet MS", Trebuchet, sans-serif;
+            font-size: 2em;
+            color: var(--accent-red);
+            margin: 30px 0 15px 0;
+            padding-bottom: 8px;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        h3 {
+            font-family: "Trebuchet MS", Trebuchet, sans-serif;
+            font-size: 1.5em;
+            color: var(--accent-blue);
+            margin: 20px 0 10px 0;
+        }
+
+        p {
+            margin: 15px 0;
+            color: var(--text-primary);
+        }
+
+        a {
+            color: var(--accent-cyan);
+            text-decoration: none;
+            border-bottom: 1px solid var(--accent-cyan);
+        }
+
+        a:hover {
+            color: var(--accent-gold);
+            border-bottom-color: var(--accent-gold);
+        }
+
+        a:visited {
+            color: var(--accent-blue);
+            border-bottom-color: var(--accent-blue);
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+        }
+
+        .float-right {
+            float: right;
+            margin: 0 0 15px 15px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        td {
+            padding: 10px;
+            text-align: center;
+            vertical-align: top;
+        }
+
+        ol, ul {
+            margin: 15px 0 15px 30px;
+            padding-left: 20px;
+        }
+
+        li {
+            margin: 10px 0;
+            color: var(--text-primary);
+        }
+
+        ol li {
+            list-style-type: decimal;
+        }
+
+        ul li {
+            list-style-type: disc;
+        }
+
+        code, kbd {
+            font-family: 'Courier New', monospace;
+            background-color: var(--bg-tertiary);
+            padding: 2px 6px;
+            border-radius: 3px;
+            color: var(--accent-cyan);
+        }
+
+        .footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 2px solid var(--border-color);
+            text-align: center;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .highlight {
+            font-weight: bold;
+            color: var(--accent-gold);
+        }
+
+        .note {
+            background-color: var(--bg-tertiary);
+            padding: 15px;
+            border-left: 4px solid var(--accent-red);
+            margin: 20px 0;
+        }
+</style>
+</head>
+<body>
+    <div id="container">
+      <div id="header">
+          <h1>Qarl's Normal Maps Reduced 2.0</h1>
+          <p class="description">Unofficial Add-On for Qarl's Texture Pack 2, Better Tiling, and Skingrad Roof Textures</p>
+      </div>
+
+      <div id="main-content">
+          <a class="float-right" href="images/QTP2_04after.jpg" target="_blank">
+              <img src="images/th_QTP2_04after.jpg" alt="Qarl's Normal Maps Reduced Screenshot" width="160" height="120">
+          </a>
+
+          <p><small>A Mod for Elder Scrolls IV: Oblivion</small><br>
+          <em>by blade9722, Qarl, mikal33, and dev_akm</em></p> 
+
+<h2>QNMR2 DESCRIPTION</h2>
+
+<p>This is a texture replacement mod that acts as an unofficial option pack for <a href="http://qarl.rpgmods2.com/Qindex.html">Qarl's Texture Pack 2</a> (QTP2). It is designed to improve performance of QTP2 on some video cards by replacing most of the high-resolution normal maps from QTP2 with dramatically smaller normal maps. Most of the normal maps are reduced to one quarter of their original size, which can significantly help reduce stuttering on 256Mb video cards with almost no loss of quality that you can see in-game.</p>
+
+<p>Where there were previously 300Mb worth of normal maps in QTP2, they are reduced here to about 90Mb uncompressed (<a href="qnmr1.html">QNMR 1.0</a> is slightly smaller, at 75Mb, so it may still be preferable for some users). This size reduction has proven to be very effective for boosting performance and reducing stuttering for QTP2 users (around +3-5 FPS, maybe more in heavily bogged areas like <a href="https://www.nexusmods.com/oblivion/mods/920">Castle Domrose</a> and <a href="https://www.nexusmods.com/oblivion/mods/1726">Castle Dunkerlore</a>) with almost no noticeable loss of in-game image quality.</p>
+
+<p>This mod was created using Qarl's original normal maps (and dev_akm's Skingrad Roof textures). Most of the normal maps were reduced with bicubic sharper resampling in Photoshop, which helps to avoid the ugly blocky compression artifacts that were sometimes visible in QNMR 1.0. Also, some normal maps are left at original size because they did not reduce well.</p>
+
+<p>The other big difference in QNMR 2.0 is that it already includes the correct normal maps for use with Better Tiling for Qarl 1.11, so you don't need the BTSR Normal Maps Reduced option package any more.</p> 
+
+<h2><font size="6">SCREENSHOTS</font></h2> 
+
+<p><font size="2">Here's some screenshots of the reduced normal maps compared to Qarl's originals:</font> </p> 
+<table border="0"><tbody><tr><td><a href="https://web.archive.org/web/20120323091349/http://i28.photobucket.com/albums/c209/dev_akm/oblivion/reduced_normals/QTP2_04before.jpg" target="_blank">before<br><img style="" src="./devnull.devakm - Qarl&#39;s Normal Maps Reduced 2.0_files/th_QTP2_04before.jpg" alt="" border="0" height="120" width="160"></a></td><td><a href="https://web.archive.org/web/20120323091349/http://i28.photobucket.com/albums/c209/dev_akm/oblivion/reduced_normals/QTP2_04after.jpg" target="_blank">after<br><img style="" src="./devnull.devakm - Qarl&#39;s Normal Maps Reduced 2.0_files/th_QTP2_04after.jpg" alt="" border="0" height="120" width="160"></a></td></tr><tr><td><a href="https://web.archive.org/web/20120323091349/http://i28.photobucket.com/albums/c209/dev_akm/oblivion/reduced_normals/QTP2_03before.jpg" target="_blank"><img style="" src="./devnull.devakm - Qarl&#39;s Normal Maps Reduced 2.0_files/th_QTP2_03before.jpg" alt="" border="0" height="120" width="160"></a></td><td><a href="https://web.archive.org/web/20120323091349/http://i28.photobucket.com/albums/c209/dev_akm/oblivion/reduced_normals/QTP2_03after.jpg" target="_blank"><img src="./devnull.devakm - Qarl&#39;s Normal Maps Reduced 2.0_files/th_QTP2_03after.jpg" alt="" border="0" height="120" width="160"></a></td></tr><tr><td><a href="https://web.archive.org/web/20120323091349/http://i28.photobucket.com/albums/c209/dev_akm/oblivion/reduced_normals/QTP2_02before.jpg" target="_blank"><img src="./devnull.devakm - Qarl&#39;s Normal Maps Reduced 2.0_files/th_QTP2_02before.jpg" alt="" border="0" height="120" width="160"></a></td><td><a href="https://web.archive.org/web/20120323091349/http://i28.photobucket.com/albums/c209/dev_akm/oblivion/reduced_normals/QTP2_02after.jpg" target="_blank"><img src="./devnull.devakm - Qarl&#39;s Normal Maps Reduced 2.0_files/th_QTP2_02after.jpg" alt="" border="0" height="120" width="160"></a></td></tr><tr><td><a href="https://web.archive.org/web/20120323091349/http://i28.photobucket.com/albums/c209/dev_akm/oblivion/reduced_normals/QTP2_01before.jpg" target="_blank"><img src="./devnull.devakm - Qarl&#39;s Normal Maps Reduced 2.0_files/th_QTP2_01before.jpg" alt="" border="0" height="120" width="160"></a></td><td><a href="https://web.archive.org/web/20120323091349/http://i28.photobucket.com/albums/c209/dev_akm/oblivion/reduced_normals/QTP2_01after.jpg" target="_blank"><img src="./devnull.devakm - Qarl&#39;s Normal Maps Reduced 2.0_files/th_QTP2_01after.jpg" alt="" border="0" height="120" width="160"></a></td></tr></tbody></table> 
+
+<p><font size="2">The difference is only really noticeable when you are very close up to some objects (you can see it if you look very closely at the shot of the large rock outside Chorral), but as soon as you get more than a few feet away there's no difference at all. This is because none of the mip-maps are altered at all. Even when you are very close, some objects seem virtually unchanged, at least to my eye.</font><br><br></p> 
+
+<h2><font size="6">INSTALLATION</font></h2> 
+
+<p><font size="2">This mod requires <a href="https://web.archive.org/web/20120323091349/http://www.elderscrolls.com/forums/index.php?showtopic=543529" target="_blank">Qarl's Texture Pack 2</a>, <a href="https://web.archive.org/web/20120323091349/http://www.tessource.net/files/file.php?id=6996" target="_blank">Better Tiling for Qarl 1.11</a>, and <a href="https://web.archive.org/web/20120323091349/http://devnull.sweetdanger.net/skingradrooftextures.html">Skingrad Roof Textures</a>. </font><font size="2">It is compatible with </font><font size="2"><span style="font-weight: bold;">Parallaxed Qarl</span>, but is not necessary if you've already installed all of the reduced normal map add-ons and fixes for Parallaxed Qarl</font><font size="2">. There are only very minor differences between QNMR2 and
+the reduced normal maps that blade9722 released in Parallaxed Qarl and
+its add-ons. QNMR2 is mainly intended for people who are not running
+Parallaxed Qarl Textures and still want the higher-quality reduced
+normal maps that were released with that mod. If you do want to add it, QNMR2 should be installed after Parallaxed Qarl.<br> </font></p> 
+
+<p><font size="2">This mod is packaged as an OMOD-ready archive, which means you can either install it manually or quickly create an OMOD for <a href="https://web.archive.org/web/20120323091349/http://timeslip.chorrol.com/obmm.html">Oblivion Mod Manager</a> directly from the included <span style="font-weight: bold;">Qarl Normal Maps Reduced</span> directory (omod conversion data is included). See the included <span style="font-style: italic;">OMOD_or_Manual_Install.txt</span> file for details.&nbsp;</font></p> 
+
+<p><font size="2">As with Qarl's Texture Pack 2, you must read the included README and follow the instructions exactly or you'll almost certainly have problems. If you're not willing to use the BSA-alteration method of invalidation, then you probably shouldn't use this add-on.&nbsp;</font></p> 
+
+<p><font size="2">Links to all the other mods required can be found on <a href="https://web.archive.org/web/20120323091349/http://devnull.sweetdanger.net/obliviontextureoverhaul.html">The Oblivion Texture Overhaul</a> (TOTO) site.&nbsp;</font></p> 
+
+<p><font size="2">Here is a summary of the install sequence:<br></font></p> 
+<ol type="1"> 
+<li> <font size="2"><a href="https://web.archive.org/web/20120323091349/http://www.elricm.com/nuke/html/modules.php?op=modload&amp;name=Downloads&amp;file=index&amp;req=getit&amp;lid=2906" target="_blank"> Qarl's Texture Pack 2</a></font></li> 
+
+<li> <font size="2"><a href="https://web.archive.org/web/20120323091349/http://www.tessource.net/files/file.php?id=5134" target="_blank">Skingrad Roof Textures</a></font></li> 
+
+<li> <font size="2"><a href="https://web.archive.org/web/20120323091349/http://www.tessource.net/files/file.php?id=6996" target="_blank">Better Tiling for Qarl 1.11</a></font></li> 
+
+<li><font size="2">Qarl Normal Maps Reduced 2.0 <br></font></li> 
+</ol> 
+
+<p><font size="2">The point of this sequence is that you'll be installing this mod last so the reduced normal map texture files included here will overwrite Qarl's originals (as well as those included in Skingrad Roof Textures and Better Tiling).&nbsp;</font></p> 
+
+<p><font size="2">To install manually, unpack the Qarl_Normal_Maps_Reduced2.7z archive and move/copy the <span style="font-weight: bold;">textures </span>folder into your <span style="font-weight: bold;">\Oblivion\Data\</span> folder. If you get a prompt asking whether you want to overwrite files/folders, click Yes. If you're unsure about how to do all this, please see the <a href="https://web.archive.org/web/20120323091349/http://cs.elderscrolls.com/constwiki/index.php/Oblivion_Mods_FAQ">Oblivion Mods FAQ</a>.</font></p> 
+
+<h2><font size="6">ARCHIVE INVALIDATION</font></h2> 
+
+<p><font size="2">Due to a bug in Oblivion, texture replacements such as those included in this mod will not display correctly unless you take some extra steps to force Oblivion to use them. Unfortunately, Oblivion has major problems loading many replacement textures even if you use an <span style="font-style: italic;">ArchiveInvalidation.txt</span> file (which was common practice in the past). This topic is far too complex to explain all the whys, hows, and wherefores here, so we'll stick to simple instructions for known solutions that work well at the moment.</font></p> 
+
+<p><font size="2">The best solution at the moment is to use one of Timeslip's excellent utility programs: <a href="https://web.archive.org/web/20120323091349/http://timeslip.chorrol.com/obmm.html">Oblivion Mod Manager</a> (OBMM version 0.7.10 or later) or <a href="https://web.archive.org/web/20120323091349/http://timeslip.chorrol.com/obmm_download.html">BSA Patcher</a>. What OBMM and BSA Patcher do is to sidestep the ArchiveInvalidation problem by making Oblivion think it never had a copy of the textures you are replacing.</font></p> 
+
+<p><font size="2">In other words, these utilities edit your BSA archives so that Oblivion cannot find the original version of files you have replaced, thus forcing it to load the replacements instead of the originals.&nbsp;</font></p> 
+<p style="font-weight: bold;"><font size="2">Download <a href="https://web.archive.org/web/20120323091349/http://timeslip.chorrol.com/obmm_download.html">Oblivion Mod Manager</a>.</font></p> 
+
+<p><font size="2">OBMM will keep track of which files have been renamed in your BSAs and provides a Remove BSA edits function to rollback any changes it has made to your BSA just in case you don't like the results. You should probably make a backup of your BSA files if you have the space (or a DVD-burner) just in case, although the latest versions of OBMM include a <span style="font-style: italic;">BSA-Uncorrupter</span></font> utility that can usually fix any BSA corruption problems you might have.&nbsp;</p> 
+
+<p><font size="2">OBMM requires .NET 2.0 to work, so if you can't run .NET 2.0 then you'll need to use <span style="font-weight: bold;">BSA Patcher</span> instead.&nbsp;</font></p> 
+
+<p><font size="2">Assuming you have OBMM 0.7.10 or later installed already, and have already installed this mod, the steps you need to take are as follows:</font></p> 
+
+<p><font size="2">1.&nbsp;&nbsp;&nbsp; Start OBMM.<br>2.&nbsp;&nbsp;&nbsp; Click <span style="font-style: italic;">Utilities</span>.<br>3.&nbsp;&nbsp;&nbsp; Select <span style="font-style: italic;">Archive invalidation</span>.<br>4.&nbsp;&nbsp;&nbsp; Click <span style="font-style: italic;">Directly Edit BSAs</span>.<br>5.&nbsp;&nbsp;&nbsp; Check <span style="font-style: italic;">Textures</span>.<br>6.&nbsp;&nbsp;&nbsp; Check <span style="font-style: italic;">Ignore normal maps</span>.<br>7.&nbsp;&nbsp;&nbsp; Check <span style="font-style: italic;">Generate archiveinvalidation entries on hash collision</span>.<br>8.&nbsp;&nbsp;&nbsp; Click the checkbox for <span style="font-style: italic;">autoupdate on exit</span> and/or click <span style="font-style: italic;">Update Now</span>.<br>9.&nbsp;&nbsp;&nbsp; Close the Archive Invalidation popup (click the red X in the upper-right corner).<br>10.&nbsp; Quit OBMM or click Launch Oblivion.</font></p> 
+
+<p><font size="2">Here's a screenshot of the exact options to use in OBMM 0.7.11: </font><br><img style="" src="./devnull.devakm - Qarl&#39;s Normal Maps Reduced 2.0_files/obmm_BSA_settings2.jpg">&nbsp;</p><p><font size="2">You can try different settings if you want, but these are known to work. You do need to make sure to check the box for <span style="font-style: italic;">Generate archiveinvalidation entries on hash collision</span>, since that setting is critical. Using the above settings in OBMM will take care of everything for you.&nbsp;</font></p><p style="font-weight: bold;"><font size="2">Download <a href="https://web.archive.org/web/20120323091349/http://timeslip.chorrol.com/obmm_download.html">BSA Patcher</a>.</font></p><p><font size="2">Another solution is Timeslip's <span style="font-weight: bold;">BSA Patcher</span>. Unlike OBMM, BSA Patcher is a command-line application, although you can launch it by double-clicking the executable. BSA Patcher doesn't include as many configuration options as OBMM, but it accomplishes the same tasks and it only requires .NET 1.1, which means it will work for anyone who is unwilling or unable to run .NET 2.0. It will also work with <a href="https://web.archive.org/web/20120323091349/http://www.mono-project.com/Main_Page">mono</a>, which is an open-source version of .NET 1.1.</font></p> 
+
+<p><font size="2">The latest version of BSA Patcher (as of this writing) uses the BSA alteration code from OBMM 0.7.10 and, like OBMM, it will automatically generate an ArchiveInvalidation.txt file for you containing only the textures that could not be safely renamed in your BSA files. It includes support for several command-line options, but you can safely ignore them.</font></p> 
+
+<p><font size="2">To use it, place <span style="font-weight: bold;">BSAPatch.exe</span> in your <span style="font-weight: bold;">\Oblivion\Data\</span> folder and double-click it once to rename files in your BSA. Run it again to restore them to their original names.</font></p> 
+
+<p style="font-weight: bold;"><font size="2">NOTE: If you use either OBMM or BSA Patcher, you should not manually alter your ArchiveInvalidation.txt file. Let one of these programs do it for you. No other solutions are recommended.&nbsp;</font></p> 
+
+<h2><font size="6">GENERAL INFORMATION &amp; HELP<br></font></h2> 
+
+<p><font size="2">For more information, installation tips, etc., please see the <a href="https://web.archive.org/web/20120323091349/http://cs.elderscrolls.com/constwiki/index.php/Oblivion_Mods_FAQ">Oblivion Mods FAQ</a>.&nbsp; </font><br></p> 
+
+<h2><font size="6">CREDITS</font></h2> 
+
+<p><font size="2">Bethesda for an awesome game, Qarl for his incredible Texture Pack 2, and MrWiseman for his excellent texture reduction script (which proved the concept of reduced normal maps would work in QNMR 1.0). Also, we owe a huge debt of gratitude to mikal33 for all the hard work he did on making the Better Tiling for Qarl mod.<br></font></p> 
+
+<h2><font size="6">COMMON QUESTIONS</font></h2> 
+
+<p><font size="2"><span style="font-style: italic;">Q. I've already followed the TOTO instructions for installing Parallaxed Qarl Textures with the reduced normal maps add-on and fix. Do I still need to install this pack, too?</span><br>No. There are only very minor differences between QNMR2 and the reduced normal maps that blade9722 released in Parallaxed Qarl and its add-ons. In fact, most of the files are exactly the same if you've already installed the reduced normals (<span style="font-weight: bold;">w3rp</span>) add-on and fix. QNMR2 is mainly intended for people who are not running Parallaxed Qarl Textures and still want the higher-quality reduced normal maps that were released for that mod. <br></font></p><p><font size="2"><i>Q. Will the performance difference even be noticeable on a 512MB card?</i><br>I have not tested this (since my card is 256Mb), but I'm fairly certain any improvement you'd see with 512Mb would be less dramatic than the improvement I got. Still, several users have reported reduced stuttering on 512Mb cards after installing the reduced normal maps.<br><br><i>Q. Will this mod improve performance for 128MB cards?</i>&nbsp;<br>Probably not. You'd probably need to also reduce the color maps, in which case Qarl's textures might not be much of an improvement over the vanilla Oblivion textures. Hard to say for sure. You could always give it a try. However, you'd probably have better luck using <a href="https://web.archive.org/web/20120323091349/http://www.elderscrolls.com/forums/index.php?showtopic=543759" target="_blank">Wiseman's Reduced Textures</a>. I would think that could give you a big improvement. You could also use his texture reduction script to make a reduced version of all of Qarl's textures rather than just the normal maps.&nbsp;</font></p> 
+
+<h2><font size="6">DOWNLOAD LINKS</font></h2> 
+
+<p><font size="2"><b>devnull.sweetdanger.net (personal server)<br></b><a href="https://web.archive.org/web/20120323091349/http://devnull.sweetdanger.net/mods/Qarl_Normal_Maps_Reduced2.7z">Qarl Normal Maps Reduced 2.0</a></font></p><p><font size="2"><b>PlanetElderScrolls&nbsp;<br></b></font><font size="2"><a href="https://web.archive.org/web/20120323091349/http://planetelderscrolls.gamespy.com/View.php?view=OblivionMods.Detail&amp;id=1873">Qarl Normal Maps Reduced 2.0</a></font><font size="2"><b>&nbsp;</b></font></p><p><font size="2"><b>rogepost</b></font><font size="2"> <br><a href="https://web.archive.org/web/20120323091349/http://www.rogepost.com/dn/2n53">Qarl Normal Maps Reduced 2.0</a> </font></p><p><font size="2"><b>ElricM<br></b><a href="https://web.archive.org/web/20120323091349/http://www.elricm.com/mods.php?mod=3310">Qarl Normal Maps Reduced 2.0</a></font></p><p><font size="2">You can also still get<b> </b><a href="https://web.archive.org/web/20120323091349/http://devnull.sweetdanger.net/qnmr1">QNMR 1.0</a></font> </p><br></div></div>
+          <div style="clear: both"></div>
+        </div>
+      </div>
+      <!-- /wrapper --><!-- /main-content -->
+      <div id="footer"><div class="wrapper">
+        <hr>
+        <p></p><div id="g_footer"><p><a href="https://web.archive.org/web/20120323091349/http://devnull.sweetdanger.net/home.html">Home</a> | <a href="https://web.archive.org/web/20120323091349/http://devnull.sweetdanger.net/obliviontextureoverhaul.html">TOTO Main</a> | <a href="https://web.archive.org/web/20120323091349/http://devnull.sweetdanger.net/quests.html">The Oblivion Quest List</a> | Copyright 2006 by dev_akm.&nbsp;</p></div><p></p>
+        <div style="clear: both"></div>
+      </div></div>
+      <!-- /wrapper --><!-- /footer -->
+    </div>
+  </div>
+<!-- /wrapper --><!-- /container -->
+
+<div id="extraDiv1"><span></span></div><div id="extraDiv2"><span></span></div>
+<div id="extraDiv3"><span></span></div><div id="extraDiv4"><span></span></div>
+<div id="extraDiv5"><span></span></div><div id="extraDiv6"><span></span></div>
+
+
+
+
+</body></html>
