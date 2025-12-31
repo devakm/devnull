@@ -255,7 +255,7 @@
                 <li>Quit OBMM or click Launch Oblivion.</li>
             </ol>
             
-            <p>Alternately, you can install a mod specifically designed to do BSA-redirection, such as <a href="http://www.tessource.net/files/file.php?id=10724" target="_blank">ArchiveInvalidation Invalidated!</a>.</p>
+            <p>Alternately, you can install a mod specifically designed to do BSA-redirection, such as <a href="https://www.nexusmods.com/oblivion/mods/10724" target="_blank">ArchiveInvalidation Invalidated!</a>.</p>
             
             <p>You can also set up BSA-redirection fairly easily yourself if you don't mind a bit of tweaking. In the Oblivion.ini file, there is a configuration entry called the SArchiveList. It lists all of the standard BSA files. It normally looks like this:</p>
             
@@ -267,10 +267,10 @@ Oblivion - Voices1.bsa, Oblivion - Voices2.bsa, Oblivion - Misc.bsa</pre>
             <pre>SArchiveList=<b>DUMMYFILE.bsa</b>, Oblivion - Meshes.bsa, Oblivion - Textures - Compressed.bsa,
 Oblivion - Sounds.bsa, Oblivion - Voices1.bsa, Oblivion - Voices2.bsa, Oblivion - Misc.bsa</pre>
             
-            <p>To do this, you'll need to either use a BSA file that came with some other mod to be your <i>DUMMYFILE.bsa</i> (any BSA file containing at least one texture should work), create one yourself using a tool like <a href="http://cs.elderscrolls.com/constwiki/index.php/BSA_Commander" target="_blank">BSA Commander</a> (you only need to put one texture in the BSA).</p>
+            <p>To do this, you'll need to either use a BSA file that came with some other mod to be your <i>DUMMYFILE.bsa</i> (any BSA file containing at least one texture should work), create one yourself using a tool like <a href="https://cs.uesp.net/wiki/BSA_Commander" target="_blank">BSA Commander</a> (you only need to put one texture in the BSA).</p>
 
             <h3>BSA-alteration</h3>
-            <p>BSA-alteration requires <a href="http://cs.elderscrolls.com/constwiki/index.php/Wrye_Bash" target="_blank">Wrye Bash</a> (as of version 0.60) or one of Timeslip's excellent utility programs: <a href="http://cs.elderscrolls.com/constwiki/index.php/Oblivion_Mod_Manager" target="_blank">Oblivion Mod Manager</a> (OBMM version 0.7.10 or later) or BSA Patcher. What Wrye Bash, OBMM and BSA Patcher do is to sidestep the ArchiveInvalidation problem by making Oblivion think it never had a copy of the textures you are replacing.</p>
+            <p>BSA-alteration requires <a href="https://cs.uesp.net/wiki/Wrye_Bash" target="_blank">Wrye Bash</a> (as of version 0.60) or one of Timeslip's excellent utility programs: <a href="https://cs.uesp.net/wiki/Oblivion_Mod_Manager" target="_blank">Oblivion Mod Manager</a> (OBMM version 0.7.10 or later) or BSA Patcher. What Wrye Bash, OBMM and BSA Patcher do is to sidestep the ArchiveInvalidation problem by making Oblivion think it never had a copy of the textures you are replacing.</p>
             
             <p>In other words, these utilities edit your Textures BSA so that Oblivion cannot find the original version of texture files you have replaced, thus forcing the game to load the replacements instead of the originals. Without getting too technical, this works much like taking a book and scrambling some entries from the table of contents so those chapters can't be found anymore, even though the chapters are really still there -- thus allowing the process to be easily reversed later by restoring the table of contents back to its original state.</p>
             
@@ -279,7 +279,7 @@ Oblivion - Sounds.bsa, Oblivion - Voices1.bsa, Oblivion - Voices2.bsa, Oblivion 
             <p>OBMM and BSA Patcher will keep track of which files have been renamed in your BSAs and provide a "Remove BSA edits" function to rollback any changes they have made to your BSA.</p>
 
             <h4>Wrye Bash</h4>
-            <p>Download <a href="http://wrye.ufrealms.net/" target="_blank">Wrye Bash</a>.</p>
+            <p>Download <a href="https://www.nexusmods.com/site/mods/591" target="_blank">Wrye Bash</a>.</p>
             
             <div class="note">
                 <p><b>Note:</b> The BSA-alteration features in Wrye Bash are designed for advanced users and provide more control over the process than OBMM's automated approach.</p>
@@ -306,13 +306,13 @@ Oblivion - Sounds.bsa, Oblivion - Voices1.bsa, Oblivion - Voices2.bsa, Oblivion 
             
             <ul>
                 <li><b>ElChE's Oblivion Automatic Content Validator 1.1.0</b> - Use the Smart Check feature (in the latest version it automatically ignores meshes; in the previous version, have it open your AI when done, and then delete meshes by hand).</li>
-                <li><b>Oblivion Mod Manager (OBMM)</b> - Available from <a href="http://timeslip.chorrol.com/" target="_blank">timeslip.chorrol.com</a></li>
+                <li><b>Oblivion Mod Manager (OBMM)</b> - Available from <a href="https://cs.uesp.net/wiki/Oblivion_Mod_Manager" target="_blank">timeslip.chorrol.com</a></li>
                 <li><b>Wrye Bash</b> - Also includes a feature to generate AI.txt</li>
             </ul>
 
             <h3>Further Reading</h3>
             <ul>
-                <li><a href="http://cs.elderscrolls.com/constwiki/index.php/Oblivion_Mods_FAQ" target="_blank">Oblivion Mods FAQ</a></li>
+                <li><a href="https://cs.uesp.net/wiki/Oblivion_Mods_FAQ" target="_blank">Oblivion Mods FAQ</a></li>
             </ul>
 
             <h3>Glossary</h3>
@@ -346,11 +346,149 @@ Oblivion - Sounds.bsa, Oblivion - Voices1.bsa, Oblivion - Voices2.bsa, Oblivion 
 
             <h2 id="ai-explained">ArchiveInvalidation Explained</h2>
             
-            <div class="info-box">
-                <p>This section provides detailed technical analysis of the ArchiveInvalidation bug and various workaround methods. The "ArchiveInvalidation Destroyed" section above provides a more concise summary of the recommended solutions.</p>
-            </div>
-            
-            <p>For complete technical details and historical context of the ArchiveInvalidation research, please refer to the archived forum discussions and the <a href="http://cs.elderscrolls.com/constwiki/index.php/Oblivion_Mods_FAQ" target="_blank">Oblivion Mods FAQ</a>.</p>
+            <p><i>by dev_akm</i></p>
+            <p><i>Preamble</i><br>
+            This is adapted from my ESF thread: <i>ArchiveInvalidation Explained (2)</i>. Unfortunately, like all the previous ESF threads on this subject, that thread has now expired and been purged from the forum. The summary lives on here.<br>
+            <br>
+            <i>Last Updated: 10-13-2006 11:40 AM CDT</i></p>
+
+            <h3>OVERVIEW</h3>
+            <p>There is a terrible beast wreaking mass destruction and chaos in the mod community. It is called ArchiveInvalidation. The purpose of our mission here was to slay this horrid creature and prevent it from respawning.</p>
+            <p>This goal has now been accomplished, but historians (and a few others, perhaps) may still wonder: From whence did this beast arise? What spurred it forth from its dank lair and into our peaceful community? The answers lie within this document and its related discussion threads.<br>
+            <br>
+            The problems with ArchiveInvalidation described here most often appear right now for people using more than one armor texture replacer, but it could crop up anywhere Oblivion uses <b>common filenames</b> like "boots.dds" for more than one set of things. If you have not experienced any problems yet, it is probably because your configuration does not meet these criteria.<br>
+            <br>
+            The extensive testing carried out by multiple users and reported in these threads makes it fairly clear that Bethesda probably never intended for anyone to have to use ArchiveInvalidation in the first place. The vast majority of textures seem to load correctly from the Data folders even without using an ArchiveInvalidation file, which explains why so many users get duped into believing that a simple three-line global/universal/generic ArchiveInvalidation has solved all their problems when in reality it has been proven to have no effect whatsoever (it's the same as having no AI file at all).<br>
+            <br>
+            In fact, we are proposing that the only reason it's necessary to use ArchiveInvalidation at all is due to a bug in the game that causes <b>some</b> texture replacements to fail to load, while others load just fine. Based largely on Malifrax's contributions, we've isolated these problems to certain common directory names and perhaps even certain NIF files (meshes) that appear to have a different structure than ones which load textures correctly.<br>
+            <br>
+            Note that you don't need to read all of this if you are using OBMM 0.7.8 or later and you select the option to "Directly Edit BSAs". Timeslip's workaround avoids the need for ArchiveInvalidation entirely in our tests.<br>
+            <br>
+            If, on the other hand, you do intend to use ArchiveInvalidation, or just want to understand what led to such drastic measures as Timeslip's solution, then you do need to read this.<br>
+            <br>
+            Hopefully, Bethesda will issue a patch for the textures bug at some point and all of this will become an odd historical footnote in the life of Oblivion. Until then, read on ...</p>
+
+            <h3>ARCHIVEINVALIDATION TEST RESULTS</h3>
+            <p><b>1) </b> ArchiveInvalidation.txt (AI.txt) is only needed for replacement textures. Also, it is most often required for replacement textures that are specified from within a mesh (NIF) rather than specified in the CS (icons and landscape textures, for example, will usually load without being referenced in AI.txt).<br>
+            <br>
+            <b>2) </b> Universal/global/generic ArchiveInvalidation methods do not work. Period. End of discussion.<br>
+            <br>
+            <b>3) </b> Mesh replacers load regardless of whether they are specified in your ArchiveInvalidation.txt (AI.txt), so you don't need to list any .NIF files. If you do list them, try to only list the specific meshes that are giving you problems, and be aware of the ramifications, as described in #4 and #5 below.<br>
+            <br>
+            <b>4) </b> A single entry of a <b>common filename</b> like "boots.dds" in AI.txt will invalidate all paths containing a "boots.dds" file that exist in both the BSA and your Data folder. It will do this regardless of whether those paths in your Data folder actually contain a "boots.dds" file and regardless of whether you have an AI.txt entry for that path. *<br>
+            <br>
+            <b>5) </b> Listing a path in your AI.txt has the same effect as listing individual textures, in the sense that it causes all the items in that path to be invalidated. However, once you've listed one such folder, Oblivion will automatically invalidate all further instances of any <b>common filenames</b> it found in that first folder. *<br>
+            <br>
+            If all this sounds really confusing, you're not alone. It's not easy to understand, even for computer experts, in part because it's such a crazy way of doing things that it seems in many ways like a bug in the invalidation code Bethesda implemented. Perhaps it is a bug, perhaps it is by design, we have no way of knowing.<br>
+            <br>
+            * <i>Credit for this discovery goes to</i> Wonder Dog.</p>
+
+            <h3>HOW DO I MAKE ONE?</h3>
+            <p>Instructions can be found in the <a href="https://cs.uesp.net/wiki/Oblivion_Mods_FAQ" target="_blank">Oblivion Mods FAQ</a>.</p>
+            <p>Once you get it started, you can list either just individual filenames, such as "boots.dds", one per line, or list entire directory paths, one per line, like this:</p>
+            <p style="font-family: 'Courier New', monospace;">textures/armor/Iron/ \s<br>
+            textures/armor/glass/ \s</p>
+            <p>In the end, I think discussions about which approach is better - listing files with no path versus listing only paths - probably won't get us anywhere, since both methods are highly imprecise and cause similar errors. Pick one and stick with it or use a mixture of approaches. I don't have enough data yet to make a recommendation one way or the other.</p>
+
+            <h3>WHAT NOW?</h3>
+            <p>This is a terrible situation any way you look at it. You can extract your textures BSA into your Data folder. That will solve most of the problems, but really it's a terrible solution. If you do this, be careful not to overwrite all the mod files you've already installed. You've been warned.<br>
+            <br>
+            Probably the only halfway reasonable approach to even begin dealing with this problem is to have a tool like ACV, OBMM, or Wrye Bash check to make sure all replaced <b>common filenames</b> exist in all replaced paths and warn you when this isn't the case.<br>
+            <br>
+            I think the best we can hope for is a combination of these approaches.<br>
+            <br>
+            <b>1)</b> Modders creating texture replacers for things with common names in the BSA need to package all the related files with their mod, as many are already doing; if they don't, then their mods would be subject to warnings or blocks from utilities like OBMM and ACV.<br>
+            <br>
+            This only applies if you are making a texture replacer that affects files with <b>common filenames</b> like "boots.dds", "cuirass.dds", etc. In this case, you must package all of the original textures that you did not change in the directory where the textures reside, such as "textures\armor\iron", along with the ones you did change. Otherwise, the ones you did not change in that directory path will be broken on the user's system.<br>
+            <br>
+            We've seen this over and over again with mod-makers releasing a 1.0 version of a replacer that only includes their changed files, then (after getting deluged with hate-mail) having to follow up with a 1.1 version that includes all the items in that set regardless of whether they changed the files.<br>
+            <br>
+            Another solution would be for modders to avoid creating texture-only replacers whenever possible. You can achieve the same result in many cases by altering the texture references in an item's mesh (using NifSkope) so it points to a new directory structure with texture files that don't use the same <b>common filenames</b>. Since meshes are loaded automatically without any need for entries in AI.txt, this avoids the problem entirely.<br>
+            <br>
+            <b>2)</b> Utilities like OBMM might warn users before they install a mod that it may cause problems, assuming the user takes advantage of the omod format; then the user can decide whether they want to ignore the warning or stop the installation process.<br>
+            <br>
+            <b>3)</b> Utilities like ACV might warn users after they have installed a mod that they are likely to have problems with certain files (like it already does for meshes); the user can then decide whether they want to ignore the warning or go back and uninstall the mod.<br>
+            <br>
+            <b>4)</b> Utilities like Wrye Bash might provide some combination of #2 and #3, perhaps with more advanced users in mind.</p>
+
+            <h3>TECHNICAL DETAILS</h3>
+            <p>The ArchiveInvalidation problems described here are related to the way Oblivion invalidates entries in its BSA hash tables. In the Oblivion.ini, these are named:<br>
+            <br>
+            <span style="font-family: 'Courier New', monospace;">- </span><b style="font-family: 'Courier New', monospace;">DirectoryStringTable</b><br style="font-family: 'Courier New', monospace;">
+            <span style="font-family: 'Courier New', monospace;">- </span><b style="font-family: 'Courier New', monospace;">FilenameStringTable</b><br>
+            <br>
+            A "hash table" is a very common method of improving performance when you've got a lot of things to keep track of. A directory structure full of files is a perfect candidate for this technology.<br>
+            <br>
+            Unfortunately, Oblivion's invalidation routines don't seem to be very accurate about how they mark a file as needing to be replaced. It appears there is a "disconnect" in the intersection between these two tables that causes a file invalidated in one path to also get invalidated in all other paths where it exists, resulting in index "collisions" that cause Oblivion to mistakenly think a texture should not be loaded from the BSA.<br>
+            <br>
+            Here is my first attempt at a simplified explanation of how this works. Unfortunately, I just couldn't figure out a way to make the explanation any simpler than this. (I also couldn't get any colors to work, so we'll have to settle for underscores and strikethroughs instead.) If you have an idea on how to make this explanation any simpler or clearer, please post it or send me a PM.<br>
+            <br>
+            The <b>FilenameStringTable</b> and <b>DirectoryStringTable</b> are initialized with all the textures in the BSA file, so all the paths and names of existing default textures get indexed in the hashes.<br>
+            <br>
+            A small sample of these two indexes might look like this:<br>
+            <br>
+            <span style="font-family: 'Courier New', monospace;">- </span><b style="font-family: 'Courier New', monospace;">FilenameStringTable</b><span style="font-family: 'Courier New', monospace;">= </span><u style="font-family: 'Courier New', monospace;">shield.dds</u><span style="font-family: 'Courier New', monospace;">, </span><u style="font-family: 'Courier New', monospace;">cuirass.dds</u><span style="font-family: 'Courier New', monospace;">, </span><u style="font-family: 'Courier New', monospace;">greaves.dds</u><span style="font-family: 'Courier New', monospace;">, </span><u style="font-family: 'Courier New', monospace;">greaves.dds</u><span style="font-family: 'Courier New', monospace;">, </span><u style="font-family: 'Courier New', monospace;">helm.dds</u><br style="font-family: 'Courier New', monospace;">
+            <span style="font-family: 'Courier New', monospace;">- </span><b style="font-family: 'Courier New', monospace;">DirectoryStringTable </b><span style="font-family: 'Courier New', monospace;">= </span><u style="font-family: 'Courier New', monospace;">textures/armor/glass/</u><span style="font-family: 'Courier New', monospace;">, </span><u style="font-family: 'Courier New', monospace;">textures/armor/iron/</u><br>
+            <br>
+            where the <u>underscored</u> items reside in the BSA.<br>
+            <br>
+            If I install one texture replacer for, say, all the Glass Armor, with AI.txt entries, then the hash entries for those textures get marked as being replaced by files in the Data folders. This means these items will now be invalidated, i.e. marked as being in Data the folders rather than the BSA, so now the hash index will look something like this:<br>
+            <br>
+            <span style="font-family: 'Courier New', monospace;">- </span><b style="font-family: 'Courier New', monospace;">FilenameStringTable </b><span style="font-family: 'Courier New', monospace;">= </span><strike style="font-family: 'Courier New', monospace;">shield.dds</strike><span style="font-family: 'Courier New', monospace;">, </span><strike style="font-family: 'Courier New', monospace;">cuirass.dds</strike><span style="font-family: 'Courier New', monospace;">, </span><strike style="font-family: 'Courier New', monospace;">greaves.dds</strike><span style="font-family: 'Courier New', monospace;">, </span><strike style="font-family: 'Courier New', monospace;">greaves.dds</strike><span style="font-family: 'Courier New', monospace;">, </span><strike style="font-family: 'Courier New', monospace;">helm.dds</strike><br style="font-family: 'Courier New', monospace;">
+            <span style="font-family: 'Courier New', monospace;">- </span><b style="font-family: 'Courier New', monospace;">DirectoryStringTable </b><span style="font-family: 'Courier New', monospace;">= </span><strike style="font-family: 'Courier New', monospace;">textures/armor/glass/</strike><span style="font-family: 'Courier New', monospace;">, </span><u style="font-family: 'Courier New', monospace;">textures/armor/iron/</u><br>
+            <br>
+            where the <strike>strikethrough</strike> items have been invalidated, but the <u>underscored</u> items still reside in the BSA.<br>
+            <br>
+            If you're following any of this so far, you can probably already start to see where problems will arise, since all the <b>common filenames</b> shared between the two armor sets have now been invalidated from the <b>FilenameStringTable</b> simply because we wanted to replace them for the Glass armor set.<br>
+            <br>
+            Now, if I want to also replace the texture for just the Iron cuirass, I'm going to run into problems because the hash table entries for all the <b>common filenames</b> in the Iron armor folder, including <u>cuirass.dds</u>, have already been invalidated (i.e., marked as existing in the Data folder rather than the BSA) and now the hash index will look something like this:<br>
+            <br>
+            <span style="font-family: 'Courier New', monospace;">- </span><b style="font-family: 'Courier New', monospace;">FilenameStringTable </b><span style="font-family: 'Courier New', monospace;">= </span><strike style="font-family: 'Courier New', monospace;">shield.dds</strike><span style="font-family: 'Courier New', monospace;">, </span><strike style="font-family: 'Courier New', monospace;">cuirass.dds</strike><span style="font-family: 'Courier New', monospace;">, </span><strike style="font-family: 'Courier New', monospace;">greaves.dds</strike><span style="font-family: 'Courier New', monospace;">, </span><strike style="font-family: 'Courier New', monospace;">greaves.dds</strike><span style="font-family: 'Courier New', monospace;">, </span><strike style="font-family: 'Courier New', monospace;">helm.dds</strike><br style="font-family: 'Courier New', monospace;">
+            <span style="font-family: 'Courier New', monospace;">- </span><b style="font-family: 'Courier New', monospace;">DirectoryStringTable </b><span style="font-family: 'Courier New', monospace;">= </span><strike style="font-family: 'Courier New', monospace;">textures/armor/glass/</strike><span style="font-family: 'Courier New', monospace;">, </span><strike style="font-family: 'Courier New', monospace;">textures/armor/iron/</strike><br>
+            <br>
+            where everything in both sets of armor has been invalidated.<br>
+            <br>
+            Because the path "textures/armor/iron/" is now marked as existing in the Data folder, and the hash already knows that path is linked to a set of files that includes shield.dds, cuirass.dds, greaves.dds, gauntlet.dds, and helm.dds, then the hash will now expect to find all those same names in the Data folders even though I only wanted to replace the Iron cuirass.<br>
+            <br>
+            In fact, the problem is even worse than this because Oblivion immediately recognizes the new directory path <u>textures\armor\iron\</u> as soon as you add it to your Data folder. It doesn't even need to be listed in your AI.txt because the Oblivion automatically scans your Data folders and recognizes that directory path as being one from the BSA that has <b>common filenames</b> which have already been invalidated.</p>
+
+            <h3>TOOLS</h3>
+            <p>Ultimately, the only really good solution is to use BSA-redirection or BSA-alteration, but if you really want to see for yourself then these tools will help you generate an ArchiveInvalidation.txt file.<br>
+            <br>
+            ElChE's Oblivion Automatic Content Validator 1.1.0<br>
+            <a href="https://cs.uesp.net/wiki/Automatic_Content_Validator" target="_blank">ACV</a><br>
+            - Use the Smart Check feature (in the latest version it automatically ignores meshes; in the previous version, have it open your AI when done, and then delete meshes by hand).<br>
+            <br>
+            <a href="https://cs.uesp.net/wiki/Oblivion_Mod_Manager" target="_blank">Oblivion Mod Manager (OBMM)</a><br>
+            - Haven't tested the latest version, but Timeslip says he has added new AI.txt options in 0.7.6: "It lets you choose exactly which types of files to include, and there's options for ignoring files not in BSA's, normal maps, and files with incorrect extensions. Following MadBat's suggestion, it also deletes empty subdirectories from the data folder. Default settings are to only include textures, and only ones which already appear in a BSA archive. Hopefully, that should keep most people happy." Heck yeah! (In previous versions, use the DDS textures option.)</p>
+            <p><a href="https://cs.uesp.net/wiki/Wrye_Bash" target="_blank">Wrye Bash</a> also now includes a feature to generate AI.txt, but I haven't tested it yet.</p>
+
+            <h3>FURTHER READING</h3>
+            <p><a href="https://cs.uesp.net/wiki/Oblivion_Mods_FAQ" target="_blank">Oblivion Mods FAQ</a></p>
+
+            <h3>GLOSSARY</h3>
+            <p><b>AI.txt</b> is shorthand for ArchiveInvalidation.txt.</p>
+
+            <h3>CREDITS</h3>
+            <p>Man of the Year award goes to <b>Timeslip</b> for solving the whole AI mess by avoiding it entirely!<br>
+            <br>
+            Aside from that, there's a very big list of very talented and somewhat crazy people who put a lot of hard work into figuring out the AI mess. The list includes:<br>
+            - DoomedMarauder<br>
+            - Auctionmule<br>
+            - Wonder Dog<br>
+            - Scanti<br>
+            - Malifrax<br>
+            - Jarol<br>
+            - Buerban<br>
+            - Midnight Voyager<br>
+            - Zanderat<br>
+            - Martigen<br>
+            - MadBat<br>
+            - rdjeke<br>
+            - DragoonWraith<br>
+            - Oblivionmasta<br>
+            - Quarn<br>
+            - and many, many others ... Thank you all for this heroic effort!</p>
         </main>
 
         <footer>
@@ -360,7 +498,7 @@ Oblivion - Sounds.bsa, Oblivion - Voices1.bsa, Oblivion - Voices2.bsa, Oblivion 
                 <a href="obliviontextureoverhaul.html">TOTO Main</a> | 
                 <a href="Quests.html">The Oblivion Quest List</a>
             </p>
-            <p class="copyright">Copyright 2006, 2007, 2008, 2009 by devakm.</p>
+            <p class="copyright">Copyright 2006, 2007, 2008, 2009, 2015, 2025 by devakm.</p>
         </footer>
     </div>
 </body>
