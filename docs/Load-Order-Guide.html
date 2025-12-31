@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -80,6 +81,25 @@
             color: var(--accent-gold);
         }
 
+        .nav-image {
+            height: 31px;
+            vertical-align: middle;
+            margin: 0 5px;
+            transition: opacity 0.3s ease;
+        }
+
+        .nav-image:hover {
+            opacity: 0.8;
+        }
+
+        .nav-divider {
+            border: none;
+            border-top: 1px solid #ffffff;
+            margin: 10px auto;
+            width: 80%;
+            opacity: 0.3;
+        }
+
         .notice {
             background-color: var(--bg-tertiary);
             padding: 15px;
@@ -129,6 +149,7 @@
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <header>
@@ -137,8 +158,10 @@
         </header>
 
         <nav>
+            <img src="images/PES_HallofFameSmall.jpg" alt="Homage to the venerable PlanetElderScrolls Hall of Fame" class="nav-image"><br>
+            <hr class="nav-divider">
             <a href="index.html">Home</a> |
-            <a href="devakm-mods.html">dev_akm's Mods & Guides</a> |
+            <a href="devakm-mods.html">Dev/Null Mods</a> |
             <a href="Quests.html">TOQL</a> |
             <a href="Convergence_TesAlliancePage.html">FCOM: Convergence</a>
         </nav>
@@ -149,63 +172,69 @@
 
         <h2>General Load-Order Guidelines</h2>
         <p><i>by ElecManEXE</i></p>
-        
+
         <p>Here are the guidelines that I adhere to, personally.</p>
-        
+
         <p>~ Unofficial Oblivon Patch should always be first on the list. The fixes are great, but most aren't essential, so if a mod overwrites them its not a big deal, and the fixes have the potential for screwing up other mods if loaded later.</p>
-        
+
         <p>~ Offical Content (DLC's) should be loaded last, until you complete all quests associated with them (that includes buying all furniture for the houses and whatnot). Once they're complete, they can be safely moved up in the list. This is especially important for Knights of the Nine, which will have some fairly major problems unless loaded last (unless you get the UOP for KotN)</p>
-        
+
         <p>~ Major overhaul mods (OOO, Frans, MMM) should be loaded near the end. That gives you the most complete experience with any of those particular mods. It also lets you carefully choose which other mods to load afterwards... only move mods that you know will conflict and that you want the changes from. For example, I have Improved Soul Gems below OOO because I know that OOO changes the icons of some of the SG's, and ISG needs to be below to show through.</p>
-        
+
         <p>Some people will recommend putting larger mods first, but personally I disagree. There are a number of mods out there that make minor tweaks, and loading after a large mod will end up completely overwriting a chunk from one of the bigger mods because of the way conflicts work in Oblivion (even one minor change will take precedence over the entire record... for example, simply tweaking the speed of a weapon can cause every stat of that weapon to be retained to vanilla levels if loaded later).</p>
-        
+
         <p>So basically, it stacks up like this...</p>
-        
+
         <p><b>Oblivion.esm<br>
-        Unofficial Oblivion Patch<br>
-        &lt;Minor Mods / DLC's (Post-Completion)&gt;<br>
-        &lt;Major Overhaul Mod/Mods&gt;<br>
-        &lt;Mods that specifically conflict with overhauls and need to take precedence&gt;<br>
-        &lt;DLC's (Pre-Completion)&gt;</b></p>
+                Unofficial Oblivion Patch<br>
+                &lt;Minor Mods / DLC's (Post-Completion)&gt;<br>
+                &lt;Major Overhaul Mod/Mods&gt;<br>
+                &lt;Mods that specifically conflict with overhauls and need to take precedence&gt;<br>
+                &lt;DLC's (Pre-Completion)&gt;</b></p>
 
         <h2>Expanded Load-Order Guidelines</h2>
         <p>by devakm</p>
-        
+
         <p>I would extend this to include:</p>
-        
+
         <p><b>Oblivion.esm<br>
-        Unofficial Oblivion Patch<br>
-        &lt;Weather/Environment/Sound Mods&gt;<br>
-        &lt;Minor Mods/New Items/Houses/DLC's (Post-Completion)&gt;<br>
-        &lt;Major Overhaul Mods&gt;<br>
-        &lt;Mods that specifically conflict with overhauls and need to take precedence&gt;<br>
-        &lt;DLC's (Pre-Completion)&gt;<br>
-        &lt;Quests&gt;<br>
-        &lt;Compatibility Patches/UOMP/Merged Leveled Lists&gt;</b></p>
-        
+                Unofficial Oblivion Patch<br>
+                &lt;Weather/Environment/Sound Mods&gt;<br>
+                &lt;Minor Mods/New Items/Houses/DLC's (Post-Completion)&gt;<br>
+                &lt;Major Overhaul Mods&gt;<br>
+                &lt;Mods that specifically conflict with overhauls and need to take precedence&gt;<br>
+                &lt;DLC's (Pre-Completion)&gt;<br>
+                &lt;Quests&gt;<br>
+                &lt;Compatibility Patches/UOMP/Merged Leveled Lists&gt;</b></p>
+
         <p>And a special-case warning for <b>Knights.esp</b> (Knights of the Nine) -- you may not be able to move it earlier than some other mods (some people have had problems after moving it before OOO, for example).</p>
-        
+
         <p>That's basically the structure I use and I have 140+ mods working well together.</p>
-        
+
         <p>Another way of describing this (posted by DMan77):<br>
-        ....<br>
-        <b>Oblivion<br>
-        unoffical patch<br>
-        Deeper realism mods that add sights and sounds<br>
-        added content like weapons/items<br>
-        gameplay changes, like 'must eat and sleep'<br>
-        The OOO type<br>
-        the 'new begining' type mod..</b><br>
-        ...</p>
+            ....<br>
+            <b>Oblivion<br>
+                unoffical patch<br>
+                Deeper realism mods that add sights and sounds<br>
+                added content like weapons/items<br>
+                gameplay changes, like 'must eat and sleep'<br>
+                The OOO type<br>
+                the 'new begining' type mod..</b><br>
+            ...
+        </p>
 
         <h2>Color-Coded Example Load-Order</h2>
         <p>Agiel has created an excellent load order example spreadsheet that can be very helpful. See <a href="https://web.archive.org/web/20110808150347/http://spreadsheets.google.com/pub?key=pb7X4kMdvelbqrwmeFgmsEA&gid=0" target="_blank">Agiel's Color-Coded Load Order (Archive)</a>.</p>
 
         <footer>
-            <p><a href="index.html">Home</a> | <a href="devakm-mods.html">Dev/Null Mods</a> | <a href="Oblivion-Texture-Overhaul.html">TOTO Main</a> | <a href="Quests.html">The Oblivion Quest List</a></p>
+            <p>
+                <img src="images/PES_HallofFameSmall.jpg" alt="Homage to the venerable PlanetElderScrolls Hall of Fame" class="nav-image"><br>
+                <hr class="nav-divider">
+                <a href="index.html">Home</a> | <a href="devakm-mods.html">Dev/Null Mods</a> | <a href="Oblivion-Texture-Overhaul.html">TOTO Main</a> | <a href="Quests.html">The Oblivion Quest List</a>
+            </p>
             <p>Copyright 2006, 2007, 2008, 2009, 2015, 2025 by devakm. Individual works copyright by their respective creators.</p>
         </footer>
     </div>
 </body>
+
 </html>

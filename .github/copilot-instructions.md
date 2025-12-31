@@ -105,6 +105,58 @@ FCOM-related pages should include the extended FCOM footer navigation:
 
 This navigation appears on: `FCOM_Convergence.html`, `FCOM_Convergence_Guide.html`, `FCOM_LoadOrder.html`, `FCOM_LoadOrderExpanded.html`, `FCOM_Options.html`, `FCOM_VersionHistory.html`
 
+### PES Hall of Fame Badge Decoration
+Quest-related pages can include the decorative PES (Planet Elder Scrolls) Hall of Fame badge above navigation links:
+
+**Required CSS**:
+```css
+.nav-image {
+    height: 31px;
+    vertical-align: middle;
+    margin: 0 5px;
+    transition: opacity 0.3s ease;
+}
+
+.nav-image:hover {
+    opacity: 0.8;
+}
+
+.nav-divider {
+    border: none;
+    border-top: 1px solid #ffffff;
+    margin: 10px auto;
+    width: 80%;
+    opacity: 0.3;
+}
+```
+
+**Header Nav Implementation**:
+```html
+<nav>
+    <img src="images/PES_HallofFameSmall.jpg" alt="Homage to the venerable PlanetElderScrolls Hall of Fame" class="nav-image"><br>
+    <hr class="nav-divider">
+    <a href="index.html">Home</a> |
+    <a href="devakm-mods.html">Dev/Null Mods & Guides</a> |
+    <a href="Oblivion-Texture-Overhaul.html">TOTO</a>
+</nav>
+```
+
+**Footer Implementation**:
+```html
+<footer>
+    <p>
+        <img src="images/PES_HallofFameSmall.jpg" alt="Homage to the venerable PlanetElderScrolls Hall of Fame" class="nav-image"><br>
+        <hr class="nav-divider">
+        <a href="index.html">Home</a> |
+        <a href="devakm-mods.html">Dev/Null Mods</a> |
+        <a href="Oblivion-Texture-Overhaul.html">TOTO Main</a>
+    </p>
+    <p>Copyright 2006, 2007, 2008, 2009, 2015, 2025 by devakm. Individual works copyright by their respective creators.</p>
+</footer>
+```
+
+**Note**: The badge is purely decorative (no link) since planetelderscrolls.gamespy.com no longer exists.
+
 ## Examples from Codebase
 
 **Preserving technical detail** (from ArchiveInvalidation.html):
