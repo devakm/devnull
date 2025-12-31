@@ -89,6 +89,8 @@ FCOM-related pages should include the extended FCOM footer navigation:
 ```html
 <div class="footer">
     <p>
+        <img src="images/PES_HallofFameSmall.jpg" alt="Homage to the venerable PlanetElderScrolls Hall of Fame" class="nav-image"><br>
+        <hr class="nav-divider">
         <a href="index.html">Home</a> |
         <a href="devakm-mods.html">Dev/Null Mods</a> |  
         <a href="FCOM_Convergence.html">Main</a> |
@@ -98,6 +100,7 @@ FCOM-related pages should include the extended FCOM footer navigation:
         <a href="FCOM_Support.html">Support</a> |
         <a href="FCOM_Options.html">Options</a> |
         <a href="FCOM_VersionHistory.html">Version History</a>
+        <hr class="nav-divider">
     </p>
     <p>Copyright 2006, 2007, 2008, 2009, 2015, 2025 by devakm. Individual works copyright by their respective creators.</p>
 </div>
@@ -125,7 +128,7 @@ Quest-related pages can include the decorative PES (Planet Elder Scrolls) Hall o
     border: none;
     border-top: 1px solid #ffffff;
     margin: 10px auto;
-    width: 80%;
+    width: 50%;
     opacity: 0.3;
 }
 ```
@@ -150,6 +153,8 @@ Quest-related pages can include the decorative PES (Planet Elder Scrolls) Hall o
         <a href="index.html">Home</a> |
         <a href="devakm-mods.html">Dev/Null Mods</a> |
         <a href="Oblivion-Texture-Overhaul.html">TOTO Main</a>
+        <a href="Quests.html">The Oblivion Quest List</a>
+        <hr class="nav-divider">
     </p>
     <p>Copyright 2006, 2007, 2008, 2009, 2015, 2025 by devakm. Individual works copyright by their respective creators.</p>
 </footer>
