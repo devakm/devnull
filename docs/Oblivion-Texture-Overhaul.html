@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TOTO - The Oblivion Texture Overhaul</title>
+    <style>
+        :root {
+            --bg-primary: #1a1a1a;
+            --bg-secondary: #2d2d2d;
+            --bg-tertiary: #252525;
+            --text-primary: #e0e0e0;
+            --text-secondary: #b0b0b0;
+            --accent-red: #ff4444;
+            --accent-blue: #4a9eff;
+            --accent-cyan: #00d9ff;
+            --accent-gold: #ffd700;
+            --accent-green: #33cc00;
+            --border-color: #444;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: var(--bg-secondary);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        header {
+            border-bottom: 2px solid var(--accent-red);
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            color: var(--accent-red);
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: var(--accent-cyan);
+            font-size: 1.2em;
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+
+        .update-date {
+            color: var(--accent-gold);
+            font-size: 0.9em;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            color: var(--accent-blue);
+            font-size: 1.8em;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+
+        h3 {
+            color: var(--accent-cyan);
+            font-size: 1.4em;
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            margin-bottom: 15px;
+            color: var(--text-primary);
+        }
+
+        a {
+            color: var(--accent-cyan);
+            text-decoration: none;
+            border-bottom: 1px solid var(--accent-cyan);
+            transition: color 0.3s, border-color 0.3s;
+        }
+
+        a:hover {
+            color: var(--accent-gold);
+            border-color: var(--accent-gold);
+        }
+
+        .image-right {
+            float: right;
+            margin-left: 20px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+            border: 2px solid var(--border-color);
+        }
+
+        .category-section {
+            background-color: var(--bg-tertiary);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 6px;
+            border-left: 3px solid var(--accent-blue);
+        }
+
+        .category-section h3 {
+            margin-top: 0;
+        }
+
+        .category-title {
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+
+        .category-date {
+            color: var(--accent-red);
+            font-size: 0.85em;
+        }
+
+        .credits {
+            background-color: var(--bg-tertiary);
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 6px;
+        }
+
+        .credits a {
+            display: inline-block;
+            margin-right: 15px;
+        }
+
+        footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+            color: var(--text-secondary);
+        }
+
+        footer a {
+            margin: 0 10px;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid var(--border-color);
+            margin: 20px 0;
+        }
+
+        .clearfix::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>The Oblivion Texture Overhaul</h1>
+            <p class="subtitle">The Ultimate Visual Experience for TES IV</p>
+            <p class="update-date">Site Last Updated 03/24/2009</p>
+        </header>
+
+        <main>
+            <section class="clearfix">
+                <h2>WHAT IS TOTO?</h2>
+                <img src="images/th_14p.jpg" alt="parallax" width="160" height="120" class="image-right">
+                <p>The Oblivion Texture Overhaul (TOTO) is not a mod itself, but rather a guide to a lot of great mods that improve the appearance of The Elder Scrolls IV: Oblivion. TOTO is an ongoing community project to create a resource guide that includes comparison screenshots, installation instructions, download mirror listings, etc. The overall goal is to improve immersion in Oblivion by documenting various texture replacers, as well as correcting omissions and oddities, improving performance, and reducing compatibility problems for these texture replacers. The topics in this guide will address these issues.</p>
+                
+                <p>In the future, the TOTO team may release patch files, updates, tweaks, and combo packs in an attempt to meet the stated goals of the project. For discussion and feedback, check the ESF thread.</p>
+                
+                <p>Anyone who isn't already doing so, should download <a href="http://timeslip.chorrol.com/" target="_blank">Oblivion Mod Manager</a> or <a href="http://wrye.ufrealms.net/" target="_blank">Wrye Bash</a> (or both!) before using any of these mods. Not only will these tools let you easily uninstall any mods you don't like, they also include critical invalidation tools (<a href="ArchiveInvalidation.html">BSA-alteration or BSA-redirection</a>), without which you will not be able to see all the great textures discussed here.</p>
+            </section>
+
+            <section class="clearfix">
+                <h3>OVERHAUL CATEGORIES</h3>
+                <img src="images/th_IWR01.jpg" alt="Improved Water" class="image-right">
+                <p>There are many excellent texture replacers for Oblivion. So many, in fact, that we can't easily discuss them all in one simple page. Thus, textures are organized here into several categories so the information will be easier to digest. The following links will each take you to a separate page for that category:</p>
+                
+                <div class="category-section">
+                    <p><span class="category-title"><a href="totoworld.html">World Textures</a></span> <span class="category-date">(Updated 03/23/2009)</span><br>
+                    Includes landscape, architecture, clutter, etc., with recommended installation sequences for 512Mb and 256Mb video cards.</p>
+                </div>
+
+                <div class="category-section">
+                    <p><span class="category-title"><a href="totocharacter.html">Character Textures</a></span> <span class="category-date">(Updated 10/01/2008)</span><br>
+                    Includes the player character, NPCs, horses, creatures, etc.</p>
+                </div>
+
+                <div class="category-section">
+                    <p><span class="category-title"><a href="totoitems.html">Item Textures</a></span> <span class="category-date">(Updated 01/06/2009)</span><br>
+                    Includes weapons, armor, clothing, rings, amulets, etc.</p>
+                </div>
+
+                <div class="category-section">
+                    <p><span class="category-title"><a href="128mbcards.html">128Mb Video Cards</a></span> <span class="category-date">(Updated 9/21/2007)</span><br>
+                    Most of the recommendations on this site won't work well for 128Mb video cards, so there's a separate page for low-end texture options.</p>
+                </div>
+
+                <div class="category-section">
+                    <p><span class="category-title"><a href="other.html">Other Improvements</a></span> <span class="category-date">(Updated 3/24/2009)</span><br>
+                    There are a lot of other essential improvements that just don't fall neatly into one of the above categories, especially since a lot of them aren't actually texture replacers. In any case, look here for everything else you need to make Oblivion rock.</p>
+                </div>
+            </section>
+
+            <section>
+                <h3>TROUBLESHOOTING</h3>
+                <p>If you're unsure how to install these mods, or just need help, check the <a href="http://cs.elderscrolls.com/constwiki/index.php/Oblivion_Mods_FAQ" target="_blank">Oblivion Mods FAQ</a> for detailed instructions. Also, don't forget to use either the <a href="ArchiveInvalidation.html">BSA-alteration or BSA-redirection methods of ArchiveInvalidation</a> if you want to see all these great textures without any problems.</p>
+                
+                <p>I've also updated the <a href="texturehelp.html">Texture Help</a> page with additional tips. As a last resort, you can always post your question in the ESF thread.</p>
+            </section>
+
+            <section>
+                <h3>CREDITS</h3>
+                <p>Aside from the creators of the individual mods listed here, lots of people in the ESF thread have contributed suggestions, feedback, and (most important) links! Here they are:</p>
+                
+                <div class="credits">
+                    <p>
+                        <a href="#" target="_blank">Slochy</a>
+                        <a href="#" target="_blank">blade9722</a>
+                        <a href="#" target="_blank">GreatMightyWarlord</a>
+                        <a href="#" target="_blank">Kal Choedan</a>
+                        <a href="#" target="_blank">MiSP</a>
+                        <a href="#" target="_blank">andreasgr</a>
+                        <a href="#" target="_blank">bata</a>
+                        <a href="#" target="_blank">ICUP</a>
+                        <a href="#" target="_blank">solardog</a>
+                        <a href="#" target="_blank">BulletSix</a>
+                        <a href="#" target="_blank">mikal33</a>
+                        <a href="#" target="_blank">przemo3642</a>
+                        <a href="#" target="_blank">Dracon Yukay</a>
+                        <a href="#" target="_blank">Hobbs</a>
+                        <a href="#" target="_blank">Dae (formerly known as Daedro)</a>
+                        <a href="#" target="_blank">Martigen</a>
+                        <a href="#" target="_blank">DLO604</a>
+                        <a href="#" target="_blank">Sage Rime</a>
+                        <a href="#" target="_blank">FiveFries</a>
+                        <a href="#" target="_blank">Venutius</a>
+                    </p>
+                </div>
+                
+                <p>Thanks for all the help, folks!</p>
+            </section>
+        </main>
+
+        <footer>
+            <hr>
+            <p>
+                <a href="index.html">Home</a> | 
+                <a href="Quests.html">The Oblivion Quest List</a>
+            </p>
+            <p class="copyright">Copyright 2006, 2007, 2008, 2009 by dev_akm. Individual works copyright by their respective creators.</p>
+        </footer>
+    </div>
+</body>
+</html>

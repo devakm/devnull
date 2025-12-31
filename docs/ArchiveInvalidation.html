@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ArchiveInvalidation</title>
+    <style>
+        :root {
+            --bg-primary: #1a1a1a;
+            --bg-secondary: #2d2d2d;
+            --bg-tertiary: #252525;
+            --text-primary: #e0e0e0;
+            --text-secondary: #b0b0b0;
+            --accent-red: #ff4444;
+            --accent-blue: #4a9eff;
+            --accent-cyan: #00d9ff;
+            --accent-gold: #ffd700;
+            --accent-green: #33cc00;
+            --border-color: #444;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: var(--bg-secondary);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        header {
+            border-bottom: 2px solid var(--accent-red);
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            color: var(--accent-red);
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: var(--accent-cyan);
+            font-size: 1.2em;
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            color: var(--accent-blue);
+            font-size: 1.8em;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+
+        h3 {
+            color: var(--accent-cyan);
+            font-size: 1.4em;
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+
+        h4 {
+            color: var(--accent-gold);
+            font-size: 1.2em;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            margin-bottom: 15px;
+            color: var(--text-primary);
+        }
+
+        a {
+            color: var(--accent-cyan);
+            text-decoration: none;
+            border-bottom: 1px solid var(--accent-cyan);
+            transition: color 0.3s, border-color 0.3s;
+        }
+
+        a:hover {
+            color: var(--accent-gold);
+            border-color: var(--accent-gold);
+        }
+
+        ul, ol {
+            margin-left: 30px;
+            margin-bottom: 15px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        .info-box {
+            background-color: rgba(74, 158, 255, 0.1);
+            border-left: 4px solid var(--accent-blue);
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .note {
+            background-color: rgba(255, 215, 0, 0.1);
+            border-left: 4px solid var(--accent-gold);
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .warning {
+            background-color: rgba(255, 68, 68, 0.1);
+            border-left: 4px solid var(--accent-red);
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+            color: var(--text-secondary);
+        }
+
+        footer a {
+            margin: 0 10px;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid var(--border-color);
+            margin: 20px 0;
+        }
+
+        b, strong {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        i, em {
+            color: var(--text-secondary);
+            font-style: italic;
+        }
+
+        code, pre {
+            background-color: var(--bg-tertiary);
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            color: var(--accent-cyan);
+        }
+
+        pre {
+            padding: 15px;
+            margin: 15px 0;
+            overflow-x: auto;
+            display: block;
+        }
+
+        .quick-nav {
+            background-color: var(--bg-tertiary);
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 6px;
+            border-left: 3px solid var(--accent-blue);
+        }
+
+        .method-list {
+            background-color: var(--bg-tertiary);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 6px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>ArchiveInvalidation</h1>
+            <p class="subtitle">Everything You Never Wanted to Know And Were Afraid to Ask</p>
+        </header>
+
+        <main>
+            <div class="quick-nav">
+                <p><a href="#ai-destroyed">ArchiveInvalidation Destroyed</a><br>
+                <a href="#ai-explained">ArchiveInvalidation Explained</a></p>
+            </div>
+
+            <h2 id="ai-destroyed">ArchiveInvalidation Destroyed</h2>
+            
+            <p><i>by dev_akm<br>
+            Updated 1-29-2008</i></p>
+            
+            <div class="info-box">
+                <p>All of the original threads on the Elder Scrolls Forums have now expired and been purged from the system, but this summary of the great work done by the ArchiveInvalidation Explained Research Team lives on! The recent discovery of an entirely new method is now described as well.</p>
+            </div>
+
+            <h3>Overview</h3>
+            <p>Oblivion normally gets all of its media assets (artwork, spoken dialog, music, etc.) from within a few large .bsa files rather than in individual folders (such as Meshes, Textures, Sound, etc.). The original game and official plugins use these .bsa files (it stands for Bethesda Softworks Archive). These .bsa files are organized internally just like your "Data" folder is.</p>
+            
+            <p>Although fan-made mods are starting to use .bsa files more often, most mods still place individual meshes, textures, etc. into folders within your "Data" directory. This isn't a problem for new items added by a mod, but it can be a problem for some "replacer" mods that alter original game items. For example, some of the most popular types of mods are "armor texture replacers" and "landscape texture replacer" mods that improve the look of the game by replacing the original "stock" textures.</p>
+            
+            <p>Normally, this isn't a problem since Oblivion is designed to automatically load any meshes, textures, etc. that it finds in your Data folder, as long as the timestamp (Modification Date) on each of these files is more recent than the timestamp on the original .bsa files. Since the .bsa files are older, items in them get replaced by any newer items with the same name that exist in your Data folders.</p>
+            
+            <p>In some cases, however, this doesn't work correctly. It now seems fairly certain that this is caused by a bug in Oblivion's ArchiveInvalidation system itself. After more than a year and several official game patches, it seems unlikely that Bethesda will ever correct this bug. This means you will have to use one of several workarounds if you want to install any "replacer" mods.</p>
+            
+            <p>Further details on this subject, as well as extensive testing results for ArchiveInvalidation problems in general, can be found in the article <a href="#ai-explained">ArchiveInvalidation Explained</a> (the ESF threads on the topic have expired).</p>
+            
+            <p>Each of the known workaround solutions has advantages and disadvantages. The first two methods in the list below -- BSA-alteration and BSA-redirection -- are the only recommended solutions. The last two methods -- BSA-invalidation and BSA-extraction -- have such serious drawbacks that they are not recommended solutions. Here's the list of methods along with some description of what's involved in each:</p>
+            
+            <div class="method-list">
+                <ul>
+                    <li><b>BSA-alteration</b>: This was the first true solution to the problem. It is widely used, very reliable, fairly simple, and most Oblivion mod users are by now familiar with using it. The disadvantages are that you must use one of several external tools (not a big deal since you probably need one of these tools anyway), you must update the BSA changes after installing or removing any replacer mods (although most of the tools will do this in an automated way), and you must remember to remove BSA changes before applying any of the official patches from Bethesda.</li>
+                    
+                    <li><b>BSA-redirection</b>: This is a newer solution that has proven to be very effective. This method has advantages that make it preferable over BSA-alteration. The biggest advantage is that it does not require any external tools (although it does require you to install some files and you may want to use a tool to help you configure it) and once it's set up, you can pretty much forget about it (no intervention is required after adding or removing any replacer mods).</li>
+                    
+                    <li><b>BSA-invalidation</b>: This was the first solution discovered, and as a result was the most widely used method for a long time. However, it has severe limitations and problems and is rarely used anymore because of this. Unfortunately, many early mods still recommend this solution, so lots of users get fooled into thinking it's a good idea. In fact, it's a terrible idea under most circumstances and the only way to make it work reliably is to also use BSA-extraction (see below). You should avoid this method if at all possible.</li>
+                    
+                    <li><b>BSA-extraction</b>: This solution works well for mod creators (who often need to have the source files extracted from the BSAs anyway). However, it has major disadvantages for mod players and because of this it is not discussed in any great detail here.</li>
+                </ul>
+            </div>
+            
+            <p>Next we'll examine these methods in a bit more detail.</p>
+
+            <h3>BSA-redirection</h3>
+            <p>This method works by tricking the Oblivion game engine into using its bugged ArchiveInvalidation method on the wrong BSA file. By doing this, it allows all files in the main Textures BSA to be reliably superseded by any more recent files found in your Textures folder.</p>
+            
+            <p>The easiest way to use this method is to use the BSA-redirection option in Oblivion Mod Manager if you already have it (see BSA-alteration below for more details). Here are the steps using OBMM:</p>
+            
+            <ol>
+                <li>Start OBMM.</li>
+                <li>Click Utilities.</li>
+                <li>Select Archive invalidation. You'll get a popup window.</li>
+                <li>Click BSA redirection (it's the default choice).</li>
+                <li>Click Update Now.</li>
+                <li>Close the Archive invalidation popup (click the red X in the upper-left corner).</li>
+                <li>Quit OBMM or click Launch Oblivion.</li>
+            </ol>
+            
+            <p>Alternately, you can install a mod specifically designed to do BSA-redirection, such as <a href="http://www.tessource.net/files/file.php?id=10724" target="_blank">ArchiveInvalidation Invalidated!</a>.</p>
+            
+            <p>You can also set up BSA-redirection fairly easily yourself if you don't mind a bit of tweaking. In the Oblivion.ini file, there is a configuration entry called the SArchiveList. It lists all of the standard BSA files. It normally looks like this:</p>
+            
+            <pre>SArchiveList=Oblivion - Meshes.bsa, Oblivion - Textures - Compressed.bsa, Oblivion - Sounds.bsa,
+Oblivion - Voices1.bsa, Oblivion - Voices2.bsa, Oblivion - Misc.bsa</pre>
+            
+            <p>By changing the list to include another BSA containing at least one texture, you can trick the game engine into processing the bugged ArchiveInvalidation logic for that new dummy file rather than the real Textures BSA (called <i>Oblivion - Textures - Compressed.bsa</i>). So, the modified SArchiveList should look something like this:</p>
+            
+            <pre>SArchiveList=<b>DUMMYFILE.bsa</b>, Oblivion - Meshes.bsa, Oblivion - Textures - Compressed.bsa,
+Oblivion - Sounds.bsa, Oblivion - Voices1.bsa, Oblivion - Voices2.bsa, Oblivion - Misc.bsa</pre>
+            
+            <p>To do this, you'll need to either use a BSA file that came with some other mod to be your <i>DUMMYFILE.bsa</i> (any BSA file containing at least one texture should work), create one yourself using a tool like <a href="http://cs.elderscrolls.com/constwiki/index.php/BSA_Commander" target="_blank">BSA Commander</a> (you only need to put one texture in the BSA).</p>
+
+            <h3>BSA-alteration</h3>
+            <p>BSA-alteration requires <a href="http://cs.elderscrolls.com/constwiki/index.php/Wrye_Bash" target="_blank">Wrye Bash</a> (as of version 0.60) or one of Timeslip's excellent utility programs: <a href="http://cs.elderscrolls.com/constwiki/index.php/Oblivion_Mod_Manager" target="_blank">Oblivion Mod Manager</a> (OBMM version 0.7.10 or later) or BSA Patcher. What Wrye Bash, OBMM and BSA Patcher do is to sidestep the ArchiveInvalidation problem by making Oblivion think it never had a copy of the textures you are replacing.</p>
+            
+            <p>In other words, these utilities edit your Textures BSA so that Oblivion cannot find the original version of texture files you have replaced, thus forcing the game to load the replacements instead of the originals. Without getting too technical, this works much like taking a book and scrambling some entries from the table of contents so those chapters can't be found anymore, even though the chapters are really still there -- thus allowing the process to be easily reversed later by restoring the table of contents back to its original state.</p>
+            
+            <p>This method of invalidation was initially tested by the <i>ArchiveInvalidation Explained Research Team</i> and has now been adopted as the de facto standard solution by the Oblivion mods community. It has proven extremely stable, but you should still make a backup of your BSA files if you have the hard drive space (or a DVD-burner) just in case something goes wrong (like you accidentally try to run both OBMM and BSA Patcher on your BSA files, which will result in a corrupt file).</p>
+            
+            <p>OBMM and BSA Patcher will keep track of which files have been renamed in your BSAs and provide a "Remove BSA edits" function to rollback any changes they have made to your BSA.</p>
+
+            <h4>Wrye Bash</h4>
+            <p>Download <a href="http://wrye.ufrealms.net/" target="_blank">Wrye Bash</a>.</p>
+            
+            <div class="note">
+                <p><b>Note:</b> The BSA-alteration features in Wrye Bash are designed for advanced users and provide more control over the process than OBMM's automated approach.</p>
+            </div>
+
+            <h3>Technical Details</h3>
+            <p>The ArchiveInvalidation problems described here are related to the way Oblivion invalidates entries in its BSA hash tables. In the Oblivion.ini, these are named:</p>
+            
+            <ul>
+                <li><code>DirectoryStringTable</code></li>
+                <li><code>FilenameStringTable</code></li>
+            </ul>
+            
+            <p>A "hash table" is a very common method of improving performance when you've got a lot of things to keep track of. A directory structure full of files is a perfect candidate for this technology.</p>
+            
+            <p>Unfortunately, Oblivion's invalidation routines don't seem to be very accurate about how they mark a file as needing to be replaced. It appears there is a "disconnect" in the intersection between these two tables that causes a file invalidated in one path to also get invalidated in all other paths where it exists, resulting in index "collisions" that cause Oblivion to mistakenly think a texture should not be loaded from the BSA.</p>
+            
+            <div class="warning">
+                <p><b>Common Filename Problem:</b> When multiple armor sets use files with the same names (like "shield.dds", "cuirass.dds", etc.) in different directories, invalidating files for one armor set can inadvertently invalidate those same filenames in other armor sets, causing missing textures.</p>
+            </div>
+
+            <h3>Tools</h3>
+            <p>Ultimately, the only really good solution is to use BSA-redirection or BSA-alteration, but if you really want to see for yourself then these tools will help you generate an ArchiveInvalidation.txt file.</p>
+            
+            <ul>
+                <li><b>ElChE's Oblivion Automatic Content Validator 1.1.0</b> - Use the Smart Check feature (in the latest version it automatically ignores meshes; in the previous version, have it open your AI when done, and then delete meshes by hand).</li>
+                <li><b>Oblivion Mod Manager (OBMM)</b> - Available from <a href="http://timeslip.chorrol.com/" target="_blank">timeslip.chorrol.com</a></li>
+                <li><b>Wrye Bash</b> - Also includes a feature to generate AI.txt</li>
+            </ul>
+
+            <h3>Further Reading</h3>
+            <ul>
+                <li><a href="http://cs.elderscrolls.com/constwiki/index.php/Oblivion_Mods_FAQ" target="_blank">Oblivion Mods FAQ</a></li>
+            </ul>
+
+            <h3>Glossary</h3>
+            <p><b>AI.txt</b> is shorthand for ArchiveInvalidation.txt.</p>
+
+            <h3>Credits</h3>
+            <p>Man of the Year award goes to <b>Timeslip</b> for solving the whole AI mess by avoiding it entirely!</p>
+            
+            <p>Aside from that, there's a very big list of very talented and somewhat crazy people who put a lot of hard work into figuring out the AI mess. The list includes:</p>
+            
+            <ul>
+                <li>DoomedMarauder</li>
+                <li>Auctionmule</li>
+                <li>Wonder Dog</li>
+                <li>Scanti</li>
+                <li>Malifrax</li>
+                <li>Jarol</li>
+                <li>Buerban</li>
+                <li>Midnight Voyager</li>
+                <li>Zanderat</li>
+                <li>Martigen</li>
+                <li>MadBat</li>
+                <li>rdjeke</li>
+                <li>DragoonWraith</li>
+                <li>Oblivionmasta</li>
+                <li>Quarn</li>
+                <li>and many, many others...</li>
+            </ul>
+            
+            <p>Thank you all for this heroic effort!</p>
+
+            <h2 id="ai-explained">ArchiveInvalidation Explained</h2>
+            
+            <div class="info-box">
+                <p>This section provides detailed technical analysis of the ArchiveInvalidation bug and various workaround methods. The "ArchiveInvalidation Destroyed" section above provides a more concise summary of the recommended solutions.</p>
+            </div>
+            
+            <p>For complete technical details and historical context of the ArchiveInvalidation research, please refer to the archived forum discussions and the <a href="http://cs.elderscrolls.com/constwiki/index.php/Oblivion_Mods_FAQ" target="_blank">Oblivion Mods FAQ</a>.</p>
+        </main>
+
+        <footer>
+            <hr>
+            <p>
+                <a href="index.html">Home</a> | 
+                <a href="obliviontextureoverhaul.html">TOTO Main</a> | 
+                <a href="Quests.html">The Oblivion Quest List</a>
+            </p>
+            <p class="copyright">Copyright 2006, 2007, 2008, 2009 by dev_akm.</p>
+        </footer>
+    </div>
+</body>
+</html>
