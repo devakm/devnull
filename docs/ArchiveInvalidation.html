@@ -305,9 +305,11 @@ Oblivion - Sounds.bsa, Oblivion - Voices1.bsa, Oblivion - Voices2.bsa, Oblivion 
             <p>Ultimately, the only really good solution is to use BSA-redirection or BSA-alteration, but if you really want to see for yourself then these tools will help you generate an ArchiveInvalidation.txt file.</p>
             
             <ul>
-                <li><b>ElChE's Oblivion Automatic Content Validator 1.1.0</b> - Use the Smart Check feature (in the latest version it automatically ignores meshes; in the previous version, have it open your AI when done, and then delete meshes by hand).</li>
-                <li><b>Oblivion Mod Manager (OBMM)</b> - Available from <a href="https://cs.uesp.net/wiki/Oblivion_Mod_Manager" target="_blank">timeslip.chorrol.com</a></li>
-                <li><b>Wrye Bash</b> - Also includes a feature to generate AI.txt</li>
+              <li><b>Wrye Bash</b> - Includes a feature to generate AI.txt. You can find it in the "Mods" tab under "Archive Invalidation". Download from <a href="https://www.nexusmods.com/site/mods/591" target="_blank">Nexus Mods</a></li>
+              <li><b>Vortex</b> - You enable this via Settings > Workarounds, which creates a special "Vortex Archive Invalidation" mod; you then enable this mod in the Mods tab, and it uses BSA redirection to make loose files load. You might need to toggle it off and on again before launching the game for it to work correctly. Download from <a href="https://www.nexusmods.com/about/vortex" target="_blank">Nexus Mods</a></li>
+
+              <li>In the early days many players used <b>ElChE's Oblivion Automatic Content Validator 1.1.0</b> - Use the Smart Check feature (in the latest version it automatically ignores meshes; in the previous version, have it open your AI when done, and then delete meshes by hand).</li>
+              <li>The venerable <b>Oblivion Mod Manager (OBMM)</b> - Available from <a href="https://www.nexusmods.com/oblivion/mods/2097" target="_blank">Nexus Mods</a></li>
             </ul>
 
             <h3>Further Reading</h3>
@@ -453,15 +455,17 @@ Oblivion - Sounds.bsa, Oblivion - Voices1.bsa, Oblivion - Voices2.bsa, Oblivion 
             In fact, the problem is even worse than this because Oblivion immediately recognizes the new directory path <u>textures\armor\iron\</u> as soon as you add it to your Data folder. It doesn't even need to be listed in your AI.txt because the Oblivion automatically scans your Data folders and recognizes that directory path as being one from the BSA that has <b>common filenames</b> which have already been invalidated.</p>
 
             <h3>TOOLS</h3>
-            <p>Ultimately, the only really good solution is to use BSA-redirection or BSA-alteration, but if you really want to see for yourself then these tools will help you generate an ArchiveInvalidation.txt file.<br>
-            <br>
-            ElChE's Oblivion Automatic Content Validator 1.1.0<br>
-            <a href="https://cs.uesp.net/wiki/Automatic_Content_Validator" target="_blank">ACV</a><br>
-            - Use the Smart Check feature (in the latest version it automatically ignores meshes; in the previous version, have it open your AI when done, and then delete meshes by hand).<br>
-            <br>
-            <a href="https://cs.uesp.net/wiki/Oblivion_Mod_Manager" target="_blank">Oblivion Mod Manager (OBMM)</a><br>
-            - Haven't tested the latest version, but Timeslip says he has added new AI.txt options in 0.7.6: "It lets you choose exactly which types of files to include, and there's options for ignoring files not in BSA's, normal maps, and files with incorrect extensions. Following MadBat's suggestion, it also deletes empty subdirectories from the data folder. Default settings are to only include textures, and only ones which already appear in a BSA archive. Hopefully, that should keep most people happy." Heck yeah! (In previous versions, use the DDS textures option.)</p>
-            <p><a href="https://cs.uesp.net/wiki/Wrye_Bash" target="_blank">Wrye Bash</a> also now includes a feature to generate AI.txt, but I haven't tested it yet.</p>
+            <p>Ultimately, the only really good solution is to use BSA-redirection or BSA-alteration, but if you really want to see for yourself then these tools will help you generate an ArchiveInvalidation.txt file.</p>
+            
+            <ul>
+                <li><b>Wrye Bash</b> - Also now includes a feature to generate AI.txt. Download from <a href="https://www.nexusmods.com/site/mods/591" target="_blank">Nexus Mods</a></li>
+                
+                <li><b>Vortex</b> - You enable this via Settings > Workarounds, which creates a special "Vortex Archive Invalidation" mod; you then enable this mod in the Mods tab, and it uses BSA redirection to make loose files load. You might need to toggle it off and on again before launching the game for it to work correctly. Download from <a href="https://www.nexusmods.com/about/vortex" target="_blank">Nexus Mods</a></li>
+
+                <li><b>ElChE's Oblivion Automatic Content Validator 1.1.0</b> (<a href="https://cs.uesp.net/wiki/Automatic_Content_Validator" target="_blank">ACV</a>) - Use the Smart Check feature (in the latest version it automatically ignores meshes; in the previous version, have it open your AI when done, and then delete meshes by hand).</li>
+
+                <li><b>Oblivion Mod Manager (OBMM)</b> (<a href="https://cs.uesp.net/wiki/Oblivion_Mod_Manager" target="_blank">UESP Wiki</a>) - Haven't tested the latest version, but Timeslip says he has added new AI.txt options in 0.7.6: "It lets you choose exactly which types of files to include, and there's options for ignoring files not in BSA's, normal maps, and files with incorrect extensions. Following MadBat's suggestion, it also deletes empty subdirectories from the data folder. Default settings are to only include textures, and only ones which already appear in a BSA archive. Hopefully, that should keep most people happy." Heck yeah! (In previous versions, use the DDS textures option.)</li>
+            </ul>
 
             <h3>FURTHER READING</h3>
             <p><a href="https://cs.uesp.net/wiki/Oblivion_Mods_FAQ" target="_blank">Oblivion Mods FAQ</a></p>
