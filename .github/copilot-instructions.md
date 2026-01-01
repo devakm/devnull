@@ -89,7 +89,7 @@ FCOM-related pages should include the extended FCOM footer navigation:
 ```html
 <div class="footer">
     <p>
-        <img src="images/PES_HallofFameSmall.jpg" alt="Homage to the venerable PlanetElderScrolls Hall of Fame" class="nav-image"><br>
+        <img src="images/PES_HallofFameSmall.jpg" title="Homage to the venerable PlanetElderScrolls Hall of Fame" class="nav-image"><br>
         <hr class="nav-divider">
         <a href="index.html">Home</a> |
         <a href="devakm-mods.html">Dev/Null Mods</a> |  
@@ -136,7 +136,7 @@ Quest-related pages can include the decorative PES (Planet Elder Scrolls) Hall o
 **Header Nav Implementation**:
 ```html
 <nav>
-    <img src="images/PES_HallofFameSmall.jpg" alt="Homage to the venerable PlanetElderScrolls Hall of Fame" class="nav-image"><br>
+    <img src="images/PES_HallofFameSmall.jpg" title="Homage to the venerable PlanetElderScrolls Hall of Fame" class="nav-image"><br>
     <hr class="nav-divider">
     <a href="index.html">Home</a> |
     <a href="devakm-mods.html">Dev/Null Mods & Guides</a> |
@@ -148,7 +148,7 @@ Quest-related pages can include the decorative PES (Planet Elder Scrolls) Hall o
 ```html
 <footer>
     <p>
-        <img src="images/PES_HallofFameSmall.jpg" alt="Homage to the venerable PlanetElderScrolls Hall of Fame" class="nav-image"><br>
+        <img src="images/PES_HallofFameSmall.jpg" title="Homage to the venerable PlanetElderScrolls Hall of Fame" class="nav-image"><br>
         <hr class="nav-divider">
         <a href="index.html">Home</a> |
         <a href="devakm-mods.html">Dev/Null Mods</a> |
