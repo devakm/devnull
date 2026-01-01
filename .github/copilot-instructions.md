@@ -19,7 +19,27 @@ This is a **static documentation website** for Elder Scrolls IV: Oblivion moddin
 
 ## HTML Conversion Standards
 
-### Dark Mode Color Scheme (required for all pages)
+### Shared CSS File
+All pages should use the shared CSS file located at `css/devnull-shared.css`. This file contains:
+- Dark mode color scheme with CSS variables
+- Common layout and typography styles
+- Navigation and footer styles
+- Content boxes (warning, update, highlight, note)
+- Grid layouts and responsive design
+- PES Hall of Fame badge styles
+
+**To use the shared CSS:**
+```html
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Title</title>
+    <link rel="stylesheet" href="css/devnull-shared.css">
+</head>
+```
+
+### Dark Mode Color Scheme (available via shared CSS)
+The shared CSS provides these CSS variables:
 ```css
 :root {
     --bg-primary: #1a1a1a;
@@ -39,8 +59,9 @@ This is a **static documentation website** for Elder Scrolls IV: Oblivion moddin
 ### Conversion Process
 1. Convert `DOCTYPE HTML 4.01 Transitional` → `<!DOCTYPE html>`
 2. Remove all Wayback Machine toolbars, scripts, and embedded content
-3. Apply standardized dark mode CSS (see existing files like `devakm-mods.html`)
-4. Preserve ALL original content including:
+3. Link to shared CSS file: `<link rel="stylesheet" href="css/devnull-shared.css">`
+4. Add page-specific CSS only if needed (in `<style>` tag after the link)
+5. Preserve ALL original content including:
    - Complete technical explanations (even if verbose)
    - Historical context and dates
    - All code examples with original formatting
