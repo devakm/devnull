@@ -1,0 +1,1772 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Oscuro's Oblivion Overhaul FAQ &amp; Changelog</title>
+  <link href="OOO_style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+
+
+
+  <!--
+<div id="masthead">
+  <h1 id="siteName">Oscuro's FAQ &amp; Changes</h1>
+  <div id="globalNav"> Questions, Answers, and Changelogs for <b>Oscuro's Oblivion Overhaul</b> </div>
+</div>
+-->
+  <!-- end masthead -->
+  <div id="content">
+
+    <div id="dateLastUpdated"><i>
+        <font color="#660000" size="1">Last Updated 07/07/2008 (minor cleanup on 01/01/2026)</font>
+      </i> </div>
+
+    <a name="top" id="top"></a>
+    <h1 id="siteName">Oscuro's Oblivion Overhaul</h1>
+    <div id="globalNav"> FAQ &amp; Changelogs for <b>Oscuro's Oblivion Overhaul 1.32, 1.33, 1.34 </b> </div>
+
+    <h2 id="pageName">Introduction</h2>
+
+    <div class="story">
+
+      <p>The development of Oscuro's Oblivion Overhaul has been ongoing for several years now, and has gone through many revisions.
+        The 1.32 release in particular took a very long time to complete. This was due in part to real life distractions,
+        but also the massive scope of what it attempted to accomplish.</p>
+
+      <p>In
+        fact, version 1.32 had multiple releases, each containing enough new
+        features and fixes to warrant a separate version number of its own.
+        This started with the 1.32 Open Beta. Then came Release Candidate 1
+        (RC1), Release Candidate 2 (RC2), and finally Release Candidate 3
+        (RC3). The RC4 version was never publicly released. Finally, after a
+        long delay, we completed Release Candidate 5 (RC5). After some additional delays,
+        we at long last released the 1.32.Final package. Sadly, as is so often the case,
+        some last-minute improvements didn't work as well as we'd hoped, so we've now
+        followed up with version 1.33 to correct those problems. Hopefully this will prove to be the
+        most stable version yet.</p>
+
+      <p>This
+        document collects the Changelog information written by Sotobrastos for
+        1.32.RC1 through 1.32.RC3, as well as the much shorter changelogs for 1.32.RC5, 1.32.Final, and 1.33.
+        The information has been somewhat revised and edited for accuracy. I have
+        also included an updated version of the original OOO 1.3 FAQ, which
+        answers many common questions about the mod. Most of the information
+        found here has now been integrated into the new <a href="OOO_134_readme.pdf" target="_blank">OOO 1.34 Readme (PDF)</a>,
+        so that's the place to look for a coherent understanding of how OOO 1.32 works. Here you will
+        instead find the "raw" information in its original sequential form.</p>
+
+      <p>-- dev_akm, on behalf of Oscuro and the entire OOO team.</p>
+
+    </div>
+    <h2 id="pageName"><a name="FAQ"></a>Oscuro's FAQ</h2>
+    <div class="story">
+
+
+      <p>The following list is a compilation of common questions, problems
+        and their respective answers and solutions that have come up since the
+        release of OOO 1.3.</p>
+
+      <h3>Installation</h3>
+      <ol>
+        <li><a href="#a3">I keep getting corrupt or incomplete downloads. How can I get this great mod?</a></li>
+        <li><a href="#a4">What is the difference between OOO FULL and OOO LITE?</a></li>
+        <li><a href="#a5">There are a lot of mods in the OOO-ADD-ON folder. Which ones do I need?</a></li>
+        <li><a href="#a6">Is it possible to use OOO 1.3 with a previous save-game? If so, how?</a></li>
+
+      </ol>
+      <h3>Technical Problems</h3>
+      <ol>
+        <li><a href="#b1">I see purple textures and/or squares with yellow exclamation signs. What is the problem?</a></li>
+        <li><a href="#b2">I have installed all content folders into my \Oblivion\Data folder, but I still see some purple textures. What is the problem?</a></li>
+        <li><a href="#b3">I'm
+            getting crashes and terrible FPS slowdowns when leaving the sewers and
+            around the Imperial City, especially when near the water.</a></li>
+        <li><a href="#b4">Your
+            explanation about using a Grass mod to help reduce crashes and terrible
+            FPS slowdowns when leaving the sewers and around the Imperial City was
+            confusing. Can you explain it again?</a></li>
+
+        <li><a href="#b5">I
+            would like to start a new game with OOO 1.3, but I also wish to
+            continue my heavily modded Oblivion I am still playing. Would a
+            copy/paste into a new directory work? Or will I have to re-install into
+            a new directory?</a></li>
+        <li><a href="#b6">Do I need the Official Patch to use OOO 1.3?</a></li>
+        <li><a href="#b7">I
+            am having a problem with exiting (entering?) Cells. When I exit the
+            Sinkhole cave cell, I get a black screen. It says Loading area at the
+            bottem. I can move around as I see my map moving. I can access my
+            inventory ect. HELP my Char is literaly stuck in this cave!</a></li>
+      </ol>
+      <h3>Gameplay Problems &amp; Questions</h3>
+      <ol>
+
+
+        <li><a href="#c0">I keep meeting dangerous enemies in the Tiber Septim Hotel. The Frost Titan killed everyone there! Help!</a></li>
+        <li><a href="#c1">Torches appear as �Missing Name� in-game, what is up?</a></li>
+        <li><a href="#c2">HK Torch appears in my inventory upon starting the game. What is it?</a></li>
+        <li><a href="#c3">I cannot open containers! They glow purple and nothing happens, what�s up?</a></li>
+        <li><a href="#c8">Does OOO work with the Unofficial Patch?</a></li>
+        <li><a href="#c9">OMG, it takes forever to level up! What's wrong?</a></li>
+        <li><a href="#c10">Wait, your supposed to load Living Economy *before* OOO? Ah, cripes. So the new load order is:</a></li>
+
+        <li><a href="#c11">Since
+            I am not a big fan of clothes/armour revealing three fourths of the
+            body, I am wondering if it is possible to remove Growlf�s Female Armor
+            sets from the mod? (I'm not trying to bash the creator, I just don't
+            like "revealing" armour.)</a></li>
+        <li><a href="#c12">At what point does one start to feel like they have a chance against anything but mud crabs and deer?</a></li>
+        <li><a href="#c13">Does OOO alter anything in the Arena?</a></li>
+        <li><a href="#c14">Are there random dangerous areas, or "static"? For instance will an area always contain high level creatures/loot?</a></li>
+        <li><a href="#c15">How
+            do you get your character to be on good terms with the new factions?
+            i.e, my pc is a ranger and I would like it if the wolves etc would
+            fight for him?</a></li>
+        <li><a href="#c16">Can I use the mages guild storage boxes as storage without respawn?</a></li>
+
+        <li><a href="#c17">Can I reduce the effectiveness of magic for armor users even further than it already is in OOO? If so, what variable is it?</a></li>
+        <li><a href="#c18">The
+            mage birthsign is supposed to give 30 magicka &amp; 1pt regeneration,
+            but in the game i get 30 magicka &amp; +10 to willpower. So is +10 wp =
+            1pt regen? Also, does the willpower bonus allow a char with the mage
+            sign to reach 110 willpower ultimately?</a></li>
+        <li><a href="#c19">Why are the harvest visual effects (plant removing/container opening) not showing?</a></li>
+        <li><a href="#c20">Will cosmetic mods cause any problems?</a></li>
+      </ol>
+
+      <h3>Conflicts</h3>
+      Even if your exact conflict issues are not listed here, reading
+      this can give you an idea which sorts of things are significant and
+      which ones can be ignored.<br>
+      <ol>
+        <li><a href="#d1">What are the conflicts with the Unofficial
+            Oblivion Patch, Beautiful People, Living Economy and Mighty Magick? Are
+            they drastic? Or can they be changed with load order?</a></li>
+        <li><a href="#d2">Does
+            anyone know why the saddlebags mod does not work with ooo 1.3? I
+            changed the load order so the saddlebags mod loads last, but it still
+            doesnt work.</a></li>
+        <li><a href="#d3">Does anyone know if these conflicts are something I should be concerned about?</a><br>
+
+          - <a href="#d3.1">No Persistant Glow</a><br>
+          - <a href="#d3.2">Short Grass v2</a><br>
+          - <a href="#d3.3">LE</a><br>
+          - <a href="#d3.4">NMAS</a></li>
+        <li><a href="#d4">I
+            really like no persistent glow and no more annoying messages. Do you
+            think these conflicts are bad enough to cause the OOO 1.3 to not work
+            properly?</a></li>
+
+        <li><a href="#d5">Having these conflicts. Just like to know if they are game breaking? I'm loading OOO before these mods.</a><br>
+          - <a href="#d5.1">FF_WaldnirsWoods.esp</a><br>
+          - <a href="#d5.2">Villages.esp</a><br>
+          - <a href="#d5.3">Solace.esp</a><br>
+          - <a href="#d5.4">Jolard Home.esp</a><br>
+
+          - <a href="#d5.5">Banes Imperial Market Enhancement.esp</a><br>
+          - <a href="#d5.6">TempleoftheFullMoon.esp</a><br>
+          - <a href="#d5.7">Ungarion1TheWelkyndSword.esp</a><br>
+          - <a href="#d5.8">Adventpublic.esp</a><br>
+          - <a href="#d5.9">kalikuts_raretradegoods2_0.esp</a><br>
+
+          - <a href="#d5.10">University Cosmetics</a><br>
+          - <a href="#d5.10">Knights of the White Stallions </a></li>
+        <li><a href="#d6">I
+            have loaded the x2 leveling esp after OOO and it says it conflicts with
+            OOO. Will it still change the leveling speed to 2X or do I have to fix
+            the conflict?</a></li>
+        <li><a href="#d7">I'm using AF level mod, and
+            I've heard there is a compatibility problem with OOO 1.3. The problem
+            is about health, then I've searched on the web to find an answer.
+            Here's what I did: I use the CS, open OOO, go to gameplay, settings,
+            find the fpchealthbasemult setting and write 2.0 instead of 1.5 in the
+            box. This should resolve the problem with health. But, now, I don't
+            know if I must load AF after or before OOO 1.3. Can anybody help me?</a></li>
+      </ol>
+      <hr noshade="noshade" size="1" width="70%">
+
+      <a href="#top">� BACK TO THE TOP</a><br>
+      <br>
+      <a name="a3" id="a3"></a>
+      <p class="content_title_small"><b>I keep getting corrupt or incomplete downloads. How can I get this great mod?</b></p>
+      <p>There
+        are a lot of possible causes. The first thing to do is make sure you
+        have enough free disk space on your boot drive and wherever you're
+        saving the file.</p>
+      <p><span>(from Phaedryn)</span> Also, be sure to check whether you are using Windows XP firewall or
+        another firewall. If you are, you probably need to turn it off
+        temporarily to download the file. NOT all firewalls will cause the
+        problem, but some do, (it all depends on how severe the settings are).
+        In my case, it is Nvidia's firewall that is associated to thier network
+        manager setup that causes the problem. I simply turn it off for the
+        duration of the download and it is fine.</p>
+
+      <a href="#top">� BACK TO THE TOP</a><br>
+      <br>
+      <a name="a4" id="a4"></a>
+      <p><b>What is the difference between OOO FULL and OOO LITE?</b></p>
+      <p>OOO
+        Full is the entire package-the whole caboodle, what I envisioned OOO to
+        be. The OOO Lite is the OOO Full minus the sum of changes found in the
+        OOO-ADD-ON folder�s ESPs. (<span class="warning">EXCEPT: Living Economy�Living Economy should be used with the Full version.</span> I left it out so that you could update the mod as CreepyFellow issues its latest versions.)</p>
+      <p>This
+        means that if you were to use the ESP inside the folder named OOO-LITE
+        plus the ESPs found inside the folder named OOO-ADD-ON you would end up
+        with the same result as if you used the Full version.</p>
+
+      <p>Look in the <a href="OOO_134_readme.pdf" target="_blank">OOO 1.34 Readme (PDF)</a>
+        for an explanation of what each of the OOO optional modules do.</p>
+      <a href="#top">� BACK TO THE TOP</a><br>
+      <br>
+      <a name="a5" id="a5"></a>
+      <p><b>There are a lot of mods in the OOO-ADD-ON folder. Which ones do I need?</b></p>
+
+      <p>If you are using the Full version, you only need to enable the Living Economy ESP (which is the same as version 3.51 of LE)</p>
+      <p>Harvest Flora is optional.</p>
+      <p>Bofra�s
+        Level_Rates_Modified ESPs are not needed, but you can use them to
+        change the rate at which your character increases skill points. You
+        only need to use one of these mods if you wish to change the OOO�s rate
+        of skill progression (x2 means twice slower, x3 means thrice slower,
+        etc, than in default Oblivion�OOO uses a x4 slower, but some skills are
+        higher, some a bit lower.)</p>
+      <p>Most other OOO optional ESPs is there to be used with the Lite version. You can use whichever of those you want.<br>
+        <i><span>(note: Some of them will "conflict" with each other. This is expected and it is not a problem.)</span></i>
+      </p>
+      <a href="#top">� BACK TO THE TOP</a><br>
+
+      <br>
+      <a name="a6" id="a6"></a>
+      <p><b>Is it possible to use OOO 1.3 with a previous save-game? If so, how?</b></p>
+      <p>Yes. It's easy using <b>Wrye Bash</b>. See the <a href="OOO_133_readme.pdf" target="_blank">OOO 1.33 Readme (PDF)</a>
+        file or the <a href="http://devnull.devakm.googlepages.com/ooo">Quick Start Guide</a> for details. </p>
+
+      <a href="#top">� BACK TO THE TOP</a><br>
+      <hr noshade="noshade" size="1" width="70%">
+      <a name="b1" id="b1"></a>
+      <p><b>I see purple textures and/or squares with yellow exclamation signs. What is the problem?</b></p>
+      <p>Purple
+        textures mean that a model is not finding the intended texture to use
+        as a wrapper to its shape. Textures wrap around models and give them
+        unique looks. Oblivion assigns the model a default deep purple texture
+        whenever it cannot find the texture that the model asks it to display.</p>
+      <p>Exclamation
+        signs appear when the Oblivion engine wants to display a certain model,
+        and it looks for it in a certain resource location, but does not find
+        it. Oblivion defaults a square model with an exclamation sign, in this
+        case, to be displayed.</p>
+      <p>If you see any of this, it means that Oblivion is not finding textures or models where it is told that they should be.</p>
+
+      <p>Usually,
+        this means that you have not properly installed the content folders
+        from the OOO download, or you only installed the UPGRADE version (which
+        does not include all of the base resource files required). Make sure
+        you move or copy the folders
+        �Meshes� and �Textures� into your \Oblivion\Data folder.</p>
+      <p>See the <a href="https://cs.uesp.net/wiki/index.php/Oblivion_Mods_FAQ">Oblivion Mods FAQ</a> for details. </p>
+      <a href="#top">� BACK TO THE TOP</a><br>
+      <br>
+      <a name="b2" id="b2"></a>
+      <p><b>I have installed all content folders into my \Oblivion\Data folder, but I still see some purple textures. What is the problem?</b></p>
+
+      <p>This problem can almost always be fixed by using a good invalidation method. See the <a href="https://cs.uesp.net/wiki/index.php/Oblivion_Mods_FAQ">Oblivion Mods FAQ</a> for details. </p>
+      <a href="#top">� BACK TO THE TOP</a><br>
+      <br>
+      <a name="b3" id="b3"></a>
+      <p><b>I'm
+          getting crashes and terrible FPS slowdowns when leaving the sewers and
+          around the Imperial City, especially when near the water.</b></p>
+      <p>Several
+        things could be causing this problem. You can try disabling the OOO
+        Water Weeds option if you use that, or you may want to try installing
+        the <a href="https://www.nexusmods.com/oblivion/mods/5434">LowPoly Grass</a> mod to <span>reduce the complexity of the grass meshes</span> or the <a href="https://www.nexusmods.com/oblivion/mods/2069">Short Grass</a> mod to <span>get rid of all the underwater grass added by OOO 1.3</span>.
+        If you use Short Grass, be sure to load it after OOO (LowPoly Grass
+        doesn't have this issue since it's a pure mesh replacer and doesn't
+        have any associated ESP load order issues). However, be aware that
+        Short Grass will make it so you will not have any grass whatsoever in
+        the water.</p>
+
+      <p>Another thing to try is, before you exit the
+        sewer, bring up the console and type this (without quotations, of
+        course) "Set OOOFishSpawn to 0" This will stop fishes from being
+        rendered by the engine. The scripts will still run, with less intensity
+        though. This should help you troubleshoot.</p>
+      <p>Another thing you
+        can do is this. In the sewer, right before you exit, make a savegame
+        there and then type in console "COC WawnetInnTavern", for example. See
+        if you load fine. Test it by getting close to the water and see what
+        happens. Walk in the city and check it out. Hopefully, if that loads
+        fine, I would retry exiting the sewers' savegame again.</p>
+      <p>Also, check to see if existing using a lower resolution (or no HDR) helps at first.</p>
+      <p>Also, here's a good tip posted by Aeonus:</p>
+      <p class="indent30"><i>"Just a tip for those who might be experiencing lag/stuttering after a fresh reinstall and addition of OOO and mods.</i></p>
+      <p class="indent30"><i> was having the exact same issue. Horrible, hanging stuttering
+          everywhere I went....especially whenever a new character would come on
+          the screen. Wilderness and crowded areas were a horror because of it.</i></p>
+
+      <p class="indent30"><i>Well,
+          I tried everything.....driver reinstall, Oblivion reinstall, disabling
+          mods, lowering settings. All short of reformatting my computer.</i></p>
+      <p class="indent30"><i>Finally
+          figured it out. It appears, even though I defragmented my HD before
+          installing Oblivion and mods, that it was 3-4% fragmented. Normally
+          this isn't that bad, however I looked at the details and to my suprise
+          all of the fragmented files were from Oblivion.</i></p>
+      <p class="indent30"><i>Defragged
+          it, and now it runs smoothly again, with really sweet framerates to
+          boot. I can confirm OOO doesn't cause framerate problems, though it is
+          just my experience i'm going off of. Those people who are getting
+          horrid framerates have other issues going on."</i></p>
+      <a href="#top">� BACK TO THE TOP</a><br>
+      <br>
+      <a name="b4" id="b4"></a>
+      <p><b>Your
+          explanation about using a Grass mod to help reduce crashes and terrible
+          FPS slowdowns when leaving the sewers and around the Imperial City was
+          confusing. Can you explain it again?</b></p>
+
+      <p>Okay, let's try that one again. You may want to try installing the <a href="https://www.nexusmods.com/oblivion/mods/5434">LowPoly Grass</a> mod to reduce the complexity of the grass meshes. This mod is very easy
+        to install and you don't have to worry about Load Order since it's a
+        pure mesh replacer and doesn't have any associated ESP load order
+        issues.</p>
+      <p>You may also want to try the <a href="https://www.nexusmods.com/oblivion/mods/2069">Short Grass</a> mod. You can use this mod to alter just normal grass in the game by
+        loading it before OOO. You can also use it to alter normal grass and
+        get rid of all the underwater grass added by OOO 1.3 by loading it
+        after OOO. Remember, if you load Short Grass after OOO, then you will
+        not have any grass whatsoever in the water.</p>
+      <a href="#top">� BACK TO THE TOP</a><br>
+      <br>
+
+      <a name="b5" id="b5"></a>
+      <p><b>I
+          would like to start a new game with OOO 1.3, but I also wish to
+          continue my heavily modded Oblivion I am still playing. Would a
+          copy/paste into a new directory work? Or will I have to re-install into
+          a new directory?</b></p>
+      <p>Neither of those solutions will work for
+        what you are trying to do. However, it is possible to use Oblivion Mod
+        Manager (OBMM) to sync your active plugins list with your savegame
+        (Utilities&gt;Save Manager). I am starting with two characters, one
+        based on OOO 1.3 and other limited sum of mods, the other one with
+        Francesco' s mod and quite a bunch of mods. Using OBMM as described
+        above I can easilly switch among the two sets of active plugins. <i>(from
+          a response posted by J.O.D.)</i></p>
+      <a href="#top">� BACK TO THE TOP</a><br>
+      <br>
+      <a name="b6" id="b6"></a>
+
+      <p><b>Do I need the Official Patch to use OOO 1.34?</b></p>
+      <p>Yes, it is required for the latest update. Previous versions did not require the official patch.</p>
+      <a href="#top">� BACK TO THE TOP</a><br>
+      <br>
+      <a name="b7" id="b7"></a>
+      <p><b>I
+          am having a problem with exiting (entering?) Cells. When I exit the
+          Sinkhole cave cell, I get a black screen. It says Loading area at the
+          bottem. I can move around as I see my map moving. I can access my
+          inventory ect. HELP my Char is literaly stuck in this cave!</b></p>
+      <p>This
+        problem is due to some specific conflicts between the Oblivion engine
+        GFX and certain video cards, as far as I know. Fortunately, there is an
+        easy fix:</p>
+
+      <p>Open up console when the screen goes black (~ key, otherwise known as "tilde").</p>
+      <p>In the console, type: <span class="textbold">CAL</span></p>
+      <p>Then hit <span>enter</span>. Good to go.</p>
+      <a href="#top">� BACK TO THE TOP</a><br>
+      <hr noshade="noshade" size="1" width="70%">
+
+      <a name="c0" id="c0"></a>
+      <p><b>I keep meeting dangerous enemies in the Tiber Septim Hotel. The Frost Titan killed everyone there! Help!</b></p>
+      <p>Tiber Septim Hotel is a dumping ground for some problematic spawns, but it's still unknown why this happens more often with OOO. The <a href="http://www.uesp.net/wiki/Oblivion:The_Tiber_Septim_Hotel" target="_blank">UESP description</a> states that:
+      </p>
+
+      <blockquote>
+        <p>The Tiber Septim Hotel lobby's cell is the game's "safe zone" to prevent crashes/bugs if a creature, NPC, or even the player is in a cell added by a mod and the mod is removed. Any any actors whose cell has disappeared will be placed in the hotel's lobby.
+          This setting can be changed in Oblivion.ini. Find the line </p>
+        <strong>
+          <pre>SSaveGameSafeCellID=2AEEA</pre>
+        </strong>
+        <p>
+          2AEEA is the form ID of the Tiber Septim lobby cell; this can be changed to any desired cell's form ID.
+        </p>
+
+      </blockquote>
+      <p>One possible alternative would be to set this to the TestingHall, as in:
+      </p>
+      <blockquote><strong>
+          <pre>SSaveGameSafeCellID=231AD</pre>
+        </strong></blockquote>
+      This will put any overflow spawns into the TestingHall, where you'll never see them unless you intentionally go there.
+      <p></p>
+      <p>Alternately, you could set them to spawn in the Arena in the hope that they might make some fights there more interesting:
+      </p>
+      <blockquote><strong>
+          <pre>SSaveGameSafeCellID=91B46</pre>
+        </strong></blockquote>
+      (do this at your own risk)
+      <br>
+      <p></p>
+      <a href="#top">� BACK TO THE TOP</a><br>
+      <br>
+      <a name="c1" id="c1"></a>
+      <p></p>
+      <p><b>Torches appear as �Missing Name� in-game, what is up?</b></p>
+      <p>This is fixed in recent versions of OOO.</p>
+      <a href="#top">� BACK TO THE TOP</a><br>
+      <br>
+      <a name="c2" id="c2"></a>
+      <p><b>Hot Key Torch appears in my inventory upon starting the game. What is it?</b></p>
+
+      <p>Hot Key
+        Torch is a dummy item used by Drop Lit Torches.
+        You do not use it as a normal torch. If you want to use torches with a
+        hotkey, point the hotkey to the Hot Key Torch item, and every time you use
+        that hotkey a regular torch will be equipped by your character. </p>
+      <p>The
+        Official Patch 1.2 added the ability to set a hot key directly on a
+        torch, but this is limited because you have to reset the hot key
+        whenever your torch burns out. You will not have this problem if you
+        use the Hot Key Torch instead.<br>
+      </p>
+      <a href="#top">� BACK TO THE TOP</a><br>
+      <br>
+      <a name="c3" id="c3"></a>
+      <p><b>I cannot open containers! They glow purple and nothing happens, what�s up?</b></p>
+
+      <p>This
+        is a feature of lock-bashing and traps� functionality in OOO
+        containers. RTFM, it is all there. But, to expedite this, let me give
+        it away for you. You must have your weapon sheathed, or be in sneak
+        mode if your weapon is drawn, in order to enter lockpick mode.</p>
+      <a href="#top">� BACK TO THE TOP</a><br>
+      <br>
+      <a name="c5" id="c5"></a><a href="#top"></a><a name="c6" id="c6"></a><a name="c7" id="c7"></a><a name="c8" id="c8"></a>
+      <p><b>Does OOO work with the Unofficial Patch?</b></p>
+      <p>Yes,
+        it works perfectly. Load OOO after the UOP. All significant overlaps
+        between the two mods have now been resolved, so you won't be losing
+        anything from UOP when using OOO.</p>
+      <a href="#top">� BACK TO THE TOP</a><br>
+
+      <br>
+      <a name="c9" id="c9"></a>
+      <p><b>OMG, it takes forever to level up! What's wrong?</b></p>
+      <p>You can easily restore standard level-up rates if the FULL version is too slow for you. Use one of these methods:</p>
+      <p><span class="textbold">Method A:</span> Use the LITE version and select all the add-ons you want, but avoid the slow-leveling.esp</p>
+      <p><span class="textbold">Method B:</span> Use the FULL version, but then load the OOO-Level_Stock.esp option after it.</p>
+
+      <a href="#top">� BACK TO THE TOP</a><br>
+      <br>
+      <a name="c10" id="c10"></a>
+      <p><b>Wait, your supposed to load Living Economy *before* OOO? Ah, cripes. So the new load order is:</b></p>
+      <ol>
+        <li><b>Oblivion.esm</b></li>
+        <li><b>Unofficial Oblivion Patch.esp</b></li>
+
+        <li><b>LE.esp</b></li>
+        <li><b>OOO.esp</b></li>
+        <li><b>Everything Else.esp</b></li>
+      </ol>
+      <p><b>That's right now isnt it?</b></p>
+      <p>That would be fine if you wanted <i><span>Everything Else.esp</span></i> to overwrite changes made by OOO. A better load order, if you want to preserve all the wonderful changes made by OOO, would be:</p>
+
+      <ol>
+        <li>Oblivion.esm</li>
+        <li>Unofficial Oblivion Patch.esp</li>
+        <li>Everything Else.esp</li>
+        <li>LE.esp</li>
+        <li>OOO.esp</li>
+
+        <li>ThingsYouWantChangedInOOO.esp</li>
+      </ol>
+      <a href="#top">� BACK TO THE TOP</a><br>
+      <br>
+      <a name="c11" id="c11"></a>
+      <p><b>Since
+          I am not a big fan of clothes/armour revealing three fourths of the
+          body, I am wondering if it is possible to remove Growlf�s Female Armor
+          sets from the mod? (I'm not trying to bash the creator, I just don't
+          like "revealing" armour)</b></p>
+      <p class="textbold">To be clear: OOO does not contain nudity... such a shame indeed.</p>
+
+      <p>But, some armor sets do show some skin. If you are very concerned about this kind of thing, read on:</p>
+      <p>These
+        armor sets are worn by the Amazon Women faction in the mod (and similar
+        sets in a few other places, e.g. Dark Rose Armor). You'll get errors if
+        you just remove those armor sets (missing meshes and textures from the
+        amazon women if you run into them, for example). If you're willing to
+        take the time to do it, you can easily replace the mesh files with a
+        set you prefer by copying the mesh files you do want over the ones you
+        don't want.</p>
+      <p>The revealing meshes you would need to replace are found in these folders.</p>
+      <p>meshes\armor\chainbikini\...<br>
+        meshes\armor\darkrose\...<br>
+        meshes\armor\growlf\...<br>
+
+        meshes\armor\vella\...<br>
+        meshes\armor\KDwhiterose\...</p>
+      <p>Replace
+        all cuirass meshes, and make sure to ascertain that your replacement
+        meshes look for their appropriate textures, which you would need to add
+        somewhere in \textures\armor\...</p>
+      <a href="#top">� BACK TO THE TOP</a><br>
+      <br>
+      <a name="c12" id="c12"></a>
+      <p><b>At what point does one start to feel like they have a chance against anything but mud crabs and deer?</b></p>
+
+      <p>Plenty
+        of people have reported being able to beat vampires, marauders,
+        conjurers, necros and, certainly, bandits and goblins at lvl 1. Don't
+        get discouraged, or think that all is hard just because of some tough
+        battles early on. Keep searching, try ruins and forts near the IC
+        (although some ARE hard, many are easy), invest in tactics, in regen
+        potions, quest a little, steal a little even. As soon as you gain some
+        nicer items, you'll be quickly growing in power.</p>
+      <p>BTW, Black bow bandits are pretty tough -- those are not like regular bandits.</p>
+      <p>Bandits, the normal kind? They can be as low as lvl 1, sometimes higher, sometimes lower, so those are usually sure hunt fodder.</p>
+      <p>More would be a spoiler here ... so I'll keep quiet for now (slaughterfish ... cough, cough).</p>
+      <p>If
+        everything else fails to help you survive, you can always resort to
+        using the difficulty slider, but be careful to only notch it down in
+        small increments or it will quickly make the game too easy again.</p>
+      <a href="#top">� BACK TO THE TOP</a><br>
+
+      <br>
+      <a name="c13" id="c13"></a>
+      <p><b>Does OOO alter anything in the Arena?</b></p>
+      <p>Yes, it changed the Arena. It should be much more challenging now, and no longer possible to become champion at Lvl-1.</p>
+      <a href="#top">� BACK TO THE TOP</a><br>
+      <br>
+      <a name="c14" id="c14"></a>
+
+      <p><b>Are there random dangerous areas or "static"? For instance will an area always contain high level creatures/loot?</b></p>
+      <p>OOO
+        is more static than default Oblivion, but not completely static.
+        Some creatures and NPCs still level with you, but only within
+        constraints. These have now minimum and maximum levels, so you will
+        frequently run into places where the residents have a minimum level
+        that's way above your own, making them too difficult for you to beat.
+        By the same token, once you reach a medium level you'll start to find
+        areas where the maximum is lower than you, making the residents much
+        easier to beat than in vanilla. For example, at a high level you will
+        find that common bandits no longer pose much of a threat (but they may
+        have a boss who is still a threat).</p>
+      <p>Also, within their
+        possible level range, creatures and actors tend to vary in level. Some
+        could be as low as 16 levels as their next �equal� type. For example,
+        encountering bandits at level 10 may result in some bandits in the
+        group being level 16, while others could be as low as level 2. This
+        effect really increases variety and feel for each enemy as if they were
+        unique.</p>
+      <a href="#top">� BACK TO THE TOP</a><br>
+      <br>
+      <a name="c15" id="c15"></a>
+      <p><b>How
+          do you get your character to be on good terms with the new factions?
+          i.e, my pc is a ranger and I would like it if the wolves etc would
+          fight for him?</b></p>
+
+      <p>I can't give all the secrets away!
+        It is a very involved and difficult quest; you will need to be pretty
+        strong... hint: what new NPCs are nature-oriented?</p>
+      <a href="#top">� BACK TO THE TOP</a><br>
+      <br>
+      <a name="c16" id="c16"></a>
+      <p><b>Can I use the mages guild storage boxes as storage without respawn?</b></p>
+      <p>Yes, this is true in all the guilds and some other places, but only the ones labeled "Storage".</p>
+      <a href="#top">� BACK TO THE TOP</a><br>
+
+      <br>
+      <a name="c17" id="c17"></a>
+      <p><b>Can I reduce the effectiveness of magic for armor users even further than it already is in OOO? If so, what variable is it?</b></p>
+      <p>This is controlled by Gamesettings in the CS:</p>
+      <p class="textitalic">fmagicarmorpenaltymax<br>
+        fmagicarmorpenaltymin</p>
+      <a href="#top">� BACK TO THE TOP</a><br>
+
+      <br>
+      <a name="c18" id="c18"></a>
+      <p><b>The
+          mage birthsign is supposed to give 30 magicka &amp; 1pt regeneration,
+          but in the game i get 30 magicka &amp; +10 to willpower. So is +10 wp =
+          1pt regen? Also, does the willpower bonus allow a char with the mage
+          sign to reach 110 willpower ultimately?</b></p>
+      <p>This
+        was an error in the original readme. It's fixed in the new
+        <a href="OOO_134_readme.pdf" target="_blank">OOO 1.34 Readme (PDF)</a>. The
+        Mage Birthsign bonus is +30 Magicka and +10 Willpower.
+      </p>
+      <a href="#top">� BACK TO THE TOP</a><br>
+
+      <br>
+      <a name="c19" id="c19"></a>
+      <p><b>Why are the harvest visual effects (plant removing) not showing?</b></p>
+      <p>Maybe
+        because you did not use the Harvest [Flora].esp that came bundled with OOO, or because
+        you did not move the BSA file included in the HF folder that comes with
+        OOO into your \Oblivion\Data\ folder. I can't say if I don't have more
+        info.<span><br>
+        </span></p>
+      <a href="#top">� BACK TO THE TOP</a><br>
+      <br>
+
+      <a name="c20" id="c20"></a>
+      <p><b>Will cosmetic mods cause any problems?</b></p>
+      <p>That
+        depends on the mod. Many of them, such as recent versions of Beautiful People, are not a problem. If they change NPCs, then yeah, they will mess up OOO stuff. Always load such mods before OOO. If they only allow alterations to the player, then no problems will occur. Mods that change a lot of NPC faces (such as the excellent TNR mod) can be used safely with OOO by taking advantage of one of the features in Wrye Bash. See the <a href="https://web.archive.org/web/20071216132022/http://www.stephanewuttunee.net/tnr_wryebashface.html" target="_blank">TNR Guide here (Archive)</a>.<br>
+      </p>
+      <a href="#top">� BACK TO THE TOP</a><br>
+      <br>
+
+      <hr noshade="noshade" size="1" width="70%">
+      <a name="d1" id="d1"></a>
+      <p><b>What
+          are the conflicts with the Unofficial Oblivion Patch, Beautiful People,
+          Living Economy and Mighty Magick? Are they drastic? Or can they be
+          changed with load order?</b></p>
+      <ul>
+        <li>UOP needs to load <span class="textbold">before</span> everything else, <span>including</span> OOO.</li>
+
+        <li>LE needs to load <span class="textbold">before</span> OOO.</li>
+        <li>Older versions of BP need to load <span class="textbold">before</span> OOO.</li>
+        <li>MM needs to load <span class="textbold">after</span> OOO.</li>
+      </ul>
+      <p>As
+        long as you have this load order, you can safely ignore any conflict
+        reports for them (as long as you're sure you want the changes
+        introduced by MM, for example).</p>
+      <a href="#top">� BACK TO THE TOP</a><br>
+      <br>
+      <a name="d2" id="d2"></a>
+      <p><b>Does
+          anyone know why the saddlebags mod does not work with ooo 1.3? I
+          changed the load order so the saddlebags mod loads last, but it still
+          doesnt work.</b></p>
+      <p>OOO gives horses their own faction. I should've
+        checked more with saddlebags, and with Slof's Horses, as those are two
+        mods I actually would've liked to merge into OOO, but did not because
+        of time constraints. I assumed that it would not give conflicts to add
+        faction to wild horses. It does.</p>
+
+      <p>So, check this out. OOO adds
+        faction to WILD horses. It does not change horses found in shops, or
+        horses found in NPCs like couriers or guards.</p>
+      <p>Thus, it should be compatible with saddlebags and slof's horses at least in all horses except WILD ones.</p>
+      <p>If
+        you rather do away with horse faction (not a big deal, really) then
+        load Saddlebags and Slof's Horses AFTER OOO. That will take care of it.</p>
+      <a href="#top">� BACK TO THE TOP</a><br>
+      <br>
+      <a name="d3" id="d3"></a>
+      <p><b>Does anyone know if these conflicts are something I should be concerned about?</b></p>
+
+      <a name="d3.1" id="d3.1"></a>
+      <p class="textitalic">
+        <font size="1">[815--No- persistant enchantment glow fix-TESSource.esp] (unparented) - Active</font>
+      </p>
+      <p>No
+        persistent glow changes spell effects. OOO changes spell effects. That
+        simple. Such a small cosmetic change hardly warrants the loss of gameplay adjustments
+        to the spells themselves, in my opinion.</p>
+      <p>However, you can safely use the <a href="https://www.nexusmods.com/oblivion/mods/5138">Initial Glow</a> mod without any conflicts.</p>
+      <a name="d3.2" id="d3.2"></a>
+      <p class="textitalic">
+        <font size="1">[Short Grass V2.esp] (unparented) - Active<br>
+
+          EDID 'UnderWaterSeaGrass01' of record type GRAS conflicts with 1 other plugin.<br>
+          Oscuro's_Oblivion_Overhaul.esp (Record type: GRAS) (Unparented) (Active)<br>
+          EDID 'UnderWaterSeaWeed01' of record type GRAS conflicts with 1 other plugin.<br>
+          Oscuro's_Oblivion_Overhaul.esp (Record type: GRAS) (Unparented) (Active)<br>
+          EDID 'UnderWaterSeaWeed02' of record type GRAS conflicts with 1 other plugin.<br>
+          Oscuro's_Oblivion_Overhaul.esp (Record type: GRAS) (Unparented) (Active)</font>
+      </p>
+
+      <p>Not a problem. Load OOO after Short Grass. It will only make water flora be larger than what grass will be.</p>
+      <a name="d3.3" id="d3.3"></a>
+      <p class="textitalic">
+        <font size="1">[Living Economy.esp] (unparented) - Active<br>
+          EDID 'SkillMercantile' of record type SKIL conflicts with 1 other plugin.<br>
+          Oscuro's_Oblivion_Overhaul.esp (Record type: SKIL) (Unparented) (Active)</font>
+      </p>
+      <p>This
+        is normal, LE will load by default before OOO (until Creepy releases a
+        new .esp, that is) So, in OBMM, make sure LE loads BEFORE OOO.</p>
+
+      <a name="d3.4" id="d3.4"></a>
+      <p class="textitalic">
+        <font size="1">EDID 'sFastTravelHorseatGate' of record type GMST conflicts with 1 other plugin.<br>
+          No More Annoying Messages.esp (Record type: GMST) (Unparented) (Active)</font>
+      </p>
+      <p>Just
+        one message collision. It is fine either way. OOO makes in-character
+        messages 1st person. Load NMAS AFTER OOO if you care about the horse at
+        gate message not appearing in your game.</p>
+      <a href="#top">� BACK TO THE TOP</a><br>
+      <br>
+      <a name="d4" id="d4"></a>
+
+      <p><b>I
+          really like no persistent glow and no more annoying messages. Do you
+          think these conflicts are bad enough to cause the OOO 1.3 to not work
+          properly?</b></p>
+      <p>No, they are not. But, NPG will override important
+        changes to magic effects. Your call: cosmetic or gameplay. The <a href="https://www.nexusmods.com/oblivion/mods/5138">Initial Glow</a> mod is a better choice, since it doesn't conflict with OOO.</p>
+      <a href="#top">� BACK TO THE TOP</a><br>
+      <br>
+      <a name="d5" id="d5"></a>
+      <p><b>Having these conflicts. Just like to know if they are game breaking? I'm loading OOO before these mods.</b></p>
+
+      <a name="d5.1" id="d5.1"></a>
+      <p class="textitalic">
+        <font size="1">[FF_WaldnirsWoods.esp] (unparented) - Active<br>
+          EDID 'WildernessChest01' of record type CONT conflicts with 1 other plugin.<br>
+          Oscuro's_Oblivion_Overhaul.esp (Record type: CONT) (Unparented) (Active)</font>
+      </p>
+      <p>Not
+        a big deal. Load WaldnirsWoods AFTER OOO and it will work fine, but you
+        will lose the Lock Bash and Harvest [Containers] scripts for the
+        containers of that kind.</p>
+      <a href="#top">� BACK TO THE TOP</a><br>
+
+      <br>
+      <a name="d5.2" id="d5.2"></a>
+      <p class="textitalic">
+        <font size="1">[Villages.esp] (unparented) - Active<br>
+          EDID 'CGChestGold01' of record type CONT conflicts with 1 other plugin.<br>
+          Oscuro's_Oblivion_Overhaul.esp (Record type: CONT) (Unparented) (Active)</font>
+      </p>
+      <p>Not
+        a big deal. Load Villages AFTER OOO and it will work fine, but you will
+        lose the Lock Bash and Harvest [Containers] scripts for the containers
+        of that kind.</p>
+      <a href="#top">� BACK TO THE TOP</a><br>
+
+      <br>
+      <a name="d5.3" id="d5.3"></a>
+      <p class="textitalic">
+        <font size="1">[Solace.esp] (unparented) - Active<br>
+          EDID 'DrawerClutterLower02' of record type CONT conflicts with 1 other plugin.<br>
+          Oscuro's_Oblivion_Overhaul.esp (Record type: CONT) (Unparented) (Active)<br>
+          EDID 'GoblinTribePatrolE' of record type CREA conflicts with 1 other plugin.<br>
+          Oscuro's_Oblivion_Overhaul.esp (Record type: CREA) (Unparented) (Active)<br>
+
+          EDID 'Lynch' of record type NPC_ conflicts with 1 other plugin.<br>
+          Oscuro's_Oblivion_Overhaul.esp (Record type: NPC_) (Unparented) (Active)</font>
+      </p>
+      <p>Load Solace AFTER OOO to make sure Solace works right. Not a game-altering overlap, by any stretch.</p>
+      <a href="#top">� BACK TO THE TOP</a><br>
+      <br>
+      <a name="d5.4" id="d5.4"></a>
+      <p class="textitalic">
+        <font size="1">[Jolard Home.esp] (unparented) - Active<br>
+
+          (Record type: NPC_) (Unparented) (Active)</font>
+      </p>
+      <p>Feel
+        free to load Jolard AFTER OOO, and you will lose some of the NPC tweaks
+        that OOO gives to those NPCs, and the bash-trap script for that
+        container. That's all.</p>
+      <a href="#top">� BACK TO THE TOP</a><br>
+      <br>
+      <a name="d5.5" id="d5.5"></a>
+      <p class="textitalic">
+        <font size="1">[Banes Imperial Market Enhancement.esp] (unparented) - Active</font>
+      </p>
+      <p>This one is more problematic. OOO already changes vendor lists. If you load
+        Banes after the OOO.esp, you'll lose the OOO tweaks, plus, you'll never see any of
+        the new OOO items that the stores may sell you (weapon stores that is).
+        Plus, it affects an important NPC in OOO, and it changes one claymore,
+        which would lose the weapon rebalance tweaks. However, you can probably
+        resolve a lot of these issues by loading Banes before OOO.esp and using
+        Wrye Bash to merge Leveled Lists. Your call.</p>
+
+      <a href="#top">� BACK TO THE TOP</a><br>
+      <br>
+      <a name="d5.6" id="d5.6"></a>
+      <p class="textitalic">
+        <font size="1">[TempleoftheFullMoon.esp] (unparented) - Active<br>
+          EDID 'ArenaHopeful1' of record type NPC_ conflicts with 1 other plugin.<br>
+          Oscuro's_Oblivion_Overhaul.esp (Record type: NPC_) (Unparented) (Active)<br>
+          EDID 'VilenaDonton' of record type NPC_ conflicts with 1 other plugin.<br>
+
+          Oscuro's_Oblivion_Overhaul.esp (Record type: NPC_) (Unparented) (Active)</font>
+      </p>
+      <p>Not gamebreaking at all, though you'll lose some cool stuff that Vilena uses if it loads after OOO. Your call.</p>
+      <a href="#top">� BACK TO THE TOP</a><br>
+      <br>
+      <a name="d5.7" id="d5.7"></a>
+      <p class="textitalic">
+        <font size="1">[Ungarion1TheWelkyndSword.esp] (unparented) - Active<br>
+          EDID 'Ungarion' of record type NPC_ conflicts with 1 other plugin.<br>
+
+          Oscuro's_Oblivion_Overhaul.esp (Record type: NPC_) (Unparented) (Active)</font>
+      </p>
+      <p>Needs to load after OOO.esp. You will not lose much from OOO by loading it AFTER OOO.</p>
+      <a href="#top">� BACK TO THE TOP</a><br>
+      <br>
+      <a name="d5.8" id="d5.8"></a>
+      <p class="textitalic">
+        <font size="1">[Adventpublic.esp] (unparented) - Active<br>
+          EDID 'DarkSellChestUnderling' of record type CONT conflicts with 1 other plugin.<br>
+
+          Oscuro's_Oblivion_Overhaul.esp (Record type: CONT) (Unparented) (Active)</font>
+      </p>
+      <p>Not
+        sure about this one. OOO adds a bunch of Dark Brotherhood specific
+        armors, weapons, gear, etc, to their vendors. So, if you load
+        Adventpublic after OOO then you may lose some of the OOO stuff they
+        would otherwise sell. Your call.</p>
+      <a href="#top">� BACK TO THE TOP</a><br>
+      <br>
+      <a name="d5.9" id="d5.9"></a>
+      <p class="textitalic">
+        <font size="1">[kalikuts_raretradegoods2_0.esp] (unparented) - Active<br>
+          EDID 'UpperRobe01' of record type CLOT conflicts with 1 other plugin.<br>
+
+          Oscuro's_Oblivion_Overhaul.esp (Record type: CLOT) (Unparented) (Active)</font>
+      </p>
+      <p>You'd lose only the higher price of the robe by loading it AFTER OOO. Probably that's what I would do. Not a biggie.</p>
+      <a href="#top">� BACK TO THE TOP</a><br>
+      <br>
+      <a name="d5.10" id="d5.10"></a>
+      <p class="textitalic"><b>OOO 1.3 has "conflicts" with University Cosmetics and Knights of the White Stallions (lots of Black Bow Bandit overlap)<br>
+          I
+          know everyone says just load AFTER OOO and it will be fine and the
+          smaller mods will overwrite a few OOO changes. But anyone know if I
+          load them BEFORE OOO will I preserve OOO's nice changes to the NPC's
+          without breaking important aspects of those mods?</b></p>
+
+      <p>Ok
+        man, check this out: University Cosmetics shouldn't be used with OOO,
+        unless you trim a few key NPCs out of it. OOO already gives those guys
+        better items, better robes
+        and even better spells for sale (Borissean is bad ass). So, up to you,
+        but I would not risk the changes just for a mere better looking face.
+        (Want to miss out on Traven's uber armor?)</p>
+      <p>Or, you could go in
+        the editor, open the mod list, click the cosmetic mod, then set as
+        active, then click on the "details" button, then in the window that
+        pops up you'd delete every NPC entry that belongs to the important
+        named NPCS, then hit ok, then hit ok again, that will load the cosmetic
+        mod, minus the named NPC changes, then, once it is loaded, save it.</p>
+      <p>Good
+        to go, some npcs will be changed as cosmetic mod changes them, and the
+        important ones will retain OOO's objects, spells, etc.</p>
+      <p>Recent versions of Knights of the White Stallion can be used safely with OOO. Load it after OOO.<br>
+      </p>
+      <a href="#top">� BACK TO THE TOP</a><br>
+
+      <br>
+      <a name="d6" id="d6"></a>
+      <p><b>I
+          have loaded the x2 leveling esp after OOO and it says it conflicts with
+          OOO. Will it still change the leveling speed to 2X or do I have to fix
+          the conflict?</b></p>
+      <p>This is completely normal and to be expected. In fact, the reason it works is <span class="textbold_underline">because it conflicts</span>. Just ignore the conflict report in this case.</p>
+      <a href="#top">� BACK TO THE TOP</a><br>
+      <br>
+
+      <a name="d7" id="d7"></a>
+      <p><b>I'm
+          using AF level mod, and I've heard there is a compatibility problem
+          with OOO 1.3. The problem is about health, then I've searched on the
+          web to find an answer. Here's what I did: I use the CS, open OOO, go to
+          gameplay, settings, find the fpchealthbasemult setting and write 2.0
+          instead of 1.5 in the box. This should resolve the problem with health.
+          But, now, I don't know if I must load AF after or before OOO 1.3. Can
+          anybody help me?</b></p>
+      <p>Then, if you edited the main OOO.esp you use, simply load AF before OOO.</p>
+      <p>If
+        you do not want to edit the OOO esp, simply make sure that AF loads
+        after OOO (through altering the load order with Oblivion Mod Manager or Wrye Bash).</p>
+      <a href="#top">� BACK TO THE TOP</a><br>
+      <br>
+      <hr noshade="noshade" size="1" width="70%">
+
+      <p>-- Jorge Salgado �Oscuro�<br>
+        -- edits by dev_akm </p>
+    </div>
+
+    <a name="OOO133"></a>
+    <h2 id="pageName">OOO 1.33 Changes</h2>
+    <div class="story">
+      <h3>General Fixes</h3>
+
+      <ul>
+        <li>Removed 400+ records that were unchanged from Oblivion.esm.</li>
+        <li>Fixed a problem with Slavers &amp; Smugglers quest that prevented it from being marked completed.</li>
+        <li>Repaired broken OOO quests resulting from TES4Edit bug. Huge thanks to ElminsterEU for correcting the TES4Edit bug so quickly!</li>
+        <li>Destruction master trainer improved.</li>
+        <li>Corrected error in Lap's script for making apple juice. Huge thanks to Carcass for this fix!<br>
+        </li>
+      </ul>
+
+      <a href="#top">� BACK TO THE TOP</a><br>
+    </div>
+
+    <a name="Final"></a>
+    <h2 id="pageName">OOO 1.32 Final Changes</h2>
+    <div class="story">
+      <h3>General Fixes</h3>
+
+      <ul>
+        <li>Cleaned up injected records in the master file to make it easier for fans to create OOO add-on mods using TESCS.</li>
+        <li>Fixed the guard bow script so guards will equip a sword after unequipping a bow.</li>
+        <li>Fixed Volmyr's Blood Transfer and Power of Vigor spells.</li>
+        <li>Tweaked Mankar Camoran's abilities slightly so he has at least one weakness.<br>
+        </li>
+      </ul>
+
+      <a href="#top">� BACK TO THE TOP</a><br>
+    </div>
+
+    <a name="RC5"></a>
+    <h2 id="pageName">OOO 1.32 RC5 Changes</h2>
+    <div class="story">
+      <h3>General Changes</h3>
+      <ul>
+        <li>Removed water weeds from Full version. Full and Lite version users can now add the OOO-Water_Weeds.esp as an option.</li>
+
+        <li>Added option for Full version users to remove Drop Lit Torches behavior using OOO-DLT_Remover.esp.</li>
+        <li>Added option for Full and Lite version users to remove guild item ownership using OOO-No_Guild_Ownership.esp.</li>
+        <li>Added option for Full and Lite version users to restore vanilla map marker behavior using OOO-Map_Markers_Stock.esp.</li>
+        <li>Merged Hotfixes v06 into both Full and Lite versions. Be sure to remove OOO132RC3Hotfixes.esp if you have it.<br>
+        </li>
+      </ul>
+      <h3>General Fixes</h3>
+
+      <ul>
+        <li>Reset Fog Near distance in all changed cells to help avoid Nvidia black screen bug.</li>
+        <li>Added city name to guildhall cells that were not identified in stock Oblivion.<br>
+        </li>
+        <li>Corrected numerous spelling errors. </li>
+        <li>Added missing sneak perk settings. </li>
+        <li>Optional OOOHCSacks off switch now works to disable the Harvest Containers behavior on sacks. ~Set OOOHCSacks to 0</li>
+
+        <li>Eliminated
+          message spam from Drop Lit Torches and gave the Torch its name back.
+          You'll need to reset your torch hotkey after you load this update, but
+          you'll get an in-game message about this. Using your existing torch
+          hotkey will start the swap process. If you don't have a hotkey, you can
+          get one using the console~ StartQuest addtorchkey</li>
+        <li>Corrected
+          a house purchase error where the full purchase price was not being
+          taken from the player's inventory for some expensive houses (Bruma,
+          Chorrol, Cheydinhal, Skingrad). </li>
+        <li>Fixed a
+          problem with the Slavers and Smugglers quest that caused the player to
+          get the wrong final journal entry upon completing the quest. </li>
+        <li>Fixed smearing effect on the map in Hlofor's Battle Plan.</li>
+        <li>Prevented inebriation stat damage (inebriation debug message is now removed, too). </li>
+        <li>Makes Armor Disposition system disabled by default (for existing 1.32 savegames, you still have to disable it in the console).</li>
+
+        <li>Included Mannimarco script fixes from UOP. </li>
+        <li>Disabled OOO fish spawn by default (for existing 1.32 savegames, you still have to disable it in the console).</li>
+        <li>Rebalances
+          elemental shield enchantments given by Sigil Stones to better match the
+          shield strength changes made elsewhere in OOO (elemental shield
+          enchantments should not be stronger than normal shield enchantments
+          since they also give resistance to fire, frost, or shock attacks). </li>
+        <li>Rebalanced
+          fire resistance/weakness on ancient vampires (they were previously too
+          resistant to fire damage given that fire is their only weakness).</li>
+        <li>Removed commoners from the Bog Ogre spawn lists. </li>
+        <li>Fixed Lost Boy lich script.<br>
+
+        </li>
+      </ul>
+      <h3>Meshes &amp; Textures</h3>
+      <ul>
+        <li>Fixed two problem helms, specifically the Eboron Helmet and the Helmet of the Conjurer.</li>
+        <li>Fixed the invisible Heaven's Fury Cape.<br>
+
+        </li>
+        <li>Added scabbards to the one-handed Ayleid Meteoric Iron blades.</li>
+      </ul>
+      <h3>Light of Dawn sword fixes and improvements</h3>
+      <ul>
+        <li>The
+          sword can now cure you of Porphyric Hemophilia, which is very handy if
+          you catch the vampire disease while battling vampires (you have to kill
+          a vampire to get the disease removed), but the sword now also cannot be
+          used by anyone who is a vampire (if you try, you'll get a very nasty
+          surprise).</li>
+        <li>Count kills of all vampires from any mod rather than just OOO vampires.</li>
+
+        <li>Adds
+          kill count message so you know how the quest is progressing (message
+          can be disabled using the console ~ Set OOOVampDeadMsg to 0 ).</li>
+        <li>Adds distinct sound effects when you kill a vampire and at each stage of taint removal (i.e., when the sword gets upgraded).</li>
+        <li>Slight kill-count bonus when you slay vampire bosses (patriarchs and matriarchs).</li>
+        <li>Improved descriptions of the taint removal process. <br>
+        </li>
+      </ul>
+      <a href="#top">� BACK TO THE TOP</a><br>
+
+    </div>
+
+    <h2 id="pageName"><a name="RC3Intro"></a>OOO 1.32 RC3 Changes</h2>
+
+    <div class="story">
+      <p><i>by Sotobrastos (with a few corrections by dev_akm)</i></p>
+      <p>RC2
+        and RC3 are smaller than the Open Beta and RC1 because there's now only
+        one ESM in the download. The ESM gets put immediately in the
+        \Oblivion\Data folder, alongside the Full version ESP. In the OOO
+        folder, under OOO-Full and OOO-Lite now you can only find the different
+        ESPs -- and you only need to do that if you want the Lite version.
+        (This reduced the size of the uncompressed files by 20Mb, so even with
+        the added resources of RC2/RC3 the file is smaller than the RC1
+        download).</p>
+      <h4><b>Important Notes</b></h4>
+
+      <ul>
+        <li>This
+          version of 1.32 is a Release Candidate of the final version of 1.32.
+          Now this version only has one ESM. This will be the same, in all
+          likelihood, as the Final version's ESM. However, some final changes may
+          still take place to the ESM here included. In any case, mods crafted
+          using this ESM will work with the final 1.32's ESM without any
+          problems. </li>
+        <li>Also, due to the change to an
+          ESM/ESP structure, previous savegames will have one problem when used
+          with 1.32 unless they were already updated to use OOO's ESM/ESP
+          structure. We'll release an auto-patcher for your savegames with the
+          final release of 1.32. For now, with this RC1, you may miss some
+          OOO-specific items if you do not use Wrye Bash to modify your savegames
+          to depend on the new OOO ESM/ESP structure. If your savegames depend
+          (expect) a single OOO ESP (1.31 versions of OOO and below) then Wrye
+          Bash allows you to tell those savegames to expect an ESP and an ESM.</li>
+        <li>This
+          requisite is temporary and proper only of the OOO 1.32 Open Beta and
+          now the RC1/RC2/RC3 releases. Again, the final version of 1.32 will
+          have an option in its installer to modify your savegames to expect the
+          new ESM/ESP structure in case you were upgrading from an earlier
+          version of OOO. See the <a href="http://devnull.devakm.googlepages.com/ooo" target="_blank">RC3 Quick Start Guide</a> for detailed instructions.<br>
+        </li>
+        <li>There is a growing number of OOO-specific mods that we are compiling into a web-page for your convenience: <a href="http://devnull.devakm.googlepages.com/oooadd-ons" target="_blank">Oscuro Add-ons</a>.</li>
+
+        <li>Harvest
+          [Flora] was not included in RC2/RC3 because the version we had was out
+          of date. [This is corrected in RC5 and later versions.] You can
+          download the much improved v3 <a href="https://www.nexusmods.com/oblivion/mods/2037" target="_blank">here</a>.</li>
+      </ul>
+      <a href="#top">� BACK TO THE TOP</a><br><br>
+
+      <a name="RC3"></a>
+      <h3>Changes in Release Candidate 3 (RC3)</h3>
+      <p>Here are the changes between RC2 and RC3. See further down for details on the changes since 1.31.</p>
+
+      <ol>
+        <li>Changed
+          the way Inebriation works. Now, you can drink as many alcoholic
+          beverages as you want without worrying about the hard-coded limit of
+          potion-consumption. You will still have to exit the inventory screen
+          after chugging from 3 to 5 bottles of booze so that you can immediately
+          resume drinking. It is recommended, then, that you use alcohol before
+          any of the regular potions that are tied to the variable of
+          consumption-limit. Also, your Endurance now has a much clearer effect
+          in how much alcohol you can consume before getting drunk. Also, drinks
+          now give different, more suitable, effects and they do not count all
+          the same in your level of drunkness (a beer is much less potent than a
+          brandy, for example, but also gives less appealing effects.) Finally,
+          the pick-up message given previously when grabbing these bottles has
+          been removed.</li>
+        <li>Added a custom OOO fix to
+          Mannimarco in order to fix the bug whereby he would be immune to
+          attacks and would not properly continue the King of Worms quest upon
+          confronting him in Echo Cave.</li>
+        <li>Added
+          Player House markers. These will be revealed when you purchase a home.
+          This change is meant also for people that used a house marker mod and
+          had trouble with OOO's changes to prices of these same homes for which
+          the markers were added by those other third-party mods. Now you do not
+          need to use those mods to get your house markers.</li>
+        <li>Removed
+          the ability to Fast-Travel at the beginning of the game to all large
+          city locations. Now, you need to discover the towns' landmarks before
+          you can fast-travel to them. That is, you will need to walk at least
+          once to each city in order to open fast-travel to their landmarks. (all
+          large cities except the Imperial City)</li>
+        <li>Added in a fix for Heaven's Fury Claymore's mesh. Thanks mmmpld for yet another OOO contribution!</li>
+
+        <li>Added
+          in the latest model of the Heaven's Fury and Heaven's Wrath models. I
+          included both in case that you want to switch around the appearance of
+          your Heaven's Fury armor. The files are all in data/meshes/armor/hf1
+          and hf2 for the meshes and data/textures/armor/hf1 and hf2 for the
+          textures. Also, now Melus Petilius has in his possession the Heaven's
+          Fury cape. Right now, OOO uses the files in HF2 for its version of
+          Heaven's Fury armor. Even in this folder you can find an alternative
+          skin of the model. The same is true of the files in HF1--there is a
+          default version and an alternative version.</li>
+        <li>Fixed
+          Umbra attacking always on sight. She should now go through her dialog
+          with the player normally. But, her combat AI is still enhanced
+          OOO-style.</li>
+        <li>Fixed the container scripts so
+          that certain NPCs would not have trouble updating Quest Stages due to
+          container-interaction changes. For example, in the quest The Best Thief
+          (where Methredel would fail to steal Amantius' stuff properly). All
+          containers related to quests should perform their functions without any
+          problems while being enhanced by OOO's container scripts.</li>
+        <li>Fixed
+          the double-sounds when opening or closing containers and changed all
+          container scripts to allow for the toggling on and off of Harvest
+          Container animations in-game. You have several options available.
+          Containers are broken in several groups. Toggle the global to 0 in
+          console if you want to disable their HC animations. Toggle it to 1 if
+          you want to enable them. Listed next to each group is the name of the
+          global responsible for toggling their HC animations on or off. For
+          example, if you want to turn off HC animations in those containers
+          found inside a home you have purchased then you'd have to type in
+          console �set OOOHCPlayerHouse to 0� (without quotation marks). Here is
+          the complete list:<br>
+          a.Player house containers: OOOHCPlayerHouse<br>
+          b.Chests, cupboards, desks, drawers and lecterns: OOOHC<br>
+
+          c.Barrels and crates: OOOBarrelsAndCrates<br>
+          d.Sacks: OOOHCSacks</li>
+        <li>Now
+          adventurers can loot clean dungeon containers while they explore the
+          world. I have hand-placed several dozen new adventurers in the world
+          that will compete with you for experience and loot while
+          dungeon-crawling. The system by which they open a container is made
+          more complex. If they are locked then the adventurers will use their
+          lockpicks to open them. If they run out of lockpicks, they will not be
+          able to open the said container. Finally, OOO traps now affect
+          adventurers as well. So, you now have the dilemma of whether to let
+          adventurers loot containers or not. They could get rid of a trap for
+          you, and receive the damage themselves. But, by the same token, they
+          could survive and take whatever was found inside the container.</li>
+        <li>Added special Aura powers to Blood Thorn Amazons, as they were missing them in previous versions.</li>
+        <li>Added
+          one more optional Add-On: OOO-Magic_Script_Effect_Fix.esp. This add-on
+          is meant for people that already use another third-party mod that
+          changes the script-effect spell's entry. With it enabled, script-effect
+          spells will not produce any sound or visual effects. This is included
+          already with OOO-full and OOO-lite, but in cases where another mod that
+          changes this MGEF entry was loaded after OOO then some OOO custom
+          features that rely on Area of Effect scripted spells would produce a
+          bothersome sound and light. Use this add-on to get rid of these effects
+          only if you are using a mod that changes scripted-spell's entry.</li>
+        <li>Added
+          in .egm files so that custom light armor helmets now properly adjust to
+          the player's race and gender head size. (most specially affecting the
+          light armors of Sin's Armor pack).</li>
+
+        <li>Lots
+          of other small tweaks and fixes that did not get logged. They�ll be
+          accounted for in future versions of OOO's documentation.</li>
+      </ol>
+      <a href="#top">� BACK TO THE TOP</a><br><br>
+
+    </div>
+
+    <a name="RC2"></a>
+
+    <h2 id="pageName">RC1 &amp; RC2 Changes</h2>
+
+    <div class="story">
+      <p>The RC1 &amp; RC2 versions have been out a long time now, but there's still a lot of good information in these old changelogs.</p>
+
+      <h3>Additions in OOO 1.32 (RC1 and RC2)</h3>
+
+      <ol>
+        <li>ESP/ESM
+          structure. This change is necessary to allow for greater compatibility
+          between OOO and other third-party mods. Authors can quickly use the OOO
+          ESM files to craft compatible versions of their work and even specific
+          OOO-enhancements. </li>
+
+        <li>Most OOO 1.3 quests
+          have now journal updates added, new icons, new texts, new scripts, etc,
+          in order to flesh them out even more in depth and with clarity. (These
+          changes are worth many pages of text: OOO's quests are very open-ended
+          and have lots of variables at play. Thus there are dozens of possible
+          routes to finish some of these quests, albeit they still have some
+          structure).</li>
+        <li>Specifically, the affected quests are:</li>
+        <li>a.<b> A Path of Iron</b>:
+          new large quest featuring the lonely and rather underused Paladin in
+          stock Oblivion, Melus Petilius. This quest is very lengthy and will
+          reward one of the best sets of gear for those those goodie-two-shoes
+          players that got no love in OOO's 1.3 Dread Armor quest. However, chose
+          your allegiances wisely. Molag Bal will refuse to help those who side
+          with Melus and his gods--nor will the Nine grant their blessing upon
+          those who desecrate the honor of their chosen Paladin. Added a new
+          lengthy text, new quest icon, a paiting of Vena, and other goodies that
+          greatly expand the meaning of Melu's background.</li>
+        <li>b.<b> Light through the Darkness</b>:
+          you know her; you love her or you hate her. She is the bane of
+          vampires, and one of the most coveted relics in Cyrodiil. Light of Dawn
+          has now a fully-fledged quest with the addition of journal updates, new
+          quest icon and tweaks to Lord Volmyr.</li>
+
+        <li>c.<b> Shadows in a Struggle for Power</b>:
+          this quest involves the Dread Arctifacts and the many factions that vye
+          for power in an effort to collect them for themselves, and thus unlock
+          their spectral power to their own ends. Again, this quest involves
+          other sub-quests, like Jephre's Heart of Wild Woods, and the Raiders'
+          missions to Forts in the Nibenay Basin. New quest icon and new graphics
+          for some of the existing clues.</li>
+        <li>d.<b> Skyrim Bandit Trouble</b>:
+          this quest develops further than in 1.3 the story and background of the
+          newly arrived clans of Skyrim bandits who assail the county of Bruma
+          and other areas in northern Cyrodiil. Now, defeating the bandits has
+          much clearer consequences in Bruma. New quest icon here as well.</li>
+        <li>e.<b> Slavers and Smugglers</b>:
+          the relation between the factions added to the Blackmarsh in 1.3 is now
+          much more developed and clearly stated. New quest icon. There are new
+          texts added to several of the key locations in this "quest." I use
+          quotation marks because this is not a quest in the sense of all the
+          other quests in Oblivion. This quest is dynamic. It has no end-point,
+          unless all its important NPCs are killed, of course. You can go back
+          and forth between your allegiances to these factions, although it will
+          take you a long time to switch sides--once you begin to favor one of
+          the two factions, turning the other way around will be more costly. The
+          most clear reward is the possibility of trading with them. They offer
+          items not available to any other vendor in the realm. Also, there are
+          good role-play opportunities for those that want to flesh out their
+          avatar's character.<br>
+
+        </li>
+        <li>Fully built-in
+          Harvest Containers functionality alongside OOO's container scripts
+          (chests animate, just as in HC, but now can be bashed and have traps,
+          as in previous versions of OOO). I have included the latest version of
+          HC's container models so as to fix their problems with animations in
+          games patched with the official 1.2 patch. However, a certain feature
+          of HC code--the unlocking of chests in a cell owned by a faction to
+          which the player belongs--has been taken out for balance reasons given
+          OOO's container loot's risk vs reward structure.</li>
+        <li>New
+          containers for each instance where a key exists to open it, and the
+          lock is below lvl 100. So, no more lockpicking restriction bug with
+          keys. Along with this change, some containers that were only accessible
+          with a key can now also be lockpicked. In a similar addition, the new
+          code prevents traps from triggering if you posses the specific key for
+          that container.</li>
+        <li>Dynamic response of NPCs
+          to the type of attire and armor sets that the player's avatars may
+          wear. This is a brand new feature in OOO that uses many of its unique
+          resources as vehicles to change the behavior of NPCs towards your
+          avatars. Now, whenever you don certain pieces of armor or items of
+          clothing, or even weapons, those around you will be affected in seeing
+          them. Depending on their nature they will look more favorably upon you
+          or perhaps even despise you. The sight of your gear will make their
+          disposition towards you either rise or drop. Also, their confidence
+          will follow the same pattern. These effects are stronger as more pieces
+          of that kind of armor and/or attire are worn. The effects tend to drop
+          when you remove the gear from sight. Now you can indulge in scaring
+          citizens away with your Daedric looks or strike righteous fear upon
+          evil hearts with your Paladin's armor. The following is a list of armor
+          sets and attires that affect NPCs around you:<br>
+          <strong>a</strong>. <strong>Daedric Nature</strong>:
+          Dremora Elite Armor, Daedric Armor, Daedric Prince Armor, Guardian of
+          Oblivion's clothing and Lady of Embers' special robes, hood and gloves.<br>
+
+          b. Necromantic
+          Nature: Dread Armor, Necromancer cloaks and hoods, Putrid Hand cloaks
+          and hoods, Master Necromancer clothing, Fayth Noor's robes and hood,
+          Lien Valeth's robes and shoes and Mannimarco's entire gear (robes, hood
+          and staff)<br>
+          <strong>c</strong>. <strong>Holy Nature</strong>: Heaven's Fury Armor<br>
+          <strong>d</strong>. <strong>Law
+            Nature</strong>: Worn Legion armor, Imperial Legion Tarnished Armor, Imperial
+          Legion Armor, Imperial Warder Armor, Imperial Guardian Armor, Imperial
+          Watch Armor, Imperial Palace Armor, Imperial Elite Armor, Imperial
+          Commander Armor and Arch-Mages' robes, hood and staff.<br>
+          <strong>e</strong>. <strong>Shadows' Nature</strong>: Dark Brotherhood garbs and hood, Shadowmail Armor and Night Elven Armor.<br>
+
+          <strong>f</strong>. ***NOTE***:
+          Although this novel feature relies on mechanics that will not affect
+          performance in any way, you can still disable it if you prefer to play
+          without it. It can be turned off by typing in console:<i><br>
+            StopQuest OOODispositionToPlayer</i><br>
+        </li>
+        <li>Added three of LCE creatures in this release: Gargoyles, Guars and Ravishing Hungers:<br>
+          <strong>a</strong>.
+          Ravishing Hungers are now included among the possible daedra you will
+          find in Oblivion and in its gates to Cyrodiil. They are a bit stronger
+          than seducers, faster and more active in their attacks. They have
+          unique combat styles. They primarily use magic from the Absorb line of
+          spells. While aggressive they are also prone to fleeing more readily
+          than other Daedra. Like the rest of OOO's Daedra, Hungers have specific
+          resistances and weaknesses. They also may yield Hunger's Skin, a new
+          alchemy ingredient. These Hungers are a sub-set of the Hunger's family.
+          However, if you prefer them to look exactly like Shivering Isle's
+          Hungers then be sure to fetch Madcat's mod for OOO that replaces them
+          with SI versions. Links to the OOO mods' page are listed at the bottom
+          of this document.<br>
+          <strong>b</strong>. Gargoyles are fairly unique in OOO. They do
+          not belong to the "evil" group of creatures (Ogres, Shadow Wolves,
+          Trolls and Imps). But they are not considered neutral like most other
+          creatures. They straddle the fine line in between them. They are
+          closely associated with Imps, and are often seen in their company. They
+          prefer caves and/or ruins to appear, but are also found in hills and
+          mountains. They have very strong abilities and can shield themselves
+          against most forms of attacks for brief periods of time while they
+          regenerate, but they are unable to move when that happens. They, like
+          the other new additions, have specific new Faction, Combat Style,
+          Abilities, Spells and Ingredients. Gargoyles are usually stronger than
+          Mystical Imps, and they vary in their abilities and overall prowess.<br>
+
+          <strong>c</strong>. Guars
+          appear in several variations: Ashen, Wild Swamp, Wild and Tamed. Ashen
+          Guar are darkened in color and very rare, found only in the mountains
+          on Vvanderfell's frontier. Wilds are regular guars that may appear also
+          along this mountain range. Wild Swamp Guars roam the Blackmarsh swamps.
+          Each of them have special combat styles, weaknesses, resistances and
+          items (pelts and meat). Although generally not aggressive, they are
+          very sturdy and strong creatures. Some may also be quite aggressive if
+          you tread on their territory.<br>
+          <strong>d</strong>. Finally, the Tamed Guar may be
+          acquired through those that frequent Vvanderfell and have connections
+          with Dunmer traders. You may have to "convince" the traders to somehow
+          accept to deal with you--either by force or kindness, it is up to you.
+          This Guar can be ridden like a horse.<br>
+        </li>
+        <li>New spell icons thanks to Spell Icon Replace 1.0 mod by Forsaken32. </li>
+        <li>Added Nicoroshi's Ayleid Meteoric Bow replacement--an addition that also exists now for Madcat's stand-alone great mod.</li>
+        <li>Re-designed
+          vanilla NPC armor/weapon lists. Those were used only in a handful of
+          cases in 1.31, they are not used any more by 1.32. They are re-designed
+          just in case they are put to use by other mod when working in tandem
+          with OOO. For example, Fran's or MMM's mods may do it. This way their
+          items will remain leveled, but with the item rarity of early versions
+          of OOO. Thanks to Dev_Akm for those lists! He worked at them fiercely
+          and they look very good--it is easy for others to tweak them at will.</li>
+
+        <li>Updated
+          the UoP compatibility to 2.00 version. That is, OOO includes its
+          changes wherever there are overlaps between the two mods. There were a
+          lot of small overlaps, but they are too many to list here in detail.
+          UoP changes a myriad spelling mistakes, for example, in NPC names. I
+          included all of those since OOO also changes those NPCs statistics,
+          gear, level data, faces, etc. That's just one small example from the
+          large lot of changes that this compatibility entailed.</li>
+        <li>Added
+          in Vagabond Angel's Femme-Daedric armor. This is part of a new special
+          Daedric set that will be related to quests in future versions of OOO,
+          although right now it is available should you be able to best the
+          enemies that guard it. <i>Two of VA's extra helmet models are used --
+            #2 and #3 -- but all three of VA's alternate meshes are included in
+            case you want to swap them by renaming their meshes.</i> They are
+          located in \Data\meshes\armor\VA\Fdaedric. Also, this female version is
+          used for a new set of Dremora armor: Elite Dremora Armor, of which you
+          will be able to get only one full set.</li>
+        <li>Added
+          Mmmpld's Female Dwemer model to replace what is used in stock Oblivion.
+          Now, female characters can use Dwemer armor fitted to their figures. </li>
+      </ol>
+      <p><i>(The following are changes added in RC2)</i></p>
+
+      <ol start="19">
+        <li>Also
+          Mmmpld rigged a better version of the Unfinished Steel Cuirass that is
+          now included. Finally, he made a new Unfinished BlackWood Company
+          Cuirass that now can be seen used by the BlackWood Company Guards. They
+          have now a more appropriate set of armor lists.</li>
+        <li>Added
+          in Leviathan's Soul Gems (by Star Boi) to replace the stock Oblivion
+          soul gem's models. These new models look much like those found in
+          Morrowind and are a real treat to the eyes. I changed their resource
+          folders and texture names, when appropriate, to avoid BSA Archive
+          Invalidation issues. Also, I edited their icons' background to better
+          mesh with the default colors of the menu's backgrounds. This addition
+          is not included in the Lite version of OOO, unless you use the
+          OOO-Magic_Effects+Enchantments Add-On.</li>
+        <li>Added
+          several dozen new wilderness spawns in areas that were severely lacking
+          wildlife, like swamps and rainforests. Also, I added a good number of
+          new forest wilderness spawns. In this pass through the wilderness of
+          Cyrodiil I changed several existing spawns to better suit them to the
+          geography where they were placed. Finally, I changed even more how
+          bandit spawns are found in roads (they should be much more
+          unpredictable) and also added new spawns outside of certain lairs that
+          previously did not have any (amazons, raiders and goblins, for example).</li>
+        <li>Added four new optional Add-on modules:
+          <br>a. <span style="font-weight: bold;">OOO-Container_Trap_Instant_Effects</span> (turns chests traps into instant-effects to avoid CTDs with UI mods that change spell timers to be displayed in text)
+
+          <br>b. <span style="font-weight: bold;">OOO-Level_Stock</span> (default Oblivion leveling rates but with OOO's perk descriptions)
+          <br>c. <span style="font-weight: bold;">OOO-Respawn_Two_Week</span> (sets the respawn time to two weeks)
+          <br>d. <span style="font-weight: bold;">OOO-Water_Weeds</span> (enables water weeds for the Lite version of the mod)
+        </li>
+
+      </ol>
+      <a href="#top">� BACK TO THE TOP</a><br><br>
+
+    </div>
+
+    <a name="RC2T"></a>
+    <h3 id="pageName">Tweaks in OOO 1.32 (RC1 and RC2)</h3>
+
+    <div class="story">
+
+      <ol>
+        <li>I have re-shaped many elements to make the balance be smoother in so far as gameplay difficulty in beginner areas:<br>
+          <br>
+          <b>a</b>.Vilverin's
+          exterior bandits will be a bit easier than before. The dungeon itself
+          is still not a low-level dungeon any more, but hunting around it should
+          not be as difficult.<br>
+          <br>
+          <b>b</b>.Changed several road spawns near the IC to reflect the above difficulty rating.<br>
+
+          <br>
+          <b>c</b>.Sideways
+          Cave retains its "Imp-Dungeon" character, but its weaker imps are now
+          more aggressive and less prone to fleeing. The special chest at the
+          bottom of this dungeon is better positioned to avoid instances where
+          players got "stuck" in the nearby roots.<br>
+          <br>
+          <b>d</b>.Cleared some
+          rather dangerous spawns in the road north of Chorrol. This will make
+          the MG admission quest stage of this city a bit safer to accomplish at
+          early levels.<br>
+          <br>
+          <b>e</b>.A host of other small changes ranging
+          from creature aggressiveness and speed to guard-patrols' pathing in
+          order to make it a bit less dangerous in the IC's vicinity.
+        </li>
+
+        <li>Tweaked
+          several bosses' difficulty, gave them new spells, new custom scripts,
+          even more combat variety and special notes, mentions and fame increases
+          in case of being defeated. They will now use spells more appropriately
+          according to the battle-necessities of the moment (if you are invisible
+          they may try to dispel it, they will use their stronger attacks more
+          often, buff themselves more often, etc.) Some of the affected NPCs are:
+          Black Rock Captain, Eregor, Faran Hestarius, Hlofor The Arctic Bear,
+          Lareil, Lady of Embers, Lien Valeth, Lord Volmyr, Marlek, Reaver of
+          Ghuul Icxth, Sheil Hestarius, Voice of Nature, Vyka Herlst and Prince
+          Xyval Viktur.</li>
+        <li>Changed some creature lists
+          and added new critters to indoor locations so that the
+          "ogre-won't-fit-through-tunnel" type of problems disappear. There may
+          be some instances where large enemies have a difficult time maneuvering
+          in close-quarters, but that should also be an option open for players
+          to use in their combat tactics. The incidence of this happening is much
+          reduced.</li>
+        <li>Added more spell weaknesses to
+          certain NPCs, to diversify even more the types of effective spell
+          forms. Made weakness to frost a bit more common in certain enemies. The
+          benefits of using other magic-based attacks were larger than using
+          frost. That is no longer the case.</li>
+        <li>Changed
+          the way you receive (or can get) Hannibal Traven's new Battle Mage
+          armor. It will not appear in his body any more before he sends you to
+          face Mannimarco. Rather, it is stashed somewhere in his
+          living-quarters. This way, players will not miss a chance to recover it
+          due to Traven's body disappearing.</li>
+        <li>Changed
+          some Daedric armors and their special Dremora wearers in stages of the
+          Main Quest. Now there is a special version of Dremora armor called
+          Elite Dremora Armor. Also, now you will not be able to stock several
+          Daedric Prince Shields and Gauntlets--there is one set of Daedric
+          Prince and one set of Dremora Elite armor in total.</li>
+        <li>Changed
+          some quest stages so that they are in tune with the new journal
+          structures and also to prevent problems (like killing Reaver of Ghuul
+          Icxth before you can wield spectral weapons).</li>
+
+        <li>Changed a few of the geomantic spells to make them more balanced. Specifically, the Opal's shield effects are now less powerful.</li>
+        <li>Changed
+          also some NPCs' and critters' AI, combat styles and inventories to make
+          them even more interesting and balanced against their status, role,
+          etc. Quite a few changes here, too long, and sometimes unnoticiable, to
+          list here in detail. (For example, Ogres tended to be overly aggressive
+          with their forward power attacks--now some of them will be much less
+          direct in their fighting style).</li>
+        <li>Drastically
+          diversified the combat styles of vampires. Even though I had made new
+          combat style sheets for them I had forgotten to ascertain that vampires
+          were using them. They were not. Now they'll show more difference in
+          their combat behaviors. </li>
+        <li>Changed several
+          critters' level of aggression and faction interaction (imps, for
+          example. Seridur won't fight against blood golems, the goblin chef is
+          now safe against retribution from his clan's members, ghosts and other
+          undead do not immediately get into fights with liches (that was a
+          leftover mess from stock Oblivion. Perhaps intended, but it sure
+          whacked the suspense and challenge of some fights.) Included 1.31d's
+          change to Spectral Warrior's faction so that they no longer can yield a
+          murder count.</li>
+        <li>Tweaked the Scamp's levels of confidence and stats to better diversify among them and to make them more unique among Daedra. </li>
+        <li>Added
+          a new faction to Alteration-based Golem Summoning spells. They will now
+          react more "forcefully" against other factions that should be "evil"
+          but are not due to the game's design (like the Arena's Yellow Team, for
+          example).</li>
+
+        <li>Added a script to the
+          enchanting altar so that certain items are dropped from the player's
+          inventory prior to enchanting them. These items have special scripts
+          that get removed once the item gets enchanted. That is how the Oblivion
+          engine works, and this method of "fixing" this problem was the least
+          obtrussive possible.</li>
+        <li>Changed some
+          quest-award item's enchantments so that they regain more uses after
+          having lost them previously due to the larger mana cost introduced
+          since OOO 1.3.</li>
+        <li>Changed the Aetherial
+          Magicka Flow ability of Meteoric Weapons to give an increased mana
+          regeneration depending on the Willpower value of their user. Higher
+          willpower will make the sword's magical essences react more readily and
+          dispense more magicka in return.</li>
+        <li>Changed
+          Bosmer Ranger and Bosmer Protector's abilities so that they last longer
+          in their fights against their former companions, the now bloodthirsty
+          corrupted followers of Jephre.</li>
+        <li>Changed
+          how the Ayelid ruins infected by the Corrupted Followers of Jephre
+          behave once you defeat Eregor and Lareil. Now their ranks will be much
+          thinner, and in some cases they will leave the dungeons altogether.</li>
+        <li>Fixed
+          Corrupted Followers of Jephre possibly becoming friendly to the player.
+          That's something that will be possible in future versions of OOO, but
+          not in 1.32</li>
+
+        <li>Changed how Fort Facian and
+          Fort Flecia are populated after the Raider parties there are defeated.
+          This change is related to the Shadows in a Struggle for Power quest,
+          like change # 18.</li>
+        <li>Changed the density
+          population of Skyrim Bandits as your progress through the quest that
+          aids Bruma in getting rid of them. Now, they will appear in less
+          numbers and less frequently if you manage to undermine their
+          allegiance's pillars.</li>
+        <li>Changed how touching spectral creatures and shields affects the player while they wear the Dread Armor set. </li>
+        <li>Increased
+          a little the range at which summoned golems and animals stop while
+          following the player--they will not so closely crowd around the player
+          any more. </li>
+        <li>Changed Boetiah's Chosen to be more effective in battle, to better correspond to the level of difficulty proper to the quest. </li>
+        <li>Several
+          tweaks to other magical abilities proper to special creatures, like the
+          Unicorn, for example, to tone down their power a notch. They'll still
+          be very difficult, but not overly so. The Arena Champion, Agronak, also
+          needed a bit of toning down in its magic resistances. Casters should
+          not find it so difficult to connect spells against him any more.</li>
+
+        <li>Changed
+          the model for the Heart of the Wild Woods and the Blood Golem. The
+          former will glow more and the latter will be much less shiny, properly
+          showing the effects of shadows upon its body.</li>
+        <li>Changed
+          the Thieves Guild quests responsible for the Stolen Goods' quest
+          updating properly. This quest is notoriously problematic, and the UoP
+          also attempts several fixes to it that I have included whenever there
+          were overlaps between both of our tweaks to the TG quests. Previously,
+          OOO failed to account for the new values of TG Stolen Goods' quest
+          properly.</li>
+        <li>Tweaked some of the Master
+          Trainers so that they remain essential until their quests are started.
+          Also beefed them up considerably, since they are supposed to be masters
+          of their craft and powerful entities, after all.</li>
+        <li>Deer are now faster. Boars are also a bit faster now.</li>
+        <li>Diversified
+          some of the creatures' possible sizes a bit more, yet still within
+          tight limits, to avoid the "giant-animal" syndrome. That's reserved
+          only for animal/creature bosses.</li>
+        <li>Increased the price of most pelts even more, to make them more attractive for hunting.</li>
+
+        <li>Toned
+          down the density of bandits along roads and also added the possibility
+          that their main opposing faction, marauders and raiders, attack the
+          usual bandit hang-out areas.</li>
+        <li>Fixed the
+          Cowl of Nocturnal's new script and powers from what was inherited
+          through Daeger's mod. I reworked the scripts so that they do not rely
+          any more on game-mode blocks. I added a new quest script and changed
+          the powers' status so that they get properly added and removed whenever
+          the cowl is equipped and unequipped.</li>
+        <li>Changed
+          how the formulas for bashing a lock get their results. Now, using H2H
+          will be much less effective than 2Hblunt. I also tweaked the values in
+          between. Generally, in ascending fashion, the effectivity increases
+          thus: H2H, 1Hblade, 1Hblunt, 2Hblade, 2Hblunt.</li>
+        <li>Increased the range at which creatures or NPCs will be alerted because of lock-bashing.</li>
+        <li>Corrected
+          several spelling mistakes left over from previous OOO version additions
+          in text. Most clear will be the change from spelling "Cheydinhall" to
+          the correct "Cheydinhal." Some changes also applied to 1.3 added texts,
+          like "Excerpts of Tamriel's Societies", "Practical Defense of
+          Morrowind" and other in-game clues.</li>
+        <li>Clarified some of the texts' writing for better understanding and characterization.</li>
+
+        <li>Book
+          on Ayleid Geomancy can now be taken. If you want to disable geomancy
+          after reading this book then type in console: Set GeomancyEnabled to 0</li>
+        <li>Fixed
+          the Ayleid's Magicka Regeneration ability to properly continue its
+          effects once the clock changes from PM to AM at night time.</li>
+        <li>Fixed
+          the problem with the Tiber Septim Hotel being a dumping ground for some
+          problematic spawns. This fix is not global. It is dependent on code
+          added to some of the usual suspects that popped up in there often
+          (frost minotaurs, Sheil Hestarius, Lareil, Vyka Helrst, etc.) So, it is
+          possible that at times another critter will appear there, but it won't
+          be as game-shattering as before.</li>
+        <li>Changed a couple of weapon and armor stat values. Just small tweaks that will not be overly apparent.</li>
+        <li>Changed
+          Silver Dragon arrows, Blood Thorn arrows and White Rose arrows to be
+          more powerful than previously--also, they are more valuable now.</li>
+        <li>Made Ungarion be able to have more Open-Lock scrolls, plus it now has the chance of holding powerful Ayleid Staves in his stock.</li>
+
+        <li>Re-worked
+          all Vampires who still used some original Oblivion loot lists. I did
+          the same for every other entity or quest that OOO changes and that used
+          LL0, LL1 or LL2 NPC loot lists. They were given, instead, appropriate
+          OOO-specific lists.</li>
+        <li>Modified Molag Bal's quest updates to reflect the possibility of having sided with the Nine in becoming their chosen Paladin.</li>
+        <li>Fixed
+          some issues with the Open Beta of 1.32 and A Path of Iron quest where
+          you could lose Melus' armor and claymore if you had already started
+          Molag Bal's quest--also, I corrected the problem with not being able to
+          pick up Path of Iron once dropped to the ground. Finally, now Path of
+          Iron has a powerful holy enchantment that does not require re-filling
+          it with soul gems.</li>
+        <li>Changed the trap's
+          spell effects to avoid those cases where they would not affect the
+          player due to hitting geometry in their path after being triggered.</li>
+        <li>Added
+          Vicente's Valtieri's key to the game-world. It was previously missing
+          and thus the only way to open his chest was through lockpicking or
+          bashing.</li>
+        <li>Changed the sound effects of
+          Frost-based spell effects to use a set of sounds included in the
+          Oblivion resource files but not implemented in the game.</li>
+
+        <li>Reduced
+          a bit the enchantments from the Ebony Helmet of the Mage, Eboron Helmet
+          of the Conjurer, Ring of the Iron fist. Also reduced slightly the power
+          of Glass (regular, Drakefired and Blue) and Elven Eldar cuirasses using
+          the Mirror effect (reflect damage and reflect spell).</li>
+        <li>The Heart of the Wild Woods no longer sounds as "killed" when he finally reaches Yeleri and disappears.</li>
+        <li>Increased the price of Bloodgrass and Harrada to reflect their supposed rarity (they grow in Oblivion only).</li>
+        <li>Tweaked
+          the Night-Eye rings. They were too powerful before and it made no
+          difference to find the lowest value ring of the type as opposed to a
+          higher quality one. So, now these low-end rings have a penalty. Since
+          they increase sensitivity to light they also increase weakness against
+          fire-based magic. The higher quality rings of Night-Eye progressively
+          lessen this penalty until it disappears in the highest quality ring of
+          this type.</li>
+        <li>Rebalanced the Finger of the
+          Mountain spells. They are now more powerful and have slightly more
+          range, but they also cost less and thus are finally accessible to
+          highly skilled wizards.</li>
+        <li>Fixed a couple of floating skellies and containers (Shattered Scales Cave and Rielle).</li>
+
+        <li>Adjusted the position of an Imperial Notice in Cheydinhal so as to make it easier to activate and read.</li>
+        <li>Fixed Audens Avidius so that his OOO gear gets correctly removed in the quest "Imperial Corruption."</li>
+        <li><i>(Note: From here down are changes added in RC2 -- and many added after Soto's first post about it.)</i></li>
+        <li>Fixed Chanel's lectern not updating properly the stages of quest "Canvas the Castle." </li>
+        <li>Added more instances of Open Lock, Kill
+          and Detect Trap spells to vendors of magical scrolls. Specially, Shady
+          Sam has had its stock increased more in proportion to other vendors. </li>
+        <li>Increased the amount of goods sold by
+          the Argonian Smugglers of the Blackmarsh and the Dunmer Slave Traders.
+          They now sell thief-friendly items in greater quantities than before,
+          specially the Smugglers. </li>
+
+        <li>Increased the amount of special sylvan and ayleid arrows used by Corrupted Followers of Jephre and Bosmer Rangers. </li>
+        <li>Fixed an overlapping OOO chest with the
+          bed added by the Frostcrag DLC official Bethesda Add-On to the Mystic
+          Emporium's bedrooms. </li>
+        <li>Fixed a potential issue with picking up
+          the Heart of the Wild Woods in Narind. This problem was unique to the
+          first release of OOO 1.32 RC1. </li>
+        <li>Invisible Gargoyle problem from RC1 corrected.</li>
+        <li>Debug messages and spells are fixed for both the Full and Lite versions' new disposition vs gear feature </li>
+        <li>Ayelid regeneration script is fixed to account properly for the higher level stages of your wisdom</li>
+
+        <li>VA's daedric helmet is fixed now for females (no more side-ways head). </li>
+        <li>68- All optional add-ons for the lite now work as they should (dependent on the ESM when necessary.) </li>
+        <li>Fixed some ayleid weapons in FG buildings to now require a high rank in the guild to be picked up without counting as stealing.</li>
+        <li>Lite
+          now does not have the OOO leveling rates and descriptions. That's what
+          the OOO-Level_Normal, OOO-Level_Slow and OOO-Level_Stock are for. The
+          new <span style="font-weight: bold;">OOO-Level_Stock.esp</span> gives default Oblivion leveling rates but with OOO's perk descriptions.</li>
+        <li>A few other small things that the RC1 had messed up.</li>
+
+        <li>Lots
+          of other small tweaks and fixes that did not get logged. They'll be
+          accounted for in a future version of this 1.32 list of changes document.</li>
+      </ol>
+      <p>So,
+        there it is. A few small things, like Marie Elena's fix to one of the
+        locked chests, repositioning of vanilla floating barrels, etc, did not
+        make it into the document. They are too small to list all of them. <br>
+        <br>
+        Make
+        sure to let the files overwrite what you have already in the
+        \Oblivion\Data\ folder --there won't be any damage by doing so.
+      </p>
+      <p><a href="#top">� BACK TO THE TOP</a></p>
+    </div>
+
+  </div>
+  <!--end content -->
+  <div id="navBar">
+
+    <div id="navLogo">
+      <center>
+        <img src="../images/th_O3LogoFlaming.jpg" height="160" width="150">
+      </center>
+    </div>
+
+    <div id="sectionLinks">
+      <h3>Contents</h3>
+      <ul>
+        <li><a href="#top">Introduction</a></li>
+        <li><a href="#FAQ">Oscuro's FAQ</a></li>
+        <li><a href="#OOO133">1.33 Changes</a></li>
+        <li><a href="#Final">1.32.Final Changes</a></li>
+        <li><a href="#RC5">1.32.RC5 Changes &amp; Additions</a></li>
+
+        <li><a href="#RC3Intro">RC3 Changelog Introduction</a></li>
+        <li><a href="#RC3">RC3 List of Changes</a></li>
+        <li><a href="#RC2">RC1 &amp; RC2 Additions</a></li>
+        <li> <a href="#RC2T">RC1 &amp; RC2 Tweaks</a></li>
+
+      </ul>
+    </div>
+    <div id="sectionLinks">
+      <h3>Online Info</h3>
+      <ul>
+        <li><a href="OOO_133_readme.pdf" target="_blank">OOO 1.33 Readme (PDF)</a></li>
+        <li><a href="OOO_Guide.html">OOO Quick-Start Guide</a></li>
+        <li><a href="OOO_Add-Ons.html" target="_blank">OOO Add-Ons</a></li>
+        <li><a href="OOO_Problems132RC5.html" target="_blank">OOO Known Problems 132RC5</a></li>
+        <li><a href="OOO_Spoilers.html" target="_blank">OOO Spoilers</a></li>
+      </ul>
+    </div>
+    <!--
+  <div id="advert">
+  </div>
+  <div id="headlines">
+    <h3>Spoilers!</h3>
+    <p> OOO Spoilers <a href="http://devnull.devakm.googlepages.com/ooospoilers" target="_blank">Stuck? Can't quite figure it out on your own? You can find tons of helpful spoilers here</a> </p>
+  </div>
+  -->
+  </div>
+  <!--end navbar -->
+  <div id="siteInfo"> <a href="">OOO Quick Start Home</a> | <br>
+    <font size="1"> � 2008 by dev_akm. Oblivion logo � 1993-2006 Bethesda
+      Softworks LLC, a ZeniMax Media company. The Elder Scrolls, Bethesda
+      Softworks, ZeniMax and their respective logos are registered trademarks
+      of ZeniMax Media Inc. All Rights Reserved. </font><br>
+  </div>
+
+
+</body>
+
+</html>
