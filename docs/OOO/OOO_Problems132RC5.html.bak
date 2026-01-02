@@ -1,0 +1,1068 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Known Issues With OOO 1.32 RC5</title>
+  <link rel="stylesheet" href="../css/devnull-shared.css">
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <h1>Known Issues With OOO 1.32 RC5</h1>
+      <p class="description">General and Specific Problems With Oscuro's Oblivion Overhaul 1.32 RC5</p>
+    </header>
+
+    <main>
+      <font color="#660000" size="1">Last Updated 01/04/2008</font>
+      <p>
+        <font size="2">If you are still using RC3, you should also check <a href="http://devnull.sweetdanger.net/oooproblemsrc3">Known Issues with OOO 1.32 RC3</a>.</font>
+      </p>
+      <h2>
+        <font size="6">Selling Platinum Coins</font>
+      </h2>
+      <p>
+        <font size="2">Selling your Platinum Coins can still sometimes cause problems with saving your game (CTD on save). This problem has been around since OOO 1.3 was first released and we still don't understand why it happens. If you run into this bug, you may be able to solve it by installing Tarnsman's <a href="#" title="Link no longer available - PlanetElderScrolls is defunct">Ayleid Coin Add-on</a>. Be sure to use the OOO version.<br></font>
+      </p>
+      <h2>
+        <font size="6">Performance Issues<br></font>
+      </h2>
+      <p>
+        <font size="2">OOO is a system-resource intensive mod. It may slow down your game.
+          This will vary a lot depending on your system and it may also improve
+          as you play the mod for a while. If the performance hit is significant
+          enough to be a problem for you, you can sometimes improve things by
+          turning off the fishies. To do this, open the Oblivion console and type:</font>
+      </p>
+      <p>
+        <font face="courier new,monospace" size="2"> Set OOOFishSpawn to 0</font>
+      </p>
+      <font size="2">This will have the biggest impact when you are near water.</font>
+      <h2>
+        <font size="6">User Interface Mods and Official 1.2 Patch</font>
+      </h2>
+      <style>
+        #g_title p,
+        #g_footer p,
+        #g_description p {
+          margin: 0;
+        }
+
+        /*
+
+  	-- -- -- -- -- -- --
+  	Browser Fixes
+  	-- -- -- -- -- -- --
+  	
+  	This file uses CSS filtering methods to fix various
+  	layout bugs.
+
+  	Each of the following three imported files is a 
+  	separate, browser-specific CSS file that keeps all 
+  	hacks out of the main style sheet.
+  	
+  	Over time, as supporting these browsers no longer
+  	remains a priority, cleaning up the hacks is as
+  	easy as deleting the @import statement below, or
+  	simply no longer linking this file from the HTML.
+  	
+  */
+
+        /* 
+    fix ie6 "peekaboo bug" using the "holly hack". 
+    Note, this style only gets applied to ie6
+  */
+        * html .wrapper {
+          height: 0.1%;
+        }
+
+        /* 
+   * IE5 mac - overrides the IE/Win hack 
+   */
+
+        /*\*/
+        /*/
+
+  * html #threecolumn div {
+  	height: auto;
+  }
+
+  /**/
+
+
+        /* 
+   * IE5/Win-specific CSS -ensures #container wraps all content on window resize
+   */
+
+        @media tty {
+          i {
+            content: "\";/*" "*/}} * html #container { height: 1%; } /*";
+          }
+        }
+
+        /* */
+        /* Styling for editable elements. Eventually, this will be part of the style. */
+        .editable {
+          border: 1px dashed blue;
+        }
+
+        #footer {
+          clear: both;
+        }
+
+        /* Extra divs hidden by default. The custom CSS can override this though */
+        #extraDiv1,
+        #extraDiv2,
+        #extraDiv3,
+        #extraDiv4,
+        #extraDiv5,
+        #extraDiv6 {
+          display: none;
+        }
+
+        a img,
+        :link img,
+        :visited img {
+          border: none;
+        }
+
+
+        body {
+          text-align: center;
+        }
+
+        #container {
+          width: 718px;
+          text-align: left;
+          margin: 0 auto;
+        }
+
+        /** BEGIN CUSTOM SKIN **/
+        /*
+
+  	-- -- -- -- -- -- --
+  	Base CSS
+  	-- -- -- -- -- -- --
+  	
+  	This file simply removes default styling on most HTML elements in 
+  	order to reduce the need to later override them.
+  	
+  */
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        pre,
+        code,
+        p {
+          font-size: 1em;
+        }
+
+        dl,
+        li,
+        dt,
+        dd,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        pre,
+        form,
+        body,
+        html,
+        p,
+        blockquote,
+        fieldset,
+        input {
+          margin: 0;
+          padding: 0;
+        }
+
+        a img,
+        :link img,
+        :visited img {
+          border: none;
+        }
+
+        address {
+          font-style: normal;
+        }
+
+        /*
+
+  	-- -- -- -- -- -- --
+  	Type Scheme: Deco
+  	-- -- -- -- -- -- --
+  	
+  */
+
+        body {
+          font: 76% Verdana, sans-serif;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        p.description {
+          font-family: "Trebuchet MS", Trebuchet, sans-serif;
+        }
+
+        h1 {
+          font-size: 3em;
+          font-weight: bold;
+          letter-spacing: 2px;
+        }
+
+        h2 {
+          font-size: 2em;
+          font-weight: normal;
+        }
+
+        h3 {
+          font-size: 1.5em;
+        }
+
+        h4 {
+          font-size: 1.2em;
+          letter-spacing: 0.2em;
+        }
+
+        h5 {
+          font-size: 1.2em;
+        }
+
+        h6 {
+          font-size: 1em;
+          font-weight: bold;
+        }
+
+        p,
+        td {
+          line-height: 1.8em;
+        }
+
+        code,
+        kbd {
+          font-size: 1.25em;
+        }
+
+        /*
+
+  	-- -- -- -- -- -- --
+  	STYLE: Victoria
+  	-- -- -- -- -- -- --
+
+  */
+
+
+        /* ie6win */
+
+        /* IE/Win fixes for various layouts
+  ----------------------------------------------- */
+        * html #threecolumn #main-content {
+          width: 429px;
+          margin-left: -2px;
+        }
+
+        /* ie5mac */
+
+        /*\*/
+        /*/
+  * html #threecolumn #main-content {
+  	width: 429px;
+  	margin-left: 0;
+  }
+  /**/
+
+        /* ie5win */
+
+        @media tty {
+          i {
+            content: "\";/*" "*/}} td { font-size: 0.8em; } #footer p { margin: 0; padding: 1em 0; } /*";
+          }
+        }
+
+        /* */
+
+
+        /* Basic HTML style
+  ----------------------------------------------- */
+        a:link {
+          text-decoration: underline;
+        }
+
+        a:visited {
+          text-decoration: underline;
+        }
+
+        body {
+          font: 80% "Georgia", serif;
+          margin: 0;
+          padding: 25px 0 25px 0;
+          border-top: solid 3px #fff;
+          border-bottom: solid 3px #fff;
+        }
+
+        caption {
+          font-size: 1.2em;
+          font-style: italic;
+          text-align: left;
+          padding: 1px 4px 4px 4px;
+          margin-bottom: 4px;
+          border-bottom: solid 1px #ccc;
+        }
+
+        dt {
+          font-weight: bold;
+        }
+
+        dd {
+          font-style: italic;
+          margin: 0 0 1em 1em;
+        }
+
+        h2 {
+          font-size: 1.4em;
+          font-weight: normal;
+          margin: 1em 0;
+          padding-bottom: 3px;
+        }
+
+        h3 {
+          font-size: 1.2em;
+          font-weight: normal;
+          font-style: normal;
+          padding-bottom: 8px;
+          margin-top: 1em;
+          margin-bottom: 0.5em;
+        }
+
+        h4 {
+          font-size: 1.1em;
+          letter-spacing: 0.1em;
+          padding-left: 12px;
+          margin: 1.5em 0 1em 0;
+        }
+
+        h5 {
+          padding-bottom: 2px;
+          margin: 1.5em 0 1em 0;
+        }
+
+        h6 {
+          font-weight: normal;
+          letter-spacing: 0.1em;
+          margin: 1em 0;
+        }
+
+        hr {
+          margin: 2em 0;
+          border-style: none;
+          height: 1px;
+        }
+
+        p {
+          line-height: 1.6;
+          margin: 1em 0;
+        }
+
+        td {
+          vertical-align: top;
+          padding: 1px 4px;
+        }
+
+        td p {
+          margin: 0 0 1em 0;
+        }
+
+        th {
+          text-align: left;
+          font-weight: normal;
+          font-style: italic;
+          vertical-align: top;
+          padding: 1px 4px;
+        }
+
+
+        ul,
+        ol,
+        dl {
+          margin-bottom: 1.6em;
+          padding-left: 2em;
+          margin-left: 0;
+        }
+
+        ul li {
+          list-style: circle;
+          margin-bottom: 0.8em;
+        }
+
+        ol li {
+          list-style: upper-roman;
+          margin-left: 2em;
+          margin-bottom: 0.8em;
+        }
+
+
+
+
+        /* Header
+  ----------------------------------------------- */
+        h1 {
+          padding-top: 25px;
+          font-size: 2.4em;
+          letter-spacing: 0.1em;
+          text-align: center;
+        }
+
+        #g_description {
+          font-style: italic;
+          text-align: center;
+          padding-bottom: 15px;
+          margin: 0;
+          line-height: 1;
+        }
+
+
+        /* content
+  ----------------------------------------------- */
+        #main-content .wrapper {
+          margin: 0 25px;
+        }
+
+
+
+        /* sidebar
+  ----------------------------------------------- */
+
+        #sidebar .wrapper {
+          padding-left: 15px;
+          padding-right: 5px;
+        }
+
+        #sidebar .wrapper h3 {
+          padding: 0 0 11px 0;
+        }
+
+
+        #sidebar li {
+          margin-bottom: 0.8em;
+        }
+
+        #sidebar .wrapper ul li {
+          list-style: circle;
+        }
+
+        #sidebar .wrapper ol li {
+          list-style: upper-roman;
+        }
+
+        #sidebar .links {
+          margin-bottom: 2em;
+        }
+
+
+        #adsense,
+        #adsense .wrapper {
+          text-align: left;
+          margin: 0;
+          padding: 0;
+        }
+
+
+        /* footer
+  ----------------------------------------------- */
+        #footer {
+          margin: 0;
+          font-style: italic;
+          font-size: 0.9em;
+        }
+
+        #footer hr {
+          display: none;
+        }
+
+        /* header
+  ----------------------------------------------- */
+        #header #page-title {
+          padding-left: 12px;
+          padding-right: 12px;
+        }
+
+        #header #g_description {
+          margin-left: 12px;
+          margin-right: 12px;
+        }
+
+        /* fixed 1 column
+  ----------------------------------------------- */
+        #onecolumn #header .wrapper {
+          padding-bottom: 10px;
+        }
+
+        #onecolumn #footer {
+          padding: 0 25px 10px 25px;
+        }
+
+
+
+        /* fixed left 2 column
+  ----------------------------------------------- */
+        #twocolumn-left #header .wrapper {
+          padding-bottom: 10px;
+        }
+
+        #twocolumn-left #footer {
+          padding: 0 25px 10px 264px;
+        }
+
+
+        /* fixed right 2 column
+  ----------------------------------------------- */
+        #twocolumn-right #header .wrapper {
+          padding-bottom: 10px;
+        }
+
+        #twocolumn-right #footer {
+          padding: 0 264px 10px 25px;
+        }
+
+
+        /* fixed 3 column
+  ----------------------------------------------- */
+        #threecolumn #header .wrapper {
+          padding-bottom: 10px;
+        }
+
+        #threecolumn #footer {
+          padding: 0 168px 10px 168px;
+        }
+
+        #sidebar-alternate {
+          width: 129px;
+        }
+
+
+        /* liquid 2 column, right and left
+  ----------------------------------------------- */
+        #twocolumn-liquid-left,
+        #twocolumn-liquid-right {
+          padding: 0;
+          border: 0;
+          border-top: solid 1px #999;
+        }
+
+        #twocolumn-liquid-left h1,
+        #twocolumn-liquid-right h1 {
+          margin: 0;
+        }
+
+
+        #twocolumn-liquid-left #footer,
+        #twocolumn-liquid-right #footer {
+          padding: 0;
+          margin: 0;
+        }
+
+        #twocolumn-liquid-left #container #footer .wrapper,
+        #twocolumn-liquid-right #container #footer .wrapper {
+          padding: 10px 25px 10px 25px;
+          text-align: center;
+        }
+
+
+
+
+        #twocolumn-liquid-left #sidebar .wrapper *,
+        #twocolumn-liquid-right #sidebar .wrapper * {
+          margin-left: 0;
+          margin-right: 0;
+        }
+
+        #twocolumn-liquid-left #sidebar h3,
+        #twocolumn-liquid-right #sidebar h3 {
+          padding-left: 0;
+        }
+
+        #twocolumn-liquid-left #sidebar ul,
+        #twocolumn-liquid-left #sidebar ol,
+        #twocolumn-liquid-right #sidebar ul,
+        #twocolumn-liquid-right #sidebar ol {
+          padding-left: 2.5em;
+          /* extra wide for IE's sake */
+        }
+
+        #twocolumn-liquid-left #sidebar .links ul,
+        #twocolumn-liquid-right #sidebar .links ul {
+          padding-left: 0;
+        }
+
+
+
+
+
+
+
+        /* editable area borders
+  ----------------------------------------------- */
+        .editable {
+          border: dashed 1px #f00;
+        }
+
+        #onecolumn .editmode h1,
+        #twocolumn-left .editmode h1,
+        #twocolumn-right .editmode h1,
+        #threecolumn .editmode h1 {
+          background-position: -1px 0;
+        }
+
+        #twocolumn-liquid-left .editmode h1,
+        #twocolumn-liquid-right .editmode h1 {
+          background-position: 0 -1px;
+        }
+
+        /*
+
+  	-- -- -- -- -- -- --
+  	COLOR SCHEME: Underbrush
+  	-- -- -- -- -- -- --
+
+  */
+
+
+        /* Basic HTML style */
+
+        a:link {
+          color: #A04D3E;
+          border-bottom: solid 1px #C3C191;
+          text-decoration: none;
+        }
+
+        a:visited {
+          color: #BC8278;
+          border-bottom: solid 1px #BC8278;
+          text-decoration: none;
+        }
+
+        a:hover {
+          color: #000;
+          border-color: #000;
+        }
+
+        body {
+          color: #36341A;
+          background: #3C391B url(../devnull_style/body-bg.gif) repeat-x left top;
+        }
+
+        caption {
+          border-bottom-color: #ccc;
+        }
+
+        code,
+        kbd {
+          color: #A04D3E;
+        }
+
+        dt {}
+
+        dd {}
+
+        h2 {
+          color: #A04D3E;
+          background: url(../devnull_style/h2.gif) repeat-x left bottom;
+        }
+
+        h3 {
+          color: #827C5C;
+          background: url(../devnull_style/h3.gif) repeat-x left bottom;
+        }
+
+        h4 {
+          color: #A04D3E;
+          background: url(../devnull_style/h4.gif) no-repeat 0 5px;
+        }
+
+        h5 {
+          color: #ADA97C;
+          background: url(../devnull_style/h5-border.gif) repeat-x left bottom;
+        }
+
+        h6 {
+          color: #3C391B;
+        }
+
+        hr {
+          color: #B3B3A9;
+          background: #B3B3A9;
+          border-color: #B3B3A9;
+        }
+
+        td {
+          vertical-align: top;
+          padding: 1px 4px;
+        }
+
+        th {}
+
+
+
+
+        /* Header
+  ----------------------------------------------- */
+        h1 {
+          color: #36341A;
+        }
+
+        #g_description {
+          color: #DAD7A4;
+        }
+
+        /* fixed-width common header
+  ----------------------------------------------- */
+        #onecolumn h1,
+        #twocolumn-left h1,
+        #twocolumn-right h1,
+        #threecolumn h1 {
+          background: url(../devnull_style/fixed-h1.gif) no-repeat;
+        }
+
+        #onecolumn #header,
+        #twocolumn-left #header,
+        #twocolumn-right #header,
+        #threecolumn #header {
+          background: url(../devnull_style/fixed-header.gif) repeat-y;
+        }
+
+
+
+        #footer {
+          color: #797454;
+        }
+
+        .editable {
+          border: dashed 1px #f00;
+        }
+
+
+
+        /* fixed 1 column
+  ----------------------------------------------- */
+        #onecolumn #header .wrapper {
+          background: url(../devnull_style/fixed-one-headerwrapper.gif) no-repeat left bottom;
+        }
+
+        #onecolumn #container {
+          background: #fff url(../devnull_style/fixed-one-container.gif) repeat-y;
+        }
+
+        #onecolumn #footer {
+          background: url(../devnull_style/fixed-one-footer.gif) no-repeat left bottom;
+        }
+
+
+
+        #sidebar .wrapper h3 {
+          background-image: url(../devnull_style/h3-sidebar-border.gif);
+        }
+
+
+        /* fixed 2 column left
+  ----------------------------------------------- */
+        #twocolumn-left #header .wrapper {
+          background: url(../devnull_style/fixed-left-headerwrapper.gif) no-repeat left bottom;
+        }
+
+        #twocolumn-left #container {
+          background: #fff url(../devnull_style/fixed-left-container.gif) repeat-y;
+        }
+
+        #twocolumn-left #footer {
+          background: url(../devnull_style/fixed-left-footer.gif) no-repeat left bottom;
+        }
+
+
+        /* fixed 2 column right
+  ----------------------------------------------- */
+        #twocolumn-right #header .wrapper {
+          background: url(../devnull_style/fixed-right-headerwrapper.gif) no-repeat left bottom;
+        }
+
+        #twocolumn-right #container {
+          background: #fff url(../devnull_style/fixed-right-container.gif) repeat-y;
+        }
+
+        #twocolumn-right #footer {
+          background: url(../devnull_style/fixed-right-footer.gif) no-repeat left bottom;
+        }
+
+
+        /* fixed 3 column
+  ----------------------------------------------- */
+        #threecolumn #header .wrapper {
+          background: url(../devnull_style/fixed-three-headerwrapper.gif) no-repeat left bottom;
+        }
+
+        #threecolumn #container {
+          background: #fff url(../devnull_style/fixed-three-container.gif) repeat-y;
+        }
+
+        #threecolumn #footer {
+          background: url(../devnull_style/fixed-three-footer.gif) no-repeat left bottom;
+        }
+
+        #threecolumn #sidebar h3,
+        #threecolumn #sidebar-alternate h3 {
+          background: url(../devnull_style/h3-sidebar-border-3col.gif) no-repeat center bottom;
+        }
+
+
+        /* liquid 2 column, right and left
+  ----------------------------------------------- */
+        #twocolumn-liquid-left,
+        #twocolumn-liquid-right {
+          background: #fff;
+        }
+
+        #twocolumn-liquid-left h1,
+        #twocolumn-liquid-right h1 {
+          margin: 0;
+          background: url(../devnull_style/liquid-header-left.gif) no-repeat left top;
+        }
+
+        #twocolumn-liquid-left #header,
+        #twocolumn-liquid-right #header {
+          background: #87815F url(../devnull_style/liquid-header-bg.gif) repeat-x;
+        }
+
+        #twocolumn-liquid-left #container #header .wrapper,
+        #twocolumn-liquid-right #container #header .wrapper {
+          background: url(../devnull_style/liquid-header-right.gif) no-repeat right top;
+        }
+
+        #twocolumn-liquid-left #container #header p.description,
+        #twocolumn-liquid-right #container #header p.description {
+          background: url(../devnull_style/liquid-header-desc.gif) repeat-y left top;
+        }
+
+
+        #twocolumn-liquid-left #footer,
+        #twocolumn-liquid-right #footer {
+          background: url(../devnull_style/liquid-left-footer.gif) no-repeat left bottom;
+        }
+
+        #twocolumn-liquid-left #container #footer .wrapper,
+        #twocolumn-liquid-right #container #footer .wrapper {
+          background: url(../devnull_style/liquid-right-footer.gif) no-repeat right bottom;
+        }
+
+
+        #twocolumn-liquid-left #container,
+        #twocolumn-liquid-right #container {
+          background: #fff url(../devnull_style/liquid-left-container.gif) repeat-y;
+        }
+
+        #twocolumn-liquid-left #container .wrapper,
+        #twocolumn-liquid-right #container .wrapper {
+          background: url(../devnull_style/liquid-right-container.gif) repeat-y right top;
+        }
+
+        /** END CUSTOM SKIN **/
+      </style>
+
+      <!-- Hack to avoid flash of unstyled content in IE -->
+      <script> </script>
+      </head>
+
+      <body id="onecolumn">
+
+        <div id="container">
+          <div class="wrapper">
+            <div id="header">
+              <div class="wrapper">
+                <h1 id="page-title">
+                  <div id="g_title">Known Issues With OOO 1.32 RC5<br></div>
+                </h1>
+                <div style="clear: both;"></div>
+                <p class="description"></p>
+                <div id="g_description">
+                  <p>General and Specific Problems With Oscuro's Oblivion Overhaul 1.32 RC5<br></p>
+                </div>
+                <p></p>
+                <div style="clear: both"></div>
+              </div>
+            </div>
+            <!-- /editable --><!-- /wrapper --><!-- /header -->
+            <div id="main-content">
+
+              <div class="wrapper">
+                <div class="content-item ">
+                  <div id="g_body">
+                    <font color="#660000" size="1">Last Updated 01/04/2008</font>
+                    <p>
+                      <font size="2">If you are still using RC3, you should also check <a href="http://devnull.sweetdanger.net/oooproblemsrc3">Known Issues with OOO 1.32 RC3</a>.</font>
+                    </p>
+                    <h2>
+                      <font size="6">Selling Platinum Coins</font>
+                    </h2>
+                    <p>
+                      <font size="2">Selling your Platinum Coins can still sometimes cause problems with saving your game (CTD on save). This problem has been around since OOO 1.3 was first released and we still don't understand why it happens. If you run into this bug, you may be able to solve it by installing Tarnsman's <a href="#" title="Link no longer available - PlanetElderScrolls is defunct">Ayleid Coin Add-on</a>. Be sure to use the OOO version.<br></font>
+                    </p>
+                    <h2>
+                      <font size="6">Performance Issues<br></font>
+                    </h2>
+                    <p>
+                      <font size="2">OOO is a system-resource intensive mod. It may slow down your game.
+                        This will vary a lot depending on your system and it may also improve
+                        as you play the mod for a while. If the performance hit is significant
+                        enough to be a problem for you, you can sometimes improve things by
+                        turning off the fishies. To do this, open the Oblivion console and type:</font>
+                    </p>
+                    <p>
+                      <font face="courier new,monospace" size="2"> Set OOOFishSpawn to 0</font>
+                    </p>
+                    <font size="2">This will have the biggest impact when you are near water.</font>
+                    <h2>
+                      <font size="6">User Interface Mods and Official 1.2 Patch</font>
+                    </h2>
+                    <p>
+                      <font size="1"><i>(Thanks to Arkgnt, apet07, drmbs76, and killgore for this info!)</i></font><br>
+                    </p>
+                    <h4><b>
+                        <font size="2">HUD Mod CTDs</font>
+                      </b></h4>
+                    <p>
+                      <font size="2">The official Oblivion 1.2
+                        patch has problems with certain interface mods. In particular, there are problems with HUD mods that replace the normal spell effect timer bars with a text-only counter. What happens is that certain very short spell effects can lead to CTDs with spell effect timers that have countdowns in seconds.
+                        With OOO 1.32, you may get these CTDs with trapped containers. The problem isn't specific to OOO, however. It also causes CTDs near the end of the Shivering Isles main quest, so you'll need to fix this problem even if you're not using OOO.</font>
+                    </p>
+                    <p>
+                      <font size="2">The other interface problem is a more general issue with the official 1.2 patch and UI mods like older versions of Darnified UI (and Phinix Immersive DarkUI, etc.) that use new interface fonts, so this problem is not specifically connected to OOO at all. Both problems can be fixed, however.</font>
+                    </p>
+                    <p>
+                      <font size="2">To
+                        get rid of the CTD's when opening trapped containers in OOO 1.32, one method is to use the new optional plugin (added in RC2) called </font>
+                      <font size="2"><span style="font-weight: bold;">OOO-Container_Trap_Instant_Effects</span>. This add-on turns chests traps into instant effects so the timers will no longer be a problem (although you may still encounter the bug with other spell effects).</font>
+                    </p>
+                    <p>
+                      <font size="2">Another (probably more reliable) method is to reinstall <a href="#" title="Link no longer available - PlanetElderScrolls is defunct" target="_blank">Immersive Interface</a> and choose bars instead of seconds for current spell effects
+                        during the Immersive Interface setup. You can probably still use
+                        seconds if you really want to by following <a href="https://forums.bethsoft.com/index.php?s=&amp;showtopic=674268&amp;view=findpost&amp;p=9722116" target="_blank">apet07's instructions</a>. Here's the key point from his post:</font>
+                    </p>
+                    <p>
+                      <font size="2">Open<b> hudmainmenu_config.xml, </b>found<b></b>in<b>
+                          Oblivion\Data\menus\prefabs\ui_config\, </b>with a suitable editor and change the line that reads:</font>
+                    </p>
+                    <p>
+                      <font face="courier new,monospace" size="2"><b><i>&lt;_aecta&gt; 0 &lt;/_aecta&gt; &lt;!-- DEFAULT : 255 --&gt;</i></b></font>
+                    </p>
+                    <p>
+                      <font size="2">to instead say:<b><br></b></font>
+                    </p>
+                    <p>
+                      <font face="courier new,monospace" size="2"><b><i> &lt;_aecta&gt; 130 &lt;/_aecta&gt; &lt;!-- DEFAULT : 255 --&gt;</i></b></font>
+                    </p>
+                    <p>
+                      <font size="2">Save your changes. This should give you both a text timer and a normal bar timer, like in the original BTMod.</font>
+                    </p>
+                    <p>
+                      <font size="2">Another solution to try if that one doesn't work is to look for a line in the same file that says:</font>
+                    </p>
+                    <p>
+                      <font size="2"></font><b>
+                        <font face="courier new,monospace"> &lt;_arctimer&gt; &amp;false; &lt;/_arctimer&gt;</font>
+                      </b>
+                    </p>
+                    <p>
+                      <font size="2">and change it to:</font>
+                    </p>
+                    <p><b>
+                        <font face="courier new,monospace"> &lt;_arctimer&gt; &amp;true; &lt;/_arctimer&gt;</font>
+                      </b></p>
+                    <p>
+                      <font size="2">You'll also need to modify the next few lines after that, so the entire result looks like:</font>
+                    </p>
+                    <p><b>
+                        <font face="courier new,monospace" size="2"></font>
+                        <font face="courier new,monospace">&lt;_arctimer&gt; &amp;true; &lt;/_arctimer&gt;<br><br> &lt;_aectx&gt; 0 &lt;/_aectx&gt;<br> &lt;_aecty&gt; 31 &lt;/_aecty&gt;</font>
+                      </b></p>
+                    <p>
+                      <font size="2">This will add a barely visible timer bar under the text timer, hence preventing the CTD.</font>
+                    </p>
+                    <p>
+                      <font size="2">If you use Phinix Immersive DarkUI, there's a patch to make this change for you: <a href="https://www.nexusmods.com/oblivion/mods/10974">Phinix Immersive Dark UI Compatiblilty Fix for OOO and SI</a>.</font>
+                    </p>
+                    <p>
+                      <font size="2">This problem is also solved in <a href="https://www.nexusmods.com/oblivion/mods/10763">DarNified UI</a> 1.0 or later.<br></font>
+                    </p>
+                    <p>
+                      <font size="2">If you use one of these other solutions, then you don't need </font>
+                      <font size="2">to use the </font>
+                      <font size="2"><span style="font-weight: bold;">OOO-Container_Trap_Instant_Effects</span>.&nbsp; option.</font>
+                      <font size="2"><br></font>
+                    </p>
+                    <h4><b>
+                        <font size="2">UI Fonts</font>
+                      </b></h4>
+                    <p>
+                      <font size="2">If you use DarNified UI, you'll also need to update your fonts for compatibility with the official 1.2 patch. You can find details and downloads on the <a href="http://www.darnui.com/" target="_blank">DarNified UI</a> page, or you can simply install the <a href="https://www.nexusmods.com/oblivion/mods/10763">latest version</a> (1.0 or later).&nbsp;</font>
+                    </p>
+                    <p>
+                      <font size="2">If you're using one of the older DarN versions (or another UI mod derived from a version of DarNified UI </font>
+                      <font size="2">prior to version 1.0</font>
+                      <font size="2">), then here's one suggested font setup that works:</font>
+                    </p>
+                    <div class="codemain">
+                      <font face="courier new,monospace" size="2">[Fonts]<br>SFontFile_1=Data\Fonts\Kingthings_Regular.fnt<br>SFontFile_2=Data\Fonts\Kingthings_Shadowed.fnt<br>SFontfile_3=Data\Fonts\DarN_Kingthings_Petrock_16.fnt<br>SFontFile_4=Data\Fonts\Daedric_Font.fnt<br>SFontfile_5=Data\Fonts\DarN_Kingthings_Petrock_14.fnt</font>
+                    </div>
+                    <p>
+                      <font size="2">This doesn't work with the latest DarNified UI since the font setup has changed significantly, but it should help for older versions (and other UI mods derived from older versions of DarNified UI).</font>
+                    </p>
+                    <p>
+                      <font size="2">The
+                        above should also work for other UI mods, if you would rather use BTMod,
+                        DarkUI, etc. -- i.e., switch fonts if they cause problems, choose bars for
+                        current spell effects or change the xml by following apet07's
+                        instructions.</font>
+                    </p>
+                    <p>
+                      <font size="2">Note that for some of these UIs, you
+                        really need to perform an <a href="http://devnull.sweetdanger.net/archiveinvalidation.html">Archive Invalidation</a> with OBMM or Wrye Bash to get
+                        it to work correctly.</font>
+                    </p>
+                    <font size="2"></font><br>
+                  </div>
+                </div>
+                <div style="clear: both"></div>
+              </div>
+            </div>
+            <!-- /wrapper --><!-- /main-content -->
+            <div id="footer">
+              <div class="wrapper">
+                <hr>
+                <p></p>
+                <div id="g_footer">
+                  <p><a href="http://devnull.sweetdanger.net/home.html">Home</a> | <a href="http://devnull.sweetdanger.net/OOO/OOO_Guide.html">OOO Quick Start</a> | &nbsp;</p>
+    </main>
+
+    <footer>
+      <p>
+        <a href="../index.html">Home</a> |
+        <a href="../devakm-mods.html">Dev/Null Mods</a> |
+        <a href="OOO_Guide.html">OOO Quick Start</a>
+      </p>
+      <p>Copyright 2006, 2007, 2008, 2009, 2015, 2025 by devakm. Individual works copyright by their respective creators.</p>
+    </footer>
+  </div>
+</body>
+
+</html>
