@@ -1,26 +1,22 @@
 # Git LFS configuration for devnull documentation site
 
-# Image files
-*.jpg filter=lfs diff=lfs merge=lfs -text
-*.jpeg filter=lfs diff=lfs merge=lfs -text
-*.png filter=lfs diff=lfs merge=lfs -text
-*.gif filter=lfs diff=lfs merge=lfs -text
-*.bmp filter=lfs diff=lfs merge=lfs -text
-*.ico filter=lfs diff=lfs merge=lfs -text
-# Archive files
+# Archive files (keep in LFS - downloadable resources not needed for website display)
 *.zip filter=lfs diff=lfs merge=lfs -text
 *.rar filter=lfs diff=lfs merge=lfs -text
 *.7z filter=lfs diff=lfs merge=lfs -text
 *.bsa filter=lfs diff=lfs merge=lfs -text
-# Executable files
+
+# Executable files (keep in LFS - downloadable resources)
 *.exe filter=lfs diff=lfs merge=lfs -text
-# Document files
+
+# Document files (keep in LFS - downloadable resources)
 *.pdf filter=lfs diff=lfs merge=lfs -text
-# Video files
+
+# Video files (keep in LFS if any are added)
 *.mp4 filter=lfs diff=lfs merge=lfs -text
 *.avi filter=lfs diff=lfs merge=lfs -text
 *.mov filter=lfs diff=lfs merge=lfs -text
 *.wmv filter=lfs diff=lfs merge=lfs -text
-*.jpg !text !filter !merge !diff
-*.png !text !filter !merge !diff
-*.gif !text !filter !merge !diff
+
+# NOTE: Images are NOT in LFS because GitHub Pages doesn't support serving LFS files.
+# Images are committed directly to git so they display correctly on the website.
