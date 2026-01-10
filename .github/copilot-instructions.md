@@ -68,6 +68,67 @@ The shared CSS provides these CSS variables:
    - Credits and contributor lists
    - Detailed step-by-step instructions
 
+### Conversion Verification Checklist
+
+**MANDATORY - Verify ALL items before completing any HTML conversion:**
+
+#### General Page Requirements
+- [ ] Used `<!DOCTYPE html>` (not HTML 4.01 Transitional)
+- [ ] Linked to shared CSS: `<link rel="stylesheet" href="css/devnull-shared.css">`
+- [ ] NO inline `<style>` blocks (unless page-specific styles are required)
+- [ ] NO Wayback Machine scripts, toolbars, or wrapper divs
+- [ ] All `<font>` tags converted to semantic HTML
+- [ ] Structure uses `<div class="container">` → `<header>` → `<main>` → `<div class="footer">`
+- [ ] Title tag is descriptive and accurate
+- [ ] Meta charset and viewport tags present
+
+#### Content Preservation
+- [ ] 100% of original content preserved (compared against original file)
+- [ ] All technical explanations intact (no summarizing)
+- [ ] All code examples preserved with original formatting
+- [ ] All credits and contributor names preserved
+- [ ] All step-by-step instructions preserved
+- [ ] All tables and structured data preserved
+- [ ] Historical dates and "Last Updated" information preserved
+
+#### Links and Navigation
+- [ ] All external links have `target="_blank"`
+- [ ] Dead links updated to modern equivalents (UESP, Nexusmods)
+- [ ] Wayback Machine URLs unwrapped and modernized
+- [ ] Internal links use relative paths (not absolute URLs)
+- [ ] Footer navigation matches page type (see below)
+
+#### FCOM Page-Specific Requirements
+**If converting a FCOM_*.html page, verify ALL of these:**
+- [ ] Footer uses `<div class="footer">` NOT `<footer>` tag
+- [ ] Footer includes PES Hall of Fame image: `<img src="images/PES_HallofFameSmall.jpg" class="nav-image">`
+- [ ] Footer has `<hr class="nav-divider">` BEFORE navigation links
+- [ ] Footer has `<hr class="nav-divider">` AFTER navigation links
+- [ ] Footer includes ALL 9 navigation links in this order:
+  1. Home
+  2. Dev/Null Mods
+  3. Main (FCOM_Convergence.html)
+  4. Guide (FCOM_Convergence_Guide.html)
+  5. Load-Order (FCOM_LoadOrder.html)
+  6. FAQ (FCOM_FAQ.html)
+  7. Support (FCOM_Support.html)
+  8. Options (FCOM_Options.html)
+  9. Version History (FCOM_VersionHistory.html)
+- [ ] Copyright line exactly matches: `Copyright 2006, 2007, 2008, 2009, 2015, 2025 by devakm. Individual works copyright by their respective creators.`
+
+#### Standard Page Footer Requirements
+**If converting a non-FCOM page, verify:**
+- [ ] Footer uses `<div class="footer">` NOT `<footer>` tag
+- [ ] Footer includes standard 4-link navigation (Home | Dev/Null Mods | TOTO Main | Quest List)
+- [ ] Copyright line matches standard format
+
+#### Final Validation
+- [ ] Opened file in browser to verify rendering
+- [ ] All images load correctly
+- [ ] No console errors in browser dev tools
+- [ ] Dark mode colors display correctly
+- [ ] All links clickable and functional
+
 ## Key Content Areas
 
 - **FCOM: Convergence** - Major mod integration project (Francesco + WarCry + Oscuro + Martigen)
