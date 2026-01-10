@@ -104,16 +104,14 @@ The shared CSS provides these CSS variables:
 - [ ] Footer includes PES Hall of Fame image: `<img src="images/PES_HallofFameSmall.jpg" class="nav-image">`
 - [ ] Footer has `<hr class="nav-divider">` BEFORE navigation links
 - [ ] Footer has `<hr class="nav-divider">` AFTER navigation links
-- [ ] Footer includes ALL 9 navigation links in this order:
+- [ ] Footer includes ALL 7 navigation links in this order:
   1. Home
   2. Dev/Null Mods
   3. Main (FCOM_Convergence.html)
   4. Guide (FCOM_Convergence_Guide.html)
   5. Load-Order (FCOM_LoadOrder.html)
-  6. FAQ (FCOM_FAQ.html)
-  7. Support (FCOM_Support.html)
-  8. Options (FCOM_Options.html)
-  9. Version History (FCOM_VersionHistory.html)
+  6. Options (FCOM_Options.html)
+  7. Version History (FCOM_VersionHistory.html)
 - [ ] Copyright line exactly matches: `Copyright 2006, 2007, 2008, 2009, 2015, 2025 by devakm. Individual works copyright by their respective creators.`
 
 #### Standard Page Footer Requirements
@@ -183,8 +181,6 @@ FCOM-related pages should include the extended FCOM footer navigation:
         <a href="FCOM_Convergence.html">Main</a> |
         <a href="FCOM_Convergence_Guide.html">Guide</a> |
         <a href="FCOM_LoadOrder.html">Load-Order</a> |
-        <a href="FCOM_FAQ.html">FAQ</a> |
-        <a href="FCOM_Support.html">Support</a> |
         <a href="FCOM_Options.html">Options</a> |
         <a href="FCOM_VersionHistory.html">Version History</a>
         <hr class="nav-divider">
