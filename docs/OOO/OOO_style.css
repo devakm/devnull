@@ -406,6 +406,13 @@ html>body #navBar li {border-bottom: none;}
      ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
      SECTION 108(a)(3)).
 */
+
+/* Custom styles added 2025 */
+.image-right {
+    float: right;
+    margin: 0 0 15px 15px;
+}
+
 /*
 playback timings (ms):
   captures_list: 0.627
