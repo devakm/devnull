@@ -127,7 +127,12 @@ The shared CSS provides these CSS variables:
 - [ ] All images load correctly
 - [ ] No console errors in browser dev tools
 - [ ] Dark mode colors display correctly
-- [ ] All links clickable and functional
+- [ ] **Link Testing (MANDATORY - Test ALL links):**
+  - [ ] Clicked every external link to verify it resolves (not 404)
+  - [ ] Verified internal links point to existing files
+  - [ ] Checked that modernized links (UESP, Nexusmods) load correctly
+  - [ ] Documented any broken links that cannot be fixed
+  - [ ] Reported broken links to user before completing task
 
 ## Key Content Areas
 
@@ -295,9 +300,37 @@ Copy-Item "x:\dev-staging\temp\devnull.devakm - Page Name_files\*.png" "x:\dev\d
 ```
 
 ## Testing
-Open converted HTML files in browser to verify:
-- All content renders correctly
-- Links work (especially updated UESP/Nexus links)
-- Dark mode colors are consistent
-- No missing sections or truncated content
-- All images load properly from `docs/images/` folder
+
+### Pre-Deployment Validation
+Before completing any HTML conversion, perform comprehensive testing:
+
+**Content Rendering:**
+- Open converted HTML file in browser
+- Verify all sections render correctly with proper formatting
+- Check that dark mode colors are consistent throughout
+- Confirm no missing sections or truncated content
+- Verify all images load properly from `docs/images/` folder
+
+**Link Validation (CRITICAL):**
+1. **Test ALL external links:**
+   - Click each external link to verify it resolves (not 404/dead)
+   - Confirm modernized links (UESP, Nexusmods, UESPNET) load correctly
+   - Verify target="_blank" opens in new tab
+   - Document any dead links that couldn't be modernized
+
+2. **Test ALL internal links:**
+   - Click each internal link to verify file exists
+   - Confirm relative paths resolve correctly
+   - Check navigation footer links work properly
+
+3. **Report Broken Links:**
+   - If any links cannot be fixed or modernized, document them
+   - Report to user with list of broken links and URLs attempted
+   - Suggest archival alternatives or indicate "link no longer available"
+   - Example: "Note: XYZ mod page no longer exists - PlanetElderScrolls is defunct"
+
+**Browser Console Check:**
+- Open browser dev tools (F12)
+- Check for any JavaScript errors (there shouldn't be any - pure HTML/CSS)
+- Verify no 404 errors for missing resources
+- Confirm no mixed content warnings
