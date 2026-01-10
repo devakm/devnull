@@ -418,3 +418,42 @@ th {
     color: var(--accent-red);
     font-weight: bold;
 }
+
+/* Load Order Plugin Lists */
+.load-order {
+    background-color: var(--bg-tertiary);
+    padding: 20px;
+    border-radius: 4px;
+    margin: 20px 0;
+    border: 1px solid var(--border-color);
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.95em;
+    line-height: 1.8;
+}
+
+.load-order-line {
+    color: var(--text-primary);
+    margin: 2px 0;
+}
+
+.load-order-line .checkbox {
+    color: var(--accent-green);
+    margin-right: 4px;
+}
+
+.load-order-line .plugin-name {
+    color: var(--text-primary);
+}
+
+.load-order-line .plugin-note {
+    color: var(--text-secondary);
+    font-style: italic;
+}
+
+.load-order-line .plugin-note.required {
+    color: var(--accent-red);
+}
+
+.load-order-line .plugin-note.optional {
+    color: var(--accent-blue);
+}
