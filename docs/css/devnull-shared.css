@@ -275,7 +275,7 @@ footer {
     border: 0;
     height: 2px;
     background: linear-gradient(to right, transparent, var(--border-color), transparent);
-    margin: 40px 0;
+    margin: 20px 0;
 }
 
 hr {
