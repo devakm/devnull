@@ -1,0 +1,2788 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FCOM Detailed Load Order</title>
+    <link rel="stylesheet" href="css/devnull-shared.css">
+    <style>
+        /* Page-specific styles for the detailed load order table */
+        .load-order-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 0.9em;
+            background-color: var(--bg-tertiary);
+        }
+
+        .load-order-table th {
+            background-color: var(--bg-primary);
+            color: var(--accent-gold);
+            font-weight: bold;
+            padding: 12px 8px;
+            text-align: left;
+            border: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .load-order-table td {
+            padding: 8px;
+            border: 1px solid var(--border-color);
+            vertical-align: top;
+        }
+
+        .load-order-table tr:hover {
+            background-color: var(--bg-secondary);
+        }
+
+        .load-number {
+            text-align: center;
+            font-weight: bold;
+            color: var(--accent-cyan);
+            min-width: 40px;
+        }
+
+        .plugin-file {
+            font-family: 'Courier New', monospace;
+            color: var(--text-primary);
+            min-width: 250px;
+        }
+
+        .mod-name {
+            color: var(--text-primary);
+            min-width: 180px;
+        }
+
+        .version {
+            text-align: center;
+            color: var(--text-secondary);
+            min-width: 60px;
+        }
+
+        .conflicts {
+            color: var(--accent-red);
+            font-size: 0.85em;
+        }
+
+        .mod-group {
+            color: var(--accent-blue);
+            font-size: 0.85em;
+        }
+
+        .category {
+            color: var(--accent-green);
+            font-size: 0.85em;
+        }
+
+        .description {
+            color: var(--text-secondary);
+            font-size: 0.85em;
+        }
+
+        .legend {
+            background-color: var(--bg-tertiary);
+            padding: 20px;
+            border-radius: 4px;
+            margin: 20px 0;
+            border: 1px solid var(--border-color);
+        }
+
+        .legend h4 {
+            color: var(--accent-gold);
+            margin-top: 0;
+        }
+
+        .legend ul {
+            margin-left: 20px;
+        }
+
+        .legend li {
+            margin-bottom: 8px;
+        }
+
+        .obse-required {
+            color: var(--accent-red);
+            font-weight: bold;
+        }
+
+        .conflict-resolved {
+            color: var(--accent-gold);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>FCOM Detailed Load Order</h1>
+            <p class="subtitle">Mods in Load Order</p>
+        </header>
+
+        <main>
+            <p class="last-updated">Last Updated 07/04/2009</p>
+
+            <div class="warning">
+                <p><strong>Important:</strong> This is an advanced configuration with 259 plugins. Modern load order tools like <a href="https://loot.github.io/" target="_blank">LOOT</a> (Load Order Optimization Tool) can help automate much of this process. This historical list is preserved for reference and for those seeking to recreate a complete FCOM setup similar to what was possible in 2009.</p>
+            </div>
+
+            <div class="note">
+                <p><strong>Note:</strong> Many mods listed here require <a href="http://obse.silverlock.org/" target="_blank">OBSE (Oblivion Script Extender)</a>. These are marked with <span class="obse-required">Requires OBSE</span> in the conflicts column.</p>
+                <p>Use <a href="https://www.nexusmods.com/site/mods/591" target="_blank">Wrye Bash's</a> merge function to combine compatible mods into the Bashed Patch.esp if you want to exceed the 255 plugin limit.</p>
+            </div>
+
+            <table class="load-order-table">
+                <thead>
+                    <tr>
+                        <th>Load Order</th>
+                        <th>File Name</th>
+                        <th>Mod</th>
+                        <th>Version</th>
+                        <th>Conflicts/Notes</th>
+                        <th>Mod Group</th>
+                        <th>Category</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="load-number">1</td>
+                        <td class="plugin-file">Oblivion.esm</td>
+                        <td class="mod-name">Core game</td>
+                        <td class="version">1.2.0416</td>
+                        <td class="conflicts"></td>
+                        <td class="mod-group">Core</td>
+                        <td class="category">Core</td>
+                        <td class="description"></td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">2</td>
+                        <td class="plugin-file">Armamentarium.esm</td>
+                        <td class="mod-name"><a href="https://www.nexusmods.com/oblivion/mods/3930" target="_blank">Armamentarium</a></td>
+                        <td class="version">1.0</td>
+                        <td class="conflicts">.esm file provided by ArmamentariumForNPCs Load before OOO.esp</td>
+                        <td class="mod-group"></td>
+                        <td class="category">Armor Weapons</td>
+                        <td class="description"></td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">3</td>
+                        <td class="plugin-file">Oscuro's_Oblivion_Overhaul.esm</td>
+                        <td class="mod-name"><a href="https://www.nexusmods.com/oblivion/mods/15256" target="_blank">Oscuro's Oblivion Overhaul</a></td>
+                        <td class="version">1.34b5</td>
+                        <td class="conflicts"></td>
+                        <td class="mod-group">OOO</td>
+                        <td class="category">Gameplay</td>
+                        <td class="description"></td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">4</td>
+                        <td class="plugin-file">Mart's Monster Mod.esm</td>
+                        <td class="mod-name"><a href="https://www.nexusmods.com/oblivion/mods/34038" target="_blank">Martigen's Monster Mod</a></td>
+                        <td class="version">3.7b1</td>
+                        <td class="conflicts"></td>
+                        <td class="mod-group">MMM</td>
+                        <td class="category">Gameplay</td>
+                        <td class="description"></td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">5</td>
+                        <td class="plugin-file">Mart's Monster Mod for OOO.esm</td>
+                        <td class="mod-name">Martigen's Monster Mod</td>
+                        <td class="version">3.7b1</td>
+                        <td class="conflicts"></td>
+                        <td class="mod-group">MMM</td>
+                        <td class="category">Gameplay</td>
+                        <td class="description"></td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">6</td>
+                        <td class="plugin-file">TamrielTravellers.esm</td>
+                        <td class="mod-name">Tamriel Travellers</td>
+                        <td class="version">1.39b</td>
+                        <td class="conflicts"></td>
+                        <td class="mod-group">TT</td>
+                        <td class="category">Gameplay</td>
+                        <td class="description"></td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">7</td>
+                        <td class="plugin-file">ScreenEffects.esm</td>
+                        <td class="mod-name">Screen Effects</td>
+                        <td class="version">1.0</td>
+                        <td class="conflicts"></td>
+                        <td class="mod-group"></td>
+                        <td class="category"></td>
+                        <td class="description"></td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">8</td>
+                        <td class="plugin-file">EnhancedWeather.esm</td>
+                        <td class="mod-name">Enhanced Weather</td>
+                        <td class="version">1.3.1</td>
+                        <td class="conflicts"></td>
+                        <td class="mod-group"></td>
+                        <td class="category"></td>
+                        <td class="description"></td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">9</td>
+                        <td class="plugin-file">Unofficial Oblivion Patch.esp</td>
+                        <td class="mod-name"><a href="https://www.nexusmods.com/oblivion/mods/5296" target="_blank">Unofficial Oblivion Patch</a></td>
+                        <td class="version">3.2</td>
+                        <td class="conflicts"></td>
+                        <td class="mod-group">Unofficial Patch</td>
+                        <td class="category">Patch</td>
+                        <td class="description">Over 1,100 bugs fixed. (2007-08-07)</td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">10</td>
+                        <td class="plugin-file">Oblivion Citadel Door Fix.esp</td>
+                        <td class="mod-name">Unofficial Oblivion Patch</td>
+                        <td class="version">3.2</td>
+                        <td class="conflicts"></td>
+                        <td class="mod-group"></td>
+                        <td class="category"></td>
+                        <td class="description"></td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">11</td>
+                        <td class="plugin-file">UOP Vampire Aging & Face Fix.esp</td>
+                        <td class="mod-name">Unofficial Oblivion Patch</td>
+                        <td class="version">3.2</td>
+                        <td class="conflicts"></td>
+                        <td class="mod-group"></td>
+                        <td class="category"></td>
+                        <td class="description"></td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">12</td>
+                        <td class="plugin-file">Unofficial Shivering Isles Patch.esp</td>
+                        <td class="mod-name"><a href="https://www.nexusmods.com/oblivion/mods/10739" target="_blank">Unofficial Shivering Isles Patch</a></td>
+                        <td class="version">1.4</td>
+                        <td class="conflicts">Can be placed before DLCShiveringIsles.esp (place holder esp)</td>
+                        <td class="mod-group">Unofficial Patch</td>
+                        <td class="category">Patch</td>
+                        <td class="description">Over 220 bugs in SI fixed (2007-12-25)</td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">13</td>
+                        <td class="plugin-file">MaleBodyReplacerV4.esp</td>
+                        <td class="mod-name"><a href="https://www.nexusmods.com/oblivion/mods/15980" target="_blank">Roberts Male body replacement</a></td>
+                        <td class="version">4.0</td>
+                        <td class="conflicts"></td>
+                        <td class="mod-group"></td>
+                        <td class="category">Mesh replacement</td>
+                        <td class="description"></td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">14</td>
+                        <td class="plugin-file">DLCHorseArmor.esp</td>
+                        <td class="mod-name">Horse Armors pack</td>
+                        <td class="version"></td>
+                        <td class="conflicts">These 5 official mods are safe anywhere in the load order. I leave them at the top to keep them out of the way (bottom of load order tends to get crowded with more important mods).</td>
+                        <td class="mod-group"></td>
+                        <td class="category">Official Plugin</td>
+                        <td class="description"></td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">15</td>
+                        <td class="plugin-file">DLCHorseArmor - Unofficial Patch.esp</td>
+                        <td class="mod-name"><a href="https://www.nexusmods.com/oblivion/mods/9969" target="_blank">Unofficial patch for Horse Armor pack</a></td>
+                        <td class="version">v15</td>
+                        <td class="conflicts">Patches need to be loaded after the mod they modify</td>
+                        <td class="mod-group">Unofficial Patch</td>
+                        <td class="category">Patch</td>
+                        <td class="description"></td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">16</td>
+                        <td class="plugin-file">SM Plugin Refurbish - HorseArmor.esp</td>
+                        <td class="mod-name">Strategy Master Plugin Refurbish - Horse Armor pack</td>
+                        <td class="version">1.0.7</td>
+                        <td class="conflicts">Optional mods need to be loaded after the mod they modify</td>
+                        <td class="mod-group">Plugin Refurbish</td>
+                        <td class="category">Patch</td>
+                        <td class="description">Removes default pop up quest message</td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">17</td>
+                        <td class="plugin-file">DLCOrrery.esp</td>
+                        <td class="mod-name">Orrery</td>
+                        <td class="version"></td>
+                        <td class="conflicts"></td>
+                        <td class="mod-group"></td>
+                        <td class="category">Official Plugin</td>
+                        <td class="description"></td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">18</td>
+                        <td class="plugin-file">DLCOrrery - Unofficial Patch.esp</td>
+                        <td class="mod-name"><a href="https://www.nexusmods.com/oblivion/mods/9969" target="_blank">Unofficial patch for Orrery</a></td>
+                        <td class="version">v15</td>
+                        <td class="conflicts"></td>
+                        <td class="mod-group">Unofficial Patch</td>
+                        <td class="category">Patch</td>
+                        <td class="description"></td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">19</td>
+                        <td class="plugin-file">SM Plugin Refurbish - Orrery.esp</td>
+                        <td class="mod-name">Strategy Master Plugin Refurbish - Orrery</td>
+                        <td class="version">1.0.7</td>
+                        <td class="conflicts"></td>
+                        <td class="mod-group">Plugin Refurbish</td>
+                        <td class="category">Patch</td>
+                        <td class="description">Removes default pop up quest message</td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">20</td>
+                        <td class="plugin-file">DLCMehrunesRazor.esp</td>
+                        <td class="mod-name">Mehrune's Razor</td>
+                        <td class="version"></td>
+                        <td class="conflicts"></td>
+                        <td class="mod-group"></td>
+                        <td class="category">Official Plugin</td>
+                        <td class="description"></td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">21</td>
+                        <td class="plugin-file">DLCMehrunesRazor - Unofficial Patch.esp</td>
+                        <td class="mod-name"><a href="https://www.nexusmods.com/oblivion/mods/9969" target="_blank">Unofficial patch for Mehrunes Razor</a></td>
+                        <td class="version">v15</td>
+                        <td class="conflicts"></td>
+                        <td class="mod-group">Unofficial Patch</td>
+                        <td class="category">Patch</td>
+                        <td class="description"></td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">22</td>
+                        <td class="plugin-file">SM Plugin Refurbish - MehrunesRazor.esp</td>
+                        <td class="mod-name">Strategy Master Plugin Refurbish - Mehrunes Razor</td>
+                        <td class="version">1.0.7</td>
+                        <td class="conflicts"></td>
+                        <td class="mod-group">Plugin Refurbish</td>
+                        <td class="category">Patch</td>
+                        <td class="description">Removes default pop up quest message</td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">23</td>
+                        <td class="plugin-file">DLCVileLair.esp</td>
+                        <td class="mod-name">The Vile Lair</td>
+                        <td class="version"></td>
+                        <td class="conflicts"></td>
+                        <td class="mod-group"></td>
+                        <td class="category">Official Plugin</td>
+                        <td class="description"></td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">24</td>
+                        <td class="plugin-file">DLCVileLair - Unofficial Patch.esp</td>
+                        <td class="mod-name"><a href="https://www.nexusmods.com/oblivion/mods/9969" target="_blank">Unofficial patch for The Vile Lair</a></td>
+                        <td class="version">v15</td>
+                        <td class="conflicts"></td>
+                        <td class="mod-group">Unofficial Patch</td>
+                        <td class="category">Patch</td>
+                        <td class="description"></td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">25</td>
+                        <td class="plugin-file">SM Plugin Refurbish - VileLair.esp</td>
+                        <td class="mod-name">Strategy Master Plugin Refurbish - Vile Lair</td>
+                        <td class="version">1.0.7</td>
+                        <td class="conflicts"></td>
+                        <td class="mod-group">Plugin Refurbish</td>
+                        <td class="category">Patch</td>
+                        <td class="description">Removes default pop up quest message</td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">26</td>
+                        <td class="plugin-file">DLCSpellTomes.esp</td>
+                        <td class="mod-name">Spell Tomes</td>
+                        <td class="version"></td>
+                        <td class="conflicts"></td>
+                        <td class="mod-group"></td>
+                        <td class="category">Official Plugin</td>
+                        <td class="description"></td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">27</td>
+                        <td class="plugin-file">DLCSpellTomes - Unofficial Patch.esp</td>
+                        <td class="mod-name"><a href="https://www.nexusmods.com/oblivion/mods/9969" target="_blank">Unofficial patch for Spell Tomes</a></td>
+                        <td class="version">v15</td>
+                        <td class="conflicts"></td>
+                        <td class="mod-group">Unofficial Patch</td>
+                        <td class="category">Patch</td>
+                        <td class="description">Removes default pop up quest message</td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">28</td>
+                        <td class="plugin-file">The Lost Spires.esp</td>
+                        <td class="mod-name"><a href="https://www.nexusmods.com/oblivion/mods/12997" target="_blank">The Lost Spires</a> and <a href="plugins/thelostspiresv14.zip" target="_blank">here</a></td>
+                        <td class="version">1.4</td>
+                        <td class="conflicts">Load before UL: Dark forest</td>
+                        <td class="mod-group">The Lost Spires</td>
+                        <td class="category">Quest</td>
+                        <td class="description"></td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">29</td>
+                        <td class="plugin-file">Better-Horse-Eyes.esp</td>
+                        <td class="mod-name">Better Horse Eyes</td>
+                        <td class="version">1.0</td>
+                        <td class="conflicts">Keep before UL dark forest (blue eyed unicorns)</td>
+                        <td class="mod-group"></td>
+                        <td class="category">Textures</td>
+                        <td class="description">Replaces the dead looking eyes from horses with more realistic texture.</td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">30</td>
+                        <td class="plugin-file">Slof's Horses Base.esp</td>
+                        <td class="mod-name"><a href="https://www.nexusmods.com/oblivion/mods/10401" target="_blank">Slofs Oblivion Horses Base</a></td>
+                        <td class="version">2.0</td>
+                        <td class="conflicts"></td>
+                        <td class="mod-group"></td>
+                        <td class="category"></td>
+                        <td class="description"></td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">31</td>
+                        <td class="plugin-file">xulTheHeath.esp</td>
+                        <td class="mod-name"><a href="https://www.nexusmods.com/oblivion/mods/13769" target="_blank">Unique Landscapes: The Heath</a></td>
+                        <td class="version">1.1</td>
+                        <td class="conflicts">Conflict over water height with moDem City Life May have to move at end of list with other uL mods after investigation</td>
+                        <td class="mod-group">Unique Landscapes</td>
+                        <td class="category">Scenery</td>
+                        <td class="description"></td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">32</td>
+                        <td class="plugin-file">xuldarkforest.esp</td>
+                        <td class="mod-name"><a href="https://www.nexusmods.com/oblivion/mods/13769" target="_blank">Unique Landscapes: The Dark Forest</a></td>
+                        <td class="version">1.0.1</td>
+                        <td class="conflicts">Load before OOO</td>
+                        <td class="mod-group">Unique Landscapes</td>
+                        <td class="category">Scenery</td>
+                        <td class="description"></td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">33</td>
+                        <td class="plugin-file">LostSpires-DarkForest patch.esp</td>
+                        <td class="mod-name">The Lost Spires - UL Dark Forest Compatibility</td>
+                        <td class="version">1.0</td>
+                        <td class="conflicts">Load after UL: Dark Forest</td>
+                        <td class="mod-group">The Lost Spires</td>
+                        <td class="category">Patch</td>
+                        <td class="description"></td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">34</td>
+                        <td class="plugin-file">cyrodiil transportation network 1.3 wz.esp</td>
+                        <td class="mod-name"><a href="https://www.nexusmods.com/oblivion/mods/7627" target="_blank">Cryrodiil Transportation Network</a></td>
+                        <td class="version">1.3</td>
+                        <td class="conflicts">* Customized for compatibility with Better Cities Skingrad and Anvil * Moved Guild guide door (conflicts with Guild Basement door from Origin of Mage Guild).</td>
+                        <td class="mod-group"></td>
+                        <td class="category">Gameplay</td>
+                        <td class="description">Restores transportation system comparable to that of Morrowind (carts, boats and mage guild teleportation).</td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">35</td>
+                        <td class="plugin-file">moDem's City Life.esp</td>
+                        <td class="mod-name">moDem's City Life</td>
+                        <td class="version">2.2</td>
+                        <td class="conflicts">* Customixed for compatibility with Better Cities Anvil * Customized to add missing civilian clothing to NPC Paervil from Leyawiin (OOO compatibility).</td>
+                        <td class="mod-group"></td>
+                        <td class="category">NPC</td>
+                        <td class="description"></td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">36</td>
+                        <td class="plugin-file">Oblivion Cats v0.22b.esp</td>
+                        <td class="mod-name">Oblivion Cats</td>
+                        <td class="version">0.22b</td>
+                        <td class="conflicts">Faction conflicts with OOO Keep before OOO to give OOO priority</td>
+                        <td class="mod-group"></td>
+                        <td class="category">NPC</td>
+                        <td class="description"></td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">37</td>
+                        <td class="plugin-file">Better Wine SI.esp</td>
+                        <td class="mod-name">CM Better Wine for SI</td>
+                        <td class="version">1.1</td>
+                        <td class="conflicts">Keep before OOO (Shadowbanish wine upgraded)</td>
+                        <td class="mod-group"></td>
+                        <td class="category">Textures</td>
+                        <td class="description"></td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">38</td>
+                        <td class="plugin-file">Brandy.esp</td>
+                        <td class="mod-name">Better Brandy</td>
+                        <td class="version"></td>
+                        <td class="conflicts">Changed by OOO (inebriation effect)</td>
+                        <td class="mod-group"></td>
+                        <td class="category">Textures</td>
+                        <td class="description"></td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">39</td>
+                        <td class="plugin-file">OL_CustomPaintings.esp</td>
+                        <td class="mod-name">Custom Paintings</td>
+                        <td class="version">1.0</td>
+                        <td class="conflicts"></td>
+                        <td class="mod-group"></td>
+                        <td class="category">Textures</td>
+                        <td class="description"></td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">40</td>
+                        <td class="plugin-file">Book Jackets Oblivion.esp</td>
+                        <td class="mod-name"><a href="https://www.nexusmods.com/oblivion/mods/3680" target="_blank">Retextured Book Jackets</a></td>
+                        <td class="version">1.0</td>
+                        <td class="conflicts"></td>
+                        <td class="mod-group"></td>
+                        <td class="category">Textures</td>
+                        <td class="description"></td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">41</td>
+                        <td class="plugin-file">Book Jackets SI.esp</td>
+                        <td class="mod-name">Grimbots DLC Book Jackets SI</td>
+                        <td class="version">1.0</td>
+                        <td class="conflicts"></td>
+                        <td class="mod-group"></td>
+                        <td class="category"></td>
+                        <td class="description"></td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">42</td>
+                        <td class="plugin-file">more books teach.esp</td>
+                        <td class="mod-name">More Books Teach</td>
+                        <td class="version">1.0</td>
+                        <td class="conflicts">Keep after Book Jackets to preserve teaching effects Create compatibility mod to add meshes from Book Jackets to books in this mod</td>
+                        <td class="mod-group"></td>
+                        <td class="category">Gameplay</td>
+                        <td class="description"></td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">43</td>
+                        <td class="plugin-file">MorrowindBooks.esp</td>
+                        <td class="mod-name">Morrowind Books</td>
+                        <td class="version">1.0</td>
+                        <td class="conflicts"></td>
+                        <td class="mod-group"></td>
+                        <td class="category">Gameplay</td>
+                        <td class="description"></td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">44</td>
+                        <td class="plugin-file">Cliff_BetterLetters.esp</td>
+                        <td class="mod-name">Better Letters</td>
+                        <td class="version">1.0</td>
+                        <td class="conflicts"></td>
+                        <td class="mod-group"></td>
+                        <td class="category">Gameplay</td>
+                        <td class="description"></td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">45</td>
+                        <td class="plugin-file">Enhanced Water v2.0 ND.esp</td>
+                        <td class="mod-name"><a href="https://www.nexusmods.com/oblivion/mods/8011" target="_blank">Enhanced Water</a></td>
+                        <td class="version">2.0</td>
+                        <td class="conflicts"></td>
+                        <td class="mod-group"></td>
+                        <td class="category">Water</td>
+                        <td class="description"></td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">46</td>
+                        <td class="plugin-file">EnhancedWeather.esp</td>
+                        <td class="mod-name">Enhanced Weather</td>
+                        <td class="version">1.3</td>
+                        <td class="conflicts"></td>
+                        <td class="mod-group"></td>
+                        <td class="category"></td>
+                        <td class="description"></td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">47</td>
+                        <td class="plugin-file">EnhancedWeather - Darker Nights, 50.esp</td>
+                        <td class="mod-name">Enhanced Weather</td>
+                        <td class="version">1.3</td>
+                        <td class="conflicts"></td>
+                        <td class="mod-group"></td>
+                        <td class="category"></td>
+                        <td class="description"></td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">48</td>
+                        <td class="plugin-file">EnhancedWeather - Enhanced Seasons.esp</td>
+                        <td class="mod-name">Enhanced Weather</td>
+                        <td class="version">1.3.1</td>
+                        <td class="conflicts"></td>
+                        <td class="mod-group"></td>
+                        <td class="category"></td>
+                        <td class="description"></td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">49</td>
+                        <td class="plugin-file">diversegrasses.esp</td>
+                        <td class="mod-name"><a href="https://www.nexusmods.com/oblivion/mods/10963" target="_blank">Diverse Grass</a></td>
+                        <td class="version">0.2</td>
+                        <td class="conflicts"></td>
+                        <td class="mod-group"></td>
+                        <td class="category">Textures</td>
+                        <td class="description">Makes grass look more seamless with ground. Version .6 available. I keep version 0.2 because I prefer the colors.</td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">50</td>
+                        <td class="plugin-file">_burning_kvatch.esp</td>
+                        <td class="mod-name">Burning Kvatch</td>
+                        <td class="version">1.0</td>
+                        <td class="conflicts"></td>
+                        <td class="mod-group">Darker Mods</td>
+                        <td class="category">Patch</td>
+                        <td class="description"></td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">51</td>
+                        <td class="plugin-file">Dousing The Flames.esp</td>
+                        <td class="mod-name">Dousing the flames</td>
+                        <td class="version">1.1</td>
+                        <td class="conflicts"></td>
+                        <td class="mod-group"></td>
+                        <td class="category">Patch</td>
+                        <td class="description"></td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">52</td>
+                        <td class="plugin-file">IWR-Windows.esp</td>
+                        <td class="mod-name">Illuminated Windows Revived</td>
+                        <td class="version">0.9.2</td>
+                        <td class="conflicts">Edited version for compatibility with Better Cities: Bruma</td>
+                        <td class="mod-group">IWR</td>
+                        <td class="category">Lights</td>
+                        <td class="description"></td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">53</td>
+                        <td class="plugin-file">lantern.esp</td>
+                        <td class="mod-name">Lantern</td>
+                        <td class="version">1.1</td>
+                        <td class="conflicts">Keep before OOO and HTS</td>
+                        <td class="mod-group"></td>
+                        <td class="category">Armor Weapons</td>
+                        <td class="description"></td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">54</td>
+                        <td class="plugin-file">StockClothingArmor-forExnems.esp</td>
+                        <td class="mod-name">Stock Clothing Armor replacement for Exnem</td>
+                        <td class="version">1.0</td>
+                        <td class="conflicts">Negates changes from MMM. Move before OOO and MMM.</td>
+                        <td class="mod-group"></td>
+                        <td class="category">Armor Weapons</td>
+                        <td class="description"></td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">55</td>
+                        <td class="plugin-file">Atmospheric Oblivion.esp</td>
+                        <td class="mod-name"><a href="https://www.nexusmods.com/oblivion/mods/17689" target="_blank">Atmospheric Oblivion</a></td>
+                        <td class="version">1.0</td>
+                        <td class="conflicts">Serious conflicts with Harvest from OOO. Needs better compatibility mod.</td>
+                        <td class="mod-group"></td>
+                        <td class="category">Sounds</td>
+                        <td class="description"></td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">56</td>
+                        <td class="plugin-file">Living Economy.esp</td>
+                        <td class="mod-name"><a href="https://www.nexusmods.com/oblivion/mods/25078" target="_blank">Living Economy</a></td>
+                        <td class="version">3.70</td>
+                        <td class="conflicts">Keep before OOO</td>
+                        <td class="mod-group"></td>
+                        <td class="category">Gameplay</td>
+                        <td class="description">Enhances merchands prices across the game.</td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">57</td>
+                        <td class="plugin-file">za_bankmod.esp</td>
+                        <td class="mod-name"><a href="https://www.nexusmods.com/oblivion/mods/8098" target="_blank">Bank of Cyrodiil</a></td>
+                        <td class="version">1.11</td>
+                        <td class="conflicts">Edited version for compatibility with Better Cities: IC Market Load before Better Cities: IC Market</td>
+                        <td class="mod-group"></td>
+                        <td class="category">Gameplay</td>
+                        <td class="description">Adds bank services (storage vault, deposit, withdrawal) Updated version for compatibility with Better Cities : IC Market</td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">58</td>
+                        <td class="plugin-file">DLCThievesDen.esp</td>
+                        <td class="mod-name">The Thieves Den</td>
+                        <td class="version"></td>
+                        <td class="conflicts">Keep after Living Economy (Conflict with NPC Fences from Thieves Den)</td>
+                        <td class="mod-group"></td>
+                        <td class="category">Official Plugin</td>
+                        <td class="description"></td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">59</td>
+                        <td class="plugin-file">DLCThievesDen - Unofficial Patch.esp</td>
+                        <td class="mod-name"><a href="https://www.nexusmods.com/oblivion/mods/9969" target="_blank">Unofficial patch for The Thieves Den</a></td>
+                        <td class="version">v15</td>
+                        <td class="conflicts"></td>
+                        <td class="mod-group">Unofficial Patch</td>
+                        <td class="category">Patch</td>
+                        <td class="description"></td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">60</td>
+                        <td class="plugin-file">DLCThievesDen - Unofficial Patch - SSSB.esp</td>
+                        <td class="mod-name">Unofficial patch for The Thieves Den - SSSB</td>
+                        <td class="version">v15</td>
+                        <td class="conflicts"></td>
+                        <td class="mod-group">Unofficial Patch</td>
+                        <td class="category">Patch</td>
+                        <td class="description">Sigil Stone Sound Bug fix placed in its own esp file to avoid a crash in Oblivion main menu</td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">61</td>
+                        <td class="plugin-file">SM Plugin Refurbish - ThievesDen.esp</td>
+                        <td class="mod-name">Strategy Master Plugin Refurbish - Thieves Den</td>
+                        <td class="version">1.0.7</td>
+                        <td class="conflicts"></td>
+                        <td class="mod-group">Plugin Refurbish</td>
+                        <td class="category">Patch</td>
+                        <td class="description">Removes default pop up quest message</td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">62</td>
+                        <td class="plugin-file">Oscuro's_Oblivion_Overhaul.esp</td>
+                        <td class="mod-name"><a href="https://www.nexusmods.com/oblivion/mods/15256" target="_blank">Oscuro's Oblivion Overhaul</a></td>
+                        <td class="version">1.34b5</td>
+                        <td class="conflicts">Creatures / NPC override by MMM Spells override by Supreme Magicka Harvest containers override by several mods placed after (any mod placing items into container redefined by OOO as harvestable)</td>
+                        <td class="mod-group">OOO</td>
+                        <td class="category">Gameplay</td>
+                        <td class="description">Deep redesign of game rules. Eliminates automatic leveling system. Adds quests, NPCs, weapons, armors, and creatures.</td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">63</td>
+                        <td class="plugin-file">OOO-Water_Weeds.esp</td>
+                        <td class="mod-name">Water Weeds for OOO</td>
+                        <td class="version">1.34b3</td>
+                        <td class="conflicts">Load after OOO (optional plugin)</td>
+                        <td class="mod-group">OOO</td>
+                        <td class="category">Gameplay</td>
+                        <td class="description">Optional esp from OOO Adds weeds and underwater life to ponds, lakes.</td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">64</td>
+                        <td class="plugin-file">xulStendarrValley.esp</td>
+                        <td class="mod-name"><a href="https://www.nexusmods.com/oblivion/mods/13769" target="_blank">Unique Landscapes: Stendarr Valley</a></td>
+                        <td class="version">1.0</td>
+                        <td class="conflicts">Could probably be loaded at end of list with other UL mods</td>
+                        <td class="mod-group">Unique Landscapes</td>
+                        <td class="category">Scenery</td>
+                        <td class="description"></td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">65</td>
+                        <td class="plugin-file">xulAncientYews.esp</td>
+                        <td class="mod-name"><a href="https://www.nexusmods.com/oblivion/mods/13769" target="_blank">Unique Landscapes: Ancient Yews</a></td>
+                        <td class="version">1.4</td>
+                        <td class="conflicts">Could probably be loaded at end of list with other UL mods</td>
+                        <td class="mod-group">Unique Landscapes</td>
+                        <td class="category">Scenery</td>
+                        <td class="description"></td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">66</td>
+                        <td class="plugin-file">xulArriusCreek.esp</td>
+                        <td class="mod-name"><a href="https://www.nexusmods.com/oblivion/mods/13769" target="_blank">Unique Landscapes: Arrius Creek</a></td>
+                        <td class="version">1.1.1</td>
+                        <td class="conflicts">Load after Ancient Yews</td>
+                        <td class="mod-group"></td>
+                        <td class="category"></td>
+                        <td class="description"></td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">67</td>
+                        <td class="plugin-file">xulPatch_AY_AC.esp</td>
+                        <td class="mod-name">Compatibility path UL: Ancient Yews - UL Arrius Creek</td>
+                        <td class="version">1.1</td>
+                        <td class="conflicts"></td>
+                        <td class="mod-group"></td>
+                        <td class="category"></td>
+                        <td class="description"></td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">68</td>
+                        <td class="plugin-file">Mart's Monster Mod for OOO.esp</td>
+                        <td class="mod-name">Martigen's Monster Mod</td>
+                        <td class="version">3.7b1</td>
+                        <td class="conflicts">Load after OOO</td>
+                        <td class="mod-group">MMM</td>
+                        <td class="category">Gameplay</td>
+                        <td class="description">Adds much needed mobs, monsters and NPCs across the whole game.</td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">69</td>
+                        <td class="plugin-file">Mart's Monster Mod - Extra Wounding.esp</td>
+                        <td class="mod-name">Martigen's Monster Mod - Extra Wounding</td>
+                        <td class="version">3.7b1</td>
+                        <td class="conflicts">Load after MMM (optional plugin)</td>
+                        <td class="mod-group">MMM</td>
+                        <td class="category">Gameplay</td>
+                        <td class="description">Optional esp from MMM Extends wounding system from MMM to other mods</td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">70</td>
+                        <td class="plugin-file">Mart's Monster Mod - Additional Enemy NPC Vars.esp</td>
+                        <td class="mod-name">Mart's Monster Mod - Additional Enemy NPC Vars</td>
+                        <td class="version">3.7b1</td>
+                        <td class="conflicts">Load after MMM (optional plugin)</td>
+                        <td class="mod-group">MMM</td>
+                        <td class="category"></td>
+                        <td class="description"></td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">71</td>
+                        <td class="plugin-file">Mart's Monster Mod - Durzog Addon.esp</td>
+                        <td class="mod-name">Mart's Monster Mod - Durzog Addon</td>
+                        <td class="version">3.7b1</td>
+                        <td class="conflicts">Load after MMM (optional plugin)</td>
+                        <td class="mod-group">MMM</td>
+                        <td class="category"></td>
+                        <td class="description"></td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">72</td>
+                        <td class="plugin-file">Mart's Monster Mod - Farm Animals.esp</td>
+                        <td class="mod-name">Mart's Monster Mod - Farm Animals</td>
+                        <td class="version">3.7b1</td>
+                        <td class="conflicts">Load after MMM (optional plugin)</td>
+                        <td class="mod-group">MMM</td>
+                        <td class="category"></td>
+                        <td class="description"></td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">73</td>
+                        <td class="plugin-file">TamrielTravellerAdvScript.esp</td>
+                        <td class="mod-name">Tamriel Travellers</td>
+                        <td class="version">1.39b</td>
+                        <td class="conflicts">Load before TamrielTravellers.esp</td>
+                        <td class="mod-group">TT</td>
+                        <td class="category">Gameplay</td>
+                        <td class="description"></td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">74</td>
+                        <td class="plugin-file">TamrielTravellers.esp</td>
+                        <td class="mod-name"><a href="https://www.nexusmods.com/oblivion/mods/17954" target="_blank">Tamriel Travellers</a></td>
+                        <td class="version">1.39b</td>
+                        <td class="conflicts">Load after MMM and OOO</td>
+                        <td class="mod-group">TT</td>
+                        <td class="category">Gameplay</td>
+                        <td class="description">Adds travelling merchands on the roads of Tamriel.</td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">75</td>
+                        <td class="plugin-file">TamrielTravellersItemsNPC.esp</td>
+                        <td class="mod-name">Tamriel Travellers</td>
+                        <td class="version">1.39b</td>
+                        <td class="conflicts">Load after TamrielTravellers.esp</td>
+                        <td class="mod-group">TT</td>
+                        <td class="category">Gameplay</td>
+                        <td class="description"></td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">76</td>
+                        <td class="plugin-file">ShiveringIsleTravellers.esp</td>
+                        <td class="mod-name">Tamriel Travellers for Shivering Isles</td>
+                        <td class="version">1.39b</td>
+                        <td class="conflicts">Load after TamrielTravellers.esp</td>
+                        <td class="mod-group"></td>
+                        <td class="category"></td>
+                        <td class="description"></td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">77</td>
+                        <td class="plugin-file">Roleplaying Dialogues.esp</td>
+                        <td class="mod-name">Role Playing Dialogues</td>
+                        <td class="version">0.72b</td>
+                        <td class="conflicts">Load before A new Beginning and Reneer's Guard Overhaul</td>
+                        <td class="mod-group"></td>
+                        <td class="category">Gameplay</td>
+                        <td class="description">Adds more discussion topics.</td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">78</td>
+                        <td class="plugin-file">RenGuardOverhaul.esp</td>
+                        <td class="mod-name"><a href="https://www.nexusmods.com/oblivion/mods/15350" target="_blank">Reneer's Guards Overhaul</a></td>
+                        <td class="version">1.87a</td>
+                        <td class="conflicts">Load after OOO</td>
+                        <td class="mod-group">RGO</td>
+                        <td class="category">Gameplay</td>
+                        <td class="description">Improves guard AI and bounty system</td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">79</td>
+                        <td class="plugin-file">VaultsofCyrodiil.esp</td>
+                        <td class="mod-name">Vaults of Cyrodiil</td>
+                        <td class="version">2.0</td>
+                        <td class="conflicts"></td>
+                        <td class="mod-group"></td>
+                        <td class="category">Gameplay</td>
+                        <td class="description"></td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">80</td>
+                        <td class="plugin-file">Shady Sam Plus.esp</td>
+                        <td class="mod-name">Shady Sam Plus</td>
+                        <td class="version">3.01</td>
+                        <td class="conflicts">Keep after OOO.</td>
+                        <td class="mod-group"></td>
+                        <td class="category">NPC</td>
+                        <td class="description"></td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">81</td>
+                        <td class="plugin-file">Diverse Races.esp</td>
+                        <td class="mod-name">Diverse Races</td>
+                        <td class="version">2.0</td>
+                        <td class="conflicts">Keep after OOO.</td>
+                        <td class="mod-group"></td>
+                        <td class="category">Gameplay</td>
+                        <td class="description">Adds racial modifiers to skills and spells for new characters.</td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">82</td>
+                        <td class="plugin-file">Slof's Dogs.esp</td>
+                        <td class="mod-name">Alienslof's Dogs</td>
+                        <td class="version">1.0</td>
+                        <td class="conflicts">Several mesh conflicts with MMM. Will be included into future version of MMM - keep after MMM for now.</td>
+                        <td class="mod-group"></td>
+                        <td class="category">NPC</td>
+                        <td class="description"></td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">83</td>
+                        <td class="plugin-file">PJs Spell Compendium - Spell Requirements.esp</td>
+                        <td class="mod-name">PJ's Spell Compendium with Spells Requirements</td>
+                        <td class="version">2.0</td>
+                        <td class="conflicts">Keep before Supreme Magicka</td>
+                        <td class="mod-group">PJ's Spell Compendium</td>
+                        <td class="category">Spells</td>
+                        <td class="description">Powerful spells for higher levels (force push, meteor, etc)</td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">84</td>
+                        <td class="plugin-file">JADPolymorphSpellv3.esp</td>
+                        <td class="mod-name">JAD's Polymorph Spell</td>
+                        <td class="version">3.0</td>
+                        <td class="conflicts">Keep before Supreme Magicka</td>
+                        <td class="mod-group"></td>
+                        <td class="category">Spells</td>
+                        <td class="description">Turns ennemies into sheep and other creatures</td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">85</td>
+                        <td class="plugin-file">SupremeMagicka.esp</td>
+                        <td class="mod-name"><a href="https://www.nexusmods.com/oblivion/mods/12466" target="_blank">Supreme Magicka</a></td>
+                        <td class="version">0.86a</td>
+                        <td class="conflicts">Edit SupremeMagicka.ini file to disable DetectLife effect (Xray Detect compatibility) Requires OBSE. .0015</td>
+                        <td class="mod-group">Supreme Magicka</td>
+                        <td class="category">Spells</td>
+                        <td class="description">Overhauls Magicka system</td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">86</td>
+                        <td class="plugin-file">SM_UnlockSpells.esp</td>
+                        <td class="mod-name">Supreme Magicka - Unlock Spells</td>
+                        <td class="version">0.86a</td>
+                        <td class="conflicts">Load after Supreme Magicka (optional plugin)</td>
+                        <td class="mod-group">Supreme Magicka</td>
+                        <td class="category">Spells</td>
+                        <td class="description"></td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">87</td>
+                        <td class="plugin-file">SM_OOO.esp</td>
+                        <td class="mod-name">Supreme Magicka - OOO Compatibility</td>
+                        <td class="version">0.86a</td>
+                        <td class="conflicts"></td>
+                        <td class="mod-group">Supreme Magicka</td>
+                        <td class="category">Patch</td>
+                        <td class="description"></td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">88</td>
+                        <td class="plugin-file">SM_MMM.esp</td>
+                        <td class="mod-name">Supreme Magicka - MMM Compatibility</td>
+                        <td class="version">0.86a</td>
+                        <td class="conflicts"></td>
+                        <td class="mod-group">Supreme Magicka</td>
+                        <td class="category">Patch</td>
+                        <td class="description"></td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">89</td>
+                        <td class="plugin-file">SM_DLCSpellTome.esp</td>
+                        <td class="mod-name">Supreme Magicka - DLC Spell Tome Compatibility</td>
+                        <td class="version">0.86a</td>
+                        <td class="conflicts"></td>
+                        <td class="mod-group">Supreme Magicka</td>
+                        <td class="category">Patch</td>
+                        <td class="description"></td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">90</td>
+                        <td class="plugin-file">Diverse Effects Icons for SM.esp</td>
+                        <td class="mod-name">Diverse Effects Icons</td>
+                        <td class="version">1.11</td>
+                        <td class="conflicts"></td>
+                        <td class="mod-group"></td>
+                        <td class="category">Textures</td>
+                        <td class="description"></td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">91</td>
+                        <td class="plugin-file">SorcerysToll.esp</td>
+                        <td class="mod-name">Sorcery's Toll</td>
+                        <td class="version">0.85</td>
+                        <td class="conflicts"></td>
+                        <td class="mod-group"></td>
+                        <td class="category"></td>
+                        <td class="description"></td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">92</td>
+                        <td class="plugin-file">X-Ray Detect.esp</td>
+                        <td class="mod-name">X-Ray Detect Life</td>
+                        <td class="version">1.0</td>
+                        <td class="conflicts">Keep after Supreme Magicka. Update SM.ini file to disable DetectLife effect</td>
+                        <td class="mod-group"></td>
+                        <td class="category">Spells</td>
+                        <td class="description">Makes Detect Life spell effect look like X-rays</td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">93</td>
+                        <td class="plugin-file">CBScryingv1.esp</td>
+                        <td class="mod-name">Crystal Ball Scrying</td>
+                        <td class="version">1.0</td>
+                        <td class="conflicts"></td>
+                        <td class="mod-group"></td>
+                        <td class="category">Spells</td>
+                        <td class="description"></td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">94</td>
+                        <td class="plugin-file">DLCFrostcrag.esp</td>
+                        <td class="mod-name">Frostcrag Spire Revisited</td>
+                        <td class="version">1.5</td>
+                        <td class="conflicts">Keep after OOO to avoid minor conflicts Use version 1.5 !!! earlier versions break the Main Quest</td>
+                        <td class="mod-group"></td>
+                        <td class="category">Official Plugin</td>
+                        <td class="description"></td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">95</td>
+                        <td class="plugin-file">DLCFrostcrag - Unofficial Patch.esp</td>
+                        <td class="mod-name"><a href="https://www.nexusmods.com/oblivion/mods/9969" target="_blank">Unofficial patch for Wizard's Tower</a></td>
+                        <td class="version">v15</td>
+                        <td class="conflicts"></td>
+                        <td class="mod-group">Unofficial Patch</td>
+                        <td class="category">Patch</td>
+                        <td class="description"></td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">96</td>
+                        <td class="plugin-file">Real Lava.esp</td>
+                        <td class="mod-name">Real Lava</td>
+                        <td class="version">1.3</td>
+                        <td class="conflicts">Keep after DLCFrostcrag esp file renamed without version number for future updates</td>
+                        <td class="mod-group"></td>
+                        <td class="category">Textures</td>
+                        <td class="description"></td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">97</td>
+                        <td class="plugin-file">Shining Flame Atronachs.esp</td>
+                        <td class="mod-name">Shining Flame Atronarch</td>
+                        <td class="version">1.2</td>
+                        <td class="conflicts">Keep after Supreme Magicka (Light effect for Atronarch) Keep after DLCFrostcrag (override Flame Atronarch pets)</td>
+                        <td class="mod-group"></td>
+                        <td class="category">Patch</td>
+                        <td class="description"></td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">98</td>
+                        <td class="plugin-file">Shining Flame Atronachs_DLCFrostcrag.esp</td>
+                        <td class="mod-name">Shining Flame Atronarch - DLC Frostcrag Compatibility</td>
+                        <td class="version">1.2</td>
+                        <td class="conflicts"></td>
+                        <td class="mod-group"></td>
+                        <td class="category">Patch</td>
+                        <td class="description"></td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">99</td>
+                        <td class="plugin-file">Dungeon Actors Have Torches 1.6 CT.esp</td>
+                        <td class="mod-name">Dungeon Actors Have Torches</td>
+                        <td class="version">1.6</td>
+                        <td class="conflicts">Load after Supreme Magicka</td>
+                        <td class="mod-group"></td>
+                        <td class="category">Gameplay</td>
+                        <td class="description"></td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">100</td>
+                        <td class="plugin-file">Exterior Actors Have Torches 1.3 CT.esp</td>
+                        <td class="mod-name">Exterior Actors Have Torches</td>
+                        <td class="version">1.3</td>
+                        <td class="conflicts">Load after Supreme Magicka</td>
+                        <td class="mod-group"></td>
+                        <td class="category">Gameplay</td>
+                        <td class="description"></td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">101</td>
+                        <td class="plugin-file">Harvest [Flora].esp</td>
+                        <td class="mod-name"><a href="https://www.nexusmods.com/oblivion/mods/2037" target="_blank">Harvest [Flora]</a></td>
+                        <td class="version">3.0</td>
+                        <td class="conflicts">Keep after OOO</td>
+                        <td class="mod-group">Harvest [Flora]</td>
+                        <td class="category">Gameplay</td>
+                        <td class="description"></td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">102</td>
+                        <td class="plugin-file">Harvest [Flora] - DLCFrostcrag.esp</td>
+                        <td class="mod-name">Harvest [Flora] - The Wizard's Tower Compatibility</td>
+                        <td class="version">3.0</td>
+                        <td class="conflicts"></td>
+                        <td class="mod-group">Harvest [Flora]</td>
+                        <td class="category">Patch</td>
+                        <td class="description"></td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">103</td>
+                        <td class="plugin-file">Harvest [Flora] - DLCVileLair.esp</td>
+                        <td class="mod-name">Harvest [Flora] - The Vile Lair Compatibility</td>
+                        <td class="version">3.0</td>
+                        <td class="conflicts"></td>
+                        <td class="mod-group">Harvest [Flora]</td>
+                        <td class="category">Patch</td>
+                        <td class="description"></td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">104</td>
+                        <td class="plugin-file">PersuasionOverhaul.esp</td>
+                        <td class="mod-name"><a href="https://www.nexusmods.com/oblivion/mods/22124" target="_blank">Persuasion Overhaul (OBSE version)</a></td>
+                        <td class="version">1.2</td>
+                        <td class="conflicts">Keep after OOO and MMM Requires OBSE.</td>
+                        <td class="mod-group">Persuasion Overhaul</td>
+                        <td class="category">Gameplay</td>
+                        <td class="description">Replaces default persuasion mini-game by a system comparable to that of Morrowind.</td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">105</td>
+                        <td class="plugin-file">PersuasionOverhaul_OOO.esp</td>
+                        <td class="mod-name">Persuasion Overhaul - OOO Compatibility</td>
+                        <td class="version">1.2</td>
+                        <td class="conflicts"></td>
+                        <td class="mod-group">Persuasion Overhaul</td>
+                        <td class="category">Patch</td>
+                        <td class="description"></td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">106</td>
+                        <td class="plugin-file">anb.esp</td>
+                        <td class="mod-name"><a href="https://www.nexusmods.com/oblivion/mods/13285" target="_blank">A new Beginning</a></td>
+                        <td class="version">1.2</td>
+                        <td class="conflicts">Load AFTER Role Playing Dialogues Select 'Go to Jail' when arrested by Imperial Watch to trigger main quest. Try to start Main Quest BEFORE Dark Brotherhood quests</td>
+                        <td class="mod-group"></td>
+                        <td class="category">Gameplay</td>
+                        <td class="description">Replaces the default tutorial by simple questions on a boat to Anvil. Delays main quest to first time arrest by Imperial Guards.</td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">107</td>
+                        <td class="plugin-file">vn_goldweight.esp</td>
+                        <td class="mod-name">Goldweight</td>
+                        <td class="version">1.0</td>
+                        <td class="conflicts"></td>
+                        <td class="mod-group"></td>
+                        <td class="category">Gameplay</td>
+                        <td class="description">Adds weight to gold coins.</td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">108</td>
+                        <td class="plugin-file">StumbleRunningBackwards.esp</td>
+                        <td class="mod-name">Stumble when running backwards</td>
+                        <td class="version">1.0</td>
+                        <td class="conflicts"></td>
+                        <td class="mod-group"></td>
+                        <td class="category">Gameplay</td>
+                        <td class="description"></td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">109</td>
+                        <td class="plugin-file">ANB_Regen.esp</td>
+                        <td class="mod-name">ANB Dynamic Health Regen</td>
+                        <td class="version">1.0</td>
+                        <td class="conflicts"></td>
+                        <td class="mod-group"></td>
+                        <td class="category">Gameplay</td>
+                        <td class="description">Slowly regenerates health without having to sleep.</td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">110</td>
+                        <td class="plugin-file">FF_Real_Thirst.esp</td>
+                        <td class="mod-name">FF Real Thirst</td>
+                        <td class="version">1.2</td>
+                        <td class="conflicts">Major conflict with Parasite X New Vampires Disable before becoming a vampire and re-enable after being cured</td>
+                        <td class="mod-group"></td>
+                        <td class="category"></td>
+                        <td class="description"></td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">111</td>
+                        <td class="plugin-file">RealHungerv1.4.esp</td>
+                        <td class="mod-name"><a href="https://www.nexusmods.com/oblivion/mods/3097" target="_blank">Real Hunger</a></td>
+                        <td class="version">1.4</td>
+                        <td class="conflicts">Major conflict with Parasite X New Vampires Disable before becoming a vampire and re-enable after being cured</td>
+                        <td class="mod-group"></td>
+                        <td class="category"></td>
+                        <td class="description"></td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">112</td>
+                        <td class="plugin-file">RealSleep.esp</td>
+                        <td class="mod-name"><a href="https://www.nexusmods.com/oblivion/mods/10839" target="_blank">Real Sleep</a></td>
+                        <td class="version">1.4</td>
+                        <td class="conflicts">Major conflict with Parasite X New Vampires Disable before becoming a vampire and re-enable after being cured</td>
+                        <td class="mod-group"></td>
+                        <td class="category"></td>
+                        <td class="description"></td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">113</td>
+                        <td class="plugin-file">RealisticFatigue.esp</td>
+                        <td class="mod-name">Realistic Fatigue</td>
+                        <td class="version">1.13</td>
+                        <td class="conflicts">Requires OBSE</td>
+                        <td class="mod-group"></td>
+                        <td class="category"></td>
+                        <td class="description"></td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">114</td>
+                        <td class="plugin-file">ANB_Portable_Bedroll.esp</td>
+                        <td class="mod-name">Portable Bedroll</td>
+                        <td class="version">1.0</td>
+                        <td class="conflicts">Made obsolete by camping gear from RealSleep. Will be removed from this list in future versions</td>
+                        <td class="mod-group"></td>
+                        <td class="category">Gameplay</td>
+                        <td class="description">Transportable bedroll for outdoors.</td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">115</td>
+                        <td class="plugin-file">Adrenaline Fuelled Archery- Bow Sway.esp</td>
+                        <td class="mod-name">Bow Sway</td>
+                        <td class="version">1.0</td>
+                        <td class="conflicts">Requires OBSE</td>
+                        <td class="mod-group"></td>
+                        <td class="category">Gameplay</td>
+                        <td class="description"></td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">116</td>
+                        <td class="plugin-file">ImmersiveHealthIndication.esp</td>
+                        <td class="mod-name">Immersive Health Indication</td>
+                        <td class="version">1.21</td>
+                        <td class="conflicts"></td>
+                        <td class="mod-group"></td>
+                        <td class="category">Gameplay</td>
+                        <td class="description">Adds blurred visual cue for low health.</td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">117</td>
+                        <td class="plugin-file">Bloodeus'UniqueStuff.esp</td>
+                        <td class="mod-name">Bloodeu's Unique Stuff</td>
+                        <td class="version">1.2</td>
+                        <td class="conflicts"></td>
+                        <td class="mod-group"></td>
+                        <td class="category">Armor Weapons</td>
+                        <td class="description">Chorrol - smith</td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">118</td>
+                        <td class="plugin-file">kalikuts_raretradegoods2_0.esp</td>
+                        <td class="mod-name">Kalikut's Rare Trade Goods</td>
+                        <td class="version">2.0</td>
+                        <td class="conflicts"></td>
+                        <td class="mod-group"></td>
+                        <td class="category">Armor Weapons</td>
+                        <td class="description">Version 2.0 + Update - Buy from new vendor in weye</td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">119</td>
+                        <td class="plugin-file">Slof's Male Clothing.esp</td>
+                        <td class="mod-name">Alienslof's male Clothing</td>
+                        <td class="version">1.0b</td>
+                        <td class="conflicts"></td>
+                        <td class="mod-group"></td>
+                        <td class="category">Armor Weapons</td>
+                        <td class="description">Replacement</td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">120</td>
+                        <td class="plugin-file">LC-Compilation-Exnem.esp</td>
+                        <td class="mod-name">Low Cut armors compilation</td>
+                        <td class="version">1.0</td>
+                        <td class="conflicts">Keep after Stock Clothing Armor for Exnem</td>
+                        <td class="mod-group"></td>
+                        <td class="category">Armor Weapons</td>
+                        <td class="description">Replacement</td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">121</td>
+                        <td class="plugin-file">OOO-Armor.esp</td>
+                        <td class="mod-name">Exnem version of OOO armors</td>
+                        <td class="version">1.3</td>
+                        <td class="conflicts">Keep after LC-Compilation</td>
+                        <td class="mod-group"></td>
+                        <td class="category">Armor Weapons</td>
+                        <td class="description">Replacement</td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">122</td>
+                        <td class="plugin-file">Slof's Oblivion Robe Trader.esp</td>
+                        <td class="mod-name">Alienslof's Oblivion Robe Trader for Exnem</td>
+                        <td class="version">1.3</td>
+                        <td class="conflicts">Keep after OOO, Shady Sam, and LC-compilation for Exnem. Conflicts with Supreme Magicka on non robe items Keep before Origin of Mage Guild NPCs Customized to replace Battlemage transparent cuirasses by Alienslof's Elaborate robe (male battlemage) and BlackLuster Blood robe (female battlemage)</td>
+                        <td class="mod-group"></td>
+                        <td class="category">Armor Weapons</td>
+                        <td class="description">Replaces mage robes by more colorful versions. - Replacement</td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">123</td>
+                        <td class="plugin-file">V1 Imperial Legion Dragon Cuirass.esp</td>
+                        <td class="mod-name">Imperial Dragon Cuirass Retextured</td>
+                        <td class="version">1.0</td>
+                        <td class="conflicts">Not needed anymore since Imperial Dragon armor meshes were replaced by Tona Whitesquall armor</td>
+                        <td class="mod-group"></td>
+                        <td class="category">Armor Weapons</td>
+                        <td class="description">Replacement</td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">124</td>
+                        <td class="plugin-file">OS Artifacts.esp</td>
+                        <td class="mod-name">Old School Artifacts</td>
+                        <td class="version">1.1</td>
+                        <td class="conflicts">* Customized version with German names translated (Thanks Ismelda!) Lots of conflicts with MMM. Keep after AlienSlof Robe Trader Is it worth it ?</td>
+                        <td class="mod-group"></td>
+                        <td class="category">Armor Weapons</td>
+                        <td class="description">Morrowind artefacts - Loot on NPCs in dungeons</td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">125</td>
+                        <td class="plugin-file">Female Steel Armor.esp</td>
+                        <td class="mod-name">Female Steel Armor</td>
+                        <td class="version">1.0b</td>
+                        <td class="conflicts">Keep after LC-Compilation to override changes</td>
+                        <td class="mod-group"></td>
+                        <td class="category">Armor Weapons</td>
+                        <td class="description">Replacement</td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">126</td>
+                        <td class="plugin-file">BlackMail.esp</td>
+                        <td class="mod-name">Black Mail Armor</td>
+                        <td class="version">1.0</td>
+                        <td class="conflicts"></td>
+                        <td class="mod-group"></td>
+                        <td class="category">Armor Weapons</td>
+                        <td class="description">IC - Best Defense</td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">127</td>
+                        <td class="plugin-file">Armor_skirts.esp</td>
+                        <td class="mod-name">Armored Skirts</td>
+                        <td class="version">0.9</td>
+                        <td class="conflicts"></td>
+                        <td class="mod-group"></td>
+                        <td class="category">Armor Weapons</td>
+                        <td class="description">IC - Best Defense / Stonewall shields Skingrad - Hammer and Tongs</td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">128</td>
+                        <td class="plugin-file">Ancient Silver Armor.esp</td>
+                        <td class="mod-name">Ancient Silver Armor</td>
+                        <td class="version">1.0</td>
+                        <td class="conflicts"></td>
+                        <td class="mod-group"></td>
+                        <td class="category"></td>
+                        <td class="description">Large wooden door in Silver Tooth Cave</td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">129</td>
+                        <td class="plugin-file">LadiesOrcish.esp</td>
+                        <td class="mod-name">Ladies Orcish armor</td>
+                        <td class="version">1.0</td>
+                        <td class="conflicts"></td>
+                        <td class="mod-group"></td>
+                        <td class="category">Armor Weapons</td>
+                        <td class="description">Anvil - Peace makers</td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">130</td>
+                        <td class="plugin-file">vermillionandsilverthorn.esp</td>
+                        <td class="mod-name">Vermillion and Silverthorn robes for Exnem</td>
+                        <td class="version">1.0</td>
+                        <td class="conflicts"></td>
+                        <td class="mod-group"></td>
+                        <td class="category">Armor Weapons</td>
+                        <td class="description">Skingrad - Colovian Traders</td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">131</td>
+                        <td class="plugin-file">samurai.esp</td>
+                        <td class="mod-name">Samurai armors</td>
+                        <td class="version">5.0</td>
+                        <td class="conflicts"></td>
+                        <td class="mod-group"></td>
+                        <td class="category">Armor Weapons</td>
+                        <td class="description">Version 4.0 + 5.0 update - IC - Slash´n Smash Bruma - Fighter Guild</td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">132</td>
+                        <td class="plugin-file">Rise Of A Samurai.esp</td>
+                        <td class="mod-name">The Rise of a Samurai</td>
+                        <td class="version">1.0</td>
+                        <td class="conflicts">with Female Add-on (see second sheet)</td>
+                        <td class="mod-group"></td>
+                        <td class="category">Armor Weapons</td>
+                        <td class="description">Adds a house for the Player and samurai armors - Special house near Bruma</td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">133</td>
+                        <td class="plugin-file">PhoenixEquipment.esp</td>
+                        <td class="mod-name">Phoenix Equipment</td>
+                        <td class="version">0.95b</td>
+                        <td class="conflicts"></td>
+                        <td class="mod-group"></td>
+                        <td class="category">Armor Weapons</td>
+                        <td class="description">IC - Best Defense / Slash´n Smash</td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">134</td>
+                        <td class="plugin-file">Blood Elves and Egyptian Armors for Exnems body.esp</td>
+                        <td class="mod-name">Blood Elves and Egyptian Armors for Exenm</td>
+                        <td class="version">0.9</td>
+                        <td class="conflicts"></td>
+                        <td class="mod-group"></td>
+                        <td class="category">Armor Weapons</td>
+                        <td class="description">NPCs in fort Istirus is located between Skingrad and Kvatch, south of Miscarcand</td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">135</td>
+                        <td class="plugin-file">Badmagic's Rogue Set.esp</td>
+                        <td class="mod-name">Badmagic's Rogue set</td>
+                        <td class="version">1.1</td>
+                        <td class="conflicts">Customized to add missing civilian clothing to Anvil weaponsmith Varel Morvyn (OOO compatibility).</td>
+                        <td class="mod-group"></td>
+                        <td class="category">Armor Weapons</td>
+                        <td class="description">Anvil - Peace makers</td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">136</td>
+                        <td class="plugin-file">Badmagic Chrome Dwarven.esp</td>
+                        <td class="mod-name">Badmagic's Chrome Dwarven armor</td>
+                        <td class="version">1.0</td>
+                        <td class="conflicts"></td>
+                        <td class="mod-group"></td>
+                        <td class="category">Armor Weapons</td>
+                        <td class="description">Cheydinhal - Borba's Goods and Stores</td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">137</td>
+                        <td class="plugin-file">Badmagic Red Ebony - Ebony Strength.esp</td>
+                        <td class="mod-name">Badmagic's Red Ebony armor</td>
+                        <td class="version">2.0</td>
+                        <td class="conflicts"></td>
+                        <td class="mod-group"></td>
+                        <td class="category">Armor Weapons</td>
+                        <td class="description">IC - Fighting Chance / Best Defense / Divine Elegance</td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">138</td>
+                        <td class="plugin-file">BlackLuster.esp</td>
+                        <td class="mod-name">Black Luster Armor for Exnem</td>
+                        <td class="version">313eFixed</td>
+                        <td class="conflicts">Customized to move 'special items' from IC Market street into Fighting Chance basement (compatibility with Better Cities IC Market)</td>
+                        <td class="mod-group"></td>
+                        <td class="category">Armor Weapons</td>
+                        <td class="description">IC - Fighting Chance</td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">139</td>
+                        <td class="plugin-file">sluggosilkdancer.esp</td>
+                        <td class="mod-name">Sluggo's Silk Dancer bikini for Exnem</td>
+                        <td class="version">1.2</td>
+                        <td class="conflicts">Customized to move chest to the Foc's'cle private rooms in Anvil Added chest to the Siren Gang's basement and made Faustina wear silk during meeting at the farm.</td>
+                        <td class="mod-group"></td>
+                        <td class="category">Armor Weapons</td>
+                        <td class="description">Strange shack IC waterfront Relocated to Focscle private room in Anvil</td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">140</td>
+                        <td class="plugin-file">Krakens.esp</td>
+                        <td class="mod-name">Krakens Set</td>
+                        <td class="version">1.1</td>
+                        <td class="conflicts">Customized to move chest in crypt (Fort Cedrian)</td>
+                        <td class="mod-group"></td>
+                        <td class="category">Armor Weapons</td>
+                        <td class="description">IC - Waterfront, under Bloated Float Relocated in Fort Cedrian crypt</td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">141</td>
+                        <td class="plugin-file">Kill_Bill_Katanas.esp</td>
+                        <td class="mod-name">Kill Bill Katanas</td>
+                        <td class="version">1.0</td>
+                        <td class="conflicts"></td>
+                        <td class="mod-group"></td>
+                        <td class="category">Armor Weapons</td>
+                        <td class="description">IC - Fighting Chance</td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">142</td>
+                        <td class="plugin-file">Adonnays Elven Weaponry.esp</td>
+                        <td class="mod-name">Addonay's Elven Weaponry</td>
+                        <td class="version">3.70</td>
+                        <td class="conflicts"></td>
+                        <td class="mod-group"></td>
+                        <td class="category">Armor Weapons</td>
+                        <td class="description">Quests, dungeons and special house near Cheydinhal</td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">143</td>
+                        <td class="plugin-file">VA_UniqueKatana1.esp</td>
+                        <td class="mod-name">Vagabond Angel's Unique Katana</td>
+                        <td class="version">1.0</td>
+                        <td class="conflicts"></td>
+                        <td class="mod-group"></td>
+                        <td class="category">Armor Weapons</td>
+                        <td class="description">Replacement</td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">144</td>
+                        <td class="plugin-file">RustyItems.esp</td>
+                        <td class="mod-name">Rusty Items</td>
+                        <td class="version">1.2</td>
+                        <td class="conflicts">Keep after OOO</td>
+                        <td class="mod-group"></td>
+                        <td class="category">Armor Weapons</td>
+                        <td class="description">Replacement</td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">145</td>
+                        <td class="plugin-file">DwemerFlamesword.esp</td>
+                        <td class="mod-name">Dwemer Flamesword</td>
+                        <td class="version">3.0</td>
+                        <td class="conflicts"></td>
+                        <td class="mod-group"></td>
+                        <td class="category">Armor Weapons</td>
+                        <td class="description">In Goblin Jim's Cave</td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">146</td>
+                        <td class="plugin-file">Shdw_Armor Set_Sotonhorian.esp</td>
+                        <td class="mod-name">Sotonhorian armor set</td>
+                        <td class="version">0.8</td>
+                        <td class="conflicts"></td>
+                        <td class="mod-group"></td>
+                        <td class="category">Armor Weapons</td>
+                        <td class="description">Rasheda, Fire and Steel, Chorrol.</td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">147</td>
+                        <td class="plugin-file">UFF & ROBERT Assassin Elite Armor.esp</td>
+                        <td class="mod-name">UFF_RM Assassin Elite Armor</td>
+                        <td class="version">1.0</td>
+                        <td class="conflicts"></td>
+                        <td class="mod-group"></td>
+                        <td class="category">Armor Weapons</td>
+                        <td class="description">Black rock cave north of Chorrol</td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">148</td>
+                        <td class="plugin-file">Blackrangercuirass.esp</td>
+                        <td class="mod-name">Black Ranger Cuirass</td>
+                        <td class="version">3.0</td>
+                        <td class="conflicts"></td>
+                        <td class="mod-group"></td>
+                        <td class="category">Armor Weapons</td>
+                        <td class="description">Lucien Lachance place in fort Farragut</td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">149</td>
+                        <td class="plugin-file">DMACArmor.esp</td>
+                        <td class="mod-name">Hashshashin Armor</td>
+                        <td class="version">2.0</td>
+                        <td class="conflicts"></td>
+                        <td class="mod-group"></td>
+                        <td class="category">Armor Weapons</td>
+                        <td class="description">Cheydinhal</td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">150</td>
+                        <td class="plugin-file">DBShadowSet.esp</td>
+                        <td class="mod-name">Dark Brotherhood Shadow Armor Elite</td>
+                        <td class="version">1.0</td>
+                        <td class="conflicts"></td>
+                        <td class="mod-group"></td>
+                        <td class="category">Armor Weapons</td>
+                        <td class="description">VINCENT VALTIERI'S CHEST at the DB SANCTUARY.</td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">151</td>
+                        <td class="plugin-file">ThievesArsenal.esp</td>
+                        <td class="mod-name"><a href="https://www.nexusmods.com/oblivion/mods/14825" target="_blank">Thieves Arsenal</a></td>
+                        <td class="version">1.5</td>
+                        <td class="conflicts"></td>
+                        <td class="mod-group"></td>
+                        <td class="category">Armor Weapons</td>
+                        <td class="description">Official website: http://home.comcast.net/~scruggsyw/Thieves_Arsenal.htm</td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">152</td>
+                        <td class="plugin-file">ArmamentariumLL4OOO.esp</td>
+                        <td class="mod-name">Armamentarium Complete</td>
+                        <td class="version">1.0</td>
+                        <td class="conflicts"></td>
+                        <td class="mod-group"></td>
+                        <td class="category">Armor Weapons</td>
+                        <td class="description">Random loot on NPCs after level 6</td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">153</td>
+                        <td class="plugin-file">ArmamentariumArtifacts.esp</td>
+                        <td class="mod-name">Special items from Armamentarium Complete</td>
+                        <td class="version">1.0</td>
+                        <td class="conflicts"></td>
+                        <td class="mod-group"></td>
+                        <td class="category">Armor Weapons</td>
+                        <td class="description">Random loot on NPCs after level 6</td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">154</td>
+                        <td class="plugin-file">Armamentarium female.esp</td>
+                        <td class="mod-name">Armamentarium armors for Exnem'</td>
+                        <td class="version">0.34</td>
+                        <td class="conflicts"></td>
+                        <td class="mod-group"></td>
+                        <td class="category">Armor Weapons</td>
+                        <td class="description">Random loot on NPCs after level 6</td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">155</td>
+                        <td class="plugin-file">Armory of the Silver Dragon.esp</td>
+                        <td class="mod-name">Apophis Armory of the Silver Dragon</td>
+                        <td class="version">0.9.3</td>
+                        <td class="conflicts">Customized - moved Apophis Hammer from IC Market to a tomb in Sancre Tor</td>
+                        <td class="mod-group"></td>
+                        <td class="category">Armor Weapons</td>
+                        <td class="description">Imperial City Market District. stores and a chest in the Dark Brotherhood Sanctuary</td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">156</td>
+                        <td class="plugin-file">Apachii_Goddess_Store.esp</td>
+                        <td class="mod-name">Apachii Goddess Store</td>
+                        <td class="version">1.3</td>
+                        <td class="conflicts"></td>
+                        <td class="mod-group"></td>
+                        <td class="category">Armor Weapons</td>
+                        <td class="description">IC - Waterfront</td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">157</td>
+                        <td class="plugin-file">Exnem_Assassin_Armor.esp</td>
+                        <td class="mod-name">Black Assassin Armor for Exnem</td>
+                        <td class="version">1.0</td>
+                        <td class="conflicts">Minor conflict with Better Cities IC Market Customized to move location of armor in a more appropriate place (Cheydinhal) Will be removed from this list in future versions for question of taste</td>
+                        <td class="mod-group"></td>
+                        <td class="category">Armor Weapons</td>
+                        <td class="description">IC - Market District in Ayleid Box by statue (BCC conflict) Relocated in Cheydinhal</td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">158</td>
+                        <td class="plugin-file">Rogue Mage & Scoundrel.esp</td>
+                        <td class="mod-name">Rogue Mage and Scoundrel Outfits</td>
+                        <td class="version">1.3</td>
+                        <td class="conflicts">Customized to move outfit inside Vilverin</td>
+                        <td class="mod-group"></td>
+                        <td class="category">Armor Weapons</td>
+                        <td class="description">Box in Vilverin</td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">159</td>
+                        <td class="plugin-file">ExnemEyeCandy.esp</td>
+                        <td class="mod-name">Exnem's Eye candy wardrobe</td>
+                        <td class="version">0.1</td>
+                        <td class="conflicts"></td>
+                        <td class="mod-group"></td>
+                        <td class="category">Armor Weapons</td>
+                        <td class="description">Amazon Warlord who lives in Wooden Hand Fort, Southeast of Chorrol 2 Witches that live in Fort Rayles, Northwest of Chorrol.</td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">160</td>
+                        <td class="plugin-file">ExnemEC_Rogue01.esp</td>
+                        <td class="mod-name">Exnem's Rogue outfit</td>
+                        <td class="version">1.0</td>
+                        <td class="conflicts"></td>
+                        <td class="mod-group"></td>
+                        <td class="category">Armor Weapons</td>
+                        <td class="description">NPCs in Fort Alessia, Southeast of the Imperial City, and another at the Infested Mine West of chorrol,</td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">161</td>
+                        <td class="plugin-file">ExnemEC_Warrior01.esp</td>
+                        <td class="mod-name">Exnem's Sexy Warrior armor</td>
+                        <td class="version">1.0</td>
+                        <td class="conflicts"></td>
+                        <td class="mod-group"></td>
+                        <td class="category">Armor Weapons</td>
+                        <td class="description">3 Warriors, they all live in Fort Cedrian, southeast of the Imperial City</td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">162</td>
+                        <td class="plugin-file">Exnem_Chaindress1.esp</td>
+                        <td class="mod-name">Chaindress for Exnem</td>
+                        <td class="version">1.0</td>
+                        <td class="conflicts">Customized to add a free chaindress in Fighter Guild in Anvil since Ordinator mod removes chaindress from Best Defense vendor</td>
+                        <td class="mod-group"></td>
+                        <td class="category">Armor Weapons</td>
+                        <td class="description">IC - Best Defense Customized to place free set in Fighter Guild of Anvil</td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">163</td>
+                        <td class="plugin-file">Cryos Ordinator Lite.esp</td>
+                        <td class="mod-name">Cryo's Ordinator Armor</td>
+                        <td class="version">1.2</td>
+                        <td class="conflicts">Conflicts with ExnemChaindress. Load after Chaindress to have Indoril cuirass sold by Best Defense vendor</td>
+                        <td class="mod-group"></td>
+                        <td class="category">Armor Weapons</td>
+                        <td class="description">IC - Best Defense</td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">164</td>
+                        <td class="plugin-file">Oddbasket Glass Replace.esp</td>
+                        <td class="mod-name">Oddbasket's Glass Replace for Exnem</td>
+                        <td class="version">1.22a</td>
+                        <td class="conflicts"></td>
+                        <td class="mod-group"></td>
+                        <td class="category">Armor Weapons</td>
+                        <td class="description">Replacement</td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">165</td>
+                        <td class="plugin-file">Sinblood's Widow Dress.esp</td>
+                        <td class="mod-name">Sinblood's Widow Dress for Exnem</td>
+                        <td class="version">1.0</td>
+                        <td class="conflicts"></td>
+                        <td class="mod-group"></td>
+                        <td class="category">Armor Weapons</td>
+                        <td class="description">IC - copious coinpurse</td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">166</td>
+                        <td class="plugin-file">Potion Belt.esp</td>
+                        <td class="mod-name">JDFan's potion belt adaptation for Exnem</td>
+                        <td class="version"></td>
+                        <td class="conflicts">Uses same slot as KC circlets. Character can wear belt or circlet, not both.</td>
+                        <td class="mod-group"></td>
+                        <td class="category">Armor Weapons</td>
+                        <td class="description"></td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">167</td>
+                        <td class="plugin-file">SB_PFM_AyleidMageOutfits.esp</td>
+                        <td class="mod-name">Ayleid Mage Outfit (SinBlood's Pure Fantasy Mage)</td>
+                        <td class="version">1.0</td>
+                        <td class="conflicts">Customized to replace startup script by mini-quests and replace look of black and red robes with other outfits from Sinblood (bewitching and vampire)</td>
+                        <td class="mod-group"></td>
+                        <td class="category">Armor Weapons</td>
+                        <td class="description">Customized to place armors in Ayleid chests hidden around Anvil coast</td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">168</td>
+                        <td class="plugin-file">Rogue Sun's Blood Lust Dress.esp</td>
+                        <td class="mod-name">Rogue Sun's Blood Lust Dress for Exnem</td>
+                        <td class="version">1.0</td>
+                        <td class="conflicts"></td>
+                        <td class="mod-group"></td>
+                        <td class="category">Armor Weapons</td>
+                        <td class="description">Quest under IC arena</td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">169</td>
+                        <td class="plugin-file">Unique Ebony Sets.esp</td>
+                        <td class="mod-name">Unique Ebony Sets with Exnem support</td>
+                        <td class="version">1.0</td>
+                        <td class="conflicts"></td>
+                        <td class="mod-group"></td>
+                        <td class="category">Armor Weapons</td>
+                        <td class="description">Quests (check Readme file)</td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">170</td>
+                        <td class="plugin-file">pizz_NINJA_outfit.esp</td>
+                        <td class="mod-name">Pizz's Ninja Outfit</td>
+                        <td class="version">1.2</td>
+                        <td class="conflicts">Customized to move cave entrance and guardian north of Underpall Cave, west of Bruma (didn't make sense to keep a level 20 guardian next to my starting area in Anvil)</td>
+                        <td class="mod-group"></td>
+                        <td class="category">Armor Weapons</td>
+                        <td class="description">NPC west of Anvil docks</td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">171</td>
+                        <td class="plugin-file">tona_whitesquall-armor_ver2.esp</td>
+                        <td class="mod-name">Whitesquall-Armor for HGEC ver2.0</td>
+                        <td class="version">2.1</td>
+                        <td class="conflicts">Customized to replace the Imperial Dragon Armor Replaced helmet by Light armor helmet from Apophis Silver Dragon sets</td>
+                        <td class="mod-group"></td>
+                        <td class="category"></td>
+                        <td class="description"></td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">172</td>
+                        <td class="plugin-file">tona_simple_dress-armor_ver3.esp</td>
+                        <td class="mod-name">Tona SimpleDress-Armor for HGEC</td>
+                        <td class="version">3.0.1</td>
+                        <td class="conflicts"></td>
+                        <td class="mod-group"></td>
+                        <td class="category"></td>
+                        <td class="description"></td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">173</td>
+                        <td class="plugin-file">DarkIllusionArmor.esp</td>
+                        <td class="mod-name">Dark Illusion Armor</td>
+                        <td class="version">1.0</td>
+                        <td class="conflicts"></td>
+                        <td class="mod-group"></td>
+                        <td class="category">Armor Weapons</td>
+                        <td class="description">Piukanada Ruin and defeat all hidden heroic enemies.</td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">174</td>
+                        <td class="plugin-file">Blood Illusion and Arcania armors for Exnem's body.esp</td>
+                        <td class="mod-name">Blood Illusion and Arcania armors for Exnems body by Plipo</td>
+                        <td class="version">0.9.2</td>
+                        <td class="conflicts">Cell with room name still in French Load before darker_dungeons to revert name to English</td>
+                        <td class="mod-group"></td>
+                        <td class="category">Armor Weapons</td>
+                        <td class="description">Blueblood fort, located south-east fo Leyawiin</td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">175</td>
+                        <td class="plugin-file">Nightshade_Armor.esp</td>
+                        <td class="mod-name">Nightshade Armor</td>
+                        <td class="version">0.95</td>
+                        <td class="conflicts">Customized to add armor in an Ayleid dungeon (Anga)</td>
+                        <td class="mod-group"></td>
+                        <td class="category">Armor Weapons</td>
+                        <td class="description">IC Market - Stony Shields</td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">176</td>
+                        <td class="plugin-file">LichGear.esp</td>
+                        <td class="mod-name">Lich Gear</td>
+                        <td class="version">2.0</td>
+                        <td class="conflicts"></td>
+                        <td class="mod-group"></td>
+                        <td class="category">Armor Weapons</td>
+                        <td class="description">"Lelles' Quality Merchandise" shop in Anvil Underpall cave</td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">177</td>
+                        <td class="plugin-file">The Dead Knights.esp</td>
+                        <td class="mod-name">Dead Knights Armor and Weapons</td>
+                        <td class="version">1.0</td>
+                        <td class="conflicts"></td>
+                        <td class="mod-group"></td>
+                        <td class="category">Armor Weapons</td>
+                        <td class="description">Fort Blueblood</td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">178</td>
+                        <td class="plugin-file">Dk second knight update.esp</td>
+                        <td class="mod-name">Dead Knights Armor and Weapons</td>
+                        <td class="version">1.0</td>
+                        <td class="conflicts"></td>
+                        <td class="mod-group"></td>
+                        <td class="category">Armor Weapons</td>
+                        <td class="description"></td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">179</td>
+                        <td class="plugin-file">HelmetCollection.esp</td>
+                        <td class="mod-name">Phitts Helmet Collection</td>
+                        <td class="version">1.1</td>
+                        <td class="conflicts"></td>
+                        <td class="mod-group"></td>
+                        <td class="category">Armor Weapons</td>
+                        <td class="description">Multiple vendor locations</td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">180</td>
+                        <td class="plugin-file">Masks Revised.esp</td>
+                        <td class="mod-name">Masks Revised</td>
+                        <td class="version">1.0</td>
+                        <td class="conflicts"></td>
+                        <td class="mod-group"></td>
+                        <td class="category">Armor Weapons</td>
+                        <td class="description">Skingrad - Colovian Trader</td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">181</td>
+                        <td class="plugin-file">XiaNewAmuletsV1.esp</td>
+                        <td class="mod-name">New amulets</td>
+                        <td class="version">1.0</td>
+                        <td class="conflicts"></td>
+                        <td class="mod-group"></td>
+                        <td class="category">Armor Weapons</td>
+                        <td class="description">IC - Red Diamond Jewlery Store</td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">182</td>
+                        <td class="plugin-file">Slof's Bracelet Collection.esp</td>
+                        <td class="mod-name">Slof's bracelet collection</td>
+                        <td class="version">1.6</td>
+                        <td class="conflicts"></td>
+                        <td class="mod-group"></td>
+                        <td class="category">Armor Weapons</td>
+                        <td class="description">Cheydenhal - Borba's</td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">183</td>
+                        <td class="plugin-file">Slof's Bracelets & Rings.esp</td>
+                        <td class="mod-name">AlienSlof's Bracelets and Rings</td>
+                        <td class="version">1.0</td>
+                        <td class="conflicts"></td>
+                        <td class="mod-group"></td>
+                        <td class="category">Armor Weapons</td>
+                        <td class="description">Bruma - Nord Winds,</td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">184</td>
+                        <td class="plugin-file">KDClothCirclets.esp</td>
+                        <td class="mod-name">KD's Armored Circlets (cloth)</td>
+                        <td class="version">1.1</td>
+                        <td class="conflicts">See note for JDFan's potion belt adaptation for Exnem</td>
+                        <td class="mod-group"></td>
+                        <td class="category">Armor Weapons</td>
+                        <td class="description">Skingrad - Colovian Trader</td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">185</td>
+                        <td class="plugin-file">TheForgottenShields.esp</td>
+                        <td class="mod-name">The Forgotten Shields</td>
+                        <td class="version">1.0</td>
+                        <td class="conflicts"></td>
+                        <td class="mod-group"></td>
+                        <td class="category">Armor Weapons</td>
+                        <td class="description">IC - Stonewall Shields, Best Defense and quests</td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">186</td>
+                        <td class="plugin-file">The One Ring.esp</td>
+                        <td class="mod-name">The One Ring</td>
+                        <td class="version">1.2</td>
+                        <td class="conflicts"></td>
+                        <td class="mod-group"></td>
+                        <td class="category">Armor Weapons</td>
+                        <td class="description">Bottom of Lake Rumare</td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">187</td>
+                        <td class="plugin-file">KDDwemerSpectacles.esp</td>
+                        <td class="mod-name">KD's Dweemer Spectacles</td>
+                        <td class="version">3.0</td>
+                        <td class="conflicts"></td>
+                        <td class="mod-group"></td>
+                        <td class="category">Armor Weapons</td>
+                        <td class="description">IC - jewelry store</td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">188</td>
+                        <td class="plugin-file">CT-Com's Torch Compendium.esp</td>
+                        <td class="mod-name">Com's Torch Compendium</td>
+                        <td class="version">1.1</td>
+                        <td class="conflicts">Load before Origin of Mage Guild - conflicts with NPC Julienne Fanis Created another NPC to fill this role</td>
+                        <td class="mod-group"></td>
+                        <td class="category">Armor Weapons</td>
+                        <td class="description">Multiple vendor locations</td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">189</td>
+                        <td class="plugin-file">Creeper.esp</td>
+                        <td class="mod-name">The Creeper</td>
+                        <td class="version">0.99</td>
+                        <td class="conflicts"></td>
+                        <td class="mod-group"></td>
+                        <td class="category">NPC</td>
+                        <td class="description">Brings back an old friend from Morrowind</td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">190</td>
+                        <td class="plugin-file">MM_NoMoreAnnoyingMessages.esp</td>
+                        <td class="mod-name">No More Annoying Messages</td>
+                        <td class="version">1.0</td>
+                        <td class="conflicts"></td>
+                        <td class="mod-group"></td>
+                        <td class="category">Patch</td>
+                        <td class="description">Removes annoying messages (loading screen..)</td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">191</td>
+                        <td class="plugin-file">No More Annoying Comments.esp</td>
+                        <td class="mod-name">No More Annoying Comments about your skills</td>
+                        <td class="version">0.1</td>
+                        <td class="conflicts"></td>
+                        <td class="mod-group"></td>
+                        <td class="category">Patch</td>
+                        <td class="description">Removes annoying comments (when leveling up).</td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">192</td>
+                        <td class="plugin-file">SA Social Alertness.esp</td>
+                        <td class="mod-name">SA Social Alertness</td>
+                        <td class="version">1.3</td>
+                        <td class="conflicts"></td>
+                        <td class="mod-group"></td>
+                        <td class="category"></td>
+                        <td class="description"></td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">193</td>
+                        <td class="plugin-file">Pestilent Afflictions.esp</td>
+                        <td class="mod-name">Pestilent Afflictions</td>
+                        <td class="version">1.6</td>
+                        <td class="conflicts">Load after Supreme Magicka and MMM Customized to tweak chances of diseases (Magic -> LevelledSpells: increase Chance None to reduce likelihood of disease)</td>
+                        <td class="mod-group"></td>
+                        <td class="category">Gameplay</td>
+                        <td class="description">Improves visual effect and progression of diseases.</td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">194</td>
+                        <td class="plugin-file">Origin of the Mages Guild.esp</td>
+                        <td class="mod-name"><a href="https://www.nexusmods.com/oblivion/mods/11273" target="_blank">Origin of the Mage Guild</a></td>
+                        <td class="version">5.1</td>
+                        <td class="conflicts">Keep after Persuasion Overhaul (Faction conflict) Keep after Alienslof Robe Trader Conflict with NPC Julienne Fanis over CT-Torch_Compendium</td>
+                        <td class="mod-group"></td>
+                        <td class="category">Quest</td>
+                        <td class="description"></td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">195</td>
+                        <td class="plugin-file">MannimarcoRevisited.esp</td>
+                        <td class="mod-name"><a href="https://www.nexusmods.com/oblivion/mods/11369" target="_blank">Mannimarco Revisited</a></td>
+                        <td class="version">1.0</td>
+                        <td class="conflicts">Load after OOO</td>
+                        <td class="mod-group"></td>
+                        <td class="category">Patch</td>
+                        <td class="description">Makes one of the biggest villains in Oblivion an opponent worthy of his reputation.</td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">196</td>
+                        <td class="plugin-file">MannimarcoRevisitedOOO.esp</td>
+                        <td class="mod-name">Mannimarco Revisited - OOO Compatibility</td>
+                        <td class="version">1.0</td>
+                        <td class="conflicts"></td>
+                        <td class="mod-group"></td>
+                        <td class="category">Patch</td>
+                        <td class="description"></td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">197</td>
+                        <td class="plugin-file">DLCShiveringIsles.esp</td>
+                        <td class="mod-name">Shivering Isles</td>
+                        <td class="version"></td>
+                        <td class="conflicts">Dummy.esp file. Can be loaded anywhere in list.</td>
+                        <td class="mod-group"></td>
+                        <td class="category">Official Plugin</td>
+                        <td class="description"></td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">198</td>
+                        <td class="plugin-file">SM Plugin Refurbish - SI.esp</td>
+                        <td class="mod-name">Strategy Master Plugin Refurbish - Shivering Isle</td>
+                        <td class="version">1.0.7</td>
+                        <td class="conflicts"></td>
+                        <td class="mod-group">Plugin Refurbish</td>
+                        <td class="category">Patch</td>
+                        <td class="description"></td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">199</td>
+                        <td class="plugin-file">SIHungerFix.esp</td>
+                        <td class="mod-name">SI Hunger mesh fix</td>
+                        <td class="version"></td>
+                        <td class="conflicts"></td>
+                        <td class="mod-group"></td>
+                        <td class="category">Patch</td>
+                        <td class="description">Resets the Hunger from MMM to the one used in SI</td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">200</td>
+                        <td class="plugin-file">OOO SI Hunger replacer.esp</td>
+                        <td class="mod-name">SI Hunger replacer for OOO</td>
+                        <td class="version"></td>
+                        <td class="conflicts"></td>
+                        <td class="mod-group"></td>
+                        <td class="category">Patch</td>
+                        <td class="description">Resets the Hunger from OOO to the one used in SI</td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">201</td>
+                        <td class="plugin-file">Harvest [Flora] - Shivering Isles.esp</td>
+                        <td class="mod-name">Harvest [Flora] - Shivering Isles Compatibility</td>
+                        <td class="version">0.2</td>
+                        <td class="conflicts"></td>
+                        <td class="mod-group">Harvest [Flora]</td>
+                        <td class="category">Patch</td>
+                        <td class="description"></td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">202</td>
+                        <td class="plugin-file">SM_ShiveringIsles.esp</td>
+                        <td class="mod-name">Supreme Magicka - SI Compatibility</td>
+                        <td class="version">0.80</td>
+                        <td class="conflicts"></td>
+                        <td class="mod-group">Supreme Magicka</td>
+                        <td class="category">Patch</td>
+                        <td class="description"></td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">203</td>
+                        <td class="plugin-file">PersuasionSI.esp</td>
+                        <td class="mod-name">Persuasion Overhaul - SI Compatibility</td>
+                        <td class="version">1.2</td>
+                        <td class="conflicts"></td>
+                        <td class="mod-group">Persuasion Overhaul</td>
+                        <td class="category">Patch</td>
+                        <td class="description"></td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">204</td>
+                        <td class="plugin-file">RenGuardOverhaulShiveringIsles.esp</td>
+                        <td class="mod-name">Reneer's Guards Overhaul - SI Compatibility</td>
+                        <td class="version">1.79a</td>
+                        <td class="conflicts"></td>
+                        <td class="mod-group">RGO</td>
+                        <td class="category">Patch</td>
+                        <td class="description"></td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">205</td>
+                        <td class="plugin-file">Abandoned Mania Camp.esp</td>
+                        <td class="mod-name">Abandonned Mania Camp</td>
+                        <td class="version">1.0</td>
+                        <td class="conflicts"></td>
+                        <td class="mod-group"></td>
+                        <td class="category">House</td>
+                        <td class="description"></td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">206</td>
+                        <td class="plugin-file">Jagnot-SI-Bliss Aquaduct House.esp</td>
+                        <td class="mod-name">Jagnot's SI Bliss Acquaduct House</td>
+                        <td class="version">1.0</td>
+                        <td class="conflicts"></td>
+                        <td class="mod-group"></td>
+                        <td class="category">House</td>
+                        <td class="description"></td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">207</td>
+                        <td class="plugin-file">Lakeview2.esp</td>
+                        <td class="mod-name"><a href="https://www.nexusmods.com/oblivion/mods/5316" target="_blank">Lakeview house</a></td>
+                        <td class="version">2.2b</td>
+                        <td class="conflicts">Customized to remove immersion breaking note from campsite storage.</td>
+                        <td class="mod-group"></td>
+                        <td class="category">House</td>
+                        <td class="description">House with simple quest for low levels</td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">208</td>
+                        <td class="plugin-file">Knights.esp</td>
+                        <td class="mod-name">Knights of the Nine</td>
+                        <td class="version"></td>
+                        <td class="conflicts">Load after most non cosmetic mods</td>
+                        <td class="mod-group"></td>
+                        <td class="category">Official plugin</td>
+                        <td class="description"></td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">209</td>
+                        <td class="plugin-file">Knights - Unofficial Patch</td>
+                        <td class="mod-name"><a href="https://www.nexusmods.com/oblivion/mods/9974" target="_blank">Unofficial patch for Knights of the Nine</a></td>
+                        <td class="version">1.0.6</td>
+                        <td class="conflicts"></td>
+                        <td class="mod-group">Unofficial Patch</td>
+                        <td class="category">Patch</td>
+                        <td class="description"></td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">210</td>
+                        <td class="plugin-file">SM Plugin Refurbish - Knights.esp</td>
+                        <td class="mod-name">Strategy Master Plugin Refurbish - Shivering Isle</td>
+                        <td class="version">1.0.7</td>
+                        <td class="conflicts"></td>
+                        <td class="mod-group">Plugin Refurbish</td>
+                        <td class="category">Patch</td>
+                        <td class="description"></td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">211</td>
+                        <td class="plugin-file">XulEntiusGorge.esp</td>
+                        <td class="mod-name"><a href="https://www.nexusmods.com/oblivion/mods/13769" target="_blank">Unique Landscapes: Entius Gorge</a></td>
+                        <td class="version">1.1</td>
+                        <td class="conflicts"></td>
+                        <td class="mod-group">Unique Landscapes</td>
+                        <td class="category">Scenery</td>
+                        <td class="description"></td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">212</td>
+                        <td class="plugin-file">xulChorrolHinterland.esp</td>
+                        <td class="mod-name"><a href="https://www.nexusmods.com/oblivion/mods/13769" target="_blank">Unique Landscapes: Chorrol Hinterlands</a></td>
+                        <td class="version">1.2</td>
+                        <td class="conflicts"></td>
+                        <td class="mod-group">Unique Landscapes</td>
+                        <td class="category">Scenery</td>
+                        <td class="description"></td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">213</td>
+                        <td class="plugin-file">xulRiverEthe.esp</td>
+                        <td class="mod-name"><a href="https://www.nexusmods.com/oblivion/mods/13769" target="_blank">Unique Landscapes - River Ethe</a></td>
+                        <td class="version">1.0</td>
+                        <td class="conflicts"></td>
+                        <td class="mod-group"></td>
+                        <td class="category"></td>
+                        <td class="description"></td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">214</td>
+                        <td class="plugin-file">xulCloudtopMountains.esp</td>
+                        <td class="mod-name"><a href="https://www.nexusmods.com/oblivion/mods/13769" target="_blank">Unique Landscapes - CloudTop Mountain</a></td>
+                        <td class="version">1.0</td>
+                        <td class="conflicts"></td>
+                        <td class="mod-group">Unique Landscapes</td>
+                        <td class="category">Scenery</td>
+                        <td class="description"></td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">215</td>
+                        <td class="plugin-file">mythsandlegends.esp</td>
+                        <td class="mod-name"><a href="https://www.nexusmods.com/oblivion/mods/9464" target="_blank">Myths and Legends</a></td>
+                        <td class="version">2.4.8</td>
+                        <td class="conflicts">Keep after Chorrol Hinterland (AI Package FWFind1)</td>
+                        <td class="mod-group"></td>
+                        <td class="category">Armor Weapons</td>
+                        <td class="description">Quests from books - Multiple vendor locations</td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">216</td>
+                        <td class="plugin-file">xulBravilBarrowfields.esp</td>
+                        <td class="mod-name"><a href="https://www.nexusmods.com/oblivion/mods/13769" target="_blank">Unique Landscapes - Bravil Barrowfields</a></td>
+                        <td class="version">1.3</td>
+                        <td class="conflicts"></td>
+                        <td class="mod-group"></td>
+                        <td class="category"></td>
+                        <td class="description"></td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">217</td>
+                        <td class="plugin-file">xulLushWoodlands.esp</td>
+                        <td class="mod-name"><a href="https://www.nexusmods.com/oblivion/mods/13769" target="_blank">Unique Landscapes: Lush Woodlands</a></td>
+                        <td class="version">1.2</td>
+                        <td class="conflicts"></td>
+                        <td class="mod-group">Unique Landscapes</td>
+                        <td class="category">Scenery</td>
+                        <td class="description"></td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">218</td>
+                        <td class="plugin-file">xulFallenLeafEverglade.esp</td>
+                        <td class="mod-name"><a href="https://www.nexusmods.com/oblivion/mods/13769" target="_blank">Unique Landscapes: FallenLeaf Everglade</a></td>
+                        <td class="version">1.2</td>
+                        <td class="conflicts">Customized manually for floating rocks and stairs between Ayleid ruin and river</td>
+                        <td class="mod-group">Unique Landscapes</td>
+                        <td class="category">Scenery</td>
+                        <td class="description"></td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">219</td>
+                        <td class="plugin-file">LostSpires-Everglade patch.esp</td>
+                        <td class="mod-name">Lost Spires - UL FallenLeaf Everglade Compatibility</td>
+                        <td class="version">1.0</td>
+                        <td class="conflicts"></td>
+                        <td class="mod-group">Unique Landscapes</td>
+                        <td class="category">Patch</td>
+                        <td class="description"></td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">220</td>
+                        <td class="plugin-file">xulAncientRedwoods.esp</td>
+                        <td class="mod-name"><a href="https://www.nexusmods.com/oblivion/mods/13769" target="_blank">Unique Landscapes: Ancient Redwoods</a></td>
+                        <td class="version">1.5.1</td>
+                        <td class="conflicts"></td>
+                        <td class="mod-group">Unique Landscapes</td>
+                        <td class="category">Scenery</td>
+                        <td class="description"></td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">221</td>
+                        <td class="plugin-file">xulColovianHighlands_EV.esp</td>
+                        <td class="mod-name"><a href="https://www.nexusmods.com/oblivion/mods/13769" target="_blank">Unique Landscapes: Colovian Highlands</a></td>
+                        <td class="version">1.1.1</td>
+                        <td class="conflicts"></td>
+                        <td class="mod-group">Unique Landscapes</td>
+                        <td class="category">Scenery</td>
+                        <td class="description"></td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">222</td>
+                        <td class="plugin-file">xulBeachesOfCyrodiilLostCoast.esp</td>
+                        <td class="mod-name"><a href="https://www.nexusmods.com/oblivion/mods/13769" target="_blank">Unique Landscapes: Beaches of Cyrodiil - The Lost Coast</a></td>
+                        <td class="version">1.6.1</td>
+                        <td class="conflicts">Load after OOO and Knights of the Nine</td>
+                        <td class="mod-group">Unique Landscapes</td>
+                        <td class="category">Scenery</td>
+                        <td class="description"></td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">223</td>
+                        <td class="plugin-file">Better Cities BRUMA.esp</td>
+                        <td class="mod-name"><a href="https://www.nexusmods.com/oblivion/mods/16513" target="_blank">Bananasplit Better Cities: Bruma</a></td>
+                        <td class="version">1.8.5</td>
+                        <td class="conflicts">Customized to remove ugly Bruma gate in middle of town</td>
+                        <td class="mod-group">Better Cities Translated</td>
+                        <td class="category">Scenery</td>
+                        <td class="description"></td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">224</td>
+                        <td class="plugin-file">Better Cities LEYAWIIN.esp</td>
+                        <td class="mod-name"><a href="https://www.nexusmods.com/oblivion/mods/16513" target="_blank">Bananasplit Better Cities: Leyawiin</a></td>
+                        <td class="version">1.8.5</td>
+                        <td class="conflicts"></td>
+                        <td class="mod-group">Better Cities Translated</td>
+                        <td class="category">Scenery</td>
+                        <td class="description"></td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">225</td>
+                        <td class="plugin-file">Better Cities CHEYDINHAL.esp</td>
+                        <td class="mod-name"><a href="https://www.nexusmods.com/oblivion/mods/16513" target="_blank">Bananasplit Better Cities: Cheydinhal</a></td>
+                        <td class="version">1.8.5</td>
+                        <td class="conflicts"></td>
+                        <td class="mod-group">Better Cities Translated</td>
+                        <td class="category">Scenery</td>
+                        <td class="description"></td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">226</td>
+                        <td class="plugin-file">BC CHEYDINHAL Additions.esp</td>
+                        <td class="mod-name">BC CHEYDINHAL Additions</td>
+                        <td class="version">1.8.5</td>
+                        <td class="conflicts">Load after Better Cities Cheydinhal</td>
+                        <td class="mod-group">Better Cities Translated</td>
+                        <td class="category">Patch</td>
+                        <td class="description"></td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">227</td>
+                        <td class="plugin-file">Better Cities SKINGRAD.esp</td>
+                        <td class="mod-name">Bananasplit Better Cities: Skingrad</td>
+                        <td class="version">1.8.5</td>
+                        <td class="conflicts"></td>
+                        <td class="mod-group">Better Cities Translated</td>
+                        <td class="category">Scenery</td>
+                        <td class="description"></td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">228</td>
+                        <td class="plugin-file">Better Cities ANVIL.esp</td>
+                        <td class="mod-name">Bananasplit Better Cities: Anvil</td>
+                        <td class="version">1.8.5</td>
+                        <td class="conflicts">Load after UL Lost Coast</td>
+                        <td class="mod-group">Better Cities Translated</td>
+                        <td class="category">Scenery</td>
+                        <td class="description"></td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">229</td>
+                        <td class="plugin-file">BCAnvil-LostCoast Fix.esp</td>
+                        <td class="mod-name">BC Anvil - UL Lost Coast Compatibility</td>
+                        <td class="version">1.8.5</td>
+                        <td class="conflicts">Load after UL Lost Coast and Better Cities Anvil</td>
+                        <td class="mod-group">Better Cities Translated</td>
+                        <td class="category">Patch</td>
+                        <td class="description"></td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">230</td>
+                        <td class="plugin-file">Better Cities BRAVIL.esp</td>
+                        <td class="mod-name">Bananasplit Better Cities: Bravil</td>
+                        <td class="version">1.8.5</td>
+                        <td class="conflicts"></td>
+                        <td class="mod-group">Better Cities Translated</td>
+                        <td class="category">Scenery</td>
+                        <td class="description"></td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">231</td>
+                        <td class="plugin-file">Better Cities CHORROL.esp</td>
+                        <td class="mod-name">Bananasplit Better Cities: Chorrol</td>
+                        <td class="version">1.8.5</td>
+                        <td class="conflicts">Load after UL Chorrol Hinterland</td>
+                        <td class="mod-group">Better Cities Translated</td>
+                        <td class="category">Scenery</td>
+                        <td class="description"></td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">232</td>
+                        <td class="plugin-file">BCChorrol-ChorrolHinterland fix.esp</td>
+                        <td class="mod-name">BC Chorrol - UL Chorrol Hinterland Compatibility</td>
+                        <td class="version">1.8.5</td>
+                        <td class="conflicts">Load after UL Chorrol Hinterland and Better Cities: Chorrol</td>
+                        <td class="mod-group">Better Cities Translated</td>
+                        <td class="category">Patch</td>
+                        <td class="description"></td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">233</td>
+                        <td class="plugin-file">FCC-IC-Elfengaden.esp</td>
+                        <td class="mod-name">Fellan Cities: Elven Gardens</td>
+                        <td class="version">1.0</td>
+                        <td class="conflicts"></td>
+                        <td class="mod-group">Fellan Cities Translated</td>
+                        <td class="category">Scenery</td>
+                        <td class="description"></td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">234</td>
+                        <td class="plugin-file">FCC-IC-Arena.esp</td>
+                        <td class="mod-name">Fellan Cities: Arena</td>
+                        <td class="version">1.0</td>
+                        <td class="conflicts"></td>
+                        <td class="mod-group">Fellan Cities Translated</td>
+                        <td class="category">Scenery</td>
+                        <td class="description"></td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">235</td>
+                        <td class="plugin-file">FCC-IC-Talosplaza.esp</td>
+                        <td class="mod-name">Fellan Cities: Talos Plaza</td>
+                        <td class="version">1.0</td>
+                        <td class="conflicts"></td>
+                        <td class="mod-group">Fellan Cities Translated</td>
+                        <td class="category">Scenery</td>
+                        <td class="description"></td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">236</td>
+                        <td class="plugin-file">Better Cities ICMarket.esp</td>
+                        <td class="mod-name">Bananasplit Better Cities: IC Market</td>
+                        <td class="version">1.8.5</td>
+                        <td class="conflicts"></td>
+                        <td class="mod-group">Better Cities Translated</td>
+                        <td class="category">Scenery</td>
+                        <td class="description"></td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">237</td>
+                        <td class="plugin-file">WBA Arboretum.esp</td>
+                        <td class="mod-name">Wolfslady's Arboretum</td>
+                        <td class="version">1.4.2</td>
+                        <td class="conflicts">Customized to remove Hotel and add Altar of Dibella</td>
+                        <td class="mod-group"></td>
+                        <td class="category">Scenery</td>
+                        <td class="description"></td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">238</td>
+                        <td class="plugin-file">xulImperialIsle.esp</td>
+                        <td class="mod-name"><a href="https://www.nexusmods.com/oblivion/mods/13769" target="_blank">Unique Landscapes: Imperial Isle</a></td>
+                        <td class="version">1.4</td>
+                        <td class="conflicts">Keep after Better Cities: IC market and WBA Arboretum</td>
+                        <td class="mod-group">Unique Landscapes</td>
+                        <td class="category">Scenery</td>
+                        <td class="description"></td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">239</td>
+                        <td class="plugin-file">xulRollingHills_EV.esp</td>
+                        <td class="mod-name">Unique Landscapes: Rolling Hills</td>
+                        <td class="version">1.3.1</td>
+                        <td class="conflicts">Overrides changes to TrigZonePlayerDoonce01DABoethiaSCRIPT from UOP Load after Arrius Creek (install LOD patch) Load at end of list to avoid tearing in terrain around Roland Janseric cabin</td>
+                        <td class="mod-group">Unique Landscapes</td>
+                        <td class="category">Scenery</td>
+                        <td class="description"></td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">240</td>
+                        <td class="plugin-file">Ivellon.esp</td>
+                        <td class="mod-name"><a href="https://www.nexusmods.com/oblivion/mods/2544" target="_blank">The Dungeons of Ivellon</a></td>
+                        <td class="version">1.8</td>
+                        <td class="conflicts"></td>
+                        <td class="mod-group"></td>
+                        <td class="category">Quest</td>
+                        <td class="description">search for the ancient book that countess Narina Carvain of Bruma preserves in her rooms</td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">241</td>
+                        <td class="plugin-file">ImperialForts.esp</td>
+                        <td class="mod-name"><a href="https://www.nexusmods.com/oblivion/mods/18601" target="_blank">Imperial Forts</a></td>
+                        <td class="version">2.0</td>
+                        <td class="conflicts">Keep after Better Cities</td>
+                        <td class="mod-group"></td>
+                        <td class="category">Scenery</td>
+                        <td class="description"></td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">242</td>
+                        <td class="plugin-file">Music Controller.esp</td>
+                        <td class="mod-name">Music Controller</td>
+                        <td class="version">1.1</td>
+                        <td class="conflicts"></td>
+                        <td class="mod-group"></td>
+                        <td class="category">Gameplay</td>
+                        <td class="description">Allow you to select music playlists for battle/dungeon/explore</td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">243</td>
+                        <td class="plugin-file">Personality Idles.esp</td>
+                        <td class="mod-name">Personality idles</td>
+                        <td class="version">1.0</td>
+                        <td class="conflicts"></td>
+                        <td class="mod-group"></td>
+                        <td class="category">NPC</td>
+                        <td class="description"></td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">244</td>
+                        <td class="plugin-file">kuertee_fatigues_decouple_walking_from_running.esp</td>
+                        <td class="mod-name">Fatigue decouple walking from running</td>
+                        <td class="version">1.0</td>
+                        <td class="conflicts"></td>
+                        <td class="mod-group"></td>
+                        <td class="category">Gameplay</td>
+                        <td class="description"></td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">245</td>
+                        <td class="plugin-file">_darker_dungeons.esp</td>
+                        <td class="mod-name"><a href="https://www.nexusmods.com/oblivion/mods/2918" target="_blank">Darker Mods</a></td>
+                        <td class="version">2.0</td>
+                        <td class="conflicts">Load after MMM</td>
+                        <td class="mod-group"></td>
+                        <td class="category">Gameplay</td>
+                        <td class="description">Really dark dungeons...</td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">246</td>
+                        <td class="plugin-file">StarX Vanilla Vampires.esp</td>
+                        <td class="mod-name">StarX Vanilla Vampires V (Starfire's vampires)</td>
+                        <td class="version">2.1</td>
+                        <td class="conflicts">Customized to tweak some AI package. Conflicts with races and NPC. Unload Glowing Vampires.esp (after enabling to add glow in customized mod)</td>
+                        <td class="mod-group"></td>
+                        <td class="category">NPC</td>
+                        <td class="description">Conflict with Glowing Eyes for NPCs from UOP</td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">247</td>
+                        <td class="plugin-file">KINewVampires.esp</td>
+                        <td class="mod-name">ParasiteX New Vampires - Requires StarX to be loaded first</td>
+                        <td class="version">2.1</td>
+                        <td class="conflicts">Load After StarX and MMM - may require customization for feeding AI Packages Will allow feeding on human NPCs after combat if you belong to their faction.</td>
+                        <td class="mod-group"></td>
+                        <td class="category">NPC</td>
+                        <td class="description">Customized for compatibility with OMOBS</td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">248</td>
+                        <td class="plugin-file">StarXAI.esp</td>
+                        <td class="mod-name">StarX Vanilla Vampires AI</td>
+                        <td class="version">1.0</td>
+                        <td class="conflicts">Load after KI New Vampires</td>
+                        <td class="mod-group"></td>
+                        <td class="category">Patch</td>
+                        <td class="description">Improves AI packages. Manually added to archive.</td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">249</td>
+                        <td class="plugin-file">OOO-Worn_Torches.esp</td>
+                        <td class="mod-name">OOO Worn Torches Compatibility Patch</td>
+                        <td class="version">1.33</td>
+                        <td class="conflicts">Load after CT-Torch Compendium &amp; OOO</td>
+                        <td class="mod-group">OOO</td>
+                        <td class="category">Patch</td>
+                        <td class="description"></td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">250</td>
+                        <td class="plugin-file">Badmagic - Amazon Nord 02.esp</td>
+                        <td class="mod-name">Badmagic Amazon (player character)</td>
+                        <td class="version"></td>
+                        <td class="conflicts"></td>
+                        <td class="mod-group"></td>
+                        <td class="category">NPC</td>
+                        <td class="description"></td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">251</td>
+                        <td class="plugin-file">Streamline 3.1.esp</td>
+                        <td class="mod-name"><a href="https://www.nexusmods.com/oblivion/mods/10400" target="_blank">Streamline</a></td>
+                        <td class="version">3.1</td>
+                        <td class="conflicts">Customized to remove Purge Bloat. Load at end to catch largest # of mods.</td>
+                        <td class="mod-group"></td>
+                        <td class="category">Gameplay</td>
+                        <td class="description">Performance improvement mod</td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">252</td>
+                        <td class="plugin-file">_Crowded Roads Revamped.esp</td>
+                        <td class="mod-name"><a href="https://www.nexusmods.com/oblivion/mods/8265" target="_blank">Crowded Roads Revamped</a></td>
+                        <td class="version">1.1</td>
+                        <td class="conflicts">Load after Unique Landscapes, Better Cities</td>
+                        <td class="mod-group"></td>
+                        <td class="category">NPC</td>
+                        <td class="description">Load at end to increase number of NPCs in list</td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">253</td>
+                        <td class="plugin-file">Bashed Patch, 0.esp</td>
+                        <td class="mod-name"><a href="https://www.nexusmods.com/site/mods/591" target="_blank">Bashed Patch</a> (Wrye Bash)</td>
+                        <td class="version"></td>
+                        <td class="conflicts">Keep at end of load order Refresh patch after any major change in load order or new mod added / removed</td>
+                        <td class="mod-group"></td>
+                        <td class="category">Patch</td>
+                        <td class="description">Used to add faces from Tamriel NPCs Revamped - All races and TNR - Shivering Isles Also used to merge level lists and disable flickering effect from lights.</td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">254</td>
+                        <td class="plugin-file">RAEVWD Cities.esp</td>
+                        <td class="mod-name"><a href="https://www.nexusmods.com/oblivion/mods/20053" target="_blank">Really AEVWD</a></td>
+                        <td class="version">1.3.1</td>
+                        <td class="conflicts"></td>
+                        <td class="mod-group"></td>
+                        <td class="category"></td>
+                        <td class="description"></td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">255</td>
+                        <td class="plugin-file">RAEVWD New Sheoth.esp</td>
+                        <td class="mod-name">Really AEVWD</td>
+                        <td class="version">1.3.1</td>
+                        <td class="conflicts"></td>
+                        <td class="mod-group"></td>
+                        <td class="category"></td>
+                        <td class="description"></td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">256</td>
+                        <td class="plugin-file">Corean_hair_for_Original_race.esp</td>
+                        <td class="mod-name">Corean hair</td>
+                        <td class="version">1.8</td>
+                        <td class="conflicts"></td>
+                        <td class="mod-group"></td>
+                        <td class="category"></td>
+                        <td class="description"></td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">257</td>
+                        <td class="plugin-file">ChaseCameraMod.esp</td>
+                        <td class="mod-name">Chase Camera Mod</td>
+                        <td class="version">1.0.1</td>
+                        <td class="conflicts"></td>
+                        <td class="mod-group"></td>
+                        <td class="category">Patch</td>
+                        <td class="description"></td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">258</td>
+                        <td class="plugin-file">FlyingCameraMod.esp</td>
+                        <td class="mod-name">Flying Camera Mod</td>
+                        <td class="version">1.3</td>
+                        <td class="conflicts"></td>
+                        <td class="mod-group"></td>
+                        <td class="category">Patch</td>
+                        <td class="description"></td>
+                    </tr>
+                    <tr>
+                        <td class="load-number">259</td>
+                        <td class="plugin-file">ANBToggleGrab.esp</td>
+                        <td class="mod-name">ANB Toggle Grab</td>
+                        <td class="version">1.0</td>
+                        <td class="conflicts"></td>
+                        <td class="mod-group"></td>
+                        <td class="category">Patch</td>
+                        <td class="description"></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="note">
+                <p><strong>Important Note:</strong> Use <a href="https://www.nexusmods.com/site/mods/591" target="_blank">Wrye Bash</a> option to merge a few mods into the Bashed Patch.esp if you want to go beyond the 250 limit for esp files.</p>
+            </div>
+
+            <div class="legend">
+                <h4>Mods Legend</h4>
+                <ul>
+                    <li><strong>New content</strong> - Adds new quests, items, or locations</li>
+                    <li><strong>Aesthetic mods</strong> - Texture replacers, mesh improvements</li>
+                    <li><strong>Gameplay changes</strong> - Modifies game mechanics or balance</li>
+                    <li><strong>Must have mod</strong> - Essential for FCOM setup</li>
+                    <li><strong>Official mod</strong> - Bethesda DLC content</li>
+                    <li><strong>Patch</strong> - Compatibility or bug fix</li>
+                </ul>
+
+                <h4>Conflicts Legend</h4>
+                <ul>
+                    <li><span class="conflict-resolved">Conflicts in this color</span> have been resolved using personal customizations of the original esp files. These modifications have not been released online.</li>
+                    <li><span class="obse-required">Requires OBSE</span> - Oblivion Script Extender needed</li>
+                </ul>
+            </div>
+
+            <div class="warning">
+                <p><strong>Disclaimer:</strong> This load order represents a personal configuration from 2009. Many mods listed are no longer available or have been superseded by newer versions. This is preserved as a historical reference and for educational purposes. Always use modern load order tools and consult current compatibility guides when building your own setup.</p>
+            </div>
+        </main>
+
+        <div class="footer">
+            <p>
+                <img src="images/PES_HallofFameSmall.jpg" title="Homage to the venerable PlanetElderScrolls Hall of Fame" class="nav-image"><br>
+                <hr class="nav-divider">
+                <a href="index.html">Home</a> |
+                <a href="devakm-mods.html">Dev/Null Mods</a> |
+                <a href="FCOM_Convergence.html">Main</a> |
+                <a href="FCOM_Convergence_Guide.html">Guide</a> |
+                <a href="FCOM_LoadOrder.html">Load-Order</a> |
+                <a href="FCOM_Options.html">Options</a> |
+                <a href="FCOM_VersionHistory.html">Version History</a>
+                <hr class="nav-divider">
+            </p>
+            <p>Copyright 2006, 2007, 2008, 2009, 2015, 2025 by devakm. Individual works copyright by their respective creators.</p>
+        </div>
+    </div>
+</body>
+
+</html>

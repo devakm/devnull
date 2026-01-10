@@ -295,6 +295,93 @@ Copy-Item "x:\dev-staging\temp\devnull.devakm - Page Name_files\*.jpg" "x:\dev\d
 Copy-Item "x:\dev-staging\temp\devnull.devakm - Page Name_files\*.png" "x:\dev\devnull\docs\images\" -ErrorAction SilentlyContinue
 ```
 
+## Chunking Strategy for Large Files
+
+When creating or updating files with large amounts of repetitive content (e.g., tables with hundreds of rows, long lists), use a **chunking strategy** to work around tool response length limits.
+
+### When to Use Chunking
+
+Use chunking when:
+- Creating HTML tables with 100+ rows
+- Adding 50+ entries to structured lists
+- Converting large data sets from spreadsheets
+- Tool calls would exceed reasonable response sizes
+- Initial file creation would result in massive placeholder gaps
+
+### Chunking Best Practices
+
+**1. Initial File Creation**
+- Create the complete HTML structure (head, navigation, footer)
+- Include first ~40 entries to establish the pattern
+- Include final ~7 entries to anchor the end
+- Leave a gap in between that will be filled
+
+**2. Batch Insertion Strategy**
+- Break remaining content into batches of 40-50 entries
+- Use `replace_string_in_file` for each batch
+- Each replacement should:
+  - Start with the last complete entry from previous batch
+  - Insert all new entries for current batch
+  - End with the next anchor entry (either next batch start or final entries)
+
+**3. Pattern Example**
+
+For a 259-entry table:
+```
+Initial creation:
+- Entries 1-40 (complete)
+- Entries 253-259 (complete)
+- Gap: entries 41-252 missing
+
+Batch 1: Replace from entry 40 → add entries 41-90 → to entry 253
+Batch 2: Replace from entry 90 → add entries 91-140 → to entry 253
+Batch 3: Replace from entry 140 → add entries 141-190 → to entry 253
+Batch 4: Replace from entry 190 → add entries 191-240 → to entry 253
+Batch 5: Replace from entry 240 → add entries 241-252 → to entry 253
+```
+
+**4. Data Source Retention**
+- Extract all data upfront (e.g., via `fetch_webpage`)
+- Data from earlier tool calls remains available in conversation history
+- Reference earlier results directly when building batches
+- Do NOT use `runSubagent` - subagents cannot access parent conversation context
+
+**5. Verification After Completion**
+- Use `grep_search` to verify entry count
+- Check first, middle, and last entries are present
+- Confirm no gaps or duplicates in sequence
+- Validate table structure is intact
+
+### Real-World Example: FCOM_DetailedLoadOrder.html
+
+Successfully created 259-entry table using this approach:
+- Initial: Entries 1-40 and 253-259 (47 entries)
+- Batch 1: Added entries 41-90 (50 entries)
+- Batch 2: Added entries 91-140 (50 entries)
+- Batch 3: Added entries 141-190 (50 entries)
+- Batch 4: Added entries 191-240 (50 entries)
+- Batch 5: Added entries 241-252 (12 entries)
+- Total: 259 complete entries with 0% data loss
+
+### Common Pitfalls to Avoid
+
+❌ **Don't**: Create file with placeholder text like "entries 41-252 omitted"
+- Violates Rule #1 (NEVER remove content)
+- Requires rework to fix
+
+❌ **Don't**: Try to insert all entries in one operation
+- Exceeds response limits
+- Likely to fail or truncate
+
+❌ **Don't**: Use runSubagent for completing batches
+- Subagents lack conversation context
+- Cannot access earlier `fetch_webpage` or data extraction results
+
+✅ **Do**: Plan batches before starting
+✅ **Do**: Keep batches consistent (~40-50 entries)
+✅ **Do**: Verify each batch completes successfully before proceeding
+✅ **Do**: Use conversation history for data extraction
+
 ## Testing
 
 ### Pre-Deployment Validation
