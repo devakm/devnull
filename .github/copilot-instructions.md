@@ -191,6 +191,34 @@ FCOM-related pages should include the extended FCOM footer navigation:
 
 This navigation appears on: `FCOM_Convergence.html`, `FCOM_Convergence_Guide.html`, `FCOM_LoadOrder.html`, `FCOM_LoadOrderExpanded.html`, `FCOM_Options.html`, `FCOM_VersionHistory.html`
 
+### TOTO Footer Navigation
+TOTO (The Oblivion Texture Overhaul) pages should include footer navigation with PES Hall of Fame badge:
+```html
+<footer>
+    <hr>
+    <p>
+        <img src="images/PES_HallofFameSmall.jpg" title="Homage to the venerable PlanetElderScrolls Hall of Fame" class="nav-image"><br>
+        <hr class="nav-divider">
+        <a href="index.html">Home</a> |
+        <a href="devakm-mods.html">Dev/Null Mods</a> |
+        <a href="Oblivion-Texture-Overhaul.html">TOTO Main</a> |
+        <a href="Quests.html">The Oblivion Quest List</a>
+    </p>
+    <p class="copyright">Copyright 2006, 2007, 2008, 2009, 2015, 2025 by devakm. Individual works copyright by their respective creators.</p>
+</footer>
+```
+
+**TOTO Page-Specific Requirements:**
+- [ ] Footer uses `<footer>` tag (unlike FCOM pages which use `<div class="footer">`)
+- [ ] Footer includes PES Hall of Fame badge image
+- [ ] Footer has `<hr class="nav-divider">` before AND after navigation links
+- [ ] Footer includes standard 4-link navigation: Home | Dev/Null Mods | TOTO Main | Quest List
+- [ ] "Last Updated" note preserved from original (e.g., "Last Updated 03/23/2009 and 1/10/2026")
+- [ ] All mod links updated from dead sites (PlanetElderScrolls, TesSource) to Nexusmods where possible
+- [ ] All comparison screenshots and technical details preserved 100%
+
+This navigation appears on: `totoworld.html`, `totocharacter.html`, `totoitems.html`, `128mbcards.html`, `other.html`
+
 ### PES Hall of Fame Badge Decoration
 Quest-related pages can include the decorative PES (Planet Elder Scrolls) Hall of Fame badge above navigation links:
 
