@@ -61,12 +61,18 @@ The shared CSS provides these CSS variables:
 2. Remove all Wayback Machine toolbars, scripts, and embedded content
 3. Link to shared CSS file: `<link rel="stylesheet" href="css/devnull-shared.css">`
 4. Add page-specific CSS only if needed (in `<style>` tag after the link)
-5. Preserve ALL original content including:
+5. **Fix all image references** - Convert Wayback Machine image paths to local images:
+   - Change `./devnull.devakm - Page Name_files/image.jpg` → `images/image.jpg`
+   - Change `./TOTO_Page_Name_files/image.jpg` → `images/image.jpg`
+   - All images should reference files in `docs/images/` folder
+   - Preserve external image links (Wayback, Photobucket, Imageshack) in `<a href>` tags for historical reference
+6. Preserve ALL original content including:
    - Complete technical explanations (even if verbose)
    - Historical context and dates
    - All code examples with original formatting
    - Credits and contributor lists
    - Detailed step-by-step instructions
+   - All screenshots and images
 
 ### Conversion Verification Checklist
 
