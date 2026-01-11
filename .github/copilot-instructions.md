@@ -74,6 +74,14 @@ The shared CSS provides these CSS variables:
    - Detailed step-by-step instructions
    - All screenshots and images
 
+**CRITICAL: Complete File Replacement**
+- When converting HTML files, NEVER use `replace_string_in_file` to only replace the `<head>` section
+- Always create a COMPLETE new file from `<!DOCTYPE html>` to `</html>` using `create_file` first
+- Then copy the new file over the old file using PowerShell `Copy-Item -Force`
+- Or delete the old file first, then create the new complete file
+- Partial replacements leave behind old Wayback Machine CSS, scripts, and formatting
+- **Verify**: Check file after conversion - no `#g_title`, `#g_footer`, `.wrapper`, Wayback scripts, or old `<style>` blocks should remain
+
 ### Conversion Verification Checklist
 
 **MANDATORY - Verify ALL items before completing any HTML conversion:**
