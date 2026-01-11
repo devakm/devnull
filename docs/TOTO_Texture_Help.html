@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Texture Help - The Oblivion Texture Overhaul</title>
+  <link rel="stylesheet" href="css/devnull-shared.css">
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <h1>Texture Help</h1>
+      <p class="subtitle">Troubleshooting and Performance Tips for Texture Mods</p>
+      <nav>
+        <a href="index.html">Home</a> |
+        <a href="devakm-mods.html">Dev/Null Mods</a> |
+        <a href="Oblivion-Texture-Overhaul.html">TOTO Main</a> |
+        <a href="Quests.html">The Oblivion Quest List</a>
+      </nav>
+    </header>
+
+    <main>
+      <p><em class="update-note">Last Updated 9/27/2007 and 1/10/2026</em></p>
+
+      <p>If you don't understand a lot of the terms used on this site, please see the Textures FAQ (original link no longer available).</p>
+
+      <h2>Patch 1.2 and Custom Shaders</h2>
+      <p>One fairly common problem that many users have encountered after installing the official 1.2 patch is the parts of the ground (landscape) starts looking like a bunch of little map textures. Here's a screenshot (original Photobucket link no longer available) of what it looks like when this happens. Replacing the landscape textures doesn't help because it's a shader problem.</p>
+      <p>The problem happens when you update to the 1.2.x patch while using a mod that alters your shaders. Because the patch also edits the shaders, it will fail if the shaders have already been edited (the patcher can't find the correct files to update).</p>
+      <p>The solution is to uninstall the shader editing package (and possibly delete the Shader folder entirely). After doing this, reinstall the patch. The patch will set the new Shaders folder to read-only, so if you want to reinstall your edited shaders then go to the \Oblivion\Data\ folder and set it to read-write in the Properties menu. Now reinstall the shader editing package. Everything should work correctly after this.<br>
+        <em>(Thanks to AstionM for the screenshot and wmj for describing the solution).</em>
+      </p>
+
+      <h2>Stuttering and/or Slow FPS</h2>
+      <p>As long as your video card meets the recommended specs for Oblivion, you should see fairly minimal impact on your performance with most of the texture replacement mod described here. If you do suffer from performance problems, you should be able to fix the problem by following the guidelines in the Oblivion Tweaks Guide (original tweakguides.com link from 2007) and defragging your drive.</p>
+      <p>If Oblivion Launcher is massively slower to launch the game and you've got terrible stuttering after adding these suggested texture replacements and other enhancements, then the most likely explanation is that you have heavy fragmentation on your drive. Also, if you don't have enough main system RAM + video RAM to keep the game in memory with all these new meshes and textures, then WinXP will start using the page file and things get ugly real fast, especially if you have a slow/fragmented hard drive or the page file is fragmented (you can defrag the page file with some free utilities to help a bit here).</p>
+      <p>You may also want to try turning off all non-critical background processes (OBMM has a great new feature to do this for you automatically on launch) and tweaking your memory settings (see the Oblivion Tweaks Guide). If all that fails, you may need to add more RAM, get a better video card, and/or uninstall the problem mods.</p>
+      <p>Some users have also reported that it helps to delete your .ini (\My Documents\My Games\Oblivion\Oblivion.ini) and let Oblivion generate a new one, then tweak the new one.</p>
+      <p>If you're using QTP2, you can also try out my Qarl Normal Maps Reduced (original link no longer available), which improves performance and reduces stuttering for QTP2 on 256Mb video cards with very little loss of image quality in-game.</p>
+
+      <h3>Purging the Cell Buffer</h3>
+      <p>The most frequent slowdowns with large texture packs happen after you've been wandering around for a while (since VRAM usage will grow over time) regardless of your video card size -- it will just happen sooner on a 256Mb card than on a 512Mb card. For this reason, it is highly recommended that you use a "purge cell buffer" mod.</p>
+      <p>There are a bunch of these mods out already, but the most advanced one so far is Jaga Telesin's <a href="https://www.nexusmods.com/oblivion/mods/10400" target="_blank">Streamline</a> (it is far more effective and suffers a lot fewer side-effects than any other mods of this type, but it does require you to use OBSE). Alternately, you can use <a href="https://www.nexusmods.com/oblivion/mods/9139" target="_blank">Quarn's Purge Cell Buffer</a> (the <strong>Cell Change</strong> version is best if you don't use fast travel very often, but the <strong>Load Screen</strong> version works great as long as you fast travel or enter inns, shops, dungeons, etc. somewhat frequently) or Martigen's HTFpcb Extended New (original iinet.com.au link defunct) to keep the cell buffer purged (<a href="https://www.nexusmods.com/oblivion/mods/6077" target="_blank">HTFpcb</a> or <a href="https://www.nexusmods.com/oblivion/mods/6081" target="_blank">HTFpcb Extended</a> will also work).</p>
+      <p>If you want to test this yourself without installing one of the pcb mods, you can open the console whenever you start getting bogged down and type "pcb" (purge cell buffer) yourself. For more details on some of these PCB mods, check out this ESF thread (original elderscrolls.com forum link no longer available).</p>
+
+      <h3>General Performance Tuning Tips</h3>
+      <p>Tuning performance for Oblivion is a complicated subject with so many variables that I cannot reasonably attempt to do the subject any justice here. As mentioned earlier, I highly recommend reading Koroush Ghazi's Oblivion Tweak Guide (original tweakguides.com link from 2007). You should also check out the excellent series of ESF threads: Mastering the INI (original bethsoft.com forum link no longer available).</p>
+
+      <h2>Brief OMOD Creation Guide</h2>
+      <p>Creating your own omods with Oblivion Mod Manager (original timeslip.chorrol.com link defunct) may seem intimidating at first, but it's really very simple after the first few times. In short, the process is:</p>
+      <p><strong>(1)</strong> Download the mod to a temporary location and unpack it.<br>
+        <strong>(2)</strong> Launch OBMM.<br>
+        <strong>(3)</strong> Click <em>Create</em>.<br>
+        <strong>(4)</strong> Select the directory where you've unpacked the mod (you can click the <em>Data Files</em> radio button to make sure the files got added).<br>
+        <strong>(5)</strong> Type a name for the omod.<br>
+        <strong>(6)</strong> Click <em>Create omod</em>. Go get a cup of coffee while the 7-zip compression chugs away.
+      </p>
+      <p>That's it!</p>
+      <p>Once you've created the omod, simply select it and click the <em>Activate</em> button. If you later need to remove the textures, then you can simply select the omod and click <em>Deactivate</em>.</p>
+      <p>Oh yeah, don't forget to run <em>Utilities-&gt;ArchiveInvalidation</em> to update your BSA edits after installing/removing the textures.</p>
+
+      <h2>Pink or Missing Textures</h2>
+      <p>If you're seeing any pink/purple/black textures in-game, then there are only a few possible explanations:</p>
+      <p><strong>(1)</strong> You didn't install the texture replacer correctly, or<br>
+        <strong>(2)</strong> You didn't use a BSA-alteration or BSA-redirection method of invalidation, or<br>
+        <strong>(3)</strong> You've got a Windows file permissions problem (very rare in WinXP, fairly common in Vista), or<br>
+        <strong>(4)</strong> You removed a texture replacer and forgot to <em>Remove BSA Edits</em> (in OBMM) or <em>Restore</em> (in Wrye Bash) afterward, or<br>
+        <strong>(5)</strong> You've managed to corrupt your textures BSA and you need to restore a backup of it (this can happen if you try to use both OBMM and BSA Patcher). The latest versions of OBMM include a <em>BSA-Uncorruptor</em> utility that can save your hide if you ever get caught without a backup.
+      </p>
+
+      <h2>Normal Maps Don't Match</h2>
+      <p>If the textures are not pink but look really odd in some places, you may be suffering from mismatched normal maps. This can only happen if:</p>
+      <p><strong>(1)</strong> You didn't follow the Post-Patch Fix instructions (original elderscrolls.com forum link no longer available), which might leave Qarl's normal map dated older than your textures BSA, meaning you'll see Qarl's base texture with the default Oblivion normal map. This can be easily corrected by clicking <em>Reset BSA Dates</em> on OBMM's ArchiveInvalidation screen and several other methods detailed in the Post-Patch Fix instructions.</p>
+      <p><strong>(2)</strong> You didn't follow the readme instructions and you're running without any invalidation method, which will cause some of the base textures not to load (due to the Oblivion <a href="ArchiveInvalidation.html">texture-loading bug</a>). In this case you will see Qarl's normal map on the default Oblivion base texture in some places.</p>
+      <p><strong>(3)</strong> You've got a Windows file permissions problem preventing the correct normal map from loading, but this is pretty rare.</p>
+
+      <h2>Uninstalling</h2>
+      <p>It's not easy to uninstall a large texture pack like QTP2 by hand. You <em>could</em> simply delete them, but QTP2 includes more than 690 files, Parallax Qarl includes about 900 files, and QTP3 includes more than 4,000 files, so this approach isn't very practical in most cases unless you don't have any other textures installed!</p>
+      <p>However, if you take the time to create an omod for it, then you can simply <em>Deactivate</em> the omod. Easy as pie!</p>
+      <p>You can also use the <em>Replacers</em> feature in Wrye Bash to do it for you.</p>
+      <p>If you're using BSA-alteration, you must always remember to <em>Remove BSA edits</em> in OBMM or <em>Restore</em> in Wrye Bash after uninstalling (if you don't already have them set to update BSA changes automatically).</p>
+      <p>You can also try the <a href="https://www.nexusmods.com/oblivion/mods/7557" target="_blank">Oblivion Mod Remover</a>. It works great.</p>
+
+      <h2>Uninstalling QTP2 by Hand</h2>
+      <p><em>(adapted from a post by Dalamar1991 with additional info from Ryu Hyabusa)</em></p>
+      <p>If you're using BSA-alteration, you must always remember to <em>Remove BSA edits</em> in OBMM or <em>Restore</em> in Wrye Bash after uninstalling (if you don't already have them set to update BSA changes automatically).</p>
+      <p>If you want to try uninstalling QTP2 by hand, the files are located in:</p>
+      <p><code>textures\rock<br>
+            textures\wood<br>
+            textures\clutter<br>
+            textures\landscape<br>
+            textures\architecture<br>
+            textures\dungeons<br>
+            meshes\dungeons\caves\exterior</code></p>
+      <p>If you are <strong>not</strong> using any other mods that put files in these folders, then you can simply delete those folders. Make sure to <em>Remove BSA edits</em> in OBMM after uninstalling!</p>
+      <p>If you <strong>are</strong> using any other mods that put files in these folders, then things get a little more complicated.</p>
+      <p>Start off by deleting <code>meshes\dungeons\caves\exterior\centrancemtnsnowlg02.nif</code> (the only mesh in the texture pack).</p>
+      <p>For the textures... Well... all you can really do is grab the texture pack, open up the 7z file, and go through it, using it as a list of the files you need to delete in each folder. One shortcut here though, rather than go file by file, first compare file counts!</p>
+      <p>For example: Inside the 7z is a folder: <code>textures\architecture\anvil\</code><br>
+        This folder contains 34 files (and 1 folder). Open the <code>\Oblivion\data\textures\architecture\anvil\</code> folder on your hard drive. If there's only 34 files in there, then you can delete them all. It's a safe bet they're all the same files. If there's more than 34 files, though, then you'll have to match up the filenames before deleting them.</p>
+      <p>One technique that will also work for advanced Windows users is as follows (don't try this if you're a newbie!). Extract the archive to a safe location somewhere. Open two separate file windows, then drag files from each folder in the archive into the corresponding target data folder and let them overwrite again. After doing this and before you click on anything else, all the files you just copied will be highlighted in the target window. If you click on the outer rim of the target window, it will become the active window without deselecting the files you just copied. You can then hit delete in that window to remove them all. Other files in the target directory will not be affected. <strong>However, beware:</strong> This only works with files, not folders, so you can only do this safely within each subfolder. If you copy a higher-level of the folder structure, hitting delete will remove all the subfolders regardless of whether they contained any of Qarl's files.</p>
+    </main>
+
+    <footer>
+      <hr>
+      <p>
+        <img src="images/PES_HallofFameSmall.jpg" title="Homage to the venerable PlanetElderScrolls Hall of Fame" class="nav-image"><br>
+        <hr class="nav-divider">
+        <a href="index.html">Home</a> |
+        <a href="devakm-mods.html">Dev/Null Mods</a> |
+        <a href="Oblivion-Texture-Overhaul.html">TOTO Main</a> |
+        <a href="Quests.html">The Oblivion Quest List</a>
+      </p>
+      <p class="copyright">Copyright 2006, 2007, 2008, 2009, 2015, 2025 by devakm. Individual works copyright by their respective creators.</p>
+    </footer>
+  </div>
+</body>
+
+</html>
