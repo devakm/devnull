@@ -6,11 +6,103 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>FCOM: Convergence - Complete Installation Guide</title>
 	<link rel="stylesheet" href="css/devnull-shared.css">
+	<style>
+		/* Navigation Styles */
+		#navBar {
+			position: fixed;
+			left: 20px;
+			top: 20px;
+			width: 200px;
+			background-color: var(--bg-tertiary);
+			border: 1px solid var(--border-color);
+			border-radius: 8px;
+			padding: 0;
+			z-index: 100;
+			max-height: calc(100vh - 40px);
+			overflow-y: auto;
+		}
+
+		.container {
+			margin-left: 240px;
+			max-width: calc(100vw - 280px);
+		}
+
+		#navLogo {
+			padding: 15px;
+			background-color: var(--bg-secondary);
+			border-bottom: 1px solid var(--border-color);
+			text-align: center;
+			border-radius: 8px 8px 0 0;
+		}
+
+		#sectionLinks {
+			border-bottom: 1px solid var(--border-color);
+		}
+
+		#sectionLinks:last-child {
+			border-bottom: none;
+			border-radius: 0 0 8px 8px;
+		}
+
+		#sectionLinks h3 {
+			padding: 10px 15px 5px 15px;
+			margin: 0;
+			font-size: 0.9em;
+			color: var(--accent-blue);
+			background-color: var(--bg-secondary);
+		}
+
+		#sectionLinks ul {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+		}
+
+		#sectionLinks li {
+			margin: 0;
+			padding: 0;
+		}
+
+		#sectionLinks a {
+			display: block;
+			padding: 8px 15px;
+			color: var(--text-secondary);
+			text-decoration: none;
+			border-top: 1px solid var(--border-color);
+			font-size: 0.85em;
+			transition: background-color 0.2s;
+		}
+
+		#sectionLinks a:hover {
+			background-color: var(--bg-secondary);
+			color: var(--text-primary);
+		}
+
+		#sectionLinks a:first-child {
+			border-top: none;
+		}
+
+		/* Mobile responsive */
+		@media (max-width: 768px) {
+			#navBar {
+				position: static;
+				width: 100%;
+				margin-bottom: 20px;
+				max-height: none;
+			}
+
+			.container {
+				margin-left: 0;
+				max-width: 1200px;
+			}
+		}
+	</style>
 </head>
 
 <body>
+
 	<div class="container">
-		<h1>FCOM: Convergence</h1>
+		<h1 id="intro">FCOM: Convergence</h1>
 
 		<div class="subtitle">Francesco + WarCry + Oscuro + Martigen</div>
 		<div class="tagline">(aka Cry FranOOOMMM)</div>
@@ -33,10 +125,10 @@
 
 		<p>uBee created a very nice step-by-step installation guide for FCOM: Convergence as a PDF <a href="https://docs.google.com/file/d/0B8BTIQGFFmHPWmNCbVdSUXFDRXc/edit?pli=1&resourcekey=0-QMuIbVlWixcaP6BQw8TpYw" target="_blank">here</a>.</p>
 
-		<h3>Trailer</h3>
+		<h3 id="trailer">Trailer</h3>
 		<p><strong><a href="https://www.youtube.com/watch?v=MryxMaob-Jo" target="_blank">FCOM: Convergence 1.0 Official Xvid Trailer</a> By Vini</strong></p>
 
-		<h3>Team FCOM</h3>
+		<h3 id="team">Team FCOM</h3>
 		<ul>
 			<li><strong>devakm</strong> -- project leader.</li>
 			<li><strong>Martigen</strong> -- original MMM for FCOM design and WarCry faction integration.</li>
@@ -64,12 +156,12 @@
 
 		<hr class="section-divider">
 
-		<h2>Downloads</h2>
+		<h2 id="downloads">Downloads</h2>
 
 		<div class="warning">
 			<strong>WARNING:</strong> The beta version of FCOM is not for the faint of heart. It may chew your game up into tiny bits and spit it back in your face! Yes, Wrye Bash really is required.
 		</div>
-
+		<p><strong>Important:</strong> Be sure to read the <a href="#requirements">Requirements</a> and <a href="#installation">Installation</a> sections below before downloading and installing FCOM. There are many critical steps you must follow to get everything working correctly.</p>
 		<p>There's no readme. Just this website and the files. If you know what to expect already, then go ahead, but you've been warned!</p>
 
 		<p><strong>FCOM Beta 9.9 Download:</strong> <a href="https://www.nexusmods.com/oblivion/mods/12249" target="_blank">Nexus Mods</a></p>
@@ -317,21 +409,72 @@
 
 		<p>Also, a huge thank-you is owed to the many beta testers who have offered support, encouragement, and feedback for the numerous beta versions. Thanks so much for all your help!</p>
 
-		<div class="footer">
-			<p>
-				<img src="images/PES_HallofFameSmall.jpg" title="Homage to the venerable PlanetElderScrolls Hall of Fame" class="nav-image"><br>
-				<hr class="nav-divider">
-				<a href="index.html">Home</a> |
-				<a href="devakm-mods.html">Dev/Null Mods</a> |
-				<a href="FCOM_Convergence.html">Main</a> |
-				<a href="FCOM_Convergence_Guide.html">Guide</a> |
-				<a href="FCOM_Installation.html">Installation</a> |
-				<a href="FCOM_LoadOrder.html">Load-Order</a> |
-				<a href="FCOM_VersionHistory.html">Version History</a>
-				<hr class="nav-divider">
-			</p>
-			<p>Copyright 2006, 2007, 2008, 2009, 2015, 2025 by devakm. Individual works copyright by their respective creators.</p>
+	</div>
+	<!--end content -->
+	<div id="navBar">
+		<center>
+			<h1>FCOM</h1>
+		</center>
+		<div id="sectionLinks">
+			<h3>Contents</h3>
+			<ul>
+				<li><a href="#intro">Introduction</a></li>
+				<li><a href="#trailer">Trailer</a></li>
+				<li><a href="#team">Team FCOM</a></li>
+				<li><a href="#downloads">Downloads</a></li>
+				<li><a href="#new-in-fcom-099">New in FCOM 0.9.9</a></li>
+				<li><a href="#requirements">Requirements</a></li>
+				<li><a href="#quick-start-links">Quick-Start Links</a></li>
+				<li><a href="#required-patches">Required Patches</a></li>
+				<li><a href="#installation">Installation</a></li>
+				<li><a href="#main-fcom-plugins">Main FCOM Plugins</a></li>
+				<li><a href="#installing-supported-mods">Installing Supported Mods</a></li>
+				<li><a href="#bashed-patch">Bashed Patch</a></li>
+				<li><a href="#testing">Testing</a></li>
+				<li><a href="#credits">Credits</a></li>
+			</ul>
 		</div>
+		<div id="sectionLinks">
+			<h3>Plugin Details</h3>
+			<ul>
+				<li><a href="#fcom-convergence-esm">FCOM_Convergence.esm</a></li>
+				<li><a href="#fcom-francescos-esp">FCOM_Francescos.esp</a></li>
+				<li><a href="#fcom-bobs-armory-esp">FCOM_BobsArmory.esp</a></li>
+				<li><a href="#fcom-warcry-esp">FCOM_WarCry.esp</a></li>
+				<li><a href="#fcom-convergence-esp">FCOM_Convergence.esp</a></li>
+				<li><a href="#fcom-real-swords-esp">FCOM_RealSwords.esp</a></li>
+			</ul>
+		</div>
+		<div id="sectionLinks">
+			<h3>Installation Steps</h3>
+			<ul>
+				<li><a href="#oscuros-installation">Oscuro's Installation</a></li>
+				<li><a href="#martigens-installation">Martigen's Installation</a></li>
+				<li><a href="#francescos-installation">Francesco's Installation</a></li>
+				<li><a href="#keeping-frans-bsa-loaded">Keeping Fran's BSA Loaded</a></li>
+				<li><a href="#warcry-installation">WarCry Installation</a></li>
+				<li><a href="#double-checking">Double-Checking</a></li>
+				<li><a href="#update-your-savegame">Update Your Savegame</a></li>
+			</ul>
+		</div>
+	</div>
+	<!--end navbar -->
+
+	<div class="footer">
+		<p>
+			<img src="images/PES_HallofFameSmall.jpg" title="Homage to the venerable PlanetElderScrolls Hall of Fame" class="nav-image"><br>
+			<hr class="nav-divider">
+			<a href="index.html">Home</a> |
+			<a href="devakm-mods.html">Dev/Null Mods</a> |
+			<a href="FCOM_Convergence.html">Main</a> |
+			<a href="FCOM_Convergence_Guide.html">Guide</a> |
+			<a href="FCOM_Installation.html">Installation</a> |
+			<a href="FCOM_LoadOrder.html">Load-Order</a> |
+			<a href="FCOM_VersionHistory.html">Version History</a>
+			<hr class="nav-divider">
+		</p>
+		<p>Copyright 2006, 2007, 2008, 2009, 2015, 2025 by devakm. Individual works copyright by their respective creators.</p>
+	</div>
 	</div>
 </body>
 
