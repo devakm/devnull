@@ -305,12 +305,20 @@
 		<p>Do NOT use ANY other Fran files except these.</p>
 
 		<h4 id="keeping-frans-bsa-loaded">Keeping Fran's BSA Loaded</h4>
-		<p>Keeping the Fran Optional Items Add-On BSA file loaded is a very common problem, so I highly recommend taking a little extra time now to avoid this problem:</p>
+		<p>Keeping the Fran Optional Items Add-On BSA file loaded is a very common problem, so I highly recommend taking a little extra time now to avoid this problem.</p>
 
 		<ol>
+			<li>If using Fran 4.5b:</li>
 			<li>Make a copy of your <code>Shivering Isles.esp</code> file and rename it to <code>Oblivion.esp</code>. Or, make a new blank esp with a single item in it and name it <code>Oblivion.esp</code>.</li>
 			<li>Change the name of <code>FraNewItems.bsa</code> to <code>Oblivion - FraNewItems.bsa</code>.</li>
 			<li>As long as your Oblivion.esp is active, then your renamed <code>Oblivion - FraNewItems.bsa</code> file will always get loaded automatically because the start of the names match.</li>
+		</ol>
+
+		<ol>
+			<li>If using Francesco V5 or later, the installer uses a different name for the BSA file and already contains an empty plugin that accomplishes the same thing I described above:</li>
+			<li>Make sure your load order includes the empty plugin that comes with the Francesco download called <code>Francesco's Creatures and Items Resources.esp</code>.</li>
+			<li>Inlcluding this plugin will force <code>Francesco's Creatures and Items Resources - Items.bsa</code> to be loaded automatically.</li>
+			<li>As long as <code>Francesco's Creatures and Items Resources.esp</code> is active, then the new BSA file will always get loaded automatically because the start of the names match.</li>
 		</ol>
 
 		<h3 id="warcry-installation">WarCry Installation</h3>
