@@ -315,7 +315,7 @@
 			<li>As long as your Oblivion.esp is active, then your renamed <code>Oblivion - FraNewItems.bsa</code> file will always get loaded automatically because the start of the names match.</li>
 		</ol>
 
-		<p>If using Francesco V5 or later:</p>
+		<p>If using Francesco V5 or later standard method:</p>
 
 		<ol>
 			<li>The V5 installer uses a different name for the BSA file and already contains an empty plugin that accomplishes the same thing I described for 4.5b above:</li>
@@ -324,6 +324,13 @@
 			<li>As long as <code>Francesco's Creatures and Items Resources.esp</code> is active, then the new BSA file will always get loaded automatically because the start of the names match.</li>
 		</ol>
 
+		<p>Alternately, you can accomplish the same thing by using <code>FCOM_Convergence.esp</code> to accomplish the same thing, saving one slot in your load order by skipping the blank plugin methods described above.</p>
+
+		<ol>
+			<li>Rename the <code>Francesco's Creatures and Items Resources - Items.bsa</code> (or <code>FraNewItems.bsa</code> if using 4.5b) to file to start with <code>FCOM_Convergence -</code>, i.e. <code>FCOM_Convergence - Fran Resources.bsa</code> so it matches on the <code>FCOM_Convergence</code> part of the names.</li>
+		</ol>
+
+		<hr class="section-divider">
 		<h3 id="warcry-installation">WarCry Installation</h3>
 		<p>During installation of Oblivion WarCry, make sure you install the English version (Oblivion WarCry EV.esp). Do not use the regular WarCry plugin (it's in German). Make sure you also install the WarCry 1.085b patch, especially if you use an Nvidia graphics card.</p>
 
