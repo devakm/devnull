@@ -1,0 +1,63 @@
+================================================================================
+HTML TO BBCODE CONVERSION GUIDE
+================================================================================
+
+CONVERSION MAPPINGS USED:
+
+HTML Tag                                    → BBCode
+-----------------------------------------   → ----------------------------------------
+<p>text</p>                                 → text (with blank line between paragraphs)
+<strong>text</strong>                       → [b]text[/b]
+<em>text</em>                               → [i]text[/i]
+<span style="font-size:36px;">              → [size=7]...[/size] (largest)
+<span style="font-size:14px;">              → [size=4]...[/size]
+<span style="font-size:12px;">              → [size=3]...[/size]
+<span style="font-size:10px;">              → [size=2]...[/size]
+<span style="font-size:8px;">               → [size=1]...[/size]
+<span style="font-family:'Arial Black';">   → [font=Arial Black]...[/font]
+<span style="color:#FF0000;">               → [color=#FF0000]...[/color]
+<span style="color:#FFD700;">               → [color=#FFD700]...[/color]
+<span style="color:#00FFFF;">               → [color=#00FFFF]...[/color]
+<span style="color:#7FA1C5;">               → [color=#7FA1C5]...[/color]
+<span style="color:#FFFFFF;">               → [color=#FFFFFF]...[/color]
+<span style="color:rgb(255,0,0);">          → [color=#FF0000]...[/color]
+<a href="URL">text</a>                      → [url=URL]text[/url]
+<ul><li>item</li></ul>                      → [list][*]item[/list]
+
+NESTED TAGS: BBCode nesting follows same order as HTML (outer to inner)
+
+================================================================================
+ADDITIONAL CONVERSIONS
+================================================================================
+
+<br> or <br/>                               → (line break)
+<u>text</u>                                 → [u]text[/u]
+<s>text</s> or <strike>                     → [s]text[/s]
+<code>text</code>                           → [code]text[/code]
+<blockquote>text</blockquote>               → [quote]text[/quote]
+<img src="URL">                             → [img]URL[/img]
+<center>text</center>                       → [center]text[/center]
+
+================================================================================
+NOTES
+================================================================================
+
+1. Font sizes in BBCode typically range from 1 (smallest) to 7 (largest)
+   - Approximate pixel mappings: 8px=1, 10px=2, 12px=3, 14px=4, 18px=5, 24px=6, 36px=7
+
+2. Colors can use hex (#FF0000) or named colors (red, blue, etc.)
+
+3. When nesting tags, close them in reverse order:
+   HTML:    <strong><span style="color:red;">text</span></strong>
+   BBCode:  [b][color=red]text[/color][/b]
+
+4. Some BBCode implementations may not support all tags (e.g., [font])
+   - Check target forum's supported tags before posting
+
+5. Lists use [*] for each item, no closing tag needed per item:
+   [list]
+   [*]Item 1
+   [*]Item 2
+   [/list]
+
+================================================================================
