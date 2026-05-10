@@ -19,42 +19,9 @@
 
     <p><strong>Oscuro&#x27;s Oblivion Overhaul Remastered FULL</strong> (&quot;OOORS Full&quot;) is the Oblivion Remastered (UE5) re-release of the long-running <strong>Oscuro&#x27;s Oblivion Overhaul</strong> (OOO) gameplay mod, with Shivering Isles content extended to match.</p>
 
-    <h2>How releases are stored</h2>
+    <h2>What is included in an OOORS Full release</h2>
 
-    <p>The repo uses a <strong>Releases-for-Assets</strong> split — text content is checked into git, binary content lives only in the <code>.7z</code> attached to the matching GitHub Release.</p>
-
-    <table>
-      <thead>
-        <tr>
-          <th>What</th>
-          <th>Where</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Per-release manifest (SHA-256 of every file)</td>
-          <td><code>manifests/&lt;tag&gt;.json</code> in git</td>
-        </tr>
-        <tr>
-          <td>Per-release diff doc (added/removed/changed)</td>
-          <td><code>docs/per-release/&lt;tag&gt;.md</code> in git</td>
-        </tr>
-        <tr>
-          <td>Text files from the release tree (JSON, INI, Lua, etc.)</td>
-          <td><code>release/</code> in git, mirroring source paths</td>
-        </tr>
-        <tr>
-          <td>Binary files (paks, ESPs, DLLs, textures)</td>
-          <td><code>dist/&lt;tag&gt;.7z</code> (locally built, gitignored) → uploaded to <a href="https://github.com/devakm/OblivionRemastered_OOO/releases">GitHub Releases</a></td>
-        </tr>
-      </tbody>
-    </table>
-
-    <p>This means <code>git checkout &lt;tag&gt;</code> reproduces the <strong>text content</strong> of any historical release, and <code>git diff &lt;tagA&gt;..&lt;tagB&gt; -- release/</code> shows actual line-level changes inside MagicLoader records / SyncMap mappings / Lua scripts. To get the binaries for a historical release, download <code>&lt;tag&gt;.7z</code> from the matching GitHub Release.</p>
-
-    <h2>What ships in a release</h2>
-
-    <p>A release is a directory tree the user merges into their <code>Oblivion Remastered\</code> install. The latest build (<code>alpha90</code>) includes:</p>
+    <p>An OOORS Full release is a directory tree the user merges into their <code>Oblivion Remastered\</code> install. The latest build (<code>alpha90</code>) includes:</p>
 
     <h3>Game-data overlay (<code>OblivionRemastered/Content/Dev/ObvData/Data/</code>)</h3>
 
@@ -119,15 +86,15 @@
     <table>
       <thead>
         <tr>
-          <td><code>RAX/</code></td>
-          <td>Allows loading of new custom maps. Created by Antrix to allow OOO to load custom UE5 maps. Native DLL helper (<code>dlls/main.dll</code>) plus Lua glue. Required.</td>
-        </tr>
-        <tr>
           <th>Mod</th>
           <th>What it does</th>
         </tr>
       </thead>
       <tbody>
+        <tr>
+          <td><code>RAX/</code></td>
+          <td>Allows loading of new custom maps. Created by <a href="https://www.nexusmods.com/profile/Antrix/mods?gameId=7587" target="_blank" rel="noopener">Antrix</a> to allow OOO to load custom UE5 maps. Native DLL helper (<code>dlls/main.dll</code>) plus Lua glue. Required.</td>
+        </tr>
         <tr>
           <td><code>Begone/</code></td>
           <td>Removes specific actor/object references at runtime that are not needed or wanted in the UE5 maps; configured by <code>Config/OscurosOblivionOverhaul.json</code>. Required until we figure out how to delete them properly from the UE5 map clones.</td>
