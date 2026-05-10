@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OOORS Full — Overview</title>
+  <link rel="stylesheet" href="../../css/devnull-shared.css">
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <h1>Oscuro's Oblivion Overhaul Remastered FULL</h1>
+      <p class="subtitle">Release Tracker</p>
+    </header>
+    <nav><a href="index.html">Home</a> | <a href="changelog.html">Changelog</a> | <a href="install.html">Install</a> | <a href="dependencies.html">Dependencies</a> | <a href="overview.html" class="highlight-text">Overview</a> | <a href="https://github.com/devakm/OblivionRemastered_OOO/releases">Downloads (GitHub Releases)</a></nav>
+    <h1>Overview — what OOORS Full bundles</h1>
+
+    <p><strong>Oscuro&#x27;s Oblivion Overhaul Remastered FULL</strong> (&quot;OOORS Full&quot;) is the Oblivion Remastered (UE5) re-release of the long-running <strong>Oscuro&#x27;s Oblivion Overhaul</strong> (OOO) gameplay mod, with Shivering Isles content extended to match.</p>
+
+    <h2>How releases are stored</h2>
+
+    <p>The repo uses a <strong>Releases-for-Assets</strong> split — text content is checked into git, binary content lives only in the <code>.7z</code> attached to the matching GitHub Release.</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>What</th>
+          <th>Where</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Per-release manifest (SHA-256 of every file)</td>
+          <td><code>manifests/&lt;tag&gt;.json</code> in git</td>
+        </tr>
+        <tr>
+          <td>Per-release diff doc (added/removed/changed)</td>
+          <td><code>docs/per-release/&lt;tag&gt;.md</code> in git</td>
+        </tr>
+        <tr>
+          <td>Text files from the release tree (JSON, INI, Lua, etc.)</td>
+          <td><code>release/</code> in git, mirroring source paths</td>
+        </tr>
+        <tr>
+          <td>Binary files (paks, ESPs, DLLs, textures)</td>
+          <td><code>dist/&lt;tag&gt;.7z</code> (locally built, gitignored) → uploaded to <a href="https://github.com/devakm/OblivionRemastered_OOO/releases">GitHub Releases</a></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>This means <code>git checkout &lt;tag&gt;</code> reproduces the <strong>text content</strong> of any historical release, and <code>git diff &lt;tagA&gt;..&lt;tagB&gt; -- release/</code> shows actual line-level changes inside MagicLoader records / SyncMap mappings / Lua scripts. To get the binaries for a historical release, download <code>&lt;tag&gt;.7z</code> from the matching GitHub Release.</p>
+
+    <h2>What ships in a release</h2>
+
+    <p>A release is a directory tree the user merges into their <code>Oblivion Remastered\</code> install. The latest build (<code>alpha90</code>) includes:</p>
+
+    <h3>Game-data overlay (<code>OblivionRemastered/Content/Dev/ObvData/Data/</code>)</h3>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Path</th>
+          <th>Purpose</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>Oscuro&#x27;s_Oblivion_Overhaul.esp</code></td>
+          <td>The main OOO TES4 plugin — leveled lists, NPCs, creatures, items, quests, factions, dialog, etc.</td>
+        </tr>
+        <tr>
+          <td><code>OptionalPatches/OOO_DeluxeEdition.esp</code></td>
+          <td>Optional content for the Deluxe edition of the game.</td>
+        </tr>
+        <tr>
+          <td><code>OptionalPatches/OOO_OOMC_Compatibility_Patch.esp</code></td>
+          <td>Compatibility for <strong>OOMC</strong><a href="https://www.nexusmods.com/oblivionremastered/mods/4992" target="_blank" rel="noopener"> (Opulent Outfits: Mages of Cyrodiil)</a>.</td>
+        </tr>
+        <tr>
+          <td><code>OptionalPatches/OOO_UORP.esp</code></td>
+          <td>Compatibility for the <a href="https://www.nexusmods.com/oblivionremastered/mods/477" target="_blank" rel="noopener"> Unofficial Oblivion Remaster Patch.</a></td>
+        </tr>
+        <tr>
+          <td><code>OptionalPatches/OOO_UnlimitedRingsReduxPatch.esp</code></td>
+          <td>Compatibility for the <a href="https://www.nexusmods.com/oblivionremastered/mods/2457" target="_blank" rel="noopener"> Unlimited Rings Redux mod.</a></td>
+        </tr>
+        <tr>
+          <td><code>OptionalPatches/SyncMap - DeluxeEdition/Oscuro&#x27;s_Oblivion_Overhaul.ini</code></td>
+          <td>Alternate SyncMap override for Deluxe-edition users. This greatly improves the unique look of several unique item sets by using new artwork added in the Deluxe Edition.</td>
+        </tr>
+        <tr>
+          <td><code>MagicLoader/Oscuro&#x27;s_Oblivion_Overhaul_*.json</code></td>
+          <td>Per-record-type JSON exports (ACTI, ALCH, AMMO, ARMO, BOOK, CELL, CELLMAP, CLAS, CLOT, CONT, CREA, DIAL, DOOR, ENCH, FACT, INGR, KEY, MISC, NPC_, QUST, SCPT, SGST, SLGM, SPELL, WEAP). Consumed by <strong>MagicLoader</strong> at game launch to provide proper localization for in-game content. Required.</td>
+        </tr>
+        <tr>
+          <td><code>SyncMap/Oscuro&#x27;s_Oblivion_Overhaul.ini</code></td>
+          <td>TES4 FormID → UE5 SoftObjectPath mappings consumed by <strong>TesSyncMapInjector</strong> at load time. This is used to ensure proper asset references in the UE5 layer of Oblivion Remastered. Required.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>New Dungeons and Items - custom UE5 pak mods to add new dungeons, armor and weapons (<code>OblivionRemastered/Content/Paks/~mods/</code>)</h3>
+
+    <p>21 new interior maps. Almost all of these have working zone lighting, water, and working navmesh pathfinding. A few are generic empty maps for small locations where we could not easily build full UE5 map support. (<code>.pak</code> + <code>.ucas</code> + <code>.utoc</code>):</p>
+
+    <p><code>L_Arondar_Map</code>, <code>L_Baras_Map</code>, <code>L_BloodClotCave_Map</code>, <code>L_BrokenToothCaveXX_Map</code>, <code>L_Cehan_Map</code>, <code>L_DeepCoverCav_Map</code>, <code>L_Dostares_Map</code>, <code>L_DrownedHopesCa_Map</code>, <code>L_GloomWayCaveXX_Map</code>, <code>L_GraveGroundCaveXX_Map</code>, <code>L_LipsTarn03_Map</code>, <code>L_NarindXXX_Map</code>, <code>L_OOOR1waterCave_Map</code>, <code>L_OOOR2waterCave02_Map</code>, <code>L_OOORCastleInterior_Map</code>, <code>L_OscuroWaterCellCHMGWell0_Map</code>, <code>L_RedGillCave_Map</code>, <code>L_RosulasXX_Map</code>, <code>L_ThunderingSte_Map</code>, <code>L_VarastalXX_Map</code>, <code>L_Yele_Map</code>.</p>
+
+    <p><strong>Obsidian armor and weapons set</strong>. This is a Glass-armor recolor created by <a href="https://www.nexusmods.com/profile/SquigM/mods?gameId=7587" target="_blank" rel="noopener">SquigM</a>, which we have converted to a new Obsidian material set using the <code>OblivionRemastered_ItemClone</code> project:</p>
+
+    <ul>
+      <li><code>ObsidianItems.{pak,ucas,utoc}</code> — cloned Glass weapons + armor renamed to Obsidian.</li>
+      <li><code>ObsidianMaterials.{pak,ucas,utoc}</code> — bronze/black retexture overlays for the Obsidian set.</li>
+    </ul>
+
+    <h3>UE4SS Lua mods (<code>OblivionRemastered/Binaries/Win64/ue4ss/Mods/</code>)</h3>
+
+    <table>
+      <thead>
+        <tr>
+          <td><code>RAX/</code></td>
+          <td>Allows loading of new custom maps. Created by Antrix to allow OOO to load custom UE5 maps. Native DLL helper (<code>dlls/main.dll</code>) plus Lua glue. Required.</td>
+        </tr>
+        <tr>
+          <th>Mod</th>
+          <th>What it does</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>Begone/</code></td>
+          <td>Removes specific actor/object references at runtime that are not needed or wanted in the UE5 maps; configured by <code>Config/OscurosOblivionOverhaul.json</code>. Required until we figure out how to delete them properly from the UE5 map clones.</td>
+        </tr>
+        <tr>
+          <td><code>OOO_REFRFix/</code></td>
+          <td>Fixes spawn / placement deltas for OOO references stored in your save file (<code>Scripts/spawn_deltas.lua</code>). Only required if you have existing saves with older alpha release OOO references. Not needed for new saves or if you never used prior alpha releases.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Brief recap of the alpha releases so far</h2>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Number range</th>
+          <th>What was happening</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>alpha00-premerge</code></td>
+          <td>Pre-merge snapshot — multiple legacy ESPs side-by-side (137, 137ESM, _ESP, _merged) before consolidation.</td>
+        </tr>
+        <tr>
+          <td><code>alpha01</code>–<code>alpha14</code></td>
+          <td>Single consolidated ESP + the first MagicLoader JSON (SPELL only at first), gradually adding more record-type JSONs.</td>
+        </tr>
+        <tr>
+          <td><code>alpha15</code>–<code>alpha40</code></td>
+          <td>The full record-type JSON family lands; OptionalPatches start appearing.</td>
+        </tr>
+        <tr>
+          <td><code>alpha32nex</code></td>
+          <td>Parallel Nexus-prep variant of <code>alpha32</code> (lives on the <code>variants/alpha32nex</code> branch).</td>
+        </tr>
+        <tr>
+          <td><code>alpha41</code>–<code>alpha70</code></td>
+          <td>Mostly tuning passes — small file counts changing each build, ESP iteration.</td>
+        </tr>
+        <tr>
+          <td><code>alpha71</code>–<code>alpha90</code></td>
+          <td>UE4SS mods (<code>RAX</code>, <code>Begone</code>, <code>OOO_REFRFix</code>) and IoStore content (<code>L_*_Map</code>, Obsidian set) get layered in.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>How to compare two releases</h2>
+
+    <pre><code>git diff alpha75..alpha90 -- manifests/    # see exactly which file SHA-256s changed
+cat docs/per-release/alpha90.md            # human-readable added/removed/changed list
+git log --oneline alpha75..alpha90         # the commit subjects (= release names) between</code></pre>
+    <footer>
+      <p>Source: <a href="https://github.com/devakm/OblivionRemastered_OOO">github.com/devakm/OblivionRemastered_OOO</a> · Releases: <a href="https://github.com/devakm/OblivionRemastered_OOO/releases">GitHub Releases</a></p>
+    </footer>
+  </div>
+</body>
+
+</html>

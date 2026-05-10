@@ -1,0 +1,6 @@
+{
+  "livePreview.serverRoot": "docs",
+  "livePreview.defaultPreviewPath": "OOO/OBR/index.html",
+  "livePreview.openPreviewTarget": "Embedded Preview",
+  "livePreview.autoRefreshPreview": "On All Changes in Editor"
+}
