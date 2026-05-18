@@ -217,6 +217,8 @@
 
     <h3>UE4SS Lua mods (<code>OblivionRemastered/Binaries/Win64/ue4ss/Mods/</code>)</h3>
 
+    <h4>Required for normal play</h4>
+
     <table>
       <thead>
         <tr>
@@ -229,13 +231,28 @@
           <td><code>RAX/</code></td>
           <td>Allows loading of new custom maps. Created by <a href="https://www.nexusmods.com/profile/Antrix/mods?gameId=7587" target="_blank" rel="noopener">Antrix</a> to allow OOO to load custom UE5 maps. Native DLL helper (<code>dlls/main.dll</code>) plus Lua glue. Required.</td>
         </tr>
+      </tbody>
+    </table>
+
+    <h4>Alpha-testing utilities (optional)</h4>
+
+    <p>Also bundled in the same folder, but <strong>not required for normal play</strong>. These exist to support the OOORF alpha-testing workflow — leave them enabled if you are testing or migrating an older save; disable them otherwise.</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Mod</th>
+          <th>What it does</th>
+        </tr>
+      </thead>
+      <tbody>
         <tr>
           <td><code>Begone/</code></td>
-          <td>Removes specific actor/object references at runtime that are not needed or wanted in the UE5 maps; configured by <code>Config/OscurosOblivionOverhaul.json</code>. Required until we figure out how to delete them properly from the UE5 map clones.</td>
+          <td><strong>Test recording, debugging, and ad-hoc UE5-mesh suppression.</strong> Originally Begone suppressed UE5 ghost objects (extra doors, fires, debris, dynamic FX) at runtime via per-cell rules in <code>Config/OscurosOblivionOverhaul.json</code>; as of alpha90 that suppression is baked into the map paks themselves, so Begone is no longer required for normal play. Two ongoing uses: (1) capturing per-cell object inventories during dungeon walkthroughs and verifying or extending suppression coverage when new map paks are being built; and (2) a runtime escape hatch — if a problem UE5 mesh slips through into a shipped pak, Begone can still suppress it via config rules until a pak rebuild lands.</td>
         </tr>
         <tr>
           <td><code>OOO_REFRFix/</code></td>
-          <td>Fixes spawn / placement deltas for OOO references stored in your save file (<code>Scripts/spawn_deltas.lua</code>). Only required if you have existing saves with older alpha release OOO references. Not needed for new saves or if you never used prior alpha releases.</td>
+          <td>Save-file migration helper. Fixes spawn / placement deltas for OOO references stored in your save file (<code>Scripts/spawn_deltas.lua</code>). Only required if you have existing saves with older alpha-release OOO references; not needed for new saves or if you never used prior alpha releases.</td>
         </tr>
       </tbody>
     </table>
