@@ -54,7 +54,7 @@
 
     <h3>MagicLoader</h3>
 
-    <p>OOORF ships its plugin in <strong>two complementary forms</strong>: a single <code>Oscuro&#x27;s_Oblivion_Overhaul.esp</code> plus a per-record-type JSON family under <code>…\ObvData\Data\MagicLoader\</code>. <strong>MagicLoader</strong> reads those JSONs at game start and merges them into the live record set, sidestepping the 255-plugin load-order limit.</p>
+    <p>OOORF ships its plugin in <strong>two complementary forms</strong>: a single <code>Oscuro&#x27;s_Oblivion_Overhaul.esp</code> plus a per-record-type JSON config family containing localization strings and map loading instructions under <code>…\ObvData\Data\MagicLoader\</code>. <strong>MagicLoader</strong> reads those JSONs at game start and merges them into the live record set. For non-English speakers, the localization strings can be replaced with your language of choice.</p>
 
     <ul>
       <li>Required for everything record-related to work (creatures, items, spells, etc.) beyond what the bare ESP defines.</li>
@@ -76,37 +76,6 @@
       <li>Required by <strong>TesSyncMapInjector</strong> (Lua) and <strong>RAX</strong> — both essential for normal play (SyncMap binding and custom-map loading respectively).</li>
       <li>Also used by the optional bundled mods <code>Begone</code> (development test recording / debugging) and <code>OOO_REFRFix</code> (save migration for users with existing saves on older alpha releases) when those are enabled.</li>
     </ul>
-
-    <h2>Optional recommended compatibility patches</h2>
-
-    <p>The OptionalPatches/ subfolder ships ESPs that add compatibility with these mods if you also have them installed:</p>
-
-    <table>
-      <thead>
-        <tr>
-          <th>Patch ESP</th>
-          <th>Provides compatibility with</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><code>OOO_DeluxeEdition.esp</code></td>
-          <td>Oblivion Remastered Deluxe Edition (extra cosmetic/content). Pair with <code>SyncMap - DeluxeEdition/</code> override.</td>
-        </tr>
-        <tr>
-          <td><code>OOO_OOMC_Compatibility_Patch.esp</code></td>
-          <td>OOMC (<a href="https://www.nexusmods.com/oblivionremastered/mods/4992" target="_blank" rel="noopener">Opulent Outfits: Mages of Cyrodiil</a>).</td>
-        </tr>
-        <tr>
-          <td><code>OOO_UORP.esp</code></td>
-          <td>The <a href="https://www.nexusmods.com/oblivionremastered/mods/477" target="_blank" rel="noopener">Unofficial Oblivion Remaster Patch</a>.</td>
-        </tr>
-        <tr>
-          <td><code>OOO_UnlimitedRingsReduxPatch.esp</code></td>
-          <td><a href="https://www.nexusmods.com/oblivionremastered/mods/2457" target="_blank" rel="noopener">Unlimited Rings Redux</a>.</td>
-        </tr>
-      </tbody>
-    </table>
 
     <h2>Bundled UE4SS mods — required for normal play</h2>
 
@@ -146,6 +115,67 @@
         <tr>
           <td><code>OOO_REFRFix/</code></td>
           <td>Save-file migration helper. Patches OOO reference placements that need runtime correction; see <code>Scripts/spawn_deltas.lua</code>. Only needed if you have existing saves carrying OOO references from older alpha releases.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Optional recommended compatibility patches</h2>
+
+    <p>The OptionalPatches/ subfolder ships ESPs that add compatibility with these mods if you also have them installed:</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Patch ESP</th>
+          <th>Provides compatibility with</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>OOO_DeluxeEdition.esp</code></td>
+          <td>Oblivion Remastered Deluxe Edition (extra cosmetic/content). Pair with <code>SyncMap - DeluxeEdition/</code> override.</td>
+        </tr>
+        <tr>
+          <td><code>OOO_OOMC_Compatibility_Patch.esp</code></td>
+          <td>OOMC (<a href="https://www.nexusmods.com/oblivionremastered/mods/4992" target="_blank" rel="noopener">Opulent Outfits: Mages of Cyrodiil</a>).</td>
+        </tr>
+        <tr>
+          <td><code>OOO_UORP.esp</code></td>
+          <td>The <a href="https://www.nexusmods.com/oblivionremastered/mods/477" target="_blank" rel="noopener">Unofficial Oblivion Remaster Patch</a>.</td>
+        </tr>
+        <tr>
+          <td><code>OOO_UnlimitedRingsReduxPatch.esp</code></td>
+          <td><a href="https://www.nexusmods.com/oblivionremastered/mods/2457" target="_blank" rel="noopener">Unlimited Rings Redux</a>.</td>
+        </tr>
+      </tbody>
+    </table>
+    <h2>Optional recommended compatibility patches</h2>
+
+    <p>The OptionalPatches/ subfolder ships ESPs that add compatibility with these mods if you also have them installed:</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Patch ESP</th>
+          <th>Provides compatibility with</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>OOO_DeluxeEdition.esp</code></td>
+          <td>Oblivion Remastered Deluxe Edition (extra cosmetic/content). Pair with <code>SyncMap - DeluxeEdition/</code> override.</td>
+        </tr>
+        <tr>
+          <td><code>OOO_OOMC_Compatibility_Patch.esp</code></td>
+          <td>OOMC (<a href="https://www.nexusmods.com/oblivionremastered/mods/4992" target="_blank" rel="noopener">Opulent Outfits: Mages of Cyrodiil</a>).</td>
+        </tr>
+        <tr>
+          <td><code>OOO_UORP.esp</code></td>
+          <td>The <a href="https://www.nexusmods.com/oblivionremastered/mods/477" target="_blank" rel="noopener">Unofficial Oblivion Remaster Patch</a>.</td>
+        </tr>
+        <tr>
+          <td><code>OOO_UnlimitedRingsReduxPatch.esp</code></td>
+          <td><a href="https://www.nexusmods.com/oblivionremastered/mods/2457" target="_blank" rel="noopener">Unlimited Rings Redux</a>.</td>
         </tr>
       </tbody>
     </table>
