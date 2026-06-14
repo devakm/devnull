@@ -1,176 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>OOORF — Dependencies</title>
+  <title>OOORS Full — Dependencies</title>
   <link rel="stylesheet" href="../../css/devnull-shared.css">
 </head>
-
 <body>
   <div class="container">
     <header>
       <h1>Oscuro's Oblivion Overhaul Remastered FULL</h1>
       <p class="subtitle">Release Tracker</p>
     </header>
-    <nav><a href="index.html">Home</a> | <a href="overview.html">Overview</a> | <a href="new-Items.html">New Items</a> | <a href="changelog.html">Changelog</a> | <a href="install.html">Install</a> | <a href="dependencies.html" class="highlight-text">Dependencies</a> | <a href="https://github.com/devakm/OblivionRemastered_OOO/releases" target="_blank" rel="noopener">Downloads (GitHub Releases)</a></nav>
+    <nav><a href="index.html">Home</a> | <a href="changelog.html">Changelog</a> | <a href="install.html">Install</a> | <a href="dependencies.html" class="highlight-text">Dependencies</a> | <a href="overview.html">Overview</a> | <a href="https://github.com/devakm/OblivionRemastered_OOO/releases">Downloads (GitHub Releases)</a></nav>
     <h1>Dependencies</h1>
 
-    <p>These are the runtime components a player needs to install themselves. <strong>None of them are bundled in the OOORF release archive</strong> — install them separately before deploying OOORF.</p>
+<p>These are the runtime components a player needs to install themselves. <strong>None of them are bundled in the OOORS Full release archive</strong> — install them separately before deploying OOORS Full.</p>
 
-    <h2>Required</h2>
+<h2>Required</h2>
 
-    <h3>Oblivion Remastered</h3>
+<h3>Oblivion Remastered</h3>
 
-    <p>The base game. Install via Steam, Game Pass, or your platform of choice.</p>
+<p>The base game. Install via Steam, Game Pass, or your platform of choice.</p>
 
-    <table>
-      <thead>
-        <tr>
-          <th>Detail</th>
-          <th>Value</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Engine</td>
-          <td>Unreal Engine 5.3</td>
-        </tr>
-        <tr>
-          <td>Default content path</td>
-          <td><code>…\Oblivion Remastered\OblivionRemastered\Content\</code></td>
-        </tr>
-        <tr>
-          <td>Default mod-pak path</td>
-          <td><code>…\Oblivion Remastered\OblivionRemastered\Content\Paks\~mods\</code></td>
-        </tr>
-        <tr>
-          <td>TES4 data path</td>
-          <td><code>…\Oblivion Remastered\OblivionRemastered\Content\Dev\ObvData\Data\</code></td>
-        </tr>
-      </tbody>
-    </table>
+<p>| Detail | Value |</p>
+<p>|--------|-------|</p>
+<p>| Engine | Unreal Engine 5.3 |</p>
+<p>| Default content path | <code>…\Oblivion Remastered\OblivionRemastered\Content\</code> |</p>
+<p>| Default mod-pak path | <code>…\Oblivion Remastered\OblivionRemastered\Content\Paks\~mods\</code> |</p>
+<p>| TES4 data path | <code>…\Oblivion Remastered\OblivionRemastered\Content\Dev\ObvData\Data\</code> |</p>
 
-    <h3>MagicLoader</h3>
+<h3>MagicLoader</h3>
 
-    <p>OOORF ships its plugin in <strong>two complementary forms</strong>: a single <code>Oscuro&#x27;s_Oblivion_Overhaul.esp</code> plus a per-record-type JSON config family containing localization strings and map loading instructions under <code>…\ObvData\Data\MagicLoader\</code>. <strong>MagicLoader</strong> reads those JSONs at game start and merges them into the live record set. For non-English speakers, the localization strings can be replaced with your language of choice.</p>
+<p>OOORS Full ships its plugin in <strong>two complementary forms</strong>: a single <code>Oscuro&#x27;s_Oblivion_Overhaul.esp</code> plus a per-record-type JSON family under <code>…\ObvData\Data\MagicLoader\</code>. <strong>MagicLoader</strong> reads those JSONs at game start and merges them into the live record set, sidestepping the 255-plugin load-order limit.</p>
 
-    <ul>
-      <li>Required for custom dungeons to load correctly and for localization strings to work (books, creature names, item names, spell names, location names, quest dialog, etc.).</li>
-    </ul>
+<ul>
+<li>Required for everything record-related to work (creatures, items, spells, etc.) beyond what the bare ESP defines.</li>
+</ul>
 
-    <h3>TesSyncMapInjector (UE4SS Lua mod)</h3>
+<h3>TesSyncMapInjector (UE4SS Lua mod)</h3>
 
-    <p>OOORF&#x27;s <code>…\ObvData\Data\SyncMap\Oscuro&#x27;s_Oblivion_Overhaul.ini</code> is a list of <code>&lt;TES4 FormID hex&gt;=&lt;UE5 SoftObjectPath&gt;</code> lines. <strong>TesSyncMapInjector</strong> consumes this at load time and rebinds each FormID to its UE5 asset path — the bridge that lets ESP records point at UE5 meshes/blueprints.</p>
+<p>OOORS Full&#x27;s <code>…\ObvData\Data\SyncMap\Oscuro&#x27;s_Oblivion_Overhaul.ini</code> is a list of <code>&lt;TES4 FormID hex&gt;=&lt;UE5 SoftObjectPath&gt;</code> lines. <strong>TesSyncMapInjector</strong> consumes this at load time and rebinds each FormID to its UE5 asset path — the bridge that lets ESP records point at UE5 meshes/blueprints.</p>
 
-    <ul>
-      <li>Required to avoid invisible or missing assets and prevent game crashes when NPCs and creatures spawn. Also required for any new items like the bundled Obsidian set.</li>
-    </ul>
+<ul>
+<li>Required for any item / object whose ESP record was authored to point at a non-default UE5 asset (e.g. the bundled Obsidian items).</li>
+</ul>
 
-    <h3>UE4SS</h3>
+<h3>UE4SS</h3>
 
-    <p>The Unreal Engine 4 / 5 Scripting System. A loader for native DLL and Lua mods inside Unreal games.</p>
+<p>The Unreal Engine 4 / 5 Scripting System. A loader for native DLL and Lua mods inside Unreal games.</p>
 
-    <ul>
-      <li>Required by <strong>TesSyncMapInjector</strong> (Lua) and <strong>RAX</strong> — both essential for normal play (SyncMap binding and custom-map loading respectively).</li>
-      <li>Also used by the optional bundled mods <code>Begone</code> (development test recording / debugging) and <code>OOO_REFRFix</code> (save migration for users with existing saves on older alpha releases) when those are enabled.</li>
-    </ul>
+<ul>
+<li>Required by <strong>TesSyncMapInjector</strong> (Lua) and by the bundled <code>Begone</code>, <code>OOO_REFRFix</code>, <code>RAX</code> mods.</li>
+</ul>
 
-    <h2>Bundled UE4SS mods — required for normal play</h2>
+<h2>Optional but supported</h2>
 
-    <p>This ships <em>inside</em> the OOORF archive — don&#x27;t install separately, but it DOES require UE4SS to be installed first.</p>
+<p>The OptionalPatches/ subfolder ships ESPs that add compatibility with these mods if you also have them installed:</p>
 
-    <table>
-      <thead>
-        <tr>
-          <th>Mod (under <code>…\Binaries\Win64\ue4ss\Mods\</code>)</th>
-          <th>Role</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><code>RAX/</code></td>
-          <td>Allows loading of custom UE5 maps (the new <code>L_*_Map</code> dungeons). Native DLL (<code>dlls/main.dll</code>) plus Lua glue.</td>
-        </tr>
-      </tbody>
-    </table>
+<p>| Patch ESP | Provides compatibility with |</p>
+<p>|-----------|------------------------------|</p>
+<p>| <code>OOO_DeluxeEdition.esp</code> | Oblivion Remastered Deluxe Edition (extra cosmetic/content). Pair with <code>SyncMap - DeluxeEdition/</code> override. |</p>
+<p>| <code>OOO_OOMC_Compatibility_Patch.esp</code> | OOMC (Oscuro&#x27;s Oblivion Modular Companions / Mod Components). |</p>
+<p>| <code>OOO_UORP.esp</code> | The Unofficial Oblivion Remaster Patch. |</p>
+<p>| <code>OOO_UnlimitedRingsReduxPatch.esp</code> | Unlimited Rings Redux. |</p>
 
-    <h2>Optional recommended compatibility patches</h2>
+<h2>Bundled UE4SS mods (auto-installed)</h2>
 
-    <p>The OptionalPatches/ subfolder ships ESPs that add compatibility with these mods if you also have them installed:</p>
+<p>These ride along <em>inside</em> the OOORS Full archive — don&#x27;t install separately, but they DO require UE4SS to be installed first.</p>
 
-    <table>
-      <thead>
-        <tr>
-          <th>Patch ESP</th>
-          <th>Provides compatibility with</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><code>OOO_DeluxeEdition.esp</code></td>
-          <td>Oblivion Remastered Deluxe Edition (extra cosmetic/content). Pair with <code>SyncMap - DeluxeEdition/</code> override.</td>
-        </tr>
-        <tr>
-          <td><code>OOO_OOMC_Compatibility_Patch.esp</code></td>
-          <td>OOMC (<a href="https://www.nexusmods.com/oblivionremastered/mods/4992" target="_blank" rel="noopener">Opulent Outfits: Mages of Cyrodiil</a>).</td>
-        </tr>
-        <tr>
-          <td><code>OOO_UORP.esp</code></td>
-          <td>The <a href="https://www.nexusmods.com/oblivionremastered/mods/477" target="_blank" rel="noopener">Unofficial Oblivion Remaster Patch</a>.</td>
-        </tr>
-        <tr>
-          <td><code>OOO_UnlimitedRingsReduxPatch.esp</code></td>
-          <td><a href="https://www.nexusmods.com/oblivionremastered/mods/2457" target="_blank" rel="noopener">Unlimited Rings Redux</a>.</td>
-        </tr>
-      </tbody>
-    </table>
+<p>| Mod (under <code>…\Binaries\Win64\ue4ss\Mods\</code>) | Role |</p>
+<p>|--------------|------|</p>
+<p>| <code>Begone/</code> | Removes specific references at runtime per the bundled <code>Config/OscurosOblivionOverhaul.json</code>. |</p>
+<p>| <code>OOO_REFRFix/</code> | Patches OOO reference placements that need runtime correction; see <code>Scripts/spawn_deltas.lua</code>. |</p>
+<p>| <code>RAX/</code> | Provides native helpers via <code>dlls/main.dll</code> plus Lua glue. |</p>
 
-    <h2>Alpha-testing utilities (also bundled, optional)</h2>
+<h2>Game install layout reference</h2>
 
-    <p>These run on UE4SS too and live in the same <code>…\Mods\</code> folder, but are <strong>not required for normal play</strong>. They exist to support the OOORF alpha-testing workflow. Safe to disable if you&#x27;re not testing or migrating an older save.</p>
-
-    <table>
-      <thead>
-        <tr>
-          <th>Mod (under <code>…\Binaries\Win64\ue4ss\Mods\</code>)</th>
-          <th>Role</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><code>Begone/</code></td>
-          <td><strong>Test recording, debugging, and ad-hoc UE5-mesh suppression.</strong> Originally Begone hid UE5 ghost objects at runtime per <code>Config/OscurosOblivionOverhaul.json</code>; alpha90 baked that suppression into the map paks, so it is no longer required for normal play. Two ongoing uses: (1) capturing per-cell object inventories during alpha-test walkthroughs and verifying suppression coverage when new map paks are built; and (2) a runtime escape hatch — if a problem UE5 mesh slips through into a shipped pak, Begone can still suppress it via config rules until a pak rebuild lands.</td>
-        </tr>
-        <tr>
-          <td><code>OOO_REFRFix/</code></td>
-          <td>Save-file migration helper. Patches OOO reference placements that need runtime correction; see <code>Scripts/spawn_deltas.lua</code>. Only needed if you have existing saves carrying OOO references from older alpha releases.</td>
-        </tr>
-      </tbody>
-    </table>
-
-
-    <h2>Game install layout reference</h2>
-
-    <pre><code>…\Oblivion Remastered\
-├── OblivionRemastered\
-│   ├── Binaries\Win64\
-│   │   └── ue4ss\          ← UE4SS install lives here; bundled Mods\ overlays into it
-│   └── Content\
-│       ├── Dev\ObvData\Data\
-│       │   ├── MagicLoader\         ← MagicLoader looks here
-│       │   ├── SyncMap\             ← TesSyncMapInjector looks here
-│       │   ├── OptionalPatches\     ← OOORF-shipped patch ESPs (move into Data\ to enable)
-│       │   ├── *.esp                ← TES4 plugins
-│       │   └── *.esm                ← TES4 master files
-│       └── Paks\
-│           └── ~mods\               ← IoStore content (.pak/.ucas/.utoc) drops here
-</code></pre>
+<p>```</p>
+<p>…\Oblivion Remastered\</p>
+<p>├── OblivionRemastered\</p>
+<p>│   ├── Binaries\Win64\</p>
+<p>│   │   └── ue4ss\          ← UE4SS install lives here; bundled Mods\ overlays into it</p>
+<p>│   └── Content\</p>
+<p>│       ├── Dev\ObvData\Data\</p>
+<p>│       │   ├── MagicLoader\         ← MagicLoader looks here</p>
+<p>│       │   ├── SyncMap\             ← TesSyncMapInjector looks here</p>
+<p>│       │   ├── OptionalPatches\     ← OOORS-shipped patch ESPs (move into Data\ to enable)</p>
+<p>│       │   ├── *.esp                ← TES4 plugins</p>
+<p>│       │   └── *.esm                ← TES4 master files</p>
+<p>│       └── Paks\</p>
+<p>│           └── ~mods\               ← IoStore content (.pak/.ucas/.utoc) drops here</p>
+<p>```</p>
     <footer>
-      <p>Source: <a href="https://github.com/devakm/OblivionRemastered_OOO" target="_blank" rel="noopener">github.com/devakm/OblivionRemastered_OOO</a> · Releases: <a href="https://github.com/devakm/OblivionRemastered_OOO/releases" target="_blank" rel="noopener">GitHub Releases</a></p>
+      <p>Source: <a href="https://github.com/devakm/OblivionRemastered_OOO">github.com/devakm/OblivionRemastered_OOO</a> · Releases: <a href="https://github.com/devakm/OblivionRemastered_OOO/releases">GitHub Releases</a></p>
     </footer>
   </div>
 </body>
-
 </html>
