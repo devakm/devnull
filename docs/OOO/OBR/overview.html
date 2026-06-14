@@ -6,6 +6,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>OOORF — Overview</title>
   <link rel="stylesheet" href="../../css/devnull-shared.css">
+  <style>
+    .item-gallery { display:grid; grid-template-columns:repeat(auto-fit, minmax(140px, 1fr));
+      gap:14px; margin:20px 0; }
+    .item-gallery a { display:block; text-align:center; text-decoration:none;
+      color:var(--accent-cyan); padding:8px; background:var(--bg-tertiary);
+      border:1px solid var(--border-color); border-radius:6px;
+      transition:transform 0.15s, border-color 0.15s; }
+    .item-gallery a:hover { transform:translateY(-2px); border-color:var(--accent-cyan); }
+    .item-gallery img { width:100%; height:200px; object-fit:cover;
+      object-position:right center; border-radius:4px;
+      border:2px solid var(--border-color); display:block; }
+    .item-gallery span { display:block; margin-top:6px; font-weight:bold; font-size:0.95em; }
+  </style>
 </head>
 
 <body>
@@ -14,27 +27,40 @@
       <h1>Oscuro's Oblivion Overhaul Remastered FULL</h1>
       <p class="subtitle">Release Tracker</p>
     </header>
-    <nav><a href="index.html">Home</a> | <a href="overview.html" class="highlight-text">Overview</a> | <a href="changelog.html">Changelog</a> | <a href="install.html">Install</a> | <a href="dependencies.html">Dependencies</a> | <a href="https://github.com/devakm/OblivionRemastered_OOO/releases" target="_blank" rel="noopener">Downloads (GitHub Releases)</a></nav>
+    <nav><a href="index.html">Home</a> | <a href="overview.html" class="highlight-text">Overview</a> | <a href="new-Items.html">New Items</a> | <a href="changelog.html">Changelog</a> | <a href="install.html">Install</a> | <a href="dependencies.html">Dependencies</a> | <a href="https://github.com/devakm/OblivionRemastered_OOO/releases" target="_blank" rel="noopener">Downloads (GitHub Releases)</a></nav>
     <h1>Overview — what OOORF bundles</h1>
 
     <p><strong>Oscuro&#x27;s Oblivion Overhaul Remastered FULL</strong> (<strong>OOORF</strong>) is the Oblivion Remastered (UE5) re-release of the long-running <strong>Oscuro&#x27;s Oblivion Overhaul</strong> (OOO) gameplay mod, with Shivering Isles content extended to match.</p>
 
     <p><em>Note: <strong>OOORF</strong> (this site) is the FULL edition. The acronym <strong>OOORS</strong> refers to the separate <a href="https://www.nexusmods.com/oblivionremastered/mods/2759" target="_blank" rel="noopener">Slim edition</a>.</em></p>
 
-    <h2>What&#x27;s new in alpha90</h2>
+    <h2>What&#x27;s new in alpha91</h2>
 
     <ul>
-      <li><strong>New dungeon map:</strong> Lipsand Tarn 03 (<code>L_LipsTarn03_Map.{pak,ucas,utoc}</code>) joins the bundled map set.</li>
-      <li><strong>Three Glass-recolor armor sets get their real UE5 visuals — and Obsidian gains a weapon line:</strong> the <strong>Obsidian</strong> (bronze-black, SquigM), <strong>BGlass</strong> (gold-trim + blue body, also SquigM — converted to its own item set in OOORF for the first time), and <strong>Drakefired</strong> (dark red — OOO&#x27;s classic Drakefired set, recreated this release via a mashup of <a href="https://www.nexusmods.com/profile/ProhagonCreations/mods?gameId=7587" target="_blank" rel="noopener">ProhagonCreations</a> <a href="https://www.nexusmods.com/oblivionremastered/mods/556" target="_blank" rel="noopener">Blackened Glass</a> with the glass parts recolored dark red; ships under the <code>RGlass</code> pak names) armor sets — six pieces each (Boots, Cuirass, Gauntlets, Greaves, Helmet, Shield) — are now rebound by the updated <strong>SyncMap</strong> to dedicated UE5 forms shipped this release, instead of falling back on the vanilla Glass UE5 assets. On top of that, Obsidian gains a full <strong>9-weapon line</strong> for the first time: BattleAxe, Bow, Claymore, Dagger, Longsword, Mace, Shortsword, WarAxe, WarHammer. A new loot leveled list (<code>LL0LootWeapon7Obsidian100</code>) carries the weapons, and two existing NPC bow lists are updated to distribute the new Obsidian Bow. The UE5 assets ship as six new paks — <code>ObsidianItems</code>/<code>ObsidianMaterials</code>, <code>BGlassItems</code>/<code>BGlassMaterials</code>, <code>RGlassItems</code>/<code>RGlassMaterials</code> — built by the <code>OblivionRemastered_ItemClone</code> pipeline. See the <a href="#item-sets">Custom Glass-recolor item sets</a> section below for more.</li>
-      <li><strong>All 16 dungeon map paks rebuilt — ghost-object suppression moved into the paks.</strong> Earlier OOORF builds relied on the <code>Begone</code> UE4SS Lua mod to hide UE5-only kit props (extra doors, ambient fires, debris, dynamic FX) at runtime, every cell load, via a large per-cell config. Alpha90 migrates that suppression into the map paks themselves: every bundled dungeon — <code>L_Arondar_Map</code>, <code>L_Baras_Map</code>, <code>L_BloodClotCave_Map</code>, <code>L_BrokenToothCaveXX_Map</code>, <code>L_Cehan_Map</code>, <code>L_DeepCoverCav_Map</code>, <code>L_Dostares_Map</code>, <code>L_DrownedHopesCa_Map</code>, <code>L_GloomWayCaveXX_Map</code>, <code>L_GraveGroundCaveXX_Map</code>, <code>L_NarindXXX_Map</code>, <code>L_RedGillCave_Map</code>, <code>L_RosulasXX_Map</code>, <code>L_ThunderingSte_Map</code>, <code>L_VarastalXX_Map</code>, <code>L_Yele_Map</code> — ships with a refreshed <code>.ucas</code>/<code>.utoc</code> where the suppression is baked in. Result: less Lua work at every cell load, fewer runtime races between Begone and the engine, and a more stable first-entry experience.</li>
-      <li><strong>UE4SS mod updates align with the pak migration:</strong> the <code>Begone</code> config json shrinks from ~115 KB → ~60 KB (entries the paks now handle directly are removed), while <code>Begone/Scripts/main.lua</code> grows from ~25 KB → ~37 KB to support the new pak-aware suppression flow. <code>OOO_REFRFix/Scripts/main.lua</code> is also refreshed.</li>
+      <li><strong>14 new cloned and retextured armor sets:</strong> <strong>ArcticFur</strong>, <strong>Aureus</strong>, <strong>BloodLeather</strong>, <strong>BlueGlass</strong>, <strong>Drakefired</strong>, <strong>Eboron</strong>, <strong>ElvenEldar</strong>, <strong>ElvenNight</strong>, <strong>ElvenSky</strong>, <strong>GoldenBronze</strong>, <strong>GrayFox</strong>, <strong>ShadowMail</strong>, <strong>WornFur</strong>, and <strong>WornLeather</strong> all ship for the first time with dedicated UE5 visuals (84 new pak files in total — one <code>&lt;Set&gt;Items</code> + <code>&lt;Set&gt;Materials</code> pair per set). Each set rebrands a long-standing OOO armor family from its placeholder vanilla appearance to its own dedicated look. The new <a href="new-Items.html">New Items</a> page lists every set with full inventory icons, EDIDs, FormIDs, and UE5 asset paths.</li>
+      <li><strong>BGlass and RGlass renamed:</strong> the alpha90 <code>BGlassItems</code>/<code>BGlassMaterials</code> and <code>RGlassItems</code>/<code>RGlassMaterials</code> paks are removed and re-released as <strong>BlueGlass</strong> and <strong>Drakefired</strong> respectively. Same FormIDs, same visuals — the renames clarify the in-game identity. The six BlueGlass display names also change from &quot;Ornate Obsidian &hellip;&quot; to &quot;Blue Glass &hellip;&quot; in the MagicLoader ARMO JSON.</li>
+      <li><strong>~307 SyncMap rebindings:</strong> all of the new and renamed sets have their existing OOO FormIDs re-pointed at the new UE5 asset paths. Largest groups: GoldenBronze (42), ElvenSky (35), BlueGlass (34), Eboron (34), Drakefired (33), ElvenEldar (33), ElvenNight (32), BloodLeather (24), GrayFox (10); ArcticFur, Aureus, ShadowMail, WornFur, and WornLeather each contribute 6.</li>
+      <li><strong>7 dungeon map paks rebuilt (14 zones):</strong> further tuning of ghost-object suppression, position overrides, and TES4-twin disablement in <code>L_BloodClotCave_Map</code>, <code>L_BrokenToothCaveXX_Map</code>, <code>L_DeepCoverCav_Map</code>, <code>L_GraveGroundCaveXX_Map</code>, <code>L_LipsTarn03_Map</code>, <code>L_RosulasXX_Map</code>, and <code>L_ThunderingSte_Map</code>. Net per-cell changes: <strong>+254 disabled REFRs</strong> (2127 → 2381 across 27 cells), <strong>+17 position overrides</strong>, and <strong>+92 Begone entries</strong>. New cells covered for the first time: LipsandTarn03OOO, Varastal, BrokenToothCave, and the GraveGroundCave_Li layer.</li>
+      <li><strong>New exterior fix:</strong> <code>GraveGroundExterior_P.{pak,ucas,utoc}</code> ships an exterior foliage fix for the Grave Ground Cave area — the first non-dungeon map pak in the OOORF bundle.</li>
+      <li><strong>ESP additions:</strong> six new ARMO records — the <code>LairVileCrimsonScarRaiment</code> series at levels 01, 05, 10, 15, 20, 25 — quest gear for one of the bundled dungeons.</li>
+    </ul>
+    <p>See the <a href="changelog.html#alpha91">alpha91 changelog</a> for the full file-level diff, or the <a href="https://github.com/devakm/OblivionRemastered_OOO/releases/tag/alpha91" target="_blank" rel="noopener">GitHub release page</a> to download.</p>
+
+    <h2>Previously: what was new in alpha90</h2>
+
+    <p><em>Curated highlights from the prior release — preserved here so the per-release stories accumulate into the eventual beta and GA release notes. See the <a href="changelog.html#alpha90">alpha90 changelog</a> for the full file-level diff.</em></p>
+
+    <ul>
+      <li><strong>New dungeon map:</strong> Lipsand Tarn 03 (<code>L_LipsTarn03_Map.{pak,ucas,utoc}</code>) joined the bundled map set.</li>
+      <li><strong>First three custom item sets debut:</strong> <strong>Obsidian</strong> (bronze trim, black body, by <a href="https://www.nexusmods.com/profile/SquigM/mods?gameId=7587" target="_blank" rel="noopener">SquigM</a>), <strong>BGlass</strong> (gold trim, blue body — also SquigM&#x27;s <code>GoldBlueGlassArmourWeapons</code>, first OOORF conversion), and <strong>RGlass</strong> (the Drakefired set — a mashup of <a href="https://www.nexusmods.com/profile/ProhagonCreations/mods?gameId=7587" target="_blank" rel="noopener">ProhagonCreations</a> <a href="https://www.nexusmods.com/oblivionremastered/mods/556" target="_blank" rel="noopener">Blackened Glass</a> with the glass parts recolored dark red). Six armor pieces each (Boots, Cuirass, Gauntlets, Greaves, Helmet, Shield). The Obsidian set also introduced a full <strong>9-weapon line</strong> for the first time (BattleAxe, Bow, Claymore, Dagger, Longsword, Mace, Shortsword, WarAxe, WarHammer), distributed via a new loot leveled list (<code>LL0LootWeapon7Obsidian100</code>) and folded into two existing NPC bow lists for the Obsidian Bow. <em>In alpha91 the BGlass and RGlass paks were renamed to <code>BlueGlass</code> and <code>Drakefired</code>; the underlying items and visuals carry over.</em></li>
+      <li><strong>All 16 dungeon map paks rebuilt — ghost-object suppression moved into the paks.</strong> Earlier OOORF builds relied on the <code>Begone</code> UE4SS Lua mod to hide UE5-only kit props (extra doors, ambient fires, debris, dynamic FX) at runtime every cell load. Alpha90 migrated that suppression into the map paks themselves: every bundled dungeon — <code>L_Arondar_Map</code>, <code>L_Baras_Map</code>, <code>L_BloodClotCave_Map</code>, <code>L_BrokenToothCaveXX_Map</code>, <code>L_Cehan_Map</code>, <code>L_DeepCoverCav_Map</code>, <code>L_Dostares_Map</code>, <code>L_DrownedHopesCa_Map</code>, <code>L_GloomWayCaveXX_Map</code>, <code>L_GraveGroundCaveXX_Map</code>, <code>L_NarindXXX_Map</code>, <code>L_RedGillCave_Map</code>, <code>L_RosulasXX_Map</code>, <code>L_ThunderingSte_Map</code>, <code>L_VarastalXX_Map</code>, <code>L_Yele_Map</code> — shipped with a refreshed <code>.ucas</code>/<code>.utoc</code> where the suppression is baked in. Result: less Lua work at every cell load, fewer runtime races between Begone and the engine, and a more stable first-entry experience.</li>
+      <li><strong>UE4SS mod updates aligned with the pak migration:</strong> the <code>Begone</code> config JSON shrank from ~115 KB → ~60 KB (entries the paks now handle directly removed), while <code>Begone/Scripts/main.lua</code> grew from ~25 KB → ~37 KB to support the new pak-aware suppression flow. <code>OOO_REFRFix/Scripts/main.lua</code> was also refreshed.</li>
       <li><strong>Data refresh:</strong> main ESP, SyncMap INI (incl. Deluxe variant), CELLMAP and WEAP MagicLoader JSONs.</li>
     </ul>
-    <p>See the <a href="changelog.html#alpha90">alpha90 changelog</a> for the full file-level diff, or the <a href="https://github.com/devakm/OblivionRemastered_OOO/releases/tag/alpha90" target="_blank" rel="noopener">GitHub release page</a> to download.</p>
 
     <h2>What is included in an OOORF release</h2>
 
-    <p>An OOORF release is a directory tree the user merges into their <code>Oblivion Remastered\</code> install. The latest build (<code>alpha90</code> · 114 files · 254.9 MiB) includes:</p>
+    <p>An OOORF release is a directory tree the user merges into their <code>Oblivion Remastered\</code> install. The latest build (<code>alpha91</code> · 199 files · 215.9 MiB) includes:</p>
 
     <h3>Game-data overlay (<code>OblivionRemastered/Content/Dev/ObvData/Data/</code>)</h3>
 
@@ -87,9 +113,11 @@
 
     <p><code>L_Arondar_Map</code>, <code>L_Baras_Map</code>, <code>L_BloodClotCave_Map</code>, <code>L_BrokenToothCaveXX_Map</code>, <code>L_Cehan_Map</code>, <code>L_DeepCoverCav_Map</code>, <code>L_Dostares_Map</code>, <code>L_DrownedHopesCa_Map</code>, <code>L_GloomWayCaveXX_Map</code>, <code>L_GraveGroundCaveXX_Map</code>, <code>L_LipsTarn03_Map</code>, <code>L_NarindXXX_Map</code>, <code>L_OOOR1waterCave_Map</code>, <code>L_OOOR2waterCave02_Map</code>, <code>L_OOORCastleInterior_Map</code>, <code>L_OscuroWaterCellCHMGWell0_Map</code>, <code>L_RedGillCave_Map</code>, <code>L_RosulasXX_Map</code>, <code>L_ThunderingSte_Map</code>, <code>L_VarastalXX_Map</code>, <code>L_Yele_Map</code>.</p>
 
+    <p>Plus one exterior fix pak added in alpha91: <code>GraveGroundExterior_P.{pak,ucas,utoc}</code> — foliage fixes for the Grave Ground Cave exterior cell.</p>
+
     <h4>Per-dungeon validation status</h4>
 
-    <p>Each new dungeon goes through in-game validation passes (NPC pathfinding, water surface/swim behavior, REFR placement, ghost-object suppression, surface-flicker) before we mark it shippable. The four generic &quot;blank-room&quot; maps (<code>L_OOOR1waterCave_Map</code>, <code>L_OOOR2waterCave02_Map</code>, <code>L_OOORCastleInterior_Map</code>, <code>L_OscuroWaterCellCHMGWell0_Map</code>) are utility shells and are not validated per-dungeon. Current state for the remaining 17:</p>
+    <p>Each new dungeon goes through in-game validation passes (NPC pathfinding, water surface/swim behavior, REFR placement, ghost-object suppression, surface-flicker) before we mark it shippable. The four generic &quot;blank-room&quot; maps (<code>L_OOOR1waterCave_Map</code>, <code>L_OOOR2waterCave02_Map</code>, <code>L_OOORCastleInterior_Map</code>, <code>L_OscuroWaterCellCHMGWell0_Map</code>) are utility shells and are not validated per-dungeon. <strong>Current state: 15 of 17 dungeons are now fully validated;</strong> only the two water caves below — both still missing navmesh / position / flicker passes — are tagged not-yet-validated.</p>
 
     <table>
       <thead>
@@ -109,11 +137,11 @@
         </tr>
         <tr>
           <td>Blood Clot Cave</td>
-          <td>Not yet validated</td>
+          <td>Validated</td>
         </tr>
         <tr>
           <td>Broken Tooth Cave</td>
-          <td>Not yet validated</td>
+          <td>Validated</td>
         </tr>
         <tr>
           <td>Cehani</td>
@@ -133,15 +161,15 @@
         </tr>
         <tr>
           <td>Gloom Way Cave</td>
-          <td>Not yet validated</td>
+          <td>Not yet validated <em>(ghost suppression done; navmesh / position / flicker passes pending)</em></td>
         </tr>
         <tr>
           <td>Grave Ground Cave</td>
-          <td>Not yet validated</td>
+          <td>Validated</td>
         </tr>
         <tr>
           <td>Lipsand Tarn 03</td>
-          <td>Not yet validated <em>(new in alpha90)</em></td>
+          <td>Validated</td>
         </tr>
         <tr>
           <td>Narind</td>
@@ -149,19 +177,19 @@
         </tr>
         <tr>
           <td>Red Gill Cave</td>
-          <td>Not yet validated</td>
+          <td>Not yet validated <em>(ghost suppression done; navmesh / position / flicker passes pending)</em></td>
         </tr>
         <tr>
           <td>Rosulas</td>
-          <td>Not yet validated</td>
+          <td>Validated</td>
         </tr>
         <tr>
           <td>Thundering Steps Cave</td>
-          <td>Not yet validated</td>
+          <td>Validated</td>
         </tr>
         <tr>
           <td>Varastal</td>
-          <td>Not yet validated</td>
+          <td>Validated</td>
         </tr>
         <tr>
           <td>Yeleri</td>
@@ -170,50 +198,37 @@
       </tbody>
     </table>
 
-    <p><em>&quot;Validated&quot; means the dungeon has been walked end-to-end in-game and all applicable phases pass. &quot;Not yet validated&quot; covers both untested dungeons and ones partway through testing — they may still be playable, but expect rough edges (stray ghost objects, mispositioned REFRs, or pathfinding gaps) until a full retest is logged.</em></p>
+    <p><em>&quot;Validated&quot; means the dungeon has been walked end-to-end in-game and all applicable phases pass (NPC pathfinding, REFR positions, ghost-object suppression, surface-flicker, and water surface/swim behavior where applicable). The two remaining not-yet-validated dungeons have curated ghost-object suppression but are still missing full-zone passes for the other phases — they are playable, but expect rough edges (stray ghost objects in untouched layers, mispositioned REFRs, or pathfinding gaps) until a full retest is logged.</em></p>
 
-    <h4 id="item-sets">Custom Glass-recolor item sets <em>(dedicated UE5 visuals new in alpha90)</em></h4>
+    <h4 id="item-sets">Custom cloned and retextured item sets</h4>
 
-    <p>OOO has shipped several Glass-clone armor sets (and now a matching weapon line) for a long time — their TES4 records, stats, and leveled-list placement all live in the main ESP. What was missing until alpha90 was their dedicated UE5 appearance: the <strong>SyncMap</strong> (the authoritative FormID → UE5 asset binding in Oblivion Remastered) used to point all of these items at the vanilla Glass UE5 assets, so they rendered as ordinary Glass in-game despite the rebalanced stats. Alpha90 ships fresh SyncMap entries that rebind each set to its own dedicated UE5 forms, and the matching <code>&lt;Set&gt;Items</code> / <code>&lt;Set&gt;Materials</code> pak pairs that supply those forms — produced by the <code>OblivionRemastered_ItemClone</code> pipeline. (The ESP <code>modl</code> string updates that accompany this are cosmetic; in Oblivion Remastered the SyncMap is what actually drives the visual binding.)</p>
+    <p>OOO has shipped many recolored Glass / Mithril / Elven / Leather / Fur armor families for a long time — their TES4 records, stats, and leveled-list placement all live in the main ESP. What was missing in OOORF builds before alpha90 was their dedicated UE5 appearance: the <strong>SyncMap</strong> (the authoritative FormID → UE5 asset binding in Oblivion Remastered) used to point all of these items at the vanilla UE5 assets they were originally cloned from, so they rendered as ordinary Glass / Mithril / Elven / Leather / Fur in-game despite the rebalanced stats. Alpha90 introduced this rebinding for Obsidian + BGlass + RGlass; <strong>alpha91 expands it to 14 more sets</strong>, and renames the two armor-only Glass-clones from alpha90 to clearer player-facing names (BGlass → BlueGlass, RGlass → Drakefired).</p>
 
-    <table>
-      <thead>
-        <tr>
-          <th>Set</th>
-          <th>Style</th>
-          <th>Items</th>
-          <th>New paks (alpha90)</th>
-          <th>Visual source</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong>Obsidian</strong></td>
-          <td>Bronze trim, black body</td>
-          <td>6 armor pieces (Boots, Cuirass, Gauntlets, Greaves, Helmet, Shield) + <strong>9 brand-new weapons</strong> (BattleAxe, Bow, Claymore, Dagger, Longsword, Mace, Shortsword, WarAxe, WarHammer)</td>
-          <td><code>ObsidianItems.{pak,ucas,utoc}</code><br><code>ObsidianMaterials.{pak,ucas,utoc}</code> (~75 MB)</td>
-          <td><a href="https://www.nexusmods.com/profile/SquigM/mods?gameId=7587" target="_blank" rel="noopener">SquigM</a>&#x27;s <code>BronzeBlackGlassArmourWeapons</code> converted to a new item set pak. This is its first conversion into a distinct item set as opposed to a vanilla retexture.</td>
-        </tr>
-        <tr>
-          <td><strong>Blue Glass</strong> <em>(ships as <code>BGlass</code> paks)</em></td>
-          <td>Gold trim, blue body</td>
-          <td>6 armor pieces (Boots, Cuirass, Gauntlets, Greaves, Helmet, Shield); no weapons</td>
-          <td><code>BGlassItems.{pak,ucas,utoc}</code><br><code>BGlassMaterials.{pak,ucas,utoc}</code> (~44 MB)</td>
-          <td>A second <a href="https://www.nexusmods.com/profile/SquigM/mods?gameId=7587" target="_blank" rel="noopener">SquigM</a> retexture — the <code>GoldBlueGlassArmourWeapons</code> donor pak. This is its first conversion into a distinct item set as opposed to a vanilla retexture.</td>
-        </tr>
-        <tr>
-          <td><strong>Drakefired</strong> <em>(ships as <code>RGlass</code> paks)</em></td>
-          <td>Black trim, dark red body</td>
-          <td>6 armor pieces (Boots, Cuirass, Gauntlets, Greaves, Helmet, Shield); no weapons</td>
-          <td><code>RGlassItems.{pak,ucas,utoc}</code><br><code>RGlassMaterials.{pak,ucas,utoc}</code> (~44 MB)</td>
-          <td>Recreation of OOO&#x27;s classic <em>Drakefired</em> armor set — an in-house mashup using <a href="https://www.nexusmods.com/profile/ProhagonCreations/mods?gameId=7587" target="_blank" rel="noopener">ProhagonCreations</a> <a href="https://www.nexusmods.com/oblivionremastered/mods/556" target="_blank" rel="noopener">Blackened Glass</a> with the glass parts recolored dark red (gradient-map recipe applied to the donor diffuse, BC3-encoded and spliced onto the donor shell).</td>
-        </tr>
-      </tbody>
-    </table>
+    <p>Each set ships as a matching <code>&lt;Set&gt;Items</code> + <code>&lt;Set&gt;Materials</code> pak pair, produced by the <code>OblivionRemastered_ItemClone</code> pipeline. <strong><a href="new-Items.html">See the New Items page →</a></strong> for the full per-set tables (every item&#x27;s inventory icon, EDID, FormID, and UE5 form path). Or jump straight to a set from the gallery below — click any render to land on that set&#x27;s section.</p>
 
-    <p><strong>Obsidian-specific alpha90 ESP additions.</strong> Obsidian is the only one of the three sets that grew this release: nine WEAP records were added — <code>WeapObsidianBattleAxe</code>, <code>WeapObsidianBow</code>, <code>WeapObsidianClaymore</code>, <code>WeapObsidianDagger</code>, <code>WeapObsidianLongsword</code>, <code>WeapObsidianMace</code>, <code>WeapObsidianShortsword</code>, <code>WeapObsidianWarAxe</code>, <code>WeapObsidianWarHammer</code>. A new loot leveled list <code>LL0LootWeapon7Obsidian100</code> distributes them, and two existing NPC bow lists (<code>LL0NPCWeaponBow100at35</code> and <code>LL0NPCWeaponBow100at29</code>) were updated to include <code>WeapObsidianBow</code> so the new bow shows up on level-appropriate archer NPCs. BGlass and RGlass remain armor-only in alpha90.</p>
+    <div class="item-gallery">
+      <a href="new-Items.html#Obsidian"><img src="images/refs/OBR-OOO-item-Obsidian-Armor_F-v1-front.png" alt="Obsidian render"><span>Obsidian</span></a>
+      <a href="new-Items.html#BlueGlass"><img src="images/refs/OBR-OOO-item-BlueGlass-Armor_F-v1-front.png" alt="BlueGlass render"><span>BlueGlass</span></a>
+      <a href="new-Items.html#Drakefired"><img src="images/refs/OBR-OOO-item-Drakefired-Armor_F-v1-front.png" alt="Drakefired render"><span>Drakefired</span></a>
+      <a href="new-Items.html#Aureus"><img src="images/refs/OBR-OOO-item-Aureus-Armor_F-v13-front.png" alt="Aureus render"><span>Aureus</span></a>
+      <a href="new-Items.html#Eboron"><img src="images/refs/OBR-OOO-item-Eboron-Armor_F-v11-front.png" alt="Eboron render"><span>Eboron</span></a>
+      <a href="new-Items.html#GoldenBronze"><img src="images/refs/OBR-OOO-item-GoldenBronze-Armor_F-v2-front.png" alt="GoldenBronze render"><span>GoldenBronze</span></a>
+      <a href="new-Items.html#ShadowMail"><img src="images/refs/OBR-OOO-item-Shadowwmail-Armor_F-v29-front.png" alt="ShadowMail render"><span>ShadowMail</span></a>
+      <a href="new-Items.html#ElvenSky"><img src="images/refs/OBR-OOO-item-ElvenSky-Armor_F.png" alt="ElvenSky render"><span>ElvenSky</span></a>
+      <a href="new-Items.html#ElvenEldar"><img src="images/refs/OBR-OOO-item-ElvenEldar-Armor_F.png" alt="ElvenEldar render"><span>ElvenEldar</span></a>
+      <a href="new-Items.html#ElvenNight"><img src="images/refs/OBR-OOO-item-ElvenNight-Armor_F.png" alt="ElvenNight render"><span>ElvenNight</span></a>
+      <a href="new-Items.html#BloodLeather"><img src="images/refs/OBR-OOO-item-BloodLeather-Armor_F-v1-front.png" alt="BloodLeather render"><span>BloodLeather</span></a>
+      <a href="new-Items.html#GrayFox"><img src="images/refs/OBR-OOO-item-GreyFox-Armor_F-v3-front.png" alt="GrayFox render"><span>GrayFox</span></a>
+      <a href="new-Items.html#WornLeather"><img src="images/refs/OBR-OOO-item-WornLeather-Armor_F-v3-front.png" alt="WornLeather render"><span>WornLeather</span></a>
+      <a href="new-Items.html#ArcticFur"><img src="images/refs/OBR-OOO-item-ArcticFur-Armor_F-v2-front.png" alt="ArcticFur render"><span>ArcticFur</span></a>
+      <a href="new-Items.html#WornFur"><img src="images/refs/OBR-OOO-item-WornFur-Armor_F-v3-front.png" alt="WornFur render"><span>WornFur</span></a>
+    </div>
 
-    <p><em>Stats note:</em> all three sets have stats significantly rebalanced compared to vanilla Glass — they are distinct items, not just retextures. Slot coverage and leveled-list placement are auditable in the main ESP with TES4Edit / xEdit if you want the specifics.</p>
+    <p>Sets are grouped above by base material: <strong>Glass</strong> (Obsidian, BlueGlass, Drakefired), <strong>Mithril</strong> (Aureus, Eboron, GoldenBronze, ShadowMail), <strong>Elven</strong> (ElvenSky, ElvenEldar, ElvenNight), <strong>Leather</strong> (BloodLeather, GrayFox, WornLeather), <strong>Fur</strong> (ArcticFur, WornFur). Obsidian is the only set that also ships a weapon line (9 pieces); the other 14 are armor-only six-piece sets.</p>
+
+    <p><strong>Visual sources.</strong> <a href="https://www.nexusmods.com/profile/SquigM/mods?gameId=7587" target="_blank" rel="noopener">SquigM</a> retextures donate the visuals for Obsidian (<code>BronzeBlackGlassArmourWeapons</code>) and BlueGlass (<code>GoldBlueGlassArmourWeapons</code>). The Drakefired set is built from <a href="https://www.nexusmods.com/profile/ProhagonCreations/mods?gameId=7587" target="_blank" rel="noopener">ProhagonCreations</a> <a href="https://www.nexusmods.com/oblivionremastered/mods/556" target="_blank" rel="noopener">Blackened Glass</a> with the glass parts recolored dark red. The remaining 12 sets are in-house recolors built on the relevant Glass / Mithril / Elven / Leather / Fur donor materials through the <code>OblivionRemastered_ItemClone</code> pipeline.</p>
+
+    <p><em>Stats note:</em> all sets have stats significantly rebalanced compared to their vanilla base material — they are distinct items, not just retextures. Slot coverage and leveled-list placement are auditable in the main ESP with TES4Edit / xEdit if you want the specifics.</p>
 
     <h3>UE4SS Lua mods (<code>OblivionRemastered/Binaries/Win64/ue4ss/Mods/</code>)</h3>
 
