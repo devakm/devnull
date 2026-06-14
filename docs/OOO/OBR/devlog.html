@@ -48,6 +48,12 @@
     .devlog-thumbs { display: flex; flex-wrap: wrap; gap: 10px; margin: 12px 0; }
     .devlog-thumbs a { display: block; }
     .devlog-thumbs img { height: 110px; border: 1px solid var(--border-color); border-radius: 4px; object-fit: cover; }
+    .devlog-thumbs figure.wrong { margin: 0; position: relative; max-width: 150px; }
+    .devlog-thumbs figure.wrong img { border: 2px solid var(--accent-red); }
+    .devlog-thumbs figure.wrong::before { content: "¹7"; position: absolute; top: 3px; left: 3px;
+      color: #fff; background: var(--accent-red); font-weight: bold; font-size: 0.95em; line-height: 1;
+      padding: 2px 6px; border-radius: 3px; }
+    .devlog-thumbs figure.wrong figcaption { color: var(--accent-red); font-size: 0.78em; line-height: 1.3; margin-top: 5px; }
 
     .devlog-renders { display: flex; flex-wrap: wrap; gap: 12px; margin: 14px 0; }
     .devlog-renders a { display: block; }
@@ -259,7 +265,7 @@
           <div class="date">2026-06-11</div>
           <h3>WornLeather, and a naming issue</h3>
           <p>WornLeather's first build showed vanilla in-game. The armor players call "Leather" is built from a "Thief"-codenamed asset chain, while the assets literally named "Leather" are an unused arena set the game never shipped, so the first build recolored the wrong chain. The fix traced the full display chain from item to blueprint to mesh to material to texture and retargeted onto the correct body. A tuning note also came out of this: in-game lighting is brighter than the flat preview, so previews should be biased darker. Shipped and verified this day.</p>
-          <div class="devlog-renders"><a href="new-Items.html#WornLeather"><img src="images/refs/OBR-OOO-item-WornLeather-Armor_F-v3-front.png" alt="WornLeather armor render"></a></div>
+          <div class="devlog-renders"><a href="new-Items.html#WornLeather"><img src="images/refs/OBR-OOO-item-WornLeather-Armor_F-v3-front.png" alt="WornLeather armor render"></a></div><div class="devlog-thumbs"><figure class="wrong"><a href="new-Items.html#WornLeather"><img src="images/item-tracker-assets/WornLeather_Cuirass.png" alt="WornLeather inventory icon currently showing vanilla Pit Armor (wrong source)"></a><figcaption>Wrong icon: this is vanilla Pit Armor, not the Thief-based WornLeather recolor &mdash; a live example of the naming trap described above. To be fixed in alpha92.</figcaption></figure></div>
         </div>
         <div class="milestone">
           <div class="date">2026-06-11</div>
