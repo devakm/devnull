@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<!-- DO-NOT-REGENERATE: hand-canonical. See docs/OOO/OBR/CONTRIBUTING.md -->
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OOORF — Devlog</title>
+  <link rel="stylesheet" href="../../css/devnull-shared.css">
+  <style>
+    .devlog-arcs {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px;
+      margin: 20px 0 32px;
+    }
+    .arc-card {
+      display: block;
+      padding: 14px 16px;
+      background: var(--bg-tertiary);
+      border: 1px solid var(--border-color);
+      border-left: 3px solid var(--accent-cyan);
+      border-radius: 6px;
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.15s, border-color 0.15s;
+    }
+    .arc-card:hover { transform: translateY(-2px); border-color: var(--accent-cyan); }
+    .arc-card h4 { margin: 0 0 6px; color: var(--accent-cyan); font-size: 1.02em; }
+    .arc-card p { margin: 0; color: var(--text-secondary); font-size: 0.92em; }
+    .arc-card .jump { display: inline-block; margin-top: 8px; font-size: 0.85em; color: var(--accent-cyan); }
+
+    .devlog-timeline { border-left: 2px solid var(--border-color); margin: 24px 0; padding-left: 0; }
+    .milestone {
+      position: relative;
+      margin: 0 0 26px;
+      padding: 0 0 0 22px;
+      scroll-margin-top: 16px;
+    }
+    .milestone::before {
+      content: ""; position: absolute; left: -7px; top: 6px;
+      width: 10px; height: 10px; border-radius: 50%;
+      background: var(--bg-primary); border: 2px solid var(--accent-cyan);
+    }
+    .milestone .date { font-weight: bold; color: var(--accent-cyan); font-size: 0.9em; letter-spacing: 0.02em; }
+    .milestone h3 { margin: 2px 0 8px; font-size: 1.1em; }
+
+    .devlog-thumbs { display: flex; flex-wrap: wrap; gap: 10px; margin: 12px 0; }
+    .devlog-thumbs a { display: block; }
+    .devlog-thumbs img { height: 110px; border: 1px solid var(--border-color); border-radius: 4px; object-fit: cover; }
+
+    .progress-strip { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0; }
+    .progress-strip img { height: 90px; border: 1px solid var(--border-color); border-radius: 4px; }
+
+    figure.shot { margin: 14px 0; }
+    figure.shot img { max-width: 100%; border: 1px solid var(--border-color); border-radius: 6px; }
+    figure.shot figcaption { color: var(--text-secondary); font-size: 0.88em; margin-top: 6px; }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <h1>Oscuro's Oblivion Overhaul Remastered FULL (OOORF)</h1>
+      <p class="subtitle">Release Tracker</p>
+    </header>
+    <nav><a href="index.html">Home</a> | <a href="overview.html">Overview</a> | <a href="new-Items.html">New Items</a> | <a href="devlog.html" class="highlight-text">Devlog</a> | <a href="changelog.html">Changelog</a> | <a href="install.html">Install</a> | <a href="dependencies.html">Dependencies</a> | <a href="https://github.com/devakm/OblivionRemastered_OOO/releases" target="_blank" rel="noopener">Downloads (GitHub Releases)</a></nav>
+
+    <h1>Devlog — the story behind each release</h1>
+    <p>Notes on what changed in each release and how it was built, drawn from the build logs of the item and map work behind OOORF. For the file-level list, see the <a href="changelog.html">changelog</a>; for the new armor sets, the <a href="new-Items.html">New Items</a> page.</p>
+
+    <section id="alpha91">
+      <h2>alpha91 — June 2026</h2>
+      <p>alpha91 is a large OOORF release with work on two fronts: fourteen new armor sets, and fixes to the bundled dungeons covering water, campfire effects, surface flicker, and ghost objects. This entry records what changed and how each problem was solved.</p>
+      <div class="devlog-arcs">
+        <a class="arc-card" href="#a91-water">
+          <h4>Water in the dungeons</h4>
+          <p>Several OOO dungeons had no water of their own. A working water body was transplanted from a clean vanilla cave, and its four parts — the visible surface, the underwater fog, the swim volume, and the breath meter — were brought up one at a time and combined into a single result.</p>
+          <span class="jump">Jump to the story ↓</span>
+        </a>
+        <a class="arc-card" href="#a91-fire">
+          <h4>Campfire effects</h4>
+          <p>One dungeon zone needed working campfires. A campfire blueprint and its particle system were cloned from a different vanilla package; the clone step had to be corrected so the sparks, flame, light, and smoke render in the target cave.</p>
+          <span class="jump">Jump to the story ↓</span>
+        </a>
+        <a class="arc-card" href="#a91-flicker">
+          <h4>Flicker and ghost suppression</h4>
+          <p>In modded caves the remaster's baked geometry and OOO's older copy occupy the same space, so surfaces flicker. The fix disables OOO's redundant copy; a separate pass removes UE5-baked objects that have no place in the OOO layout.</p>
+          <span class="jump">Jump to the story ↓</span>
+        </a>
+        <a class="arc-card" href="#a91-icons">
+          <h4>Icons and ground meshes</h4>
+          <p>Recoloring inventory icons in their compressed format, and wiring up recolored drop/preview meshes, each introduced a specific bug — a glow halo that took on color, and a packing error that produced invalid icon dimensions. Both were diagnosed and added to the build's quality gates.</p>
+          <span class="jump">Jump to the story ↓</span>
+        </a>
+        <a class="arc-card" href="#a91-recolor">
+          <h4>The recolor pipeline</h4>
+          <p>New sets are recolors of existing armor, not new models. The pipeline recolors by scaling each texture's existing light-to-dark variation rather than flattening it. Fur is a special case: its color is stored as two values inside the material, not in a texture.</p>
+          <span class="jump">Jump to the story ↓</span>
+        </a>
+        <a class="arc-card" href="#a91-armor">
+          <h4>Fourteen new armor sets</h4>
+          <p>Fourteen sets were built between 2026-06-01 and 2026-06-12 on one shared recolor pipeline, finishing with the rename of two older sets to their in-game names.</p>
+          <span class="jump">Jump to the story ↓</span>
+        </a>
+      </div>
+      <div class="devlog-timeline">
+        <div class="milestone" id="a91-flicker">
+          <div class="date">2026-04-04</div>
+          <h3>Flicker fix proven on a test cell</h3>
+          <p>Oblivion Remastered runs a UE5 world re-baked from the original game on top of the old Oblivion data that still drives its logic. OOO injects its own copy of dungeon architecture into that world, so in modded caves many walls and pillars exist twice — once as the UE5-baked geometry, once as OOO's older duplicate in the same place. When two surfaces occupy the same depth the renderer alternates between them, which is the flicker players reported. The fix, proven this day on a single duplicated pedestal, is to flip an "initially disabled" flag on OOO's copy so it never spawns. The UE5 original remains, along with its collision and navigation.</p>
+        </div>
+        <div class="milestone">
+          <div class="date">2026-04-16</div>
+          <h3>Drowned Hopes Cave, zone 1</h3>
+          <p>The first dungeon to get water and ghost suppression working together end-to-end, later reused as the reference recipe. Its first zone was confirmed in-game today.</p>
+        </div>
+        <div class="milestone">
+          <div class="date">2026-04-17</div>
+          <h3>Drowned Hopes Cave, zone 2</h3>
+          <p>The second zone's water was confirmed in-game — a case that needed only a water-height adjustment, not a full surface rebuild.</p>
+        </div>
+        <div class="milestone">
+          <div class="date">2026-05-09</div>
+          <h3>Armor recolor work scoped</h3>
+          <p>OOO's armor families — roughly sixty-eight sets — were catalogued, and the approach was set: build new looks by recoloring existing vanilla armor rather than modeling new geometry.</p>
+        </div>
+        <div class="milestone">
+          <div class="date">2026-05-10</div>
+          <h3>Deep Cover Cave, zone 1</h3>
+          <p>The first cave with no vanilla water of its own. Water was transplanted from a donor cave and confirmed in-game, establishing the height-offset rule used for later water work.</p>
+        </div>
+        <div class="milestone">
+          <div class="date">2026-05-11</div>
+          <h3>Deep Cover Cave, zone 2</h3>
+          <p>The second zone was confirmed. A suppressed container had left behind invisible collision that the player could walk into; that was fixed here.</p>
+        </div>
+        <div class="milestone">
+          <div class="date">2026-05-15</div>
+          <h3>Arondar and Narind validated</h3>
+          <p>Arondar (three zones) and Narind (two zones) passed full in-game validation as part of the "unify" retest campaign, which walks each dungeon end-to-end to confirm flicker, ghost suppression, and chest placement. Narind also recovered a batch of ghost-suppression entries that had been dropped months earlier under an unrelated change; rather than re-adding them by hand, the suppression tool gained rules that regenerate them. This is where the two suppression problems are distinguished. TES4-REFR suppression removes OOO's redundant copy of geometry the remaster already bakes in. The Begone tool does the reverse: it removes a UE5-baked object — a stray door, torch, or cobweb — that has no counterpart in the OOO layout. The goal in both cases is one object per location; the difference is which layer holds the unwanted copy.</p>
+        </div>
+        <div class="milestone">
+          <div class="date">2026-05-16</div>
+          <h3>Cehani validated; Begone moved to build time</h3>
+          <p>Both Cehani zones were confirmed. The main change this day was the Begone migration. Begone had run as a live mod that scanned each zone on entry and hid ghost actors at runtime, but the scanning kept references to engine objects that went stale during zone transitions and could crash the game. The work was moved to edit the cooked map files directly before load, so the engine skips each ghost as it loads the map. The live mod was kept only for debug logging and does not ship for normal play.</p>
+        </div>
+        <div class="milestone">
+          <div class="date">2026-05-17</div>
+          <h3>Yeleri and Barastas validated</h3>
+          <p>Yeleri (three zones) and Barastas (two zones) were confirmed. Yeleri's altar chests began the chest-placement work that later exposed a measurement error.</p>
+        </div>
+        <div class="milestone">
+          <div class="date">2026-05-18</div>
+          <h3>Dostares validated; the floating-chest problem</h3>
+          <p>Dostares (two zones) was confirmed. Disabling a duplicated platform, sarcophagus, or table leaves anything resting on it with no surface beneath, so a chest that sat on a tomb lid now hangs above where the lid was. The fix, "position overrides," re-seats each affected chest, bedroll, and furniture piece onto the UE5-baked surface that remains. The offsets are not uniform — even two identical sarcophagi in one room can sit at different heights — and a scale-conversion error found here had been skewing every height calculation.</p>
+        </div>
+        <div class="milestone">
+          <div class="date">2026-05-19</div>
+          <h3>Rosulas validated</h3>
+          <p>Both Rosulas zones were confirmed. The rule established here: a chest's correct height is measured against the UE5-baked surface beneath it, and the original OOO placement is the best clue to where it belongs.</p>
+        </div>
+        <div class="milestone">
+          <div class="date">2026-05-20</div>
+          <h3>Varastal, Lipsand Tarn 03, Thundering Steps, Broken Tooth validated</h3>
+          <p>Four dungeons were confirmed in one day — Varastal, Lipsand Tarn 03, Thundering Steps Cave (three zones), and Broken Tooth Cave (two zones) — several in a single walkthrough, using a new tool that derives chest heights automatically.</p>
+        </div>
+        <div class="milestone">
+          <div class="date">2026-05-22</div>
+          <h3>Grave Ground Cave validated; a foliage rock in the entrance</h3>
+          <p>Grave Ground Cave was confirmed. Its entrance was blocked by a UE5-baked rock that neither suppression method could touch, because it was a foliage instance rather than a normal actor. A separate workflow shifted the rock in the cooked foliage data and produced the GraveGroundExterior pak, the bundle's first non-dungeon map.</p>
+        </div>
+        <div class="milestone">
+          <div class="date">2026-05-22</div>
+          <h3>Blood Clot Cave water: the four components</h3>
+          <p>Blood Clot Cave is an OOO-added, Argonian-themed dungeon with no usable water of its own. Adding water means making four independent systems agree: the water surface seen from above, the underwater fog seen while submerged, the swim volume that lets the player float and paddle, and the breath/drowning meter. Each is driven by different engine data and can fail on its own. The starting point was to copy the entire working water apparatus out of a clean vanilla cave — a donor cell, a simple rectangular pool chosen over larger but messier candidates — and graft it into Blood Clot Cave. The remaining work was getting each of the four components to function in the new location.</p>
+        </div>
+        <div class="milestone">
+          <div class="date">2026-05-23</div>
+          <h3>Swim volume corrected</h3>
+          <p>The swim volume reported the right size and position but never triggered a swim. The cause: a copied water brush carries an internal pointer to its collision body, stored as a slot number. In the larger donor cave that number referenced a valid object; in the smaller Blood Clot Cave it referenced an unrelated decal, so the engine could not build the swim collision. Re-pointing the brush at a valid collision body fixed it. The correct water height was also measured against roughly ninety vanilla cells, correcting the scale error noted earlier.</p>
+        </div>
+        <div class="milestone" id="a91-water">
+          <div class="date">2026-05-26</div>
+          <h3>Blood Clot Cave, zone 1 complete</h3>
+          <p>The last component for zone 1 was the visible surface, which clipped off at a vertical line partway down the cave. Extending the surface meshes, bounds, splines, and zone boxes had no effect. The surface is shaped by a separate, high-precision copy of the collision hull's vertices — not the copy being edited — confirmed against the UE5.3 engine source. Extending that copy covered the whole cave. With the surface, fog, swim volume, breath meter, and ghost-fire suppression all working, zone 1 was confirmed in-game this day.</p>
+        </div>
+        <div class="milestone">
+          <div class="date">2026-05-27</div>
+          <h3>Blood Clot Cave, zone 2 complete</h3>
+          <p>Zone 2 needed the water raised into a previously dry upper hall. The surface is gated by a chain of elements where the smallest clips the rest, including an outer tile grid that had not been accounted for. Resolving zone 2 prompted an offline check that flags an incomplete water footprint before the game is launched.</p>
+        </div>
+        <div class="milestone" id="a91-fire">
+          <div class="date">2026-06-01</div>
+          <h3>Blood Clot Cave, zone 3: campfire effects</h3>
+          <p>The roughly eight days since zone 1 were spent on a separate problem: zone 3 needed two working campfires. A water volume belongs to an always-loaded engine module, but a campfire is a blueprint with a particle system, and cloning one from a different vanilla package than the target cave required correcting how the clone step rewrites the asset's internal data. The clone used a byte-scan that rewrote any value resembling an internal reference; a particle system contains parameter values, name indices, and offset fields that resemble references and were being corrupted. The fixes addressed the asset header layout, parameter names lost to the packaging tool, and a specific offset field that controlled the flame spawn rate. The vanilla bonfire effect also overflows its woodpile mesh, which was compensated with a scale adjustment. With these corrected, both campfires render sparks, flame, light, and smoke, and the cross-package clone method is reusable for later effects.</p>
+        </div>
+        <div class="milestone">
+          <div class="date">2026-06-01</div>
+          <h3>ElvenNight, the first recolored set</h3>
+          <p>ElvenNight was the first set built with the recolor approach. It established that a vanilla texture ships on its own if its full structure and exact byte size are preserved: recolor the top image, regenerate the smaller zoom levels, and rename the texture in its folder. It also set the original metal/cloth/leather region recipe used by later sets. The pipeline recolors by scaling a texture's existing light-to-dark variation up or down, never by flattening every pixel to one value, because that variation is what makes a material read as itself.</p>
+          <div class="devlog-thumbs"><a href="new-Items.html#ElvenNight"><img src="images/item-tracker-assets/ElvenNight_Cuirass.png" alt="ElvenNight"></a></div>
+        </div>
+        <div class="milestone">
+          <div class="date">2026-06-03</div>
+          <h3>Quality gates added to the pipeline</h3>
+          <p>The recolor pipeline gained automated checks: one confirms each shipped texture is structurally valid, one confirms a renamed clone did not break an internal reference, and a later one confirms a recolor's region assignment matches the vanilla layout.</p>
+        </div>
+        <div class="milestone">
+          <div class="date">2026-06-04</div>
+          <h3>Mithril and Elven tiers built</h3>
+          <p>The Mithril base material and its first variants — Eboron and ShadowMail — were built this day, along with the ElvenSky and ElvenEldar recolors on the now-generic pipeline. Eboron established four metal-recolor rules confirmed in-game: gold rivets must be excluded from the plate region by area; chainmail must be the default surface or its highlights stay vanilla; dark metal comes from darkening mid-tones while keeping highlights; and a brightness cap lets trim stay silver while rivets stay dark.</p>
+          <div class="devlog-thumbs"><a href="new-Items.html#Eboron"><img src="images/item-tracker-assets/Eboron_Cuirass.png" alt="Eboron"></a><a href="new-Items.html#ElvenSky"><img src="images/item-tracker-assets/ElvenSky_Cuirass.png" alt="ElvenSky"></a><a href="new-Items.html#ElvenEldar"><img src="images/item-tracker-assets/ElvenEldar_Cuirass.png" alt="ElvenEldar"></a></div>
+        </div>
+        <div class="milestone">
+          <div class="date">2026-06-04</div>
+          <h3>ShadowMail refined over several days</h3>
+          <p>ShadowMail, the second Mithril variant, was first built this day and tuned through 2026-06-06. It uses a blue-steel hue with a saturation floor so the blue does not read as grey, leather corrected from an initial muddy red to dark mahogany, and a four-region model — trim, plate body, chainmail, and skirt leather — with the chainmail separated by a hand-painted mask because no texture statistic distinguished it from the body.</p>
+          <div class="devlog-thumbs"><a href="new-Items.html#ShadowMail"><img src="images/item-tracker-assets/ShadowMail_Cuirass.png" alt="ShadowMail"></a></div>
+        </div>
+        <div class="milestone">
+          <div class="date">2026-06-05</div>
+          <h3>Two reusable leather techniques</h3>
+          <p>Some vanilla textures carry baked-in defects; on one cuirass the top strip of a leather panel is blurred in the original art. Instead of synthesizing replacement grain, a clean copy of the same panel found elsewhere on the texture sheet was pasted over the defect. A second technique transplants fine leather grain from a sharp region into a blurred one, taking only the detail and keeping the original color.</p>
+        </div>
+        <div class="milestone">
+          <div class="date">2026-06-07</div>
+          <h3>Aureus, and recolored ground meshes</h3>
+          <p>Aureus, the third Mithril variant (silver body, copper chainmail), was built this day with a gold rampant-unicorn emblem on its skirt panels. Recolored ground meshes — the model shown when an item is dropped or previewed — were first wired into the pipeline here, which surfaced a rotation issue: dropped boots lay on their backs. The mesh was unchanged with no rotation baked in; the display angle is stored in a separate table keyed by mesh name, so a renamed mesh finds no entry and falls back to a default angle. The decision was to ship the correct recolored art at the wrong angle for now and treat the rotation as a later fix.</p>
+          <div class="devlog-thumbs"><a href="new-Items.html#Aureus"><img src="images/item-tracker-assets/Aureus_Cuirass.png" alt="Aureus"></a></div>
+        </div>
+        <div class="milestone">
+          <div class="date">2026-06-08</div>
+          <h3>Aureus front-tabard relief</h3>
+          <p>The skirt emblem was resolved, but the front tabard's tribal engraving remained visible regardless of texture edits. It was traced to the mesh itself — the relief is in the vertex normals and geometry, which a flat texture cannot cancel — so the unicorn emblem was placed over it. The general check that came out of this: determine whether a relief lives in the texture or the mesh before attempting to remove it.</p>
+        </div>
+        <div class="milestone" id="a91-recolor">
+          <div class="date">2026-06-10</div>
+          <h3>Fur sets: color stored in the material</h3>
+          <p>Fur is rendered with a hair-card shader, and recoloring it appeared to require decoding and repainting a packed texture. Reconnaissance found the color is not in a texture: it is two values in the material — a root color and a tip color, giving the base-to-tip gradient — stored as 16-byte color values in the material's parameter block, confirmed against the UE5.3 source. Those two overrides already existed in the vanilla material as a brown gradient, so the recolor is an in-place overwrite of two values with no repainting or re-encoding. ArcticFur was set to a cool snow-white; WornFur kept the vanilla brown. The fur helmet's body texture was the only one in a different compression format, which made its real dimensions read as garbled until the format was confirmed. Both fur sets were built this day.</p>
+          <div class="devlog-thumbs"><a href="new-Items.html#ArcticFur"><img src="images/item-tracker-assets/ArcticFur_Cuirass.png" alt="ArcticFur"></a><a href="new-Items.html#WornFur"><img src="images/item-tracker-assets/WornFur_Cuirass.png" alt="WornFur"></a></div>
+        </div>
+        <div class="milestone">
+          <div class="date">2026-06-10</div>
+          <h3>GoldenBronze completes the Mithril tier</h3>
+          <p>The last Mithril variant was built, confirmed in-game, and merged this day. Its engraved helmet was losing line-work to a hard brightness cap; a value-preserving multiply restored it.</p>
+          <div class="devlog-thumbs"><a href="new-Items.html#GoldenBronze"><img src="images/item-tracker-assets/GoldenBronze_Cuirass.png" alt="GoldenBronze"></a></div>
+        </div>
+        <div class="milestone">
+          <div class="date">2026-06-11</div>
+          <h3>ArcticFur and WornFur approved in-game</h3>
+          <p>The two fur sets, built the day before, were tuned and approved in a live in-game test.</p>
+        </div>
+        <div class="milestone">
+          <div class="date">2026-06-11</div>
+          <h3>WornLeather, and a naming issue</h3>
+          <p>WornLeather's first build showed vanilla in-game. The armor players call "Leather" is built from a "Thief"-codenamed asset chain, while the assets literally named "Leather" are an unused arena set the game never shipped, so the first build recolored the wrong chain. The fix traced the full display chain from item to blueprint to mesh to material to texture and retargeted onto the correct body. A tuning note also came out of this: in-game lighting is brighter than the flat preview, so previews should be biased darker. Shipped and verified this day.</p>
+          <div class="devlog-thumbs"><a href="new-Items.html#WornLeather"><img src="images/item-tracker-assets/WornLeather_Cuirass.png" alt="WornLeather"></a></div>
+        </div>
+        <div class="milestone">
+          <div class="date">2026-06-11</div>
+          <h3>BloodLeather and GrayFox shipped</h3>
+          <p>Both were built on the WornLeather groundwork and verified in-game this day — BloodLeather in a deep-red dye, GrayFox a grey body with darker straps. GrayFox includes one bracer that is genuinely Leather-named, handled by reusable mix-and-match logic added here.</p>
+          <div class="devlog-thumbs"><a href="new-Items.html#BloodLeather"><img src="images/item-tracker-assets/BloodLeather_Cuirass.png" alt="BloodLeather"></a><a href="new-Items.html#GrayFox"><img src="images/item-tracker-assets/GrayFox_Cuirass.png" alt="GrayFox"></a></div>
+        </div>
+        <div class="milestone" id="a91-armor">
+          <div class="date">2026-06-12</div>
+          <h3>Fourteen sets complete; glass rename</h3>
+          <p>The final pass renamed the two oldest sets from their codenames to their in-game names: BGlass to BlueGlass, RGlass to Drakefired. Drakefired also received new red icons, since its previous ones were copied from the blue set. The rename surfaced a process point: builds passed while the override file binding items to asset paths still pointed at the old names, so "done" means checking the full deploy set, not only the build. With these two re-released, all fourteen sets are complete: ArcticFur, Aureus, BloodLeather, BlueGlass, Drakefired, Eboron, ElvenEldar, ElvenNight, ElvenSky, GoldenBronze, GrayFox, ShadowMail, WornFur, and WornLeather.</p>
+          <div class="devlog-thumbs"><a href="new-Items.html#BlueGlass"><img src="images/item-tracker-assets/BlueGlass_Cuirass.png" alt="BlueGlass"></a><a href="new-Items.html#Drakefired"><img src="images/item-tracker-assets/Drakefired_Cuirass.png" alt="Drakefired"></a></div>
+        </div>
+        <div class="milestone">
+          <div class="date">2026-06-12</div>
+          <h3>Icon recolor: glow bleed</h3>
+          <p>Inventory icons are recolored in their compressed DXT5 form, which keeps a transparency channel for clean edges. An in-game test showed the recolor bleeding past the item silhouette: the game draws a soft glow halo, and the recolor was tinting the halo's bright pixels as metal. A second artifact was stray black blocks, caused when two reference colors in a compression block are set to the same value. The initial response was to edit each icon's transparency data to remove the glow.</p>
+        </div>
+        <div class="milestone" id="a91-icons">
+          <div class="date">2026-06-13</div>
+          <h3>Icon packing bug and ground-mesh crash</h3>
+          <p>The next session opened with a crash to desktop when the inventory was opened, and many icons rendering as blank or broken. Because the test character carried every item at once, the trigger was unclear, and effort first went to comparing the preview meshes. A reduced save with a single set, run through the game's own texture parser, showed the cause: the icons still declared the right format but their stored width and height were invalid, so the game could not build the images. The previous day's transparency edit had corrupted the repacking bookkeeping, but only for icons storing multiple zoom levels, which is why the one single-level icon stayed fine. The correction was to recolor icon color only and leave the glow channel untouched, and to add a quality gate that runs the parser over every shipped icon and fails the build on an invalid size. A separate ground-mesh drop crash was isolated the same day by bisection, and two minor regressions — a fur set reverted to brown and a truncated package — were fixed. All confirmed in-game.</p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>Source: <a href="https://github.com/devakm/OblivionRemastered_OOO" target="_blank" rel="noopener">github.com/devakm/OblivionRemastered_OOO</a> · Releases: <a href="https://github.com/devakm/OblivionRemastered_OOO/releases" target="_blank" rel="noopener">GitHub Releases</a></p>
+    </footer>
+  </div>
+</body>
+
+</html>
