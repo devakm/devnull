@@ -7,7 +7,7 @@ them from clobbering each other.
 
 ## Ownership: every page here is HAND-CANONICAL
 
-`index.html`, `overview.html`, `new-Items.html`, `changelog.html`,
+`index.html`, `overview.html`, `new-Items.html`, `devlog.html`, `changelog.html`,
 `install.html`, and `dependencies.html` are edited by hand. Each carries this
 marker right after its doctype:
 
