@@ -31,7 +31,8 @@ def _staged_obr_html() -> list[str]:
 
 
 def _staged_content(path: str) -> str:
-    r = subprocess.run(["git", "show", f":{path}"], capture_output=True, text=True, check=True)
+    r = subprocess.run(["git", "show", f":{path}"], capture_output=True, text=True,
+                        encoding="utf-8", check=True)
     return r.stdout
 
 
