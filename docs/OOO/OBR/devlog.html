@@ -118,7 +118,7 @@
         <div class="milestone" id="a91-flicker">
           <div class="date">2026-04-04</div>
           <h3>Flicker fix proven on a test cell</h3>
-          <p>Oblivion Remastered runs a UE5 world re-baked from the original game on top of the old Oblivion data that still drives its logic. OOO injects its own copy of dungeon architecture into that world, so in modded caves many walls and pillars exist twice — once as the UE5-baked geometry, once as OOO's older duplicate in the same place. When two surfaces occupy the same depth the renderer alternates between them, which is the flicker players reported. The fix, proven this day on a single duplicated pedestal, is to flip an "initially disabled" flag on OOO's copy so it never spawns. The UE5 original remains, along with its collision and navigation.</p>
+          <p>Oblivion Remastered runs a UE5 world re-baked from the original game on top of the old Oblivion data that still drives its logic. OOO injects its own copy of dungeon architecture into that world, so in modded caves many walls and pillars exist twice — once as the UE5-baked geometry, once as OOO's older duplicate in the same place. When two surfaces occupy the same depth the renderer alternates between them, which is the flicker players reported. The fix, proven today on a single duplicated pedestal, is to flip an "initially disabled" flag on OOO's copy so it never spawns. The UE5 original remains, along with its collision and navigation.</p>
         </div>
         <div class="milestone">
           <div class="date">2026-04-16</div>
@@ -153,7 +153,7 @@
         <div class="milestone">
           <div class="date">2026-05-16</div>
           <h3>Cehani validated; Begone moved to build time</h3>
-          <p>Both Cehani zones were confirmed. The main change this day was the Begone migration. Begone had run as a live mod that scanned each zone on entry and hid ghost actors at runtime, but the scanning kept references to engine objects that went stale during zone transitions and could crash the game. The work was moved to edit the cooked map files directly before load, so the engine skips each ghost as it loads the map. The live mod was kept only for debug logging and does not ship for normal play.</p>
+          <p>Both Cehani zones were confirmed. The main change today was the Begone migration. Begone had run as a live mod that scanned each zone on entry and hid ghost actors at runtime, but the scanning kept references to engine objects that went stale during zone transitions and could crash the game. The work was moved to edit the cooked map files directly before load, so the engine skips each ghost as it loads the map. The live mod was kept only for debug logging and is not bundled for normal play.</p>
         </div>
         <div class="milestone">
           <div class="date">2026-05-17</div>
@@ -193,7 +193,7 @@
         <div class="milestone" id="a91-water">
           <div class="date">2026-05-26</div>
           <h3>Blood Clot Cave, zone 1 complete</h3>
-          <p>The last component for zone 1 was the visible surface, which clipped off at a vertical line partway down the cave. Extending the surface meshes, bounds, splines, and zone boxes had no effect. The surface is shaped by a separate, high-precision copy of the collision hull's vertices — not the copy being edited — confirmed against the UE5.3 engine source. Extending that copy covered the whole cave. With the surface, fog, swim volume, breath meter, and ghost-fire suppression all working, zone 1 was confirmed in-game this day.</p>
+          <p>The last component for zone 1 was the visible surface, which clipped off at a vertical line partway down the cave. Extending the surface meshes, bounds, splines, and zone boxes had no effect. The surface is shaped by a separate, high-precision copy of the collision hull's vertices — not the copy being edited — confirmed against the UE5.3 engine source. Extending that copy covered the whole cave. With the surface, fog, swim volume, breath meter, and ghost-fire suppression all working, zone 1 was confirmed in-game today.</p>
         </div>
         <div class="milestone">
           <div class="date">2026-05-27</div>
@@ -208,24 +208,24 @@
         <div class="milestone">
           <div class="date">2026-06-01</div>
           <h3>ElvenNight, the first recolored set</h3>
-          <p>ElvenNight was the first set built with the recolor approach. It established that a vanilla texture ships on its own if its full structure and exact byte size are preserved: recolor the top image, regenerate the smaller zoom levels, and rename the texture in its folder. It also set the original metal/cloth/leather region recipe used by later sets. The pipeline recolors by scaling a texture's existing light-to-dark variation up or down, never by flattening every pixel to one value, because that variation is what makes a material read as itself.</p>
+          <p>ElvenNight was the first set built with the recolor approach. It established that a vanilla texture works on its own if its full structure and exact byte size are preserved: recolor the top image, regenerate the smaller zoom levels, and rename the texture in its folder. It also set the original metal/cloth/leather region recipe used by later sets. The pipeline recolors by scaling a texture's existing light-to-dark variation up or down, never by flattening every pixel to one value, because that variation is what makes a material read as itself.</p>
           <div class="devlog-renders"><a href="new-Items.html#ElvenNight"><img src="images/refs/OBR-OOO-item-ElvenNight-Armor_F.png" alt="ElvenNight armor render"></a></div><div class="devlog-thumbs"><a href="new-Items.html#ElvenNight"><img src="images/item-tracker-assets/ElvenNight_Cuirass.png" alt="ElvenNight cuirass icon"></a></div>
         </div>
         <div class="milestone">
           <div class="date">2026-06-03</div>
           <h3>Quality gates added to the pipeline</h3>
-          <p>The recolor pipeline gained automated checks: one confirms each shipped texture is structurally valid, one confirms a renamed clone did not break an internal reference, and a later one confirms a recolor's region assignment matches the vanilla layout.</p>
+          <p>The recolor pipeline gained automated checks: one confirms each generated texture is structurally valid, one confirms a renamed clone did not break an internal reference, and a later one confirms a recolor's region assignment matches the vanilla layout.</p>
         </div>
         <div class="milestone">
           <div class="date">2026-06-04</div>
           <h3>Mithril and Elven tiers built</h3>
-          <p>The Mithril base material and its first variants — Eboron and ShadowMail — were built this day, along with the ElvenSky and ElvenEldar recolors on the now-generic pipeline. Eboron established four metal-recolor rules confirmed in-game: gold rivets must be excluded from the plate region by area; chainmail must be the default surface or its highlights stay vanilla; dark metal comes from darkening mid-tones while keeping highlights; and a brightness cap lets trim stay silver while rivets stay dark.</p>
+          <p>The Mithril base material and its first variants — Eboron and ShadowMail — were built today, along with the ElvenSky and ElvenEldar recolors on the now-generic pipeline. Eboron established four metal-recolor rules confirmed in-game: gold rivets must be excluded from the plate region by area; chainmail must be the default surface or its highlights stay vanilla; dark metal comes from darkening mid-tones while keeping highlights; and a brightness cap lets trim stay silver while rivets stay dark.</p>
           <div class="devlog-renders"><a href="new-Items.html#Eboron"><img src="images/refs/OBR-OOO-item-Eboron-Armor_F-v11-front.png" alt="Eboron armor render"></a><a href="new-Items.html#ElvenSky"><img src="images/refs/OBR-OOO-item-ElvenSky-Armor_F.png" alt="ElvenSky armor render"></a><a href="new-Items.html#ElvenEldar"><img src="images/refs/OBR-OOO-item-ElvenEldar-Armor_F.png" alt="ElvenEldar armor render"></a></div><div class="devlog-thumbs"><a href="new-Items.html#Eboron"><img src="images/item-tracker-assets/Eboron_Cuirass.png" alt="Eboron cuirass icon"></a><a href="new-Items.html#ElvenSky"><img src="images/item-tracker-assets/ElvenSky_Cuirass.png" alt="ElvenSky cuirass icon"></a><a href="new-Items.html#ElvenEldar"><img src="images/item-tracker-assets/ElvenEldar_Cuirass.png" alt="ElvenEldar cuirass icon"></a></div>
         </div>
         <div class="milestone">
           <div class="date">2026-06-04</div>
           <h3>ShadowMail refined over several days</h3>
-          <p>ShadowMail, the second Mithril variant, was first built this day and tuned through 2026-06-06. It uses a blue-steel hue with a saturation floor so the blue does not read as grey, leather corrected from an initial muddy red to dark mahogany, and a four-region model — trim, plate body, chainmail, and skirt leather — with the chainmail separated by a hand-painted mask because no texture statistic distinguished it from the body.</p>
+          <p>ShadowMail, the second Mithril variant, was first built today and tuned through 2026-06-06. It uses a blue-steel hue with a saturation floor so the blue does not read as grey, leather corrected from an initial muddy red to dark mahogany, and a four-region model — trim, plate body, chainmail, and skirt leather — with the chainmail separated by a hand-painted mask because no texture statistic distinguished it from the body.</p>
           <div class="devlog-renders"><a href="new-Items.html#ShadowMail"><img src="images/refs/OBR-OOO-item-Shadowwmail-Armor_F-v29-front.png" alt="ShadowMail armor render"></a></div><div class="devlog-thumbs"><a href="new-Items.html#ShadowMail"><img src="images/item-tracker-assets/ShadowMail_Cuirass.png" alt="ShadowMail cuirass icon"></a></div>
         </div>
         <div class="milestone">
@@ -236,7 +236,7 @@
         <div class="milestone">
           <div class="date">2026-06-07</div>
           <h3>Aureus, and recolored ground meshes</h3>
-          <p>Aureus, the third Mithril variant (silver body, copper chainmail), was built this day with a gold rampant-unicorn emblem on its skirt panels. Recolored ground meshes — the model shown when an item is dropped or previewed — were first wired into the pipeline here, which surfaced a rotation issue: dropped boots lay on their backs. The mesh was unchanged with no rotation baked in; the display angle is stored in a separate table keyed by mesh name, so a renamed mesh finds no entry and falls back to a default angle. The decision was to ship the correct recolored art at the wrong angle for now and treat the rotation as a later fix.</p>
+          <p>Aureus, the third Mithril variant (silver body, copper chainmail), was built today with a gold rampant-unicorn emblem on its skirt panels. Recolored ground meshes — the model shown when an item is dropped or previewed — were first wired into the pipeline here, which surfaced a rotation issue: dropped boots lay on their backs. The mesh was unchanged with no rotation baked in; the display angle is stored in a separate table keyed by mesh name, so a renamed mesh finds no entry and falls back to a default angle. The decision was to keep the correct recolored art at the wrong angle for now and treat the rotation as a later fix.</p>
           <div class="devlog-renders"><a href="new-Items.html#Aureus"><img src="images/refs/OBR-OOO-item-Aureus-Armor_F-v13-front.png" alt="Aureus armor render"></a></div><div class="devlog-thumbs"><a href="new-Items.html#Aureus"><img src="images/item-tracker-assets/Aureus_Cuirass.png" alt="Aureus cuirass icon"></a></div>
         </div>
         <div class="milestone">
@@ -247,13 +247,13 @@
         <div class="milestone" id="a91-recolor">
           <div class="date">2026-06-10</div>
           <h3>Fur sets: color stored in the material</h3>
-          <p>Fur is rendered with a hair-card shader, and recoloring it appeared to require decoding and repainting a packed texture. Reconnaissance found the color is not in a texture: it is two values in the material — a root color and a tip color, giving the base-to-tip gradient — stored as 16-byte color values in the material's parameter block, confirmed against the UE5.3 source. Those two overrides already existed in the vanilla material as a brown gradient, so the recolor is an in-place overwrite of two values with no repainting or re-encoding. ArcticFur was set to a cool snow-white; WornFur kept the vanilla brown. The fur helmet's body texture was the only one in a different compression format, which made its real dimensions read as garbled until the format was confirmed. Both fur sets were built this day.</p>
+          <p>Fur is rendered with a hair-card shader, and recoloring it appeared to require decoding and repainting a packed texture. Reconnaissance found the color is not in a texture: it is two values in the material — a root color and a tip color, giving the base-to-tip gradient — stored as 16-byte color values in the material's parameter block, confirmed against the UE5.3 source. Those two overrides already existed in the vanilla material as a brown gradient, so the recolor is an in-place overwrite of two values with no repainting or re-encoding. ArcticFur was set to a cool snow-white; WornFur kept the vanilla brown. The fur helmet's body texture was the only one in a different compression format, which made its real dimensions read as garbled until the format was confirmed. Both fur sets were built today.</p>
           <div class="devlog-renders"><a href="new-Items.html#ArcticFur"><img src="images/refs/OBR-OOO-item-ArcticFur-Armor_F-v2-front.png" alt="ArcticFur armor render"></a><a href="new-Items.html#WornFur"><img src="images/refs/OBR-OOO-item-WornFur-Armor_F-v3-front.png" alt="WornFur armor render"></a></div><div class="devlog-thumbs"><a href="new-Items.html#ArcticFur"><img src="images/item-tracker-assets/ArcticFur_Cuirass.png" alt="ArcticFur cuirass icon"></a><a href="new-Items.html#WornFur"><img src="images/item-tracker-assets/WornFur_Cuirass.png" alt="WornFur cuirass icon"></a></div>
         </div>
         <div class="milestone">
           <div class="date">2026-06-10</div>
           <h3>GoldenBronze completes the Mithril tier</h3>
-          <p>The last Mithril variant was built, confirmed in-game, and merged this day. Its engraved helmet was losing line-work to a hard brightness cap; a value-preserving multiply restored it.</p>
+          <p>The last Mithril variant was built, confirmed in-game, and merged today. Its engraved helmet was losing line-work to a hard brightness cap; a value-preserving multiply restored it.</p>
           <div class="devlog-renders"><a href="new-Items.html#GoldenBronze"><img src="images/refs/OBR-OOO-item-GoldenBronze-Armor_F-v2-front.png" alt="GoldenBronze armor render"></a></div><div class="devlog-thumbs"><a href="new-Items.html#GoldenBronze"><img src="images/item-tracker-assets/GoldenBronze_Cuirass.png" alt="GoldenBronze cuirass icon"></a></div>
         </div>
         <div class="milestone">
@@ -264,13 +264,13 @@
         <div class="milestone">
           <div class="date">2026-06-11</div>
           <h3>WornLeather, and a naming issue</h3>
-          <p>WornLeather's first build showed vanilla in-game. The armor players call "Leather" is built from a "Thief"-codenamed asset chain, while the assets literally named "Leather" are an unused arena set the game never shipped, so the first build recolored the wrong chain. The fix traced the full display chain from item to blueprint to mesh to material to texture and retargeted onto the correct body. A tuning note also came out of this: in-game lighting is brighter than the flat preview, so previews should be biased darker. Shipped and verified this day.</p>
+          <p>WornLeather's first build showed vanilla in-game. The armor players call "Leather" is built from a "Thief"-codenamed asset chain, while the assets literally named "Leather" are an unused arena set the vanilla game never released, so the first build recolored the wrong chain. The fix traced the full display chain from item to blueprint to mesh to material to texture and retargeted onto the correct body. A tuning note also came out of this: in-game lighting is brighter than the flat preview, so previews should be biased darker. Built and verified today.</p>
           <div class="devlog-renders"><a href="new-Items.html#WornLeather"><img src="images/refs/OBR-OOO-item-WornLeather-Armor_F-v3-front.png" alt="WornLeather armor render"></a></div><div class="devlog-thumbs"><figure class="wrong"><a href="new-Items.html#WornLeather"><img src="images/item-tracker-assets/WornLeather_Cuirass.png" alt="WornLeather inventory icon currently showing vanilla Pit Armor (wrong source)"></a><figcaption>Wrong icon: this is vanilla Pit Armor, not the Thief-based WornLeather recolor &mdash; a live example of the naming trap described above. To be fixed in alpha92.</figcaption></figure></div>
         </div>
         <div class="milestone">
           <div class="date">2026-06-11</div>
-          <h3>BloodLeather and GrayFox shipped</h3>
-          <p>Both were built on the WornLeather groundwork and verified in-game this day — BloodLeather in a deep-red dye, GrayFox a grey body with darker straps. GrayFox includes one bracer that is genuinely Leather-named, handled by reusable mix-and-match logic added here.</p>
+          <h3>BloodLeather and GrayFox completed</h3>
+          <p>Both were built on the WornLeather groundwork and verified in-game today — BloodLeather in a deep-red dye, GrayFox a grey body with darker straps. GrayFox includes one bracer that is genuinely Leather-named, handled by reusable mix-and-match logic added here.</p>
           <div class="devlog-renders"><a href="new-Items.html#BloodLeather"><img src="images/refs/OBR-OOO-item-BloodLeather-Armor_F-v1-front.png" alt="BloodLeather armor render"></a><a href="new-Items.html#GrayFox"><img src="images/refs/OBR-OOO-item-GreyFox-Armor_F-v3-front.png" alt="GrayFox armor render"></a></div><div class="devlog-thumbs"><a href="new-Items.html#BloodLeather"><img src="images/item-tracker-assets/BloodLeather_Cuirass.png" alt="BloodLeather cuirass icon"></a><a href="new-Items.html#GrayFox"><img src="images/item-tracker-assets/GrayFox_Cuirass.png" alt="GrayFox cuirass icon"></a></div>
         </div>
         <div class="milestone" id="a91-armor">
@@ -287,7 +287,7 @@
         <div class="milestone" id="a91-icons">
           <div class="date">2026-06-13</div>
           <h3>Icon packing bug and ground-mesh crash</h3>
-          <p>The next session opened with a crash to desktop when the inventory was opened, and many icons rendering as blank or broken. Because the test character carried every item at once, the trigger was unclear, and effort first went to comparing the preview meshes. A reduced save with a single set, run through the game's own texture parser, showed the cause: the icons still declared the right format but their stored width and height were invalid, so the game could not build the images. The previous day's transparency edit had corrupted the repacking bookkeeping, but only for icons storing multiple zoom levels, which is why the one single-level icon stayed fine. The correction was to recolor icon color only and leave the glow channel untouched, and to add a quality gate that runs the parser over every shipped icon and fails the build on an invalid size. A separate ground-mesh drop crash was isolated the same day by bisection, and two minor regressions — a fur set reverted to brown and a truncated package — were fixed. All confirmed in-game.</p>
+          <p>The next session opened with a crash to desktop when the inventory was opened, and many icons rendering as blank or broken. Because the test character carried every item at once, the trigger was unclear, and effort first went to comparing the preview meshes. A reduced save with a single set, run through the game's own texture parser, showed the cause: the icons still declared the right format but their stored width and height were invalid, so the game could not build the images. The previous day's transparency edit had corrupted the repacking bookkeeping, but only for icons storing multiple zoom levels, which is why the one single-level icon stayed fine. The correction was to recolor icon color only and leave the glow channel untouched, and to add a quality gate that runs the parser over every output icon and fails the build on an invalid size. A separate ground-mesh drop crash was isolated the same day by bisection, and two minor regressions — a fur set reverted to brown and a truncated package — were fixed. All confirmed in-game.</p>
         </div>
       </div>
     </section>
