@@ -1,0 +1,4 @@
+#!/bin/sh
+# devnull pre-commit guard. Installed into .git/hooks by scripts/install-hooks.sh.
+# Rejects any staged docs/OOO/OBR/*.html that lost its DO-NOT-REGENERATE marker.
+exec python scripts/check_obr_markers.py
