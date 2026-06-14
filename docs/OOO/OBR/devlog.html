@@ -49,6 +49,10 @@
     .devlog-thumbs a { display: block; }
     .devlog-thumbs img { height: 110px; border: 1px solid var(--border-color); border-radius: 4px; object-fit: cover; }
 
+    .devlog-renders { display: flex; flex-wrap: wrap; gap: 12px; margin: 14px 0; }
+    .devlog-renders a { display: block; }
+    .devlog-renders img { width: 170px; border: 1px solid var(--border-color); border-radius: 4px; display: block; }
+
     .progress-strip { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0; }
     .progress-strip img { height: 90px; border: 1px solid var(--border-color); border-radius: 4px; }
 
@@ -199,7 +203,7 @@
           <div class="date">2026-06-01</div>
           <h3>ElvenNight, the first recolored set</h3>
           <p>ElvenNight was the first set built with the recolor approach. It established that a vanilla texture ships on its own if its full structure and exact byte size are preserved: recolor the top image, regenerate the smaller zoom levels, and rename the texture in its folder. It also set the original metal/cloth/leather region recipe used by later sets. The pipeline recolors by scaling a texture's existing light-to-dark variation up or down, never by flattening every pixel to one value, because that variation is what makes a material read as itself.</p>
-          <div class="devlog-thumbs"><a href="new-Items.html#ElvenNight"><img src="images/item-tracker-assets/ElvenNight_Cuirass.png" alt="ElvenNight"></a></div>
+          <div class="devlog-renders"><a href="new-Items.html#ElvenNight"><img src="images/refs/OBR-OOO-item-ElvenNight-Armor_F.png" alt="ElvenNight armor render"></a></div>
         </div>
         <div class="milestone">
           <div class="date">2026-06-03</div>
@@ -210,13 +214,13 @@
           <div class="date">2026-06-04</div>
           <h3>Mithril and Elven tiers built</h3>
           <p>The Mithril base material and its first variants — Eboron and ShadowMail — were built this day, along with the ElvenSky and ElvenEldar recolors on the now-generic pipeline. Eboron established four metal-recolor rules confirmed in-game: gold rivets must be excluded from the plate region by area; chainmail must be the default surface or its highlights stay vanilla; dark metal comes from darkening mid-tones while keeping highlights; and a brightness cap lets trim stay silver while rivets stay dark.</p>
-          <div class="devlog-thumbs"><a href="new-Items.html#Eboron"><img src="images/item-tracker-assets/Eboron_Cuirass.png" alt="Eboron"></a><a href="new-Items.html#ElvenSky"><img src="images/item-tracker-assets/ElvenSky_Cuirass.png" alt="ElvenSky"></a><a href="new-Items.html#ElvenEldar"><img src="images/item-tracker-assets/ElvenEldar_Cuirass.png" alt="ElvenEldar"></a></div>
+          <div class="devlog-renders"><a href="new-Items.html#Eboron"><img src="images/refs/OBR-OOO-item-Eboron-Armor_F-v11-front.png" alt="Eboron armor render"></a><a href="new-Items.html#ElvenSky"><img src="images/refs/OBR-OOO-item-ElvenSky-Armor_F.png" alt="ElvenSky armor render"></a><a href="new-Items.html#ElvenEldar"><img src="images/refs/OBR-OOO-item-ElvenEldar-Armor_F.png" alt="ElvenEldar armor render"></a></div>
         </div>
         <div class="milestone">
           <div class="date">2026-06-04</div>
           <h3>ShadowMail refined over several days</h3>
           <p>ShadowMail, the second Mithril variant, was first built this day and tuned through 2026-06-06. It uses a blue-steel hue with a saturation floor so the blue does not read as grey, leather corrected from an initial muddy red to dark mahogany, and a four-region model — trim, plate body, chainmail, and skirt leather — with the chainmail separated by a hand-painted mask because no texture statistic distinguished it from the body.</p>
-          <div class="devlog-thumbs"><a href="new-Items.html#ShadowMail"><img src="images/item-tracker-assets/ShadowMail_Cuirass.png" alt="ShadowMail"></a></div>
+          <div class="devlog-renders"><a href="new-Items.html#ShadowMail"><img src="images/refs/OBR-OOO-item-Shadowwmail-Armor_F-v29-front.png" alt="ShadowMail armor render"></a></div>
         </div>
         <div class="milestone">
           <div class="date">2026-06-05</div>
@@ -227,7 +231,7 @@
           <div class="date">2026-06-07</div>
           <h3>Aureus, and recolored ground meshes</h3>
           <p>Aureus, the third Mithril variant (silver body, copper chainmail), was built this day with a gold rampant-unicorn emblem on its skirt panels. Recolored ground meshes — the model shown when an item is dropped or previewed — were first wired into the pipeline here, which surfaced a rotation issue: dropped boots lay on their backs. The mesh was unchanged with no rotation baked in; the display angle is stored in a separate table keyed by mesh name, so a renamed mesh finds no entry and falls back to a default angle. The decision was to ship the correct recolored art at the wrong angle for now and treat the rotation as a later fix.</p>
-          <div class="devlog-thumbs"><a href="new-Items.html#Aureus"><img src="images/item-tracker-assets/Aureus_Cuirass.png" alt="Aureus"></a></div>
+          <div class="devlog-renders"><a href="new-Items.html#Aureus"><img src="images/refs/OBR-OOO-item-Aureus-Armor_F-v13-front.png" alt="Aureus armor render"></a></div>
         </div>
         <div class="milestone">
           <div class="date">2026-06-08</div>
@@ -238,13 +242,13 @@
           <div class="date">2026-06-10</div>
           <h3>Fur sets: color stored in the material</h3>
           <p>Fur is rendered with a hair-card shader, and recoloring it appeared to require decoding and repainting a packed texture. Reconnaissance found the color is not in a texture: it is two values in the material — a root color and a tip color, giving the base-to-tip gradient — stored as 16-byte color values in the material's parameter block, confirmed against the UE5.3 source. Those two overrides already existed in the vanilla material as a brown gradient, so the recolor is an in-place overwrite of two values with no repainting or re-encoding. ArcticFur was set to a cool snow-white; WornFur kept the vanilla brown. The fur helmet's body texture was the only one in a different compression format, which made its real dimensions read as garbled until the format was confirmed. Both fur sets were built this day.</p>
-          <div class="devlog-thumbs"><a href="new-Items.html#ArcticFur"><img src="images/item-tracker-assets/ArcticFur_Cuirass.png" alt="ArcticFur"></a><a href="new-Items.html#WornFur"><img src="images/item-tracker-assets/WornFur_Cuirass.png" alt="WornFur"></a></div>
+          <div class="devlog-renders"><a href="new-Items.html#ArcticFur"><img src="images/refs/OBR-OOO-item-ArcticFur-Armor_F-v2-front.png" alt="ArcticFur armor render"></a><a href="new-Items.html#WornFur"><img src="images/refs/OBR-OOO-item-WornFur-Armor_F-v3-front.png" alt="WornFur armor render"></a></div>
         </div>
         <div class="milestone">
           <div class="date">2026-06-10</div>
           <h3>GoldenBronze completes the Mithril tier</h3>
           <p>The last Mithril variant was built, confirmed in-game, and merged this day. Its engraved helmet was losing line-work to a hard brightness cap; a value-preserving multiply restored it.</p>
-          <div class="devlog-thumbs"><a href="new-Items.html#GoldenBronze"><img src="images/item-tracker-assets/GoldenBronze_Cuirass.png" alt="GoldenBronze"></a></div>
+          <div class="devlog-renders"><a href="new-Items.html#GoldenBronze"><img src="images/refs/OBR-OOO-item-GoldenBronze-Armor_F-v2-front.png" alt="GoldenBronze armor render"></a></div>
         </div>
         <div class="milestone">
           <div class="date">2026-06-11</div>
@@ -255,19 +259,19 @@
           <div class="date">2026-06-11</div>
           <h3>WornLeather, and a naming issue</h3>
           <p>WornLeather's first build showed vanilla in-game. The armor players call "Leather" is built from a "Thief"-codenamed asset chain, while the assets literally named "Leather" are an unused arena set the game never shipped, so the first build recolored the wrong chain. The fix traced the full display chain from item to blueprint to mesh to material to texture and retargeted onto the correct body. A tuning note also came out of this: in-game lighting is brighter than the flat preview, so previews should be biased darker. Shipped and verified this day.</p>
-          <div class="devlog-thumbs"><a href="new-Items.html#WornLeather"><img src="images/item-tracker-assets/WornLeather_Cuirass.png" alt="WornLeather"></a></div>
+          <div class="devlog-renders"><a href="new-Items.html#WornLeather"><img src="images/refs/OBR-OOO-item-WornLeather-Armor_F-v3-front.png" alt="WornLeather armor render"></a></div>
         </div>
         <div class="milestone">
           <div class="date">2026-06-11</div>
           <h3>BloodLeather and GrayFox shipped</h3>
           <p>Both were built on the WornLeather groundwork and verified in-game this day — BloodLeather in a deep-red dye, GrayFox a grey body with darker straps. GrayFox includes one bracer that is genuinely Leather-named, handled by reusable mix-and-match logic added here.</p>
-          <div class="devlog-thumbs"><a href="new-Items.html#BloodLeather"><img src="images/item-tracker-assets/BloodLeather_Cuirass.png" alt="BloodLeather"></a><a href="new-Items.html#GrayFox"><img src="images/item-tracker-assets/GrayFox_Cuirass.png" alt="GrayFox"></a></div>
+          <div class="devlog-renders"><a href="new-Items.html#BloodLeather"><img src="images/refs/OBR-OOO-item-BloodLeather-Armor_F-v1-front.png" alt="BloodLeather armor render"></a><a href="new-Items.html#GrayFox"><img src="images/refs/OBR-OOO-item-GreyFox-Armor_F-v3-front.png" alt="GrayFox armor render"></a></div>
         </div>
         <div class="milestone" id="a91-armor">
           <div class="date">2026-06-12</div>
           <h3>Fourteen sets complete; glass rename</h3>
           <p>The final pass renamed the two oldest sets from their codenames to their in-game names: BGlass to BlueGlass, RGlass to Drakefired. Drakefired also received new red icons, since its previous ones were copied from the blue set. The rename surfaced a process point: builds passed while the override file binding items to asset paths still pointed at the old names, so "done" means checking the full deploy set, not only the build. With these two re-released, all fourteen sets are complete: ArcticFur, Aureus, BloodLeather, BlueGlass, Drakefired, Eboron, ElvenEldar, ElvenNight, ElvenSky, GoldenBronze, GrayFox, ShadowMail, WornFur, and WornLeather.</p>
-          <div class="devlog-thumbs"><a href="new-Items.html#BlueGlass"><img src="images/item-tracker-assets/BlueGlass_Cuirass.png" alt="BlueGlass"></a><a href="new-Items.html#Drakefired"><img src="images/item-tracker-assets/Drakefired_Cuirass.png" alt="Drakefired"></a></div>
+          <div class="devlog-renders"><a href="new-Items.html#BlueGlass"><img src="images/refs/OBR-OOO-item-BlueGlass-Armor_F-v1-front.png" alt="BlueGlass armor render"></a><a href="new-Items.html#Drakefired"><img src="images/refs/OBR-OOO-item-Drakefired-Armor_F-v1-front.png" alt="Drakefired armor render"></a></div>
         </div>
         <div class="milestone">
           <div class="date">2026-06-12</div>
