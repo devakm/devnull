@@ -228,7 +228,7 @@
         <div class="milestone">
           <div class="date">2026-07-01</div>
           <h3>A mesh-sanity check for new piece types</h3>
-          <p>TheBear's shield and helmet were new kinds of geometry for the pipeline, and each exposed a way the mesh reader could silently misread a model's data — a shield whose index data used a wider number format than assumed, and a helmet whose header sat at an unexpected offset. Both produced plausible-looking but wrong readings that eyeballing would not catch. A structural check was added: it measures the edge lengths a decoded mesh implies and fails the build when they are impossible, so a misread model is caught by its own bad geometry rather than by a person noticing later. It runs over every shipped piece as part of the build's gates.</p>
+          <p>TheBear's shield and helmet geometry tripped up our mesh previews for pipeline approval, and each exposed a way the mesh reader could silently misread a model's data — a shield whose index data used a wider number format than assumed, and a helmet whose header sat at an unexpected offset. Both produced wrong readings. A structural check was added: it measures the edge lengths a decoded mesh implies and fails the build when they are impossible, so a misread model is caught by its own bad geometry rather than by a person noticing later. It runs over every shipped piece as part of the build's gates.</p>
         </div>
       </div>
     </section>
