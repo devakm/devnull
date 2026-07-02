@@ -81,7 +81,7 @@
 
     <section id="alpha92">
       <h2>alpha92 — in progress (June 2026)</h2>
-      <p>alpha92 is in progress. The map work is settled as of alpha91, so the work so far is purely armor: six new sets — Dragonborne, Draconis, and a four-set Daedric family (DaedricPrince, Dread, ImagoStorm, DremoraElite) — built on the existing recolor pipeline, plus a major thread of build-time quality gates that make that pipeline self-verifying. The gates read the bytes a build is about to produce and fail the build if a recolor has regressed, so a mistake that used to surface only in-game now stops the build instead.</p>
+      <p>alpha92 is in progress. The map work is settled as of alpha91, so the work so far is purely armor: twelve new sets built on the recolor pipeline, in two groups. The first is six sets — Dragonborne, Draconis, and a four-set Daedric family (DaedricPrince, Dread, ImagoStorm, DremoraElite). The second is a six-set Steel tier — WornSteel, UnfinishedSteel, UnfinishedWornSteel, DurableSteel, BladesElite, and TheBear — all cloned from one source, the vanilla Steel armor. Alongside the sets the pipeline gained new capabilities: a thread of build-time quality gates that make it self-verifying, a reusable wear-and-scratch system, a whole-diffuse recolor pass, and a way to separate a texture's cloth and metal regions by the model's own geometry rather than by color. The gates read the bytes a build is about to produce and fail the build if a recolor has regressed, so a mistake that used to surface only in-game now stops the build instead.</p>
       <div class="devlog-arcs">
         <a class="arc-card" href="#a92-daedric">
           <h4>The Daedric family</h4>
@@ -106,6 +106,21 @@
         <a class="arc-card" href="#a92-draconis">
           <h4>Draconis</h4>
           <p>A two-piece Kvatch derivative with twin red griffins, whose shoulder plates refused to take a steel color until the cause was traced past the texture to a tint baked into the shared parent material.</p>
+          <span class="jump">Jump to the story ↓</span>
+        </a>
+        <a class="arc-card" href="#a92-steel">
+          <h4>The Steel tier</h4>
+          <p>Six sets built from one source — every one cloned from the vanilla Steel armor — ranging from scratched and tarnished, through de-gilded and darkened, to a matte-black set and a bright ivory one. The shared base made each new set mostly a matter of recipe and region masks.</p>
+          <span class="jump">Jump to the story ↓</span>
+        </a>
+        <a class="arc-card" href="#a92-wear">
+          <h4>Wear and scratches</h4>
+          <p>A reusable way to add believable wear to any set. The lesson that shaped it: the vanilla art already has dents, and faked ones render as blocky compression squares, so the wear is carried as depth in the surface normal map rather than as bright paint in the color.</p>
+          <span class="jump">Jump to the story ↓</span>
+        </a>
+        <a class="arc-card" href="#a92-masks">
+          <h4>Cloth from metal</h4>
+          <p>Recoloring a skirt without touching the plate needs a mask that separates cloth from metal, and color alone cannot do it on grimy, rusted pieces where rust reads like leather. The reliable separator is the model's own geometry: classify the mesh's faces, not the texture's pixels.</p>
           <span class="jump">Jump to the story ↓</span>
         </a>
       </div>
@@ -174,6 +189,46 @@
           <div class="date">2026-06-27</div>
           <h3>Self-verifying builds: the quality gates</h3>
           <p>The quality-gate thread that runs through alpha92 turns each config promise into a build-time check that reads the staged bytes and refuses to emit on a violation. Earlier gates landed alongside the sets: a gate that fails the build if a set's item-id repoint is incomplete, caught when only one of two Daedric item groups had been repointed; a region-class gate that fails if a new color region overlaps an already-owned one; the master-tint gate that flags a piece sitting on a tinting parent; an icon-aura gate that fails if a recolored icon's halo drifts toward the theme color; and a guard that refuses to overwrite a hand-edited texture on bulk re-export. Today's work generalized them. The motivating regression was a partial build that ran the recolor but skipped the emblem step and produced a cuirass with a black disc instead of the dragon — every structural check passed because nothing inspected content. The new framework maps each output-shaping directive to a verifier that confirms the promised result is actually present, with a meta-gate that fails the build if any declared directive has no verifier at all, so a new output knob cannot be added without its own check. Verifiers were written for the emblem, skirt emblem, leather grain, and corrected-source-diffuse directives, with others delegating to the existing gates; the framework was specified and planned test-first before implementation. Dragonborne was rebuilt today with its dragon confirmed by the new emblem gate.</p>
+        </div>
+        <div class="milestone" id="a92-steel">
+          <div class="date">2026-06-27</div>
+          <h3>The Steel tier begins with WornSteel</h3>
+          <p>The Steel tier is six sets built from a single source: every one is cloned from the vanilla Steel armor, with each set's items repointed onto its own steel-based copy. The first is WornSteel, a scratched and tarnished version of the base steel across six pieces including a shield. Building it started with a reusable wear-and-scratch capability, described below, and its first in-game pass opened a tuning loop on how heavy and how fine the wear should read.</p>
+          <div class="devlog-renders"><a href="images/refs/OBR-OOO-item-WornSteel-Armor_M-v13-front.png"><img src="images/refs/OBR-OOO-item-WornSteel-Armor_M-v13-front.png" alt="WornSteel armor render"></a></div>
+        </div>
+        <div class="milestone" id="a92-wear">
+          <div class="date">2026-06-28</div>
+          <h3>Wear and scratches: depth in the normal map, not the paint</h3>
+          <p>The wear capability built for WornSteel is material-agnostic and reusable across sets. Its central lesson came from an in-game test: the vanilla steel art already carries dents, and synthesizing more produced low-resolution blocky squares, because the compressed texture format quantizes small high-contrast marks badly. The correction was to stop painting dents — let the vanilla ones stand — and to carry the added scratches as depth in the surface normal map rather than as bright bare metal in the color, keeping the color change modest. Four separate bugs in re-encoding that normal map, each producing its own compression artifact, were found and fixed, and scratch size was normalized across pieces so a scratch is the same physical size everywhere despite the pieces differing several-fold in texture density. A new build-time check requires the worn normal map to stay almost entirely identical to vanilla outside the scratch marks, and caught two regressions on its own. WornSteel was confirmed in-game.</p>
+        </div>
+        <div class="milestone">
+          <div class="date">2026-06-28</div>
+          <h3>UnfinishedSteel and UnfinishedWornSteel: de-gilding by an orthogonal signal</h3>
+          <p>Two cuirass-only sets strip the vanilla steel's gold trim: UnfinishedSteel reads as clean ungilded steel, UnfinishedWornSteel as a tarnished version of the same. Both depend on a mask that selects the gold trim, and the first version failed on the trim's dark, shadowed edges. The mask had used brightness to exclude the brown leather, but the dark gold edges and the leather are both warm and dark, so no brightness threshold could separate them — tightening dropped the edges, loosening grabbed the leather. The discriminator that works is an orthogonal one: the surface's metallic channel, since gold is metal and leather is not. Re-gating on that, and removing a cleanup step that had been eroding the thin edges, brought the trim mask to full coverage. Both sets share the fixed mask, and both were confirmed in-game.</p>
+          <div class="devlog-renders"><a href="images/refs/OBR-OOO-item-UnfinishedSteel-Armor_M-v16-front.png"><img src="images/refs/OBR-OOO-item-UnfinishedSteel-Armor_M-v16-front.png" alt="UnfinishedSteel armor render"></a><a href="images/refs/OBR-OOO-item-UnfinishedWornSteel-Armor_M-v3-front.png"><img src="images/refs/OBR-OOO-item-UnfinishedWornSteel-Armor_M-v3-front.png" alt="UnfinishedWornSteel armor render"></a></div>
+        </div>
+        <div class="milestone">
+          <div class="date">2026-06-29</div>
+          <h3>DurableSteel and a whole-diffuse recolor</h3>
+          <p>DurableSteel is a darker, richer version of the base steel across all six pieces, including a shield. It introduced a whole-diffuse recolor pass — a single hue, saturation, and lightness adjustment applied to the entire texture at once, the same operation a photo editor's Hue/Saturation control performs — used here to deepen the steel in one step before any region work. The first build came out too dark, and the lightness was lifted to settle it. The set was confirmed in-game.</p>
+          <div class="devlog-renders"><a href="images/refs/OBR-OOO-item-DurableSteel-Armor_M-v2-front.png"><img src="images/refs/OBR-OOO-item-DurableSteel-Armor_M-v2-front.png" alt="DurableSteel armor render"></a></div>
+        </div>
+        <div class="milestone" id="a92-masks">
+          <div class="date">2026-06-30</div>
+          <h3>BladesElite: separating cloth from metal by mesh face</h3>
+          <p>BladesElite is a five-piece set with no shield: matte-black plate, dark-gold trim, and a red skirt. Its hard problem was separating the cloth skirt and leather straps from the metal so each could be recolored on its own. A color-based mask kept failing on the grimy, rusted pieces, where rust on metal reads warm and unsaturated exactly like leather, so a color rule could not tell them apart — and a good score on one clean piece hid the failure on the dirty ones. The method that works classifies the mesh's faces rather than the texture's pixels: each face is assigned to cloth, leather, or metal by a vote of its own pixels, with the metal faces dropped by the same metallic signal used elsewhere. Because faces are classified as whole units, scattered grime specks no longer flip the result, and this per-face approach became the pipeline's preferred way to author region masks. With the masks resolved, BladesElite was tuned and confirmed in-game.</p>
+          <div class="devlog-renders"><a href="images/refs/OBR-OOO-item-BladesElite-Armor_M-v4-front.png"><img src="images/refs/OBR-OOO-item-BladesElite-Armor_M-v4-front.png" alt="BladesElite armor render"></a></div>
+        </div>
+        <div class="milestone">
+          <div class="date">2026-07-01</div>
+          <h3>TheBear completes the Steel tier; the first lightened set</h3>
+          <p>TheBear — the sixth and last Steel set, six pieces including a shield — is an ivory set: near-white cream plate, a vivid scarlet cloth skirt and shield emblem, natural brown leather, gold trim on every piece, and silver chainmail. It is the first set to lighten its base rather than darken it, which the whole-diffuse pass could not do without flattening the metal's light-to-dark structure and tinting it pink; a spread-preserving lighten was built that remaps the vanilla brightness onto a brighter range while keeping that structure, with a warm tint so the white reads as ivory rather than blue-grey. The per-face masks carried over from BladesElite unchanged, and because the cloth is red and the leather is brown they separated by color for free. TheBear was confirmed in-game and completes the Steel material at six of six sets.</p>
+          <div class="devlog-renders"><a href="images/refs/OBR-OOO-item-TheBear-Armor_M-v3-front.png"><img src="images/refs/OBR-OOO-item-TheBear-Armor_M-v3-front.png" alt="TheBear armor render"></a></div>
+        </div>
+        <div class="milestone">
+          <div class="date">2026-07-01</div>
+          <h3>A mesh-sanity check for new piece types</h3>
+          <p>TheBear's shield and helmet were new kinds of geometry for the pipeline, and each exposed a way the mesh reader could silently misread a model's data — a shield whose index data used a wider number format than assumed, and a helmet whose header sat at an unexpected offset. Both produced plausible-looking but wrong readings that eyeballing would not catch. A structural check was added: it measures the edge lengths a decoded mesh implies and fails the build when they are impossible, so a misread model is caught by its own bad geometry rather than by a person noticing later. It runs over every shipped piece as part of the build's gates.</p>
         </div>
       </div>
     </section>
