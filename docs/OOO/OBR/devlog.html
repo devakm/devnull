@@ -81,7 +81,7 @@
 
     <section id="alpha92">
       <h2>alpha92 — in progress (June 2026)</h2>
-      <p>alpha92 is in progress. The map work is settled as of alpha91, so the work so far is purely armor: twelve new sets built on the recolor pipeline, in two groups. The first is six sets — Dragonborne, Draconis, and a four-set Daedric family (DaedricPrince, Dread, ImagoStorm, DremoraElite). The second is a six-set Steel tier — WornSteel, UnfinishedSteel, UnfinishedWornSteel, DurableSteel, BladesElite, and TheBear — all cloned from one source, the vanilla Steel armor. Alongside the sets the pipeline gained new capabilities: a thread of build-time quality gates that make it self-verifying, a reusable wear-and-scratch system, a whole-diffuse recolor pass, and a way to separate a texture's cloth and metal regions by the model's own geometry rather than by color. The gates read the bytes a build is about to produce and fail the build if a recolor has regressed, so a mistake that used to surface only in-game now stops the build instead.</p>
+      <p>alpha92 is in progress. The map work is settled as of alpha91, so the work so far is purely armor: twelve new sets built on the recolor pipeline, in two groups. The first is six sets — Dragonborne, Draconis, and a four-set Daedric family (DaedricPrince, Dread, ImagoStorm, DremoraElite). The second is a six-set Steel tier — WornSteel, UnfinishedSteel, UnfinishedWornSteel, DurableSteel, BladesElite, and TheBear — all cloned from one source, the vanilla Steel armor. Alongside the sets the pipeline gained new capabilities: a thread of build-time quality gates that make it self-verifying, a reusable wear-and-scratch system, a whole-diffuse recolor pass, and a way to separate a texture's cloth and metal regions by the model's own geometry rather than by color, and a way to preserve small vanilla hardware — rivets, buttons, buckles — under a whole-texture recolor. The gates read the bytes a build is about to produce and fail the build if a recolor has regressed, so a mistake that used to surface only in-game now stops the build instead.</p>
       <div class="devlog-arcs">
         <a class="arc-card" href="#a92-daedric">
           <h4>The Daedric family</h4>
@@ -123,6 +123,11 @@
           <p>Recoloring a skirt without touching the plate needs a mask that separates cloth from metal, and color alone cannot do it on grimy, rusted pieces where rust reads like leather. The reliable separator is the model's own geometry: classify the mesh's faces, not the texture's pixels.</p>
           <span class="jump">Jump to the story ↓</span>
         </a>
+        <a class="arc-card" href="#a92-objects">
+          <h4>Preserving the hardware</h4>
+          <p>A whole-texture lighten washes small gold objects — rivets, buttons, buckles — toward white wherever a mask misses them. The reliable fix stops trying to mask them perfectly and instead whitens the plate freely, then restores each catalogued gold object's original bytes on top, with a gate that fails the build if any is missed.</p>
+          <span class="jump">Jump to the story ↓</span>
+        </a>
       </div>
       <div class="devlog-timeline">
         <div class="milestone">
@@ -130,6 +135,7 @@
           <h3>Dragonborne scoped and built through clone</h3>
           <p>Dragonborne is a five-piece dark recolor of the Kvatch/Townguard "Townguard" armor with no helmet: a near-black quilted tunic, cooled steel, and dark-brown leather, with the Kvatch wolf emblem to be replaced by a dragon insignia. Reconnaissance traced the full asset chain and surfaced the cuirass as the hard piece — its body mesh and cloth-simulation assets come from one vanilla folder while its material, textures, and ground mesh come from another, with inconsistent casing between them. The set was cloned and built end-to-end today, rendering as a dark Townguard set with the wolf emblem still in place.</p>
           <div class="devlog-renders"><a href="images/refs/OBR-OOO-item-Dragonborne-Armor_F-v33-front.png"><img src="images/refs/OBR-OOO-item-Dragonborne-Armor_F-v33-front.png" alt="Dragonborne armor render"></a></div>
+          <div class="devlog-thumbs"><a href="images/item-tracker-assets/Dragonborne_Cuirass.png"><img src="images/item-tracker-assets/Dragonborne_Cuirass.png" alt="Dragonborne cuirass icon"></a></div>
         </div>
         <div class="milestone" id="a92-emblem">
           <div class="date">2026-06-16</div>
@@ -146,6 +152,7 @@
           <h3>Draconis built; passthrough diffuse and region-class recoloring</h3>
           <p>Draconis is a two-piece Kvatch derivative — a cuirass and shield carrying twin red griffins in place of the wolf. It needed an approach the earlier global recolors could not provide, since the vanilla armor was to be preserved and only specific patches changed. Three mechanisms were built for this: passing the vanilla diffuse through untouched and editing only named regions; giving a region its own surface recipe so the shoulder plates and shield boss could be flipped to metal while the rest stayed vanilla; and subtracting one region from another, used to keep the painted griffin out of the metal boss. The set was built and confirmed in-game the next day, which exposed the bugs handled below.</p>
           <div class="devlog-renders"><a href="images/refs/OBR-OOO-item-Draconis-Armor_M-v5-profile.png"><img src="images/refs/OBR-OOO-item-Draconis-Armor_M-v5-profile.png" alt="Draconis armor render"></a></div>
+          <div class="devlog-thumbs"><a href="images/item-tracker-assets/Draconis_Cuirass.png"><img src="images/item-tracker-assets/Draconis_Cuirass.png" alt="Draconis cuirass icon"></a></div>
         </div>
         <div class="milestone">
           <div class="date">2026-06-20</div>
@@ -157,6 +164,7 @@
           <h3>The Daedric base and Dread</h3>
           <p>The Daedric family is four sets cloned from one shared Daedric body, so a fix to the shared cuirass propagates to every variant. Reconnaissance found the Daedric diffuse textures use a format with a load-bearing alpha channel, not the simpler format the plan assumed, and corrected a decoder that had been misreading them. Dread, the first set, is a dark green-steel plate with a blue gem. Its first build still showed vanilla red in-game on the trim, because part of the red lives in the material's color parameters rather than the visible texture; a tool that rotates those parameters to the target hue resolved it. The skirt's dark-red cloth hem was too unsaturated for the automatic mask to catch and was handled with a hand-painted region.</p>
           <div class="devlog-renders"><a href="images/refs/OBR-OOO-item-Dread-Armor_F-v9-front.png"><img src="images/refs/OBR-OOO-item-Dread-Armor_F-v9-front.png" alt="Dread armor render"></a></div>
+          <div class="devlog-thumbs"><a href="images/item-tracker-assets/Dread_Cuirass.png"><img src="images/item-tracker-assets/Dread_Cuirass.png" alt="Dread cuirass icon"></a></div>
         </div>
         <div class="milestone">
           <div class="date">2026-06-22</div>
@@ -168,6 +176,7 @@
           <h3>DaedricPrince: lava, and where the glow comes from</h3>
           <p>DaedricPrince is a six-piece lava set, including a shield: tarnished bronze-gold metal that glows with red lava, indigo chainmail, and a gem rendered as a radial flame burst. Two techniques were built for it — a value-dependent hue ramp that reads each pixel's brightness so dark areas stay deep red while highlights shift to orange, and a radial fill that brightens the gem at its center and darkens it to the rim. The first build rotated the glow's color parameters toward orange, which killed the vibrant red on every piece except the cuirass. The cuirass survived because its glow comes from a rich texture alpha mask, not the parameters; the shield, having no such mask, went dull. The fix set the glow parameters back to pure red and let the diffuse supply the warmth.</p>
           <div class="devlog-renders"><a href="images/refs/OBR-OOO-item-DaedricPrince-Armor_F-v7-front.png"><img src="images/refs/OBR-OOO-item-DaedricPrince-Armor_F-v7-front.png" alt="DaedricPrince armor render"></a></div>
+          <div class="devlog-thumbs"><a href="images/item-tracker-assets/DaedricPrince_Cuirass.png"><img src="images/item-tracker-assets/DaedricPrince_Cuirass.png" alt="DaedricPrince cuirass icon"></a></div>
         </div>
         <div class="milestone" id="a92-daedric">
           <div class="date">2026-06-24</div>
@@ -179,6 +188,7 @@
           <h3>ImagoStorm and DremoraElite; partial texture overrides</h3>
           <p>The last two Daedric variants were built today: ImagoStorm in bright neutral steel with gold accents, DremoraElite the same bright steel with a darker dark-red accent and a shield. Building them extended the pipeline. A masked partial override composites only the front and back skirt panels from a hand-painted texture while holding the side panels and everything else from the normal recolor; a separate uniform fill colors the side panels while preserving their original brightness and grain. ImagoStorm's plate first read green-yellow from a hue-scale units error and was corrected to neutral grey, and a saturation clamp that was flattening vanilla's soft accent fades was dropped. DremoraElite rendered completely invisible in-game — the build was sound, but only its materials package had been copied into the mods folder and not the matching items package that holds the asset paths, so the pieces loaded with nothing to render. Copying the items package fixed it.</p>
           <div class="devlog-renders"><a href="images/refs/OBR-OOO-item-ImagoStorm-Armor_F-v3-front.png"><img src="images/refs/OBR-OOO-item-ImagoStorm-Armor_F-v3-front.png" alt="ImagoStorm armor render"></a><a href="images/refs/OBR-OOO-item-DremoraElite-Armor_F-v3-front.png"><img src="images/refs/OBR-OOO-item-DremoraElite-Armor_F-v3-front.png" alt="DremoraElite armor render"></a></div>
+          <div class="devlog-thumbs"><a href="images/item-tracker-assets/ImagoStorm_Cuirass.png"><img src="images/item-tracker-assets/ImagoStorm_Cuirass.png" alt="ImagoStorm cuirass icon"></a><a href="images/item-tracker-assets/DremoraElite_Cuirass.png"><img src="images/item-tracker-assets/DremoraElite_Cuirass.png" alt="DremoraElite cuirass icon"></a></div>
         </div>
         <div class="milestone">
           <div class="date">2026-06-26</div>
@@ -195,6 +205,7 @@
           <h3>The Steel tier begins with WornSteel</h3>
           <p>The Steel tier is six sets built from a single source: every one is cloned from the vanilla Steel armor, with each set's items repointed onto its own steel-based copy. The first is WornSteel, a scratched and tarnished version of the base steel across six pieces including a shield. Building it started with a reusable wear-and-scratch capability, described below, and its first in-game pass opened a tuning loop on how heavy and how fine the wear should read.</p>
           <div class="devlog-renders"><a href="images/refs/OBR-OOO-item-WornSteel-Armor_M-v13-front.png"><img src="images/refs/OBR-OOO-item-WornSteel-Armor_M-v13-front.png" alt="WornSteel armor render"></a></div>
+          <div class="devlog-thumbs"><a href="images/item-tracker-assets/WornSteel_Cuirass.png"><img src="images/item-tracker-assets/WornSteel_Cuirass.png" alt="WornSteel cuirass icon"></a></div>
         </div>
         <div class="milestone" id="a92-wear">
           <div class="date">2026-06-28</div>
@@ -206,29 +217,38 @@
           <h3>UnfinishedSteel and UnfinishedWornSteel: de-gilding by an orthogonal signal</h3>
           <p>Two cuirass-only sets strip the vanilla steel's gold trim: UnfinishedSteel reads as clean ungilded steel, UnfinishedWornSteel as a tarnished version of the same. Both depend on a mask that selects the gold trim, and the first version failed on the trim's dark, shadowed edges. The mask had used brightness to exclude the brown leather, but the dark gold edges and the leather are both warm and dark, so no brightness threshold could separate them — tightening dropped the edges, loosening grabbed the leather. The discriminator that works is an orthogonal one: the surface's metallic channel, since gold is metal and leather is not. Re-gating on that, and removing a cleanup step that had been eroding the thin edges, brought the trim mask to full coverage. Both sets share the fixed mask, and both were confirmed in-game.</p>
           <div class="devlog-renders"><a href="images/refs/OBR-OOO-item-UnfinishedSteel-Armor_M-v16-front.png"><img src="images/refs/OBR-OOO-item-UnfinishedSteel-Armor_M-v16-front.png" alt="UnfinishedSteel armor render"></a><a href="images/refs/OBR-OOO-item-UnfinishedWornSteel-Armor_M-v3-front.png"><img src="images/refs/OBR-OOO-item-UnfinishedWornSteel-Armor_M-v3-front.png" alt="UnfinishedWornSteel armor render"></a></div>
+          <div class="devlog-thumbs"><a href="images/item-tracker-assets/UnfinishedSteel_Cuirass.png"><img src="images/item-tracker-assets/UnfinishedSteel_Cuirass.png" alt="UnfinishedSteel cuirass icon"></a><a href="images/item-tracker-assets/UnfinishedWornSteel_Cuirass.png"><img src="images/item-tracker-assets/UnfinishedWornSteel_Cuirass.png" alt="UnfinishedWornSteel cuirass icon"></a></div>
         </div>
         <div class="milestone">
           <div class="date">2026-06-29</div>
           <h3>DurableSteel and a whole-diffuse recolor</h3>
           <p>DurableSteel is a darker, richer version of the base steel across all six pieces, including a shield. It introduced a whole-diffuse recolor pass — a single hue, saturation, and lightness adjustment applied to the entire texture at once, the same operation a photo editor's Hue/Saturation control performs — used here to deepen the steel in one step before any region work. The first build came out too dark, and the lightness was lifted to settle it. The set was confirmed in-game.</p>
           <div class="devlog-renders"><a href="images/refs/OBR-OOO-item-DurableSteel-Armor_M-v2-front.png"><img src="images/refs/OBR-OOO-item-DurableSteel-Armor_M-v2-front.png" alt="DurableSteel armor render"></a></div>
+          <div class="devlog-thumbs"><a href="images/item-tracker-assets/DurableSteel_Cuirass.png"><img src="images/item-tracker-assets/DurableSteel_Cuirass.png" alt="DurableSteel cuirass icon"></a></div>
         </div>
         <div class="milestone" id="a92-masks">
           <div class="date">2026-06-30</div>
           <h3>BladesElite: separating cloth from metal by mesh face</h3>
           <p>BladesElite is a five-piece set with no shield: matte-black plate, dark-gold trim, and a red skirt. Its hard problem was separating the cloth skirt and leather straps from the metal so each could be recolored on its own. A color-based mask kept failing on the grimy, rusted pieces, where rust on metal reads warm and unsaturated exactly like leather, so a color rule could not tell them apart — and a good score on one clean piece hid the failure on the dirty ones. The method that works classifies the mesh's faces rather than the texture's pixels: each face is assigned to cloth, leather, or metal by a vote of its own pixels, with the metal faces dropped by the same metallic signal used elsewhere. Because faces are classified as whole units, scattered grime specks no longer flip the result, and this per-face approach became the pipeline's preferred way to author region masks. With the masks resolved, BladesElite was tuned and confirmed in-game.</p>
           <div class="devlog-renders"><a href="images/refs/OBR-OOO-item-BladesElite-Armor_M-v4-front.png"><img src="images/refs/OBR-OOO-item-BladesElite-Armor_M-v4-front.png" alt="BladesElite armor render"></a></div>
+          <div class="devlog-thumbs"><a href="images/item-tracker-assets/BladesElite_Cuirass.png"><img src="images/item-tracker-assets/BladesElite_Cuirass.png" alt="BladesElite cuirass icon"></a></div>
         </div>
         <div class="milestone">
           <div class="date">2026-07-01</div>
           <h3>TheBear completes the Steel tier; the first lightened set</h3>
-          <p>TheBear — the sixth and last Steel set, six pieces including a shield — is an ivory set: near-white cream plate, a vivid scarlet cloth skirt and shield emblem, natural brown leather, gold trim on every piece, and silver chainmail. It is the first set to lighten its base rather than darken it, which the whole-diffuse pass could not do without flattening the metal's light-to-dark structure and tinting it pink; a spread-preserving lighten was built that remaps the vanilla brightness onto a brighter range while keeping that structure, with a warm tint so the white reads as ivory rather than blue-grey. The per-face masks carried over from BladesElite unchanged, and because the cloth is red and the leather is brown they separated by color for free. TheBear was confirmed in-game and completes the Steel material at six of six sets.</p>
+          <p>TheBear — the sixth and last Steel set, six pieces including a shield — is an ivory set: near-white cream plate, a vivid scarlet cloth skirt and shield emblem, natural brown leather, gold trim on every piece, and silver chainmail. It is the first set to lighten its base rather than darken it, which the whole-diffuse pass could not do without flattening the metal's light-to-dark structure and tinting it pink; a spread-preserving lighten was built that remaps the vanilla brightness onto a brighter range while keeping that structure, with a warm tint so the white reads as ivory rather than blue-grey. The per-face masks carried over from BladesElite unchanged, and because the cloth is red and the leather is brown they separated by color for free. An in-game pass approved TheBear's ivory look and completed the Steel material at six of six sets; its fine gold hardware then needed several more days to hold up under the lighten, covered below.</p>
           <div class="devlog-renders"><a href="images/refs/OBR-OOO-item-TheBear-Armor_M-v3-front.png"><img src="images/refs/OBR-OOO-item-TheBear-Armor_M-v3-front.png" alt="TheBear armor render"></a></div>
+          <div class="devlog-thumbs"><a href="images/item-tracker-assets/TheBear_Cuirass.png"><img src="images/item-tracker-assets/TheBear_Cuirass.png" alt="TheBear cuirass icon"></a></div>
         </div>
         <div class="milestone">
           <div class="date">2026-07-01</div>
           <h3>A mesh-sanity check for new piece types</h3>
           <p>TheBear's shield and helmet geometry tripped up our mesh previews for pipeline approval, and each exposed a way the mesh reader could silently misread a model's data — a shield whose index data used a wider number format than assumed, and a helmet whose header sat at an unexpected offset. Both produced wrong readings. A structural check was added: it measures the edge lengths a decoded mesh implies and fails the build when they are impossible, so a misread model is caught by its own bad geometry rather than by a person noticing later. It runs over every shipped piece as part of the build's gates.</p>
+        </div>
+        <div class="milestone" id="a92-objects">
+          <div class="date">2026-07-04</div>
+          <h3>The Bear's gold hardware: a registry and a restore</h3>
+          <p>Whitening the whole plate to ivory washed the small gold hardware toward white — the rivets, flower buttons, buckles, and belt studs studding the armor. The cause was structural: the lighten paints the entire texture, so any gold object the region mask failed to cover defaulted to ivory. Refining the mask object by object helped but never closed it, because the defects were a whole population — each in-game test surfaced a different missed object while many more remained, and a fix confirmed at one rivet said nothing about the rest. The resolution reframed the problem: rather than defend every gold object inside a mask, whiten the plate freely and then restore the original gold hardware on top. A persistent registry was built — a ground-truth inventory of every hardware object on each piece — and the restore step holds those objects out of the lighten so they keep their vanilla bytes, while grime that only looks gold is left to whiten. A new build gate checks every registered object against being painted by the lighten, turning a defect that used to surface one at a time in-game into a build failure that names the whole set at once. With the registry and restore in place, TheBear was confirmed in-game and its gold hardware reads correctly across every piece.</p>
         </div>
       </div>
     </section>

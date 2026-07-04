@@ -68,3 +68,35 @@ alpha92 is in progress. The map work is settled as of alpha91, so the work so fa
 - **In-progress framing.** alpha92 remains unreleased. Nothing is described as shipped; the Steel tier is "built" and, where recorded, "confirmed in-game." TheBear completing the Steel material at six of six is a material-level milestone, not a release.
 - **Capability claims.** The wear system, the whole-diffuse recolor pass, the per-face region-mask method, and the mesh edge-length gate are all reusable additions recorded in the sources; the per-face method is documented there as the new preferred masking approach.
 - **Could not independently verify / open items (non-blocking).** A shared mesh loader still cannot decode the two-UV-channel Steel helmet and loudly skips it in the sanity gate; the vanilla Steel shield is essentially gold-free, so its reference gold emblem border would need hand-painting if ever wanted. Neither is presented as done in the entry.
+
+---
+
+# The Bear gold-hardware addition (draft 3, 2026-07-02 → 07-04) — for review
+
+## Intro capability clause (ADD to the current intro's capability list)
+
+Add, after "…by the model's own geometry rather than by color": "…, and a way to preserve small vanilla hardware — rivets, buttons, buckles — under a whole-texture recolor."
+
+## New arc card (1, appended after "Cloth from metal")
+
+- **Preserving the hardware** | `a92-objects` | A whole-texture lighten washes small gold objects — rivets, buttons, buckles — toward white wherever a mask misses them. The reliable fix stops trying to mask them perfectly and instead whitens the plate freely, then restores each catalogued gold object's original bytes on top, with a gate that fails the build if any is missed.
+
+## Reframe the 07-01 TheBear milestone ending
+
+Replace the last sentence — "TheBear was confirmed in-game and completes the Steel material at six of six sets." — with: "An in-game pass approved TheBear's ivory look and completed the Steel material at six of six sets; its fine gold hardware then needed several more days to hold up under the lighten, covered below."
+
+## New milestone (appended after the mesh-sanity milestone)
+
+- `2026-07-04 | a92-objects | The Bear's gold hardware: a registry and a restore | Whitening the whole plate to ivory washed the small gold hardware toward white — the rivets, flower buttons, buckles, and belt studs studding the armor. The cause was structural: the lighten paints the entire texture, so any gold object the region mask failed to cover defaulted to ivory. Refining the mask object by object helped but never closed it, because the defects were a whole population — each in-game test surfaced a different missed object while many more remained, and a fix confirmed at one rivet said nothing about the rest. The resolution reframed the problem: rather than defend every gold object inside a mask, whiten the plate freely and then restore the original gold hardware on top. A persistent registry was built — a ground-truth inventory of every hardware object on each piece — and the restore step holds those objects out of the lighten so they keep their vanilla bytes, while grime that only looks gold is left to whiten. A new build gate checks every registered object against being painted by the lighten, turning a defect that used to surface one at a time in-game into a build failure that names the whole set at once. With the registry and restore in place, TheBear was confirmed in-game and its gold hardware reads correctly across every piece.`
+
+## Icons (presentation change, no prose)
+
+Each alpha92 set milestone gains its piece icon next to the render (matching alpha91's render + `<Set>_Cuirass.png` pairing), sourced from the regenerated `docs/item-tracker-assets/` set. Cuirass icon per set; the two paired milestones (UnfinishedSteel + UnfinishedWornSteel; ImagoStorm + DremoraElite) show both. Icons link to the icon image file (new-Items.html still has no alpha92 anchors).
+
+## Fact-check notes (Bear addition)
+
+- **Dates.** The gold-hardware refinement ran 2026-07-02 → 07-04 (author dates); TheBear's final in-game verification is 07-04. The 07-01 milestone's earlier in-game approval is kept but reworded so it no longer claims the fine hardware was finished then.
+- **No attempt-counting.** The multi-day span is reported as a real debugging span; the internal version numbers (v5…v18) are translated out.
+- **Capability claims.** The object registry (a persistent per-piece hardware inventory), the object-restore step (gold-bearing objects keep patched-vanilla bytes under the lighten), and the object-coverage gate are all recorded in the sources and were the fix that passed in-game on 07-04.
+- **Translated out.** Atlas coordinates, per-object pixel counts, gate violation counts, tool and config names, and version tags are kept out of the entry.
+- **Scope.** Only TheBear needed this; the other eleven sets are unaffected. A separate new tier (Amelion/Noble) is in early onboarding and is deliberately not in this entry — nothing there is built and verified.
