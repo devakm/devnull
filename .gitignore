@@ -2,3 +2,6 @@
 __pycache__/
 *.py[cod]
 .pytest_cache/
+
+# Run ledger: machine-local operational state, not project history.
+.claude/runs.jsonl
