@@ -73,9 +73,13 @@
 
     <p>The Unreal Engine 4 / 5 Scripting System. A loader for native DLL and Lua mods inside Unreal games.</p>
 
+    <p><strong>UE4SS — &quot;UE4SS new&quot;, v3.0.1-1164 or later (required from alpha92).</strong> Get it from the <a href="https://www.nexusmods.com/oblivionremastered/mods/32" target="_blank" rel="noopener">UE4SS Nexus page</a>, under <strong>Update files</strong>, the file named <strong>&quot;UE4SS new&quot;</strong> (uploaded 10 Oct 2026). It installs over an existing UE4SS: overwrite the files.</p>
+
+    <p>The <strong>&quot;UE4SS stable&quot;</strong> main file (3.0.1.a) is <strong>not supported</strong> from alpha92. OOORF&#x27;s <code>RAX</code> mod contains a native DLL built for one exact UE4SS version: the alpha92 <code>RAX</code> DLL is not safe on the old UE4SS, and the alpha91 <code>RAX</code> DLL is not safe on the new one. The UE4SS page warns that some older UE4SS mods may not work with &quot;UE4SS new&quot;; TesSyncMapInjector v0.1.8 and MagicLoader v2.9 work with it.</p>
+
     <ul>
       <li>Required by <strong>TesSyncMapInjector</strong> (Lua) and <strong>RAX</strong> — both essential for normal play (SyncMap binding and custom-map loading respectively).</li>
-      <li>Also used by the optional bundled mods <code>Begone</code> (development test recording / debugging) and <code>OOO_REFRFix</code> (save migration for users with existing saves on older alpha releases) when those are enabled.</li>
+      <li>Also used by the optional test mods <code>Begone</code> (development test recording / debugging) and <code>OOO_REFRFix</code> (save migration for users with existing saves on older alpha releases), if you deploy them.</li>
     </ul>
 
     <h2>Bundled UE4SS mods — required for normal play</h2>
@@ -92,7 +96,7 @@
       <tbody>
         <tr>
           <td><code>RAX/</code></td>
-          <td>Allows loading of custom UE5 maps (the new <code>L_*_Map</code> dungeons). Native DLL (<code>dlls/main.dll</code>) plus Lua glue.</td>
+          <td>Allows loading of custom UE5 maps (the new <code>L_*_Map</code> dungeons). Native DLL (<code>dlls/main.dll</code>) plus Lua glue. The alpha92 DLL is built for &quot;UE4SS new&quot; v3.0.1-1164. Do not use it with any other UE4SS version.</td>
         </tr>
       </tbody>
     </table>
@@ -128,9 +132,9 @@
       </tbody>
     </table>
 
-    <h2>Alpha-testing utilities (also bundled, optional)</h2>
+    <h2>Optional test UE4SS mods (manual deploy)</h2>
 
-    <p>These run on UE4SS too and live in the same <code>…\Mods\</code> folder, but are <strong>not required for normal play</strong>. They exist to support the OOORF alpha-testing workflow. Safe to disable if you&#x27;re not testing or migrating an older save.</p>
+    <p>These run on UE4SS too, but are <strong>not required for normal play</strong>. They exist to support the OOORF alpha-testing workflow. From alpha92 they are <strong>not</strong> installed by default: they ship under <code>OblivionRemastered\alpha92_test_optional\</code> with their install tree intact. To use one, copy its folder from <code>alpha92_test_optional\Binaries\Win64\ue4ss\Mods\</code> into <code>OblivionRemastered\Binaries\Win64\ue4ss\Mods\</code>. Installing alpha92 over alpha91 does not remove the alpha91 copies; delete <code>Mods\Begone\</code> and <code>Mods\OOO_REFRFix\</code> unless you want them.</p>
 
     <table>
       <thead>
@@ -142,7 +146,7 @@
       <tbody>
         <tr>
           <td><code>Begone/</code></td>
-          <td><strong>Test recording, debugging, and ad-hoc UE5-mesh suppression.</strong> Originally Begone hid UE5 ghost objects at runtime per <code>Config/OscurosOblivionOverhaul.json</code>; alpha90 baked that suppression into the map paks, so it is no longer required for normal play. Two ongoing uses: (1) capturing per-cell object inventories during alpha-test walkthroughs and verifying suppression coverage when new map paks are built; and (2) a runtime escape hatch — if a problem UE5 mesh slips through into a shipped pak, Begone can still suppress it via config rules until a pak rebuild lands.</td>
+          <td><strong>Test recording and debugging.</strong> Originally Begone hid UE5 ghost objects at runtime per <code>Config/OscurosOblivionOverhaul.json</code>; alpha90 baked that suppression into the map paks. From alpha92 Begone is log-only: it suppresses nothing. Its remaining use is capturing per-cell object inventories during alpha-test walkthroughs and checking suppression coverage when new map paks are built.</td>
         </tr>
         <tr>
           <td><code>OOO_REFRFix/</code></td>
@@ -158,6 +162,7 @@
 ├── OblivionRemastered\
 │   ├── Binaries\Win64\
 │   │   └── ue4ss\          ← UE4SS install lives here; bundled Mods\ overlays into it
+│   ├── alpha92_test_optional\  ← optional test mods, same tree; copy by hand to enable
 │   └── Content\
 │       ├── Dev\ObvData\Data\
 │       │   ├── MagicLoader\         ← MagicLoader looks here
