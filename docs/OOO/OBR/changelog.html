@@ -16,6 +16,214 @@
     <nav><a href="index.html">Home</a> | <a href="overview.html">Overview</a> | <a href="new-Items.html">New Items</a> | <a href="devlog.html">Devlog</a> | <a href="changelog.html" class="highlight-text">Changelog</a> | <a href="install.html">Install</a> | <a href="dependencies.html">Dependencies</a> | <a href="https://github.com/devakm/OblivionRemastered_OOO/releases" target="_blank" rel="noopener">Downloads (GitHub Releases)</a></nav>
     <h2>Per-release changes</h2>
 <p>Newest first. Click a release name in the index to jump to it.</p>
+<hr><h2 id="alpha92">alpha92</h2>
+<p><a href="https://github.com/devakm/OblivionRemastered_OOO/releases/tag/alpha92" target="_blank" rel="noopener">Download</a></p>
+
+<h2>Summary</h2>
+
+<ul>
+<li><strong>Added:</strong> 133</li>
+<li><strong>Removed:</strong> 7</li>
+<li><strong>Changed:</strong> 27</li>
+<li><strong>Unchanged:</strong> 165</li>
+</ul>
+
+<h3>Highlights</h3>
+
+<ul>
+<li><strong>Requires a UE4SS update:</strong> install &quot;UE4SS new&quot; (v3.0.1-1164) from the <a href="https://www.nexusmods.com/oblivionremastered/mods/32" target="_blank" rel="noopener">UE4SS Nexus page</a> (under <strong>Update files</strong>) <strong>before</strong> alpha92. &quot;UE4SS stable&quot; (3.0.1.a) is no longer supported. <code>RAX</code> was rebuilt for the new UE4SS, with no change to what it does. See <a href="install.html">Install</a>.</li>
+<li><strong>Begone and OOO_REFRFix are now optional test mods:</strong> RAX is the only UE4SS mod installed by default. The other two ship under <code>OblivionRemastered\alpha92_test_optional\</code>; Begone is now log-only. Installing over alpha91 does not remove the old copies.</li>
+<li><strong>21 new item sets:</strong> Ancestral, BladesElite, DaedricPrince, DarkMalachite, Draconis, Dragonborne, Dread, DremoraElite, DurableSteel, ImagoStorm, Light of Dawn (one sword in four restoration stages), Noble, TheBear, UnfinishedAncestral, UnfinishedSteel, UnfinishedWornSteel, WornAncestral, WornSteel.</li>
+<li><strong>5 item sets rebuilt:</strong> Aureus, Drakefired, Eboron, GrayFox, Obsidian.</li>
+<li><strong>2 dungeon paks rebuilt (3 zones):</strong> L_GloomWayCaveXX_Map, L_RedGillCave_Map. With Gloom Way Cave and Red Gill Cave finished, all classic OOO dungeons are complete.</li>
+<li><strong>SyncMap:</strong> ~120 asset remappings (+4 -2). About 120 OOO items that borrowed a vanilla mesh in alpha91 now point at their own set.</li>
+<li><strong>UE5-layer ghost suppression (static, baked into map paks):</strong> net +30 entries.</li>
+<li><strong>MagicLoader display names:</strong> the six Harbinger armor pieces are now &quot;Ancient Harbinger&quot;; eight Jephre&#x27;s summon spell names added.</li>
+<li><strong>ESP records:</strong> +4 WEAP, test copies of the Light of Dawn stages (the in-game swords are the existing OOO records <code>WeapLightOfDawnFlame</code>, <code>WeapLightOfDawnFlameA</code>, <code>WeapLightOfDawnFlameB</code> and <code>WeapLightOfDawnFlameC</code>); 12 ARMO greaves records now use a greaves model instead of boots or gauntlets; 2 CREA and 8 SPEL names moved to localized strings.</li>
+</ul>
+
+<h2>Added</h2>
+
+<ul>
+<li><code>OblivionRemastered/Content/Paks/~mods/AncestralItems.pak</code> (347 B)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/AncestralItems.ucas</code> (6.2 KiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/AncestralItems.utoc</code> (1.0 KiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/AncestralMaterials.pak</code> (347 B)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/AncestralMaterials.ucas</code> (41.5 MiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/AncestralMaterials.utoc</code> (15.1 KiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/BladesEliteItems.pak</code> (347 B)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/BladesEliteItems.ucas</code> (6.0 KiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/BladesEliteItems.utoc</code> (942 B)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/BladesEliteMaterials.pak</code> (347 B)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/BladesEliteMaterials.ucas</code> (39.3 MiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/BladesEliteMaterials.utoc</code> (14.2 KiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/DaedricPrinceItems.pak</code> (347 B)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/DaedricPrinceItems.ucas</code> (7.3 KiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/DaedricPrinceItems.utoc</code> (1.0 KiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/DaedricPrinceMaterials.pak</code> (347 B)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/DaedricPrinceMaterials.ucas</code> (33.5 MiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/DaedricPrinceMaterials.utoc</code> (14.4 KiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/DarkMalachiteItems.pak</code> (347 B)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/DarkMalachiteItems.ucas</code> (5.1 KiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/DarkMalachiteItems.utoc</code> (842 B)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/DarkMalachiteMaterials.pak</code> (347 B)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/DarkMalachiteMaterials.ucas</code> (38.4 MiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/DarkMalachiteMaterials.utoc</code> (14.0 KiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/DraconisItems.pak</code> (347 B)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/DraconisItems.ucas</code> (2.1 KiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/DraconisItems.utoc</code> (609 B)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/DraconisMaterials.pak</code> (347 B)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/DraconisMaterials.ucas</code> (44.3 MiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/DraconisMaterials.utoc</code> (11.8 KiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/DragonborneItems.pak</code> (347 B)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/DragonborneItems.ucas</code> (5.7 KiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/DragonborneItems.utoc</code> (942 B)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/DragonborneMaterials.pak</code> (347 B)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/DragonborneMaterials.ucas</code> (50.3 MiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/DragonborneMaterials.utoc</code> (16.0 KiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/DreadItems.pak</code> (347 B)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/DreadItems.ucas</code> (6.0 KiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/DreadItems.utoc</code> (912 B)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/DreadMaterials.pak</code> (347 B)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/DreadMaterials.ucas</code> (28.7 MiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/DreadMaterials.utoc</code> (12.3 KiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/DremoraEliteItems.pak</code> (347 B)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/DremoraEliteItems.ucas</code> (7.2 KiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/DremoraEliteItems.utoc</code> (1.0 KiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/DremoraEliteMaterials.pak</code> (347 B)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/DremoraEliteMaterials.ucas</code> (33.4 MiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/DremoraEliteMaterials.utoc</code> (14.2 KiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/DurableSteelItems.pak</code> (347 B)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/DurableSteelItems.ucas</code> (7.0 KiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/DurableSteelItems.utoc</code> (1.0 KiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/DurableSteelMaterials.pak</code> (347 B)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/DurableSteelMaterials.ucas</code> (42.1 MiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/DurableSteelMaterials.utoc</code> (15.5 KiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/ImagoStormItems.pak</code> (347 B)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/ImagoStormItems.ucas</code> (6.1 KiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/ImagoStormItems.utoc</code> (937 B)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/ImagoStormMaterials.pak</code> (347 B)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/ImagoStormMaterials.ucas</code> (28.7 MiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/ImagoStormMaterials.utoc</code> (12.6 KiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/LightOfDawn0Items.pak</code> (347 B)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/LightOfDawn0Items.ucas</code> (1.0 KiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/LightOfDawn0Items.utoc</code> (508 B)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/LightOfDawn0Materials.pak</code> (347 B)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/LightOfDawn0Materials.ucas</code> (13.1 MiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/LightOfDawn0Materials.utoc</code> (3.9 KiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/LightOfDawnAItems.pak</code> (347 B)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/LightOfDawnAItems.ucas</code> (1.0 KiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/LightOfDawnAItems.utoc</code> (508 B)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/LightOfDawnAMaterials.pak</code> (347 B)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/LightOfDawnAMaterials.ucas</code> (13.1 MiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/LightOfDawnAMaterials.utoc</code> (3.9 KiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/LightOfDawnBItems.pak</code> (347 B)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/LightOfDawnBItems.ucas</code> (1.0 KiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/LightOfDawnBItems.utoc</code> (508 B)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/LightOfDawnBMaterials.pak</code> (347 B)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/LightOfDawnBMaterials.ucas</code> (13.1 MiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/LightOfDawnBMaterials.utoc</code> (3.9 KiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/LightOfDawnItems.pak</code> (347 B)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/LightOfDawnItems.ucas</code> (1.0 KiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/LightOfDawnItems.utoc</code> (507 B)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/LightOfDawnMaterials.pak</code> (347 B)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/LightOfDawnMaterials.ucas</code> (13.1 MiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/LightOfDawnMaterials.utoc</code> (3.9 KiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/NobleItems.pak</code> (347 B)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/NobleItems.ucas</code> (6.0 KiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/NobleItems.utoc</code> (1014 B)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/NobleMaterials.pak</code> (347 B)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/NobleMaterials.ucas</code> (41.5 MiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/NobleMaterials.utoc</code> (14.9 KiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/TheBearItems.pak</code> (347 B)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/TheBearItems.ucas</code> (6.8 KiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/TheBearItems.utoc</code> (1.0 KiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/TheBearMaterials.pak</code> (347 B)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/TheBearMaterials.ucas</code> (42.1 MiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/TheBearMaterials.utoc</code> (15.2 KiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/UnfinishedAncestralItems.pak</code> (347 B)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/UnfinishedAncestralItems.ucas</code> (4.3 KiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/UnfinishedAncestralItems.utoc</code> (866 B)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/UnfinishedAncestralMaterials.pak</code> (347 B)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/UnfinishedAncestralMaterials.ucas</code> (31.3 MiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/UnfinishedAncestralMaterials.utoc</code> (10.9 KiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/UnfinishedSteelItems.pak</code> (347 B)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/UnfinishedSteelItems.ucas</code> (1.2 KiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/UnfinishedSteelItems.utoc</code> (511 B)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/UnfinishedSteelMaterials.pak</code> (347 B)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/UnfinishedSteelMaterials.ucas</code> (21.9 MiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/UnfinishedSteelMaterials.utoc</code> (6.0 KiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/UnfinishedWornSteelItems.pak</code> (347 B)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/UnfinishedWornSteelItems.ucas</code> (1.3 KiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/UnfinishedWornSteelItems.utoc</code> (515 B)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/UnfinishedWornSteelMaterials.pak</code> (347 B)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/UnfinishedWornSteelMaterials.ucas</code> (27.2 MiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/UnfinishedWornSteelMaterials.utoc</code> (7.3 KiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/WornAncestralItems.pak</code> (347 B)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/WornAncestralItems.ucas</code> (4.2 KiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/WornAncestralItems.utoc</code> (842 B)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/WornAncestralMaterials.pak</code> (347 B)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/WornAncestralMaterials.ucas</code> (31.3 MiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/WornAncestralMaterials.utoc</code> (10.7 KiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/WornSteelItems.pak</code> (347 B)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/WornSteelItems.ucas</code> (6.9 KiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/WornSteelItems.utoc</code> (1.0 KiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/WornSteelMaterials.pak</code> (347 B)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/WornSteelMaterials.ucas</code> (70.1 MiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/WornSteelMaterials.utoc</code> (21.9 KiB)</li>
+<li><code>OblivionRemastered/alpha92_test_optional/Binaries/Win64/ue4ss/Mods/Begone/Config/OscurosOblivionOverhaul.json</code> (547 B)</li>
+<li><code>OblivionRemastered/alpha92_test_optional/Binaries/Win64/ue4ss/Mods/Begone/Scripts/main.lua</code> (44.2 KiB)</li>
+<li><code>OblivionRemastered/alpha92_test_optional/Binaries/Win64/ue4ss/Mods/Begone/enabled.txt</code> (0 B)</li>
+<li><code>OblivionRemastered/alpha92_test_optional/Binaries/Win64/ue4ss/Mods/OOO_REFRFix/Scripts/main.lua</code> (55.8 KiB)</li>
+<li><code>OblivionRemastered/alpha92_test_optional/Binaries/Win64/ue4ss/Mods/OOO_REFRFix/Scripts/spawn_deltas.lua</code> (10.1 KiB)</li>
+<li><code>OblivionRemastered/alpha92_test_optional/Binaries/Win64/ue4ss/Mods/OOO_REFRFix/Scripts/tests.lua</code> (9.8 KiB)</li>
+<li><code>OblivionRemastered/alpha92_test_optional/Binaries/Win64/ue4ss/Mods/OOO_REFRFix/enabled.txt</code> (0 B)</li>
+</ul>
+
+<h2>Removed</h2>
+
+<ul>
+<li><code>OblivionRemastered/Binaries/Win64/ue4ss/Mods/Begone/Config/OscurosOblivionOverhaul.json</code></li>
+<li><code>OblivionRemastered/Binaries/Win64/ue4ss/Mods/Begone/Scripts/main.lua</code></li>
+<li><code>OblivionRemastered/Binaries/Win64/ue4ss/Mods/Begone/enabled.txt</code></li>
+<li><code>OblivionRemastered/Binaries/Win64/ue4ss/Mods/OOO_REFRFix/Scripts/main.lua</code></li>
+<li><code>OblivionRemastered/Binaries/Win64/ue4ss/Mods/OOO_REFRFix/Scripts/spawn_deltas.lua</code></li>
+<li><code>OblivionRemastered/Binaries/Win64/ue4ss/Mods/OOO_REFRFix/Scripts/tests.lua</code></li>
+<li><code>OblivionRemastered/Binaries/Win64/ue4ss/Mods/OOO_REFRFix/enabled.txt</code></li>
+</ul>
+
+<h2>Changed</h2>
+
+<ul>
+<li><code>OblivionRemastered/Binaries/Win64/ue4ss/Mods/RAX/dlls/main.dll</code> (994.0 KiB)</li>
+<li><code>OblivionRemastered/Content/Dev/ObvData/Data/MagicLoader/Oscuro&#x27;s_Oblivion_Overhaul_ARMO.json</code> (53.0 KiB)</li>
+<li><code>OblivionRemastered/Content/Dev/ObvData/Data/MagicLoader/Oscuro&#x27;s_Oblivion_Overhaul_CREA.json</code> (22.0 KiB)</li>
+<li><code>OblivionRemastered/Content/Dev/ObvData/Data/MagicLoader/Oscuro&#x27;s_Oblivion_Overhaul_QUST.json</code> (205.0 KiB)</li>
+<li><code>OblivionRemastered/Content/Dev/ObvData/Data/MagicLoader/Oscuro&#x27;s_Oblivion_Overhaul_SPELL.json</code> (46.7 KiB)</li>
+<li><code>OblivionRemastered/Content/Dev/ObvData/Data/MagicLoader/Oscuro&#x27;s_Oblivion_Overhaul_WEAP.json</code> (56.1 KiB)</li>
+<li><code>OblivionRemastered/Content/Dev/ObvData/Data/OptionalPatches/SyncMap - DeluxeEdition/Oscuro&#x27;s_Oblivion_Overhaul.ini</code> (560.2 KiB)</li>
+<li><code>OblivionRemastered/Content/Dev/ObvData/Data/Oscuro&#x27;s_Oblivion_Overhaul.esp</code> (16.1 MiB)</li>
+<li><code>OblivionRemastered/Content/Dev/ObvData/Data/SyncMap/Oscuro&#x27;s_Oblivion_Overhaul.ini</code> (560.2 KiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/AureusMaterials.ucas</code> (31.2 MiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/AureusMaterials.utoc</code> (14.2 KiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/DrakefiredMaterials.ucas</code> (41.7 MiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/DrakefiredMaterials.utoc</code> (16.9 KiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/EboronMaterials.ucas</code> (25.8 MiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/EboronMaterials.utoc</code> (13.0 KiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/GrayFoxItems.ucas</code> (5.6 KiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/GrayFoxItems.utoc</code> (922 B)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/GrayFoxMaterials.ucas</code> (24.7 MiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/GrayFoxMaterials.utoc</code> (11.9 KiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/L_GloomWayCaveXX_Map.ucas</code> (8.9 MiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/L_GloomWayCaveXX_Map.utoc</code> (3.5 KiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/L_RedGillCave_Map.ucas</code> (3.9 MiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/L_RedGillCave_Map.utoc</code> (1.8 KiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/ObsidianItems.ucas</code> (14.4 KiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/ObsidianItems.utoc</code> (2.0 KiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/ObsidianMaterials.ucas</code> (75.4 MiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/ObsidianMaterials.utoc</code> (32.9 KiB)</li>
+</ul>
+
 <hr><h2 id="alpha91">alpha91</h2>
 <p><a href="https://github.com/devakm/OblivionRemastered_OOO/releases/tag/alpha91" target="_blank" rel="noopener">Download</a></p>
 
