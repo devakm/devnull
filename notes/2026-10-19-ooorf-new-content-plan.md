@@ -17,7 +17,7 @@ Only what the user stated, with no diff behind it:
 
 - The **Ancestral**, **Worn Ancestral** and **Unfinished Ancestral** armor sets: credit changed to
   "New armor set created by devakm."; a "New in OOORF" tag on their New Items cards.
-- An overview section **"New in OOORF — not in classic OOO"** that names the Ancestral armor and
+- An overview section **"New in OOORF — not in classic OOO"** that names the Ancestral armor, the Royal
   weapons, the Ancient Harbinger armor and weapons, and the Ancient Gargoyles, and says the list is
   not yet complete.
 
@@ -54,5 +54,5 @@ Only what the user stated, with no diff behind it:
 1. The classic baseline files and versions (OOO 1.36? the SI add-on version?).
 2. Ancient Harbinger: is it new records, or classic Harbinger records reworked? This decides how
    the diff counts it.
-3. Ancient Gargoyles and the Ancestral weapons have no New Items card. Should they get one (new
+3. Ancient Gargoyles and the Royal weapons have no New Items card. Should they get one (new
    creature and weapon entries), or only the overview list?
