@@ -58,6 +58,8 @@
     .devlog-renders { display: flex; flex-wrap: wrap; gap: 12px; margin: 14px 0; }
     .devlog-renders a { display: block; }
     .devlog-renders img { width: 170px; border: 1px solid var(--border-color); border-radius: 4px; display: block; }
+    .devlog-renders img, .devlog-thumbs img { transition: transform 0.15s, border-color 0.15s; }
+    .devlog-renders a:hover img, .devlog-thumbs a:hover img { transform: translateY(-2px); border-color: var(--accent-cyan); }
 
     .progress-strip { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0; }
     .progress-strip img { height: 90px; border: 1px solid var(--border-color); border-radius: 4px; }

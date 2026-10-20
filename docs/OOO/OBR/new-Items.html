@@ -13,6 +13,8 @@
     .set-head { display:flex; gap:24px; align-items:flex-start; }
     .set-head .ref { flex:0 0 240px; }
     .set-head .ref img { display:block; width:240px; border-radius:4px; border:2px solid var(--border-color); }
+    .set-head .ref img { transition: transform 0.15s, border-color 0.15s; }
+    .set-head .ref a:hover img { transform: translateY(-2px); border-color: var(--accent-cyan); }
     .set-head .meta { flex:1; }
     .set-head .meta > table:first-child { margin-top:0; }
     .icon-col { width:66px; min-width:66px; text-align:center; }
