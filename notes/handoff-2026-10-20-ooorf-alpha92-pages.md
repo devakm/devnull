@@ -67,7 +67,7 @@ emits none of it:
   neither, so re-apply the card lines on re-sync. New milestones about a set get both links.
 - Icons: devnull took ItemClone's new Ancestral / Worn / Unfinished Ancestral icons (2026-10-21). Not taken:
   `AncientHarbinger_Greaves.png` (ItemClone `13a9fe7` greaves icon depends on an `OOO_IconConsistencyFix.esp`
-  change not yet released or checked in game); the six steel cuirass icons (devnull keeps its 106x105 crops).
+  change that is not in alpha92.1 -- alpha92.1 (2026-10-21) has no ESP changes and its manifest has no OOO_IconConsistencyFix.esp); the six steel cuirass icons (devnull keeps its 106x105 crops).
 - "215 items" is right for the page: the tracker counts 223, and the page drops the 8 Light of Dawn
   FlameTest/NoFlame rows.
 - Keep devnull's cropped copies of the six steel cuirass icons (106×105); ItemClone's still carry the
