@@ -160,6 +160,25 @@ nav a {
     font-weight: bold;
 }
 
+/* Navigation pinned to the top of the window (pages that opt in with class="sticky-nav") */
+nav.sticky-nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+}
+
+/* Keep anchor jumps from landing under the pinned nav */
+html:has(nav.sticky-nav) {
+    scroll-padding-top: 90px;
+}
+
+@media (max-width: 700px) {
+    html:has(nav.sticky-nav) {
+        scroll-padding-top: 170px;
+    }
+}
+
 .nav-image {
     height: 31px;
     vertical-align: middle;
