@@ -83,7 +83,7 @@
 
     <section id="alpha92">
       <h2>alpha92 — October 2026</h2>
-      <p>alpha92 was released on 2026-10-18. It adds 21 item sets and completes the classic dungeons. The armor work came in three groups. The first is six sets — Dragonborne, Draconis, and a four-set Daedric family (DaedricPrince, Dread, ImagoStorm, DremoraElite). The second is a six-set Steel tier: WornSteel, UnfinishedSteel, UnfinishedWornSteel, DurableSteel, BladesElite, and TheBear. All six are cloned from the vanilla Steel armor and then recolored to the theme used for the set in classic OOO (if possible). The third is an Amelion family — Noble, Ancestral, Worn Ancestral, and Unfinished Ancestral. Amelion is a bright silver tier with indigo trim and fine silver pattern work. That pattern work needed methods the earlier recolors did not have. Light of Dawn opened the weapon work with one sword in four restoration stages. DarkMalachite completed Vella's armor in the last days before the release. The pipeline also gained new capabilities. They include build-time quality gates, a reusable wear-and-scratch system, and a whole-texture recolor pass. They also include region masks taken from the model's own geometry, and a way to preserve small vanilla hardware under a recolor. The gates read the bytes a build is about to produce. They fail the build if a recolor regressed, so a mistake that once showed only in game now stops the build. The map work returned after alpha91. Gloom Way Cave and Red Gill Cave were the two water caves without a full cleanup session. Both are now validated, so every dungeon in the release is validated. Twice in this period, copying a method already confirmed in game was faster than working out a new one. The armor work and the map work each found this on the same day.</p>
+      <p>alpha92 was released on 2026-10-18. It adds 21 item sets and completes the classic dungeons. The armor work came in three groups. The first is six sets — Dragonborne, Draconis, and a four-set Daedric family (DaedricPrince, Dread, ImagoStorm, DremoraElite). The second is a six-set Steel tier: WornSteel, UnfinishedSteel, UnfinishedWornSteel, DurableSteel, BladesElite, and TheBear. All six are cloned from the vanilla Steel armor and then recolored to the theme used for the set in classic OOO (if possible). The third is an Amelion family — Noble, Ancestral, Worn Ancestral, and Unfinished Ancestral. Amelion is a bright silver tier with indigo trim and fine silver pattern work. That pattern work needed methods the earlier recolors did not have. Light of Dawn opened the weapon work with one sword in four restoration stages. DarkMalachite completed Vella's armor in the last days before the release. New recolor methods were added for wear and scratches, whole-texture recolors, region masks taken from the model's geometry, and keeping small vanilla hardware unchanged under a recolor. The map work returned after alpha91. Gloom Way Cave and Red Gill Cave were the two water caves without a full cleanup session. Both are now validated, so every dungeon in the release is validated.</p>
       <div class="devlog-arcs">
         <a class="arc-card" href="#a92-daedric">
           <h4>The Daedric family</h4>
@@ -102,7 +102,7 @@
         </a>
         <a class="arc-card" href="#a92-gates">
           <h4>Self-verifying builds</h4>
-          <p>The pipeline now turns each configuration setting into a build-time check that inspects the output and stops the build if the setting was not met. A further check requires every setting that changes the output to have its own check, so a new setting cannot be added without one.</p>
+          <p>The pipeline now turns each configuration setting into a build-time check that inspects the output and stops the build if the setting was not met.</p>
           <span class="jump">Jump to the story ↓</span>
         </a>
         <a class="arc-card" href="#a92-draconis">
@@ -127,7 +127,7 @@
         </a>
         <a class="arc-card" href="#a92-objects">
           <h4>Preserving the hardware</h4>
-          <p>A whole-texture lighten washes small gold objects — rivets, buttons, buckles — toward white wherever a mask misses them. The reliable fix stops trying to mask them perfectly and instead whitens the plate freely, then restores each catalogued gold object's original bytes on top, with a gate that fails the build if any is missed.</p>
+          <p>A whole-texture lighten turned small gold objects (rivets, buttons, buckles) white wherever a mask missed them. The fix lightens the plate and then restores the original pixels of each listed gold object.</p>
           <span class="jump">Jump to the story ↓</span>
         </a>
         <a class="arc-card" href="#a92-amelion">
@@ -142,17 +142,17 @@
         </a>
         <a class="arc-card" href="#a92-noble">
           <h4>Noble, object by object</h4>
-          <p>Seven weeks of tuning one set one object at a time, each change confirmed in game before the next began. It ended on a hand-painted benchmark that exposed three separate ownership declarations. Each one held pixels out of the treatment entirely.</p>
+          <p>Seven weeks of tuning one set one object at a time, each change confirmed in game before the next began. A hand-painted helmet mask showed that three mask settings were keeping some pixels out of the recolor. Removing them fixed the helmet.</p>
           <span class="jump">Jump to the story ↓</span>
         </a>
         <a class="arc-card" href="#a92-ancestral">
           <h4>The Ancestral sets</h4>
-          <p>Three sets were built from the Amelion template in three days: Ancestral, Worn Ancestral, and Unfinished Ancestral with its trim tarnished. Every new surface control was added switched off, so the other sets rebuild byte-for-byte identical.</p>
+          <p>Three sets were built from the Amelion template in three days: Ancestral, Worn Ancestral, and Unfinished Ancestral with its trim tarnished.</p>
           <span class="jump">Jump to the story ↓</span>
         </a>
         <a class="arc-card" href="#a92-weapon">
           <h4>The first weapon stages</h4>
-          <p>Light of Dawn is one sword in four restoration stages, with a flame etching that glows more at each stage. Armor methods did not carry over directly. A weapon scopes its glow by a material slot and by the mesh's vertex color. The weapon build also needed the checks that the armor builds already had.</p>
+          <p>Light of Dawn is one sword in four restoration stages, with a flame etching that glows more at each stage. A weapon limits its glow by a material slot and by the mesh's vertex color, so the armor methods did not carry over directly.</p>
           <span class="jump">Jump to the story ↓</span>
         </a>
         <a class="arc-card" href="#a92-water">
@@ -177,7 +177,7 @@
         <div class="milestone">
           <div class="date">2026-06-18</div>
           <h3>Dragonborne cuirass trim and shield rivets</h3>
-          <p>Two finishing issues completed the cuirass. The skirt and strap leather looked plain brown rather than the set's oxblood, because the tunic's cloth mask suppressed the path that gave the other pieces their red; a cuirass-specific recipe restored it. On the body pieces the warm recesses of the chainmail were being painted red as if they were cloth, fixed by gating the cloth recoloring to non-metallic pixels so the chainmail keeps its steel color. The shield's rivets had been made too large by an unneeded mask expansion, which was removed. A thin trim around the tunic panels reading three different colors was noted as a remaining polish item.</p>
+          <p>Two finishing issues completed the cuirass. The skirt and strap leather looked plain brown rather than the set's oxblood, because the tunic's cloth mask suppressed the path that gave the other pieces their red; a cuirass-specific recipe restored it. On the body pieces the warm recesses of the chainmail were being painted red as if they were cloth, fixed by limiting the cloth recoloring to non-metallic pixels so the chainmail keeps its steel color. The shield's rivets had been made too large by an unneeded mask expansion, which was removed. A thin trim around the tunic panels reading three different colors was noted as a remaining polish item.</p>
         </div>
         <div class="milestone" id="a92-draconis">
           <div class="date">2026-06-19</div>
@@ -230,7 +230,7 @@
         <div class="milestone" id="a92-gates">
           <div class="date">2026-06-27</div>
           <h3>Self-verifying builds: the quality gates</h3>
-          <p>The quality gates added during alpha92 turn each configuration setting into a build-time check that reads the staged bytes and stops the build if the setting was not met. Earlier gates were added with the sets: a gate that fails the build if a set's item-id repoint is incomplete, caught when only one of two Daedric item groups had been repointed; a region-class gate that fails if a new color region overlaps an already-owned one; the master-tint gate that flags a piece sitting on a tinting parent; an icon-aura gate that fails if a recolored icon's halo drifts toward the theme color; and a guard that refuses to overwrite a hand-edited texture on bulk re-export. Today's work generalized them. The motivating regression was a partial build that ran the recolor but skipped the emblem step and produced a cuirass with a black disc instead of the dragon — every structural check passed because nothing inspected content. The new framework gives each setting that changes the output a check that confirms the result is actually present, and a further check fails the build if any setting has no check, so a new setting cannot be added without one. Checks were written for the emblem, skirt emblem, leather grain, and corrected-source-diffuse settings, with others delegating to the existing gates; the framework was specified and planned test-first before implementation. Dragonborne was rebuilt today with its dragon confirmed by the new emblem gate.</p>
+          <p>The quality gates added during alpha92 turn each configuration setting into a build-time check that reads the staged bytes and stops the build if the setting was not met. To stop partial builds that skipped a step, such as one that left a black disc instead of the dragon on the Dragonborne cuirass, checks were written for the emblem, skirt emblem, leather grain, and corrected-source-diffuse settings.</p>
         </div>
         <div class="milestone" id="a92-steel">
           <div class="date">2026-06-27</div>
@@ -242,7 +242,7 @@
         <div class="milestone" id="a92-wear">
           <div class="date">2026-06-28</div>
           <h3>Wear and scratches: depth in the normal map, not the paint</h3>
-          <p>The wear capability built for WornSteel is material-agnostic and reusable across sets. Its central lesson came from an in-game test: the vanilla steel art already carries dents, and synthesizing more produced low-resolution blocky squares, because the compressed texture format quantizes small high-contrast marks badly. The correction was to stop painting dents, keep the vanilla ones, and to carry the added scratches as depth in the surface normal map rather than as bright bare metal in the color, keeping the color change modest. Four separate bugs in re-encoding that normal map, each producing its own compression artifact, were found and fixed, and scratch size was normalized across pieces so a scratch is the same physical size everywhere despite the pieces differing several-fold in texture density. A new build-time check requires the worn normal map to stay almost entirely identical to vanilla outside the scratch marks, and caught two regressions on its own. WornSteel was confirmed in-game.</p>
+          <p>The wear capability built for WornSteel is material-agnostic and reusable across sets. Its central lesson came from an in-game test: the vanilla steel art already carries dents, and synthesizing more produced low-resolution blocky squares, because the compressed texture format quantizes small high-contrast marks badly. The correction was to stop painting dents, keep the vanilla ones, and to carry the added scratches as depth in the surface normal map rather than as bright bare metal in the color, keeping the color change modest. Four separate bugs in re-encoding that normal map, each producing its own compression artifact, were found and fixed, and scratch size was normalized across pieces so a scratch is the same physical size everywhere despite the pieces differing several-fold in texture density. WornSteel was confirmed in-game.</p>
         </div>
         <div class="milestone">
           <div class="date">2026-06-28</div>
@@ -274,13 +274,13 @@
         </div>
         <div class="milestone">
           <div class="date">2026-07-01</div>
-          <h3>A mesh-sanity check for new piece types</h3>
-          <p>TheBear's shield and helmet geometry caused errors in the mesh previews used for approval, and each exposed a way the mesh reader could silently misread a model's data — a shield whose index data used a wider number format than assumed, and a helmet whose header sat at an unexpected offset. Both produced wrong readings. A structural check was added: it measures the edge lengths a decoded mesh implies and fails the build when they are impossible, so a misread model is caught by the impossible geometry it produces rather than by a person noticing later. It runs over every shipped piece as part of the build's gates.</p>
+          <h3>TheBear's shield and helmet meshes</h3>
+          <p>The mesh reader used for the approval previews misread TheBear's shield and helmet: the shield's index data used a wider number format than expected, and the helmet's header was at an unexpected offset. Both were fixed, and the build now stops when a decoded mesh has impossible edge lengths.</p>
         </div>
         <div class="milestone" id="a92-objects">
           <div class="date">2026-07-04</div>
-          <h3>The Bear's gold hardware: a registry and a restore</h3>
-          <p>Whitening the whole plate to ivory turned the small gold hardware nearly white: the rivets, flower buttons, buckles, and belt studs. The cause was structural: the lighten paints the entire texture, so any gold object the region mask failed to cover defaulted to ivory. Refining the mask object by object helped but never fixed all of them, because there were many such objects: each in-game test found a different missed object while many more remained, and a fix confirmed at one rivet said nothing about the rest. The fix changed the approach: instead of protecting every gold object with a mask, whiten the plate freely and then restore the original gold hardware on top. A persistent registry was built — a complete inventory of every hardware object on each piece — and the restore step holds those objects out of the lighten so they keep their vanilla bytes, while grime that only looks gold is left to whiten. A new build gate checks that no registered object is painted by the lightening, so the build reports all missed objects at once instead of one at a time in game. With the registry and restore in place, TheBear was confirmed in-game and its gold hardware reads correctly across every piece.</p>
+          <h3>The Bear's gold hardware</h3>
+          <p>Whitening the whole plate to ivory turned the small gold hardware nearly white: the rivets, flower buttons, buckles, and belt studs. The lighten changes the entire texture, so any gold object the region mask did not cover became ivory, and mask fixes made one object at a time kept missing others. The method was changed. Every hardware object on each piece was listed, and the listed objects keep their vanilla pixels while the rest of the plate is lightened. Grime that only looks gold is still lightened. TheBear was confirmed in-game with its gold hardware correct on every piece.</p>
         </div>
         <div class="milestone" id="a92-amelion">
           <div class="date">2026-07-04</div>
@@ -299,13 +299,13 @@
         </div>
         <div class="milestone" id="a92-noble">
           <div class="date">2026-07-16</div>
-          <h3>Per-object tuning, and a tool to review it</h3>
-          <p>With the pattern solved, the set moved to tuning one object at a time, starting with the neckguard lining. Each change was rendered, reviewed, and confirmed in game before the next began. A permanent review page was built alongside it, so a proposed change could be seen against the current state instead of described. The method used is a recolor written for one named object and applied only there. It became the standard approach for the rest of the set.</p>
+          <h3>Per-object tuning</h3>
+          <p>With the pattern solved, the set was tuned one object at a time, starting with the neckguard lining. Each change is a recolor written for one named object and applied only to it, and each was confirmed in game before the next began.</p>
         </div>
         <div class="milestone">
           <div class="date">2026-07-18</div>
-          <h3>The rondel, and two standards that came out of it</h3>
-          <p>The rondel's pattern needed two masks working together, one for the pattern's core and one for its shadow. A single mask could not cover both the stroke and its shading. That recipe was written down. So was a second standard, which governs how a frame's edge fades into the panel it encloses. Both were written to apply to other pieces too, and the working branch was merged.</p>
+          <h3>The rondel's two masks</h3>
+          <p>The rondel's pattern needed two masks working together, one for the pattern's core and one for its shadow, because a single mask could not cover both the stroke and its shading.</p>
         </div>
         <div class="milestone">
           <div class="date">2026-07-21</div>
@@ -314,20 +314,20 @@
         </div>
         <div class="milestone">
           <div class="date">2026-08-01</div>
-          <h3>Unused masks, and recording where a mask came from</h3>
-          <p>Two related faults were fixed. First, a hand-painted mask was connected to a surface class that never used it. The mask was correct and committed but had no effect, and no part of the build reported that it went unused. Confirming that each mask is actually read by the build step it is meant for became a required step. Second, masks now record where they came from. Whether a mask is hand-painted or generated by the pipeline is written into the mask file when it is made, instead of inferred later from where the file sits. Both faults produced work that looked done and was not.</p>
+          <h3>A mask that had no effect</h3>
+          <p>A hand-painted mask had no effect because it was connected to a surface class that never used it. This was fixed.</p>
         </div>
         <div class="milestone">
           <div class="date">2026-08-23</div>
-          <h3>The helmet benchmark, and three settings that blocked the recolor</h3>
-          <p>A hand-painted helmet mask was supplied as the quality standard for generated masks, to be used exactly as delivered. Using it revealed a defect: hard sawtooth cutouts and a blob-shaped hole on one helmet panel. None of it was left over from an incomplete recolor. Three separate mask settings kept those pixels out of the plate recolor, so they showed as vanilla with mask-shaped edges. One was an old mask left in place because a measurement had shown it as harmless. One kept the panel's vanilla color, based on an assumption about that color. The third was a mask cut around the other two. A measurement showed that the assumption was wrong. After the fix the visible artifact dropped to roughly a quarter of its extent. Untreated pixels on the helmet fell from tens of thousands to about a hundred and forty. The fix also resolved a defect noted in the set's own configuration a month earlier. Noble was confirmed in game and closed for the release, with one cuirass improvement deferred.</p>
+          <h3>The helmet mask, and three settings that blocked the recolor</h3>
+          <p>A hand-painted helmet mask was supplied as the standard for generated masks. Using it showed hard sawtooth cutouts and a blob-shaped hole on one helmet panel. Three mask settings were keeping those pixels out of the plate recolor, so they showed the vanilla color with mask-shaped edges. Removing them reduced the untreated pixels on the helmet from tens of thousands to about a hundred and forty. Noble was confirmed in game and closed for the release, with one cuirass improvement deferred.</p>
           <div class="devlog-renders"><a href="images/refs/OBR-OOO-item-Noble-Armor_M-v52-shadows2.png" target="_blank" rel="noopener"><img src="images/refs/OBR-OOO-item-Noble-Armor_M-v52-shadows2.png" alt="Noble armor, in-game screenshot"></a></div>
           <div class="devlog-thumbs"><a href="images/item-tracker-assets/Noble_Cuirass.png" target="_blank" rel="noopener"><img src="images/item-tracker-assets/Noble_Cuirass.png" alt="noble cuirass icon"></a></div>
         </div>
         <div class="milestone">
           <div class="date">2026-08-23</div>
-          <h3>Amelion kept as a donor template</h3>
-          <p>The finished Amelion set was copied as a template of fifty-one files, ready to point at a new set. The alternative was to write down how the set had been built and rebuild the next one from those notes. Copying a confirmed result is faster than rebuilding it from notes. The next three sets tested this.</p>
+          <h3>The Amelion template</h3>
+          <p>The finished Amelion set was copied as a template of fifty-one files, and the next three sets were built from it.</p>
         </div>
         <div class="milestone" id="a92-water">
           <div class="date">2026-08-23</div>
@@ -337,7 +337,7 @@
         <div class="milestone">
           <div class="date">2026-08-30</div>
           <h3>The invisible wall in Gloom Way's first zone</h3>
-          <p>An invisible barrier blocked the tunnel that connects Gloom Way's first zone to the rest of the cave. The obstruction was not ordinary geometry. Two vertical emissive light cards, the flat panels that add a glow to a cave wall, carried collision and stood across the passage. They sat in a layer that had not been searched. That is the general lesson: a cell is assembled from six layers, and an obstruction can be in any of them. The cards were suppressed and the surface was measured against forty-three depth probes. The zone was then confirmed in game.</p>
+          <p>An invisible barrier blocked the tunnel that connects Gloom Way's first zone to the rest of the cave. The obstruction was not ordinary geometry. Two vertical emissive light cards, the flat panels that add a glow to a cave wall, carried collision and stood across the passage. They sat in a layer that had not been searched. A cell is assembled from six layers, and an obstruction can be in any of them. The cards were suppressed and the surface was measured against forty-three depth probes. The zone was then confirmed in game.</p>
         </div>
         <div class="milestone" id="a92-ancestral">
           <div class="date">2026-09-05</div>
@@ -349,17 +349,17 @@
         <div class="milestone">
           <div class="date">2026-09-06</div>
           <h3>Separating grime from wear</h3>
-          <p>Fixing Ancestral's grime meant separating three effects that had been treated as one. The stains and the scratches sit at different spatial frequencies and are now handled apart. The mottling across the plate proved to be a color-saturation artifact rather than a brightness one. The rondel's base plate, long assumed to be gold, was measured and had never been gold. Five new surface controls were added. Each stays switched off unless a set turns it on, so the other sets rebuild byte-for-byte identical.</p>
+          <p>Fixing Ancestral's grime meant separating three effects that had been treated as one. The stains and the scratches sit at different spatial frequencies and are now handled apart. The mottling across the plate proved to be a color-saturation artifact rather than a brightness one. The rondel's base plate, long assumed to be gold, was measured and had never been gold. Five new surface controls were added.</p>
         </div>
         <div class="milestone">
           <div class="date">2026-09-07</div>
-          <h3>Gloom Way's second zone, and the recipe that already existed</h3>
-          <p>The second zone's water had to reach across the whole cave. Getting it there took a week and seven rebuilds, and five of those corrected a real component without moving the visible surface at all. The cause was not technical. A complete recipe for this exact job, nine components working together, already existed in the configuration of a cave confirmed in game back in May. The week went to deriving a new recipe instead of comparing against that one. The rule written down afterwards is to diff a new cell against the nearest confirmed cell before deriving anything. A second finding came with it. The stored bounds of a water mesh decide only whether it is drawn, never what shape it takes, because the engine recomputes them on load. The shape comes from the vertices. The zone was confirmed in game against eleven depth probes. Gloom Way Cave is finished. That left Red Gill Cave as the one dungeon without a full cleanup session.</p>
+          <h3>Gloom Way's second zone</h3>
+          <p>The second zone's water had to reach across the whole cave. This took a week and seven rebuilds. A complete recipe for the same job, nine components working together, already existed in a cave confirmed in game in May, and the week went to working out a new one before it was found. The stored bounds of a water mesh decide only whether it is drawn, not its shape, because the engine recomputes them on load. The shape comes from the vertices. The zone was confirmed in game against eleven depth probes. Gloom Way Cave is finished. That left Red Gill Cave as the one dungeon without a full cleanup session.</p>
         </div>
         <div class="milestone">
           <div class="date">2026-09-07</div>
-          <h3>Two more sets, and the rule about copying</h3>
-          <p>Two variants were built from Ancestral and confirmed in game the same day. The worn set is Ancestral at half strength with its grime kept, and it was approved on its first look. The unfinished set removes the glow and tarnishes the trim, which needed a new control. Tarnish is produced by amplifying a region's mid-tones rather than by adding more grime over them. It tapers off in the darks, so no black ring forms at the edge. The session also identified a mistake repeated across the project: copying a working method without the checks that made it work. The rule written down is to copy the checks along with the method. The map work reached the same rule on the same day. Ancestral's own final revision, a darker trim and a glow in the gems' own hue, was also confirmed in game that day. That finished the Amelion family for the release.</p>
+          <h3>Worn Ancestral and Unfinished Ancestral</h3>
+          <p>Two variants were built from Ancestral and confirmed in game the same day. The worn set is Ancestral at half strength with its grime kept, and it was approved on its first look. The unfinished set removes the glow and tarnishes the trim, which needed a new control. Tarnish is produced by amplifying a region's mid-tones rather than by adding more grime over them. It tapers off in the darks, so no black ring forms at the edge. Ancestral's own final revision, a darker trim and a glow in the gems' own hue, was also confirmed in game that day. That finished the Amelion family for the release.</p>
           <div class="devlog-renders"><a href="images/refs/OBR-OOO-item-AncestralWorn-Armor_M-v1-shadows.png" target="_blank" rel="noopener"><img src="images/refs/OBR-OOO-item-AncestralWorn-Armor_M-v1-shadows.png" alt="WornAncestral armor, in-game screenshot"></a><a href="images/refs/OBR-OOO-item-AncestralUnfinished-Armor_M-v2-front.png" target="_blank" rel="noopener"><img src="images/refs/OBR-OOO-item-AncestralUnfinished-Armor_M-v2-front.png" alt="UnfinishedAncestral armor, in-game screenshot"></a></div>
           <div class="devlog-thumbs"><a href="images/item-tracker-assets/WornAncestral_Cuirass.png" target="_blank" rel="noopener"><img src="images/item-tracker-assets/WornAncestral_Cuirass.png" alt="wornancestral cuirass icon"></a><a href="images/item-tracker-assets/UnfinishedAncestral_Cuirass.png" target="_blank" rel="noopener"><img src="images/item-tracker-assets/UnfinishedAncestral_Cuirass.png" alt="unfinishedancestral cuirass icon"></a></div>
         </div>
@@ -378,22 +378,22 @@
         <div class="milestone">
           <div class="date">2026-10-15</div>
           <h3>Red Gill Cave, and the last dungeon</h3>
-          <p>Red Gill Cave was built in August but did not have a cleanup session until now. Its water surface rises 57 units over the vanilla level. It needed none of the extra water components that Gloom Way's second zone needed, because the vanilla water area already encloses the cave. A build gate failed on the first attempt. It read the water's tile grid from the wrong position in the file. The gate was fixed, and the earlier caves' results stay valid because the misread did not change their outcome. In game, the water was right, but the cave had no ambient light. One suppression entry removed the prefab that holds the cave's sky light. A bulk migration in May added that entry with no recorded reason, and every other water cave keeps its sky light. That one entry was removed and nothing else changed. The zone was then confirmed in game in all five phases, against twenty-three depth probes. The measured surface was within one unit of its target. Every dungeon in the release is now validated.</p>
+          <p>Red Gill Cave was built in August but did not have a cleanup session until now. Its water surface rises 57 units over the vanilla level. It needed none of the extra water components that Gloom Way's second zone needed, because the vanilla water area already encloses the cave. In game, the water was right, but the cave had no ambient light. One suppression entry removed the prefab that holds the cave's sky light. That entry was added in May with no recorded reason. It was removed, and nothing else changed. The zone was then confirmed in game in all five phases, against twenty-three depth probes. The measured surface was within one unit of its target. Every dungeon in the release is now validated.</p>
         </div>
         <div class="milestone">
           <div class="date">2026-10-15</div>
-          <h3>The weapon build, and the checks it was missing</h3>
-          <p>Two faults showed in game. After a save load or a fast travel, the world stopped streaming. The sword's clone was missing its mesh's bulk data file, which the vanilla source keeps beside the mesh. Separately, the blood effect painted the blade flat red, because its material copy was compiled for a different parent material. The armor builds already had checks for both faults. The weapon build did not. Both checks were copied to the weapon build, and two new gates now stop the build if either fault returns. The fixes were confirmed in game.</p>
+          <h3>The sword's streaming and blood-effect faults</h3>
+          <p>Two faults showed in game. After a save load or a fast travel, the world stopped streaming, because the sword's clone was missing its mesh's bulk data file, which the vanilla source keeps beside the mesh. The blood effect painted the blade flat red, because its material copy was compiled for a different parent material. Both were fixed and confirmed in game.</p>
         </div>
         <div class="milestone">
           <div class="date">2026-10-17</div>
-          <h3>The SyncMap, reviewed three ways</h3>
-          <p>The SyncMap is the file that tells the game which model each item uses. Three copies of it had come to differ: the hand-maintained master, the copy the build generates, and the copy in the test install. A difference between two copies could not show who made it. A fix made during testing, a master fix that never reached the game, and the build's own output all looked the same. A fourth file was added: a snapshot of each copy that goes into the game. Each difference is now compared with that snapshot to show who made it, and shown on the real files before anything is written. Each change is accepted one row at a time. The first round was applied and confirmed in game today. The master is now written in the exact form the release uses, so the release copies it unchanged. About 120 items moved to their own sets in alpha92 through this file.</p>
+          <h3>The SyncMap reviewed</h3>
+          <p>The SyncMap is the file that tells the game which model each item uses. Its three copies had come to differ: the hand-maintained master, the copy the build generates, and the copy in the test install. The differences were reviewed one row at a time, and the first round was confirmed in game today. The release now uses the master unchanged. About 120 items moved to their own sets in alpha92 through this file.</p>
         </div>
         <div class="milestone">
           <div class="date">2026-10-18</div>
           <h3>DarkMalachite, Vella's armor, and the icons</h3>
-          <p>Vella's armor in OOO is built on glass records. Its six Blue Glass pieces now point at the Blue Glass set, and four more pieces form a new set, DarkMalachite. DarkMalachite uses the Blackened Glass textures on the vanilla Glass material. It needed a fourth mesh, because one of its greaves records borrowed a boots model. A new warning compares, for each record, the piece named in its ID, in its model, and in the SyncMap. It found more greaves records in the Drakefired and Blood Leather sets that were authored on a boots or gauntlets piece. Twelve greaves records now use a greaves model. The warning does not stop the build. The Gray Fox bracers and the Obsidian bow also received their own inventory icons. Each change was confirmed in game today, and alpha92 was released the same evening.</p>
+          <p>Vella's armor in OOO is built on glass records. Its six Blue Glass pieces now point at the Blue Glass set, and four more pieces form a new set, DarkMalachite. DarkMalachite uses the Blackened Glass textures on the vanilla Glass material. It needed a fourth mesh, because one of its greaves records borrowed a boots model. A comparison of each record's ID, model, and SyncMap entry found more greaves records in the Drakefired and Blood Leather sets that used a boots or gauntlets model. Twelve greaves records now use a greaves model. The Gray Fox bracers and the Obsidian bow also received their own inventory icons. Each change was confirmed in game today, and alpha92 was released the same evening.</p>
           <div class="devlog-renders"><a href="images/refs/OBR-OOO-item-DarkMalachite-Armor_M-waterfront.png" target="_blank" rel="noopener"><img src="images/refs/OBR-OOO-item-DarkMalachite-Armor_M-waterfront.png" alt="DarkMalachite armor, in-game screenshot"></a></div>
           <div class="devlog-thumbs"><a href="images/item-tracker-assets/DarkMalachite_Cuirass.png" target="_blank" rel="noopener"><img src="images/item-tracker-assets/DarkMalachite_Cuirass.png" alt="darkmalachite cuirass icon"></a><a href="images/item-tracker-assets/DarkMalachite_Greaves.png" target="_blank" rel="noopener"><img src="images/item-tracker-assets/DarkMalachite_Greaves.png" alt="darkmalachite greaves icon"></a><a href="images/item-tracker-assets/DarkMalachite_Boots.png" target="_blank" rel="noopener"><img src="images/item-tracker-assets/DarkMalachite_Boots.png" alt="darkmalachite boots icon"></a><a href="images/item-tracker-assets/DarkMalachite_Gauntlets.png" target="_blank" rel="noopener"><img src="images/item-tracker-assets/DarkMalachite_Gauntlets.png" alt="darkmalachite gauntlets icon"></a></div>
         </div>
@@ -421,7 +421,7 @@
         </a>
         <a class="arc-card" href="#a91-icons">
           <h4>Icons and ground meshes</h4>
-          <p>Recoloring inventory icons in their compressed format, and wiring up recolored drop/preview meshes, each introduced a specific bug — a glow halo that took on color, and a packing error that produced invalid icon dimensions. Both were diagnosed and added to the build's quality gates.</p>
+          <p>Recoloring inventory icons in their compressed format, and wiring up recolored drop/preview meshes, each introduced a specific bug — a glow halo that took on color, and a packing error that produced invalid icon dimensions. Both were fixed.</p>
           <span class="jump">Jump to the story ↓</span>
         </a>
         <a class="arc-card" href="#a91-recolor">
@@ -469,7 +469,7 @@
         <div class="milestone">
           <div class="date">2026-05-15</div>
           <h3>Arondar and Narind validated</h3>
-          <p>Arondar (three zones) and Narind (two zones) passed full in-game validation as part of the "unify" retest campaign, which walks each dungeon end-to-end to confirm flicker, ghost suppression, and chest placement. Narind also recovered a batch of ghost-suppression entries that had been dropped months earlier under an unrelated change; rather than re-adding them by hand, the suppression tool gained rules that regenerate them. This is where the two suppression problems are distinguished. TES4-REFR suppression removes OOO's redundant copy of geometry the remaster already bakes in. The Begone tool does the reverse: it removes a UE5-baked object — a stray door, torch, or cobweb — that has no counterpart in the OOO layout. The goal in both cases is one object per location; the difference is which layer holds the unwanted copy.</p>
+          <p>Arondar (three zones) and Narind (two zones) passed full in-game validation as part of the "unify" retest campaign, which walks each dungeon end-to-end to confirm flicker, ghost suppression, and chest placement. Narind also recovered a batch of ghost-suppression entries that had been dropped months earlier under an unrelated change; rather than re-adding them by hand, the suppression tool gained rules that regenerate them. TES4-REFR suppression removes OOO's redundant copy of geometry the remaster already bakes in. The Begone tool does the reverse: it removes a UE5-baked object — a stray door, torch, or cobweb — that has no counterpart in the OOO layout. The goal in both cases is one object per location; the difference is which layer holds the unwanted copy.</p>
         </div>
         <div class="milestone">
           <div class="date">2026-05-16</div>
@@ -489,7 +489,7 @@
         <div class="milestone">
           <div class="date">2026-05-19</div>
           <h3>Rosulas validated</h3>
-          <p>Both Rosulas zones were confirmed. The rule established here: a chest's correct height is measured against the UE5-baked surface beneath it, and the original OOO placement is the best clue to where it belongs.</p>
+          <p>Both Rosulas zones were confirmed. A chest's correct height is measured against the UE5-baked surface beneath it, and the original OOO placement shows where it belongs.</p>
         </div>
         <div class="milestone">
           <div class="date">2026-05-20</div>
@@ -519,7 +519,7 @@
         <div class="milestone">
           <div class="date">2026-05-27</div>
           <h3>Blood Clot Cave, zone 2 complete</h3>
-          <p>Zone 2 needed the water raised into a previously dry upper hall. The surface is gated by a chain of elements where the smallest clips the rest, including an outer tile grid that had not been accounted for. Resolving zone 2 prompted an offline check that flags an incomplete water footprint before the game is launched.</p>
+          <p>Zone 2 needed the water raised into a previously dry upper hall. The surface is limited by a chain of elements, and the smallest one clips the rest. One of them was an outer tile grid that had not been accounted for.</p>
         </div>
         <div class="milestone" id="a91-fire">
           <div class="date">2026-06-01</div>
@@ -531,11 +531,6 @@
           <h3>ElvenNight, the first recolored set</h3>
           <p>ElvenNight was the first set built with the recolor approach. It established that a vanilla texture works on its own if its full structure and exact byte size are preserved: recolor the top image, regenerate the smaller zoom levels, and rename the texture in its folder. It also set the original metal/cloth/leather region recipe used by later sets. The pipeline recolors by scaling a texture's existing light-to-dark variation up or down, never by flattening every pixel to one value, because that variation is what makes a material look like itself.</p>
           <div class="devlog-renders"><a href="new-Items.html#ElvenNight"><img src="images/refs/OBR-OOO-item-ElvenNight-Armor_F-sunlight.png" alt="ElvenNight armor, in-game screenshot"></a></div><div class="devlog-thumbs"><a href="new-Items.html#ElvenNight"><img src="images/item-tracker-assets/ElvenNight_Cuirass.png" alt="ElvenNight cuirass icon"></a></div>
-        </div>
-        <div class="milestone">
-          <div class="date">2026-06-03</div>
-          <h3>Quality gates added to the pipeline</h3>
-          <p>The recolor pipeline gained automated checks: one confirms each generated texture is structurally valid, one confirms a renamed clone did not break an internal reference, and a later one confirms a recolor's region assignment matches the vanilla layout.</p>
         </div>
         <div class="milestone">
           <div class="date">2026-06-04</div>
@@ -563,7 +558,7 @@
         <div class="milestone">
           <div class="date">2026-06-08</div>
           <h3>Aureus front-tabard relief</h3>
-          <p>The skirt emblem was resolved, but the front tabard's tribal engraving remained visible regardless of texture edits. It was traced to the mesh itself — the relief is in the vertex normals and geometry, which a flat texture cannot cancel — so the unicorn emblem was placed over it. The general check that came out of this: determine whether a relief is in the texture or the mesh before attempting to remove it.</p>
+          <p>The skirt emblem was resolved, but the front tabard's tribal engraving remained visible regardless of texture edits. It was traced to the mesh itself — the relief is in the vertex normals and geometry, which a flat texture cannot cancel — so the unicorn emblem was placed over it.</p>
         </div>
         <div class="milestone" id="a91-recolor">
           <div class="date">2026-06-10</div>
@@ -585,7 +580,7 @@
         <div class="milestone">
           <div class="date">2026-06-11</div>
           <h3>WornLeather, and a naming issue</h3>
-          <p>WornLeather's first build showed vanilla in-game. The armor players call "Leather" is built from a "Thief"-codenamed asset chain, while the assets literally named "Leather" are an unused arena set the vanilla game never released, so the first build recolored the wrong chain. The fix traced the full display chain from item to blueprint to mesh to material to texture and retargeted onto the correct body. A tuning note also came out of this: in-game lighting is brighter than the flat preview, so previews should be biased darker. Built and verified today.</p>
+          <p>WornLeather's first build showed vanilla in-game. The armor players call "Leather" is built from a "Thief"-codenamed asset chain, while the assets literally named "Leather" are an unused arena set the vanilla game never released, so the first build recolored the wrong chain. The fix traced the full display chain from item to blueprint to mesh to material to texture and retargeted onto the correct body. Built and verified today.</p>
           <div class="devlog-renders"><a href="new-Items.html#WornLeather"><img src="images/refs/OBR-OOO-item-WornLeather-Armor_F-v3-front.png" alt="WornLeather armor, in-game screenshot"></a></div><div class="devlog-thumbs"><figure class="wrong"><a href="new-Items.html#WornLeather"><img src="images/item-tracker-assets/WornLeather_Cuirass.png" alt="WornLeather inventory icon currently showing vanilla Pit Armor (wrong source)"></a><figcaption>Wrong icon: this is vanilla Pit Armor, not the Thief-based WornLeather recolor &mdash; a live example of the naming issue described above. To be fixed in alpha92.</figcaption></figure></div>
         </div>
         <div class="milestone">
@@ -597,7 +592,7 @@
         <div class="milestone" id="a91-armor">
           <div class="date">2026-06-12</div>
           <h3>Fourteen sets complete; glass rename</h3>
-          <p>The final pass renamed the two oldest sets from their codenames to their in-game names: BGlass to BlueGlass, RGlass to Drakefired. Drakefired also received new red icons, since its previous ones were copied from the blue set. The rename showed a process issue: builds passed while the override file binding items to asset paths still pointed at the old names, so "done" means checking the full deploy set, not only the build. With these two re-released, all fourteen sets are complete: ArcticFur, Aureus, BloodLeather, BlueGlass, Drakefired, Eboron, ElvenEldar, ElvenNight, ElvenSky, GoldenBronze, GrayFox, ShadowMail, WornFur, and WornLeather.</p>
+          <p>The final pass renamed the two oldest sets from their codenames to their in-game names: BGlass to BlueGlass, RGlass to Drakefired. Drakefired also received new red icons, since its previous ones were copied from the blue set. The override file that binds items to asset paths was also updated to the new names. With these two re-released, all fourteen sets are complete: ArcticFur, Aureus, BloodLeather, BlueGlass, Drakefired, Eboron, ElvenEldar, ElvenNight, ElvenSky, GoldenBronze, GrayFox, ShadowMail, WornFur, and WornLeather.</p>
           <div class="devlog-renders"><a href="new-Items.html#BlueGlass"><img src="images/refs/OBR-OOO-item-BlueGlass-Armor_F-v1-shadows.png" alt="BlueGlass armor, in-game screenshot"></a><a href="new-Items.html#Drakefired"><img src="images/refs/OBR-OOO-item-Drakefired-Armor_F-v1-shadows.png" alt="Drakefired armor, in-game screenshot"></a></div><div class="devlog-thumbs"><a href="new-Items.html#BlueGlass"><img src="images/item-tracker-assets/BlueGlass_Cuirass.png" alt="BlueGlass cuirass icon"></a><a href="new-Items.html#Drakefired"><img src="images/item-tracker-assets/Drakefired_Cuirass.png" alt="Drakefired cuirass icon"></a></div>
         </div>
         <div class="milestone">
@@ -608,7 +603,7 @@
         <div class="milestone" id="a91-icons">
           <div class="date">2026-06-13</div>
           <h3>Icon packing bug and ground-mesh crash</h3>
-          <p>The next session opened with a crash to desktop when the inventory was opened, and many icons rendering as blank or broken. Because the test character carried every item at once, the trigger was unclear, and effort first went to comparing the preview meshes. A reduced save with a single set, run through the game's own texture parser, showed the cause: the icons still declared the right format but their stored width and height were invalid, so the game could not build the images. The previous day's transparency edit had corrupted the repacking bookkeeping, but only for icons storing multiple zoom levels, which is why the one single-level icon stayed fine. The correction was to recolor icon color only and leave the glow channel untouched, and to add a quality gate that runs the parser over every output icon and fails the build on an invalid size. A separate ground-mesh drop crash was isolated the same day by bisection, and two minor regressions — a fur set reverted to brown and a truncated package — were fixed. All confirmed in-game.</p>
+          <p>The next session opened with a crash to desktop when the inventory was opened, and many icons rendering as blank or broken. A reduced save with a single set, run through the game's own texture parser, showed the cause: the icons still declared the right format but their stored width and height were invalid, so the game could not build the images. The previous day's transparency edit had corrupted the repacking bookkeeping, but only for icons storing multiple zoom levels, which is why the one single-level icon stayed fine. The fix recolors only the icon color and leaves the glow channel untouched. A separate crash when dropping an item was found and fixed the same day, and two minor regressions — a fur set reverted to brown and a truncated package — were fixed. All confirmed in-game.</p>
         </div>
       </div>
     </section>
