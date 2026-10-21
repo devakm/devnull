@@ -62,6 +62,12 @@ emits none of it:
   note paragraph AFTER the Durable Iron card; the Gargoyle crop (`OBR-OOO-creature-AncientGargoyle2-crop.png`)
   linking to the full-width shot; each `_DE` icon in the Deluxe Edition path cell, not stacked in the Icon column;
   "screenshot" (never "render") on placeholders. Not counted in "36 sets · 215 items".
+- Devlog cross-links (2026-10-21): each set card has a `<p class="xlinks">Devlog: …</p>` line after its credit, and
+  each devlog milestone about a set ends with `<p class="xlinks">New Items card(s): …</p>`. The tracker emits
+  neither, so re-apply the card lines on re-sync. New milestones about a set get both links.
+- Icons: devnull took ItemClone's new Ancestral / Worn / Unfinished Ancestral icons (2026-10-21). Not taken:
+  `AncientHarbinger_Greaves.png` (ItemClone `13a9fe7` greaves icon depends on an `OOO_IconConsistencyFix.esp`
+  change not yet released or checked in game); the six steel cuirass icons (devnull keeps its 106x105 crops).
 - "215 items" is right for the page: the tracker counts 223, and the page drops the 8 Light of Dawn
   FlameTest/NoFlame rows.
 - Keep devnull's cropped copies of the six steel cuirass icons (106×105); ItemClone's still carry the

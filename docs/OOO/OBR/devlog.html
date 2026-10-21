@@ -67,6 +67,8 @@
     figure.shot { margin: 14px 0; }
     figure.shot img { max-width: 100%; border: 1px solid var(--border-color); border-radius: 6px; }
     figure.shot figcaption { color: var(--text-secondary); font-size: 0.88em; margin-top: 6px; }
+  
+    .xlinks { margin: 6px 0 14px; font-size: 0.88em; color: var(--text-secondary); }
   </style>
 </head>
 
@@ -162,22 +164,25 @@
         </a>
       </div>
       <div class="devlog-timeline">
-        <div class="milestone">
+        <div class="milestone" id="dl-2026-06-14">
           <div class="date">2026-06-14</div>
           <h3>Dragonborne scoped and built through clone</h3>
           <p>Dragonborne is a five-piece dark recolor of the Kvatch Town Guard armor with no helmet: a near-black quilted tunic, cool-toned steel, and dark-brown leather, with the Kvatch wolf emblem to be replaced by a dragon insignia. A survey of its assets showed that the cuirass would be the hard piece: its body mesh and cloth-simulation assets come from one vanilla folder while its material, textures, and ground mesh come from another, with inconsistent casing between them. The set was cloned and built end-to-end today, rendering as a dark Townguard set with the wolf emblem still in place.</p>
           <div class="devlog-renders"><a href="images/refs/OBR-OOO-item-Dragonborne-Armor_F-v44-shadows.png" target="_blank" rel="noopener"><img src="images/refs/OBR-OOO-item-Dragonborne-Armor_F-v44-shadows.png" alt="Dragonborne armor, in-game screenshot"></a></div>
           <div class="devlog-thumbs"><a href="images/item-tracker-assets/Dragonborne_Cuirass.png" target="_blank" rel="noopener"><img src="images/item-tracker-assets/Dragonborne_Cuirass.png" alt="Dragonborne cuirass icon"></a></div>
+          <p class="xlinks">New Items card: <a href="new-Items.html#Dragonborne">Dragonborne</a></p>
         </div>
         <div class="milestone" id="a92-emblem">
           <div class="date">2026-06-16</div>
           <h3>The Dragonborne emblem: four days on the wrong layer</h3>
           <p>Replacing the wolf with a dragon spanned 06-14 to 06-18. On the cuirass the dragon is a flat painted decal; on the shield it is an embossed metal relief. The first obstacle was a notch where the cuirass emblem's frame met its picture: the frame's bottom verts were sampling the wrong texels of the disc, which was fixed by fitting the frame's mapping only from the clean rim ring. The larger problem came next. The old wolf kept showing, and was first thought to be baked into the mesh, but clearing the mesh changed nothing in game. The real cause was that the export tool drops a packed texture's color channels wherever its metallic channel reads zero, which is the entire cloth region, so the emblem only looked absent. The wolf was actually in the cloth's normal map; flattening it there, then adding back clean weave grain, removed it. This was confirmed in-game.</p>
+          <p class="xlinks">New Items card: <a href="new-Items.html#Dragonborne">Dragonborne</a></p>
         </div>
-        <div class="milestone">
+        <div class="milestone" id="dl-2026-06-18">
           <div class="date">2026-06-18</div>
           <h3>Dragonborne cuirass trim and shield rivets</h3>
           <p>Two finishing issues completed the cuirass. The skirt and strap leather looked plain brown rather than the set's oxblood, because the tunic's cloth mask suppressed the path that gave the other pieces their red; a cuirass-specific recipe restored it. On the body pieces the warm recesses of the chainmail were being painted red as if they were cloth, fixed by limiting the cloth recoloring to non-metallic pixels so the chainmail keeps its steel color. The shield's rivets had been made too large by an unneeded mask expansion, which was removed. A thin trim around the tunic panels reading three different colors was noted as a remaining polish item.</p>
+          <p class="xlinks">New Items card: <a href="new-Items.html#Dragonborne">Dragonborne</a></p>
         </div>
         <div class="milestone" id="a92-draconis">
           <div class="date">2026-06-19</div>
@@ -185,35 +190,41 @@
           <p>Draconis is a two-piece Kvatch derivative — a cuirass and shield carrying twin red griffins in place of the wolf. It needed an approach the earlier global recolors could not provide, since the vanilla armor was to be preserved and only specific patches changed. Three mechanisms were built for this: passing the vanilla diffuse through untouched and editing only named regions; giving a region its own surface recipe so the shoulder plates and shield boss could be changed to metal while the rest stayed vanilla; and subtracting one region from another, used to keep the painted griffin out of the metal boss. The set was built and confirmed in-game the next day, which exposed the bugs handled below.</p>
           <div class="devlog-renders"><a href="images/refs/OBR-OOO-item-Draconis-Armor_F-v6-sunlight.png" target="_blank" rel="noopener"><img src="images/refs/OBR-OOO-item-Draconis-Armor_F-v6-sunlight.png" alt="Draconis armor, in-game screenshot"></a></div>
           <div class="devlog-thumbs"><a href="images/item-tracker-assets/Draconis_Cuirass.png" target="_blank" rel="noopener"><img src="images/item-tracker-assets/Draconis_Cuirass.png" alt="Draconis cuirass icon"></a></div>
+          <p class="xlinks">New Items card: <a href="new-Items.html#Draconis">Draconis Family</a></p>
         </div>
-        <div class="milestone">
+        <div class="milestone" id="dl-2026-06-20">
           <div class="date">2026-06-20</div>
           <h3>Draconis steel and the baked master tint</h3>
           <p>The converted plate regions rendered shiny brown on the cuirass and shiny black on the shield rather than steel, because on a metallic surface the base color tints the reflection, and the recipe had been derived from the dark leather beneath. Neutralizing to true steel — bright on the shield, darker gunmetal on the cuirass — addressed the shield, but the cuirass plates stayed near-black no matter the texture. The cause was not in the texture at all: the cuirass material inherited a shared parent that bakes in a strong blue tint at full strength, which darkens any neutral or dark base to near-black. Repointing the cuirass to a plain untinted parent made the steel render correctly. The clue was an overlay showing that the visible plate faces used the edited texture for only about five percent of their area, so the problem was in the material, not the texture. With both pieces corrected, Draconis was confirmed in-game and called done.</p>
+          <p class="xlinks">New Items card: <a href="new-Items.html#Draconis">Draconis Family</a></p>
         </div>
-        <div class="milestone">
+        <div class="milestone" id="dl-2026-06-20-2">
           <div class="date">2026-06-20</div>
           <h3>The Daedric base and Dread</h3>
           <p>The Daedric family is four sets cloned from one shared Daedric body, so a fix to the shared cuirass propagates to every variant. Reconnaissance found the Daedric diffuse textures use a format whose alpha channel the material depends on, not the simpler format the plan assumed, and corrected a decoder that had been misreading them. Dread, the first set, is a dark green-steel plate with a blue gem. Its first build still showed vanilla red in-game on the trim, because part of the red is stored in the material's color parameters rather than the visible texture; a tool that rotates those parameters to the target hue resolved it. The skirt's dark-red cloth hem was too unsaturated for the automatic mask to catch and was handled with a hand-painted region.</p>
           <div class="devlog-renders"><a href="images/refs/OBR-OOO-item-Dread-Armor_M-v9-shadows.png" target="_blank" rel="noopener"><img src="images/refs/OBR-OOO-item-Dread-Armor_M-v9-shadows.png" alt="Dread armor, in-game screenshot"></a></div>
           <div class="devlog-thumbs"><a href="images/item-tracker-assets/Dread_Cuirass.png" target="_blank" rel="noopener"><img src="images/item-tracker-assets/Dread_Cuirass.png" alt="Dread cuirass icon"></a></div>
+          <p class="xlinks">New Items card: <a href="new-Items.html#Dread">Dread</a></p>
         </div>
-        <div class="milestone">
+        <div class="milestone" id="dl-2026-06-22">
           <div class="date">2026-06-22</div>
           <h3>Dread metal and skirt panels</h3>
           <p>The green metal recolor had flattened the texture's brightness range so the mesh relief was no longer visible; a value-preserving recolor following a supplied olive swatch restored it. The same diagnosis confirmed and fixed the texture-format decoder bug. The side skirt panels — fragmented into many small separately-mapped scales — were left showing vanilla brown, which fed into the later shared side-panel work. Dread carries a small hand-edited diffuse to clean up the remaining green at the edges.</p>
+          <p class="xlinks">New Items card: <a href="new-Items.html#Dread">Dread</a></p>
         </div>
-        <div class="milestone">
+        <div class="milestone" id="dl-2026-06-23">
           <div class="date">2026-06-23</div>
           <h3>DaedricPrince: lava, and where the glow comes from</h3>
           <p>DaedricPrince is a six-piece lava set, including a shield: tarnished bronze-gold metal that glows with red lava, indigo chainmail, and a gem rendered as a radial flame burst. Two techniques were built for it — a value-dependent hue ramp that reads each pixel's brightness so dark areas stay deep red while highlights shift to orange, and a radial fill that brightens the gem at its center and darkens it to the rim. The first build rotated the glow's color parameters toward orange, which removed the strong red on every piece except the cuirass. The cuirass kept its red because its glow comes from a detailed texture alpha mask, not the parameters; the shield, having no such mask, went dull. The fix set the glow parameters back to pure red and left the orange tones to the diffuse texture.</p>
           <div class="devlog-renders"><a href="images/refs/OBR-OOO-item-DaedricPrince-Armor_F-v7-shadows.png" target="_blank" rel="noopener"><img src="images/refs/OBR-OOO-item-DaedricPrince-Armor_F-v7-shadows.png" alt="DaedricPrince armor, in-game screenshot"></a></div>
           <div class="devlog-thumbs"><a href="images/item-tracker-assets/DaedricPrince_Cuirass.png" target="_blank" rel="noopener"><img src="images/item-tracker-assets/DaedricPrince_Cuirass.png" alt="DaedricPrince cuirass icon"></a></div>
+          <p class="xlinks">New Items card: <a href="new-Items.html#DaedricPrince">Daedric Prince</a></p>
         </div>
         <div class="milestone" id="a92-daedric">
           <div class="date">2026-06-24</div>
           <h3>Daedric eyes glow and the belly-gem seam</h3>
           <p>Two problems shared across the family were resolved today. The demon-face eyes on the shared cuirass did not glow while the surrounding face did: the glow is driven not by the visible color or the material parameters but by the diffuse texture's alpha channel, which the master material routes as a per-region glow mask, and the vanilla eyes carried that alpha at zero. A reusable alpha patch applies a hand-made mask that turns on the eye glow without changing the eye color. Separately, the navel gem split dark-on-one-side viewed head-on but looked fine at an angle; because the artifact was view-dependent the cause was geometry, not paint. The gem is a coarse bump whose two half-domes catch light unevenly, exaggerated by the bright radial coloring. Flattening the surface normals across the gem so its faces point one way removed the split. With these, Dread and DaedricPrince were confirmed in-game and called done.</p>
+          <p class="xlinks">New Items cards: <a href="new-Items.html#Dread">Dread</a>, <a href="new-Items.html#DaedricPrince">Daedric Prince</a></p>
         </div>
         <div class="milestone" id="a92-pipeline">
           <div class="date">2026-06-25</div>
@@ -221,11 +232,13 @@
           <p>The last two Daedric variants were built today: ImagoStorm in bright neutral steel with gold accents, DremoraElite the same bright steel with a darker dark-red accent and a shield. Building them extended the pipeline. A masked partial override composites only the front and back skirt panels from a hand-painted texture while holding the side panels and everything else from the normal recolor; a separate uniform fill colors the side panels while preserving their original brightness and grain. ImagoStorm's plate first came out green-yellow from a hue-scale units error and was corrected to neutral grey, and a saturation clamp that was flattening vanilla's soft accent fades was dropped. DremoraElite rendered completely invisible in-game — the build was sound, but only its materials package had been copied into the mods folder and not the matching items package that holds the asset paths, so the pieces loaded with nothing to render. Copying the items package fixed it.</p>
           <div class="devlog-renders"><a href="images/refs/OBR-OOO-item-ImagoStorm-Armor_M-v3-shadows.png" target="_blank" rel="noopener"><img src="images/refs/OBR-OOO-item-ImagoStorm-Armor_M-v3-shadows.png" alt="ImagoStorm armor, in-game screenshot"></a><a href="images/refs/OBR-OOO-item-DremoraElite-Armor_M-v3-shadows.png" target="_blank" rel="noopener"><img src="images/refs/OBR-OOO-item-DremoraElite-Armor_M-v3-shadows.png" alt="DremoraElite armor, in-game screenshot"></a></div>
           <div class="devlog-thumbs"><a href="images/item-tracker-assets/ImagoStorm_Cuirass.png" target="_blank" rel="noopener"><img src="images/item-tracker-assets/ImagoStorm_Cuirass.png" alt="ImagoStorm cuirass icon"></a><a href="images/item-tracker-assets/DremoraElite_Cuirass.png" target="_blank" rel="noopener"><img src="images/item-tracker-assets/DremoraElite_Cuirass.png" alt="DremoraElite cuirass icon"></a></div>
+          <p class="xlinks">New Items cards: <a href="new-Items.html#ImagoStorm">Imago Storm&#x27;s Armor</a>, <a href="new-Items.html#DremoraElite">Dremora Elite</a></p>
         </div>
-        <div class="milestone">
+        <div class="milestone" id="dl-2026-06-26">
           <div class="date">2026-06-26</div>
           <h3>Daedric icons: preserving the aura</h3>
           <p>The vanilla inventory icons carry a bright cream halo around each item, which the recolor had been repainting along with the item. The recipe was changed to recolor only the icon's solid core and leave the bright aura vanilla, which required several adjustments working together: a mode that recolors only the item silhouette, a brightness ceiling so the brightest aura pixels stay vanilla, a saturation-minimum tweak, and a corrected hue-scale value. All four Daedric sets were rebuilt with the corrected icons.</p>
+          <p class="xlinks">New Items cards: <a href="new-Items.html#DaedricPrince">Daedric Prince</a>, <a href="new-Items.html#Dread">Dread</a>, <a href="new-Items.html#ImagoStorm">Imago Storm&#x27;s Armor</a>, <a href="new-Items.html#DremoraElite">Dremora Elite</a></p>
         </div>
         <div class="milestone" id="a92-gates">
           <div class="date">2026-06-27</div>
@@ -238,25 +251,29 @@
           <p>The Steel tier is six sets built from a single source: every one is cloned from the vanilla Steel armor, with each set's items repointed onto its own steel-based copy. The first is WornSteel, a scratched and tarnished version of the base steel across six pieces including a shield. Building it started with a reusable wear-and-scratch capability, described below, and its first in-game test started several rounds of tuning how heavy and how fine the wear should look.</p>
           <div class="devlog-renders"><a href="images/refs/OBR-OOO-item-WornSteel-Armor_M-v13-shadows.png" target="_blank" rel="noopener"><img src="images/refs/OBR-OOO-item-WornSteel-Armor_M-v13-shadows.png" alt="WornSteel armor, in-game screenshot"></a></div>
           <div class="devlog-thumbs"><a href="images/item-tracker-assets/WornSteel_Cuirass.png" target="_blank" rel="noopener"><img src="images/item-tracker-assets/WornSteel_Cuirass.png" alt="WornSteel cuirass icon"></a></div>
+          <p class="xlinks">New Items card: <a href="new-Items.html#WornSteel">Worn Steel</a></p>
         </div>
         <div class="milestone" id="a92-wear">
           <div class="date">2026-06-28</div>
           <h3>Wear and scratches: depth in the normal map, not the paint</h3>
           <p>The wear capability built for WornSteel is material-agnostic and reusable across sets. Its central lesson came from an in-game test: the vanilla steel art already carries dents, and synthesizing more produced low-resolution blocky squares, because the compressed texture format quantizes small high-contrast marks badly. The correction was to stop painting dents, keep the vanilla ones, and to carry the added scratches as depth in the surface normal map rather than as bright bare metal in the color, keeping the color change modest. Four separate bugs in re-encoding that normal map, each producing its own compression artifact, were found and fixed, and scratch size was normalized across pieces so a scratch is the same physical size everywhere despite the pieces differing several-fold in texture density. WornSteel was confirmed in-game.</p>
+          <p class="xlinks">New Items card: <a href="new-Items.html#WornSteel">Worn Steel</a></p>
         </div>
-        <div class="milestone">
+        <div class="milestone" id="dl-2026-06-28">
           <div class="date">2026-06-28</div>
           <h3>UnfinishedSteel and UnfinishedWornSteel: removing the gold trim with the metallic channel</h3>
           <p>Two cuirass-only sets strip the vanilla steel's gold trim: UnfinishedSteel looks like clean ungilded steel, UnfinishedWornSteel like a tarnished version of the same. Both depend on a mask that selects the gold trim, and the first version failed on the trim's dark, shadowed edges. The mask had used brightness to exclude the brown leather, but the dark gold edges and the leather are both warm and dark, so no brightness threshold could separate them: a stricter threshold missed the edges, and a looser one included the leather. What works is an independent measure: the surface's metallic channel, since gold is metal and leather is not. Using that channel, and removing a cleanup step that had been shrinking the thin edges, brought the trim mask to full coverage. Both sets share the fixed mask, and both were confirmed in-game.</p>
           <div class="devlog-renders"><a href="images/refs/OBR-OOO-item-UnfinishedSteel-Armor_M-v16-front.png" target="_blank" rel="noopener"><img src="images/refs/OBR-OOO-item-UnfinishedSteel-Armor_M-v16-front.png" alt="UnfinishedSteel armor, in-game screenshot"></a><a href="images/refs/OBR-OOO-item-UnfinishedWornSteel-Armor_M-v3-front.png" target="_blank" rel="noopener"><img src="images/refs/OBR-OOO-item-UnfinishedWornSteel-Armor_M-v3-front.png" alt="UnfinishedWornSteel armor, in-game screenshot"></a></div>
           <div class="devlog-thumbs"><a href="images/item-tracker-assets/UnfinishedSteel_Cuirass.png" target="_blank" rel="noopener"><img src="images/item-tracker-assets/UnfinishedSteel_Cuirass.png" alt="UnfinishedSteel cuirass icon"></a><a href="images/item-tracker-assets/UnfinishedWornSteel_Cuirass.png" target="_blank" rel="noopener"><img src="images/item-tracker-assets/UnfinishedWornSteel_Cuirass.png" alt="UnfinishedWornSteel cuirass icon"></a></div>
+          <p class="xlinks">New Items cards: <a href="new-Items.html#UnfinishedSteel">Unfinished Steel</a>, <a href="new-Items.html#UnfinishedWornSteel">Unfinished Worn Steel</a></p>
         </div>
-        <div class="milestone">
+        <div class="milestone" id="dl-2026-06-29">
           <div class="date">2026-06-29</div>
           <h3>DurableSteel and a whole-diffuse recolor</h3>
           <p>DurableSteel is a darker, richer version of the base steel across all six pieces, including a shield. It introduced a whole-diffuse recolor pass — a single hue, saturation, and lightness adjustment applied to the entire texture at once, the same operation a photo editor's Hue/Saturation control performs — used here to deepen the steel in one step before any region work. The first build came out too dark, and the lightness was raised. The set was confirmed in-game.</p>
           <div class="devlog-renders"><a href="images/refs/OBR-OOO-item-DurableSteel-Armor_M-v2-front.png" target="_blank" rel="noopener"><img src="images/refs/OBR-OOO-item-DurableSteel-Armor_M-v2-front.png" alt="DurableSteel armor, in-game screenshot"></a></div>
           <div class="devlog-thumbs"><a href="images/item-tracker-assets/DurableSteel_Cuirass.png" target="_blank" rel="noopener"><img src="images/item-tracker-assets/DurableSteel_Cuirass.png" alt="DurableSteel cuirass icon"></a></div>
+          <p class="xlinks">New Items card: <a href="new-Items.html#DurableSteel">Durable Steel</a></p>
         </div>
         <div class="milestone" id="a92-masks">
           <div class="date">2026-06-30</div>
@@ -264,65 +281,76 @@
           <p>BladesElite is a five-piece set with no shield: matte-black plate, dark-gold trim, and a red skirt. Its main problem was separating the cloth skirt and leather straps from the metal so each could be recolored on its own. A color-based mask kept failing on the grimy, rusted pieces, where rust on metal is warm and unsaturated exactly like leather, so a color rule could not tell them apart — and a good score on one clean piece hid the failure on the dirty ones. The method that works classifies the mesh's faces rather than the texture's pixels: each face is assigned to cloth, leather, or metal by the majority of its own pixels, with the metal faces dropped by the same metallic signal used elsewhere. Because faces are classified as whole units, scattered grime specks no longer flip the result, and this per-face approach became the pipeline's preferred way to author region masks. With the masks resolved, BladesElite was tuned and confirmed in-game.</p>
           <div class="devlog-renders"><a href="images/refs/OBR-OOO-item-BladesElite-Armor_M-v5-shadows.png" target="_blank" rel="noopener"><img src="images/refs/OBR-OOO-item-BladesElite-Armor_M-v5-shadows.png" alt="BladesElite armor, in-game screenshot"></a></div>
           <div class="devlog-thumbs"><a href="images/item-tracker-assets/BladesElite_Cuirass.png" target="_blank" rel="noopener"><img src="images/item-tracker-assets/BladesElite_Cuirass.png" alt="BladesElite cuirass icon"></a></div>
+          <p class="xlinks">New Items card: <a href="new-Items.html#BladesElite">Blades Elite</a></p>
         </div>
-        <div class="milestone">
+        <div class="milestone" id="dl-2026-07-01">
           <div class="date">2026-07-01</div>
           <h3>TheBear completes the Steel tier; the first lightened set</h3>
           <p>TheBear — the sixth and last Steel set, six pieces including a shield — is an ivory set: near-white cream plate, a vivid scarlet cloth skirt and shield emblem, natural brown leather, gold trim on every piece, and silver chainmail. It is the first set to lighten its base rather than darken it, which the whole-diffuse pass could not do without flattening the metal's light-to-dark structure and tinting it pink; a spread-preserving lighten was built that remaps the vanilla brightness onto a brighter range while keeping that structure, with a warm tint so the white looks ivory rather than blue-grey. The per-face masks carried over from BladesElite unchanged, and because the cloth is red and the leather is brown color alone separated them. An in-game test approved TheBear's ivory look and completed all six Steel sets; its fine gold hardware then needed several more days to keep its color under the lightening, covered below.</p>
           <div class="devlog-renders"><a href="images/refs/OBR-OOO-item-TheBear-Armor_M-v18-shadows.png" target="_blank" rel="noopener"><img src="images/refs/OBR-OOO-item-TheBear-Armor_M-v18-shadows.png" alt="TheBear armor, in-game screenshot"></a></div>
           <div class="devlog-thumbs"><a href="images/item-tracker-assets/TheBear_Cuirass.png" target="_blank" rel="noopener"><img src="images/item-tracker-assets/TheBear_Cuirass.png" alt="TheBear cuirass icon"></a></div>
+          <p class="xlinks">New Items card: <a href="new-Items.html#TheBear">The Bear&#x27;s Armor</a></p>
         </div>
-        <div class="milestone">
+        <div class="milestone" id="dl-2026-07-01-2">
           <div class="date">2026-07-01</div>
           <h3>TheBear's shield and helmet meshes</h3>
           <p>The mesh reader used for the approval previews misread TheBear's shield and helmet: the shield's index data used a wider number format than expected, and the helmet's header was at an unexpected offset. Both were fixed, and the build now stops when a decoded mesh has impossible edge lengths.</p>
+          <p class="xlinks">New Items card: <a href="new-Items.html#TheBear">The Bear&#x27;s Armor</a></p>
         </div>
         <div class="milestone" id="a92-objects">
           <div class="date">2026-07-04</div>
           <h3>The Bear's gold hardware</h3>
           <p>Whitening the whole plate to ivory turned the small gold hardware nearly white: the rivets, flower buttons, buckles, and belt studs. The lighten changes the entire texture, so any gold object the region mask did not cover became ivory, and mask fixes made one object at a time kept missing others. The method was changed. Every hardware object on each piece was listed, and the listed objects keep their vanilla pixels while the rest of the plate is lightened. Grime that only looks gold is still lightened. TheBear was confirmed in-game with its gold hardware correct on every piece.</p>
+          <p class="xlinks">New Items card: <a href="new-Items.html#TheBear">The Bear&#x27;s Armor</a></p>
         </div>
         <div class="milestone" id="a92-amelion">
           <div class="date">2026-07-04</div>
           <h3>Noble's base material corrected, and the first build discarded</h3>
           <p>Noble was first built on Steel. The premise came from the item records, which show an ebony binding, and from an earlier set that cloned Steel successfully. It was wrong. Noble is an Amelion set: bright silver plate, indigo trim, and fine silver pattern work. A steel base cannot be adjusted to that look. The whole steel build was discarded, including its configuration, its masks, its packaged output, and the flat icons requested for it. Work restarted on the Amelion body the same day and built the material layer, the glow pipeline, and the first masks against it. The discard is why the set took until late August instead of mid-July.</p>
+          <p class="xlinks">New Items card: <a href="new-Items.html#Noble">Noble</a></p>
         </div>
         <div class="milestone" id="a92-filigree">
           <div class="date">2026-07-13</div>
           <h3>Hard white edges traced to a forced lightening</h3>
           <p>The silver pattern work on the Amelion cuirass kept showing hard white edges, and no mask correction removed them. The cause was in the recolor. One step lightened the anti-aliased boundary of the trim, which forced those boundary pixels toward white whatever sat under them. The replacement separates a pixel's brightness from its color and inverts only the brightness. It applies to the silver strokes alone, and is layered over the rest of the build, which was already correct. The pattern keeps its shape, and its edges keep the color of the plate under them. The forced lightening was removed from the pipeline rather than tuned.</p>
+          <p class="xlinks">New Items card: <a href="new-Items.html#Noble">Noble</a></p>
         </div>
-        <div class="milestone">
+        <div class="milestone" id="dl-2026-07-15">
           <div class="date">2026-07-15</div>
           <h3>The chest plate's central pattern, derived instead of drawn</h3>
           <p>A hand-drawn mask covered the cuirass's central pattern, and its brightness threshold was lopsided. It clipped the shaded right side of the panel, where ambient occlusion darkens the plate. The pattern then looked present on one side and absent on the other. The drawn mask was not adjusted. The pattern's extent is now derived instead. The derivation takes the panel's area on the mesh, thresholds it for the bright low-saturation strokes, isolates the connected components, and subtracts the enclosing frame. The hand-drawn mask is no longer used. The result was confirmed in game. The new tone improved every piece of the set, not only the cuirass.</p>
+          <p class="xlinks">New Items card: <a href="new-Items.html#Noble">Noble</a></p>
         </div>
         <div class="milestone" id="a92-noble">
           <div class="date">2026-07-16</div>
           <h3>Per-object tuning</h3>
           <p>With the pattern solved, the set was tuned one object at a time, starting with the neckguard lining. Each change is a recolor written for one named object and applied only to it, and each was confirmed in game before the next began.</p>
+          <p class="xlinks">New Items card: <a href="new-Items.html#Noble">Noble</a></p>
         </div>
-        <div class="milestone">
+        <div class="milestone" id="dl-2026-07-18">
           <div class="date">2026-07-18</div>
           <h3>The rondel's two masks</h3>
           <p>The rondel's pattern needed two masks working together, one for the pattern's core and one for its shadow, because a single mask could not cover both the stroke and its shading.</p>
+          <p class="xlinks">New Items card: <a href="new-Items.html#Noble">Noble</a></p>
         </div>
-        <div class="milestone">
+        <div class="milestone" id="dl-2026-07-21">
           <div class="date">2026-07-21</div>
           <h3>Gems read from the transparency channel</h3>
           <p>The gems on the helmet and boots could not be recolored the usual way. Their masks are not in the metallic texture that holds every other surface property. They are in the diffuse texture's transparency channel, which the master material uses as a per-gem mask. Reading the masks from that channel let the gem recolor run as a normal final step. The order of those steps was then fixed, so it is the same for every set.</p>
+          <p class="xlinks">New Items card: <a href="new-Items.html#Noble">Noble</a></p>
         </div>
         <div class="milestone">
           <div class="date">2026-08-01</div>
           <h3>A mask that had no effect</h3>
           <p>A hand-painted mask had no effect because it was connected to a surface class that never used it. This was fixed.</p>
         </div>
-        <div class="milestone">
+        <div class="milestone" id="dl-2026-08-23">
           <div class="date">2026-08-23</div>
           <h3>The helmet mask, and three settings that blocked the recolor</h3>
           <p>A hand-painted helmet mask was supplied as the standard for generated masks. Using it showed hard sawtooth cutouts and a blob-shaped hole on one helmet panel. Three mask settings were keeping those pixels out of the plate recolor, so they showed the vanilla color with mask-shaped edges. Removing them reduced the untreated pixels on the helmet from tens of thousands to about a hundred and forty. Noble was confirmed in game and closed for the release, with one cuirass improvement deferred.</p>
           <div class="devlog-renders"><a href="images/refs/OBR-OOO-item-Noble-Armor_M-v52-shadows2.png" target="_blank" rel="noopener"><img src="images/refs/OBR-OOO-item-Noble-Armor_M-v52-shadows2.png" alt="Noble armor, in-game screenshot"></a></div>
           <div class="devlog-thumbs"><a href="images/item-tracker-assets/Noble_Cuirass.png" target="_blank" rel="noopener"><img src="images/item-tracker-assets/Noble_Cuirass.png" alt="noble cuirass icon"></a></div>
+          <p class="xlinks">New Items card: <a href="new-Items.html#Noble">Noble</a></p>
         </div>
         <div class="milestone">
           <div class="date">2026-08-23</div>
@@ -345,57 +373,64 @@
           <p>With the Amelion template, the Ancestral set was set up, built, approved on its look, and tested in game in one session. The set is six pieces. The in-game test found two defects in the grime, which were fixed the next day.</p>
           <div class="devlog-renders"><a href="images/refs/OBR-OOO-item-Ancestral-Armor_M-v13-shadows.png" target="_blank" rel="noopener"><img src="images/refs/OBR-OOO-item-Ancestral-Armor_M-v13-shadows.png" alt="Ancestral armor, in-game screenshot"></a></div>
           <div class="devlog-thumbs"><a href="images/item-tracker-assets/Ancestral_Cuirass.png" target="_blank" rel="noopener"><img src="images/item-tracker-assets/Ancestral_Cuirass.png" alt="ancestral cuirass icon"></a></div>
+          <p class="xlinks">New Items card: <a href="new-Items.html#Ancestral">Ancestral</a></p>
         </div>
-        <div class="milestone">
+        <div class="milestone" id="dl-2026-09-06">
           <div class="date">2026-09-06</div>
           <h3>Separating grime from wear</h3>
           <p>Fixing Ancestral's grime meant separating three effects that had been treated as one. The stains and the scratches sit at different spatial frequencies and are now handled apart. The mottling across the plate proved to be a color-saturation artifact rather than a brightness one. The rondel's base plate, long assumed to be gold, was measured and had never been gold. Five new surface controls were added.</p>
+          <p class="xlinks">New Items card: <a href="new-Items.html#Ancestral">Ancestral</a></p>
         </div>
         <div class="milestone">
           <div class="date">2026-09-07</div>
           <h3>Gloom Way's second zone</h3>
           <p>The second zone's water had to reach across the whole cave. This took a week and seven rebuilds. A complete recipe for the same job, nine components working together, already existed in a cave confirmed in game in May, and the week went to working out a new one before it was found. The stored bounds of a water mesh decide only whether it is drawn, not its shape, because the engine recomputes them on load. The shape comes from the vertices. The zone was confirmed in game against eleven depth probes. Gloom Way Cave is finished. That left Red Gill Cave as the one dungeon without a full cleanup session.</p>
         </div>
-        <div class="milestone">
+        <div class="milestone" id="dl-2026-09-07">
           <div class="date">2026-09-07</div>
           <h3>Worn Ancestral and Unfinished Ancestral</h3>
           <p>Two variants were built from Ancestral and confirmed in game the same day. The worn set is Ancestral at half strength with its grime kept, and it was approved on its first look. The unfinished set removes the glow and tarnishes the trim, which needed a new control. Tarnish is produced by amplifying a region's mid-tones rather than by adding more grime over them. It tapers off in the darks, so no black ring forms at the edge. Ancestral's own final revision, a darker trim and a glow in the gems' own hue, was also confirmed in game that day. That finished the Amelion family for the release.</p>
           <div class="devlog-renders"><a href="images/refs/OBR-OOO-item-AncestralWorn-Armor_M-v1-shadows.png" target="_blank" rel="noopener"><img src="images/refs/OBR-OOO-item-AncestralWorn-Armor_M-v1-shadows.png" alt="WornAncestral armor, in-game screenshot"></a><a href="images/refs/OBR-OOO-item-AncestralUnfinished-Armor_M-v2-front.png" target="_blank" rel="noopener"><img src="images/refs/OBR-OOO-item-AncestralUnfinished-Armor_M-v2-front.png" alt="UnfinishedAncestral armor, in-game screenshot"></a></div>
           <div class="devlog-thumbs"><a href="images/item-tracker-assets/WornAncestral_Cuirass.png" target="_blank" rel="noopener"><img src="images/item-tracker-assets/WornAncestral_Cuirass.png" alt="wornancestral cuirass icon"></a><a href="images/item-tracker-assets/UnfinishedAncestral_Cuirass.png" target="_blank" rel="noopener"><img src="images/item-tracker-assets/UnfinishedAncestral_Cuirass.png" alt="unfinishedancestral cuirass icon"></a></div>
+          <p class="xlinks">New Items cards: <a href="new-Items.html#Ancestral">Ancestral</a>, <a href="new-Items.html#WornAncestral">Worn Ancestral</a>, <a href="new-Items.html#UnfinishedAncestral">Unfinished Ancestral</a></p>
         </div>
         <div class="milestone" id="a92-weapon">
           <div class="date">2026-10-07</div>
           <h3>A weapon, and a mask drawn by hand</h3>
           <p>Light of Dawn started the weapon work. It is one sword in four restoration stages: tainted, an initial restoration stage, an intermediate restoration stage, and fully restored at 300 vampire kills. Its most-restored stage was recolored from a pink copper to a darker red copper and confirmed in game. The flame etching on the blade was harder. Several derived masks failed to separate the etching from the blade around it. The etching mask was then drawn by hand and used as delivered, and the derivation was removed. A set of white specks that remained came from the preview renderer, not from the mask.</p>
+          <p class="xlinks">New Items card: <a href="new-Items.html#LightOfDawn0">Light of Dawn</a></p>
         </div>
-        <div class="milestone">
+        <div class="milestone" id="dl-2026-10-13">
           <div class="date">2026-10-13</div>
           <h3>How a weapon scopes its glow</h3>
           <p>All four stages now run on one shader with a real glow ramp, and that build was confirmed in game. Black spots that moved with the view angle were traced to a parallax depth setting on the blade's layer map. Setting it to zero removed them. A weapon scopes its glow differently from armor. The glow is limited to one material slot, and the fire enchant is limited to the blade by the mesh's vertex color. The vertex mask therefore had to be cut at the blade's start, not only the texture mask. The balance between glow strength and the layer map's dark streaks was still being tuned when the set was merged for the release.</p>
           <div class="devlog-renders"><a href="images/refs/OBR-item-OOO-LightOfDawn-FullyTainted-22-shadows-Ancestral.png" target="_blank" rel="noopener"><img src="images/refs/OBR-item-OOO-LightOfDawn-FullyTainted-22-shadows-Ancestral.png" alt="Light of Dawn, tainted"></a><a href="images/refs/OBR-item-OOO-LightOfDawn-TaintA-22-shadows-Ancestral.png" target="_blank" rel="noopener"><img src="images/refs/OBR-item-OOO-LightOfDawn-TaintA-22-shadows-Ancestral.png" alt="Light of Dawn, initial restoration stage"></a><a href="images/refs/OBR-item-OOO-LightOfDawn-TaintB-22-shadows-Ancestral.png" target="_blank" rel="noopener"><img src="images/refs/OBR-item-OOO-LightOfDawn-TaintB-22-shadows-Ancestral.png" alt="Light of Dawn, intermediate restoration stage"></a><a href="images/refs/OBR-item-OOO-LightOfDawn-FullyRestored-22-shadows-Ancestral.png" target="_blank" rel="noopener"><img src="images/refs/OBR-item-OOO-LightOfDawn-FullyRestored-22-shadows-Ancestral.png" alt="Light of Dawn, fully restored"></a></div>
           <div class="devlog-thumbs"><a href="images/item-tracker-assets/LightOfDawn0_Sword.png" target="_blank" rel="noopener"><img src="images/item-tracker-assets/LightOfDawn0_Sword.png" alt="Light of Dawn, tainted, icon"></a><a href="images/item-tracker-assets/LightOfDawnA_Sword.png" target="_blank" rel="noopener"><img src="images/item-tracker-assets/LightOfDawnA_Sword.png" alt="Light of Dawn, initial restoration stage, icon"></a><a href="images/item-tracker-assets/LightOfDawnB_Sword.png" target="_blank" rel="noopener"><img src="images/item-tracker-assets/LightOfDawnB_Sword.png" alt="Light of Dawn, intermediate restoration stage, icon"></a><a href="images/item-tracker-assets/LightOfDawn_Sword.png" target="_blank" rel="noopener"><img src="images/item-tracker-assets/LightOfDawn_Sword.png" alt="Light of Dawn, fully restored, icon"></a></div>
+          <p class="xlinks">New Items card: <a href="new-Items.html#LightOfDawn0">Light of Dawn</a></p>
         </div>
         <div class="milestone">
           <div class="date">2026-10-15</div>
           <h3>Red Gill Cave, and the last dungeon</h3>
           <p>Red Gill Cave was built in August but did not have a cleanup session until now. Its water surface rises 57 units over the vanilla level. It needed none of the extra water components that Gloom Way's second zone needed, because the vanilla water area already encloses the cave. In game, the water was right, but the cave had no ambient light. One suppression entry removed the prefab that holds the cave's sky light. That entry was added in May with no recorded reason. It was removed, and nothing else changed. The zone was then confirmed in game in all five phases, against twenty-three depth probes. The measured surface was within one unit of its target. Every dungeon in the release is now validated.</p>
         </div>
-        <div class="milestone">
+        <div class="milestone" id="dl-2026-10-15">
           <div class="date">2026-10-15</div>
           <h3>The sword's streaming and blood-effect faults</h3>
           <p>Two faults showed in game. After a save load or a fast travel, the world stopped streaming, because the sword's clone was missing its mesh's bulk data file, which the vanilla source keeps beside the mesh. The blood effect painted the blade flat red, because its material copy was compiled for a different parent material. Both were fixed and confirmed in game.</p>
+          <p class="xlinks">New Items card: <a href="new-Items.html#LightOfDawn0">Light of Dawn</a></p>
         </div>
         <div class="milestone">
           <div class="date">2026-10-17</div>
           <h3>The SyncMap reviewed</h3>
           <p>The SyncMap is the file that tells the game which model each item uses. Its three copies had come to differ: the hand-maintained master, the copy the build generates, and the copy in the test install. The differences were reviewed one row at a time, and the first round was confirmed in game today. The release now uses the master unchanged. About 120 items moved to their own sets in alpha92 through this file.</p>
         </div>
-        <div class="milestone">
+        <div class="milestone" id="dl-2026-10-18">
           <div class="date">2026-10-18</div>
           <h3>DarkMalachite, Vella's armor, and the icons</h3>
           <p>Vella's armor in OOO is built on glass records. Its six Blue Glass pieces now point at the Blue Glass set, and four more pieces form a new set, DarkMalachite. DarkMalachite uses the Blackened Glass textures on the vanilla Glass material. It needed a fourth mesh, because one of its greaves records borrowed a boots model. A comparison of each record's ID, model, and SyncMap entry found more greaves records in the Drakefired and Blood Leather sets that used a boots or gauntlets model. Twelve greaves records now use a greaves model. The Gray Fox bracers and the Obsidian bow also received their own inventory icons. Each change was confirmed in game today, and alpha92 was released the same evening.</p>
           <div class="devlog-renders"><a href="images/refs/OBR-OOO-item-DarkMalachite-Armor_M-waterfront.png" target="_blank" rel="noopener"><img src="images/refs/OBR-OOO-item-DarkMalachite-Armor_M-waterfront.png" alt="DarkMalachite armor, in-game screenshot"></a></div>
           <div class="devlog-thumbs"><a href="images/item-tracker-assets/DarkMalachite_Cuirass.png" target="_blank" rel="noopener"><img src="images/item-tracker-assets/DarkMalachite_Cuirass.png" alt="darkmalachite cuirass icon"></a><a href="images/item-tracker-assets/DarkMalachite_Greaves.png" target="_blank" rel="noopener"><img src="images/item-tracker-assets/DarkMalachite_Greaves.png" alt="darkmalachite greaves icon"></a><a href="images/item-tracker-assets/DarkMalachite_Boots.png" target="_blank" rel="noopener"><img src="images/item-tracker-assets/DarkMalachite_Boots.png" alt="darkmalachite boots icon"></a><a href="images/item-tracker-assets/DarkMalachite_Gauntlets.png" target="_blank" rel="noopener"><img src="images/item-tracker-assets/DarkMalachite_Gauntlets.png" alt="darkmalachite gauntlets icon"></a></div>
+          <p class="xlinks">New Items cards: <a href="new-Items.html#DarkMalachite">Dark Malachite Plated</a>, <a href="new-Items.html#BlueGlass">Blue Glass</a></p>
         </div>
       </div>
     </section>
@@ -526,74 +561,85 @@
           <h3>Blood Clot Cave, zone 3: campfire effects</h3>
           <p>The roughly eight days since zone 1 were spent on a separate problem: zone 3 needed two working campfires. A water volume belongs to an always-loaded engine module, but a campfire is a blueprint with a particle system, and cloning one from a different vanilla package than the target cave required correcting how the clone step rewrites the asset's internal data. The clone used a byte-scan that rewrote any value resembling an internal reference; a particle system contains parameter values, name indices, and offset fields that resemble references and were being corrupted. The fixes addressed the asset header layout, parameter names lost to the packaging tool, and a specific offset field that controlled the flame spawn rate. The vanilla bonfire effect also overflows its woodpile mesh, which was compensated with a scale adjustment. With these corrected, both campfires render sparks, flame, light, and smoke, and the cross-package clone method is reusable for later effects.</p>
         </div>
-        <div class="milestone">
+        <div class="milestone" id="dl-2026-06-01">
           <div class="date">2026-06-01</div>
           <h3>ElvenNight, the first recolored set</h3>
           <p>ElvenNight was the first set built with the recolor approach. It established that a vanilla texture works on its own if its full structure and exact byte size are preserved: recolor the top image, regenerate the smaller zoom levels, and rename the texture in its folder. It also set the original metal/cloth/leather region recipe used by later sets. The pipeline recolors by scaling a texture's existing light-to-dark variation up or down, never by flattening every pixel to one value, because that variation is what makes a material look like itself.</p>
           <div class="devlog-renders"><a href="new-Items.html#ElvenNight"><img src="images/refs/OBR-OOO-item-ElvenNight-Armor_F-sunlight.png" alt="ElvenNight armor, in-game screenshot"></a></div><div class="devlog-thumbs"><a href="new-Items.html#ElvenNight"><img src="images/item-tracker-assets/ElvenNight_Cuirass.png" alt="ElvenNight cuirass icon"></a></div>
+          <p class="xlinks">New Items card: <a href="new-Items.html#ElvenNight">Elven Night</a></p>
         </div>
-        <div class="milestone">
+        <div class="milestone" id="dl-2026-06-04">
           <div class="date">2026-06-04</div>
           <h3>Mithril and Elven tiers built</h3>
           <p>The Mithril base material and its first variants — Eboron and ShadowMail — were built today, along with the ElvenSky and ElvenEldar recolors on the now-generic pipeline. Eboron established four metal-recolor rules confirmed in-game: gold rivets must be excluded from the plate region by area; chainmail must be the default surface or its highlights stay vanilla; dark metal comes from darkening mid-tones while keeping highlights; and a brightness cap lets trim stay silver while rivets stay dark.</p>
           <div class="devlog-renders"><a href="new-Items.html#Eboron"><img src="images/refs/OBR-OOO-item-Eboron-Armor_F-v11-shadows.png" alt="Eboron armor, in-game screenshot"></a><a href="new-Items.html#ElvenSky"><img src="images/refs/OBR-OOO-item-ElvenSky-Armor_F-sunlight.png" alt="ElvenSky armor, in-game screenshot"></a><a href="new-Items.html#ElvenEldar"><img src="images/refs/OBR-OOO-item-ElvenEldar-Armor_F-sunlight.png" alt="ElvenEldar armor, in-game screenshot"></a></div><div class="devlog-thumbs"><a href="new-Items.html#Eboron"><img src="images/item-tracker-assets/Eboron_Cuirass.png" alt="Eboron cuirass icon"></a><a href="new-Items.html#ElvenSky"><img src="images/item-tracker-assets/ElvenSky_Cuirass.png" alt="ElvenSky cuirass icon"></a><a href="new-Items.html#ElvenEldar"><img src="images/item-tracker-assets/ElvenEldar_Cuirass.png" alt="ElvenEldar cuirass icon"></a></div>
+          <p class="xlinks">New Items cards: <a href="new-Items.html#Eboron">Eboron</a>, <a href="new-Items.html#ShadowMail">Shadowmail</a>, <a href="new-Items.html#ElvenSky">Elven Sky</a>, <a href="new-Items.html#ElvenEldar">Elven Eldar</a></p>
         </div>
-        <div class="milestone">
+        <div class="milestone" id="dl-2026-06-04-2">
           <div class="date">2026-06-04</div>
           <h3>ShadowMail refined over several days</h3>
           <p>ShadowMail, the second Mithril variant, was first built today and tuned through 2026-06-06. It uses a blue-steel hue with a saturation floor so the blue does not look grey, leather corrected from an initial muddy red to dark mahogany, and a four-region model — trim, plate body, chainmail, and skirt leather — with the chainmail separated by a hand-painted mask because no texture statistic distinguished it from the body.</p>
           <div class="devlog-renders"><a href="new-Items.html#ShadowMail"><img src="images/refs/OBR-OOO-item-Shadowwmail-Armor_F-v30-shadows.png" alt="ShadowMail armor, in-game screenshot"></a></div><div class="devlog-thumbs"><a href="new-Items.html#ShadowMail"><img src="images/item-tracker-assets/ShadowMail_Cuirass.png" alt="ShadowMail cuirass icon"></a></div>
+          <p class="xlinks">New Items card: <a href="new-Items.html#ShadowMail">Shadowmail</a></p>
         </div>
         <div class="milestone">
           <div class="date">2026-06-05</div>
           <h3>Two reusable leather techniques</h3>
           <p>Some vanilla textures carry baked-in defects; on one cuirass the top strip of a leather panel is blurred in the original art. Instead of synthesizing replacement grain, a clean copy of the same panel found elsewhere on the texture sheet was pasted over the defect. A second technique transplants fine leather grain from a sharp region into a blurred one, taking only the detail and keeping the original color.</p>
         </div>
-        <div class="milestone">
+        <div class="milestone" id="dl-2026-06-07">
           <div class="date">2026-06-07</div>
           <h3>Aureus, and recolored ground meshes</h3>
           <p>Aureus, the third Mithril variant (silver body, copper chainmail), was built today with a gold rampant-unicorn emblem on its skirt panels. Recolored ground meshes — the model shown when an item is dropped or previewed — were first wired into the pipeline here, which showed a rotation issue: dropped boots lay on their backs. The mesh was unchanged with no rotation baked in; the display angle is stored in a separate table keyed by mesh name, so a renamed mesh finds no entry and falls back to a default angle. The decision was to keep the correct recolored art at the wrong angle for now and treat the rotation as a later fix.</p>
           <div class="devlog-renders"><a href="new-Items.html#Aureus"><img src="images/refs/OBR-OOO-item-Aureus-Armor_F-v15-sunlight.png" alt="Aureus armor, in-game screenshot"></a></div><div class="devlog-thumbs"><a href="new-Items.html#Aureus"><img src="images/item-tracker-assets/Aureus_Cuirass.png" alt="Aureus cuirass icon"></a></div>
+          <p class="xlinks">New Items card: <a href="new-Items.html#Aureus">Jephre&#x27;s Aureus</a></p>
         </div>
-        <div class="milestone">
+        <div class="milestone" id="dl-2026-06-08">
           <div class="date">2026-06-08</div>
           <h3>Aureus front-tabard relief</h3>
           <p>The skirt emblem was resolved, but the front tabard's tribal engraving remained visible regardless of texture edits. It was traced to the mesh itself — the relief is in the vertex normals and geometry, which a flat texture cannot cancel — so the unicorn emblem was placed over it.</p>
+          <p class="xlinks">New Items card: <a href="new-Items.html#Aureus">Jephre&#x27;s Aureus</a></p>
         </div>
         <div class="milestone" id="a91-recolor">
           <div class="date">2026-06-10</div>
           <h3>Fur sets: color stored in the material</h3>
           <p>Fur is rendered with a hair-card shader, and recoloring it appeared to require decoding and repainting a packed texture. Reconnaissance found the color is not in a texture: it is two values in the material — a root color and a tip color, giving the base-to-tip gradient — stored as 16-byte color values in the material's parameter block, confirmed against the UE5.3 source. Those two overrides already existed in the vanilla material as a brown gradient, so the recolor is an in-place overwrite of two values with no repainting or re-encoding. ArcticFur was set to a cool snow-white; WornFur kept the vanilla brown. The fur helmet's body texture was the only one in a different compression format, which made its real dimensions appear garbled until the format was confirmed. Both fur sets were built today.</p>
           <div class="devlog-renders"><a href="new-Items.html#ArcticFur"><img src="images/refs/OBR-OOO-item-ArcticFur-Armor_F-v2-sunlight.png" alt="ArcticFur armor, in-game screenshot"></a><a href="new-Items.html#WornFur"><img src="images/refs/OBR-OOO-item-WornFur-Armor_F-v3-front.png" alt="WornFur armor, in-game screenshot"></a></div><div class="devlog-thumbs"><a href="new-Items.html#ArcticFur"><img src="images/item-tracker-assets/ArcticFur_Cuirass.png" alt="ArcticFur cuirass icon"></a><a href="new-Items.html#WornFur"><img src="images/item-tracker-assets/WornFur_Cuirass.png" alt="WornFur cuirass icon"></a></div>
+          <p class="xlinks">New Items cards: <a href="new-Items.html#ArcticFur">Arctic Fur</a>, <a href="new-Items.html#WornFur">Worn Fur</a></p>
         </div>
-        <div class="milestone">
+        <div class="milestone" id="dl-2026-06-10">
           <div class="date">2026-06-10</div>
           <h3>GoldenBronze completes the Mithril tier</h3>
           <p>The last Mithril variant was built, confirmed in-game, and merged today. Its engraved helmet was losing line-work to a hard brightness cap; a value-preserving multiply restored it.</p>
           <div class="devlog-renders"><a href="new-Items.html#GoldenBronze"><img src="images/refs/OBR-OOO-item-GoldenBronze-Armor_F-v3-sunlight.png" alt="GoldenBronze armor, in-game screenshot"></a></div><div class="devlog-thumbs"><a href="new-Items.html#GoldenBronze"><img src="images/item-tracker-assets/GoldenBronze_Cuirass.png" alt="GoldenBronze cuirass icon"></a></div>
+          <p class="xlinks">New Items card: <a href="new-Items.html#GoldenBronze">Golden Bronze</a></p>
         </div>
-        <div class="milestone">
+        <div class="milestone" id="dl-2026-06-11">
           <div class="date">2026-06-11</div>
           <h3>ArcticFur and WornFur approved in-game</h3>
           <p>The two fur sets, built the day before, were tuned and approved in a live in-game test.</p>
+          <p class="xlinks">New Items cards: <a href="new-Items.html#ArcticFur">Arctic Fur</a>, <a href="new-Items.html#WornFur">Worn Fur</a></p>
         </div>
-        <div class="milestone">
+        <div class="milestone" id="dl-2026-06-11-2">
           <div class="date">2026-06-11</div>
           <h3>WornLeather, and a naming issue</h3>
           <p>WornLeather's first build showed vanilla in-game. The armor players call "Leather" is built from a "Thief"-codenamed asset chain, while the assets literally named "Leather" are an unused arena set the vanilla game never released, so the first build recolored the wrong chain. The fix traced the full display chain from item to blueprint to mesh to material to texture and retargeted onto the correct body. Built and verified today.</p>
           <div class="devlog-renders"><a href="new-Items.html#WornLeather"><img src="images/refs/OBR-OOO-item-WornLeather-Armor_F-v3-front.png" alt="WornLeather armor, in-game screenshot"></a></div><div class="devlog-thumbs"><figure class="wrong"><a href="new-Items.html#WornLeather"><img src="images/item-tracker-assets/WornLeather_Cuirass.png" alt="WornLeather inventory icon currently showing vanilla Pit Armor (wrong source)"></a><figcaption>Wrong icon: this is vanilla Pit Armor, not the Thief-based WornLeather recolor &mdash; a live example of the naming issue described above. To be fixed in alpha92.</figcaption></figure></div>
+          <p class="xlinks">New Items card: <a href="new-Items.html#WornLeather">Worn Leather</a></p>
         </div>
-        <div class="milestone">
+        <div class="milestone" id="dl-2026-06-11-3">
           <div class="date">2026-06-11</div>
           <h3>BloodLeather and GrayFox completed</h3>
           <p>Both were built on the WornLeather groundwork and verified in-game today — BloodLeather in a deep-red dye, GrayFox a grey body with darker straps. GrayFox includes one bracer that is genuinely Leather-named, handled by reusable mix-and-match logic added here.</p>
           <div class="devlog-renders"><a href="new-Items.html#BloodLeather"><img src="images/refs/OBR-OOO-item-BloodLeather-Armor_F-v1-shadows.png" alt="BloodLeather armor, in-game screenshot"></a><a href="new-Items.html#GrayFox"><img src="images/refs/OBR-OOO-item-GreyFox-Armor_F-v3-shadows.png" alt="GrayFox armor, in-game screenshot"></a></div><div class="devlog-thumbs"><a href="new-Items.html#BloodLeather"><img src="images/item-tracker-assets/BloodLeather_Cuirass.png" alt="BloodLeather cuirass icon"></a><a href="new-Items.html#GrayFox"><img src="images/item-tracker-assets/GrayFox_Cuirass.png" alt="GrayFox cuirass icon"></a></div>
+          <p class="xlinks">New Items cards: <a href="new-Items.html#BloodLeather">Blood Leather</a>, <a href="new-Items.html#GrayFox">Gray Fox&#x27;s Armor of Deception and Gray Fox&#x27;s Armor of War</a></p>
         </div>
         <div class="milestone" id="a91-armor">
           <div class="date">2026-06-12</div>
           <h3>Fourteen sets complete; glass rename</h3>
           <p>The final pass renamed the two oldest sets from their codenames to their in-game names: BGlass to BlueGlass, RGlass to Drakefired. Drakefired also received new red icons, since its previous ones were copied from the blue set. The override file that binds items to asset paths was also updated to the new names. With these two re-released, all fourteen sets are complete: ArcticFur, Aureus, BloodLeather, BlueGlass, Drakefired, Eboron, ElvenEldar, ElvenNight, ElvenSky, GoldenBronze, GrayFox, ShadowMail, WornFur, and WornLeather.</p>
           <div class="devlog-renders"><a href="new-Items.html#BlueGlass"><img src="images/refs/OBR-OOO-item-BlueGlass-Armor_F-v1-shadows.png" alt="BlueGlass armor, in-game screenshot"></a><a href="new-Items.html#Drakefired"><img src="images/refs/OBR-OOO-item-Drakefired-Armor_F-v1-shadows.png" alt="Drakefired armor, in-game screenshot"></a></div><div class="devlog-thumbs"><a href="new-Items.html#BlueGlass"><img src="images/item-tracker-assets/BlueGlass_Cuirass.png" alt="BlueGlass cuirass icon"></a><a href="new-Items.html#Drakefired"><img src="images/item-tracker-assets/Drakefired_Cuirass.png" alt="Drakefired cuirass icon"></a></div>
+          <p class="xlinks">New Items cards: <a href="new-Items.html#BlueGlass">Blue Glass</a>, <a href="new-Items.html#Drakefired">Drakefired</a></p>
         </div>
         <div class="milestone">
           <div class="date">2026-06-12</div>
