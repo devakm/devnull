@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<!-- DO-NOT-REGENERATE: hand-canonical. See docs/OOO/OBR/CONTRIBUTING.md -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OOORF — Spawn Danger</title>
+  <link rel="stylesheet" href="../../css/devnull-shared.css">
+  <style>
+    /* Spawn Danger map. Data per release in spawn-danger/*.json, added with scripts/add_spawn_danger_release.py.
+       Map code from RAX tools/spawnlog/spawn_heatmap.py (docs/ooo-spawn-heatmap.html). */
+    #sd {
+      --surface: var(--bg-secondary); --surface-2: var(--bg-tertiary); --line: var(--border-color);
+      --text: var(--text-primary); --text-2: var(--text-secondary); --text-3: #8f8e86;
+      --land: #3a3a38; --zero: #4a4a46; --accent: #3987e5;
+      --s1: #0d366b; --s2: #104281; --s3: #184f95; --s4: #1c5cab; --s5: #256abf;
+      --s6: #3987e5; --s7: #6da7ec; --s8: #9ec5f4; --s9: #cde2fb;
+      font-size: 14px; line-height: 1.45;
+    }
+    #sd .sub { color: var(--text-2); margin: 0 0 10px; max-width: 900px; }
+    #sd .src { color: var(--text-2); margin: 0 0 16px; max-width: 900px; font-size: 13px; }
+    #sd .controls { display: flex; flex-wrap: wrap; gap: 8px 18px; align-items: center;
+      padding: 10px 12px; background: var(--surface-2); border: 1px solid var(--line);
+      border-radius: 0 0 8px 8px; margin-bottom: 14px;
+      position: sticky; top: var(--nav-h, 0px); z-index: 50; box-shadow: 0 4px 12px rgba(0,0,0,.4); }
+    #sd .controls label { color: var(--text-2); display: flex; gap: 6px; align-items: center; }
+    #sd select, #sd input[type=range] { accent-color: var(--accent); }
+    #sd select { background: var(--bg-primary); color: var(--text); border: 1px solid var(--line);
+      border-radius: 6px; padding: 3px 6px; font: inherit; }
+    #sd #lvl { width: 180px; }
+    #sd #lvlv { font-variant-numeric: tabular-nums; font-weight: 600; color: var(--text); min-width: 2ch; }
+    #sd .layout { display: grid; grid-template-columns: 1fr; gap: 14px; }
+    #sd .mapbox { position: relative; border: 1px solid var(--line); border-radius: 8px;
+      background: var(--surface); overflow: hidden; min-height: 200px; }
+    #sd canvas { display: block; width: 100%; touch-action: none; }
+    #sd .loading { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+      color: var(--text-2); background: var(--surface); }
+    #sd .side { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; }
+    #sd .legend-row { grid-column: 1 / -1; }
+    #sd .legend-row .legend { grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); }
+    #sd .legend .it { display: flex; gap: 6px; align-items: center; }
+    #sd .card { border: 1px solid var(--line); border-radius: 8px; padding: 10px 12px; }
+    #sd .card h2 { font-size: 13px; margin: 0 0 8px; padding: 0; border: 0; color: var(--text-2); font-weight: 600; }
+    #sd .legend { display: grid; grid-template-columns: 18px 1fr; gap: 4px 8px; align-items: center;
+      font-size: 12px; color: var(--text-2); font-variant-numeric: tabular-nums; }
+    #sd .sw { width: 18px; height: 12px; border-radius: 2px; }
+    #sd .stat { display: flex; justify-content: space-between; font-size: 13px; padding: 2px 0; }
+    #sd .stat b { font-variant-numeric: tabular-nums; }
+    #sd #tip { position: absolute; pointer-events: none; background: var(--bg-primary);
+      border: 1px solid var(--line); border-radius: 6px; padding: 8px 10px; font-size: 12px;
+      box-shadow: 0 4px 14px rgba(0,0,0,.5); max-width: 300px; display: none; z-index: 2; }
+    #sd #tip .t { font-weight: 600; margin-bottom: 2px; }
+    #sd #tip .m { color: var(--text-2); }
+    #sd #tip table { width: auto; border-collapse: collapse; margin: 4px 0 0; }
+    #sd #tip td { padding: 1px 6px 1px 0; border: 0; color: var(--text-2); }
+    #sd #tip td.n { text-align: right; font-variant-numeric: tabular-nums; color: var(--text); }
+    #sd .tablewrap { margin-top: 8px; overflow: auto; max-height: 70vh; border: 1px solid var(--line); border-radius: 8px; }
+    #sd table.d { border-collapse: collapse; width: 100%; margin: 0; font-size: 13px; }
+    #sd table.d th, #sd table.d td { padding: 6px 10px; border: 0; border-bottom: 1px solid var(--line);
+      text-align: left; vertical-align: middle; white-space: nowrap; }
+    #sd table.d th { position: sticky; top: 0; background: var(--surface-2); color: var(--accent-gold);
+      font-weight: 600; cursor: pointer; user-select: none; }
+    #sd table.d td.n, #sd table.d th.n { text-align: right; font-variant-numeric: tabular-nums; }
+    #sd table.d tr:hover td, #sd table.d tr.sel td { background: var(--surface-2); }
+    #sd .bar { display: inline-block; height: 8px; border-radius: 2px; vertical-align: middle;
+      margin-right: 6px; background: var(--s6); }
+    #sd .cells { color: var(--text-3); white-space: normal; max-width: 360px; font-size: 12px; }
+    #sd .sd-note { color: var(--text-3); font-size: 12px; margin-top: 10px; max-width: 900px; }
+    #sd h3 { margin: 22px 0 0; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Oscuro's Oblivion Overhaul Remastered FULL</h1>
+      <p class="subtitle">Release Tracker</p>
+    </header>
+    <nav class="sticky-nav"><a href="../../index.html">devnull</a> | <a href="index.html">OOORF Home</a> | <a href="overview.html">Overview</a> | <a href="new-Items.html">New Items</a> | <a href="devlog.html">Devlog</a> | <a href="changelog.html">Changelog</a> | <a href="install.html">Install</a> | <a href="dependencies.html">Dependencies</a> | <a href="spawn-danger.html" class="highlight-text">Spawn Danger</a> | <a href="https://github.com/devakm/OblivionRemastered_OOO/releases" target="_blank" rel="noopener">Downloads</a></nav>
+    <h1>Spawn Danger Map</h1>
+<div id="sd">
+<p class="sub">How likely the leveled creatures at a place are to be above the player's level, for player
+levels 1 to 40. Exterior cells are colored squares; dungeons are circles at their entrance, sized by
+spawn points. Computed from the leveled lists with each creature's level offset, calc-min and calc-max
+applied, with RAX levlist on. Not measured in game.</p>
+<p class="src" id="src"></p>
+
+<div class="controls">
+  <label>Release <select id="rel"></select></label>
+  <label>Data <select id="ds"><option value="OOO">OOORF</option><option value="Vanilla">vanilla Oblivion</option></select></label>
+  <label>Area <select id="ws"><option value="Tamriel">Tamriel</option><option value="SEWorld">Shivering Isles</option></select></label>
+  <label>Player level <input id="lvl" type="range" min="1" max="40" value="1"><span id="lvlv">1</span></label>
+  <label>Creature <select id="thr">
+    <option value="2">deadly (more than 10 above)</option>
+    <option value="1">over-level (more than 5 above)</option>
+    <option value="0">above the player</option>
+    <option value="3" selected>graded: levels above, every creature</option>
+  </select></label>
+  <label>Measure <select id="agg">
+    <option value="any">chance of at least one in the place</option>
+    <option value="per" selected>expected per spawn point (packs counted)</option>
+    <option value="sum">expected in the whole place (packs counted)</option>
+  </select></label>
+  <label>Show <select id="show">
+    <option value="both">cells and dungeons</option>
+    <option value="cells">exterior cells</option>
+    <option value="dungeons">dungeons</option>
+  </select></label>
+</div>
+
+<div class="layout">
+  <div class="mapbox" id="mapbox"><canvas id="map" aria-label="Heatmap of spawn danger"></canvas><div id="tip"></div><div class="loading" id="loading">Loading…</div></div>
+  <div class="side">
+    <div class="card legend-row"><h2 id="legt">Chance</h2><div class="legend" id="legend"></div></div>
+    <div class="card"><h2 id="st-h">Per spawn point, this area</h2>
+      <div class="stat"><span>Exterior points</span><b id="st-ext"></b></div>
+      <div class="stat"><span>Dungeon points</span><b id="st-int"></b></div>
+      <div class="stat"><span>Exterior points with any chance</span><b id="st-extn"></b></div>
+    </div>
+    <div class="card"><h2>Reading it</h2><div style="font-size:12px;color:var(--text-2)">
+      A roll is one spawn of one list; a pack of three counts as three creatures. "In the place"
+      treats every spawn point in the cell or dungeon as rolled once, which is what a player walking
+      through meets. "Graded" adds up how many levels above the player each creature is (a pack of
+      three creatures 3 levels above counts 9), so a creature fades out over several levels instead
+      of crossing a line. Points disabled at load (enabled later by quests) are left out. Hover for
+      the lists behind a place.</div></div>
+  </div>
+</div>
+
+<div style="display:flex;gap:14px;align-items:baseline;flex-wrap:wrap"><h3 id="dt">Dungeons</h3>
+  <label style="color:var(--text-2)">List <select id="tscope">
+    <option value="area">this area</option><option value="all">every worldspace</option></select></label></div>
+<div class="tablewrap"><table class="d" id="dtab"><thead><tr>
+  <th data-k="name">Dungeon</th><th data-k="ws">Area</th><th class="n" data-k="npts">Spawn points</th>
+  <th class="n" data-k="v">At this level</th><th class="n" data-k="per">Per spawn point</th>
+  <th class="n" data-k="safe" id="th-safe">Calm from level</th><th data-k="cells">Cells</th>
+</tr></thead><tbody></tbody></table></div>
+<p class="sd-note">Dungeon = interior cells joined by doors, placed at a door to an exterior. City and
+garden worldspaces are drawn on their parent map. Dungeons whose only entrance is in another
+worldspace (Oblivion planes, test cells) appear in the table under that worldspace. Names are the
+map marker near the entrance that matches a cell's EditorID, or the first EditorID.</p>
+</div>
+  </div>
+<script>
+let DATA = {}, RELEASES = [];
+const navH = () => (document.querySelector("nav.sticky-nav") || { offsetHeight: 0 }).offsetHeight;
+const $ = id => document.getElementById(id);
+// color bins per kind of value: a chance, a number of creatures, or a sum of levels above
+const KINDS = {
+  prob:   { bins: [0.01, 0.025, 0.05, 0.10, 0.20, 0.35, 0.50, 0.75, Infinity],
+            labels: ["up to 1 %", "1–2.5 %", "2.5–5 %", "5–10 %", "10–20 %", "20–35 %", "35–50 %", "50–75 %", "75–100 %"] },
+  count:  { bins: [0.01, 0.025, 0.05, 0.1, 0.25, 0.5, 1, 2, Infinity],
+            labels: ["up to 0.01", "0.01–0.025", "0.025–0.05", "0.05–0.1", "0.1–0.25", "0.25–0.5", "0.5–1", "1–2", "over 2"] },
+  levels: { bins: [0.05, 0.1, 0.25, 0.5, 1, 2, 4, 8, Infinity],
+            labels: ["up to 0.05", "0.05–0.1", "0.1–0.25", "0.25–0.5", "0.5–1", "1–2", "2–4", "4–8", "over 8"] },
+};
+// "calm" = the value stays under this from that level on
+const CALM = { prob: { any: 0.10 }, count: { per: 0.01, sum: 0.10 }, levels: { per: 0.10, sum: 1 } };
+let css = {}, view = null, hover = null, selected = null, sortK = "v", sortDir = -1;
+
+function readCss() {
+  const s = getComputedStyle($("sd"));
+  for (const k of ["surface", "land", "zero", "text", "text-2", "line"]) css[k] = s.getPropertyValue("--" + k).trim();
+  css.ramp = [1,2,3,4,5,6,7,8,9].map(i => s.getPropertyValue("--s" + i).trim());
+}
+const kind = s => s.t === 3 ? "levels" : s.agg === "any" ? "prob" : "count";
+function bin(v, k) { const b = KINDS[k].bins; for (let i = 0; i < b.length; i++) if (v <= b[i]) return i; return b.length - 1; }
+function color(v, k) { return v <= 0 ? css.zero : css.ramp[bin(v, k)]; }
+function pct(v) { return v <= 0 ? "0 %" : v < 0.001 ? "<0.1 %" : (100 * v).toFixed(v < 0.1 ? 1 : 0) + " %"; }
+function num(v) { return v <= 0 ? "0" : v < 0.001 ? "<0.001" : v < 1 ? v.toFixed(3) : v.toFixed(2); }
+function fmt(v, k) { return k === "prob" ? pct(v) : num(v) + (k === "levels" ? " lv" : ""); }
+
+const st = () => ({ D: DATA[$("ds").value], ws: $("ws").value, L: +$("lvl").value, t: +$("thr").value, agg: $("agg").value });
+// per-roll value of list li for the current creature choice: expected creatures, or summed levels above
+const ev = (s, li) => s.t === 3 ? s.D.lists[li].g[s.L - 1] : s.D.lists[li].e[s.t][s.L - 1];
+const pv = (s, li) => s.D.lists[li].p[s.t === 3 ? 0 : s.t][s.L - 1];
+function place(pts, s) {           // pts: [[listIdx, count]]
+  let none = 1, sum = 0, n = 0;
+  for (const [li, c] of pts) { none *= Math.pow(1 - pv(s, li), c); sum += ev(s, li) * c; n += c; }
+  return { any: 1 - none, per: n ? sum / n : 0, sum, n };
+}
+function topLists(pts, s, k = 4) {
+  return pts.map(([li, c]) => ({ n: s.D.lists[li].n, c, v: ev(s, li) }))
+    .filter(x => x.v > 0).sort((a, b) => b.v * b.c - a.v * a.c).slice(0, k);
+}
+
+function layout() {
+  const s = st(), W = s.D.ws[s.ws], cv = $("map");
+  let x0 = Infinity, x1 = -Infinity, y0 = Infinity, y1 = -Infinity;
+  const ext = (x, y) => { x0 = Math.min(x0, x); x1 = Math.max(x1, x); y0 = Math.min(y0, y); y1 = Math.max(y1, y); };
+  for (const c of W.cells) ext(c[0], c[1]);
+  for (const d of s.D.dungeons) if (d.ws === s.ws && d.x !== null) ext(Math.floor(d.x), Math.floor(d.y));
+  x0 -= 2; y0 -= 2; x1 += 2; y1 += 2;
+  const cw = cv.parentElement.clientWidth, cols = x1 - x0 + 1, rows = y1 - y0 + 1;
+  const px = Math.max(2, Math.min(cw / cols, Math.max(400, window.innerHeight - document.querySelector(".controls").offsetHeight - navH() - 30) / rows));
+  const dpr = window.devicePixelRatio || 1;
+  cv.width = Math.round(cols * px * dpr); cv.height = Math.round(rows * px * dpr);
+  cv.style.width = cols * px + "px"; cv.style.height = rows * px + "px";
+  view = { x0, y1, px, dpr };
+}
+const sx = gx => (gx - view.x0) * view.px;
+const sy = gy => (view.y1 - gy) * view.px;    // y up in game, down on screen
+
+function draw() {
+  tip(null); readCss(); layout();
+  const s = st(), W = s.D.ws[s.ws], cv = $("map"), g = cv.getContext("2d"), px = view.px;
+  g.setTransform(view.dpr, 0, 0, view.dpr, 0, 0);
+  g.fillStyle = css.surface; g.fillRect(0, 0, cv.width, cv.height);
+  g.fillStyle = css.land;
+  for (const [x, y] of W.land) g.fillRect(sx(x), sy(y + 1), px, px);
+  const show = $("show").value;
+  if (show !== "dungeons") for (const c of W.cells) {
+    const v = place(c[2], s)[s.agg];
+    g.fillStyle = color(v, kind(s)); g.fillRect(sx(c[0]), sy(c[1] + 1), px, px);
+  }
+  if (show !== "cells") {
+    const ds = s.D.dungeons.filter(d => d.ws === s.ws && d.x !== null)
+      .map(d => ({ d, v: place(d.pts, s)[s.agg], n: d.pts.reduce((a, p) => a + p[1], 0) }))
+      .sort((a, b) => a.v - b.v);
+    for (const { d, v, n } of ds) {
+      const r = Math.max(2.5, Math.min(7, 1.1 * Math.sqrt(n))) * Math.max(0.8, Math.min(1.5, px / 7));
+      d._r = r;
+      g.beginPath(); g.arc(sx(d.x), sy(d.y), r, 0, 2 * Math.PI);
+      g.fillStyle = color(v, kind(s)); g.fill();
+      g.lineWidth = d === selected ? 3 : 2; g.strokeStyle = d === selected ? css.text : css.surface; g.stroke();
+    }
+  }
+  g.font = "600 12px system-ui, sans-serif"; g.textAlign = "center";
+  for (const [x, y, n] of W.markers) {
+    g.lineWidth = 3; g.strokeStyle = css.surface; g.strokeText(n, sx(x), sy(y) - 8);
+    g.fillStyle = css.text; g.fillText(n, sx(x), sy(y) - 8);
+  }
+  legend(); stats(); table();
+}
+
+function legend() {
+  const s = st(), k = kind(s);
+  const t = ["above the player", "over-level (more than 5 above)", "deadly (more than 10 above)", "levels above the player, summed"][s.t];
+  $("legt").textContent = k === "prob" ? "Chance of at least one creature " + t
+    : k === "count" ? (s.agg === "per" ? "Expected creatures per spawn point, " : "Expected creatures in the place, ") + t
+    : (s.agg === "per" ? "Per spawn point: " : "In the place: ") + t;
+  const it = (bg, l, extra = "") => `<div class="it"><div class="sw" style="background:${bg};${extra}"></div><div>${l}</div></div>`;
+  $("legend").innerHTML = it(css.land, "no spawn points", `border:1px solid ${css.line}`) + it(css.zero, "spawn points, none") +
+    KINDS[k].labels.map((l, i) => it(css.ramp[i], l)).join("");
+}
+function stats() {
+  const s = st(), W = s.D.ws[s.ws], k = s.t === 3 ? "levels" : "count";
+  let es = 0, en = 0, nz = 0, is = 0, inn = 0;
+  for (const c of W.cells) for (const [li, n] of c[2]) { es += ev(s, li) * n; en += n; if (pv(s, li) > 0) nz += n; }
+  for (const d of s.D.dungeons) if (d.ws === s.ws) for (const [li, n] of d.pts) { is += ev(s, li) * n; inn += n; }
+  $("st-h").textContent = s.t === 3 ? "Levels above the player per spawn point, this area" : "Expected creatures per spawn point, this area";
+  $("st-ext").textContent = fmt(en ? es / en : 0, k) + " · " + en.toLocaleString() + " points";
+  $("st-int").textContent = fmt(inn ? is / inn : 0, k) + " · " + inn.toLocaleString() + " points";
+  $("st-extn").textContent = pct(en ? nz / en : 0);
+}
+
+function table() {
+  const s = st(), agg = s.agg, k = kind(s), kp = s.t === 3 ? "levels" : "count";
+  const scope = $("tscope").value;
+  const rows = s.D.dungeons.filter(d => scope === "all" || d.ws === s.ws)
+    .map(d => {
+      const r = place(d.pts, s);
+      return { d, name: d.name, ws: d.ws || "none", npts: r.n, v: r[agg], per: r.per, safe: safeFrom(d, s), cells: d.cells.join(", ") };
+    });
+  rows.sort((a, b) => (a[sortK] < b[sortK] ? -1 : a[sortK] > b[sortK] ? 1 : 0) * sortDir);
+  $("dt").textContent = `Dungeons (${rows.length})`;
+  $("th-safe").textContent = `Calm from level (under ${fmt(CALM[k][agg], k)})`;
+  $("dtab").tBodies[0].innerHTML = rows.map(r =>
+    `<tr data-i="${s.D.dungeons.indexOf(r.d)}"${r.d === selected ? ' class="sel"' : ""}><td>${esc(r.name)}</td><td>${esc(r.ws)}</td><td class="n">${r.npts}</td>` +
+    `<td class="n"><span class="bar" style="width:${r.v > 0 ? 6 * (bin(r.v, k) + 1) : 0}px;background:${color(r.v, k)}"></span>${fmt(r.v, k)}</td>` +
+    `<td class="n">${fmt(r.per, kp)}</td><td class="n">${r.safe === 99 ? "never" : r.safe}</td>` +
+    `<td class="cells">${esc(r.cells)}</td></tr>`).join("");
+}
+const safeCache = new Map();
+function safeFrom(d, s) {          // lowest level from which the place stays calm (99 = never)
+  const k = kind(s), lim = CALM[k][s.agg], key = [$("ds").value, s.t, s.agg].join("|");
+  if (!safeCache.has(key)) safeCache.set(key, new Map());
+  const m = safeCache.get(key);
+  if (!m.has(d)) {
+    let safe = 99;
+    for (let L = 40; L >= 1; L--) { if (place(d.pts, { ...s, L })[s.agg] < lim) safe = L; else break; }
+    m.set(d, safe);
+  }
+  return m.get(d);
+}
+const esc = t => String(t).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+
+function pick(ev) {
+  const s = st(), W = s.D.ws[s.ws], rect = $("map").getBoundingClientRect();
+  const mx = ev.clientX - rect.left, my = ev.clientY - rect.top;
+  if ($("show").value !== "cells") {
+    let best = null, bd = Infinity;
+    for (const d of s.D.dungeons) if (d.ws === s.ws && d.x !== null && d._r) {
+      const dd = Math.hypot(sx(d.x) - mx, sy(d.y) - my);
+      if (dd <= d._r + 3 && dd < bd) { bd = dd; best = d; }
+    }
+    if (best) return { kind: "d", d: best, mx, my };
+  }
+  if ($("show").value === "dungeons") return null;
+  const gx = Math.floor(mx / view.px + view.x0), gy = Math.floor(view.y1 - my / view.px);
+  const c = W.cells.find(c => c[0] === gx && c[1] === gy);
+  return c ? { kind: "c", c, mx, my } : null;
+}
+function tip(h) {
+  const t = $("tip");
+  if (!h) { t.style.display = "none"; return; }
+  const s = st(), pts = h.kind === "d" ? h.d.pts : h.c[2], r = place(pts, s), kp = s.t === 3 ? "levels" : "count";
+  const title = h.kind === "d" ? esc(h.d.name) : `Cell ${h.c[0]}, ${h.c[1]}` + (h.c[3] ? ` · near ${esc(h.c[3])}` : "");
+  const sub = h.kind === "d" ? `${h.d.cells.length} cell${h.d.cells.length > 1 ? "s" : ""} · ${r.n} spawn points` : `${r.n} spawn point${r.n > 1 ? "s" : ""}`;
+  const tl = topLists(pts, s);
+  t.innerHTML = `<div class="t">${title}</div><div class="m">${sub}</div>` +
+    `<div style="margin-top:4px">` + (s.t === 3 ? "" : `At least one: <b>${pct(r.any)}</b> · `) +
+    `per point: <b>${fmt(r.per, kp)}</b> · in the place: <b>${fmt(r.sum, kp)}</b></div>` +
+    (tl.length ? `<table>${tl.map(x => `<tr><td>${esc(x.n)}${x.c > 1 ? " ×" + x.c : ""}</td><td class="n">${fmt(x.v, kp)}</td></tr>`).join("")}</table>` : "");
+  t.style.display = "block";
+  const box = $("mapbox").getBoundingClientRect();
+  let x = h.mx + 14, y = h.my + 14;
+  if (x + 300 > box.width) x = h.mx - 14 - t.offsetWidth;
+  if (y + t.offsetHeight > box.height) y = h.my - 14 - t.offsetHeight;
+  t.style.left = Math.max(4, x) + "px"; t.style.top = Math.max(4, y) + "px";
+}
+
+const fetched = {};
+const getJson = f => fetched[f] || (fetched[f] = fetch("spawn-danger/" + f).then(r => {
+  if (!r.ok) throw new Error(f + ": " + r.status); return r.json(); }));
+async function loadRelease(tag) {
+  const r = RELEASES.find(x => x.tag === tag) || RELEASES[0];
+  $("rel").value = r.tag; $("loading").style.display = "flex"; $("loading").textContent = "Loading " + r.tag + "…";
+  const [ooo, van] = await Promise.all([getJson(r.file), getJson("vanilla.json")]);
+  DATA = { OOO: ooo, Vanilla: van }; safeCache.clear(); selected = null;
+  $("ds").options[0].textContent = "OOORF " + r.tag;
+  $("src").textContent = `Release ${r.tag}, computed ${r.date}. Load order: ${r.source || "not recorded"}. ` +
+    `Vanilla is Oblivion.esm alone.`;
+  const u = new URL(location.href);
+  if (r.tag === RELEASES[0].tag) u.searchParams.delete("release"); else u.searchParams.set("release", r.tag);
+  history.replaceState(null, "", u);
+  $("loading").style.display = "none";
+  draw();
+}
+async function init() {
+  RELEASES = await getJson("releases.json");
+  $("rel").innerHTML = RELEASES.map((r, i) => `<option value="${esc(r.tag)}">${esc(r.tag)}${i ? "" : " (latest)"}</option>`).join("");
+  try { const v = JSON.parse(localStorage.getItem("ooorf-spawn-danger") || "{}");
+    for (const k of KEYS) if (v[k] !== undefined) {
+      const el = $(k);
+      if (el.tagName === "SELECT" ? [...el.options].some(o => o.value === v[k]) : true) el.value = v[k];
+    }
+  } catch (e) {}
+  $("lvlv").textContent = $("lvl").value;
+  const setNav = () => document.documentElement.style.setProperty("--nav-h", navH() + "px");
+  setNav();
+  const sync = () => { const g = $("thr").value === "3", a = $("agg").querySelector('option[value="any"]');
+    a.disabled = g; if (g && $("agg").value === "any") $("agg").value = "sum"; };
+  sync();
+  const ready = () => DATA.OOO;
+  for (const k of ["ds", "ws", "thr", "agg", "show", "tscope"]) $(k).addEventListener("change", () => { sync(); save(); if (ready()) draw(); });
+  $("rel").addEventListener("change", () => loadRelease($("rel").value).catch(fail));
+  $("lvl").addEventListener("input", () => { $("lvlv").textContent = $("lvl").value; save(); if (ready()) draw(); });
+  $("map").addEventListener("mousemove", ev => { if (ready()) tip(pick(ev)); });
+  $("map").addEventListener("mouseleave", () => tip(null));
+  $("map").addEventListener("click", ev => { if (!ready()) return; const h = pick(ev); selected = h && h.kind === "d" ? h.d : null; draw();
+    if (selected) { const tr = document.querySelector("#dtab tr.sel"); if (tr) tr.scrollIntoView({ block: "nearest" }); } });
+  document.querySelectorAll("#dtab th").forEach(th => th.addEventListener("click", () => {
+    const k = th.dataset.k; sortDir = sortK === k ? -sortDir : (k === "name" || k === "ws" || k === "cells" ? 1 : -1); sortK = k; if (ready()) table(); }));
+  $("dtab").tBodies[0].addEventListener("click", ev => { const tr = ev.target.closest("tr"); if (!tr) return;
+    const d = st().D.dungeons[+tr.dataset.i]; selected = d === selected ? null : d; draw(); });
+  window.addEventListener("resize", () => { setNav(); if (ready()) draw(); });
+  await loadRelease(new URLSearchParams(location.search).get("release"));
+}
+const KEYS = ["ds", "ws", "lvl", "thr", "agg", "show", "tscope"];
+function save() { try { localStorage.setItem("ooorf-spawn-danger", JSON.stringify(Object.fromEntries(KEYS.map(k => [k, $(k).value])))); } catch (e) {} }
+function fail(e) { $("loading").style.display = "flex"; $("loading").textContent = "Could not load the data: " + e.message; }
+init().catch(fail);
+</script>
+</body>
+</html>
