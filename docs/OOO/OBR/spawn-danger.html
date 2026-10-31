@@ -30,14 +30,16 @@
     #sd #lvl { width: 180px; }
     #sd #lvlv { font-variant-numeric: tabular-nums; font-weight: 600; color: var(--text); min-width: 2ch; }
     #sd .layout { display: grid; grid-template-columns: 1fr; gap: 14px; }
+    #sd .maprow { display: flex; flex-wrap: wrap; gap: 14px; align-items: flex-start; }
     #sd .mapbox { position: relative; border: 1px solid var(--line); border-radius: 8px;
-      background: var(--surface); overflow: hidden; min-height: 200px; }
+      background: var(--surface); overflow: hidden; min-height: 200px; min-width: min(100%, 300px);
+      flex: 0 0 auto; max-width: 100%; }
     #sd canvas { display: block; width: 100%; touch-action: none; }
     #sd .loading { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
       color: var(--text-2); background: var(--surface); }
     #sd .side { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; }
-    #sd .legend-row { grid-column: 1 / -1; }
-    #sd .legend-row .legend { grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); }
+    #sd .legend-card { flex: 1 1 200px; min-width: 200px; }
+    #sd .legend-card .legend { grid-template-columns: 1fr; gap: 6px; }
     #sd .legend .it { display: flex; gap: 6px; align-items: center; }
     #sd .card { border: 1px solid var(--line); border-radius: 8px; padding: 10px 12px; }
     #sd .card h2 { font-size: 13px; margin: 0 0 8px; padding: 0; border: 0; color: var(--text-2); font-weight: 600; }
@@ -108,9 +110,11 @@ applied, with RAX levlist on. Not measured in game.</p>
 </div>
 
 <div class="layout">
-  <div class="mapbox" id="mapbox"><canvas id="map" aria-label="Heatmap of spawn danger"></canvas><div id="tip"></div><div class="loading" id="loading">Loading…</div></div>
+  <div class="maprow">
+    <div class="mapbox" id="mapbox"><canvas id="map" aria-label="Heatmap of spawn danger"></canvas><div id="tip"></div><div class="loading" id="loading">Loading…</div></div>
+    <div class="card legend-card"><h2 id="legt">Chance</h2><div class="legend" id="legend"></div></div>
+  </div>
   <div class="side">
-    <div class="card legend-row"><h2 id="legt">Chance</h2><div class="legend" id="legend"></div></div>
     <div class="card"><h2 id="st-h">Per spawn point, this area</h2>
       <div class="stat"><span>Exterior points</span><b id="st-ext"></b></div>
       <div class="stat"><span>Dungeon points</span><b id="st-int"></b></div>
@@ -191,7 +195,9 @@ function layout() {
   for (const c of W.cells) ext(c[0], c[1]);
   for (const d of s.D.dungeons) if (d.ws === s.ws && d.x !== null) ext(Math.floor(d.x), Math.floor(d.y));
   x0 -= 2; y0 -= 2; x1 += 2; y1 += 2;
-  const cw = cv.parentElement.clientWidth, cols = x1 - x0 + 1, rows = y1 - y0 + 1;
+  // Leave room for the legend beside the map; on narrow screens it wraps below.
+  const rw = document.querySelector(".maprow").clientWidth;
+  const cw = (rw >= 720 ? rw - 214 - 14 : rw) - 2, cols = x1 - x0 + 1, rows = y1 - y0 + 1;
   const px = Math.max(2, Math.min(cw / cols, Math.max(400, window.innerHeight - document.querySelector(".controls").offsetHeight - navH() - 30) / rows));
   const dpr = window.devicePixelRatio || 1;
   cv.width = Math.round(cols * px * dpr); cv.height = Math.round(rows * px * dpr);
