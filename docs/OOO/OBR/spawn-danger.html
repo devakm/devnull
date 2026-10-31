@@ -7,7 +7,7 @@
   <title>OOORF — Spawn Danger</title>
   <link rel="stylesheet" href="../../css/devnull-shared.css">
   <style>
-    /* Spawn Danger map. Data per release in spawn-danger/*.json, added with scripts/add_spawn_danger_release.py.
+    /* Spawn Danger map. Data per release in spawn-danger/*.js, added with scripts/add_spawn_danger_release.py.
        Map code from RAX tools/spawnlog/spawn_heatmap.py (docs/ooo-spawn-heatmap.html). */
     #sd {
       --surface: var(--bg-secondary); --surface-2: var(--bg-tertiary); --line: var(--border-color);
@@ -140,6 +140,7 @@ worldspace (Oblivion planes, test cells) appear in the table under that worldspa
 map marker near the entrance that matches a cell's EditorID, or the first EditorID.</p>
 </div>
   </div>
+<script src="spawn-danger/releases.js"></script>
 <script>
 let DATA = {}, RELEASES = [];
 const navH = () => (document.querySelector("nav.sticky-nav") || { offsetHeight: 0 }).offsetHeight;
@@ -319,25 +320,32 @@ function tip(h) {
   t.style.left = Math.max(4, x) + "px"; t.style.top = Math.max(4, y) + "px";
 }
 
-const fetched = {};
-const getJson = f => fetched[f] || (fetched[f] = fetch("spawn-danger/" + f).then(r => {
-  if (!r.ok) throw new Error(f + ": " + r.status); return r.json(); }));
+// Data files are scripts that set SD_DATA[key], so the page also works opened from disk (file://).
+const loading = {};
+const getData = key => loading[key] || (loading[key] = new Promise((ok, no) => {
+  const el = document.createElement("script");
+  el.src = "spawn-danger/" + encodeURIComponent(key) + ".js";
+  el.onload = () => (window.SD_DATA || {})[key] ? ok(SD_DATA[key]) : no(new Error(el.src + " has no data"));
+  el.onerror = () => { delete loading[key]; no(new Error(el.src + " did not load")); };
+  document.head.appendChild(el);
+}));
 async function loadRelease(tag) {
   const r = RELEASES.find(x => x.tag === tag) || RELEASES[0];
   $("rel").value = r.tag; $("loading").style.display = "flex"; $("loading").textContent = "Loading " + r.tag + "…";
-  const [ooo, van] = await Promise.all([getJson(r.file), getJson("vanilla.json")]);
+  const [ooo, van] = await Promise.all([getData(r.tag), getData("vanilla")]);
   DATA = { OOO: ooo, Vanilla: van }; safeCache.clear(); selected = null;
   $("ds").options[0].textContent = "OOORF " + r.tag;
   $("src").textContent = `Release ${r.tag}, computed ${r.date}. Load order: ${r.source || "not recorded"}. ` +
     `Vanilla is Oblivion.esm alone.`;
   const u = new URL(location.href);
   if (r.tag === RELEASES[0].tag) u.searchParams.delete("release"); else u.searchParams.set("release", r.tag);
-  history.replaceState(null, "", u);
+  try { history.replaceState(null, "", u); } catch (e) {}
   $("loading").style.display = "none";
   draw();
 }
 async function init() {
-  RELEASES = await getJson("releases.json");
+  RELEASES = window.SD_RELEASES || [];
+  if (!RELEASES.length) throw new Error("spawn-danger/releases.js did not load");
   $("rel").innerHTML = RELEASES.map((r, i) => `<option value="${esc(r.tag)}">${esc(r.tag)}${i ? "" : " (latest)"}</option>`).join("");
   try { const v = JSON.parse(localStorage.getItem("ooorf-spawn-danger") || "{}");
     for (const k of KEYS) if (v[k] !== undefined) {

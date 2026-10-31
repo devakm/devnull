@@ -35,9 +35,10 @@ pages. The marker stays.
 ## Spawn Danger data, one file per release
 
 `spawn-danger.html` is hand-canonical like the others. Its map data is not in the
-page: each release has `spawn-danger/<tag>.json`, listed in
-`spawn-danger/releases.json` (newest first; the page opens the first entry, and
-`?release=<tag>` opens another). To add a release, build RAX's heatmap
+page: each release has `spawn-danger/<tag>.js`, listed in
+`spawn-danger/releases.js` (newest first; the page opens the first entry, and
+`?release=<tag>` opens another). The data files are scripts, not JSON, so the
+page also works opened from disk: browsers block `fetch()` on `file://` pages. To add a release, build RAX's heatmap
 (`tools/spawnlog/spawn_heatmap.py`) with that release installed, then:
 
     python scripts/add_spawn_danger_release.py <ooo-spawn-heatmap.html> <tag> --date YYYY-MM-DD \
