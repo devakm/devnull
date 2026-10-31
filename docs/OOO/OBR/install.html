@@ -19,7 +19,7 @@
 <p><strong>First time?</strong> Install the <a href="dependencies.html">dependencies</a> (Oblivion Remastered, UE4SS, MagicLoader, TesSyncMapInjector) before installing OOORF.</p>
 
 <div class="update">
-<p><strong>Upgrading from alpha91 or earlier:</strong> install &quot;UE4SS new&quot; (v3.0.1-1164, see <a href="dependencies.html">dependencies</a>) <strong>before</strong> you install alpha92. Install the UE4SS update and the alpha92 archive together. The alpha92 <code>RAX</code> DLL is not safe on the old UE4SS, and the old <code>RAX</code> DLL is not safe on the new UE4SS.</p>
+<p><strong>Upgrading from alpha91 or earlier:</strong> install &quot;UE4SS new&quot; (v3.0.1-1164, see <a href="dependencies.html">dependencies</a>) <strong>before</strong> you install alpha92 or later. Install the UE4SS update and the OOORF archive together. The <code>RAX</code> DLL in alpha92 and later is not safe on the old UE4SS, and the old <code>RAX</code> DLL is not safe on the new UE4SS.</p>
 <p>alpha91 also installed <code>Begone</code> and <code>OOO_REFRFix</code> into <code>…\Binaries\Win64\ue4ss\Mods\</code> by default. alpha92 does not: they are optional test mods under <code>alpha92_test_optional\</code>. Installing over alpha91 does <strong>not</strong> remove the old copies. Delete <code>Mods\Begone\</code> and <code>Mods\OOO_REFRFix\</code> unless you want them; to use them, copy the alpha92 versions in from <code>alpha92_test_optional\</code>.</p>
 </div>
 
@@ -70,9 +70,11 @@
 
 <p>In-game smoke test: spawn into the world (any new game or existing save). Encountering OOO-only creatures, items, or the Obsidian armor / weapons confirms records loaded; teleporting to one of the new <code>L_*_Map</code> cells confirms the engine paks loaded.</p>
 
-<h2>alpha92.1 patch (optional)</h2>
+<h2>Updating from alpha92 or alpha92.1 to alpha93</h2>
 
-<p><a href="https://github.com/devakm/OblivionRemastered_OOO/releases/tag/alpha92.1" target="_blank" rel="noopener">alpha92.1</a> is a patch, not a full install. Its archive holds only four updated Materials paks (new Ancestral icons and a Draconis Family shield fix). Install alpha92 first, then extract <code>alpha92.1.7z</code> over it and accept the overwrites. MO2 users: install it as a separate mod that loads after alpha92. It changes no ESP, SyncMap or save data.</p>
+<p><a href="https://github.com/devakm/OblivionRemastered_OOO/releases/tag/alpha93" target="_blank" rel="noopener">alpha93</a> is a full install. It includes the alpha92.1 fixes, so you do not need alpha92.1. Extract <code>alpha93.7z</code> over your alpha92 or alpha92.1 install and accept the overwrites. MO2 users: install alpha93 as a mod in place of alpha92, and remove the alpha92.1 mod if you have it. alpha93 still requires &quot;UE4SS new&quot; (v3.0.1-1164).</p>
+
+<p><strong>West Kvatch Sylvan Ranger Camp in existing saves:</strong> alpha93 moves the camp onto the remaster&#x27;s terrain. A save records the Tamriel worldspace when the character first leaves the starter dungeon, so a save that left the starter dungeon with an earlier OOORF alpha installed keeps the old camp positions, and parts of the camp may still float. The corrected camp shows in a new game that has not yet left the starter dungeon, or in a save that never had an OOORF alpha installed (saves that only ran OOOR Slim count).</p>
 
 <h2>Updating to a newer release</h2>
 
