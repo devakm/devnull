@@ -78,10 +78,96 @@
       <h1>Oscuro's Oblivion Overhaul Remastered FULL (OOORF)</h1>
       <p class="subtitle">Release Tracker</p>
     </header>
-    <nav class="sticky-nav"><a href="../../index.html">devnull</a> | <a href="index.html">OOORF Home</a> | <a href="overview.html">Overview</a> | <a href="new-Items.html">New Items</a> | <a href="devlog.html" class="highlight-text">Devlog</a> | <a href="changelog.html">Changelog</a> | <a href="install.html">Install</a> | <a href="dependencies.html">Dependencies</a> | <a href="spawn-danger.html">Spawn Danger</a> | <a href="https://github.com/devakm/OblivionRemastered_OOO/releases" target="_blank" rel="noopener">Downloads</a></nav>
+    <nav class="sticky-nav"><a href="../../index.html">devnull</a> | <a href="index.html">Home</a> | <a href="overview.html">Overview</a> | <a href="new-Items.html">New Items</a> | <a href="devlog.html" class="highlight-text">Devlog</a> | <a href="changelog.html">Changelog</a> | <a href="install.html">Install</a> | <a href="dependencies.html">Dependencies</a> | <a href="spawn-danger.html">Spawn Danger</a> | <a href="https://github.com/devakm/OblivionRemastered_OOO/releases" target="_blank" rel="noopener">Downloads</a></nav>
 
     <h1>Devlog — the story behind each release</h1>
     <p>Notes on what changed in each release and how it was built, drawn from the build logs of the item and map work behind OOORF. For the file-level list, see the <a href="changelog.html">changelog</a>; for the new armor sets, the <a href="new-Items.html">New Items</a> page.</p>
+
+    <section id="alpha93">
+      <h2>alpha93 — October 2026</h2>
+      <p>alpha93 was released on 2026-10-31. It was planned as beta1, but bugs found in testing led to an alpha with the fixes so far. It fixes creatures that share a 3D model showing the wrong creature, adds the Ayleid weapons as a new set, moves Ancient Harbinger to the Obsidian set in a standard install, rebalances the general wilderness spawn lists, and moves the West Kvatch Sylvan Ranger Camp onto the remaster&#x27;s terrain.</p>
+      <div class="devlog-arcs">
+        <a class="arc-card" href="#a93-formsplit">
+          <h4>Creatures showing the wrong creature</h4>
+          <p>Groups of creatures that share one model showed one creature&#x27;s name, stats and loot for every member. The game placed the right creatures; the remaster&#x27;s bridge to its Unreal Engine forms displayed the last one it looked up. RAX now gives each creature its own form.</p>
+          <span class="jump">Jump to the story ↓</span>
+        </a>
+        <a class="arc-card" href="#a93-ayleid">
+          <h4>The Ayleid weapons</h4>
+          <p>Nine weapon types, 122 items, that used the Elven weapons in alpha92 now have their own look: dark iron with glowing blue (welkynd) stones and etching. The set took six days, most of it on the bow, the warhammer&#x27;s head spike, the claymore&#x27;s eyes and the battle axe&#x27;s top.</p>
+          <span class="jump">Jump to the story ↓</span>
+        </a>
+        <a class="arc-card" href="#a93-spawns">
+          <h4>Spawn danger by level</h4>
+          <p>A review of every placed leveled list against OOO&#x27;s spawn design, and a map of how likely the creatures at each place are to be above the player&#x27;s level. OOO&#x27;s general wilderness lists were changed as a result.</p>
+          <span class="jump">Jump to the story ↓</span>
+        </a>
+        <a class="arc-card" href="#a93-camp">
+          <h4>The West Kvatch camp</h4>
+          <p>The camp&#x27;s objects floated above the slope because OOO placed them on a terrain pad the remaster does not have. The camp was moved onto the remaster&#x27;s ground.</p>
+          <span class="jump">Jump to the story ↓</span>
+        </a>
+      </div>
+      <div class="devlog-timeline">
+        <div class="milestone" id="dl-2026-10-21">
+          <div class="date">2026-10-21</div>
+          <h3>Ancient Harbinger on the Obsidian set</h3>
+          <p>In alpha92 a standard install showed the Ancient Harbinger armor as Glass and its weapons as Iron. In a standard install they now use the Obsidian set, armor and weapons, and the armor shows the Obsidian inventory icons. With the Deluxe Edition patch they keep the Deluxe Edition models. The greaves were also corrected: OOO had given them the boots model, so they now use the greaves model.</p>
+          <p class="xlinks">New Items card: <a href="new-Items.html#AncientHarbinger">Ancient Harbinger</a></p>
+        </div>
+        <div class="milestone" id="a93-ayleid">
+          <div class="date">2026-10-21</div>
+          <h3>The Ayleid shortsword</h3>
+          <p>The Ayleid weapons started with the shortsword, cloned from the Elven shortsword. The blade is recolored to dark iron, and the stones and etching glow welkynd blue. The first build did not glow in game; the glow material was replaced. The glow was confirmed in game on 2026-10-22.</p>
+          <div class="devlog-renders"><a href="images/refs/OBR-item-OOO-AyleidWeapons-v34-Shortsword-interior-light-near.png" target="_blank" rel="noopener"><img src="images/refs/OBR-item-OOO-AyleidWeapons-v34-Shortsword-interior-light-near.png" alt="Ayleid shortsword, in-game screenshot"></a></div>
+          <div class="devlog-thumbs"><a href="images/item-tracker-assets/Ayleid_Shortsword.png" target="_blank" rel="noopener"><img src="images/item-tracker-assets/Ayleid_Shortsword.png" alt="Ayleid shortsword icon"></a></div>
+          <p class="xlinks">New Items card: <a href="new-Items.html#Ayleid">Ayleid weapons</a></p>
+        </div>
+        <div class="milestone" id="dl-2026-10-25">
+          <div class="date">2026-10-25</div>
+          <h3>All nine Ayleid weapons</h3>
+          <p>The other eight types followed the shortsword&#x27;s recipe: dagger, longsword, claymore, mace, war axe, battle axe, warhammer and bow. The war axe&#x27;s etching pattern needed a hand-crafted mask. Each of the other weapons took several rounds of tuning on its etched pattern and gems. The bow also needed its own work: the filigree along its limbs and three rows of square gems, including the gems above the hand that face the string. The warhammer&#x27;s glow was limited to the spike on its head; it had spread onto the collar below. Each Ayleid weapon also needed its inventory icon set in the OOO plugin, because the game takes a weapon&#x27;s icon from the plugin record, not from the Unreal form. The set was confirmed in game from 2026-10-22 to 2026-10-25.</p>
+          <figure class="shot"><a href="images/refs/OBR-item-OOO-AyleidWeapons-montage-names.jpg" target="_blank" rel="noopener"><img src="images/refs/OBR-item-OOO-AyleidWeapons-montage-names.jpg" alt="The ten Ayleid weapons, in-game screenshots"></a></figure>
+          <div class="devlog-thumbs"><a href="images/item-tracker-assets/Ayleid_Dagger.png" target="_blank" rel="noopener"><img src="images/item-tracker-assets/Ayleid_Dagger.png" alt="Ayleid dagger icon"></a><a href="images/item-tracker-assets/Ayleid_Shortsword.png" target="_blank" rel="noopener"><img src="images/item-tracker-assets/Ayleid_Shortsword.png" alt="Ayleid shortsword icon"></a><a href="images/item-tracker-assets/Ayleid_LongSword.png" target="_blank" rel="noopener"><img src="images/item-tracker-assets/Ayleid_LongSword.png" alt="Ayleid longsword icon"></a><a href="images/item-tracker-assets/Ayleid_Claymore.png" target="_blank" rel="noopener"><img src="images/item-tracker-assets/Ayleid_Claymore.png" alt="Ayleid claymore icon"></a><a href="images/item-tracker-assets/Ayleid_Mace.png" target="_blank" rel="noopener"><img src="images/item-tracker-assets/Ayleid_Mace.png" alt="Ayleid mace icon"></a><a href="images/item-tracker-assets/Ayleid_WarAxe.png" target="_blank" rel="noopener"><img src="images/item-tracker-assets/Ayleid_WarAxe.png" alt="Ayleid war axe icon"></a><a href="images/item-tracker-assets/Ayleid_BattleAxe.png" target="_blank" rel="noopener"><img src="images/item-tracker-assets/Ayleid_BattleAxe.png" alt="Ayleid battle axe icon"></a><a href="images/item-tracker-assets/Ayleid_WarHammer.png" target="_blank" rel="noopener"><img src="images/item-tracker-assets/Ayleid_WarHammer.png" alt="Ayleid warhammer icon"></a><a href="images/item-tracker-assets/Ayleid_Bow.png" target="_blank" rel="noopener"><img src="images/item-tracker-assets/Ayleid_Bow.png" alt="Ayleid bow icon"></a></div>
+          <p class="xlinks">New Items card: <a href="new-Items.html#Ayleid">Ayleid weapons</a></p>
+        </div>
+        <div class="milestone" id="dl-2026-10-26">
+          <div class="date">2026-10-26</div>
+          <h3>The claymore&#x27;s eyes and the battle axe&#x27;s top</h3>
+          <p>The claymore&#x27;s bird-head eyes showed a gold-green center in game, whatever color the texture gave them. The cause: the game draws a high-detail version of the mesh (Nanite, 56,766 triangles), while the tools read the low-detail fallback (2,826 triangles). On the high-detail mesh the eyes sample a different part of the texture. Decoding that mesh located the eye texels, and the eyes were confirmed in game. The same day the glow on the battle axe&#x27;s top section was confirmed in game. The claymore, battle axe, mace and war axe forms were also pointed at the Ayleid meshes; they still named the vanilla Elven meshes.</p>
+          <div class="devlog-renders"><a href="images/refs/OBR-item-OOO-AyleidWeapons-v38-Claymore-interior-light-near.png" target="_blank" rel="noopener"><img src="images/refs/OBR-item-OOO-AyleidWeapons-v38-Claymore-interior-light-near.png" alt="Ayleid claymore, in-game screenshot"></a><a href="images/refs/OBR-item-OOO-AyleidWeapons-v39-BattleAxe-interior-light-near.png" target="_blank" rel="noopener"><img src="images/refs/OBR-item-OOO-AyleidWeapons-v39-BattleAxe-interior-light-near.png" alt="Ayleid battle axe, in-game screenshot"></a></div>
+          <div class="devlog-thumbs"><a href="images/item-tracker-assets/Ayleid_Claymore.png" target="_blank" rel="noopener"><img src="images/item-tracker-assets/Ayleid_Claymore.png" alt="Ayleid claymore icon"></a><a href="images/item-tracker-assets/Ayleid_BattleAxe.png" target="_blank" rel="noopener"><img src="images/item-tracker-assets/Ayleid_BattleAxe.png" alt="Ayleid battle axe icon"></a></div>
+          <p class="xlinks">New Items card: <a href="new-Items.html#Ayleid">Ayleid weapons</a></p>
+        </div>
+        <div class="milestone" id="a93-camp">
+          <div class="date">2026-10-27</div>
+          <h3>The West Kvatch camp</h3>
+          <p>OOO flattened the ground under the West Kvatch Sylvan Ranger Camp. The remaster does not use the original terrain data, so the camp&#x27;s 32 objects floated above the slope. The camp was moved 225 units west onto the remaster&#x27;s ground, measured from the vanilla terrain heights and checked against the remaster&#x27;s grass and the player&#x27;s position in game. The tents and bedrolls were tilted to the slope, and a large rock that sat inside the camp was moved out. A save keeps the camp positions from the first time the character left the starter dungeon, so saves made with an earlier OOORF alpha still show the old positions.</p>
+        </div>
+        <div class="milestone" id="dl-2026-10-28">
+          <div class="date">2026-10-28</div>
+          <h3>The leveled-list level band</h3>
+          <p>A spawn logger was added to RAX to record what the leveled lists place in game. Testing with it found a difference from classic Oblivion. A leveled list picks among entries within 8 levels. Classic Oblivion counts the 8 levels down from the highest entry the player qualifies for; the remaster counts them from the player&#x27;s level. The two differ when the player&#x27;s level falls between a list&#x27;s entries. RAX now uses the classic rule.</p>
+        </div>
+        <div class="milestone" id="a93-formsplit">
+          <div class="date">2026-10-29</div>
+          <h3>Creatures showing the wrong creature</h3>
+          <p>In the logs, 20–28% of the creatures placed from leveled lists showed a different creature than the one the game placed. In OOO many creatures share one model; all imps and gargoyles use the imp model. The remaster keeps one Unreal form for each model and writes the most recently looked-up creature into it, so every creature using that model showed that one creature&#x27;s name, stats and loot. A gargoyle group could show up as five Ancient Gargoyles. RAX now gives each creature that shares a model its own copy of the form. In two test runs at levels 15 and 31, 0 of 181 creatures showed the wrong creature.</p>
+          <p class="xlinks">New Items card: <a href="new-Items.html#AncientGargoyle">Ancient Gargoyle</a></p>
+        </div>
+        <div class="milestone" id="a93-spawns">
+          <div class="date">2026-10-30</div>
+          <h3>Spawn review and the danger map</h3>
+          <p>Every placed leveled list (693 lists, about 10,000 spawn points) was checked against OOO&#x27;s spawn design: early danger is rare and diluted, the roads are safer, and the edges of the map and the Shivering Isles are more dangerous than the center. The review also produced a map of spawn danger by player level, now on this site as the <a href="spawn-danger.html">Spawn Danger</a> page. OOO&#x27;s six general wilderness lists were changed the same day to add creatures in steps at levels 14, 18 and 24, and the Shivering Isles water, shoreline and wilderness lists move their level steps up (19 to 20 or 22, and 27 to 30). With the display fix and these changes, Ancient Gargoyles stay well below regular gargoyles at every level in the wilderness and become more common after level 24.</p>
+          <figure class="shot"><a href="spawn-danger.html"><img src="images/refs/spawn-danger-alpha93-level1.jpg" alt="Spawn Danger map of Tamriel for alpha93 at player level 1"></a><figcaption>The Spawn Danger map for alpha93, Tamriel at player level 1.</figcaption></figure>
+        </div>
+        <div class="milestone" id="dl-2026-10-31">
+          <div class="date">2026-10-31</div>
+          <h3>alpha93 released</h3>
+          <p>A level-31 test run after the wilderness change, then the release.</p>
+        </div>
+      </div>
+    </section>
 
     <section id="alpha92">
       <h2>alpha92 — October 2026</h2>

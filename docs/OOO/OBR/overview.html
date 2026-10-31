@@ -57,14 +57,30 @@
       <h1>Oscuro's Oblivion Overhaul Remastered FULL</h1>
       <p class="subtitle">Release Tracker</p>
     </header>
-    <nav class="sticky-nav"><a href="../../index.html">devnull</a> | <a href="index.html">OOORF Home</a> | <a href="overview.html" class="highlight-text">Overview</a> | <a href="new-Items.html">New Items</a> | <a href="devlog.html">Devlog</a> | <a href="changelog.html">Changelog</a> | <a href="install.html">Install</a> | <a href="dependencies.html">Dependencies</a> | <a href="spawn-danger.html">Spawn Danger</a> | <a href="https://github.com/devakm/OblivionRemastered_OOO/releases" target="_blank" rel="noopener">Downloads</a></nav>
+    <nav class="sticky-nav"><a href="../../index.html">devnull</a> | <a href="index.html">Home</a> | <a href="overview.html" class="highlight-text">Overview</a> | <a href="new-Items.html">New Items</a> | <a href="devlog.html">Devlog</a> | <a href="changelog.html">Changelog</a> | <a href="install.html">Install</a> | <a href="dependencies.html">Dependencies</a> | <a href="spawn-danger.html">Spawn Danger</a> | <a href="https://github.com/devakm/OblivionRemastered_OOO/releases" target="_blank" rel="noopener">Downloads</a></nav>
     <h1>Overview — what OOORF bundles</h1>
 
     <p><strong>Oscuro&#x27;s Oblivion Overhaul Remastered FULL</strong> (<strong>OOORF</strong>) is the Oblivion Remastered (UE5) re-release of the long-running <strong>Oscuro&#x27;s Oblivion Overhaul</strong> (OOO) gameplay mod, with Shivering Isles content extended to match.</p>
 
     <p><em>Note: <strong>OOORF</strong> (this site) is the FULL edition. The acronym <strong>OOORS</strong> refers to the separate <a href="https://www.nexusmods.com/oblivionremastered/mods/2759" target="_blank" rel="noopener">Slim edition</a>.</em></p>
 
-    <h2>What&#x27;s new in alpha92</h2>
+    <h2>What&#x27;s new in alpha93</h2>
+
+    <div class="update">
+      <p><strong>alpha93 still requires &quot;UE4SS new&quot;</strong> (v3.0.1-1164), as alpha92 did. It installs over alpha92 or alpha92.1 and includes the alpha92.1 fixes. See <a href="install.html">Install</a>.</p>
+    </div>
+
+    <ul>
+      <li><strong>Fixed: creatures that share a model showed the wrong creature.</strong> In OOO, many creatures share one 3D model (all imps and gargoyles use the imp model). In the remaster, every creature in such a group showed the name, stats and loot of whichever one the game looked up last. RAX now gives each creature its own copy of the shared form, so each one shows its own name, stats and loot. In testing, 20–28% of these creatures showed the wrong creature before the fix and 0 of 181 after it.</li>
+      <li><strong>Leveled lists use the classic Oblivion level band:</strong> RAX now counts a list&#x27;s 8-level band down from the highest entry the player qualifies for, as classic Oblivion does, instead of from the player&#x27;s level.</li>
+      <li><strong>New item set: <a href="new-Items.html#Ayleid">Ayleid weapons</a>.</strong> The Ayleid daggers, shortswords, longswords, claymores, maces, war axes, battle axes, warhammers and bows (122 items) have their own meshes and materials. In alpha92 they used the Elven weapons.</li>
+      <li><strong><a href="new-Items.html#AncientHarbinger">Ancient Harbinger</a> without the Deluxe Edition patch</strong> now uses the Obsidian set instead of Glass armor and Iron weapons. The greaves use the greaves mesh.</li>
+      <li><strong>Wilderness spawns rebalanced:</strong> the six general wilderness lists now add creatures in steps at levels 14, 18 and 24, and the Shivering Isles water, shoreline and wilderness lists move their level steps up. See the <a href="spawn-danger.html">Spawn Danger</a> map.</li>
+      <li><strong>West Kvatch Sylvan Ranger Camp moved onto the remaster&#x27;s terrain.</strong> Saves that left the starter dungeon with an earlier OOORF alpha installed keep the old camp positions; see <a href="install.html">Install</a>.</li>
+    </ul>
+    <p>See the <a href="changelog.html#alpha93">alpha93 changelog</a> for the full file-level diff, or the <a href="https://github.com/devakm/OblivionRemastered_OOO/releases/tag/alpha93" target="_blank" rel="noopener">GitHub release page</a> to download.</p>
+
+    <h2>Previously: what was new in alpha92</h2>
 
     <div class="update">
       <p><strong>alpha92 requires a UE4SS update.</strong> Install &quot;UE4SS new&quot; (v3.0.1-1164) from the <a href="https://www.nexusmods.com/oblivionremastered/mods/32" target="_blank" rel="noopener">UE4SS Nexus page</a> (under <strong>Update files</strong>) <strong>before</strong> you install alpha92. &quot;UE4SS stable&quot; (3.0.1.a) is no longer supported. See <a href="install.html">Install</a> for the upgrade steps.</p>
@@ -109,7 +125,7 @@
 
     <h2>What is included in an OOORF release</h2>
 
-    <p>An OOORF release is a directory tree the user merges into their <code>Oblivion Remastered\</code> install. The latest build (<code>alpha92</code> · 325 files · 1.5 GiB) includes:</p>
+    <p>An OOORF release is a directory tree the user merges into their <code>Oblivion Remastered\</code> install. The latest build (<code>alpha93</code> · 334 files · 1.6 GiB) includes:</p>
 
     <h3>Game-data overlay (<code>OblivionRemastered/Content/Dev/ObvData/Data/</code>)</h3>
 
@@ -162,7 +178,7 @@
 
     <p><code>L_Arondar_Map</code>, <code>L_Baras_Map</code>, <code>L_BloodClotCave_Map</code>, <code>L_BrokenToothCaveXX_Map</code>, <code>L_Cehan_Map</code>, <code>L_DeepCoverCav_Map</code>, <code>L_Dostares_Map</code>, <code>L_DrownedHopesCa_Map</code>, <code>L_GloomWayCaveXX_Map</code>, <code>L_GraveGroundCaveXX_Map</code>, <code>L_LipsTarn03_Map</code>, <code>L_NarindXXX_Map</code>, <code>L_OOOR1waterCave_Map</code>, <code>L_OOOR2waterCave02_Map</code>, <code>L_OOORCastleInterior_Map</code>, <code>L_OscuroWaterCellCHMGWell0_Map</code>, <code>L_RedGillCave_Map</code>, <code>L_RosulasXX_Map</code>, <code>L_ThunderingSte_Map</code>, <code>L_VarastalXX_Map</code>, <code>L_Yele_Map</code>.</p>
 
-    <p>Plus one exterior fix pak added in alpha91: <code>GraveGroundExterior_P.{pak,ucas,utoc}</code> — foliage fixes for the Grave Ground Cave exterior cell.</p>
+    <p>Plus two exterior fix paks: <code>GraveGroundExterior_P.{pak,ucas,utoc}</code> (added in alpha91) — foliage fixes for the Grave Ground Cave exterior cell; and <code>WestKvatchCampExterior_P.{pak,ucas,utoc}</code> (added in alpha93) — the West Kvatch Sylvan Ranger Camp moved onto the remaster&#x27;s terrain.</p>
 
     <h4>Per-dungeon validation status</h4>
 
@@ -249,7 +265,7 @@
 
     <p><em>&quot;Validated&quot; means the dungeon has been walked end-to-end in-game and all applicable phases pass (NPC pathfinding, REFR positions, ghost-object suppression, surface-flicker, and water surface/swim behavior where applicable).</em></p>
 
-    <p><em>Known issue in alpha92: in the second zone of Gloom Way Cave, a burnt rubble pile shows large flames that classic Oblivion does not have. The flames cause no damage. The issue is logged for a fix.</em></p>
+    <p><em>Known issue since alpha92, still present in alpha93: in the second zone of Gloom Way Cave, a burnt rubble pile shows large flames that classic Oblivion does not have. The flames cause no damage. The issue is logged for a fix.</em></p>
 
     <h4 id="item-sets">Custom cloned and retextured item sets</h4>
 
@@ -260,6 +276,7 @@
     <div class="item-gallery">
       <a href="new-Items.html#Ancestral"><img src="images/refs/OBR-OOO-item-Ancestral-Armor_M-v14-sunlight.png" alt="Ancestral, in-game screenshot"><span>Ancestral</span></a>
       <a href="new-Items.html#ArcticFur"><img src="images/refs/OBR-OOO-item-ArcticFur-Armor_F-v2-sunlight.png" alt="Arctic Fur, in-game screenshot"><span>Arctic Fur</span></a>
+      <a href="new-Items.html#Ayleid"><img src="images/refs/OBR-item-OOO-AyleidWeapons-v38-Claymore-interior-light-near-back.png" alt="Ayleid weapons, in-game screenshot"><span>Ayleid weapons</span></a>
       <a href="new-Items.html#BladesElite"><img src="images/refs/OBR-OOO-item-BladesElite-Armor_M-v5-shadows.png" alt="Blades Elite, in-game screenshot"><span>Blades Elite</span></a>
       <a href="new-Items.html#BloodLeather"><img src="images/refs/OBR-OOO-item-BloodLeather-Armor_F-v1-shadows.png" alt="Blood Leather, in-game screenshot"><span>Blood Leather</span></a>
       <a href="new-Items.html#BlueGlass"><img src="images/refs/OBR-OOO-item-BlueGlass-Armor_F-v1-shadows.png" alt="Blue Glass, in-game screenshot"><span>Blue Glass</span></a>
@@ -293,7 +310,7 @@
       <a href="new-Items.html#WornSteel"><img src="images/refs/OBR-OOO-item-WornSteel-Armor_M-v13-shadows.png" alt="Worn Steel, in-game screenshot"><span>Worn Steel</span></a>
     </div>
 
-    <p>Sets are listed above alphabetically. By base material, they are: <strong>Glass</strong> (Obsidian, Blue Glass, Drakefired, Dark Malachite Plated), <strong>Mithril</strong> (Jephre's Aureus, Eboron, Golden Bronze, Shadowmail), <strong>Elven</strong> (Elven Sky, Elven Eldar, Elven Night), <strong>Leather</strong> (Blood Leather, Gray Fox's Armor of Deception and Gray Fox's Armor of War, Worn Leather), <strong>Fur</strong> (Arctic Fur, Worn Fur), <strong>Chainmail and Kvatch Town Guard</strong> (Dragonborne, Draconis Family), <strong>Daedric</strong> (Daedric Prince, Dread, Imago Storm's Armor, Dremora Elite), <strong>Steel</strong> (Worn Steel, Unfinished Steel, Unfinished Worn Steel, Durable Steel, Blades Elite, The Bear's Armor), <strong>Amelion</strong> (Noble, Ancestral, Worn Ancestral, Unfinished Ancestral). Obsidian ships a 9-piece weapon line, and Light of Dawn ships one sword in four restoration stages; the other sets are armor-only, from one to six pieces.</p>
+    <p>Sets are listed above alphabetically. By base material, they are: <strong>Glass</strong> (Obsidian, Blue Glass, Drakefired, Dark Malachite Plated), <strong>Mithril</strong> (Jephre's Aureus, Eboron, Golden Bronze, Shadowmail), <strong>Elven</strong> (Elven Sky, Elven Eldar, Elven Night, Ayleid weapons), <strong>Leather</strong> (Blood Leather, Gray Fox's Armor of Deception and Gray Fox's Armor of War, Worn Leather), <strong>Fur</strong> (Arctic Fur, Worn Fur), <strong>Chainmail and Kvatch Town Guard</strong> (Dragonborne, Draconis Family), <strong>Daedric</strong> (Daedric Prince, Dread, Imago Storm's Armor, Dremora Elite), <strong>Steel</strong> (Worn Steel, Unfinished Steel, Unfinished Worn Steel, Durable Steel, Blades Elite, The Bear's Armor), <strong>Amelion</strong> (Noble, Ancestral, Worn Ancestral, Unfinished Ancestral). Obsidian ships a 9-piece weapon line, the Ayleid weapons cover nine weapon types, and Light of Dawn ships one sword in four restoration stages; the other sets are armor-only, from one to six pieces.</p>
 
     <p><strong>Item set credits.</strong> Four sets are created from other creators&#x27; mods (see also the full <a href="#credits">Credits</a> below):</p>
     <ul>
@@ -302,7 +319,7 @@
       <li><strong>Drakefired</strong>: New items using Red glass mod of <em><a href="https://www.nexusmods.com/oblivionremastered/mods/556" target="_blank" rel="noopener">Blackened Steel Glass Armor and Weapons</a></em> replacer by <a href="https://www.nexusmods.com/profile/ProhagonCreations/mods?gameId=7587" target="_blank" rel="noopener">ProhagonCreations</a>.</li>
       <li><strong>Dark Malachite Plated</strong>: New items created from the Glass replacer <em><a href="https://www.nexusmods.com/oblivionremastered/mods/556" target="_blank" rel="noopener">Blackened Steel Glass Armor and Weapons</a></em> by <a href="https://www.nexusmods.com/profile/ProhagonCreations/mods?gameId=7587" target="_blank" rel="noopener">ProhagonCreations</a>. Dark Malachite Plated uses its textures on the vanilla Glass material.</li>
     </ul>
-    <p>All other sets: new armor sets, and the Light of Dawn sword, created by devakm with inspiration from classic OOO artists, as recolors of the relevant vanilla donor materials through the <code>OblivionRemastered_ItemClone</code> pipeline.</p>
+    <p>All other sets: new armor sets, the Light of Dawn sword, and the Ayleid weapons, created by devakm with inspiration from classic OOO artists, as recolors of the relevant vanilla donor materials through the <code>OblivionRemastered_ItemClone</code> pipeline.</p>
     <p>The Ancestral, Worn Ancestral, Unfinished Ancestral, and Durable Steel sets did not exist in classic OOO. They are new armor sets created by devakm.</p>
 
     <p><em>Stats note:</em> all sets have stats significantly rebalanced compared to their vanilla base material — they are distinct items, not just retextures. Slot coverage and leveled-list placement are auditable in the main ESP with TES4Edit / xEdit if you want the specifics.</p>
@@ -430,17 +447,17 @@
           <td>UE4SS mods (<code>RAX</code>, <code>Begone</code>, <code>OOO_REFRFix</code>) and IoStore content (<code>L_*_Map</code>, Obsidian set) get layered in.</td>
         </tr>
         <tr>
-          <td><code>alpha91</code>–<code>alpha92</code></td>
-          <td>Cloned and retextured item sets at scale (14, then 21 more), all classic dungeons validated, and the move to &quot;UE4SS new&quot; with Begone and OOO_REFRFix made optional.</td>
+          <td><code>alpha91</code>–<code>alpha93</code></td>
+          <td>Cloned and retextured item sets at scale (14, then 21 more), all classic dungeons validated, the move to &quot;UE4SS new&quot; with Begone and OOO_REFRFix made optional, and the first weapon sets (Light of Dawn, Ayleid).</td>
         </tr>
       </tbody>
     </table>
 
     <h2>How to compare two releases</h2>
 
-    <pre><code>git diff alpha75..alpha92 -- manifests/    # see exactly which file SHA-256s changed
-cat docs/per-release/alpha92.md            # human-readable added/removed/changed list
-git log --oneline alpha75..alpha92         # the commit subjects (= release names) between</code></pre>
+    <pre><code>git diff alpha75..alpha93 -- manifests/    # see exactly which file SHA-256s changed
+cat docs/per-release/alpha93.md            # human-readable added/removed/changed list
+git log --oneline alpha75..alpha93         # the commit subjects (= release names) between</code></pre>
     <footer>
       <p>Source: <a href="https://github.com/devakm/OblivionRemastered_OOO" target="_blank" rel="noopener">github.com/devakm/OblivionRemastered_OOO</a> · Releases: <a href="https://github.com/devakm/OblivionRemastered_OOO/releases" target="_blank" rel="noopener">GitHub Releases</a></p>
     </footer>

@@ -13,9 +13,145 @@
       <h1>Oscuro's Oblivion Overhaul Remastered FULL</h1>
       <p class="subtitle">Release Tracker</p>
     </header>
-    <nav class="sticky-nav"><a href="../../index.html">devnull</a> | <a href="index.html">OOORF Home</a> | <a href="overview.html">Overview</a> | <a href="new-Items.html">New Items</a> | <a href="devlog.html">Devlog</a> | <a href="changelog.html" class="highlight-text">Changelog</a> | <a href="install.html">Install</a> | <a href="dependencies.html">Dependencies</a> | <a href="spawn-danger.html">Spawn Danger</a> | <a href="https://github.com/devakm/OblivionRemastered_OOO/releases" target="_blank" rel="noopener">Downloads</a></nav>
+    <nav class="sticky-nav"><a href="../../index.html">devnull</a> | <a href="index.html">Home</a> | <a href="overview.html">Overview</a> | <a href="new-Items.html">New Items</a> | <a href="devlog.html">Devlog</a> | <a href="changelog.html" class="highlight-text">Changelog</a> | <a href="install.html">Install</a> | <a href="dependencies.html">Dependencies</a> | <a href="spawn-danger.html">Spawn Danger</a> | <a href="https://github.com/devakm/OblivionRemastered_OOO/releases" target="_blank" rel="noopener">Downloads</a></nav>
     <h2>Per-release changes</h2>
 <p>Newest first. Click a release name in the index to jump to it.</p>
+<hr><h2 id="alpha93">alpha93</h2>
+<p><a href="https://github.com/devakm/OblivionRemastered_OOO/releases/tag/alpha93" target="_blank" rel="noopener">Download</a></p>
+
+<h2>Summary</h2>
+
+<ul>
+<li><strong>Added:</strong> 9</li>
+<li><strong>Removed:</strong> 0</li>
+<li><strong>Changed:</strong> 89</li>
+<li><strong>Unchanged:</strong> 236</li>
+</ul>
+
+<h3>Highlights</h3>
+
+<ul>
+<li><strong>Fixed: creatures that share a model showed the wrong creature.</strong> In OOO, many creatures share one 3D model (all imps and gargoyles use the imp model). In the remaster, every creature in such a group showed the name, stats and loot of whichever one the game looked up last, so a gargoyle group could show up as five Ancient Gargoyles. RAX now gives each creature its own copy of the shared form. In testing, 20–28% of these creatures showed the wrong creature before the fix and 0 of 181 after it. The fix is on by default. To turn it off, create <code>OblivionRemastered\Binaries\Win64\ue4ss\Mods\RAX\formsplit.json</code> (next to RAX&#x27;s <code>enabled.txt</code>) containing <code>{ "enabled": false }</code>.</li>
+<li><strong>Leveled lists use the classic Oblivion level band (RAX <code>levlist</code>):</strong> a leveled list picks among entries within 8 levels. Classic Oblivion counts those 8 levels down from the highest entry the player qualifies for; the remaster counted them from the player&#x27;s level. The two differ only when the player&#x27;s level falls between a list&#x27;s entries (for example, at level 15 the remaster skipped a list&#x27;s level-6 entry that classic Oblivion includes). RAX now uses the classic rule.</li>
+<li><strong>Still requires &quot;UE4SS new&quot;</strong> (v3.0.1-1164), as alpha92 did.</li>
+<li><strong>New item set: <a href="new-Items.html#Ayleid">Ayleid weapons</a>.</strong> The Ayleid daggers, shortswords, longswords, claymores, maces, war axes, battle axes, warhammers and bows (122 items) have their own meshes and materials. In alpha92 they used the Elven weapons.</li>
+<li><strong><a href="new-Items.html#AncientHarbinger">Ancient Harbinger</a> without the Deluxe Edition patch:</strong> the armor and weapons now use the Obsidian set instead of Glass armor and Iron weapons. With the patch they keep the Deluxe Edition models. The Harbinger greaves now use the greaves mesh instead of the boots mesh.</li>
+<li><strong>Wilderness spawns rebalanced:</strong> the six general wilderness lists (Highlands, Plains, Mountains, Hills, Forest Mountain and Snowy Mountains) now add creatures in steps at levels 14, 18 and 24. The Shivering Isles water, shoreline and wilderness lists move their level steps up (19 to 20 or 22, and 27 to 30). The <a href="spawn-danger.html">Spawn Danger</a> map shows the alpha93 lists.</li>
+<li><strong>West Kvatch Sylvan Ranger Camp moved onto the terrain:</strong> OOO placed the camp on a flat terrain pad that the remaster&#x27;s terrain does not have, so its tents, bedrolls and other objects floated above the slope. The camp (32 objects) now sits 225 units west, on the remaster&#x27;s ground. A large vanilla rock that sat under the camp is moved out of it. New pak: <code>WestKvatchCampExterior_P</code>.</li>
+<li><strong>Existing saves keep the old camp positions:</strong> a save records the Tamriel worldspace when the character first leaves the starter dungeon. A save that left the starter dungeon with an earlier OOORF alpha installed keeps the old camp positions, and parts of the camp (barrels, bedrolls and other items) may still float, whether or not that save has visited the camp. The corrected camp shows in a new game that has not yet left the starter dungeon, or in a save that never had an OOORF alpha installed. OOOR Slim makes no world changes, so saves that only ran Slim count.</li>
+<li><strong>Item textures:</strong> the mips and inventory icons of every item set are rebuilt. This includes the alpha92.1 fixes, so alpha93 installs over alpha92 or alpha92.1.</li>
+<li><strong>SyncMap:</strong> ~137 asset remappings (+0 -0): 122 Ayleid weapons from the Elven weapons to the Ayleid set, and 15 Ancient Harbinger items to the Obsidian set.</li>
+<li><strong>ESP records:</strong> in <code>Oscuro&#x27;s_Oblivion_Overhaul.esp</code>, one armor record (the Harbinger greaves model) and 14 leveled creature lists changed. <code>OOO_DeluxeEdition.esp</code> adds the six Ancient Harbinger armor records.</li>
+</ul>
+
+<h2>Added</h2>
+
+<ul>
+<li><code>OblivionRemastered/Content/Paks/~mods/AyleidItems.pak</code> (347 B)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/AyleidItems.ucas</code> (7.9 KiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/AyleidItems.utoc</code> (1.3 KiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/AyleidMaterials.pak</code> (347 B)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/AyleidMaterials.ucas</code> (74.5 MiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/AyleidMaterials.utoc</code> (25.1 KiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/WestKvatchCampExterior_P.pak</code> (347 B)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/WestKvatchCampExterior_P.ucas</code> (21.3 MiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/WestKvatchCampExterior_P.utoc</code> (4.5 KiB)</li>
+</ul>
+
+<h2>Changed</h2>
+
+<ul>
+<li><code>OblivionRemastered/Binaries/Win64/ue4ss/Mods/RAX/dlls/main.dll</code> (1.1 MiB)</li>
+<li><code>OblivionRemastered/Content/Dev/ObvData/Data/OptionalPatches/OOO_DeluxeEdition.esp</code> (82.9 KiB)</li>
+<li><code>OblivionRemastered/Content/Dev/ObvData/Data/OptionalPatches/SyncMap - DeluxeEdition/Oscuro's_Oblivion_Overhaul.ini</code> (560.6 KiB)</li>
+<li><code>OblivionRemastered/Content/Dev/ObvData/Data/Oscuro's_Oblivion_Overhaul.esp</code> (16.1 MiB)</li>
+<li><code>OblivionRemastered/Content/Dev/ObvData/Data/SyncMap/Oscuro's_Oblivion_Overhaul.ini</code> (560.6 KiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/AncestralMaterials.ucas</code> (41.5 MiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/AncestralMaterials.utoc</code> (15.1 KiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/ArcticFurMaterials.ucas</code> (45.5 MiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/ArcticFurMaterials.utoc</code> (15.8 KiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/AureusItems.ucas</code> (6.6 KiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/AureusItems.utoc</code> (1020 B)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/AureusMaterials.ucas</code> (31.2 MiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/AureusMaterials.utoc</code> (14.2 KiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/BladesEliteItems.ucas</code> (6.0 KiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/BladesEliteItems.utoc</code> (942 B)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/BladesEliteMaterials.ucas</code> (39.3 MiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/BladesEliteMaterials.utoc</code> (14.2 KiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/BloodLeatherMaterials.ucas</code> (24.4 MiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/BloodLeatherMaterials.utoc</code> (12.0 KiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/DaedricPrinceMaterials.ucas</code> (33.5 MiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/DaedricPrinceMaterials.utoc</code> (14.4 KiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/DarkMalachiteMaterials.ucas</code> (38.4 MiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/DarkMalachiteMaterials.utoc</code> (14.0 KiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/DraconisMaterials.ucas</code> (44.3 MiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/DraconisMaterials.utoc</code> (11.8 KiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/DragonborneItems.ucas</code> (5.7 KiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/DragonborneItems.utoc</code> (942 B)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/DragonborneMaterials.ucas</code> (50.3 MiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/DragonborneMaterials.utoc</code> (16.0 KiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/DrakefiredMaterials.ucas</code> (41.7 MiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/DrakefiredMaterials.utoc</code> (16.9 KiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/DreadMaterials.ucas</code> (28.7 MiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/DreadMaterials.utoc</code> (12.3 KiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/DremoraEliteMaterials.ucas</code> (33.4 MiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/DremoraEliteMaterials.utoc</code> (14.2 KiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/DurableSteelItems.ucas</code> (7.0 KiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/DurableSteelItems.utoc</code> (1.0 KiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/DurableSteelMaterials.ucas</code> (42.1 MiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/DurableSteelMaterials.utoc</code> (15.5 KiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/EboronItems.ucas</code> (6.6 KiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/EboronItems.utoc</code> (1020 B)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/EboronMaterials.ucas</code> (25.8 MiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/EboronMaterials.utoc</code> (13.0 KiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/ElvenEldarMaterials.ucas</code> (63.3 MiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/ElvenEldarMaterials.utoc</code> (20.3 KiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/ElvenNightMaterials.ucas</code> (63.3 MiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/ElvenNightMaterials.utoc</code> (20.3 KiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/ElvenSkyMaterials.ucas</code> (63.3 MiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/ElvenSkyMaterials.utoc</code> (20.2 KiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/GoldenBronzeItems.ucas</code> (6.9 KiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/GoldenBronzeItems.utoc</code> (1.0 KiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/GoldenBronzeMaterials.ucas</code> (31.2 MiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/GoldenBronzeMaterials.utoc</code> (14.6 KiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/GrayFoxMaterials.ucas</code> (24.7 MiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/GrayFoxMaterials.utoc</code> (11.9 KiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/ImagoStormMaterials.ucas</code> (28.7 MiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/ImagoStormMaterials.utoc</code> (12.6 KiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/LightOfDawn0Materials.ucas</code> (13.1 MiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/LightOfDawn0Materials.utoc</code> (3.9 KiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/LightOfDawnAMaterials.ucas</code> (13.1 MiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/LightOfDawnAMaterials.utoc</code> (3.9 KiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/LightOfDawnBMaterials.ucas</code> (13.1 MiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/LightOfDawnBMaterials.utoc</code> (3.9 KiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/LightOfDawnMaterials.ucas</code> (13.1 MiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/LightOfDawnMaterials.utoc</code> (3.9 KiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/NobleItems.ucas</code> (6.0 KiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/NobleItems.utoc</code> (1014 B)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/NobleMaterials.ucas</code> (41.5 MiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/NobleMaterials.utoc</code> (14.9 KiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/ShadowMailItems.ucas</code> (6.8 KiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/ShadowMailItems.utoc</code> (1.0 KiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/ShadowMailMaterials.ucas</code> (31.2 MiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/ShadowMailMaterials.utoc</code> (14.5 KiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/TheBearMaterials.ucas</code> (42.1 MiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/TheBearMaterials.utoc</code> (15.2 KiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/UnfinishedAncestralMaterials.ucas</code> (31.3 MiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/UnfinishedAncestralMaterials.utoc</code> (10.9 KiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/UnfinishedSteelMaterials.ucas</code> (21.9 MiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/UnfinishedSteelMaterials.utoc</code> (6.0 KiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/UnfinishedWornSteelMaterials.ucas</code> (27.2 MiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/UnfinishedWornSteelMaterials.utoc</code> (7.3 KiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/WornAncestralMaterials.ucas</code> (31.3 MiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/WornAncestralMaterials.utoc</code> (10.7 KiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/WornFurMaterials.ucas</code> (47.7 MiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/WornFurMaterials.utoc</code> (17.0 KiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/WornLeatherMaterials.ucas</code> (27.9 MiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/WornLeatherMaterials.utoc</code> (13.3 KiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/WornSteelMaterials.ucas</code> (70.1 MiB)</li>
+<li><code>OblivionRemastered/Content/Paks/~mods/WornSteelMaterials.utoc</code> (21.9 KiB)</li>
+</ul>
+
 <hr><h2 id="alpha92.1">alpha92.1</h2>
 <p><a href="https://github.com/devakm/OblivionRemastered_OOO/releases/tag/alpha92.1" target="_blank" rel="noopener">Download</a></p>
 <p><strong>Optional patch for alpha92.</strong> <code>alpha92.1.7z</code> holds only the four updated Materials paks (12 files, about 38 MiB). Install alpha92 first, then extract alpha92.1 over it and accept the overwrites. MO2 users: install it as a separate mod that loads after alpha92.</p>
